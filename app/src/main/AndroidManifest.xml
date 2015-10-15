@@ -13,13 +13,8 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".LoginPage"
-            android:label="@string/app_name"
-            android:windowSoftInputMode="adjustResize|stateVisible" >
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_main" >
+            android:name=".Main2Activity"
+            android:label="@string/title_activity_main2" >
         </activity>
     </application>
 
