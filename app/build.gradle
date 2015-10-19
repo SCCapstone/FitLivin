@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "edu.sc.fitlivinapp"
+        applicationId "edu.sc.myapplication"
         minSdkVersion 5
         targetSdkVersion 23
         versionCode 1
