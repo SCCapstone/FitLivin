@@ -12,9 +12,9 @@
         android:text="Fitness Program"
         android:id="@+id/button"
         android:clickable="true"
+        android:layout_marginTop="36dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="39dp" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
