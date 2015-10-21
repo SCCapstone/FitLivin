@@ -17,13 +17,42 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button yourButton = (Button)findViewById(R.id.button);
-        yourButton.setOnClickListener(new View.OnClickListener() {
+        Button yourButton3 = (Button)findViewById(R.id.button3);
+        Button yourButton4 = (Button)findViewById(R.id.button4);
+        Button yourButton5 = (Button)findViewById(R.id.button5);
+        Button yourButton6 = (Button)findViewById(R.id.button6);
+        yourButton.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, FitnessProgram.class));
             }
         });
+        yourButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, BMICAL.class));
+            }
+        });
+           yourButton4.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   startActivity(new Intent(MainActivity.this, NutritionCal.class));
+               }
+           });
+        yourButton5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, TrackProgress.class));
+            }
+        });
 
+        yourButton6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,PointsPage.class));
+            }
+        });
     }
 
     @Override

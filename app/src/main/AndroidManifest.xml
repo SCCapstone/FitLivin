@@ -19,6 +19,22 @@
         <activity
             android:name=".FitnessProgram"
             android:label="@string/title_activity_fitness_program" />
+        <activity
+            android:name=".BMICAL"
+            android:label="@string/title_activity_bmical" >
+        </activity>
+        <activity
+            android:name=".NutritionCal"
+            android:label="@string/title_activity_nutrition_cal" >
+        </activity>
+        <activity
+            android:name=".TrackProgress"
+            android:label="@string/title_activity_track_progress" >
+        </activity>
+        <activity
+            android:name=".PointsPage"
+            android:label="@string/title_activity_points_page" >
+        </activity>
     </application>
 
 </manifest>

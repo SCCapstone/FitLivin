@@ -3,4 +3,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_fitness_program">FitnessProgram</string>
+    <string name="title_activity_bmical">BMICAL</string>
+    <string name="title_activity_nutrition_cal">NutritionCal</string>
+    <string name="title_activity_track_progress">TrackProgress</string>
+    <string name="title_activity_points_page">PointsPage</string>
 </resources>
