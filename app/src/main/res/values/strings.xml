@@ -10,4 +10,7 @@
     <string name="title_activity_profile__page">Profile_Page</string>
     <string name="title_activity_ft__strength__training">FT_Strength_Training</string>
     <string name="title_activity_ft__str__training">FT_Str_Training</string>
+    <string name="title_activity_fp__str__training">FP_STR_Training</string>
+    <string name="title_activity_fp__body__building">FP_Body_Building</string>
+    <string name="title_activity_fp__wgt__loss">FP_WGT_Loss</string>
 </resources>

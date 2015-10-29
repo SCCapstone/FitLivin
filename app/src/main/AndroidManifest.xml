@@ -39,7 +39,18 @@
             android:name=".Profile_Page"
             android:label="@string/title_activity_profile__page" >
         </activity>
-
+        <activity
+            android:name=".FP_STR_Training"
+            android:label="@string/title_activity_fp__str__training" >
+        </activity>
+        <activity
+            android:name=".FP_Body_Building"
+            android:label="@string/title_activity_fp__body__building" >
+        </activity>
+        <activity
+            android:name=".FP_WGT_Loss"
+            android:label="@string/title_activity_fp__wgt__loss" >
+        </activity>
     </application>
 
 </manifest>
