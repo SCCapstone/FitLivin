@@ -51,7 +51,7 @@ public class MainActivity extends Activity {
         yourButton6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,Profile_Page.class));
+                startActivity(new Intent(MainActivity.this,PointsPage.class));
             }
         });
         yourButton7.setOnClickListener(new View.OnClickListener() {
