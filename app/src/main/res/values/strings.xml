@@ -8,8 +8,7 @@
     <string name="title_activity_nutrition_cal">NutritionCal</string>
     <string name="title_activity_track_progress">TrackProgress</string>
     <string name="title_activity_points_page">PointsPage</string>
-    <string name="bmi_weight">Weight in LB:</string>
-    <string name="bmi_height">Height in IN:</string>
-    <string name="bmi_calc_button">Calculate BMI</string>
-    <string name="BMI">Your BMI</string>
+    <string name="title_activity_profile__page">Profile_Page</string>
+    <string name="title_activity_ft__strength__training">FT_Strength_Training</string>
+    <string name="title_activity_ft__str__training">FT_Str_Training</string>
 </resources>

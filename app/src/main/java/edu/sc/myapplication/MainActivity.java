@@ -21,6 +21,7 @@ public class MainActivity extends Activity {
         Button yourButton4 = (Button)findViewById(R.id.button4);
         Button yourButton5 = (Button)findViewById(R.id.button5);
         Button yourButton6 = (Button)findViewById(R.id.button6);
+        Button yourButton7 = (Button)findViewById(R.id.button7);
         yourButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -53,6 +54,14 @@ public class MainActivity extends Activity {
                 startActivity(new Intent(MainActivity.this,PointsPage.class));
             }
         });
+        yourButton7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Profile_Page.class));
+            }
+        });
+
+
     }
 
     @Override
