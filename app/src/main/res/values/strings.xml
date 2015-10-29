@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">FitLivin</string>
+    <string name="BMI_title">BMI Calculator</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_fitness_program">FitnessProgram</string>
@@ -7,4 +8,8 @@
     <string name="title_activity_nutrition_cal">NutritionCal</string>
     <string name="title_activity_track_progress">TrackProgress</string>
     <string name="title_activity_points_page">PointsPage</string>
+    <string name="bmi_weight">Weight in LB:</string>
+    <string name="bmi_height">Height in IN:</string>
+    <string name="bmi_calc_button">Calculate BMI</string>
+    <string name="BMI">Your BMI</string>
 </resources>
