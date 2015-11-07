@@ -11,6 +11,7 @@ public class Profile_Page extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile__page);
+
     }
 
     @Override

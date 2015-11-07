@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class BMICAL extends Activity {
 
@@ -11,7 +14,23 @@ public class BMICAL extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmical);
+
+        Button yourButton11 = (Button)findViewById(R.id.button9);
+        yourButton11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               int a = 1;
+                int b = 2;
+                int c = a + b;
+
+                TextView t = (TextView)findViewById(R.id.textView11);
+                t.setText(""+c);
+            }
+        });
     }
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
