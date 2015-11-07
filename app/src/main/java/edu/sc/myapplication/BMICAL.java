@@ -15,9 +15,12 @@ public class BMICAL extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmical);
 
+
+
         Button yourButton11 = (Button)findViewById(R.id.button9);
         yourButton11.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View v) {
                int a = 1;
                 int b = 2;

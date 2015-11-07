@@ -13,7 +13,8 @@
         android:id="@+id/editText9"
         android:hint="Username"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="#60ff59" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -22,7 +23,8 @@
         android:layout_below="@+id/editText9"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="51dp"
-        android:hint="Weight" />
+        android:hint="Weight"
+        android:background="#42ff21" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -30,7 +32,8 @@
         android:id="@+id/editText11"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:hint="Height in Inches" />
+        android:hint="Height in Inches"
+        android:background="#6fff2f" />
 
     <Button
         android:layout_width="wrap_content"
@@ -40,4 +43,13 @@
         android:layout_alignParentBottom="true"
         android:layout_alignEnd="@+id/editText9"
         android:layout_marginBottom="61dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textView15"
+        android:layout_alignBottom="@+id/editText11"
+        android:layout_below="@+id/editText11"
+        android:layout_alignEnd="@+id/editText11" />
 </RelativeLayout>
