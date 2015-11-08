@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class BMICAL extends Activity {
+public class BMICAL extends Profile_Page {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +24,15 @@ public class BMICAL extends Activity {
             public void onClick(View v) {
                int a = 1;
                 int b = 2;
-                int c = a + b;
+
+                Profile_Page weight = new Profile_Page();
+                int c = weight.getPweight();
+                Bundle bundle = getIntent().getExtras();
+                int value = bundle.getInt("some_key");
 
                 TextView t = (TextView)findViewById(R.id.textView11);
-                t.setText(""+c);
+                t.setText(""+value);
+
             }
         });
     }
