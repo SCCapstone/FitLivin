@@ -1,6 +1,8 @@
 package edu.sc.myapplication;
 
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,19 +19,22 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button yourButton = (Button)findViewById(R.id.button);
-        Button yourButton3 = (Button)findViewById(R.id.button3);
+       /* Button yourButton3 = (Button)findViewById(R.id.button3);
         Button yourButton4 = (Button)findViewById(R.id.button4);
         Button yourButton5 = (Button)findViewById(R.id.button5);
         Button yourButton6 = (Button)findViewById(R.id.button6);
-        Button yourButton7 = (Button)findViewById(R.id.button7);
+       */ Button yourButton7 = (Button)findViewById(R.id.button7);
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         yourButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v) {
+
                 startActivity(new Intent(MainActivity.this, FitnessProgram.class));
             }
         });
-        yourButton3.setOnClickListener(new View.OnClickListener() {
+        /*yourButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, BMICAL.class));
@@ -61,7 +66,7 @@ public class MainActivity extends Activity {
             }
         });
 
-
+*/
     }
 
     @Override
