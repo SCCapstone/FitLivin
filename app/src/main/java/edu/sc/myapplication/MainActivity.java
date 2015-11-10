@@ -1,17 +1,16 @@
 package edu.sc.myapplication;
 
-import android.app.Activity;
+import android.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
 
 
     @Override
@@ -23,17 +22,24 @@ public class MainActivity extends Activity {
         Button yourButton4 = (Button)findViewById(R.id.button4);
         Button yourButton5 = (Button)findViewById(R.id.button5);
         Button yourButton6 = (Button)findViewById(R.id.button6);
-       */ Button yourButton7 = (Button)findViewById(R.id.button7);
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        yourButton.setOnClickListener(new View.OnClickListener()
-        {
+       Button yourButton7 = (Button)findViewById(R.id.button7);
+        */
+
+
+        //yourButton.setOnClickListener(new View.OnClickListener()
+       /* {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(MainActivity.this, FitnessProgram.class));
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                fragmentTransaction.replace(R.layout.activity_main, new FitnessProgramFragment());
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
+        */
         /*yourButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,8 +73,20 @@ public class MainActivity extends Activity {
         });
 
 */
+
+    }
+public void ChangeFragment(View view){
+    Fragment fragment;
+    if(view == findViewById(R.id.button)){
+        fragment = new FitnessProgramFragment();
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.add(R.id.fragment_place, fragment);
+        ft.addToBackStack(null);
+        ft.commit();
     }
 
+}
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

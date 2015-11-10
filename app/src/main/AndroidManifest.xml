@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FitnessProgram"
+            android:name=".FitnessProgramFragment"
             android:label="@string/title_activity_fitness_program" />
         <activity
             android:name=".BMICAL"
@@ -40,7 +40,7 @@
             android:label="@string/title_activity_profile__page" >
         </activity>
         <activity
-            android:name=".FP_STR_Training"
+            android:name=".FP_STR_TrainingFragment"
             android:label="@string/title_activity_fp__str__training" >
         </activity>
         <activity
