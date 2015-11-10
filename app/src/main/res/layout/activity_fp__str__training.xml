@@ -11,9 +11,64 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Strength"
+        android:text=" Strength Program "
         android:id="@+id/textView12"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="55dp" />
+        android:background="@android:color/white"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=" Day 1 "
+        android:id="@+id/textView16"
+        android:layout_below="@+id/textView12"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
+        android:background="@android:color/white" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=" Day 2 "
+        android:id="@+id/textView17"
+        android:layout_marginTop="42dp"
+        android:layout_below="@+id/textView16"
+        android:layout_alignStart="@+id/textView16"
+        android:layout_alignEnd="@+id/textView16"
+        android:background="@android:color/white" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=" Day 3 "
+        android:id="@+id/textView18"
+        android:background="@android:color/white"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/textView17" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=" Day 4 "
+        android:id="@+id/textView19"
+        android:layout_marginTop="44dp"
+        android:background="@android:color/white"
+        android:layout_below="@+id/textView18"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=" Day 5 "
+        android:id="@+id/textView20"
+        android:layout_marginTop="40dp"
+        android:background="@android:color/white"
+        android:layout_below="@+id/textView19"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
