@@ -12,81 +12,25 @@ import android.widget.Button;
 
 public class MainActivity extends FragmentActivity {
 
+    private FragmentManager fm;
+    private FragmentTransaction ft;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button yourButton = (Button)findViewById(R.id.button);
-       /* Button yourButton3 = (Button)findViewById(R.id.button3);
-        Button yourButton4 = (Button)findViewById(R.id.button4);
-        Button yourButton5 = (Button)findViewById(R.id.button5);
-        Button yourButton6 = (Button)findViewById(R.id.button6);
-       Button yourButton7 = (Button)findViewById(R.id.button7);
-        */
 
+        //Put fragment in container
 
-        //yourButton.setOnClickListener(new View.OnClickListener()
-       /* {
-            @Override
-            public void onClick(View v) {
-
-                FragmentManager fragmentManager = getFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-                fragmentTransaction.replace(R.layout.activity_main, new FitnessProgramFragment());
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-            }
-        });
-        */
-        /*yourButton3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, BMICAL.class));
-            }
-        });
-           yourButton4.setOnClickListener(new View.OnClickListener() {
-               @Override
-               public void onClick(View v) {
-                   startActivity(new Intent(MainActivity.this, NutritionCal.class));
-               }
-           });
-        yourButton5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, TrackProgress.class));
-            }
-        });
-
-        yourButton6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,PointsPage.class));
-            }
-        });
-        yourButton7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,Profile_Page.class));
-            }
-        });
-
-*/
-
-    }
-public void ChangeFragment(View view){
-    Fragment fragment;
-    if(view == findViewById(R.id.button)){
-        fragment = new FitnessProgramFragment();
-        FragmentManager fm = getFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.add(R.id.fragment_place, fragment);
+        HomePageFragment firstFragment = new HomePageFragment();
+        fm = getFragmentManager();
+        ft = fm.beginTransaction();
+        ft.replace(R.id.container, firstFragment);
         ft.addToBackStack(null);
         ft.commit();
     }
 
-}
+    //  }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

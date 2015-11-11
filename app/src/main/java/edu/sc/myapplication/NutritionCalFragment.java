@@ -7,15 +7,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class FP_STR_TrainingFragment extends Activity {
+public class NutritionCalFragment extends Fragment {
+
+
+    public NutritionCalFragment() {
+        // Required empty public constructor
+    }
+
+
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fitness_program, container, false);
+        return inflater.inflate(R.layout.fragment_nutrition_cal, container, false);
     }
-
 
 
 }

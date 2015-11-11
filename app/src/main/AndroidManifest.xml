@@ -16,27 +16,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".FitnessProgramFragment"
-            android:label="@string/title_activity_fitness_program" />
-        <activity
-            android:name=".BMICAL"
+            android:name=".BMICAL_Fragment"
             android:label="@string/title_activity_bmical" >
         </activity>
         <activity
-            android:name=".NutritionCal"
+            android:name=".NutritionCalFragment"
             android:label="@string/title_activity_nutrition_cal" >
         </activity>
         <activity
-            android:name=".TrackProgress"
+            android:name=".TrackProgressFragment"
             android:label="@string/title_activity_track_progress" >
         </activity>
         <activity
-            android:name=".PointsPage"
+            android:name=".PointsPageFragment"
             android:label="@string/title_activity_points_page" >
         </activity>
         <activity
-            android:name=".Profile_Page"
+            android:name=".Profile_Page_Fragment"
             android:label="@string/title_activity_profile__page" >
         </activity>
         <activity
