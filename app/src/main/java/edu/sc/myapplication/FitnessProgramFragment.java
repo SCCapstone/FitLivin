@@ -16,9 +16,9 @@ public class FitnessProgramFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.fragment_fp__str__training, container, false);
-        Button btnstrength = (Button) v.findViewById(R.id.StrengthTrainingButton);
-        btnstrength.setOnClickListener(new View.OnClickListener() {
+        View v = inflater.inflate(R.layout.fragment_fitness_program, container, false);
+        Button btn = (Button) v.findViewById(R.id.StrengthTrainingButton);
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FP_STR_TrainingFragment fragment = new FP_STR_TrainingFragment();
@@ -29,8 +29,8 @@ public class FitnessProgramFragment extends Fragment {
             }
         });
 
-        Button btnbuilding = (Button) v.findViewById(R.id.BodyBuildingButton);
-        btnbuilding.setOnClickListener(new View.OnClickListener() {
+        Button btn2 = (Button) v.findViewById(R.id.BodyBuildingButton);
+        btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FP_Body_Building_Fragment fragment1 = new FP_Body_Building_Fragment();
@@ -43,7 +43,7 @@ public class FitnessProgramFragment extends Fragment {
         // Inflate the layout for this fragment
       //  View v = inflater.inflate(R.layout.fragment_fitness_program, null);
 
-        return inflater.inflate(R.layout.fragment_fitness_program, container, false);
+        return v;
 
 
     }
