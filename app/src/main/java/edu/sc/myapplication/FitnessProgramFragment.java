@@ -40,6 +40,17 @@ public class FitnessProgramFragment extends Fragment {
                 ft.commit();
             }
         });
+        Button btn3 = (Button) v.findViewById(R.id.WeightLossButton);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               FP_WGT_Loss_Fragment  fragment2 = new FP_WGT_Loss_Fragment();
+                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.replace(R.id.container, fragment2);
+                ft.commit();
+            }
+        });
         // Inflate the layout for this fragment
       //  View v = inflater.inflate(R.layout.fragment_fitness_program, null);
 

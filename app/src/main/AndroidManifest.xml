@@ -46,7 +46,7 @@
             android:label="@string/title_activity_fp__body__building" >
         </activity>
         <activity
-            android:name=".FP_WGT_Loss"
+            android:name=".FP_WGT_Loss_Fragment"
             android:label="@string/title_activity_fp__wgt__loss" >
         </activity>
     </application>
