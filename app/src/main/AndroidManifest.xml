@@ -42,7 +42,7 @@
             android:label="@string/title_activity_fp__str__training" >
         </activity>
         <activity
-            android:name=".FP_Body_Building"
+            android:name=".FP_Body_Building_Fragment"
             android:label="@string/title_activity_fp__body__building" >
         </activity>
         <activity

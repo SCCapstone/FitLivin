@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Strength Training"
-        android:id="@+id/button2"
+        android:id="@+id/StrengthTrainingButton"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="94dp"
@@ -31,21 +31,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="BodyBuilding"
-        android:id="@+id/button7"
+        android:id="@+id/BodyBuildingButton"
         android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/button2"
-        android:layout_alignEnd="@+id/button2"
+        android:layout_alignStart="@+id/StrengthTrainingButton"
+        android:layout_alignEnd="@+id/StrengthTrainingButton"
         android:background="#2c6bff" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Weight Loss"
-        android:id="@+id/button8"
+        android:id="@+id/WeightLossButton"
         android:layout_marginTop="47dp"
-        android:layout_below="@+id/button7"
-        android:layout_alignStart="@+id/button7"
-        android:layout_alignEnd="@+id/button2"
+        android:layout_below="@+id/BodyBuildingButton"
+        android:layout_alignStart="@+id/BodyBuildingButton"
+        android:layout_alignEnd="@+id/StrengthTrainingButton"
         android:background="#8bff14" />
 
     <TextView
@@ -54,7 +54,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Get stronger with FitLivin!"
         android:id="@+id/textView6"
-        android:layout_below="@+id/button2"
+        android:layout_below="@+id/StrengthTrainingButton"
         android:layout_alignEnd="@+id/textView"
         android:textColor="@android:color/white" />
 
@@ -64,7 +64,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Obtain a more aesthetic physique!"
         android:id="@+id/textView7"
-        android:layout_below="@+id/button7"
+        android:layout_below="@+id/BodyBuildingButton"
         android:layout_alignStart="@+id/textView6"
         android:textColor="@android:color/white" />
 
@@ -74,7 +74,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Lose weight and get in better shape!"
         android:id="@+id/textView8"
-        android:layout_below="@+id/button8"
+        android:layout_below="@+id/WeightLossButton"
         android:layout_alignStart="@+id/textView7"
         android:textColor="@android:color/white" />
 
