@@ -14,6 +14,9 @@ public class MainActivity extends FragmentActivity {
 
     private FragmentManager fm;
     private FragmentTransaction ft;
+    private Integer weight;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +26,8 @@ public class MainActivity extends FragmentActivity {
         //Put fragment in container
 
         HomePageFragment firstFragment = new HomePageFragment();
-        fm = getFragmentManager();
-        ft = fm.beginTransaction();
-        ft.replace(R.id.container, firstFragment);
-        ft.addToBackStack(null);
-        ft.commit();
+        FragmentManager fm1 = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+        fm1.beginTransaction().add(R.id.container, firstFragment).addToBackStack(null).commit();
     }
 
     //  }
@@ -52,4 +52,14 @@ public class MainActivity extends FragmentActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
+    public void setWeight(Integer weight1) {
+        this.weight = weight1;
+    }
+    public Integer getWeight() {
+        return weight;
+    }
+
 }

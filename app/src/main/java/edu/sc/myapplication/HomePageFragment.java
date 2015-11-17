@@ -29,9 +29,7 @@ public class HomePageFragment extends Fragment{
             public void onClick(View v) {
                 FitnessProgramFragment fragment = new FitnessProgramFragment();
                 FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, fragment);
-                ft.commit();
+               fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
         Button btn3 = (Button) v.findViewById(R.id.button3);
@@ -42,6 +40,7 @@ public class HomePageFragment extends Fragment{
                 FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, fragment3);
+                ft.addToBackStack(null);
                 ft.commit();
             }
         });
@@ -50,10 +49,8 @@ public class HomePageFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 NutritionCalFragment fragment4 = new NutritionCalFragment();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, fragment4);
-                ft.commit();
+                FragmentManager fm1 = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                fm1.beginTransaction().replace(R.id.container, fragment4).addToBackStack(null).commit();
             }
         });
         Button btn5 = (Button) v.findViewById(R.id.button5);
@@ -62,9 +59,8 @@ public class HomePageFragment extends Fragment{
             public void onClick(View v) {
                 PointsPageFragment fragment5 = new PointsPageFragment();
                 FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, fragment5);
-                ft.commit();
+                fm.beginTransaction().replace(R.id.container, fragment5).addToBackStack(null).commit();
+
             }
         });
         Button btn6 = (Button) v.findViewById(R.id.button6);
@@ -75,6 +71,7 @@ public class HomePageFragment extends Fragment{
                 FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, fragment6);
+                ft.addToBackStack(null);
                 ft.commit();
             }
         });
@@ -86,6 +83,7 @@ public class HomePageFragment extends Fragment{
                 FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, fragment22);
+                ft.addToBackStack(null);
                 ft.commit();
             }
         });

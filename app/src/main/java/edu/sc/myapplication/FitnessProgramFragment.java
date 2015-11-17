@@ -25,6 +25,7 @@ public class FitnessProgramFragment extends Fragment {
                 FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, fragment);
+                ft.addToBackStack(null);
                 ft.commit();
             }
         });
@@ -37,6 +38,7 @@ public class FitnessProgramFragment extends Fragment {
                 FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, fragment1);
+                ft.addToBackStack(null);
                 ft.commit();
             }
         });
@@ -48,6 +50,7 @@ public class FitnessProgramFragment extends Fragment {
                 FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, fragment2);
+                ft.addToBackStack(null);
                 ft.commit();
             }
         });
