@@ -5,13 +5,58 @@
     android:background="@drawable/background2"
     >
 
+
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Weight Loss"
-        android:id="@+id/textView14"
+        android:id="@+id/textViewWeightLoss"
+        android:background="@android:color/white"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="136dp" />
+        android:layout_gravity="center_horizontal"
+        android:textIsSelectable="false" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Day 1"
+        android:id="@+id/day1WeightLoss"
+        android:layout_marginBottom="125dp"
+        android:layout_gravity="center" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Day 4"
+        android:id="@+id/day4WeightLoss"
+        android:layout_marginBottom="-25dp"
+        android:layout_gravity="center" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Day 3"
+        android:id="@+id/day3WeightLoss"
+        android:layout_marginBottom="25dp"
+        android:layout_gravity="center" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Day 5"
+        android:id="@+id/day5WeightLoss"
+        android:layout_marginBottom="-75dp"
+        android:layout_gravity="center" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Day 2"
+        android:id="@+id/day2WeightLoss"
+        android:layout_marginBottom="75dp"
+        android:layout_gravity="center" />
+
 </FrameLayout>
