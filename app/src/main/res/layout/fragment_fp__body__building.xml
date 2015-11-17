@@ -1,59 +1,76 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:id="@+id/containerFitnessP"
     android:background="@drawable/background2"
     >
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text=" Body Building "
         android:id="@+id/textView13"
         android:background="@android:color/white"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" Day 3 "
+        android:id="@+id/button19"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        android:layout_gravity="center" />
+
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=" Day 1 "
         android:id="@+id/button17"
         android:layout_below="@+id/textView13"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp" />
+        android:layout_marginBottom="200dp"
+        android:layout_gravity="center" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=" Day 2 "
         android:id="@+id/button18"
         android:layout_below="@+id/button17"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="150dp"
+        android:layout_gravity="center"
+        android:height="@dimen/activity_vertical_margin" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=" Day 3 "
-        android:id="@+id/button19"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=" Day 4 "
-        android:id="@+id/button20"
-        android:layout_below="@+id/button19"
-        android:layout_alignStart="@+id/button19" />
-
-    <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=" Day 5 "
         android:id="@+id/button21"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/button20"
-        android:layout_marginBottom="46dp" />
+        android:layout_marginBottom="0dp"
+        android:layout_gravity="center" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" Day 4 "
+        android:id="@+id/button20"
+        android:layout_below="@+id/button19"
+        android:layout_alignStart="@+id/button19"
+        android:layout_marginBottom="50dp"
+        android:layout_gravity="center" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BACK"
+        android:id="@+id/button9"
+        android:layout_gravity="center_horizontal|bottom" />
 </FrameLayout>
