@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.parse.ParseObject;
+
 public class BMICAL_Fragment extends Fragment {
 
 
@@ -42,6 +44,10 @@ public class BMICAL_Fragment extends Fragment {
                 ft.commit();
             }
         });
+
+        ParseObject testObject = new ParseObject("TestObject");
+        testObject.put("foo2", "bar2");
+        testObject.saveInBackground();
 
         // Inflate the layout for this fragment
         return v;

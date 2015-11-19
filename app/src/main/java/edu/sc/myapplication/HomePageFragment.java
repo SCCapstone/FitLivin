@@ -55,7 +55,7 @@ public class HomePageFragment extends Fragment{
         });
         Button btn5 = (Button) v.findViewById(R.id.button5);
         btn5.setOnClickListener(new View.OnClickListener() {
-            @Override
+
             public void onClick(View v) {
                 PointsPageFragment fragment5 = new PointsPageFragment();
                 FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.

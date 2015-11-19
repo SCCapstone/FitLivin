@@ -21,7 +21,7 @@
         android:id="@+id/StrengthTrainingButton"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="94dp"
+        android:layout_marginTop="300dp"
         android:background="#ff3c39"
         android:clickable="true" />
 

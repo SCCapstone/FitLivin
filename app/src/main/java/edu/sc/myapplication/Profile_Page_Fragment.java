@@ -26,7 +26,10 @@ public class Profile_Page_Fragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
         View v = inflater.inflate(R.layout.fragment_profile__page, container, false);
+
         Button btn2 = (Button) v.findViewById(R.id.button2);
 
         btn2.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +63,7 @@ public class Profile_Page_Fragment extends Fragment {
                 ft.commit();
             }
         });
+
 
        /* Fragment fragment = new Fragment();
         final Bundle bundle = new Bundle();

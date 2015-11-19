@@ -15,7 +15,7 @@ public class FP_STR_TrainingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_fp__str__training, container, false);
-        Button btn = (Button) v.findViewById(R.id.button9);
+        Button btn = (Button) v.findViewById(R.id.backButtonStrength);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
