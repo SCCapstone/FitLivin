@@ -85,11 +85,8 @@
         android:text="Based on your Individual Goals"
         android:id="@+id/textView9"
         android:layout_below="@+id/textView"
-        android:layout_alignEnd="@+id/textView" />
-
-
-
-
+        android:layout_alignEnd="@+id/textView"
+        android:layout_gravity="center_horizontal|top" />
 
 
 </FrameLayout>
