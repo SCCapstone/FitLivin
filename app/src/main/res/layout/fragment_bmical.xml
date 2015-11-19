@@ -23,7 +23,7 @@
         android:textColor="#fffef7" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="136dp"
         android:layout_height="wrap_content"
         android:text="BACK"
         android:id="@+id/button8"
