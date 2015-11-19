@@ -23,7 +23,7 @@ public class HomePageFragment extends Fragment{
         Log.d("T", "ONcREATEVIEW");
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_home_page, container, false);
-        Button btn = (Button) v.findViewById(R.id.button);
+        Button btn = (Button) v.findViewById(R.id.fitnessProgramButton);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
