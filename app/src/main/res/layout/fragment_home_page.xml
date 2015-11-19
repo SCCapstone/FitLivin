@@ -13,46 +13,52 @@
         android:onClick="ChangeFragment" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nutrition"
-        android:id="@+id/button4"
-        android:layout_gravity="left|top" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="67dp"
-        android:text="BMI"
-        android:id="@+id/button3"
-        android:layout_gravity="right|top" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fitness Program"
-        android:id="@+id/button"
-        android:layout_gravity="center_horizontal|top" />
-
-    <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Points"
-        android:id="@+id/button5"
-        android:layout_gravity="left|center_vertical" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Profile"
-        android:id="@+id/button6"
+        android:id="@+id/pointsButton"
+        android:layout_marginBottom="125dp"
         android:layout_gravity="center" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:id="@+id/profileButton"
+        android:layout_marginBottom="75dp"
+        android:layout_gravity="center" />
+
+    <Button
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Track Progress"
-        android:id="@+id/button22"
-        android:layout_gravity="right|center_vertical" />
+        android:id="@+id/trackProgressButton"
+        android:layout_marginBottom="25dp"
+        android:layout_gravity="center" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="BMI"
+        android:id="@+id/bmiButton"
+        android:layout_marginBottom="-25dp"
+        android:layout_gravity="center" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nutrition"
+        android:id="@+id/nutritionButton"
+        android:layout_marginBottom="-75dp"
+        android:layout_gravity="center" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fitness Program"
+        android:id="@+id/fitnessProgramButton"
+        android:layout_marginBottom="-125dp"
+        android:layout_gravity="center" />
 
 
 </FrameLayout>

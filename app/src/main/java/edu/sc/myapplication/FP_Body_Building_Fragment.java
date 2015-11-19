@@ -21,7 +21,7 @@ public class FP_Body_Building_Fragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                HomePageFragment fragment1 = new HomePageFragment();
+                FitnessProgramFragment fragment1 = new FitnessProgramFragment();
                 FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, fragment1);
@@ -32,5 +32,4 @@ public class FP_Body_Building_Fragment extends Fragment {
         // Inflate the layout for this fragment
         return v;
     }
-
 }

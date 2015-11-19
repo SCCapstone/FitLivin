@@ -32,7 +32,7 @@ public class HomePageFragment extends Fragment{
                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
-        Button btn3 = (Button) v.findViewById(R.id.button3);
+        Button btn3 = (Button) v.findViewById(R.id.bmiButton);
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,7 +44,7 @@ public class HomePageFragment extends Fragment{
                 ft.commit();
             }
         });
-        Button btn4 = (Button) v.findViewById(R.id.button4);
+        Button btn4 = (Button) v.findViewById(R.id.nutritionButton);
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,7 +53,7 @@ public class HomePageFragment extends Fragment{
                 fm1.beginTransaction().replace(R.id.container, fragment4).addToBackStack(null).commit();
             }
         });
-        Button btn5 = (Button) v.findViewById(R.id.button5);
+        Button btn5 = (Button) v.findViewById(R.id.pointsButton);
         btn5.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -63,7 +63,7 @@ public class HomePageFragment extends Fragment{
 
             }
         });
-        Button btn6 = (Button) v.findViewById(R.id.button6);
+        Button btn6 = (Button) v.findViewById(R.id.profileButton);
         btn6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,7 +75,7 @@ public class HomePageFragment extends Fragment{
                 ft.commit();
             }
         });
-        Button btn22 = (Button) v.findViewById(R.id.button22);
+        Button btn22 = (Button) v.findViewById(R.id.trackProgressButton);
         btn22.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
