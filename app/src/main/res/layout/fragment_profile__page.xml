@@ -42,4 +42,12 @@
         android:textColor="#362cff"
         android:background="#f1fff0"
         android:hint="Name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textView11"
+        android:layout_gravity="left|bottom"
+        android:background="#eaffdc" />
 </FrameLayout>

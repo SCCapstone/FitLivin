@@ -21,10 +21,10 @@ import com.parse.ParseQuery;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends ListActivity{
+public class MainActivity extends FragmentActivity{
 
-    private List<Note> posts;
 
+    private String name;
     private FragmentManager fm;
     private FragmentTransaction ft;
     private Integer weight;
@@ -46,10 +46,10 @@ public class MainActivity extends ListActivity{
        // testObject.put()
         testObject.saveInBackground();
 
-        posts = new ArrayList<Note>();
-        ArrayAdapter<Note> adapter = new ArrayAdapter<Note>(this, R.layout.list_item_layout, posts);
-        setListAdapter(adapter);
-        refreshPostList();
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("TestObject");
+
+
+
 
        // ParseObject gameScore = new ParseObject("GameScore");
       //  gameScore.put("score", 1337);
@@ -61,34 +61,18 @@ public class MainActivity extends ListActivity{
 
         HomePageFragment firstFragment = new HomePageFragment();
         FragmentManager fm1 = getFragmentManager(); //or getFragmentManager() if you are not using support library.
-       // fm1.beginTransaction().add(R.id.container, firstFragment).addToBackStack(null).commit();
+       fm1.beginTransaction().add(R.id.container, firstFragment).addToBackStack(null).commit();
     }
 
     //  }
-    private void refreshPostList() {
 
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("Post");
-
-        query.findInBackground(new FindCallback<ParseObject>() {
-
-            @Override
-            public void done(List<ParseObject> postList, ParseException e) {
-                if (e == null) {
-                    // If there are results, update the list of posts
-                    // and notify the adapter
-                    posts.clear();
-                    for (ParseObject post : postList) {
-                        Note note = new Note(post.getObjectId(), post.getString("title"), post.getString("content"));
-                        posts.add(note);
-                    }
-                    ((ArrayAdapter<Note>) getListAdapter()).notifyDataSetChanged();
-                } else {
-
-                }
-            }
-        });
-    }
-
-
+ public String getName()
+ {
+     return this.name;
+ }
+public void setName(String value)
+{
+    this.name = value;
+}
 
 }

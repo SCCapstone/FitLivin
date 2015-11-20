@@ -36,6 +36,7 @@ public class Profile_Page_Fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 EditText one = (EditText)v.findViewById(R.id.editText9);
+
                 //Integer weight1 = Integer.parseInt(one.getText().toString());
                // MainActivity main = new MainActivity();
                // main.setWeight(weight1);
