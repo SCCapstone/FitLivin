@@ -52,4 +52,12 @@
         android:id="@+id/textView19"
         android:layout_gravity="center_horizontal|bottom"
         android:textColor="#ffffff" />
+
+    <Button
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:id="@+id/button3"
+        android:layout_gravity="center_horizontal|bottom" />
+
 </FrameLayout>
