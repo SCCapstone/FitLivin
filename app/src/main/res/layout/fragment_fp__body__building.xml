@@ -11,7 +11,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text=" Body Building "
         android:id="@+id/textView13"
-        android:background="@android:color/white"
+        android:background="#2113ff"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
@@ -25,7 +25,8 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:background="#2917ff" />
 
     <Button
         android:layout_width="match_parent"
@@ -35,7 +36,8 @@
         android:layout_below="@+id/textView13"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="125dp"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:background="#3e17ff" />
 
     <Button
         android:layout_width="match_parent"
@@ -46,7 +48,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="75dp"
         android:layout_gravity="center"
-        android:height="@dimen/activity_vertical_margin" />
+        android:height="@dimen/activity_vertical_margin"
+        android:background="#2017ff" />
 
     <Button
         android:layout_width="match_parent"
@@ -56,7 +59,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/day4BodyBuilding"
         android:layout_marginBottom="-75dp"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:background="#4417ff" />
 
     <Button
         android:layout_width="match_parent"
@@ -66,7 +70,8 @@
         android:layout_below="@+id/day3BodyBuilding"
         android:layout_alignStart="@+id/day3BodyBuilding"
         android:layout_marginBottom="-25dp"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:background="#270fff" />
 
     <Button
         android:layout_width="wrap_content"
