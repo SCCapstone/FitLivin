@@ -14,7 +14,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="125dp"
 
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:background="#ff1b12" />
 
     <Button
         android:layout_width="match_parent"
@@ -25,7 +26,8 @@
         android:layout_below="@+id/day1Strength"
         android:layout_marginBottom="75dp"
         android:layout_alignStart="@+id/day1Strength"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:background="#ff271e" />
 
     <Button
         android:layout_width="match_parent"
@@ -36,7 +38,8 @@
         android:layout_marginBottom="25dp"
         android:layout_alignStart="@+id/day2Strength"
 
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:background="#ff1d19" />
 
     <Button
         android:layout_width="match_parent"
@@ -47,7 +50,8 @@
         android:layout_alignStart="@+id/day3Strength"
 
         android:layout_marginBottom="-25dp"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:background="#ff2219" />
 
     <Button
         android:layout_width="match_parent"
@@ -57,7 +61,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/day4Strength"
         android:layout_marginBottom="-75dp"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:background="#ff1f18" />
 
 
     <Button
@@ -73,7 +78,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text=" Strength Program "
         android:id="@+id/textView12"
-        android:background="@android:color/white"
+        android:background="#ff1f12"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal|top" />
