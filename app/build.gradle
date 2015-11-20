@@ -24,5 +24,4 @@ dependencies {
     compile 'com.android.support:support-v4:23.0.0'
     compile 'com.parse.bolts:bolts-android:1.+'
     compile 'com.parse:parse-android:1.+'
-    compile files('C:/Users/Zach/AndroidStudioProjects/FitLivin12/.idea/libraries/Parse-1.11.0.jar')
 }
