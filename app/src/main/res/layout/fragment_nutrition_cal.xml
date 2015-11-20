@@ -14,5 +14,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="69dp"
-        android:background="#f1ffee" />
+        android:background="#f1ffee"
+        android:layout_gravity="center_horizontal|top" />
 </FrameLayout>
