@@ -6,16 +6,6 @@
     >
 
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editText9"
-        android:layout_gravity="center_horizontal|top"
-        android:hint="weight"
-        android:background="#fcffd4" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,24 +20,58 @@
         android:id="@+id/button7"
         android:layout_gravity="center_horizontal|bottom" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:id="@+id/editText"
-        android:layout_marginBottom="100dp"
-        android:layout_gravity="left|center_vertical"
-        android:textColor="#362cff"
-        android:background="#f1fff0"
-        android:hint="Name" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textView11"
-        android:layout_gravity="left|bottom"
-        android:background="#eaffdc" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Profile Page"
+        android:id="@+id/textView21"
+        android:layout_gravity="center_horizontal|top"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="374dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Your Height:"
+        android:id="@+id/textView22"
+        android:layout_gravity="left|center_vertical"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="303dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Your Weight:"
+        android:id="@+id/textView23"
+        android:layout_gravity="left|center_vertical"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="238dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Your Age:"
+        android:id="@+id/textView24"
+        android:layout_gravity="left|center_vertical"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="437dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Name:"
+        android:id="@+id/textView25"
+        android:layout_gravity="left|center_vertical"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="188dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Points:"
+        android:id="@+id/textView26"
+        android:layout_gravity="center_horizontal|bottom"
+        android:textColor="#ffffff" />
+
 </FrameLayout>
