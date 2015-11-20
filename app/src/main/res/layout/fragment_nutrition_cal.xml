@@ -16,4 +16,40 @@
         android:layout_marginTop="69dp"
         android:background="#f1ffee"
         android:layout_gravity="center_horizontal|top" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Enter Your Weight:"
+        android:id="@+id/textView16"
+        android:layout_gravity="left|center_vertical"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="219dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="To Maintain:"
+        android:id="@+id/textView17"
+        android:layout_gravity="center_horizontal|bottom"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="171dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="To Gain:"
+        android:id="@+id/textView18"
+        android:layout_gravity="center_horizontal|bottom"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="124dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="To Lose:"
+        android:id="@+id/textView19"
+        android:layout_gravity="center_horizontal|bottom"
+        android:textColor="#ffffff" />
 </FrameLayout>
