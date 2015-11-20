@@ -11,8 +11,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.parse.FindCallback;
+import com.parse.GetCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -41,12 +43,34 @@ public class MainActivity extends FragmentActivity{
 
         Parse.initialize(this, "KkZRFZGjA2I8mKNyuBkqgunMsVCKiWA2YrLsR3w4", "8giIFo0DzUQVHwgsl0HkXzW12n2iGj8kU1vZd90f");
 
-        ParseObject testObject = new ParseObject("TestObject");
+        final ParseObject testObject = new ParseObject("TestObject");
         testObject.put("foo22", "bar22");
        // testObject.put()
         testObject.saveInBackground();
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("TestObject");
+        String objectID = testObject.getObjectId();
+        query.getInBackground(objectID, new GetCallback<ParseObject>() {
+            @Override
+            public void done(ParseObject object, ParseException e) {
+                if (e == null) {
+                   // String name = testObject.getString("foo22");
+                    //TextView newText = (TextView) findViewById(R.id.textView14);
+                    //newText.setText(name);
+                } else {
+                    String name = testObject.getString("foo22");
+                    TextView newText = (TextView) findViewById(R.id.textView14);
+                    newText.setText(name);
+                    Profile_Page_Fragment d = new Profile_Page_Fragment();
+                    d.setName(name);
+                    TextView n = (TextView) findViewById(R.id.textView16);
+                    String s = d.getName();
+                    n.setText(s);
+
+                }
+            }
+
+        });
 
 
 
@@ -59,20 +83,13 @@ public class MainActivity extends FragmentActivity{
 
         //Put fragment in container
 
-        HomePageFragment firstFragment = new HomePageFragment();
-        FragmentManager fm1 = getFragmentManager(); //or getFragmentManager() if you are not using support library.
-       fm1.beginTransaction().add(R.id.container, firstFragment).addToBackStack(null).commit();
+       HomePageFragment firstFragment = new HomePageFragment();
+      FragmentManager fm1 = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+      fm1.beginTransaction().add(R.id.container, firstFragment).addToBackStack(null).commit();
     }
 
     //  }
 
- public String getName()
- {
-     return this.name;
- }
-public void setName(String value)
-{
-    this.name = value;
-}
+
 
 }

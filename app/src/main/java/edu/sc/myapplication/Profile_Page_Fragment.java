@@ -16,7 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class Profile_Page_Fragment extends Fragment {
-
+private String name;
     public Profile_Page_Fragment() {
         // Required empty public constructor
     }
@@ -26,9 +26,13 @@ public class Profile_Page_Fragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+      Data data = new Data();
+       String s = data.getName();
 
         View v = inflater.inflate(R.layout.fragment_profile__page, container, false);
+      TextView newText = (TextView) v.findViewById(R.id.textView11);
+        String ss = "dog";
+       newText.setText(ss);
 
         Button btn2 = (Button) v.findViewById(R.id.button2);
 
@@ -72,6 +76,16 @@ public class Profile_Page_Fragment extends Fragment {
         fragment.setArguments(bundle);
         // Inflate the layout for this fragment
     */    return v;
+    }
+    public String getName()
+    {
+
+        return this.name;
+    }
+    public void setName(String value)
+    {
+
+        this.name = value;
     }
 
 }
