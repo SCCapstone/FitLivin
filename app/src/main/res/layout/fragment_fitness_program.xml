@@ -94,9 +94,12 @@
         android:layout_alignEnd="@+id/textView"
         android:textColor="#ffffff" />
 
-
-
-
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="58dp"
+        android:text="Back"
+        android:id="@+id/button"
+        android:layout_gravity="center_horizontal|bottom" />
 
 
 </FrameLayout>
