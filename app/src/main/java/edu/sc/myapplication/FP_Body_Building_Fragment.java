@@ -17,6 +17,7 @@ public class FP_Body_Building_Fragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_fp__body__building, container, false);
 
+
         Button btn = (Button) v.findViewById(R.id.backBodyBuilding);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

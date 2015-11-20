@@ -39,7 +39,7 @@ private String name;
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText one = (EditText)v.findViewById(R.id.editText9);
+              //  EditText one = (EditText)v.findViewById(R.id.editText9);
 
                 //Integer weight1 = Integer.parseInt(one.getText().toString());
                // MainActivity main = new MainActivity();
