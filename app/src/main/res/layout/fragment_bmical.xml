@@ -28,4 +28,22 @@
         android:text="BACK"
         android:id="@+id/button8"
         android:layout_gravity="center_horizontal|bottom" />
+
+    <TextView
+        android:layout_width="282dp"
+        android:layout_height="372dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Your Saved Weight is:"
+        android:id="@+id/textView11"
+        android:layout_gravity="left|center_vertical"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="269dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Your Saved Height is:"
+        android:id="@+id/textView14"
+        android:layout_gravity="left|center_vertical"
+        android:textColor="#ffffff" />
 </FrameLayout>
