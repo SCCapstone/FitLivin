@@ -34,4 +34,11 @@
         android:background="#f4ffe3"
         android:layout_gravity="center_horizontal|top" />
 
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/button5"
+        android:layout_gravity="center_horizontal|bottom" />
+
 </FrameLayout>
