@@ -1,9 +1,101 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="edu.sc.myapplication.BodyBuildingDayTwo">
+    android:layout_height="match_parent" tools:context="edu.sc.myapplication.BodyBuildingDayTwo"
+    android:id="@+id/containerFitnessP"
+    android:background="@drawable/background2"
+    >
 
     <!-- TODO: Update blank fragment layout -->
     <TextView android:layout_width="match_parent" android:layout_height="match_parent"
         android:text="@string/hello_blank_fragment" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Barbell Bench Press"
+        android:id="@+id/benchText"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginBottom="175dp"
+        android:textColor="#ffffff"
+        android:textSize="25dp" />
+
+    <TextView
+        android:layout_width="234dp"
+        android:layout_height="34dp"
+        android:text="4 Sets of 10-12 Repetitions. 1 minute rest between sets"
+        android:layout_marginBottom="155dp"
+        android:id="@+id/benchDetail"
+        android:layout_gravity="left|center_vertical"
+        android:textColor="#ffffff" />
+
+    <ImageView
+        android:layout_width="141dp"
+        android:layout_height="141dp"
+        android:id="@+id/benchImage"
+        android:layout_gravity="right|top"
+        android:layout_marginBottom="150dp"
+        android:src="@drawable/bench" />
+
+    <TextView
+        android:layout_width="219dp"
+        android:layout_height="63dp"
+        android:text="Dumbbell Flyes"
+        android:id="@+id/flyText"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginBottom="40dp"
+        android:textColor="#ffffff"
+        android:textSize="25dp" />
+
+    <ImageView
+        android:layout_width="126dp"
+        android:layout_height="126dp"
+        android:id="@+id/flyImage"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/flyes" />
+
+    <TextView
+        android:layout_width="206dp"
+        android:layout_height="49dp"
+        android:text="4 Sets of 15 lighter weight repetitions. "
+        android:id="@+id/flyDetail"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginBottom="20dp"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="177dp"
+        android:layout_height="34dp"
+        android:text="4 sets of 10-30 concentrated repetitions (Depending on skill level)"
+        android:id="@+id/pushupDetail"
+        android:layout_gravity="left|bottom"
+        android:layout_marginBottom="120dp"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="132dp"
+        android:layout_height="59dp"
+        android:text="Pushup"
+        android:id="@+id/pushupText"
+        android:layout_gravity="left|bottom"
+        android:layout_marginBottom="125dp"
+        android:textColor="#ffffff"
+        android:textSize="25dp" />
+
+    <ImageView
+        android:layout_width="153dp"
+        android:layout_height="153dp"
+        android:id="@+id/pushupImage"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="70dp"
+        android:src="@drawable/pushup" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Workout Complete!"
+        android:id="@+id/completeDay2"
+        android:layout_gravity="center_horizontal|bottom" />
 
 </FrameLayout>
