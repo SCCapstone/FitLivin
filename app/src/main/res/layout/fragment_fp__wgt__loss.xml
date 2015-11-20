@@ -12,7 +12,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Weight Loss"
         android:id="@+id/textViewWeightLoss"
-        android:background="@android:color/white"
+        android:background="#1fff28"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
@@ -25,7 +25,8 @@
         android:text="Day 1"
         android:id="@+id/day1WeightLoss"
         android:layout_marginBottom="125dp"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:background="#1aff13" />
 
     <Button
         android:layout_width="match_parent"
@@ -33,7 +34,8 @@
         android:text="Day 4"
         android:id="@+id/day4WeightLoss"
         android:layout_marginBottom="-25dp"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:background="#1aff31" />
 
     <Button
         android:layout_width="match_parent"
@@ -41,7 +43,8 @@
         android:text="Day 3"
         android:id="@+id/day3WeightLoss"
         android:layout_marginBottom="25dp"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:background="#14ff29" />
 
     <Button
         android:layout_width="match_parent"
@@ -49,7 +52,8 @@
         android:text="Day 5"
         android:id="@+id/day5WeightLoss"
         android:layout_marginBottom="-75dp"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:background="#25ff30" />
 
     <Button
         android:layout_width="match_parent"
@@ -57,7 +61,8 @@
         android:text="Day 2"
         android:id="@+id/day2WeightLoss"
         android:layout_marginBottom="75dp"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:background="#16ff1a" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
