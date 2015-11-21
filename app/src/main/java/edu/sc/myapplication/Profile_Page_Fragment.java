@@ -16,7 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class Profile_Page_Fragment extends Fragment {
-private String name;
+
     public Profile_Page_Fragment() {
         // Required empty public constructor
     }
@@ -26,19 +26,26 @@ private String name;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-      Data data = new Data();
-       String s = data.getName();
+     // Data data = new Data();
+     //  String s = data.getName();
 
         View v = inflater.inflate(R.layout.fragment_profile__page, container, false);
-      TextView newText = (TextView) v.findViewById(R.id.textView11);
-        String ss = "dog";
-       newText.setText(ss);
+        final TextView newText = (TextView) v.findViewById(R.id.textView25);
+        //newText.setText(MainActivity.name);
+   //   TextView newText = (TextView) v.findViewById(R.id.textView11);
+      //  String ss = "dog";
+       //newText.setText(ss);
 
         Button btn2 = (Button) v.findViewById(R.id.button2);
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                MainActivity main = new MainActivity();
+                main.setName("Buddy");
+                String name2 = main.getName();
+                newText.setText(MainActivity.name);
               //  EditText one = (EditText)v.findViewById(R.id.editText9);
 
                 //Integer weight1 = Integer.parseInt(one.getText().toString());
@@ -77,15 +84,6 @@ private String name;
         // Inflate the layout for this fragment
     */    return v;
     }
-    public String getName()
-    {
 
-        return this.name;
-    }
-    public void setName(String value)
-    {
-
-        this.name = value;
-    }
 
 }

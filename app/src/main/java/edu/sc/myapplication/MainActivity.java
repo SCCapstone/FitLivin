@@ -26,10 +26,13 @@ import java.util.List;
 public class MainActivity extends FragmentActivity{
 
 
-    private String name;
+    public static String name = "Rsand";
     private FragmentManager fm;
     private FragmentTransaction ft;
-    private Integer weight;
+    public static Integer weight;
+    public static Integer height;
+
+    public static ParseObject profileInfo = new ParseObject("ProfileInfo");
 
 
 
@@ -58,14 +61,7 @@ public class MainActivity extends FragmentActivity{
                     //TextView newText = (TextView) findViewById(R.id.textView14);
                     //newText.setText(name);
                 } else {
-                    String name = testObject.getString("foo22");
-                    TextView newText = (TextView) findViewById(R.id.textView14);
-                    newText.setText(name);
-                    Profile_Page_Fragment d = new Profile_Page_Fragment();
-                    d.setName(name);
-                    TextView n = (TextView) findViewById(R.id.textView16);
-                    String s = d.getName();
-                    n.setText(s);
+
 
                 }
             }
@@ -90,6 +86,23 @@ public class MainActivity extends FragmentActivity{
 
     //  }
 
-
+public String getName(){
+    return name;
+}
+    public void setName(String setName){
+        this.name = setName;
+    }
+    public Integer getWeight(){
+        return weight;
+    }
+    public void setWeight(Integer setWeight){
+        this.weight = setWeight;
+    }
+    public Integer getHeight(){
+        return height;
+    }
+    public void setHeight(Integer setHeight){
+        this.height = setHeight;
+    }
 
 }

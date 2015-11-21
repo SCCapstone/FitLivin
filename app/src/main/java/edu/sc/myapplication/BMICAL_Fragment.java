@@ -25,7 +25,9 @@ public class BMICAL_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_bmical, container, false);
-//MainActivity main = new MainActivity();
+          MainActivity main = new MainActivity();
+        final TextView newText = (TextView) v.findViewById(R.id.textView14);
+        newText.setText(MainActivity.name);
        // Bundle b = getArguments();
        // Integer x = b.getInt("weight");
         //TextView tvStyleName = (TextView)v.findViewById(R.id.textView15);
