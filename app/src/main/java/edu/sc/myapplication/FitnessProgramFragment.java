@@ -21,7 +21,7 @@ public class FitnessProgramFragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FP_STR_TrainingFragment fragment = new FP_STR_TrainingFragment();
+                FPSTRTrainingFragment fragment = new FPSTRTrainingFragment();
                 FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, fragment);
@@ -34,7 +34,7 @@ public class FitnessProgramFragment extends Fragment {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FP_Body_Building_Fragment fragment1 = new FP_Body_Building_Fragment();
+                FPBodyBuildingFragment fragment1 = new FPBodyBuildingFragment();
                 FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, fragment1);
@@ -46,7 +46,7 @@ public class FitnessProgramFragment extends Fragment {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               FP_WGT_Loss_Fragment  fragment2 = new FP_WGT_Loss_Fragment();
+               FPWGTLossFragment fragment2 = new FPWGTLossFragment();
                 FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, fragment2);

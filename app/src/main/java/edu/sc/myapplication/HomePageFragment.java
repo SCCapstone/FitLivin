@@ -67,7 +67,7 @@ public class HomePageFragment extends Fragment{
         btn6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Profile_Page_Fragment fragment6 = new Profile_Page_Fragment();
+                ProfilePageFragment fragment6 = new ProfilePageFragment();
                 FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, fragment6);

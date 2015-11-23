@@ -11,5 +11,6 @@
         android:layout_height="66dp"
         android:text="New Text"
         android:id="@+id/textView22"
-        android:layout_gravity="center_horizontal|top" />
+        android:layout_gravity="center_horizontal|top"
+        android:background="#e3ffcb" />
 </FrameLayout>

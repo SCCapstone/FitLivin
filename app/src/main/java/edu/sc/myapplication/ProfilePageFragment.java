@@ -20,9 +20,9 @@ import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 
-public class Profile_Page_Fragment extends Fragment {
+public class ProfilePageFragment extends Fragment {
 
-    public Profile_Page_Fragment() {
+    public ProfilePageFragment() {
         // Required empty public constructor
     }
 
@@ -41,11 +41,15 @@ public class Profile_Page_Fragment extends Fragment {
         final  EditText editName = (EditText) v.findViewById(R.id.name);
         final  EditText editHeight = (EditText) v.findViewById(R.id.height);
         final  EditText editWeight = (EditText) v.findViewById(R.id.weight);
-        final TextView newText1 = (TextView) v.findViewById(R.id.textView24);
-        //newText.setText(MainActivity.name);
-   //   TextView newText = (TextView) v.findViewById(R.id.textView11);
-      //  String ss = "dog";
-       //newText.setText(ss);
+        final TextView newText1 = (TextView) v.findViewById(R.id.ageView);
+
+        String name = MainActivity.name;
+        Integer height = MainActivity.height;
+        Integer weight = MainActivity.weight;
+
+        newText.setText(name);
+        weightText.setText(""+weight);
+        heightText.setText(""+ height);
 
         Button btn2 = (Button) v.findViewById(R.id.button2);
 
@@ -53,24 +57,28 @@ public class Profile_Page_Fragment extends Fragment {
             @Override
             public void onClick(View v) {
 
+               String name = MainActivity.name;
+                Integer height = MainActivity.height;
+                Integer weight = MainActivity.weight;
+
 
 
                MainActivity main = new MainActivity();
-                String name = editName.getText().toString();
+                name = editName.getText().toString();
                 //String obj = MainActivity.objectID;
 
                 String h = editHeight.getText().toString();
-                Integer height = Integer.parseInt(h);
+                height = Integer.parseInt(h);
                String w = editWeight.getText().toString();
-                Integer weight = Integer.parseInt(w);
+                weight = Integer.parseInt(w);
                 newText.setText(name);
                 weightText.setText(""+weight);
                heightText.setText(""+height);
                 Integer sum = weight + 2;
 
                 main.profileData(name,weight,height);
-               // String ee = main.getS();
-               // newText1.setText(ee);
+               String ee = main.getS();
+               newText1.setText(ee);
 
             }
         });

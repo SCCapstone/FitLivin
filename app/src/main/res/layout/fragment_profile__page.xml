@@ -52,7 +52,7 @@
         android:layout_height="238dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Your Age:"
-        android:id="@+id/textView24"
+        android:id="@+id/ageView"
         android:layout_gravity="left|center_vertical"
         android:textColor="#ffffff" />
 
