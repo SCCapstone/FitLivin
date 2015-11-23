@@ -28,12 +28,7 @@ public class BMICAL_Fragment extends Fragment {
           MainActivity main = new MainActivity();
         final TextView newText = (TextView) v.findViewById(R.id.textView14);
         newText.setText(MainActivity.name);
-       // Bundle b = getArguments();
-       // Integer x = b.getInt("weight");
-        //TextView tvStyleName = (TextView)v.findViewById(R.id.textView15);
-       // Integer x = main.getWeight();
-       //tvStyleName.setText(String.valueOf(x));
-       // Bundle args = getArguments();
+
         Button btn = (Button) v.findViewById(R.id.button8);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,11 +42,7 @@ public class BMICAL_Fragment extends Fragment {
             }
         });
 
-        ParseObject testObject = new ParseObject("TestObject");
-        testObject.put("foo2", "bar2");
-        testObject.saveInBackground();
 
-        // Inflate the layout for this fragment
         return v;
     }
 

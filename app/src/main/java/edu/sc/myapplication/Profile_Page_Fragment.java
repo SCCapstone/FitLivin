@@ -6,6 +6,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,6 +15,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.parse.GetCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
 
 public class Profile_Page_Fragment extends Fragment {
 
@@ -31,6 +36,12 @@ public class Profile_Page_Fragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_profile__page, container, false);
         final TextView newText = (TextView) v.findViewById(R.id.textView25);
+        final TextView heightText = (TextView) v.findViewById(R.id.heightView);
+        final TextView weightText = (TextView) v.findViewById(R.id.weightView);
+        final  EditText editName = (EditText) v.findViewById(R.id.name);
+        final  EditText editHeight = (EditText) v.findViewById(R.id.height);
+        final  EditText editWeight = (EditText) v.findViewById(R.id.weight);
+        final TextView newText1 = (TextView) v.findViewById(R.id.textView24);
         //newText.setText(MainActivity.name);
    //   TextView newText = (TextView) v.findViewById(R.id.textView11);
       //  String ss = "dog";
@@ -42,24 +53,25 @@ public class Profile_Page_Fragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                MainActivity main = new MainActivity();
-                main.setName("Buddy");
-                String name2 = main.getName();
-                newText.setText(MainActivity.name);
-              //  EditText one = (EditText)v.findViewById(R.id.editText9);
 
-                //Integer weight1 = Integer.parseInt(one.getText().toString());
-               // MainActivity main = new MainActivity();
-               // main.setWeight(weight1);
 
-               /* BMICAL_Fragment fragment = new BMICAL_Fragment();
-                EditText one = (EditText)v.findViewById(R.id.editText9);
-                final Bundle bundle = new Bundle();
-                Integer weight1 = Integer.parseInt(one.getText().toString());
-                //String strValue = one.getText().toString();
-                //OP.setText(Integer.toString(myNum);
-                bundle.putInt("weight", weight1);
-                fragment.setArguments(bundle);*/
+               MainActivity main = new MainActivity();
+                String name = editName.getText().toString();
+                //String obj = MainActivity.objectID;
+
+                String h = editHeight.getText().toString();
+                Integer height = Integer.parseInt(h);
+               String w = editWeight.getText().toString();
+                Integer weight = Integer.parseInt(w);
+                newText.setText(name);
+                weightText.setText(""+weight);
+               heightText.setText(""+height);
+                Integer sum = weight + 2;
+
+                main.profileData(name,weight,height);
+               // String ee = main.getS();
+               // newText1.setText(ee);
+
             }
         });
 
@@ -77,12 +89,8 @@ public class Profile_Page_Fragment extends Fragment {
         });
 
 
-       /* Fragment fragment = new Fragment();
-        final Bundle bundle = new Bundle();
-        bundle.putString("user_name", myusername);
-        fragment.setArguments(bundle);
-        // Inflate the layout for this fragment
-    */    return v;
+
+        return v;
     }
 
 

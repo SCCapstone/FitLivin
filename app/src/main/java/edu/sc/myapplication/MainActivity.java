@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentActivity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +20,7 @@ import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.SaveCallback;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,65 +28,65 @@ import java.util.List;
 public class MainActivity extends FragmentActivity{
 
 
-    public static String name = "Rsand";
+    public static String name;
+
     private FragmentManager fm;
     private FragmentTransaction ft;
     public static Integer weight;
     public static Integer height;
+    public static String s;
 
-    public static ParseObject profileInfo = new ParseObject("ProfileInfo");
 
+    final public static ParseObject profileInfo = new ParseObject("ProfileInfo");
+    ParseQuery<ParseObject> query = ParseQuery.getQuery("ProfileInfo");
+    final public static String objectID = profileInfo.getObjectId();
+
+    //TextView newText = (TextView) findViewById(R.id.textView22);
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // Enable Local Datastore.
         Parse.enableLocalDatastore(this);
 
         Parse.initialize(this, "KkZRFZGjA2I8mKNyuBkqgunMsVCKiWA2YrLsR3w4", "8giIFo0DzUQVHwgsl0HkXzW12n2iGj8kU1vZd90f");
 
-        final ParseObject testObject = new ParseObject("TestObject");
-        testObject.put("foo22", "bar22");
-       // testObject.put()
-        testObject.saveInBackground();
+        /*query.getInBackground(objectID, new GetCallback<ParseObject>() {
 
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("TestObject");
-        String objectID = testObject.getObjectId();
-        query.getInBackground(objectID, new GetCallback<ParseObject>() {
+            public void done(ParseObject object, ParseException e) {
+                Log.d("F", "done");
+
+            }
+        });*/
+
+       // newText.setText(objectID);
+       HomePageFragment firstFragment = new HomePageFragment();
+       FragmentManager fm1 = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+       fm1.beginTransaction().add(R.id.container, firstFragment).addToBackStack(null).commit();
+
+    }
+        // Enable Local Datastore.
+        public void profileData(String name, Integer weight, Integer height) {
+        Log.d("F", "pdata");
+
+       profileInfo.put("Username", name);
+        profileInfo.put("Weight", weight);
+        profileInfo.put("Height", height);
+       profileInfo.saveInBackground();
+        /*String object = profileInfo.getObjectId();
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("profileInfo");
+        query.getInBackground(object, new GetCallback<ParseObject>() {
             @Override
             public void done(ParseObject object, ParseException e) {
-                if (e == null) {
-                   // String name = testObject.getString("foo22");
-                    //TextView newText = (TextView) findViewById(R.id.textView14);
-                    //newText.setText(name);
-                } else {
+                Log.d("F", "done");
+                profileInfo = object;
 
-
-                }
             }
-
         });
-
-
-
-
-       // ParseObject gameScore = new ParseObject("GameScore");
-      //  gameScore.put("score", 1337);
-       // gameScore.put("playerName", "Sean Plott");
-       // gameScore.put("cheatMode", false);
-      //  gameScore.saveInBackground();
-
-        //Put fragment in container
-
-       HomePageFragment firstFragment = new HomePageFragment();
-      FragmentManager fm1 = getFragmentManager(); //or getFragmentManager() if you are not using support library.
-      fm1.beginTransaction().add(R.id.container, firstFragment).addToBackStack(null).commit();
+*/
     }
 
-    //  }
 
 public String getName(){
     return name;
@@ -103,6 +105,12 @@ public String getName(){
     }
     public void setHeight(Integer setHeight){
         this.height = setHeight;
+    }
+    public String getS(){
+        return s;
+    }
+    public void setS(String sn){
+        this.s = sn;
     }
 
 }

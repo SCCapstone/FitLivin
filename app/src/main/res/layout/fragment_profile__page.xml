@@ -34,7 +34,7 @@
         android:layout_height="374dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Your Height:"
-        android:id="@+id/textView22"
+        android:id="@+id/heightView"
         android:layout_gravity="left|center_vertical"
         android:textColor="#ffffff" />
 
@@ -43,7 +43,7 @@
         android:layout_height="303dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Your Weight:"
-        android:id="@+id/textView23"
+        android:id="@+id/weightView"
         android:layout_gravity="left|center_vertical"
         android:textColor="#ffffff" />
 
@@ -73,5 +73,26 @@
         android:id="@+id/textView26"
         android:layout_gravity="center_horizontal|bottom"
         android:textColor="#ffffff" />
+
+    <EditText
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/name"
+        android:layout_gravity="right|top"
+        android:background="#f7ffee" />
+
+    <EditText
+        android:layout_width="98dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/weight"
+        android:layout_gravity="right|center_vertical"
+        android:background="#ecffea" />
+
+    <EditText
+        android:layout_width="113dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/height"
+        android:layout_gravity="right|bottom"
+        android:background="#f5ffee" />
 
 </FrameLayout>
