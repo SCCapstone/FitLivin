@@ -35,7 +35,19 @@ public class BMICAL_Fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 BMI_Weight = BMI_Weight + 50;
-                BMI.setText("" + BMI_Weight);
+                //BMI.setText("" + BMI_Weight);
+                float bmiValue = calculateBMI(MainActivity.weight, MainActivity.height);
+                if (bmiValue < 16) {
+                    BMI.setText("BMI: " + BMI_Weight + "You are severely underweight. Get help!");
+                } else if (bmiValue < 18.5) {
+                    BMI.setText("" + BMI_Weight + "You are underweight. Eat something!");
+                } else if (bmiValue < 25) {
+                    BMI.setText("" + BMI_Weight + "You are average. Keep doing you.");
+                } else if (bmiValue < 30) {
+                    BMI.setText("" + BMI_Weight + "You are overweight. Go for a run.");
+                } else {
+                    BMI.setText("" + BMI_Weight + "You are obese. Get a hold of yourself!");
+                }
             }
         });
 
@@ -56,23 +68,8 @@ public class BMICAL_Fragment extends Fragment {
 
 
     }
-    /* float bmiValue = calculateBMI(weight, height);
 
     private float calculateBMI(float weight, float height) {
         return (float) (weight * 4.88 / (height * height));
     }
-
-    private interpretBMI(float bmiValue){
-        if (bmiValue < 16) {
-            return "Severely underweight";
-        } else if (bmiValue < 18.5 ) {
-            return "Underweight";
-        } else if (bmiValue < 25) {
-            return "Average weight"
-        } else if (bmiValue < 30) {
-            return "Overweight"
-        } else {
-            return "Sorry, you're obese";
-        }
-    }*/
 }
