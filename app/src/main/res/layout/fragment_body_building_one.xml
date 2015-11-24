@@ -21,4 +21,13 @@
         4. Hack Squat
         5. Calves "
         android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="BODY BUILDING DAY 1"
+        android:id="@+id/textView23"
+        android:layout_gravity="center_horizontal|top"
+        android:textColor="#ffffff" />
 </FrameLayout>
