@@ -18,4 +18,19 @@
         android:layout_gravity="center_horizontal|top"
         android:textColor="#ffffff" />
 
+    <ImageView
+        android:layout_width="176dp"
+        android:layout_height="176dp"
+        android:id="@+id/imageView"
+        android:layout_gravity="right|top"
+        android:layout_marginBottom="150dp"
+        android:src="@drawable/bench" />
+    <ImageView
+        android:layout_width="126dp"
+        android:layout_height="126dp"
+        android:id="@+id/flyImage"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/incline" />
+
 </FrameLayout>
