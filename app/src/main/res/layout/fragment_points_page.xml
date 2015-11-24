@@ -1,9 +1,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/containerFitnessP"
-    android:background="@drawable/background2"
-    >
+    android:background="@drawable/background2">
 
     <TextView
         android:layout_width="157dp"
@@ -48,8 +47,7 @@
         android:text="Share on Twitter"
         android:id="@+id/button9"
         android:layout_gravity="left|center_vertical"
-        android:background="#1ae2ff"
-        android:textColor="#ffffff" />
+        android:background="#1ae2ff" />
 
     <Button
         android:layout_width="165dp"

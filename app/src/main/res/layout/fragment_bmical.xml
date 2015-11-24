@@ -1,9 +1,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/containerFitnessP"
-    android:background="@drawable/background2"
-    >
+    android:background="@drawable/background2">
 
 
     <TextView
@@ -33,7 +32,7 @@
         android:layout_width="282dp"
         android:layout_height="372dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Your Saved Weight is:"
+        android:text="Your Weight (lbs): "
         android:id="@+id/textView11"
         android:layout_gravity="left|center_vertical"
         android:textColor="#ffffff" />
@@ -42,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="269dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Your Saved Height is:"
+        android:text="Your Height (in): "
         android:id="@+id/textView14"
         android:layout_gravity="left|center_vertical"
         android:textColor="#ffffff" />
