@@ -13,6 +13,7 @@ import android.widget.TextView;
 public class BMICAL_Fragment extends Fragment {
 
     private Integer BMI_Weight;
+    private float multiplier = 703;
 
     public BMICAL_Fragment() {
         // Required empty public constructor
@@ -38,15 +39,15 @@ public class BMICAL_Fragment extends Fragment {
                 //BMI.setText("" + BMI_Weight);
                 float bmiValue = calculateBMI(MainActivity.weight, MainActivity.height);
                 if (bmiValue < 16) {
-                    BMI.setText("BMI: " + BMI_Weight + "You are severely underweight. Get help!");
+                    BMI.setText("BMI: " + bmiValue + "You are severely underweight. Get help!");
                 } else if (bmiValue < 18.5) {
-                    BMI.setText("" + BMI_Weight + "You are underweight. Eat something!");
+                    BMI.setText("" + bmiValue + "You are underweight. Eat something!");
                 } else if (bmiValue < 25) {
-                    BMI.setText("" + BMI_Weight + "You are average. Keep doing you.");
+                    BMI.setText("" + bmiValue + "You are average. Keep doing you.");
                 } else if (bmiValue < 30) {
-                    BMI.setText("" + BMI_Weight + "You are overweight. Go for a run.");
+                    BMI.setText("" + bmiValue + "You are overweight. Go for a run.");
                 } else {
-                    BMI.setText("" + BMI_Weight + "You are obese. Get a hold of yourself!");
+                    BMI.setText("" + bmiValue + "You are obese. Get a hold of yourself!");
                 }
             }
         });
@@ -70,6 +71,6 @@ public class BMICAL_Fragment extends Fragment {
     }
 
     private float calculateBMI(float weight, float height) {
-        return (float) (weight * 4.88 / (height * height));
+        return (float) ((weight / (height * height)) * multiplier);
     }
 }
