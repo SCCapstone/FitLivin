@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Progress"
+        android:text="Progress Tracker"
         android:id="@+id/textView4"
         android:layout_gravity="center_horizontal|top"
         android:textColor="#ffffff" />
