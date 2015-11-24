@@ -16,6 +16,19 @@ public class FPSTRTrainingFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_fp__str__training, container, false);
         Button btn = (Button) v.findViewById(R.id.backButtonStrength);
+
+        Button day1 = (Button) v.findViewById(R.id.day1Strength);
+        day1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                StrengthDayOne strengthDay1 = new StrengthDayOne();
+                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.replace(R.id.container, strengthDay1);
+                ft.addToBackStack(null);
+                ft.commit();
+            }
+        });
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -6,14 +6,6 @@
 
 
     <TextView
-        android:layout_width="156dp"
-        android:layout_height="74dp"
-        android:text="New Text"
-        android:id="@+id/textView15"
-        android:layout_gravity="center"
-        android:background="#ccffde" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="170dp"
         android:text="BMI CALCULATOR"
@@ -46,11 +38,44 @@
         android:layout_gravity="left|center_vertical"
         android:textColor="#ffffff" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textView33"
+        android:layout_marginBottom="170dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="17dp"
+        android:textColor="#faf8f1"
+        android:textSize="20dp"
+        android:textIsSelectable="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textView34"
+        android:layout_gravity="center"
+        android:layout_marginBottom="118dp"
+        android:layout_marginLeft="1dp"
+        android:textColor="#ffffff"
+        android:textSize="20dp" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Calculate"
         android:id="@+id/button4"
-        android:layout_gravity="left|center_vertical" />
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="100dp" />
+
+    <TextView
+        android:layout_width="207dp"
+        android:layout_height="128dp"
+        android:id="@+id/textView15"
+        android:layout_gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textIsSelectable="true" />
 
 </FrameLayout>

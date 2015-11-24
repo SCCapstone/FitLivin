@@ -25,9 +25,9 @@ public class BMICAL_Fragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_bmical, container, false);
 
-        final TextView newText = (TextView) v.findViewById(R.id.textView14);
+        final TextView newText = (TextView) v.findViewById(R.id.textView34);
         final TextView BMI = (TextView) v.findViewById(R.id.textView15);
-        final TextView newText1 = (TextView) v.findViewById(R.id.textView11);
+        final TextView newText1 = (TextView) v.findViewById(R.id.textView33);
         newText.setText("" + MainActivity.height);
         newText1.setText("" + MainActivity.weight);
         BMI_Weight = MainActivity.weight;
@@ -35,19 +35,19 @@ public class BMICAL_Fragment extends Fragment {
         cal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BMI_Weight = BMI_Weight + 50;
+               // BMI_Weight = BMI_Weight + 50;
                 //BMI.setText("" + BMI_Weight);
                 float bmiValue = calculateBMI(MainActivity.weight, MainActivity.height);
                 if (bmiValue < 16) {
-                    BMI.setText("BMI: " + bmiValue + "You are severely underweight. Get help!");
+                    BMI.setText("BMI: " + bmiValue + ". You are severely underweight. Get help!");
                 } else if (bmiValue < 18.5) {
-                    BMI.setText("" + bmiValue + "You are underweight. Eat something!");
+                    BMI.setText("BMI: " + bmiValue + ". You are underweight. Eat something!");
                 } else if (bmiValue < 25) {
-                    BMI.setText("" + bmiValue + "You are average. Keep doing you.");
+                    BMI.setText("BMI: " + bmiValue + ". You are average. Keep doing you.");
                 } else if (bmiValue < 30) {
-                    BMI.setText("" + bmiValue + "You are overweight. Go for a run.");
+                    BMI.setText("BMI: " + bmiValue + ". You are overweight. Go for a run.");
                 } else {
-                    BMI.setText("" + bmiValue + "You are obese. Get a hold of yourself!");
+                    BMI.setText("BMI: " + bmiValue + ". You are obese. Get a hold of yourself!");
                 }
             }
         });
