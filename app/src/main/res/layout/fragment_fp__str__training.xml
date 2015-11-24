@@ -82,4 +82,13 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal|top" />
+
+    <TextView
+        android:layout_width="400dp"
+        android:layout_height="119dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="How to preform the major lifts"
+        android:id="@+id/textView23"
+        android:layout_gravity="left|bottom"
+        android:background="#f90505" />
 </FrameLayout>
