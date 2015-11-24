@@ -14,8 +14,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="69dp"
-        android:background="#f1ffee"
-        android:layout_gravity="center_horizontal|top" />
+        android:background="#070707"
+        android:layout_gravity="center_horizontal|top"
+        android:textColor="#ffffff" />
 
     <TextView
         android:layout_width="wrap_content"
