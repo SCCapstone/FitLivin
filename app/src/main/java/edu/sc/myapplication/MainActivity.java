@@ -52,7 +52,7 @@ public class MainActivity extends FragmentActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final TextView newText = (TextView) findViewById(R.id.textView22);
+
         Parse.enableLocalDatastore(this);
 
         Parse.initialize(this, "KkZRFZGjA2I8mKNyuBkqgunMsVCKiWA2YrLsR3w4", "8giIFo0DzUQVHwgsl0HkXzW12n2iGj8kU1vZd90f");
@@ -73,7 +73,7 @@ public class MainActivity extends FragmentActivity{
                             height = p.getInt("Height");
                         }
                     }
-                           newText.setText(name);
+                           //newText.setText(name);
                 } else {
 
                 }
