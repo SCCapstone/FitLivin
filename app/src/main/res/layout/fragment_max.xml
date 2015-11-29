@@ -1,0 +1,47 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/containerFitnessP"
+    android:background="@drawable/background2"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Bench (lbs):"
+        android:id="@+id/textView22"
+        android:layout_gravity="left|top"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textIsSelectable="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Squat (lbs);"
+        android:id="@+id/textView35"
+        android:layout_gravity="left|top"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:layout_marginTop="100dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current DeadLift (lbs):"
+        android:id="@+id/textView36"
+        android:layout_gravity="left|top"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="215dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MileTime (sec):"
+        android:id="@+id/textView37"
+        android:layout_gravity="left|top"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:layout_marginTop="330dp" />
+</FrameLayout>

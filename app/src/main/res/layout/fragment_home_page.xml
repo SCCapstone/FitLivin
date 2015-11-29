@@ -60,6 +60,13 @@
         android:layout_marginBottom="-75dp"
         android:layout_gravity="center" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Max"
+        android:id="@+id/MaxButton"
+        android:layout_marginBottom="-125dp"
+        android:layout_gravity="center" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

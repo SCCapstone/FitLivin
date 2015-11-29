@@ -9,13 +9,6 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save"
-        android:id="@+id/button2"
-        android:layout_gravity="center" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="BMI"
         android:id="@+id/button7"
         android:layout_gravity="center_horizontal|bottom" />
@@ -49,50 +42,84 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="238dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Your Age:"
-        android:id="@+id/ageView"
-        android:layout_gravity="left|center_vertical"
-        android:textColor="#ffffff" />
-
-    <TextView
-        android:layout_width="wrap_content"
         android:layout_height="437dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Name:"
+        android:text="Username:"
         android:id="@+id/textView25"
         android:layout_gravity="left|center_vertical"
-        android:textColor="#ffffff" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="188dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Points:"
-        android:id="@+id/textView26"
-        android:layout_gravity="center_horizontal|bottom"
         android:textColor="#ffffff" />
 
     <EditText
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:id="@+id/name"
-        android:layout_gravity="right|top"
-        android:background="#f7ffee" />
+        android:layout_gravity="left|center_vertical"
+        android:background="#f7ffee"
+        android:hint="Username"
+        android:layout_marginBottom="40dp" />
 
     <EditText
         android:layout_width="98dp"
         android:layout_height="wrap_content"
         android:id="@+id/weight"
-        android:layout_gravity="right|center_vertical"
-        android:background="#ecffea" />
+        android:layout_gravity="left|center_vertical"
+        android:background="#ecffea"
+        android:hint="Weight" />
 
     <EditText
         android:layout_width="113dp"
         android:layout_height="wrap_content"
         android:id="@+id/height"
+        android:layout_gravity="left|center_vertical"
+        android:background="#f5ffee"
+        android:hint="Height"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/CurrN"
+        android:layout_gravity="center_horizontal|top"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/CurrH"
+        android:layout_gravity="center_horizontal|top"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textIsSelectable="true"
+        android:layout_marginTop="71dp"
+        android:layout_marginRight="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/CurrW"
+        android:layout_gravity="center_horizontal|top"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:layout_marginTop="105dp"
+        android:layout_marginRight="15dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:id="@+id/button2"
         android:layout_gravity="right|bottom"
-        android:background="#f5ffee" />
+        android:layout_marginTop="100dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BACK"
+        android:id="@+id/ProfileBack"
+        android:layout_gravity="left|bottom" />
 
 </FrameLayout>

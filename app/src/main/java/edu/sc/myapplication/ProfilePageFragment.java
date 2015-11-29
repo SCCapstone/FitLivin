@@ -41,15 +41,18 @@ public class ProfilePageFragment extends Fragment {
         final  EditText editName = (EditText) v.findViewById(R.id.name);
         final  EditText editHeight = (EditText) v.findViewById(R.id.height);
         final  EditText editWeight = (EditText) v.findViewById(R.id.weight);
-        final TextView newText1 = (TextView) v.findViewById(R.id.ageView);
+        final TextView currentName = (TextView) v.findViewById(R.id.CurrN);
+        final TextView currentHeight = (TextView) v.findViewById(R.id.CurrH);
+        final TextView currrentWeight = (TextView) v.findViewById(R.id.CurrW);
+
 
         String name = MainActivity.name;
         Integer height = MainActivity.height;
         Integer weight = MainActivity.weight;
 
-        newText.setText(name);
-        weightText.setText(""+weight);
-        heightText.setText(""+ height);
+        currentName.setText(name);
+        currrentWeight.setText("" + weight);
+        currentHeight.setText("" + height);
 
         Button btn2 = (Button) v.findViewById(R.id.button2);
 
@@ -57,28 +60,26 @@ public class ProfilePageFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-               String name = MainActivity.name;
+                String name = MainActivity.name;
                 Integer height = MainActivity.height;
                 Integer weight = MainActivity.weight;
 
 
-
-               MainActivity main = new MainActivity();
+                MainActivity main = new MainActivity();
                 name = editName.getText().toString();
                 //String obj = MainActivity.objectID;
 
                 String h = editHeight.getText().toString();
                 height = Integer.parseInt(h);
-               String w = editWeight.getText().toString();
+                String w = editWeight.getText().toString();
                 weight = Integer.parseInt(w);
-                newText.setText(name);
-                weightText.setText(""+weight);
-               heightText.setText(""+height);
-                Integer sum = weight + 2;
+                currentName.setText(name);
+                currrentWeight.setText("" + weight);
+                currentHeight.setText("" + height);
+                // Integer sum = weight + 2;
 
-                main.profileData(name,weight,height);
-               String ee = main.getS();
-               newText1.setText(ee);
+                main.profileData(name, weight, height);
+
 
             }
         });
@@ -96,6 +97,18 @@ public class ProfilePageFragment extends Fragment {
             }
         });
 
+        Button backBtn = (Button) v.findViewById(R.id.ProfileBack);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HomePageFragment fragment1 = new HomePageFragment();
+                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.replace(R.id.container, fragment1);
+                ft.addToBackStack(null);
+                ft.commit();
+            }
+        });
 
 
         return v;

@@ -38,10 +38,7 @@ public class HomePageFragment extends Fragment{
             public void onClick(View v) {
                 BMICAL_Fragment fragment3 = new BMICAL_Fragment();
                 FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, fragment3);
-                ft.addToBackStack(null);
-                ft.commit();
+                fm.beginTransaction().replace(R.id.container, fragment3).addToBackStack(null).commit();
             }
         });
         Button btn4 = (Button) v.findViewById(R.id.nutritionButton);
@@ -83,6 +80,19 @@ public class HomePageFragment extends Fragment{
                 FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, fragment22);
+                ft.addToBackStack(null);
+                ft.commit();
+            }
+        });
+
+        Button maxBtn = (Button) v.findViewById(R.id.MaxButton);
+        maxBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MaxFragment maxFrag = new MaxFragment();
+                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.replace(R.id.container, maxFrag);
                 ft.addToBackStack(null);
                 ft.commit();
             }
