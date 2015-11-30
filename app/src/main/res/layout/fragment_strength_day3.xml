@@ -17,4 +17,11 @@
         android:layout_gravity="center_horizontal|top"
         android:textColor="#ffffff" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BACK"
+        android:id="@+id/Sday3BACK"
+        android:layout_gravity="center_horizontal|bottom" />
+
 </FrameLayout>

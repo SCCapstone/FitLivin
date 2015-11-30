@@ -65,6 +65,7 @@ public class BMICAL_Fragment extends Fragment {
             }
         });
 
+
         return v;
 
 

@@ -56,15 +56,12 @@
         android:layout_marginBottom="35dp"
         android:src="@drawable/incline" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BACK"
+        android:id="@+id/Sday1BACK"
+        android:layout_gravity="center_horizontal|bottom" />
 
-    <TextView
-        android:layout_width="130dp"
-        android:layout_height="67dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Back"
-        android:id="@+id/textView31"
-        android:layout_gravity="center_horizontal|bottom"
-        android:background="#dcdada"
-        android:textSize="25dp" />
 
 </FrameLayout>

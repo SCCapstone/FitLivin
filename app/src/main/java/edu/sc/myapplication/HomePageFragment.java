@@ -97,6 +97,8 @@ public class HomePageFragment extends Fragment{
                 ft.commit();
             }
         });
+
+
         return v;
     }
 

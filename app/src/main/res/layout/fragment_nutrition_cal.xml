@@ -59,6 +59,13 @@
         android:layout_height="wrap_content"
         android:text="Calculate"
         android:id="@+id/button3"
-        android:layout_gravity="center_horizontal|bottom" />
+        android:layout_gravity="right|bottom" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BACK"
+        android:id="@+id/NutBack"
+        android:layout_gravity="left|bottom" />
 
 </FrameLayout>

@@ -25,7 +25,7 @@
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:text="Back"
-        android:id="@+id/button5"
+        android:id="@+id/PointsBack"
         android:layout_gravity="center_horizontal|bottom" />
 
     <TextView
