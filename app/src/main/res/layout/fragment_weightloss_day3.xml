@@ -49,7 +49,7 @@
         android:layout_width="177dp"
         android:layout_height="34dp"
         android:text="3 sets of 6-10 reps (depending on skill level)"
-        android:id="@+id/burpiesDetail"
+        android:id="@+id/burpeesDetail"
         android:layout_gravity="left|bottom"
         android:layout_marginBottom="120dp"
         android:textColor="#ffffff" />

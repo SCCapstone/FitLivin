@@ -20,43 +20,27 @@
     <TextView
         android:layout_width="234dp"
         android:layout_height="34dp"
-        android:text="Choice of treadmill or laps around track"
         android:layout_marginBottom="155dp"
         android:id="@+id/warmupDetail"
         android:layout_gravity="left|center_vertical"
-        android:textColor="#ffffff" />
-
-    <ImageView
-        android:layout_width="160dp"
-        android:layout_height="114dp"
-        android:id="@+id/runningImage"
-        android:layout_gravity="right|top"
-        android:layout_marginBottom="200dp"
-        android:src="@drawable/running"
-        android:layout_marginTop="40dp" />
+        android:textColor="#ffffff"
+        android:text="Choice of treadmill or laps around track" />
 
     <TextView
         android:layout_width="219dp"
         android:layout_height="63dp"
-        android:text="Walking lunges"
+        android:text="Up-downs"
         android:layout_gravity="left|center_vertical"
         android:layout_marginBottom="40dp"
         android:textColor="#ffffff"
-        android:textSize="25dp" />
-
-    <ImageView
-        android:layout_width="146dp"
-        android:layout_height="146dp"
-        android:id="@+id/lungesImage"
-        android:layout_gravity="right|center_vertical"
-        android:layout_marginBottom="35dp"
-        android:src="@drawable/lunges" />
+        android:textSize="25dp"
+        android:id="@+id/updownsText" />
 
     <TextView
         android:layout_width="206dp"
         android:layout_height="49dp"
-        android:text="3 Sets of 12 lounger per leg with 50-100 lbs on shoulders (depending on skill level)"
-        android:id="@+id/lungesDetail"
+        android:text="3 Sets 60 second reps"
+        android:id="@+id/powerjumpDetail"
         android:layout_gravity="left|center_vertical"
         android:layout_marginBottom="20dp"
         android:textColor="#ffffff" />
@@ -64,8 +48,8 @@
     <TextView
         android:layout_width="177dp"
         android:layout_height="34dp"
-        android:text="4 sets of 30 seconds"
-        android:id="@+id/jumpropeDetail"
+        android:text="3 sets of 6-10 reps (depending on skill level)"
+        android:id="@+id/burpiesDetail"
         android:layout_gravity="left|bottom"
         android:layout_marginBottom="120dp"
         android:textColor="#ffffff" />
@@ -73,20 +57,12 @@
     <TextView
         android:layout_width="178dp"
         android:layout_height="59dp"
-        android:text="Jump rope"
-        android:id="@+id/jumpropeText"
+        android:text="Burpees"
+        android:id="@+id/burpeesText"
         android:layout_gravity="left|bottom"
         android:layout_marginBottom="125dp"
         android:textColor="#ffffff"
         android:textSize="25dp" />
-
-    <ImageView
-        android:layout_width="133dp"
-        android:layout_height="133dp"
-        android:id="@+id/jumpRopeImage"
-        android:layout_gravity="right|bottom"
-        android:layout_marginBottom="70dp"
-        android:src="@drawable/jump_rope" />
 
     <Button
         android:layout_width="wrap_content"
@@ -99,9 +75,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="WEIGHT LOSS DAY 1"
-        android:id="@+id/wlDay1"
+        android:text="WEIGHT LOSS DAY 5"
+        android:id="@+id/wlDay5"
         android:layout_gravity="center_horizontal|top"
         android:textColor="#ffffff" />
+
+    <ImageView
+        android:layout_width="167dp"
+        android:layout_height="167dp"
+        android:id="@+id/runningImage"
+        android:layout_gravity="right|top"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/running" />
+
+    <ImageView
+        android:layout_width="201dp"
+        android:layout_height="117dp"
+        android:id="@+id/powerjumpImage"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/powerjump" />
+
+    <ImageView
+        android:layout_width="176dp"
+        android:layout_height="242dp"
+        android:id="@+id/burpeesImage"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/burpees" />
 
 </FrameLayout>
