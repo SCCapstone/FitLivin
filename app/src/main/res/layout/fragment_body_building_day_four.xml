@@ -1,9 +1,108 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="edu.sc.myapplication.BodyBuildingDayFour">
+    android:layout_height="match_parent" tools:context="edu.sc.myapplication.BodyBuildingDayFour"
+    android:id="@+id/containerFitnessP"
+    android:background="@drawable/background2"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Deadlift"
+        android:id="@+id/deadliftText"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginBottom="175dp"
+        android:textColor="#ffffff"
+        android:textSize="25dp" />
+
+    <TextView
+        android:layout_width="234dp"
+        android:layout_height="34dp"
+        android:text="4 Sets of 8 Repetitions. (2 minute rest between sets)"
+        android:layout_marginBottom="155dp"
+        android:id="@+id/deadliftDetail"
+        android:layout_gravity="left|center_vertical"
+        android:textColor="#ffffff" />
+
+    <ImageView
+        android:layout_width="141dp"
+        android:layout_height="141dp"
+        android:id="@+id/deadliftImage"
+        android:layout_gravity="right|top"
+        android:layout_marginBottom="150dp"
+        android:src="@drawable/deadlift"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:layout_width="219dp"
+        android:layout_height="63dp"
+        android:text="Pull-ups"
+        android:id="@+id/pullupText"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginBottom="40dp"
+        android:textColor="#ffffff"
+        android:textSize="25dp" />
+
+    <ImageView
+        android:layout_width="126dp"
+        android:layout_height="126dp"
+        android:id="@+id/pullupImage"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/pullup" />
+
+    <TextView
+        android:layout_width="206dp"
+        android:layout_height="49dp"
+        android:text="3 Sets of 6-10 repetitions depending on skill level."
+        android:id="@+id/pullupDetail"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginBottom="20dp"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="177dp"
+        android:layout_height="34dp"
+        android:text="4 sets of 15 repetitions."
+        android:id="@+id/dumbbellRowDetail"
+        android:layout_gravity="left|bottom"
+        android:layout_marginBottom="120dp"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="171dp"
+        android:layout_height="59dp"
+        android:text="Dumbbell Row"
+        android:id="@+id/dumbbellRowText"
+        android:layout_gravity="left|bottom"
+        android:layout_marginBottom="125dp"
+        android:textColor="#ffffff"
+        android:textSize="25dp" />
+
+    <ImageView
+        android:layout_width="153dp"
+        android:layout_height="153dp"
+        android:id="@+id/dumbbellRowImage"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="70dp"
+        android:src="@drawable/dbrow" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Workout Complete!"
+        android:id="@+id/completeDay4bb"
+        android:layout_gravity="center_horizontal|bottom" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="BODY BUILDING DAY 4"
+        android:id="@+id/bbDay4"
+        android:layout_gravity="center_horizontal|top"
+        android:textColor="#ffffff" />
 
 </FrameLayout>
