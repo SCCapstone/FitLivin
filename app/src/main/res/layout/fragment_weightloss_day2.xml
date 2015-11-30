@@ -10,8 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="1/2 mile warm up jog"
-        android:id="@+id/warmupJogText"
+        android:text="Bicycle warm up"
+        android:id="@+id/warmupCycleText"
         android:layout_gravity="left|center_vertical"
         android:layout_marginBottom="175dp"
         android:textColor="#ffffff"
@@ -20,26 +20,27 @@
     <TextView
         android:layout_width="234dp"
         android:layout_height="34dp"
-        android:text="Choice of treadmill, bike, or laps"
         android:layout_marginBottom="155dp"
         android:id="@+id/warmupDetail"
         android:layout_gravity="left|center_vertical"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:text="5-10 minute cyle " />
 
     <TextView
         android:layout_width="219dp"
         android:layout_height="63dp"
-        android:text="Walking lunges"
+        android:text="Squat"
         android:layout_gravity="left|center_vertical"
         android:layout_marginBottom="40dp"
         android:textColor="#ffffff"
-        android:textSize="25dp" />
+        android:textSize="25dp"
+        android:id="@+id/squatText" />
 
     <TextView
         android:layout_width="206dp"
         android:layout_height="49dp"
-        android:text="4 Sets of 12 lounger per leg. "
-        android:id="@+id/loungesDetail"
+        android:text="4 Sets of 15 reps"
+        android:id="@+id/squatDetail"
         android:layout_gravity="left|center_vertical"
         android:layout_marginBottom="20dp"
         android:textColor="#ffffff" />
@@ -47,8 +48,8 @@
     <TextView
         android:layout_width="177dp"
         android:layout_height="34dp"
-        android:text="4 sets of 30 seconds"
-        android:id="@+id/jumpropeDetail"
+        android:text="4 sets of 60 seconds"
+        android:id="@+id/plankDetail"
         android:layout_gravity="left|bottom"
         android:layout_marginBottom="120dp"
         android:textColor="#ffffff" />
@@ -56,8 +57,8 @@
     <TextView
         android:layout_width="178dp"
         android:layout_height="59dp"
-        android:text="Jump rope"
-        android:id="@+id/jumpropeText"
+        android:text="Planks"
+        android:id="@+id/plankText"
         android:layout_gravity="left|bottom"
         android:layout_marginBottom="125dp"
         android:textColor="#ffffff"
@@ -74,9 +75,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="WEIGHT LOSS DAY 1"
-        android:id="@+id/wlDay1"
+        android:text="WEIGHT LOSS DAY 2"
+        android:id="@+id/wlDay2"
         android:layout_gravity="center_horizontal|top"
         android:textColor="#ffffff" />
+
+    <ImageView
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:id="@+id/cycleImage"
+        android:layout_gravity="right|top"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/cycle" />
+
+    <ImageView
+        android:layout_width="173dp"
+        android:layout_height="173dp"
+        android:id="@+id/squatImage"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/squat" />
+
+    <ImageView
+        android:layout_width="133dp"
+        android:layout_height="183dp"
+        android:id="@+id/plankImage"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/plank" />
 
 </FrameLayout>
