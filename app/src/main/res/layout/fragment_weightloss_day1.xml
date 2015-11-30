@@ -33,7 +33,8 @@
         android:layout_gravity="right|top"
         android:layout_marginBottom="200dp"
         android:src="@drawable/running"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp" />
 
     <TextView
         android:layout_width="219dp"
@@ -50,7 +51,8 @@
         android:id="@+id/lungesImage"
         android:layout_gravity="right|center_vertical"
         android:layout_marginBottom="35dp"
-        android:src="@drawable/lunges" />
+        android:src="@drawable/lunges"
+        android:layout_marginRight="20dp" />
 
     <TextView
         android:layout_width="206dp"
@@ -81,19 +83,12 @@
         android:textSize="25dp" />
 
     <ImageView
-        android:layout_width="133dp"
+        android:layout_width="match_parent"
         android:layout_height="133dp"
         android:id="@+id/jumpRopeImage"
         android:layout_gravity="right|bottom"
         android:layout_marginBottom="70dp"
         android:src="@drawable/jump_rope" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Workout Complete!"
-        android:id="@+id/completeDay1wl"
-        android:layout_gravity="center_horizontal|bottom" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -103,5 +98,19 @@
         android:id="@+id/wlDay1"
         android:layout_gravity="center_horizontal|top"
         android:textColor="#ffffff" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Workout Complete!"
+        android:id="@+id/completeDay1wl"
+        android:layout_gravity="right|bottom" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BACK"
+        android:id="@+id/WLBack"
+        android:layout_gravity="left|bottom" />
 
 </FrameLayout>

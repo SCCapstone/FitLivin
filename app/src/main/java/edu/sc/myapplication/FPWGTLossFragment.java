@@ -31,6 +31,68 @@ public class FPWGTLossFragment extends Fragment {
                 ft.commit();
             }
         });
+
+        Button day1 = (Button) v.findViewById(R.id.day1WeightLoss);
+        day1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                WeightLossDayOne weightLossDayOne = new WeightLossDayOne();
+                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.replace(R.id.container, weightLossDayOne);
+                ft.addToBackStack(null);
+                ft.commit();
+            }
+        });
+        Button day2 = (Button) v.findViewById(R.id.day2WeightLoss);
+        day2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                WeightLossDayTwo weightLossDayTwo = new WeightLossDayTwo();
+                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.replace(R.id.container, weightLossDayTwo);
+                ft.addToBackStack(null);
+                ft.commit();
+            }
+        });
+
+        Button day3 = (Button) v.findViewById(R.id.day3WeightLoss);
+        day3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                WeightLossDayThree weightLossDayThree = new WeightLossDayThree();
+                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.replace(R.id.container, weightLossDayThree);
+                ft.addToBackStack(null);
+                ft.commit();
+            }
+        });
+        Button day4 = (Button) v.findViewById(R.id.day4WeightLoss);
+        day4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                WeightLossDayFour weightLossDayFour = new WeightLossDayFour();
+                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.replace(R.id.container, weightLossDayFour);
+                ft.addToBackStack(null);
+                ft.commit();
+            }
+        });
+        Button day5 = (Button) v.findViewById(R.id.day5WeightLoss);
+        day5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                WeightLossDayFive weightLossDayFive = new WeightLossDayFive();
+                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.replace(R.id.container, weightLossDayFive);
+                ft.addToBackStack(null);
+                ft.commit();
+            }
+        });
         // Inflate the layout for this fragment
         return v;
     }
