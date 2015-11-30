@@ -10,8 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Bicycle warm up"
-        android:id="@+id/warmupCycleText"
+        android:text="1/2 mile warm up jog"
+        android:id="@+id/warmupJogText"
         android:layout_gravity="left|center_vertical"
         android:layout_marginBottom="175dp"
         android:textColor="#ffffff"
@@ -24,23 +24,23 @@
         android:id="@+id/warmupDetail"
         android:layout_gravity="left|center_vertical"
         android:textColor="#ffffff"
-        android:text="5-10 minute cyle " />
+        android:text="Choice of treadmill or laps around track" />
 
     <TextView
         android:layout_width="219dp"
         android:layout_height="63dp"
-        android:text="Pull-ups"
+        android:text="Rows"
         android:layout_gravity="left|center_vertical"
         android:layout_marginBottom="40dp"
         android:textColor="#ffffff"
         android:textSize="25dp"
-        android:id="@+id/pullupText" />
+        android:id="@+id/rowText" />
 
     <TextView
         android:layout_width="206dp"
         android:layout_height="49dp"
-        android:text="4 Sets of 6-12 reps (depending on skill lever)"
-        android:id="@+id/pullupDetail"
+        android:text="4 Sets of 12 reps (minimal rest)"
+        android:id="@+id/rowDetail"
         android:layout_gravity="left|center_vertical"
         android:layout_marginBottom="20dp"
         android:textColor="#ffffff" />
@@ -48,8 +48,8 @@
     <TextView
         android:layout_width="177dp"
         android:layout_height="34dp"
-        android:text="3 sets of 6-10 reps (depending on skill level)"
-        android:id="@+id/burpiesDetail"
+        android:text="10 - 30 minutes"
+        android:id="@+id/cardioDetail"
         android:layout_gravity="left|bottom"
         android:layout_marginBottom="120dp"
         android:textColor="#ffffff" />
@@ -57,8 +57,8 @@
     <TextView
         android:layout_width="178dp"
         android:layout_height="59dp"
-        android:text="Burpees"
-        android:id="@+id/burpeesText"
+        android:text="Cardio"
+        android:id="@+id/cardioText"
         android:layout_gravity="left|bottom"
         android:layout_marginBottom="125dp"
         android:textColor="#ffffff"
@@ -75,33 +75,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="WEIGHT LOSS DAY 3"
-        android:id="@+id/wlDay3"
+        android:text="WEIGHT LOSS DAY 4"
+        android:id="@+id/wlDay4"
         android:layout_gravity="center_horizontal|top"
         android:textColor="#ffffff" />
 
     <ImageView
-        android:layout_width="167dp"
-        android:layout_height="167dp"
-        android:id="@+id/cycleImage"
-        android:layout_gravity="right|top"
-        android:layout_marginBottom="35dp"
-        android:src="@drawable/cycle" />
-
-    <ImageView
         android:layout_width="201dp"
         android:layout_height="117dp"
-        android:id="@+id/pullupImage"
+        android:id="@+id/rowImage"
         android:layout_gravity="right|center_vertical"
         android:layout_marginBottom="35dp"
-        android:src="@drawable/pullup" />
+        android:src="@drawable/rows" />
 
     <ImageView
-        android:layout_width="176dp"
-        android:layout_height="242dp"
-        android:id="@+id/burpeesImage"
+        android:layout_width="158dp"
+        android:layout_height="218dp"
+        android:id="@+id/cardioImage"
         android:layout_gravity="right|bottom"
         android:layout_marginBottom="35dp"
-        android:src="@drawable/burpees" />
+        android:src="@drawable/cardio" />
+
+    <ImageView
+        android:layout_width="121dp"
+        android:layout_height="185dp"
+        android:id="@+id/jogginImage"
+        android:layout_gravity="right|top"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/jogging" />
 
 </FrameLayout>

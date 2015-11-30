@@ -10,8 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="1/2 mile warm up jog"
-        android:id="@+id/warmupJogText"
+        android:text="1 mile warm up run"
+        android:id="@+id/warmupRunText"
         android:layout_gravity="left|center_vertical"
         android:layout_marginBottom="175dp"
         android:textColor="#ffffff"
@@ -29,10 +29,10 @@
     <ImageView
         android:layout_width="160dp"
         android:layout_height="114dp"
-        android:id="@+id/joggingImage"
+        android:id="@+id/runningImage"
         android:layout_gravity="right|top"
         android:layout_marginBottom="200dp"
-        android:src="@drawable/jogging"
+        android:src="@drawable/running"
         android:layout_marginTop="40dp" />
 
     <TextView
