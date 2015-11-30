@@ -55,6 +55,13 @@
         android:layout_gravity="right|center_vertical"
         android:layout_marginBottom="35dp"
         android:src="@drawable/incline" />
+    <ImageView
+        android:layout_width="170dp"
+        android:layout_height="179dp"
+        android:id="@+id/flies"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="60dp"
+        android:src="@drawable/flies" />
 
     <Button
         android:layout_width="wrap_content"
