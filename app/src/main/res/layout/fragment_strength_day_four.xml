@@ -10,12 +10,57 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="STRENGTH DAY 4"
-        android:id="@+id/textView30"
-        android:layout_gravity="center_horizontal|top"
-        android:textColor="#ffffff" />
+        android:text="Close Grip Bench
+ Press"
+        android:id="@+id/cpbench"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginBottom="175dp"
+        android:textColor="#ffffff"
+        android:textSize="22dp" />
+
+    <TextView
+        android:layout_width="234dp"
+        android:layout_height="34dp"
+        android:text="Barbell Curl"
+        android:layout_marginBottom="50dp"
+        android:id="@+id/benchDetail"
+        android:layout_gravity="left|center_vertical"
+        android:textColor="#ffffff"
+        android:textSize="22dp"/>
+
+    <TextView
+        android:layout_width="219dp"
+        android:layout_height="63dp"
+        android:text="Tricep Pushdown"
+        android:id="@+id/flyText"
+        android:layout_gravity="bottom|center_vertical"
+        android:layout_marginBottom="150dp"
+        android:textColor="#ffffff"
+        android:textSize="25dp" />
+
+    <ImageView
+        android:layout_width="176dp"
+        android:layout_height="176dp"
+        android:id="@+id/imageView"
+        android:layout_gravity="right|top"
+        android:layout_marginBottom="150dp"
+        android:src="@drawable/closegrip" />
+    <ImageView
+        android:layout_width="179dp"
+        android:layout_height="179dp"
+        android:id="@+id/bbcurl"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/barbellcurl" />
+    <ImageView
+        android:layout_width="171dp"
+        android:layout_height="179dp"
+        android:id="@+id/pushdown"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="60dp"
+        android:src="@drawable/pushdown" />
 
     <Button
         android:layout_width="wrap_content"
