@@ -89,13 +89,6 @@
         android:layout_marginBottom="70dp"
         android:src="@drawable/shoulderpress" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Workout Complete!"
-        android:id="@+id/completeDay5bb"
-        android:layout_gravity="center_horizontal|bottom" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -104,5 +97,19 @@
         android:id="@+id/bbDay5"
         android:layout_gravity="center_horizontal|top"
         android:textColor="#ffffff" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Workout Complete!"
+        android:id="@+id/completeDay5bb"
+        android:layout_gravity="right|bottom" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BACK"
+        android:id="@+id/BBBack"
+        android:layout_gravity="left|bottom" />
 
 </FrameLayout>

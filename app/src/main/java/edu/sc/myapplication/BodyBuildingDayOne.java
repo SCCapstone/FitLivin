@@ -12,19 +12,20 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 
-public class BodyBuildingDayFour extends Fragment {
+public class BodyBuildingDayOne extends Fragment {
 
 
-    public BodyBuildingDayFour() {
+    public BodyBuildingDayOne() {
         // Required empty public constructor
     }
+
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_body_building_day_four, container, false);
+        View v = inflater.inflate(R.layout.fragment_body_building_one, container, false);
         Button backBtn = (Button) v.findViewById(R.id.BBBack);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +41,7 @@ public class BodyBuildingDayFour extends Fragment {
 
 
         return v;
+
     }
 
 
