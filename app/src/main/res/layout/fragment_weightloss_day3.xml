@@ -1,0 +1,107 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="edu.sc.myapplication.BodyBuildingDayOne"
+    android:id="@+id/containerFitnessP"
+    android:background="@drawable/background2"
+    >
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Bicycle warm up"
+        android:id="@+id/warmupCycleText"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginBottom="175dp"
+        android:textColor="#ffffff"
+        android:textSize="25dp" />
+
+    <TextView
+        android:layout_width="234dp"
+        android:layout_height="34dp"
+        android:layout_marginBottom="155dp"
+        android:id="@+id/warmupDetail"
+        android:layout_gravity="left|center_vertical"
+        android:textColor="#ffffff"
+        android:text="5-10 minute cyle " />
+
+    <TextView
+        android:layout_width="219dp"
+        android:layout_height="63dp"
+        android:text="Rows"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginBottom="40dp"
+        android:textColor="#ffffff"
+        android:textSize="25dp"
+        android:id="@+id/rowText" />
+
+    <TextView
+        android:layout_width="206dp"
+        android:layout_height="49dp"
+        android:text="4 Sets of 12 reps (minimal rest)"
+        android:id="@+id/rowDetail"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginBottom="20dp"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="177dp"
+        android:layout_height="34dp"
+        android:text="10 - 30 minutes"
+        android:id="@+id/cardioDetail"
+        android:layout_gravity="left|bottom"
+        android:layout_marginBottom="120dp"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="178dp"
+        android:layout_height="59dp"
+        android:text="Cardio"
+        android:id="@+id/cardioText"
+        android:layout_gravity="left|bottom"
+        android:layout_marginBottom="125dp"
+        android:textColor="#ffffff"
+        android:textSize="25dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Workout Complete!"
+        android:id="@+id/completeDay1wl"
+        android:layout_gravity="center_horizontal|bottom" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="WEIGHT LOSS DAY 3"
+        android:id="@+id/wlDay3"
+        android:layout_gravity="center_horizontal|top"
+        android:textColor="#ffffff" />
+
+    <ImageView
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:id="@+id/cycleImage"
+        android:layout_gravity="right|top"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/cycle" />
+
+    <ImageView
+        android:layout_width="201dp"
+        android:layout_height="117dp"
+        android:id="@+id/rowImage"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/rows" />
+
+    <ImageView
+        android:layout_width="158dp"
+        android:layout_height="218dp"
+        android:id="@+id/cardioImage"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/cardio" />
+
+</FrameLayout>
