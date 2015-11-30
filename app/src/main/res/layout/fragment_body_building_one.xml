@@ -1,33 +1,108 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="edu.sc.myapplication.BlankFragment"
-
+    android:layout_height="match_parent" tools:context="edu.sc.myapplication.BodyBuildingDayOne"
     android:id="@+id/containerFitnessP"
     android:background="@drawable/background2"
     >
 
-    <!-- TODO: Update blank fragment layout -->
 
-    <EditText
-        android:layout_width="206dp"
-        android:layout_height="204dp"
-        android:id="@+id/editText2"
-        android:layout_gravity="center"
-        android:text="
-        Day 1:
-        1. Squat
-        2. Leg Extension
-        3. Hamstring Curl
-        4. Hack Squat
-        5. Calves "
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Barbell Back Squat"
+        android:id="@+id/squatText"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginBottom="175dp"
+        android:textColor="#ffffff"
+        android:textSize="25dp" />
+
+    <TextView
+        android:layout_width="234dp"
+        android:layout_height="34dp"
+        android:text="4 Sets of 10-12 Repetitions. (1 minute rest between sets)"
+        android:layout_marginBottom="155dp"
+        android:id="@+id/benchDetail"
+        android:layout_gravity="left|center_vertical"
         android:textColor="#ffffff" />
+
+    <ImageView
+        android:layout_width="141dp"
+        android:layout_height="100dp"
+        android:id="@+id/squatImage"
+        android:layout_gravity="right|top"
+        android:layout_marginBottom="200dp"
+        android:src="@drawable/squat"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:layout_width="219dp"
+        android:layout_height="63dp"
+        android:text="Leg Extensions"
+        android:id="@+id/extensionText"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginBottom="40dp"
+        android:textColor="#ffffff"
+        android:textSize="25dp" />
+
+    <ImageView
+        android:layout_width="126dp"
+        android:layout_height="126dp"
+        android:id="@+id/legExtensionImage"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/legextension" />
+
+    <TextView
+        android:layout_width="206dp"
+        android:layout_height="49dp"
+        android:text="4 Sets of 15 repetitions. "
+        android:id="@+id/extensionDetail"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginBottom="20dp"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="177dp"
+        android:layout_height="34dp"
+        android:text="4 sets of 15 repetitions."
+        android:id="@+id/hamstringDetail"
+        android:layout_gravity="left|bottom"
+        android:layout_marginBottom="120dp"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="178dp"
+        android:layout_height="59dp"
+        android:text="Hamstring Curl"
+        android:id="@+id/hamstringText"
+        android:layout_gravity="left|bottom"
+        android:layout_marginBottom="125dp"
+        android:textColor="#ffffff"
+        android:textSize="25dp" />
+
+    <ImageView
+        android:layout_width="153dp"
+        android:layout_height="153dp"
+        android:id="@+id/curlImage"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="70dp"
+        android:src="@drawable/legcurl" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Workout Complete!"
+        android:id="@+id/completeDay1bb"
+        android:layout_gravity="center_horizontal|bottom" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="BODY BUILDING DAY 1"
-        android:id="@+id/textView23"
+        android:id="@+id/bbDay1"
         android:layout_gravity="center_horizontal|top"
         android:textColor="#ffffff" />
+
 </FrameLayout>
