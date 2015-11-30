@@ -95,7 +95,8 @@
         android:id="@+id/plankImage"
         android:layout_gravity="right|bottom"
         android:layout_marginBottom="35dp"
-        android:src="@drawable/plank" />
+        android:src="@drawable/plank"
+        android:layout_marginRight="10dp" />
 
     <Button
         android:layout_width="wrap_content"
