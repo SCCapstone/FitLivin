@@ -65,13 +65,6 @@
         android:background="#ff1f18" />
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BACK"
-        android:id="@+id/backButtonStrength"
-        android:layout_gravity="center_horizontal|bottom" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -83,12 +76,18 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal|top" />
 
-    <TextView
-        android:layout_width="400dp"
-        android:layout_height="119dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="How to preform the major lifts"
-        android:id="@+id/textView23"
-        android:layout_gravity="left|bottom"
-        android:background="#f90505" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BACK"
+        android:id="@+id/backButtonStrength"
+        android:layout_gravity="left|bottom" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How To"
+        android:id="@+id/howTo"
+        android:layout_gravity="right|bottom" />
+
 </FrameLayout>
