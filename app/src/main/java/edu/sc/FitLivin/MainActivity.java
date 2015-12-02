@@ -25,6 +25,7 @@ public class MainActivity extends FragmentActivity{
     public static Integer weight;
     public static Integer height;
     public static String s;
+    public static Integer points = 0;
     private String objectID;
 
 
@@ -33,6 +34,8 @@ public class MainActivity extends FragmentActivity{
     public static ParseObject profileInfo = new ParseObject("ProfileInfo");
     ParseQuery<ParseObject> query = ParseQuery.getQuery("ProfileInfo");
 
+    public static ParseObject pointsInfo = new ParseObject("Points");
+    ParseQuery<ParseObject> query2 = ParseQuery.getQuery("Points");
 
     //TextView newText = (TextView) findViewById(R.id.textView22);
 
@@ -69,6 +72,26 @@ public class MainActivity extends FragmentActivity{
             }
         });
 
+        query2.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> userList2, ParseException e) {
+
+                if (e == null) {
+                    if (userList2.size() > 0) {
+
+                        for (int i = 0; i < userList2.size(); i++) {
+                            ParseObject p = userList2.get(i);
+
+                            points = p.getInt("CurrentPoints");
+
+                        }
+                    }
+                    //newText.setText(name);
+                } else {
+
+                }
+            }
+        });
 
       HomePageFragment firstFragment = new HomePageFragment();
        FragmentManager fm1 = getFragmentManager(); //or getFragmentManager() if you are not using support library.
@@ -96,6 +119,28 @@ public class MainActivity extends FragmentActivity{
                }
            }
        });
+
+
+    }
+
+    public void pointsData(Integer points) {
+        Log.d("F", "pdata");
+        this.points = points;
+
+
+        pointsInfo.put("CurrentPoints", this.points);
+
+        pointsInfo.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e == null) {
+                    objectID = pointsInfo.getObjectId();
+                    setS(objectID);
+                } else {
+                    Log.d("F", "object failllll");
+                }
+            }
+        });
 
 
     }

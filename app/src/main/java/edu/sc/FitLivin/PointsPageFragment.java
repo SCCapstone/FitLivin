@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class PointsPageFragment extends Fragment {
 
@@ -20,8 +21,25 @@ public class PointsPageFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
+
+
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_points_page, container, false);
+
+        final TextView currrentPoints = (TextView) v.findViewById(R.id.PointsView);
+
+        Integer points = MainActivity.points;
+
+        currrentPoints.setText("" + points);
+
+        MainActivity main = new MainActivity();
+
+        points = MainActivity.points + 10;
+
+        main.pointsData(points);
+
         Button backBtn = (Button) v.findViewById(R.id.PointsBack);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
