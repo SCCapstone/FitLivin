@@ -30,15 +30,17 @@ public class PointsPageFragment extends Fragment {
 
         final TextView currrentPoints = (TextView) v.findViewById(R.id.PointsView);
 
-        Integer points = MainActivity.points;
+       // Integer points = MainActivity.points;
+        Integer points;
 
-        currrentPoints.setText("" + points);
+        //currrentPoints.setText("" + points);
 
         MainActivity main = new MainActivity();
 
-        points = MainActivity.points + 10;
+        points = MainActivity.points;
 
         main.pointsData(points);
+        currrentPoints.setText("" + points);
 
         Button backBtn = (Button) v.findViewById(R.id.PointsBack);
         backBtn.setOnClickListener(new View.OnClickListener() {

@@ -37,6 +37,17 @@ public class BodyBuildingDayOne extends Fragment {
             }
         });
 
+        Button completeBtn = (Button) v.findViewById(R.id.completeDay1bb);
+        completeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Integer points = MainActivity.points;
+                points = points + 50;
+                MainActivity main = new MainActivity();
+                main.pointsData(points);
+            }
+        });
+
 
         return v;
 

@@ -29,20 +29,20 @@ public class MaxFragment extends Fragment {
         final TextView userTotal = (TextView) v.findViewById(R.id.userTotal);
 
         Integer userBench1 = 1;
-        userBench.setText(+userBench1);
+        userBench.setText(""+userBench1);
 
         Integer userSquat1 = 2;
-        userSquat.setText(+userSquat1);
+        userSquat.setText(""+userSquat1);
 
         Integer userDL1 = 3;
-        userDL.setText(+userDL1);
+        userDL.setText(""+userDL1);
 
         Integer userTotal1 = 0;
 
-        //sums userbench, usersquat, and userdl
+         //sums userbench, usersquat, and userdl
         userTotal1 = userBench1 + userSquat1 + userDL1;
         //sets usertotal to usertotal1
-        userTotal.setText(+userTotal1);
+        userTotal.setText(""+userTotal1);
 
 
         Button backBtn = (Button) v.findViewById(R.id.MaxBack);

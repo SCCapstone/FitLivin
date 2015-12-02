@@ -82,7 +82,7 @@
         android:layout_gravity="center_horizontal|top"
         android:textSize="20dp"
         android:textColor="#ffffff"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="80dp"
         android:layout_marginLeft="0dp"
         android:layout_marginRight="40dp" />
 
@@ -94,7 +94,7 @@
         android:textColor="#ffffff"
         android:textSize="20dp"
         android:textIsSelectable="true"
-        android:layout_marginTop="71dp"
+        android:layout_marginTop="120dp"
         android:layout_marginRight="20dp" />
 
     <TextView
@@ -104,8 +104,9 @@
         android:layout_gravity="center_horizontal|top"
         android:textColor="#ffffff"
         android:textSize="20dp"
-        android:layout_marginTop="105dp"
-        android:layout_marginRight="15dp" />
+        android:layout_marginTop="160dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="0dp" />
 
     <Button
         android:layout_width="wrap_content"
