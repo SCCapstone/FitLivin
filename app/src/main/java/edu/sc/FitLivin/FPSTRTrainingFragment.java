@@ -1,3 +1,10 @@
+/******
+ * Class 'FPSTRTrainingFragment'
+ *
+ * Provides the user with choices of day 1-5 for the Strength Training Program
+ *
+ */
+
 package edu.sc.FitLivin;
 
 import android.app.Fragment;

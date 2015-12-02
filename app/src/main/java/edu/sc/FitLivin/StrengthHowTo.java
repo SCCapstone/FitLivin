@@ -1,3 +1,10 @@
+/******
+ * Class 'StrengthHowTo'
+ *
+ * Provides the user with directions on how to complete the workouts
+ *
+ */
+
 package edu.sc.FitLivin;
 
 import android.app.Activity;

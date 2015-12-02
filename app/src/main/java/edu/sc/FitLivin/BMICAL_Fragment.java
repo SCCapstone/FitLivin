@@ -1,3 +1,10 @@
+/******
+ * Class 'BMICAL_Fragment'
+ *
+ * Allows the user to calculate their Body Mass Index
+ *
+ */
+
 package edu.sc.FitLivin;
 
 import android.app.Fragment;

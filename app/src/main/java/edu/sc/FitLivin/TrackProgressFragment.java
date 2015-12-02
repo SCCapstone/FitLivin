@@ -1,3 +1,11 @@
+/******
+ * Class 'TrackProgressFragment'
+ *
+ * Provides the user with the ability to Track their progress for BMI,
+ * BENCH,SQUAT,DEAD LIFT, AND MILE RUN.
+ *
+ */
+
 package edu.sc.FitLivin;
 
 import android.app.Fragment;

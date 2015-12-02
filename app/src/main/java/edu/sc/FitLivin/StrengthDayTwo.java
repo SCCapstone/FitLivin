@@ -1,3 +1,10 @@
+/******
+ * Class 'StrengthDayTwo'
+ *
+ * Provides the workout for Day 2 of Strength Training
+ *
+ */
+
 package edu.sc.FitLivin;
 
 import android.app.FragmentManager;

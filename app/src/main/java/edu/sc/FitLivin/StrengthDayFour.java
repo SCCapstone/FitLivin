@@ -1,3 +1,10 @@
+/******
+ * Class 'StrengthDayFour'
+ *
+ * Provides the workout for Day 4 of Strength Training
+ *
+ */
+
 package edu.sc.FitLivin;
 
 import android.app.FragmentManager;

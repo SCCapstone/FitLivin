@@ -1,3 +1,10 @@
+/******
+ * Class 'WeightLossDayOne'
+ *
+ * Provides the workout for Day 1 of WeigthLoss
+ *
+ */
+
 package edu.sc.FitLivin;
 
 import android.app.FragmentManager;

@@ -1,3 +1,10 @@
+/******
+ * Class 'FPWGTLossFragment'
+ *
+ * Provides the user with choices of day 1-5 for the WeightLoss Program
+ *
+ */
+
 package edu.sc.FitLivin;
 
 import android.app.Fragment;

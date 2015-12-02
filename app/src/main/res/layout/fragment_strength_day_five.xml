@@ -72,4 +72,12 @@
         android:id="@+id/Sday5BACK"
         android:layout_gravity="center_horizontal|bottom" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/textView10"
+        android:layout_gravity="left|top" />
+
 </FrameLayout>

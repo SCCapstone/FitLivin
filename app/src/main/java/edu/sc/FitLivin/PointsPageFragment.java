@@ -1,3 +1,10 @@
+/******
+ * Class 'PointsPageFragment'
+ *
+ * Points will be accumulated for meeting goals. This page displays the points.
+ *
+ */
+
 package edu.sc.FitLivin;
 
 import android.app.Fragment;

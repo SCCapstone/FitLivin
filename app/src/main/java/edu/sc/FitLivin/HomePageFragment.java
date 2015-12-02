@@ -1,3 +1,11 @@
+/******
+ * Class 'HomePageFragment'
+ *
+ * They user is able to choose Points, Profile, Max, BMI Calculator,
+ * Nutrition Calculator, or FitnessProgram.
+ *
+ */
+
 package edu.sc.FitLivin;
 
 import android.app.FragmentManager;

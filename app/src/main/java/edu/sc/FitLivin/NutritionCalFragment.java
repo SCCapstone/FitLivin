@@ -1,3 +1,11 @@
+/******
+ * Class 'NutritionCalFragment'
+ *
+ * Provides the user with the ability to calculate their needed calorie
+ * and protein intake.
+ *
+ */
+
 package edu.sc.FitLivin;
 
 import android.app.Fragment;

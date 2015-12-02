@@ -1,3 +1,10 @@
+/******
+ * Class 'StrengthDayOne'
+ *
+ * Provides the workout for Day 1 of Strength Training
+ *
+ */
+
 package edu.sc.FitLivin;
 
 import android.app.FragmentManager;

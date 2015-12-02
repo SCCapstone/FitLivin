@@ -1,3 +1,11 @@
+/******
+ * Class 'MaxFragment'
+ *
+ * Provides the user with the chance to add to their max
+ * for four main workouts. Bench,Squat,Dead lift, and Mile Run.
+ *
+ */
+
 package edu.sc.FitLivin;
 
 import android.app.FragmentManager;

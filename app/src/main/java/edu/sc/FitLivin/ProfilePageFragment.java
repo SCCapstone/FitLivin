@@ -1,3 +1,10 @@
+/******
+ * Class 'ProfilePageFragment'
+ *
+ * Provides the user with the ability to enter their name, weight, and height
+ *
+ */
+
 package edu.sc.FitLivin;
 
 import android.app.Fragment;

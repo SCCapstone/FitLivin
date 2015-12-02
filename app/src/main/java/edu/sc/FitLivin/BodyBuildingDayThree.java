@@ -1,3 +1,10 @@
+/******
+ * Class 'BodyBuildingDayThree'
+ *
+ * Provides the workout for Day 3 of Body Building
+ *
+ */
+
 package edu.sc.FitLivin;
 
 import android.app.FragmentManager;

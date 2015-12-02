@@ -1,3 +1,12 @@
+/******
+ * Class 'FitnessProgramFragment'
+ *
+ * Allows the user to create a specific fitness program. They have
+ * choices of WeightLoss, BodyBuilding, or StrengthTraining.
+ *
+ */
+
+
 package edu.sc.FitLivin;
 
 import android.app.Fragment;

@@ -1,3 +1,11 @@
+/******
+ * Class 'MainActivity'
+ *
+ * Initializes the Parse Database and first fragment layout. Stores variables
+ * for the Database.
+ *
+ */
+
 package edu.sc.FitLivin;
 
 import android.support.v4.app.FragmentActivity;

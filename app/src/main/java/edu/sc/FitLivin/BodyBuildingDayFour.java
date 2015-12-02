@@ -1,3 +1,11 @@
+/******
+ * Class 'BodyBuildingDayFour'
+ *
+ * Provides the workout for Day 4 of Body Building
+ *
+ */
+
+
 package edu.sc.FitLivin;
 
 import android.app.FragmentManager;
