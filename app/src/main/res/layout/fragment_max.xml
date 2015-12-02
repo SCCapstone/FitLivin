@@ -9,17 +9,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Current Bench (lbs):"
-        android:id="@+id/textView22"
+        android:id="@+id/benchText"
         android:layout_gravity="left|top"
         android:textColor="#ffffff"
         android:textSize="20dp"
-        android:textIsSelectable="true" />
+        android:textIsSelectable="true"
+        android:layout_marginTop="15dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Current Squat (lbs);"
-        android:id="@+id/textView35"
+        android:id="@+id/squatText"
         android:layout_gravity="left|top"
         android:textColor="#ffffff"
         android:textSize="20dp"
@@ -29,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Current DeadLift (lbs):"
-        android:id="@+id/textView36"
+        android:id="@+id/deadliftText"
         android:layout_gravity="left|top"
         android:textSize="20dp"
         android:textColor="#ffffff"
@@ -39,11 +40,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="MileTime (sec):"
-        android:id="@+id/textView37"
+        android:id="@+id/mileText"
         android:layout_gravity="left|top"
         android:textColor="#ffffff"
         android:textSize="20dp"
-        android:layout_marginTop="330dp" />
+        android:layout_marginTop="420dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -51,4 +52,56 @@
         android:text="BACK"
         android:id="@+id/MaxBack"
         android:layout_gravity="center_horizontal|bottom" />
+
+    <TextView
+        android:layout_width="191dp"
+        android:layout_height="85dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Big 3 Total:"
+        android:id="@+id/totalText"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginBottom="-80dp"
+        android:textColor="#ffffff"
+        android:textSize="35dp" />
+
+    <TextView
+        android:layout_width="191dp"
+        android:layout_height="85dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/userTotal"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginBottom="-80dp"
+        android:textColor="#ffffff"
+        android:textSize="35dp" />
+
+    <TextView
+        android:layout_width="144dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/userDeadlift"
+        android:layout_gravity="right|center_vertical"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="-30dp"
+        android:layout_marginRight="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/userSquat"
+        android:layout_gravity="right|top"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/userBench"
+        android:layout_gravity="right|top"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textIsSelectable="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp" />
 </FrameLayout>
