@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 public class MaxFragment extends Fragment {
@@ -20,6 +21,29 @@ public class MaxFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_max, container, false);
+
+        //initialize textviews in max xml
+        final TextView userBench = (TextView) v.findViewById(R.id.userBench);
+        final TextView userSquat = (TextView) v. findViewById(R.id.userSquat);
+        final TextView userDL = (TextView) v. findViewById(R.id.userDeadlift);
+        final TextView userTotal = (TextView) v.findViewById(R.id.userTotal);
+
+        Integer userBench1 = 1;
+        userBench.setText(+userBench1);
+
+        Integer userSquat1 = 2;
+        userSquat.setText(+userSquat1);
+
+        Integer userDL1 = 3;
+        userDL.setText(+userDL1);
+
+        Integer userTotal1 = 0;
+
+        //sums userbench, usersquat, and userdl
+        userTotal1 = userBench1 + userSquat1 + userDL1;
+        //sets usertotal to usertotal1
+        userTotal.setText(+userTotal1);
+
 
         Button backBtn = (Button) v.findViewById(R.id.MaxBack);
         backBtn.setOnClickListener(new View.OnClickListener() {
