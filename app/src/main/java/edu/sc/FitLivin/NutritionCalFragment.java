@@ -21,7 +21,7 @@ public class NutritionCalFragment extends Fragment {
 
 
     public NutritionCalFragment() {
-        // Required empty public constructor
+
     }
 
 
@@ -31,14 +31,15 @@ public class NutritionCalFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_nutrition_cal, container, false);
+        //Creates back button to go back to main page
         Button backBtn = (Button) v.findViewById(R.id.NutBack);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 HomePageFragment fragment1 = new HomePageFragment();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, fragment1);
+                ft.replace(R.id.container, fragment1);//replaces fragment with previous
                 ft.addToBackStack(null);
                 ft.commit();
             }

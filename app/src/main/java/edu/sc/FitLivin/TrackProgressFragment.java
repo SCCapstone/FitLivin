@@ -21,25 +21,24 @@ public class TrackProgressFragment extends Fragment {
 
 
     public TrackProgressFragment() {
-        // Required empty public constructor
+
     }
-
-
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_track_progress, container, false);
+        //Creates back button to go back to main page
         Button backBtn = (Button) v.findViewById(R.id.TPBack);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 HomePageFragment fragment1 = new HomePageFragment();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, fragment1);
+                ft.replace(R.id.container, fragment1);//replaces fragment with previous
                 ft.addToBackStack(null);
                 ft.commit();
             }

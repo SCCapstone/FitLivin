@@ -24,39 +24,33 @@ public class PointsPageFragment extends Fragment {
     }
 
 
-
-
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-
-
 
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_points_page, container, false);
 
-        final TextView currrentPoints = (TextView) v.findViewById(R.id.PointsView);
+        final TextView currentPoints = (TextView) v.findViewById(R.id.PointsView);
 
-       // Integer points = MainActivity.points;
         Integer points;
-
-        //currrentPoints.setText("" + points);
-
+        //Calls main class
         MainActivity main = new MainActivity();
-
+        // sets points to static points in main class
         points = MainActivity.points;
 
         main.pointsData(points);
-        currrentPoints.setText("" + points);
+        //sets the text view to points
+        currentPoints.setText("" + points);
 
+        //Creates back button to go back to home page
         Button backBtn = (Button) v.findViewById(R.id.PointsBack);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 HomePageFragment fragment1 = new HomePageFragment();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, fragment1);
+                ft.replace(R.id.container, fragment1);//replaces fragment with previous
                 ft.addToBackStack(null);
                 ft.commit();
             }

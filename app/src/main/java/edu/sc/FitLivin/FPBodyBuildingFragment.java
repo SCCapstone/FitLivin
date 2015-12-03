@@ -27,7 +27,7 @@ public class FPBodyBuildingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FitnessProgramFragment fragment1 = new FitnessProgramFragment();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, fragment1);
                 ft.addToBackStack(null);
@@ -40,7 +40,7 @@ public class FPBodyBuildingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 BodyBuildingDayOne bodyB1 = new BodyBuildingDayOne();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, bodyB1);
                 ft.addToBackStack(null);
@@ -52,7 +52,7 @@ public class FPBodyBuildingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 BodyBuildingDayTwo bodyB2 = new BodyBuildingDayTwo();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, bodyB2);
                 ft.addToBackStack(null);
@@ -65,7 +65,7 @@ public class FPBodyBuildingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 BodyBuildingDayThree bodyB3 = new BodyBuildingDayThree();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, bodyB3);
                 ft.addToBackStack(null);
@@ -77,7 +77,7 @@ public class FPBodyBuildingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 BodyBuildingDayFour bodyB4 = new BodyBuildingDayFour();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, bodyB4);
                 ft.addToBackStack(null);
@@ -89,7 +89,7 @@ public class FPBodyBuildingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 BodyBuildingDayFive bodyB5 = new BodyBuildingDayFive();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, bodyB5);
                 ft.addToBackStack(null);
