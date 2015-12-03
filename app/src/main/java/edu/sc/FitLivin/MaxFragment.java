@@ -35,16 +35,16 @@ public class MaxFragment extends Fragment {
         final TextView userSquat = (TextView) v. findViewById(R.id.userSquat);
         final TextView userDL = (TextView) v. findViewById(R.id.userDeadlift);
         final TextView userTotal = (TextView) v.findViewById(R.id.userTotal);
-
+        //sets the user's bench number
         Integer userBench1 = 1;
         userBench.setText(""+userBench1);
-
+        //sets the user's squat number
         Integer userSquat1 = 2;
         userSquat.setText(""+userSquat1);
-
+        //sets the user's deadlift number
         Integer userDL1 = 3;
         userDL.setText(""+userDL1);
-
+        //initialize userTotal1
         Integer userTotal1 = 0;
 
          //sums userbench, usersquat, and userdl
@@ -52,7 +52,10 @@ public class MaxFragment extends Fragment {
         //sets usertotal to usertotal1
         userTotal.setText(""+userTotal1);
 
-
+         /*
+          *On click method that exits out of max fragment and takes users back to the
+          *menu. Gives functionality to the back button.
+          */
         Button backBtn = (Button) v.findViewById(R.id.MaxBack);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override

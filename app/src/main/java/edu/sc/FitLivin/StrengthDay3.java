@@ -30,11 +30,20 @@ public class StrengthDay3 extends Fragment {
 
 
     @Override
+    /*
+     *Creates the view of our fragment.
+     */
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_strength_day3, container, false);
+        //Initializes backbutton for strength day 3
         Button backBtn = (Button) v.findViewById(R.id.Sday3BACK);
+
+             /*
+             *On click method that exits out of Strength day three and takes users back to the
+             *strength training menu. Gives functionality to the back button.
+             */
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
