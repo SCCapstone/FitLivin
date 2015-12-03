@@ -32,13 +32,13 @@ public class BMICAL_Fragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_bmical, container, false);
 
-        final TextView newText = (TextView) v.findViewById(R.id.textView34);
-        final TextView BMI = (TextView) v.findViewById(R.id.textView15);
-        final TextView newText1 = (TextView) v.findViewById(R.id.textView33);
-        newText.setText("" + MainActivity.height);
-        newText1.setText("" + MainActivity.weight);
+        final TextView CurrH = (TextView) v.findViewById(R.id.CurrHeight);
+        final TextView BMI = (TextView) v.findViewById(R.id.DisplayBMI);
+        final TextView CurrW = (TextView) v.findViewById(R.id.CurrWeight);
+        CurrH.setText("" + MainActivity.height);
+        CurrW.setText("" + MainActivity.weight);
         BMI_Weight = MainActivity.weight;
-        Button cal = (Button) v.findViewById(R.id.button4);
+        Button cal = (Button) v.findViewById(R.id.CalculateBMI);
         cal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,7 +59,7 @@ public class BMICAL_Fragment extends Fragment {
             }
         });
 
-        Button btn = (Button) v.findViewById(R.id.button8);
+        Button btn = (Button) v.findViewById(R.id.BmiBack);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -18,7 +18,7 @@
         android:layout_width="136dp"
         android:layout_height="wrap_content"
         android:text="BACK"
-        android:id="@+id/button8"
+        android:id="@+id/BmiBack"
         android:layout_gravity="center_horizontal|bottom" />
 
     <TextView
@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
-        android:id="@+id/textView33"
+        android:id="@+id/CurrWeight"
         android:layout_marginBottom="170dp"
         android:layout_gravity="center"
         android:layout_marginLeft="17dp"
@@ -55,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
-        android:id="@+id/textView34"
+        android:id="@+id/CurrHeight"
         android:layout_gravity="center"
         android:layout_marginBottom="118dp"
         android:layout_marginLeft="1dp"
@@ -66,14 +66,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Calculate"
-        android:id="@+id/button4"
+        android:id="@+id/CalculateBMI"
         android:layout_gravity="center_horizontal|bottom"
         android:layout_marginBottom="100dp" />
 
     <TextView
         android:layout_width="207dp"
         android:layout_height="128dp"
-        android:id="@+id/textView15"
+        android:id="@+id/DisplayBMI"
         android:layout_gravity="center"
         android:textColor="#ffffff"
         android:textSize="20dp"

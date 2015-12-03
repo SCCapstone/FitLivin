@@ -28,7 +28,7 @@ public class FPWGTLossFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FitnessProgramFragment fragment1 = new FitnessProgramFragment();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, fragment1);
                 ft.addToBackStack(null);
@@ -41,7 +41,7 @@ public class FPWGTLossFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 WeightLossDayOne weightLossDayOne = new WeightLossDayOne();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, weightLossDayOne);
                 ft.addToBackStack(null);
@@ -53,7 +53,7 @@ public class FPWGTLossFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 WeightLossDayTwo weightLossDayTwo = new WeightLossDayTwo();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, weightLossDayTwo);
                 ft.addToBackStack(null);
@@ -66,7 +66,7 @@ public class FPWGTLossFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 WeightLossDayThree weightLossDayThree = new WeightLossDayThree();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, weightLossDayThree);
                 ft.addToBackStack(null);
@@ -78,7 +78,7 @@ public class FPWGTLossFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 WeightLossDayFour weightLossDayFour = new WeightLossDayFour();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, weightLossDayFour);
                 ft.addToBackStack(null);
@@ -90,7 +90,7 @@ public class FPWGTLossFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 WeightLossDayFive weightLossDayFive = new WeightLossDayFive();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, weightLossDayFive);
                 ft.addToBackStack(null);

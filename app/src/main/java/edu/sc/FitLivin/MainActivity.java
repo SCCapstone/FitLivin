@@ -25,9 +25,8 @@ import java.util.List;
 
 public class MainActivity extends FragmentActivity{
 
-
+   //Intializing varibles
     public static String name;
-
     private FragmentManager fm;
     private FragmentTransaction ft;
     public static Integer weight;
@@ -36,16 +35,13 @@ public class MainActivity extends FragmentActivity{
     public static Integer points = 0;
     private String objectID;
 
-
-
-
+    //Creates a parse object for the database
+    //Creates a query object to query through the database
     public static ParseObject profileInfo = new ParseObject("ProfileInfo");
     ParseQuery<ParseObject> query = ParseQuery.getQuery("ProfileInfo");
 
     public static ParseObject pointsInfo = new ParseObject("Points");
     ParseQuery<ParseObject> query2 = ParseQuery.getQuery("Points");
-
-    //TextView newText = (TextView) findViewById(R.id.textView22);
 
 
     @Override
@@ -53,16 +49,19 @@ public class MainActivity extends FragmentActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Parse.enableLocalDatastore(this);
+        Parse.enableLocalDatastore(this);//enables the database
 
+        //initializes the database store
         Parse.initialize(this, "KkZRFZGjA2I8mKNyuBkqgunMsVCKiWA2YrLsR3w4", "8giIFo0DzUQVHwgsl0HkXzW12n2iGj8kU1vZd90f");
 
+        //initializes the query object for the Profile databse
         ParseQuery<ParseObject> query = ParseQuery.getQuery("ProfileInfo");
+
 
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> userList, ParseException e) {
-
+              //Uses a for loop to look through the database for specific info
                 if (e == null) {
                     if (userList.size() > 0) {
 
@@ -73,8 +72,8 @@ public class MainActivity extends FragmentActivity{
                             height = p.getInt("Height");
                         }
                     }
-                           //newText.setText(name);
-                } else {
+
+                } else {//else do nothing
 
                 }
             }
@@ -100,23 +99,31 @@ public class MainActivity extends FragmentActivity{
                 }
             }
         });
-
-      HomePageFragment firstFragment = new HomePageFragment();
-       FragmentManager fm1 = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+       //Adds the fragment for the layout
+       HomePageFragment firstFragment = new HomePageFragment();
+       FragmentManager fm1 = getFragmentManager();
        fm1.beginTransaction().add(R.id.container, firstFragment).addToBackStack(null).commit();
 
     }
-        // Enable Local Datastore.
+
+    /*****
+     *
+     * This method will allow for the Profile page to send name,
+     * weight,and height to the database.
+     *
+     */
         public void profileData(String name, Integer weight, Integer height) {
         Log.d("F", "pdata");
             this.name = name;
             this.weight = weight;
             this.height = height;
 
-       profileInfo.put("Username", name);
+        // adds info to database
+        profileInfo.put("Username", name);
         profileInfo.put("Weight", weight);
         profileInfo.put("Height", height);
-       profileInfo.saveInBackground(new SaveCallback() {
+
+        profileInfo.saveInBackground(new SaveCallback() {
            @Override
            public void done(ParseException e) {
                if (e == null) {
@@ -131,11 +138,17 @@ public class MainActivity extends FragmentActivity{
 
     }
 
+    /*****
+     *
+     * Allows the user to send pints to the database
+     *
+     */
+
     public void pointsData(Integer points) {
         Log.d("F", "pdata");
         this.points = points;
 
-
+        //adds info to database
         pointsInfo.put("CurrentPoints", this.points);
 
         pointsInfo.saveInBackground(new SaveCallback() {
@@ -153,10 +166,14 @@ public class MainActivity extends FragmentActivity{
 
     }
 
+    /***
+     *
+     * Getters and Setters for name, weight, and height
+     */
 
-public String getName(){
+    public String getName(){
     return name;
-}
+    }
     public void setName(String setName){
         this.name = setName;
     }
