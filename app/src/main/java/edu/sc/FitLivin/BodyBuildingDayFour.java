@@ -31,21 +31,21 @@ public class BodyBuildingDayFour extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_body_building_day_four, container, false);
-        Button backBtn = (Button) v.findViewById(R.id.BBBack);
+        Button backBtn = (Button) v.findViewById(R.id.BBBack);//creates button
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FPBodyBuildingFragment fragment1 = new FPBodyBuildingFragment();
                 FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
                 FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, fragment1);
-                ft.addToBackStack(null);
-                ft.commit();
+                ft.replace(R.id.container, fragment1);//replaces previous fragment
+                ft.addToBackStack(null);//adds to back stack
+                ft.commit();//commits it
             }
         });
 
 
-        return v;
+        return v;//return
     }
 
 
