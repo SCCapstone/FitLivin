@@ -23,12 +23,14 @@ public class WeightLossDayFive extends Fragment {
         // Required empty public constructor
     }
 
-
+    /*
+     *Creates the view of our fragment.
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_weightloss_day_three, container, false);
+        View v = inflater.inflate(R.layout.fragment_weightloss_day3, container, false);
         Button backBtn = (Button) v.findViewById(R.id.WLBack);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
