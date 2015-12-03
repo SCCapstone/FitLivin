@@ -53,7 +53,7 @@ public class FPSTRTrainingFragment extends Fragment {
         day3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                StrengthDay3 strengthDay3 = new StrengthDay3();
+                StrengthDayThree strengthDay3 = new StrengthDayThree();
                 FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, strengthDay3);

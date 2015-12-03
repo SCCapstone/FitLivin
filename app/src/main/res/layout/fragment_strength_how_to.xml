@@ -41,12 +41,6 @@
         android:layout_gravity="right|center_vertical"
         android:background="#f70c0c" />
 
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="142dp"
-        android:id="@+id/imageView2"
-        android:layout_gravity="center|top"
-        android:src="@drawable/DougHepburn"
-        />
+
 
 </FrameLayout>
