@@ -12,9 +12,41 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="            All major lifts (Bench press, Deadlift, and Squat) will follow the Hepburn method.         This method was created by Doug Hepburn for people to use to help make continuous strength         gains throughout their lifting career. Here&apos;s how it works:         You will bench press and squat twice a week and deadlift once a week. Pick a weight that is         80% of your 1 rep max. Warm up with two to three sets then do the following:         The first time running the program for a new weight         8 sets by 2 reps         The second time you will do the below scheme with the same weight.         1 set by 3 reps and 7 sets by 2 reps         The proceding times will look like this         3,3,2,2,2,2,2,2         3,3,3,2,2,2,2,2         3,3,3,3,2,2,2,2         3,3,3,3,3,2,2,2         3,3,3,3,3,3,2,2         3,3,3,3,3,3,3,2         3,3,3,3,3,3,3,3         Once all sets are preformed with 3 reps increase the weight 5 - 10 lbs and start over with 8x2.         "
+        android:text="
+
+
+
+
+
+        All major lifts (Bench press, Deadlift, and Squat) will follow the Hepburn method.
+    This method was created by Doug Hepburn for people to use to help make continuous strength
+    gains throughout their lifting career. Here&apos;s how it works:
+    You will bench press and squat twice a week and deadlift once a week. Pick a weight that is
+    80% of your 1 rep max. Warm up with two to three sets then do the following:
+    The first time running the program for a new weight
+    8 sets by 2 reps
+    The second time you will do the below scheme with the same weight.
+    1 set by 3 reps and 7 sets by 2 reps
+    The proceding times will look like this
+    3,3,2,2,2,2,2,2
+    3,3,3,2,2,2,2,2
+    3,3,3,3,2,2,2,2
+    3,3,3,3,3,2,2,2
+    3,3,3,3,3,3,2,2
+    3,3,3,3,3,3,3,2
+    3,3,3,3,3,3,3,3
+    Once all sets are preformed with 3 reps increase the weight 5 - 10 lbs and start over with 8x2.
+            "
         android:id="@+id/textView24"
-        android:layout_gravity="center"
+        android:layout_gravity="right|center_vertical"
         android:background="#f70c0c" />
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="142dp"
+        android:id="@+id/imageView2"
+        android:layout_gravity="center|top"
+        android:src="@drawable/DougHepburn"
+        />
 
 </FrameLayout>
