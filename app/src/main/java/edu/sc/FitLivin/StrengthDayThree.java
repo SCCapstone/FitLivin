@@ -1,5 +1,5 @@
 /******
- * Class 'StrengthDay3'
+ * Class 'StrengthDayThree'
  *
  * Provides the workout for Day 3 of Strength Training
  *
@@ -17,13 +17,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 
-public class StrengthDay3 extends Fragment {
+public class StrengthDayThree extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
 
 
 
 
-    public StrengthDay3() {
+    public StrengthDayThree() {
         // Required empty public constructor
     }
 
@@ -36,7 +36,7 @@ public class StrengthDay3 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_strength_day3, container, false);
+        View v = inflater.inflate(R.layout.fragment_strength_day_three, container, false);
         //Initializes backbutton for strength day 3
         Button backBtn = (Button) v.findViewById(R.id.Sday3BACK);
 
