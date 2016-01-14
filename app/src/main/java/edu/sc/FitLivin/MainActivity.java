@@ -10,14 +10,18 @@ package edu.sc.FitLivin;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 import java.util.List;
@@ -100,13 +104,32 @@ public class MainActivity extends FragmentActivity{
        fm1.beginTransaction().add(R.id.container, firstFragment).addToBackStack(null).commit();
 
     }
+    public boolean onCreateOptionsMenu(Menu menu) {
 
-    /*****
-     *
-     * This method will allow for the Profile page to send name,
-     * weight,and height to the database.
-     *
-     */
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+
+
+
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.action_settings){
+            ParseUser.getCurrentUser().logOut();
+            startActivity(new Intent(MainActivity.this, DispatchActivity.class));
+            return true;
+        }
+        return onOptionsItemSelected(item);
+
+    }
+
+        /*****
+         *
+         * This method will allow for the Profile page to send name,
+         * weight,and height to the database.
+         *
+         */
         public void profileData(String name, Integer weight, Integer height) {
         Log.d("F", "pdata");
             this.name = name;
