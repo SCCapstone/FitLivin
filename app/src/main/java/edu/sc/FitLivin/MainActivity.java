@@ -38,6 +38,7 @@ public class MainActivity extends FragmentActivity{
     public static Integer points = 0;
     private String objectID;
 
+
     //Creates a parse object for the database
     //Creates a query object to query through the database
     public static ParseObject profileInfo = new ParseObject("ProfileInfo");

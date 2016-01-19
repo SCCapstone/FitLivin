@@ -25,4 +25,5 @@ dependencies {
     compile 'com.android.support:support-v4:23.0.0'
     compile 'com.parse.bolts:bolts-android:1.+'
     compile 'com.parse:parse-android:1.+'
+    compile 'com.jjoe64:graphview:4.0.1'
 }
