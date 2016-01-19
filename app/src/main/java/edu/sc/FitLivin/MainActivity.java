@@ -130,14 +130,12 @@ public class MainActivity extends FragmentActivity{
          * weight,and height to the database.
          *
          */
-        public void profileData(String name, Integer weight, Integer height) {
+        public void profileData(Integer weight, Integer height) {
         Log.d("F", "pdata");
-            this.name = name;
             this.weight = weight;
             this.height = height;
 
         // adds info to database
-        profileInfo.put("Username", name);
         profileInfo.put("Weight", weight);
         profileInfo.put("Height", height);
 

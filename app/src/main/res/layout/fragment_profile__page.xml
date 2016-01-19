@@ -5,123 +5,123 @@
     android:background="@drawable/background2"
     >
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/linview"
+        >
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="BMI"
         android:id="@+id/button7"
-        android:layout_gravity="center_horizontal|bottom" />
+        android:layout_gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HeightV:"
+        android:textSize="20dp"
+        android:id="@+id/heightView"
+        android:layout_gravity="left|center_vertical"
+        android:textColor="#ffffff"
+            android:layout_below="@+id/name"
+            android:layout_alignStart="@+id/weightView" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Profile Page"
-        android:id="@+id/textView21"
-        android:layout_gravity="center_horizontal|top"
-        android:textColor="#ffffff" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="374dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Your Height:"
-        android:id="@+id/heightView"
-        android:layout_gravity="left|center_vertical"
-        android:textColor="#ffffff" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="303dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Your Weight:"
+        android:text="WeightV:"
+        android:textSize="20dp"
         android:id="@+id/weightView"
-        android:layout_gravity="left|center_vertical"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:layout_below="@+id/heightView"
+        android:layout_alignEnd="@+id/button2"
+        android:layout_marginTop="30dp" />
+
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="437dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Username:"
-        android:id="@+id/textView25"
-        android:layout_gravity="left|center_vertical"
-        android:textColor="#ffffff" />
-
-    <EditText
         android:layout_width="130dp"
         android:layout_height="37dp"
         android:id="@+id/name"
         android:layout_gravity="left|center_vertical"
-        android:background="#f7ffee"
-        android:hint="Username"
-        android:layout_marginBottom="40dp" />
+        android:textSize="25dp"
+        android:text="Username"
+        android:textColor="#ffffff"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/button7" />
 
     <EditText
         android:layout_width="130dp"
         android:layout_height="37dp"
         android:id="@+id/weight"
+        android:inputType="number"
         android:layout_gravity="left|center_vertical"
         android:background="#ecffea"
         android:hint="Weight"
-        android:layout_marginTop="15dp" />
+        android:layout_below="@+id/weightView"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="130dp"
         android:layout_height="37dp"
         android:id="@+id/height"
+        android:inputType="number"
         android:layout_gravity="left|center_vertical"
         android:background="#f5ffee"
         android:hint="Height"
-        android:layout_marginTop="70dp" />
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/CurrN"
-        android:layout_gravity="center_horizontal|top"
-        android:textSize="20dp"
-        android:textColor="#ffffff"
-        android:layout_marginTop="80dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="40dp" />
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/CurrH"
-        android:layout_gravity="center_horizontal|top"
+        android:layout_gravity="center_horizontal"
         android:textColor="#ffffff"
+        android:text="Height"
         android:textSize="20dp"
         android:textIsSelectable="true"
-        android:layout_marginTop="120dp"
-        android:layout_marginRight="20dp" />
+
+        android:layout_above="@+id/weightView"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/CurrW"
-        android:layout_gravity="center_horizontal|top"
+        android:text="Weight"
+        android:layout_gravity="center_horizontal"
         android:textColor="#ffffff"
         android:textSize="20dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="0dp" />
+        android:layout_above="@+id/weight"
+        android:layout_alignStart="@+id/CurrH" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Save"
-        android:id="@+id/button2"
-        android:layout_gravity="right|bottom"
-        android:layout_marginTop="100dp" />
-
-    <Button
+        <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="BACK"
         android:id="@+id/ProfileBack"
-        android:layout_gravity="left|bottom" />
+        android:layout_gravity="right|bottom"
+            android:layout_alignTop="@+id/button7"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:id="@+id/button2"
+            android:layout_gravity="left"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true" />
+
+    </RelativeLayout>
+
+
 
 </FrameLayout>

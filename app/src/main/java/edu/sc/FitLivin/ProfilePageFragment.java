@@ -18,6 +18,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.parse.ParseUser;
+
 public class ProfilePageFragment extends Fragment {
 
     public ProfilePageFragment() {
@@ -32,49 +34,50 @@ public class ProfilePageFragment extends Fragment {
 
 
         View v = inflater.inflate(R.layout.fragment_profile__page, container, false);
-        final TextView newText = (TextView) v.findViewById(R.id.textView25);
+       // final TextView newText = (TextView) v.findViewById(R.id.textView25);
         final TextView heightText = (TextView) v.findViewById(R.id.heightView);
         final TextView weightText = (TextView) v.findViewById(R.id.weightView);
-        final EditText editName = (EditText) v.findViewById(R.id.name);
+        final TextView VeiwName = (TextView) v.findViewById(R.id.name);
         final EditText editHeight = (EditText) v.findViewById(R.id.height);
         final EditText editWeight = (EditText) v.findViewById(R.id.weight);
-        final TextView currentName = (TextView) v.findViewById(R.id.CurrN);
+        //final TextView currentName = (TextView) v.findViewById(R.id.CurrN);
         final TextView currentHeight = (TextView) v.findViewById(R.id.CurrH);
         final TextView currrentWeight = (TextView) v.findViewById(R.id.CurrW);
 
 
-        String name = MainActivity.name;
+        //String name = MainActivity.name;
         Integer height = MainActivity.height;
         Integer weight = MainActivity.weight;
 
-        currentName.setText(name);
+        //currentName.setText(name);
         currrentWeight.setText("" + weight);
         currentHeight.setText("" + height);
 
         Button btn2 = (Button) v.findViewById(R.id.button2);
-
+        VeiwName.setText(ParseUser.getCurrentUser().getUsername());
         btn2.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
 
-                String name = MainActivity.name;
+                //String name = MainActivity.name;
                 Integer height = MainActivity.height;
                 Integer weight = MainActivity.weight;
 
                 MainActivity main = new MainActivity();
-                name = editName.getText().toString();
+                //name = VeiwName.getText().toString();
 
                 String h = editHeight.getText().toString();
                 height = Integer.parseInt(h);
                 String w = editWeight.getText().toString();
                 weight = Integer.parseInt(w);
-                currentName.setText(name);
+                //currentName.setText(name);
+
                 currrentWeight.setText("" + weight);
                 currentHeight.setText("" + height);
 
-                main.profileData(name, weight, height);
+                main.profileData( weight, height);
 
 
             }
