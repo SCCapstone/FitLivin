@@ -26,7 +26,7 @@ import com.parse.SaveCallback;
 
 import java.util.List;
 
-public class MainActivity extends FragmentActivity{
+ public class MainActivity extends FragmentActivity{
 
    //Intializing varibles
     public static String name;
