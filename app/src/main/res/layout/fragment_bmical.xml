@@ -5,78 +5,108 @@
     android:background="@drawable/background2"
     >
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linview"
+        android:layout_gravity="center_horizontal|bottom">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BMI CALCULATOR"
+            android:id="@+id/textView2"
+            android:layout_gravity="center_horizontal|top"
+            android:textColor="#fffef7"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="170dp"
-        android:text="BMI CALCULATOR"
-        android:id="@+id/textView2"
-        android:layout_gravity="center_horizontal|top"
-        android:textColor="#fffef7" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BACK"
+            android:id="@+id/BmiBack"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true" />
 
-    <Button
-        android:layout_width="136dp"
-        android:layout_height="wrap_content"
-        android:text="BACK"
-        android:id="@+id/BmiBack"
-        android:layout_gravity="center_horizontal|bottom" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculate"
+            android:id="@+id/CalculateBMI"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true" />
 
-    <TextView
-        android:layout_width="282dp"
-        android:layout_height="372dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Your Weight (lbs): "
-        android:id="@+id/textView11"
-        android:layout_gravity="left|center_vertical"
-        android:textColor="#ffffff" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Your Weight (lbs): "
+            android:id="@+id/textView11"
+            android:layout_gravity="left|center_vertical"
+            android:textColor="#ffffff"
+            android:layout_below="@+id/textView2"
+            android:layout_toEndOf="@+id/DisplayBMI"
+            android:layout_alignParentStart="true"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="269dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Your Height (in): "
-        android:id="@+id/textView14"
-        android:layout_gravity="left|center_vertical"
-        android:textColor="#ffffff" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Your Height (in): "
+            android:id="@+id/textView14"
+            android:layout_gravity="left|center_vertical"
+            android:textColor="#ffffff"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView11"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/CurrWeight"
-        android:layout_marginBottom="170dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="17dp"
-        android:textColor="#faf8f1"
-        android:textSize="20dp"
-        android:textIsSelectable="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/CurrWeight"
+            android:layout_gravity="center"
+            android:layout_marginLeft="17dp"
+            android:textColor="#faf8f1"
+            android:textSize="20dp"
+            android:textIsSelectable="true"
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/CurrHeight"
-        android:layout_gravity="center"
-        android:layout_marginBottom="118dp"
-        android:layout_marginLeft="1dp"
-        android:textColor="#ffffff"
-        android:textSize="20dp" />
+            android:layout_alignBottom="@+id/textView11"
+            android:layout_toEndOf="@+id/textView11" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Calculate"
-        android:id="@+id/CalculateBMI"
-        android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginBottom="100dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/CurrHeight"
+            android:layout_gravity="center"
+            android:layout_marginLeft="1dp"
+            android:textColor="#ffffff"
+            style="@android:style/TextAppearance.Large"
+            android:layout_below="@+id/CurrWeight"
+            android:layout_alignStart="@+id/CurrWeight"
 
-    <TextView
-        android:layout_width="207dp"
-        android:layout_height="128dp"
-        android:id="@+id/DisplayBMI"
-        android:layout_gravity="center"
-        android:textColor="#ffffff"
-        android:textSize="20dp"
-        android:textIsSelectable="true" />
+            />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/DisplayBMI"
+            android:layout_gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:textIsSelectable="true"
+            android:layout_below="@+id/CurrHeight"
+            android:layout_alignStart="@+id/textView2"
+
+
+            />
+
+    </RelativeLayout>
+
 
 </FrameLayout>

@@ -5,101 +5,109 @@
     android:background="@drawable/background2"
     >
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/linview"
+        android:layout_gravity="center">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Choose your Fitness Program:"
-        android:id="@+id/textView"
+        android:id="@+id/chooseFitnessProgramText"
+        android:textColor="#ffffff"
+        android:layout_marginTop="40dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textColor="#ffffff" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Strength Training"
         android:id="@+id/StrengthTrainingButton"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
         android:background="#ff3c39"
-        android:clickable="true" />
+        android:clickable="true"
+
+
+        android:layout_below="@+id/basedOnGoalsText"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="BodyBuilding"
         android:id="@+id/BodyBuildingButton"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/StrengthTrainingButton"
-        android:layout_alignEnd="@+id/StrengthTrainingButton"
-        android:layout_marginTop="200dp"
         android:background="#2c6bff"
-        android:clickable="true" />
+        android:clickable="true"
+
+        android:layout_above="@+id/bodyBuildingText"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Weight Loss"
         android:id="@+id/WeightLossButton"
-        android:layout_below="@+id/BodyBuildingButton"
-        android:layout_alignStart="@+id/BodyBuildingButton"
-        android:layout_alignEnd="@+id/StrengthTrainingButton"
-        android:layout_marginTop="100dp"
         android:background="#8bff14"
-        android:clickable="true" />
+        android:clickable="true"
+
+        android:layout_above="@+id/weightLossText"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Get stronger with FitLivin!"
-        android:id="@+id/textView6"
+        android:id="@+id/strengthTrainingText"
+        android:textColor="@android:color/white"
         android:layout_below="@+id/StrengthTrainingButton"
-        android:layout_marginTop="350dp"
-        android:layout_alignEnd="@+id/textView"
-        android:textColor="@android:color/white" />
+        android:layout_alignEnd="@+id/weightLossText"
+        android:layout_marginTop="42dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Obtain a more aesthetic physique!"
-        android:id="@+id/textView7"
-        android:layout_below="@+id/BodyBuildingButton"
-        android:layout_alignStart="@+id/textView6"
-        android:layout_marginTop="250dp"
-        android:textColor="@android:color/white" />
+        android:id="@+id/bodyBuildingText"
+        android:textColor="@android:color/white"
+        android:layout_above="@+id/WeightLossButton"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="78dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Lose weight and get in better shape!"
-        android:id="@+id/textView8"
-        android:layout_below="@+id/WeightLossButton"
-        android:layout_marginTop="150dp"
-        android:layout_alignStart="@+id/textView7"
-        android:textColor="@android:color/white" />
+        android:id="@+id/weightLossText"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="62dp"
+        android:layout_above="@+id/FitProBack"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Based on YOUR Individual Goals"
-        android:id="@+id/textView9"
-        android:layout_below="@+id/textView"
-        android:layout_marginTop="25dp"
-        android:layout_alignEnd="@+id/textView"
-        android:textColor="#ffffff" />
+        android:id="@+id/basedOnGoalsText"
+        android:textColor="#ffffff"
+
+        android:layout_below="@+id/chooseFitnessProgramText"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="130dp"
         android:layout_height="58dp"
         android:text="BACK"
         android:id="@+id/FitProBack"
-        android:layout_gravity="center_horizontal|bottom" />
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
 
-
+</RelativeLayout>
 </FrameLayout>
