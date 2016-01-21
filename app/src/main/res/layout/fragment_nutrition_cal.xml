@@ -45,7 +45,7 @@
         android:layout_gravity="center_horizontal|bottom"
         android:textColor="#ffffff"
         android:layout_centerVertical="true"
-        android:layout_toStartOf="@+id/button3" />
+        android:layout_alignStart="@+id/textView18" />
 
     <TextView
         android:layout_width="wrap_content"
