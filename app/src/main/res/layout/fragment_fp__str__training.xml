@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:text=" Day 1 "
         android:id="@+id/day1Strength"
-        android:layout_below="@+id/textView12"
+        android:layout_below="@+id/strengthTitle"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="125dp"
 
@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text=" Strength Program "
-        android:id="@+id/textView12"
+        android:id="@+id/strengthTitle"
         android:background="#ff1f12"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"

@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Weight Loss"
-        android:id="@+id/textViewWeightLoss"
+        android:id="@+id/weightLossTitle"
         android:background="#1fff28"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"

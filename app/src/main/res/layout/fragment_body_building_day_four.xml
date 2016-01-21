@@ -119,6 +119,9 @@
         android:text="BACK"
         android:id="@+id/BBBack"
         android:layout_gravity="left|bottom" />
+</LinearLayout>>
+
+    </ScrollView>
 
 </LinearLayout>>
 

@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text=" Body Building "
-        android:id="@+id/textView13"
+        android:id="@+id/bodyBuildingTitle"
         android:background="#01579b"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"

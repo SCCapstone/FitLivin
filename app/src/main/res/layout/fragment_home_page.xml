@@ -11,6 +11,15 @@
         android:clickable="true"
         android:contextClickable="false"
         android:onClick="ChangeFragment" />
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:orientation="vertical"
+            >
 
     <Button
         android:layout_width="fill_parent"
@@ -72,9 +81,11 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Home Page"
-        android:id="@+id/textView27"
+        android:id="@+id/homePageTitle"
         android:layout_gravity="center_horizontal|top"
         android:textColor="#ffffff" />
+</LinearLayout>>
 
+    </ScrollView>
 
 </FrameLayout>

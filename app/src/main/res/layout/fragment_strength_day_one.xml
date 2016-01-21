@@ -17,7 +17,6 @@
             android:layout_width="fill_parent"
             android:orientation="vertical"
             >
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="50dp"
@@ -78,6 +77,7 @@
         android:text="BACK"
         android:id="@+id/Sday1BACK"
         android:layout_gravity="center_horizontal|bottom" />
+
 </LinearLayout>>
 
     </ScrollView>

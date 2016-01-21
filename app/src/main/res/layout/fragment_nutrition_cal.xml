@@ -5,87 +5,67 @@
     android:background="@drawable/background2"
     >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/linview"
-        >
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Nutrition Calculator"
-        android:id="@+id/textView3"
+        android:id="@+id/nutritionCalcTitle"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="69dp"
         android:background="#070707"
         android:layout_gravity="center_horizontal|top"
-        android:textColor="#ffffff"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp" />
+        android:textColor="#ffffff" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="44dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Enter Your Weight:"
-        android:id="@+id/textView16"
+        android:id="@+id/enterWeightText"
         android:layout_gravity="left|center_vertical"
-        android:textColor="#ffffff"
-        android:layout_below="@+id/textView3"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="67dp" />
+        android:textColor="#ffffff" />
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="219dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="To Maintain:"
-        android:id="@+id/textView17"
+        android:id="@+id/toMaintainText"
         android:layout_gravity="center_horizontal|bottom"
-        android:textColor="#ffffff"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/textView18" />
+        android:textColor="#ffffff" />
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="171dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="To Gain:"
-        android:id="@+id/textView18"
+        android:id="@+id/toGainText"
         android:layout_gravity="center_horizontal|bottom"
-        android:textColor="#ffffff"
-        android:layout_below="@+id/textView17"
-        android:layout_alignStart="@+id/textView19" />
+        android:textColor="#ffffff" />
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="124dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="To Lose:"
-        android:id="@+id/textView19"
+        android:id="@+id/toLoseText"
         android:layout_gravity="center_horizontal|bottom"
-        android:textColor="#ffffff"
-        android:layout_below="@+id/textView18"
-        android:layout_centerHorizontal="true" />
+        android:textColor="#ffffff" />
 
     <Button
         android:layout_width="141dp"
         android:layout_height="wrap_content"
         android:text="Calculate"
-        android:id="@+id/button3"
-        android:layout_gravity="right|bottom"
-        android:layout_alignTop="@+id/NutBack"
-        android:layout_alignParentEnd="true" />
+        android:id="@+id/calcButton"
+        android:layout_gravity="right|bottom" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="BACK"
         android:id="@+id/NutBack"
-        android:layout_alignParentBottom="true"
         android:layout_gravity="left|bottom" />
-
-    </RelativeLayout>
 
 </FrameLayout>
