@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="BMI"
-        android:id="@+id/button7"
+        android:id="@+id/profileBMIButton"
         android:layout_gravity="center"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
@@ -39,7 +39,7 @@
         android:id="@+id/weightView"
         android:textColor="#ffffff"
         android:layout_below="@+id/heightView"
-        android:layout_alignEnd="@+id/button2"
+        android:layout_alignEnd="@+id/saveButtonProfile"
         android:layout_marginTop="30dp" />
 
 
@@ -52,7 +52,7 @@
         android:text="Username"
         android:textColor="#ffffff"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/button7" />
+        android:layout_alignStart="@+id/profileBMIButton" />
 
     <EditText
         android:layout_width="130dp"
@@ -106,16 +106,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="BACK"
-        android:id="@+id/ProfileBack"
+        android:id="@+id/profilePageBackButton"
         android:layout_gravity="right|bottom"
-            android:layout_alignTop="@+id/button7"
+            android:layout_alignTop="@+id/profileBMIButton"
             android:layout_alignParentEnd="true" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Save"
-            android:id="@+id/button2"
+            android:id="@+id/saveButtonProfile"
             android:layout_gravity="left"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true" />

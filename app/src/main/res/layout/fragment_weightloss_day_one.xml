@@ -52,7 +52,8 @@
         android:layout_gravity="left|center_vertical"
         android:layout_marginBottom="40dp"
         android:textColor="#ffffff"
-        android:textSize="25dp" />
+        android:textSize="25dp"
+        android:id="@+id/walkingLungesText" />
 
     <ImageView
         android:layout_width="146dp"

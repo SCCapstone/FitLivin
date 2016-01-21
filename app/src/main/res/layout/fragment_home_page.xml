@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Home Page"
-        android:id="@+id/textView27"
+        android:id="@+id/homePageTitle"
         android:layout_gravity="center_horizontal|top"
         android:textColor="#ffffff" />
 </LinearLayout>>

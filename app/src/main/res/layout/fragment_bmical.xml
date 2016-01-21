@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Your Weight (lbs): "
-            android:id="@+id/textView11"
+            android:id="@+id/weightView"
             android:layout_gravity="left|center_vertical"
             android:textColor="#ffffff"
             android:layout_below="@+id/textView2"
@@ -55,12 +55,12 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Your Height (in): "
-            android:id="@+id/textView14"
+            android:id="@+id/heightView"
             android:layout_gravity="left|center_vertical"
             android:textColor="#ffffff"
             android:layout_centerVertical="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView11"/>
+            android:layout_below="@+id/weightView"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -73,8 +73,8 @@
             android:textSize="20dp"
             android:textIsSelectable="true"
 
-            android:layout_alignBottom="@+id/textView11"
-            android:layout_toEndOf="@+id/textView11" />
+            android:layout_alignBottom="@+id/weightView"
+            android:layout_toEndOf="@+id/weightView" />
 
         <TextView
             android:layout_width="wrap_content"

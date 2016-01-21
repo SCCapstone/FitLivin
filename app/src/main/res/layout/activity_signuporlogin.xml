@@ -37,6 +37,7 @@
         android:textColor="#ffffff"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:onClick="forgotonclicklistener"/>
+        android:onClick="forgotonclicklistener"
+        android:id="@+id/forgotPassView" />
 
 </RelativeLayout>
