@@ -30,6 +30,7 @@ import java.util.List;
 
    //Intializing varibles
     public static String name;
+     public ParseUser user;
     private FragmentManager fm;
     private FragmentTransaction ft;
     public static Integer weight;
@@ -131,14 +132,17 @@ import java.util.List;
          * weight,and height to the database.
          *
          */
-        public void profileData(Integer weight, Integer height) {
+        public void profileData(Integer weight, Integer height, ParseUser user1) {
         Log.d("F", "pdata");
             this.weight = weight;
             this.height = height;
+            this.user = user1;
 
         // adds info to database
         profileInfo.put("Weight", weight);
         profileInfo.put("Height", height);
+        profileInfo.put("randomValue",Math.random());
+        profileInfo.put("UserP",user1);
 
         profileInfo.saveInBackground(new SaveCallback() {
            @Override

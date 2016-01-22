@@ -29,7 +29,7 @@ public class ProfilePageFragment extends Fragment {
 
 
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
 
@@ -73,11 +73,12 @@ public class ProfilePageFragment extends Fragment {
                 String w = editWeight.getText().toString();
                 weight = Integer.parseInt(w);
                 //currentName.setText(name);
-
+                //info.setheight(height);
+                //info.setWeight(weight);
                 currrentWeight.setText("" + weight);
                 currentHeight.setText("" + height);
 
-                main.profileData( weight, height);
+                main.profileData( weight, height, ParseUser.getCurrentUser());
 
 
             }

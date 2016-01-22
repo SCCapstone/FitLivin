@@ -11,6 +11,7 @@ import com.parse.Parse;
 public class Application extends android.app.Application{
     public void onCreate() {
         super.onCreate();
+
         Parse.enableLocalDatastore(this);//enables the database
         Parse.initialize(this, getString(R.string.parse_application_Id), getString(R.string.parse_application_Key));
     }
