@@ -38,6 +38,7 @@ import java.util.List;
     public static String s;
     public static Integer points = 0;
     private String objectID;
+     String name1 = ParseUser.getCurrentUser().getUsername();
 
 
     //Creates a parse object for the database
@@ -55,6 +56,7 @@ import java.util.List;
         setContentView(R.layout.activity_main);
 
 
+
         //initializes the query object for the Profile databse
         ParseQuery<ParseObject> query = ParseQuery.getQuery("ProfileInfo");
 
@@ -68,7 +70,8 @@ import java.util.List;
 
                         for (int i = 0; i < userList.size(); i++) {
                             ParseObject p = userList.get(i);
-                            name = p.getString("Username");
+
+                            name = p.getString("username");
                             weight = p.getInt("Weight");
                             height = p.getInt("Height");
                         }
@@ -144,17 +147,19 @@ import java.util.List;
         profileInfo.put("randomValue",Math.random());
         profileInfo.put("UserP",user1);
 
+
+
         profileInfo.saveInBackground(new SaveCallback() {
-           @Override
-           public void done(ParseException e) {
-               if (e == null) {
-                   objectID = profileInfo.getObjectId();
-                   setS(objectID);
-               } else {
-                   Log.d("F", "object failllll");
-               }
-           }
-       });
+            @Override
+            public void done(ParseException e) {
+                if (e == null) {
+                    objectID = profileInfo.getObjectId();
+                    setS(objectID);
+                } else {
+                    Log.d("F", "object failllll");
+                }
+            }
+        });
 
 
     }

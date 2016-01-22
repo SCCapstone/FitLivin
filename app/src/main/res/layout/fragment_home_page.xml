@@ -11,6 +11,7 @@
         android:clickable="true"
         android:contextClickable="false"
         android:onClick="ChangeFragment" />
+
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
@@ -21,70 +22,102 @@
             android:orientation="vertical"
             >
 
-    <Button
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Home Page"
+                android:id="@+id/homePageTitle"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#ffffff" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="3dp"
+                android:layout_weight="1" />
+
+            <Button
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:text="Points"
         android:id="@+id/pointsButton"
-        android:layout_marginBottom="175dp"
         android:layout_gravity="center" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="7dp"
+                android:layout_weight="1" />
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:text="Profile"
         android:id="@+id/profileButton"
-        android:layout_marginBottom="125dp"
-        android:layout_gravity="center" />
+       />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="7dp"
+                android:layout_weight="1" />
 
     <Button
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:text="Track Progress"
         android:id="@+id/trackProgressButton"
-        android:layout_marginBottom="75dp"
         android:layout_gravity="center" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="7dp"
+                android:layout_weight="1" />
 
     <Button
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:text="BMI"
         android:id="@+id/bmiButton"
-        android:layout_marginBottom="25dp"
         android:layout_gravity="center" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="7dp"
+                android:layout_weight="1" />
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:text="Nutrition"
         android:id="@+id/nutritionButton"
-        android:layout_marginBottom="-25dp"
         android:layout_gravity="center" />
 
+            <View
+                android:layout_width="0dp"
+                android:layout_height="7dp"
+                android:layout_weight="1" />
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:text="Fitness Program"
         android:id="@+id/fitnessProgramButton"
-        android:layout_marginBottom="-75dp"
         android:layout_gravity="center" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="7dp"
+                android:layout_weight="1" />
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:text="Max"
         android:id="@+id/MaxButton"
-        android:layout_marginBottom="-125dp"
-        android:layout_gravity="center" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Home Page"
-        android:id="@+id/homePageTitle"
-        android:layout_gravity="center_horizontal|top"
-        android:textColor="#ffffff" />
-</LinearLayout>>
+        android:layout_gravity="center"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="7dp"
+                android:layout_weight="1" />
+        </LinearLayout>>
 
     </ScrollView>
 
