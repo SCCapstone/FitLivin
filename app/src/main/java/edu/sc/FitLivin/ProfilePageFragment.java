@@ -53,7 +53,7 @@ public class ProfilePageFragment extends Fragment {
         currrentWeight.setText("" + weight);
         currentHeight.setText("" + height);
 
-        Button btn2 = (Button) v.findViewById(R.id.button2);
+        Button btn2 = (Button) v.findViewById(R.id.saveButtonProfile);
         VeiwName.setText(ParseUser.getCurrentUser().getUsername());
         btn2.setOnClickListener(new View.OnClickListener()
         {
@@ -83,7 +83,7 @@ public class ProfilePageFragment extends Fragment {
             }
         });
 
-        Button btn = (Button) v.findViewById(R.id.button7);
+        Button btn = (Button) v.findViewById(R.id.profileBMIButton);
         btn.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -98,7 +98,7 @@ public class ProfilePageFragment extends Fragment {
             }
         });
 
-        Button backBtn = (Button) v.findViewById(R.id.ProfileBack);
+        Button backBtn = (Button) v.findViewById(R.id.profilePageBackButton);
         backBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override
