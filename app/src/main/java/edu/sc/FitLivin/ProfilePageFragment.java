@@ -64,12 +64,12 @@ public class ProfilePageFragment extends Fragment {
         ParseQuery query = ParseQuery.getQuery("ProfileInfo"); //getting query
         query.whereExists("Weight");//setting constraints
         query.whereExists("Height");//setting constraints
-        query.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        query.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
         query.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
                 if (e == null  && objects.size()!= 0 ) { //if objects size is not 0
 
-                    if(objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername()))
+                    if(objects.get(0).get("UserP").equals(ParseUser.getCurrentUser()))
                     {
                         currentWeight.setText(objects.get(objects.size() - 1).get("Weight").toString()); //setting weight
                         currentHeight.setText(objects.get(objects.size() - 1).get("Height").toString()); //setting height

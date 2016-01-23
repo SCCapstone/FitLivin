@@ -147,6 +147,7 @@ import java.util.List;
         profileInfo.put("randomValue",Math.random());
         profileInfo.put("UserP",user1);
         profileInfo.put("username",user1.getUsername());
+        profileInfo.put("ObjectId",user1.getObjectId());
 
 
 
