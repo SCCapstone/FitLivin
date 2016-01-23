@@ -146,6 +146,7 @@ import java.util.List;
         profileInfo.put("Height", height);
         profileInfo.put("randomValue",Math.random());
         profileInfo.put("UserP",user1);
+        profileInfo.put("username",user1.getUsername());
 
 
 

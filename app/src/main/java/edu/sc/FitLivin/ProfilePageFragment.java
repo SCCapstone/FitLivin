@@ -17,8 +17,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
+
+import java.util.List;
 
 public class ProfilePageFragment extends Fragment {
 
@@ -42,16 +49,38 @@ public class ProfilePageFragment extends Fragment {
         final EditText editWeight = (EditText) v.findViewById(R.id.weight);
         //final TextView currentName = (TextView) v.findViewById(R.id.CurrN);
         final TextView currentHeight = (TextView) v.findViewById(R.id.CurrH);
-        final TextView currrentWeight = (TextView) v.findViewById(R.id.CurrW);
+        final TextView currentWeight = (TextView) v.findViewById(R.id.CurrW);
+
 
 
         //String name = MainActivity.name;
-        Integer height = MainActivity.height;
+        final Integer height = MainActivity.height;
         Integer weight = MainActivity.weight;
 
         //currentName.setText(name);
-        currrentWeight.setText("" + weight);
-        currentHeight.setText("" + height);
+       // currentWeight.setText("" + weight);
+        //currentHeight.setText("" + height);
+
+        ParseQuery query = ParseQuery.getQuery("ProfileInfo"); //getting query
+        query.whereExists("Weight");//setting constraints
+        query.whereExists("Height");//setting constraints
+        query.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        query.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
+                if (e == null  && objects.size()!= 0 ) { //if objects size is not 0
+
+                    if(objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername()))
+                    {
+                        currentWeight.setText(objects.get(objects.size() - 1).get("Weight").toString()); //setting weight
+                        currentHeight.setText(objects.get(objects.size() - 1).get("Height").toString()); //setting height
+                    }
+                } else {
+                    Toast.makeText(getActivity(), "Error you must enter data first", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+        });
+
 
         Button btn2 = (Button) v.findViewById(R.id.saveButtonProfile);
         VeiwName.setText(ParseUser.getCurrentUser().getUsername());
@@ -75,21 +104,19 @@ public class ProfilePageFragment extends Fragment {
                 //currentName.setText(name);
                 //info.setheight(height);
                 //info.setWeight(weight);
-                currrentWeight.setText("" + weight);
-                currentHeight.setText("" + height);
 
-                main.profileData( weight, height, ParseUser.getCurrentUser());
+
+
+                main.profileData(weight, height, ParseUser.getCurrentUser());
 
 
             }
         });
 
         Button btn = (Button) v.findViewById(R.id.profileBMIButton);
-        btn.setOnClickListener(new View.OnClickListener()
-        {
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 BMICAL_Fragment fragment1 = new BMICAL_Fragment();
                 FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
                 FragmentTransaction ft = fm.beginTransaction();
@@ -100,11 +127,9 @@ public class ProfilePageFragment extends Fragment {
         });
 
         Button backBtn = (Button) v.findViewById(R.id.profilePageBackButton);
-        backBtn.setOnClickListener(new View.OnClickListener()
-        {
+        backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 HomePageFragment fragment1 = new HomePageFragment();
                 FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
                 FragmentTransaction ft = fm.beginTransaction();
