@@ -16,10 +16,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+
+import java.util.List;
 
 public class BMICAL_Fragment extends Fragment {
 
-    private Integer BMI_Weight;
+   // private Integer BMI_Weight;
     private float multiplier = 703;
 
     public BMICAL_Fragment() {
@@ -35,10 +44,29 @@ public class BMICAL_Fragment extends Fragment {
         final TextView CurrH = (TextView) v.findViewById(R.id.CurrHeight);
         final TextView BMI = (TextView) v.findViewById(R.id.DisplayBMI);
         final TextView CurrW = (TextView) v.findViewById(R.id.CurrWeight);
-        CurrH.setText("" + MainActivity.height);
-        CurrW.setText("" + MainActivity.weight);
-        BMI_Weight = MainActivity.weight;
+       // CurrH.setText("" + MainActivity.height);
+       // CurrW.setText("" + MainActivity.weight);
+        //BMI_Weight = MainActivity.weight;
         Button cal = (Button) v.findViewById(R.id.CalculateBMI);
+
+        ParseQuery query = ParseQuery.getQuery("ProfileInfo"); //getting query
+        query.whereExists("Weight");//setting constraints
+        query.whereExists("Height");//setting constraints
+        query.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
+        query.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
+                if (e == null  && objects.size()!= 0 ) { //if objects size is not 0
+
+                    if(objects.get(0).get("UserP").equals(ParseUser.getCurrentUser()))
+                    {
+                        CurrW.setText(objects.get(objects.size() - 1).get("Weight").toString()); //setting weight
+                        CurrH.setText(objects.get(objects.size() - 1).get("Height").toString()); //setting height
+                    }
+                }
+            }
+
+        });
+
         cal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
