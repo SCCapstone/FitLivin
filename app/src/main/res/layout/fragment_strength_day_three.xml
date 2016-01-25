@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:id="@+id/imageView"
-            android:src="@drawable/dbrow"
+            android:src="@drawable/deadlift"
             android:layout_below="@+id/squat"
             android:layout_gravity="center_horizontal"/>
 
@@ -68,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/shrugpic"
-            android:src="@drawable/dbrow"
+            android:src="@drawable/shrug"
             android:layout_below="@+id/shrug"
             android:layout_gravity="center_horizontal"/>
 

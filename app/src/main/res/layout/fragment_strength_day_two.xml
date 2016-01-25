@@ -51,7 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/legpresspic"
-                android:src="@drawable/squat"
+                android:src="@drawable/legpress"
                 android:layout_gravity="center_horizontal"
                 android:layout_below="@+id/legpress"/>
 

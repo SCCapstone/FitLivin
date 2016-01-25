@@ -17,71 +17,77 @@
         android:layout_width="fill_parent"
         android:orientation="vertical"
         >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Close Grip Bench"
+            android:id="@+id/cpbench"
+            android:textColor="#ffffff"
+            android:textSize="32dp"
+            android:layout_gravity="center_horizontal"/>
+        <ImageView
+            android:scaleType="fitXY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:src="@drawable/closegrip"
+            android:layout_below="@+id/cpbench"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Barbell Curl"
+            android:id="@+id/benchDetail"
+            android:textColor="#ffffff"
+            android:textSize="32dp"
+            android:layout_below="@+id/imageView"
+            android:layout_gravity="center_horizontal"/>
+
+        <ImageView
+            android:scaleType="fitXY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bbcurl"
+            android:src="@drawable/barbellcurl"
+            android:layout_below="@+id/benchDetail"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tricep Pushdown"
+            android:id="@+id/flyText"
+            android:textColor="#ffffff"
+            android:textSize="32dp"
+            android:layout_below="@+id/bbcurl"
+            android:layout_gravity="center_horizontal"/>
+        <ImageView
+            android:scaleType="fitXY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pushdown"
+            android:src="@drawable/pushdown"
+            android:layout_below="@+id/flyText"
+            android:layout_gravity="center_horizontal"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BACK"
+            android:id="@+id/Sday4BACK"
+            android:layout_gravity="left|bottom"
+            android:layout_below="@+id/calfpresspic"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true" />
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Close Grip Bench
- Press"
-        android:id="@+id/cpbench"
-        android:layout_gravity="left|center_vertical"
-        android:layout_marginBottom="175dp"
-        android:textColor="#ffffff"
-        android:textSize="22dp" />
 
-    <TextView
-        android:layout_width="234dp"
-        android:layout_height="34dp"
-        android:text="Barbell Curl"
-        android:layout_marginBottom="50dp"
-        android:id="@+id/benchDetail"
-        android:layout_gravity="left|center_vertical"
-        android:textColor="#ffffff"
-        android:textSize="22dp"/>
 
-    <TextView
-        android:layout_width="219dp"
-        android:layout_height="63dp"
-        android:text="Tricep Pushdown"
-        android:id="@+id/flyText"
-        android:layout_gravity="bottom|center_vertical"
-        android:layout_marginBottom="150dp"
-        android:textColor="#ffffff"
-        android:textSize="25dp" />
 
-    <ImageView
-        android:scaleType="fitXY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:layout_gravity="right|top"
-        android:layout_marginBottom="150dp"
-        android:src="@drawable/closegrip" />
-    <ImageView
-        android:scaleType="fitXY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/bbcurl"
-        android:layout_gravity="right|center_vertical"
-        android:layout_marginBottom="35dp"
-        android:src="@drawable/barbellcurl" />
-    <ImageView
-        android:scaleType="fitXY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/pushdown"
-        android:layout_gravity="bottom|right"
-        android:layout_marginBottom="60dp"
-        android:src="@drawable/pushdown" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BACK"
-        android:id="@+id/Sday4BACK"
-        android:layout_gravity="center_horizontal|bottom" />
+
+
 
     </LinearLayout>>
 
