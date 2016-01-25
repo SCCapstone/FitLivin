@@ -18,69 +18,74 @@
         android:orientation="vertical"
         >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Deadlift
- - Hepburn Method"
-        android:id="@+id/squat"
-        android:layout_gravity="left|center_vertical"
-        android:layout_marginBottom="175dp"
-        android:textColor="#ffffff"
-        android:textSize="22dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DeadLift"
+            android:id="@+id/squat"
+            android:textColor="#ffffff"
+            android:textSize="32dp"
+            android:layout_gravity="center_horizontal" />
 
-    <ImageView
-        android:layout_width="176dp"
-        android:layout_height="176dp"
-        android:id="@+id/imageView"
-        android:layout_gravity="right|top"
-        android:layout_marginBottom="150dp"
-        android:src="@drawable/deadlift" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:id="@+id/imageView"
+            android:src="@drawable/dbrow"
+            android:layout_below="@+id/squat"
+            android:layout_gravity="center_horizontal"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Dumbbell Rows"
-        android:id="@+id/dbrow"
-        android:layout_gravity="left|center_vertical"
-        android:layout_marginBottom="20dp"
-        android:textColor="#ffffff"
-        android:textSize="22dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dumbbell Rows"
+            android:id="@+id/dbrow"
+            android:textColor="#ffffff"
+            android:textSize="32dp"
+            android:layout_below="@+id/imageView"
+            android:layout_gravity="center_horizontal"/>
 
-    <ImageView
-        android:layout_width="176dp"
-        android:layout_height="176dp"
-        android:id="@+id/legpresspic"
-        android:layout_gravity="right|center"
-        android:layout_marginBottom="10dp"
-        android:src="@drawable/dbrow" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/legpresspic"
+            android:src="@drawable/dbrow"
+            android:layout_below="@+id/dbrow"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Barbell Shrugs"
+            android:id="@+id/shrug"
+            android:textColor="#ffffff"
+            android:textSize="32dp"
+            android:layout_below="@+id/legpresspic"
+            android:layout_gravity="center_horizontal"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/shrugpic"
+            android:src="@drawable/dbrow"
+            android:layout_below="@+id/shrug"
+            android:layout_gravity="center_horizontal"/>
 
-    <TextView
-        android:layout_width="219dp"
-        android:layout_height="63dp"
-        android:text="Barbell Shrugs"
-        android:id="@+id/shrug"
-        android:layout_gravity="bottom|center_vertical"
-        android:layout_marginBottom="100dp"
-        android:textColor="#ffffff"
-        android:textSize="25dp" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BACK"
+            android:id="@+id/Sday3BACK"
+            android:layout_gravity="left|bottom"
+            android:layout_below="@+id/calfpresspic"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true" />
 
-    <ImageView
-        android:layout_width="179dp"
-        android:layout_height="120dp"
-        android:id="@+id/shrugpic"
-        android:layout_gravity="bottom|right"
-        android:layout_marginBottom="60dp"
-        android:src="@drawable/shrug" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BACK"
-        android:id="@+id/Sday3BACK"
-        android:layout_gravity="center_horizontal|bottom" />
+
+
+
+
+
+
 
     </LinearLayout>>
 
