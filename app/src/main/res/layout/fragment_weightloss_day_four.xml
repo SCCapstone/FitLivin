@@ -82,24 +82,27 @@
         android:textColor="#ffffff" />
 
     <ImageView
-        android:layout_width="201dp"
-        android:layout_height="117dp"
+        android:scaleType="fitXY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/rowImage"
         android:layout_gravity="right|center_vertical"
         android:layout_marginBottom="35dp"
         android:src="@drawable/rows" />
 
     <ImageView
-        android:layout_width="158dp"
-        android:layout_height="218dp"
+        android:scaleType="fitXY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/cardioImage"
         android:layout_gravity="right|bottom"
         android:layout_marginBottom="35dp"
         android:src="@drawable/cardio" />
 
     <ImageView
-        android:layout_width="121dp"
-        android:layout_height="185dp"
+        android:scaleType="fitXY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/jogginImage"
         android:layout_gravity="right|top"
         android:layout_marginBottom="35dp"

@@ -52,22 +52,25 @@
         android:textSize="25dp" />
 
     <ImageView
-        android:layout_width="176dp"
-        android:layout_height="176dp"
+        android:scaleType="fitXY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/imageView"
         android:layout_gravity="right|top"
         android:layout_marginBottom="150dp"
         android:src="@drawable/closegrip" />
     <ImageView
-        android:layout_width="179dp"
-        android:layout_height="179dp"
+        android:scaleType="fitXY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/bbcurl"
         android:layout_gravity="right|center_vertical"
         android:layout_marginBottom="35dp"
         android:src="@drawable/barbellcurl" />
     <ImageView
-        android:layout_width="171dp"
-        android:layout_height="179dp"
+        android:scaleType="fitXY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/pushdown"
         android:layout_gravity="bottom|right"
         android:layout_marginBottom="60dp"

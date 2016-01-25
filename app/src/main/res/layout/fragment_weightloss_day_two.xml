@@ -82,24 +82,27 @@
         android:textColor="#ffffff" />
 
     <ImageView
-        android:layout_width="175dp"
-        android:layout_height="175dp"
+        android:scaleType="fitXY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/cycleImage"
         android:layout_gravity="right|top"
         android:layout_marginBottom="35dp"
         android:src="@drawable/cycle" />
 
     <ImageView
-        android:layout_width="173dp"
-        android:layout_height="173dp"
+        android:scaleType="fitXY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/squatImage"
         android:layout_gravity="right|center_vertical"
         android:layout_marginBottom="35dp"
         android:src="@drawable/squat" />
 
     <ImageView
-        android:layout_width="133dp"
-        android:layout_height="183dp"
+        android:scaleType="fitXY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/plankImage"
         android:layout_gravity="right|bottom"
         android:layout_marginBottom="35dp"

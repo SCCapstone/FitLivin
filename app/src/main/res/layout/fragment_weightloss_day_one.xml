@@ -36,8 +36,9 @@
         android:textColor="#ffffff" />
 
     <ImageView
-        android:layout_width="160dp"
-        android:layout_height="114dp"
+        android:scaleType="fitXY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/runningImage"
         android:layout_gravity="right|top"
         android:layout_marginBottom="200dp"
@@ -56,8 +57,9 @@
         android:id="@+id/walkingLungesText" />
 
     <ImageView
-        android:layout_width="146dp"
-        android:layout_height="146dp"
+        android:scaleType="fitXY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/lungesImage"
         android:layout_gravity="right|center_vertical"
         android:layout_marginBottom="35dp"
@@ -93,8 +95,9 @@
         android:textSize="25dp" />
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="133dp"
+        android:scaleType="fitXY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/jumpRopeImage"
         android:layout_gravity="right|bottom"
         android:layout_marginBottom="70dp"

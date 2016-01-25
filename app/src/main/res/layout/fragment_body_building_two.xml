@@ -35,8 +35,9 @@
         android:textColor="#ffffff" />
 
     <ImageView
-        android:layout_width="141dp"
-        android:layout_height="141dp"
+        android:scaleType="fitXY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/benchImage"
         android:layout_gravity="right|top"
         android:layout_marginBottom="150dp"
@@ -53,8 +54,9 @@
         android:textSize="25dp" />
 
     <ImageView
-        android:layout_width="126dp"
-        android:layout_height="126dp"
+        android:scaleType="fitXY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/flyImage"
         android:layout_gravity="right|center_vertical"
         android:layout_marginBottom="35dp"
@@ -89,8 +91,9 @@
         android:textSize="25dp" />
 
     <ImageView
-        android:layout_width="153dp"
-        android:layout_height="153dp"
+        android:scaleType="fitXY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/pushupImage"
         android:layout_gravity="right|bottom"
         android:layout_marginBottom="70dp"

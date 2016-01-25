@@ -28,6 +28,7 @@
             android:layout_gravity="center_horizontal" />
 
         <ImageView
+            android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:id="@+id/imageView"
@@ -46,6 +47,7 @@
             android:layout_gravity="center_horizontal"/>
 
         <ImageView
+            android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/legpresspic"
@@ -62,6 +64,7 @@
             android:layout_below="@+id/legpresspic"
             android:layout_gravity="center_horizontal"/>
         <ImageView
+            android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/shrugpic"

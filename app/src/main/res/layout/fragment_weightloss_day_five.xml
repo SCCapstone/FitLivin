@@ -82,24 +82,27 @@
         android:textColor="#ffffff" />
 
     <ImageView
-        android:layout_width="167dp"
-        android:layout_height="167dp"
+        android:scaleType="fitXY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/runningImage"
         android:layout_gravity="right|top"
         android:layout_marginBottom="35dp"
         android:src="@drawable/running" />
 
     <ImageView
-        android:layout_width="201dp"
-        android:layout_height="117dp"
+        android:scaleType="fitXY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/powerjumpImage"
         android:layout_gravity="right|center_vertical"
         android:layout_marginBottom="35dp"
         android:src="@drawable/powerjump" />
 
     <ImageView
-        android:layout_width="176dp"
-        android:layout_height="242dp"
+        android:scaleType="fitXY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/burpeesImage"
         android:layout_gravity="right|bottom"
         android:layout_marginBottom="35dp"
