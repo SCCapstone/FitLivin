@@ -11,6 +11,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,9 +74,10 @@ public class ProfilePageFragment extends Fragment {
                     {
                         currentWeight.setText(objects.get(objects.size() - 1).get("Weight").toString()); //setting weight
                         currentHeight.setText(objects.get(objects.size() - 1).get("Height").toString()); //setting height
+                        Log.d("F", "weight");
                     }
                 } else {
-                    Toast.makeText(getActivity(), "Error you must enter data first", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Error you must enter data first.", Toast.LENGTH_SHORT).show();
                 }
             }
 
