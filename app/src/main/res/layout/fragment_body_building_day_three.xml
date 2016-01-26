@@ -14,47 +14,61 @@
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"
         android:orientation="vertical"
-        >
-    <TextView
+        android:weightSum="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="BODY BUILDING DAY 3"
+            android:id="@+id/bbDay3"
+            android:layout_gravity="center_horizontal|top"
+            android:textColor="#ffffff"
+
+            android:layout_above="@+id/hammercurlText"/>
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Hammer Curl"
         android:id="@+id/hammercurlText"
         android:layout_gravity="left|center_vertical"
-        android:layout_marginBottom="175dp"
+
         android:textColor="#ffffff"
         android:textSize="25dp" />
 
-    <TextView
+        <ImageView
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:id="@+id/hammerCurlImage"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/hammercurl"
+            android:layout_below="@+id/hammercurlText"
+            android:layout_above="@+id/hammerCurlDetail"
+            android:layout_weight="0.03" />
+
+        <TextView
         android:layout_width="234dp"
         android:layout_height="34dp"
         android:text="4 Sets of 10-12 Repetitions. "
-        android:layout_marginBottom="155dp"
+        android:layout_marginBottom="20dp"
         android:id="@+id/hammerCurlDetail"
         android:layout_gravity="left|center_vertical"
         android:textColor="#ffffff" />
 
-    <ImageView
-        android:scaleType="fitXY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/hammerCurlImage"
-        android:layout_gravity="right|top"
-        android:layout_marginBottom="120dp"
-
-        android:layout_marginTop="30dp"
-        android:src="@drawable/hammercurl" />
-
-    <TextView
+        <TextView
         android:layout_width="219dp"
         android:layout_height="63dp"
         android:text="Preacher Curl"
         android:id="@+id/preacherCurlText"
         android:layout_gravity="left|center_vertical"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="10dp"
         android:textColor="#ffffff"
-        android:textSize="25dp" />
+        android:textSize="25dp"
+            android:layout_below="@+id/hammerCurlDetail"
+            android:layout_above="@+id/preacherCurlImage"
+            />
 
     <ImageView
         android:scaleType="fitXY"
@@ -63,7 +77,10 @@
         android:id="@+id/preacherCurlImage"
         android:layout_gravity="right|center_vertical"
         android:layout_marginBottom="35dp"
-        android:src="@drawable/preachercurl" />
+        android:src="@drawable/preachercurl"
+        android:layout_below="@+id/preacherCurlText"
+        android:layout_above="@+id/preacherCurlDetail"
+        />
 
     <TextView
         android:layout_width="206dp"
@@ -72,7 +89,10 @@
         android:id="@+id/preacherCurlDetail"
         android:layout_gravity="left|center_vertical"
         android:layout_marginBottom="20dp"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:layout_below="@+id/preacherCurlImage"
+        android:layout_above="@+id/closegripPushupDetail"
+        />
 
     <TextView
         android:layout_width="177dp"
@@ -81,7 +101,9 @@
         android:id="@+id/closegripPushupDetail"
         android:layout_gravity="left|bottom"
         android:layout_marginBottom="90dp"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:layout_below="@+id/preacherCurlDetail"
+        android:layout_above="@+id/closegripPushupText"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -91,7 +113,9 @@
         android:layout_gravity="left|bottom"
         android:layout_marginBottom="125dp"
         android:textColor="#ffffff"
-        android:textSize="25dp" />
+        android:textSize="25dp"
+        android:layout_below="@+id/closegripPushupDetail"
+        android:layout_above="@+id/closegrippushupImage"/>
 
     <ImageView
         android:scaleType="fitXY"
@@ -100,16 +124,12 @@
         android:id="@+id/closegrippushupImage"
         android:layout_gravity="right|bottom"
         android:layout_marginBottom="70dp"
-        android:src="@drawable/closegrippushup" />
+        android:src="@drawable/closegrippushup"
+        android:layout_below="@+id/closegripPushupText"
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="BODY BUILDING DAY 3"
-        android:id="@+id/bbDay3"
-        android:layout_gravity="center_horizontal|top"
-        android:textColor="#ffffff" />
+        />
+
+
 
     <Button
         android:layout_width="wrap_content"
