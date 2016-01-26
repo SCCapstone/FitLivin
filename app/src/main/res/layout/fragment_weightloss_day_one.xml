@@ -15,116 +15,118 @@
         android:orientation="vertical"
         >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="1 mile warm up run"
-        android:id="@+id/warmupRunText"
-        android:layout_gravity="left|center_vertical"
-        android:layout_marginBottom="175dp"
-        android:textColor="#ffffff"
-        android:textSize="25dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="WEIGHT LOSS DAY 1"
+            android:id="@+id/wlDay1"
+            android:layout_gravity="center_horizontal|top"
+            android:textColor="#ffffff" />
 
-    <TextView
-        android:layout_width="234dp"
-        android:layout_height="34dp"
-        android:text="Choice of treadmill or laps around track"
-        android:layout_marginBottom="155dp"
-        android:id="@+id/warmupDetail"
-        android:layout_gravity="left|center_vertical"
-        android:textColor="#ffffff" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 mile warm up run"
+            android:id="@+id/warmupRunText"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffffff"
+            android:textSize="32dp" />
 
-    <ImageView
-        android:scaleType="fitXY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/runningImage"
-        android:layout_gravity="right|top"
-        android:layout_marginBottom="200dp"
-        android:src="@drawable/running"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="20dp" />
+        <ImageView
+            android:scaleType="fitXY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/runningImage"
+            android:src="@drawable/running"
+            android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/warmupRunText"
+            />
 
-    <TextView
-        android:layout_width="219dp"
-        android:layout_height="63dp"
-        android:text="Walking lunges"
-        android:layout_gravity="left|center_vertical"
-        android:layout_marginBottom="40dp"
-        android:textColor="#ffffff"
-        android:textSize="25dp"
-        android:id="@+id/walkingLungesText" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choice of treadmill or laps around track"
+            android:id="@+id/warmupDetail"
+            android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/runningImage"
+            android:textColor="#ffffff" />
 
-    <ImageView
-        android:scaleType="fitXY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lungesImage"
-        android:layout_gravity="right|center_vertical"
-        android:layout_marginBottom="35dp"
-        android:src="@drawable/lunges"
-        android:layout_marginRight="20dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Walking lunges"
+            android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/warmupDetail"
+            android:textColor="#ffffff"
+            android:textSize="32dp"
+            android:id="@+id/walkingLungesText" />
 
-    <TextView
-        android:layout_width="206dp"
-        android:layout_height="49dp"
-        android:text="3 Sets of 12 lounger per leg with 50-100 lbs on shoulders (depending on skill level)"
-        android:id="@+id/lungesDetail"
-        android:layout_gravity="left|center_vertical"
-        android:layout_marginBottom="20dp"
-        android:textColor="#ffffff" />
+        <ImageView
+            android:scaleType="fitXY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lungesImage"
+            android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/walkingLungesText"
+            android:src="@drawable/lunges"
 
-    <TextView
-        android:layout_width="177dp"
-        android:layout_height="34dp"
-        android:text="4 sets of 30 seconds"
-        android:id="@+id/jumpropeDetail"
-        android:layout_gravity="left|bottom"
-        android:layout_marginBottom="120dp"
-        android:textColor="#ffffff" />
+             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3 Sets of 12 lounger per leg with 50-100 lbs on shoulders (depending on skill level)"
+            android:id="@+id/lungesDetail"
+            android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/lungesImage"
+            android:textColor="#ffffff" />
 
-    <TextView
-        android:layout_width="178dp"
-        android:layout_height="59dp"
-        android:text="Jump rope"
-        android:id="@+id/jumpropeText"
-        android:layout_gravity="left|bottom"
-        android:layout_marginBottom="125dp"
-        android:textColor="#ffffff"
-        android:textSize="25dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jump rope"
+            android:id="@+id/jumpropeText"
+            android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/lungesDetail"
+            android:textColor="#ffffff"
+            android:textSize="32dp"
+            />
 
-    <ImageView
-        android:scaleType="fitXY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/jumpRopeImage"
-        android:layout_gravity="right|bottom"
-        android:layout_marginBottom="70dp"
-        android:src="@drawable/jump_rope" />
+        <ImageView
+            android:scaleType="fitXY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/jumpRopeImage"
+            android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/jumpropeText"
+            android:src="@drawable/jump_rope"
+            />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="WEIGHT LOSS DAY 1"
-        android:id="@+id/wlDay1"
-        android:layout_gravity="center_horizontal|top"
-        android:textColor="#ffffff" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4 sets of 30 seconds"
+            android:id="@+id/jumpropeDetail"
+            android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/jumpRopeImage"
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Workout Complete!"
-        android:id="@+id/completeDay1wl"
-        android:layout_gravity="right|bottom" />
+            android:textColor="#ffffff" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BACK"
-        android:id="@+id/WLBack"
-        android:layout_gravity="left|bottom" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Workout Complete!"
+            android:id="@+id/completeDay1wl"
+            android:layout_gravity="right|bottom" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BACK"
+            android:id="@+id/WLBack"
+            android:layout_gravity="left|bottom" />
+
+
 
     </LinearLayout>>
 
