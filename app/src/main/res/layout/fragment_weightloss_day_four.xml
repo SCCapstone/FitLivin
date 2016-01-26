@@ -14,114 +14,117 @@
             android:orientation="vertical"
             >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="1/2 mile warm up jog"
-        android:id="@+id/warmupJogText"
-        android:layout_gravity="left|center_vertical"
-        android:layout_marginBottom="175dp"
-        android:textColor="#ffffff"
-        android:textSize="25dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="WEIGHT LOSS DAY 4"
+                android:id="@+id/wlDay4"
+                android:layout_gravity="center_horizontal|top"
+                android:textColor="#ffffff" />
 
-    <TextView
-        android:layout_width="234dp"
-        android:layout_height="34dp"
-        android:layout_marginBottom="155dp"
-        android:id="@+id/warmupDetail"
-        android:layout_gravity="left|center_vertical"
-        android:textColor="#ffffff"
-        android:text="Choice of treadmill or laps around track" />
 
-    <TextView
-        android:layout_width="219dp"
-        android:layout_height="63dp"
-        android:text="Rows"
-        android:layout_gravity="left|center_vertical"
-        android:layout_marginBottom="40dp"
-        android:textColor="#ffffff"
-        android:textSize="25dp"
-        android:id="@+id/rowText" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="1/2 mile warm up jog"
+                android:id="@+id/warmupJogText"
+                android:layout_gravity="center_horizontal"
+                android:layout_below = "@+id/w1Day4"
+                android:textColor="#ffffff"
+                android:textSize="32dp" />
 
-    <TextView
-        android:layout_width="206dp"
-        android:layout_height="49dp"
-        android:text="4 Sets of 12 reps (minimal rest)"
-        android:id="@+id/rowDetail"
-        android:layout_gravity="left|center_vertical"
-        android:layout_marginBottom="20dp"
-        android:textColor="#ffffff" />
+            <ImageView
+                android:scaleType="fitXY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/jogginImage"
+                android:layout_gravity="center_horizontal"
+                android:layout_below = "@+id/warmupJogText"
+                android:src="@drawable/jogging" />
 
-    <TextView
-        android:layout_width="177dp"
-        android:layout_height="34dp"
-        android:text="10 - 30 minutes"
-        android:id="@+id/cardioDetail"
-        android:layout_gravity="left|bottom"
-        android:layout_marginBottom="120dp"
-        android:textColor="#ffffff" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below = "@+id/jogginImage"
+                android:id="@+id/warmupDetail"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#ffffff"
+                android:text="Choice of treadmill or laps around track" />
 
-    <TextView
-        android:layout_width="178dp"
-        android:layout_height="59dp"
-        android:text="Cardio"
-        android:id="@+id/cardioText"
-        android:layout_gravity="left|bottom"
-        android:layout_marginBottom="125dp"
-        android:textColor="#ffffff"
-        android:textSize="25dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rows"
+                android:layout_gravity="center_horizontal"
+                android:layout_below = "@+id/warmupDetail"
+                android:textColor="#ffffff"
+                android:textSize="32dp"
+                android:id="@+id/rowText" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="WEIGHT LOSS DAY 4"
-        android:id="@+id/wlDay4"
-        android:layout_gravity="center_horizontal|top"
-        android:textColor="#ffffff" />
+            <ImageView
+                android:scaleType="fitXY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rowImage"
+                android:layout_gravity="center_horizontal"
+                android:layout_below = "@+id/rowText"
+                android:src="@drawable/rows" />
 
-    <ImageView
-        android:scaleType="fitXY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/rowImage"
-        android:layout_gravity="right|center_vertical"
-        android:layout_marginBottom="35dp"
-        android:src="@drawable/rows" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4 Sets of 12 reps (minimal rest)"
+                android:id="@+id/rowDetail"
+                android:layout_gravity="center_horizontal"
+                android:layout_below = "@+id/rowImage"
+                android:textColor="#ffffff" />
 
-    <ImageView
-        android:scaleType="fitXY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/cardioImage"
-        android:layout_gravity="right|bottom"
-        android:layout_marginBottom="35dp"
-        android:src="@drawable/cardio" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cardio"
+                android:id="@+id/cardioText"
+                android:layout_gravity="center_horizontal"
+                android:layout_below = "@+id/rowDetail"
+                android:textColor="#ffffff"
+                android:textSize="32dp" />
 
-    <ImageView
-        android:scaleType="fitXY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/jogginImage"
-        android:layout_gravity="right|top"
-        android:layout_marginBottom="35dp"
-        android:src="@drawable/jogging" />
+            <ImageView
+                android:scaleType="fitXY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cardioImage"
+                android:layout_gravity="center_horizontal"
+                android:layout_below = "@+id/cardioText"
+                android:src="@drawable/cardio" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Workout Complete!"
-        android:id="@+id/completeDay1wl"
-        android:layout_gravity="right|bottom" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10 - 30 minutes"
+                android:id="@+id/cardioDetail"
+                android:layout_gravity="center_horizontal"
+                android:layout_below = "@+id/cardioImage"
+                android:textColor="#ffffff" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BACK"
-        android:id="@+id/WLBack"
-        android:layout_gravity="left|bottom" />
-</LinearLayout>>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Workout Complete!"
+                android:id="@+id/completeDay1wl"
+                android:layout_gravity="right|bottom" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BACK"
+                android:id="@+id/WLBack"
+                android:layout_gravity="left|bottom" />
+
+
+        </LinearLayout>>
 
     </ScrollView>
 
