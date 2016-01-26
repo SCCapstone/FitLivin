@@ -21,30 +21,32 @@
         android:text="Barbell Back Squat"
         android:id="@+id/squatText"
         android:layout_gravity="left|center_vertical"
-        android:layout_marginBottom="175dp"
+        android:layout_marginBottom="5dp"
         android:textColor="#ffffff"
-        android:textSize="25dp" />
+        android:textSize="25dp"
+        android:layout_below="@+id/bbDay1"/>
 
-    <TextView
+        <ImageView
+            android:scaleType="fitXY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/squatImage"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/squat"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/squatText"
+            android:layout_above="@+id/benchDetail"/>
+
+        <TextView
         android:layout_width="234dp"
         android:layout_height="34dp"
         android:text="4 Sets of 10-12 Repetitions. (1 minute rest between sets)"
-        android:layout_marginBottom="155dp"
+        android:layout_marginBottom="55dp"
         android:id="@+id/benchDetail"
         android:layout_gravity="left|center_vertical"
         android:textColor="#ffffff" />
 
-    <ImageView
-        android:scaleType="fitXY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/squatImage"
-        android:layout_gravity="right|top"
-        android:layout_marginBottom="200dp"
-        android:src="@drawable/squat"
-        android:layout_marginTop="40dp" />
-
-    <TextView
+        <TextView
         android:layout_width="220dp"
         android:layout_height="63dp"
         android:text="Leg Extensions"
@@ -61,7 +63,9 @@
         android:id="@+id/legExtensionImage"
         android:layout_gravity="right|center_vertical"
         android:layout_marginBottom="35dp"
-        android:src="@drawable/legextension" />
+        android:src="@drawable/legextension"
+        android:layout_below="@+id/extensionText"
+        android:layout_above="@+id/extensionDetail"/>
 
     <TextView
         android:layout_width="206dp"
@@ -107,7 +111,8 @@
         android:text="BODY BUILDING DAY 1"
         android:id="@+id/bbDay1"
         android:layout_gravity="center_horizontal|top"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:layout_above="@+id/squatText"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -125,4 +130,5 @@
     </LinearLayout>>
 
     </ScrollView>
+
 </FrameLayout>
