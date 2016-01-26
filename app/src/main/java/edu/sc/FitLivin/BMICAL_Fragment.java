@@ -16,7 +16,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -72,18 +71,44 @@ public class BMICAL_Fragment extends Fragment {
             public void onClick(View v) {
                // BMI_Weight = BMI_Weight + 50;
                 //BMI.setText("" + BMI_Weight);
-                float bmiValue = calculateBMI(MainActivity.weight, MainActivity.height);
-                if (bmiValue < 16) {
-                    BMI.setText("BMI: " + bmiValue + ". You are severely underweight. Get help!");
-                } else if (bmiValue < 18.5) {
-                    BMI.setText("BMI: " + bmiValue + ". You are underweight. Eat something!");
-                } else if (bmiValue < 25) {
-                    BMI.setText("BMI: " + bmiValue + ". You are average. Keep doing you.");
-                } else if (bmiValue < 30) {
-                    BMI.setText("BMI: " + bmiValue + ". You are overweight. Go for a run.");
-                } else {
-                    BMI.setText("BMI: " + bmiValue + ". You are obese. Get a hold of yourself!");
-                }
+
+
+
+                ParseQuery query = ParseQuery.getQuery("ProfileInfo"); //getting query
+                query.whereExists("Weight");//setting constraints
+                query.whereExists("Height");//setting constraints
+                query.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
+                query.findInBackground(new FindCallback<ParseObject>() {
+                    public void done(List<ParseObject> objects, ParseException e) {
+                        if (e == null  && objects.size()!= 0 ) { //if objects size is not 0
+
+                            if(objects.get(0).get("UserP").equals(ParseUser.getCurrentUser()))
+                            {
+                                float currweight = objects.get(objects.size() - 1).get("Weight").hashCode(); //setting weight
+                                float currheight = objects.get(objects.size() - 1).get("Height").hashCode(); //setting height
+
+                                float bmiValue = calculateBMI(currweight, currheight);
+                                if (bmiValue < 16) {
+                                    BMI.setText("BMI: " + bmiValue + ". You are severely underweight. Get help!");
+                                } else if (bmiValue < 18.5) {
+                                    BMI.setText("BMI: " + bmiValue + ". You are underweight. Eat something!");
+                                } else if (bmiValue < 25) {
+                                    BMI.setText("BMI: " + bmiValue + ". You are average. Keep doing you.");
+                                } else if (bmiValue < 30) {
+                                    BMI.setText("BMI: " + bmiValue + ". You are overweight. Go for a run.");
+                                } else {
+                                    BMI.setText("BMI: " + bmiValue + ". You are obese. Get a hold of yourself!");
+                                }
+
+                            }
+                        }
+                    }
+
+                });
+
+
+
+
             }
         });
 
