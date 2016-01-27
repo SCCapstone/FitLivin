@@ -17,56 +17,9 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Nutrition Calculator"
             android:id="@+id/textView3"
-            android:background="#070707"
             android:layout_gravity="center_horizontal|top"
             android:textColor="#ffffff"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="45dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="44dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Enter Your Weight:"
-            android:id="@+id/textView16"
-            android:layout_gravity="left|center_vertical"
-            android:textColor="#ffffff"
-            android:layout_below="@+id/textView3"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="67dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="To Maintain:"
-            android:id="@+id/textView17"
-            android:layout_gravity="center_horizontal|bottom"
-            android:textColor="#ffffff"
-            android:layout_centerVertical="true"
-            android:layout_alignStart="@+id/textView18" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="To Gain:"
-            android:id="@+id/textView18"
-            android:layout_gravity="center_horizontal|bottom"
-            android:textColor="#ffffff"
-            android:layout_below="@+id/textView17"
-            android:layout_alignStart="@+id/textView19" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="To Lose:"
-            android:id="@+id/textView19"
-            android:layout_gravity="center_horizontal|bottom"
-            android:textColor="#ffffff"
-            android:layout_below="@+id/textView18"
             android:layout_centerHorizontal="true" />
 
         <Button
@@ -85,6 +38,95 @@
             android:id="@+id/NutBack"
             android:layout_alignParentBottom="true"
             android:layout_gravity="left|bottom" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Low Physical Activity:"
+            android:id="@+id/lowText"
+            android:textColor="#ffffff"
+            android:layout_gravity="left|center_vertical"
+            android:layout_below="@+id/textView3"
+            android:textSize="20dp"
+            android:textIsSelectable="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:id="@+id/lowCalories"
+            android:layout_below="@+id/lowText"
+            android:textColor="#ffffff"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" calories needed a day to maintain."
+            android:id="@+id/lowMessage"
+            android:layout_below="@+id/lowText"
+            android:textColor="#ffffff"
+            android:layout_toEndOf="@+id/lowCalories" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Moderate Physical Activity:"
+            android:id="@+id/modText"
+            android:textColor="#ffffff"
+            android:layout_gravity="left|center_vertical"
+            android:layout_below="@+id/lowMessage"
+            android:textSize="20dp"
+            android:textIsSelectable="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:id="@+id/modCalories"
+            android:layout_below="@+id/modText"
+            android:textColor="#ffffff"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text= " calories needed a day to maintain."
+            android:id="@+id/modMessage"
+            android:layout_below="@+id/modText"
+            android:textColor="#ffffff"
+            android:layout_toEndOf="@+id/modCalories" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="High Physical Activity:"
+            android:id="@+id/highText"
+            android:textColor="#ffffff"
+            android:layout_gravity="left|center_vertical"
+            android:layout_below="@+id/modMessage"
+            android:textSize="20dp"
+            android:textIsSelectable="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:id="@+id/highCalories"
+            android:layout_below="@+id/highText"
+            android:textColor="#ffffff"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text= " calories needed a day to maintain."
+            android:id="@+id/highMessage"
+            android:layout_below="@+id/highText"
+            android:textColor="#ffffff"
+            android:layout_toEndOf="@+id/highCalories" />
 
     </RelativeLayout>
 

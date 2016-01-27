@@ -4,8 +4,11 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.parse.ParseException;
@@ -25,16 +28,29 @@ public class SignupActivity extends Activity {
     private EditText emailView;
     private EditText phnumberView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
 
         usernameView = (EditText) findViewById(R.id.username_in);
         passwordView = (EditText) findViewById(R.id.password_in);
         passwordAgainView = (EditText) findViewById(R.id.retypepasswrd_in);
         emailView = (EditText) findViewById(R.id.email_in);
         phnumberView = (EditText) findViewById(R.id.phonenumber_in);
+
+        RadioButton maleRadioButton, femaleRadioButton;
+
+        maleRadioButton = (RadioButton) findViewById(R.id.radio0);
+        femaleRadioButton = (RadioButton) findViewById(R.id.radio1);
+        if (maleRadioButton.isChecked() || femaleRadioButton.isChecked()) {
+            Log.d("QAOD", "Gender is Selected");
+        } else {
+            Toast.makeText(getApplicationContext(), "Please select Gender", Toast.LENGTH_SHORT).show();
+            Log.d("QAOD", "Gender is Null");
+        }
 
         findViewById(R.id.email_signup_button_in).setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -90,6 +106,18 @@ public class SignupActivity extends Activity {
                 user.setPassword(passwordView.getText().toString());
                 user.setEmail(emailView.getText().toString());
                 user.put("phone", phnumberView.getText().toString());
+
+                RadioButton maleRadioButton, femaleRadioButton;
+
+                maleRadioButton = (RadioButton) findViewById(R.id.radio0);
+                femaleRadioButton = (RadioButton) findViewById(R.id.radio1);
+                if (maleRadioButton.isChecked()) {
+
+                 user.put("gender","male");
+                }
+                if (femaleRadioButton.isChecked()) {
+                    user.put("gender","female");
+                }
                 // Call the Parse signup method
                 user.signUpInBackground(new SignUpCallback() {
 

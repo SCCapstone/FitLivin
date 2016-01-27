@@ -43,6 +43,7 @@ public class BMICAL_Fragment extends Fragment {
         final TextView CurrH = (TextView) v.findViewById(R.id.CurrHeight);
         final TextView BMI = (TextView) v.findViewById(R.id.DisplayBMI);
         final TextView CurrW = (TextView) v.findViewById(R.id.CurrWeight);
+        final TextView weightT = (TextView) v.findViewById(R.id.weightTest);
        // CurrH.setText("" + MainActivity.height);
        // CurrW.setText("" + MainActivity.weight);
         //BMI_Weight = MainActivity.weight;
@@ -54,10 +55,13 @@ public class BMICAL_Fragment extends Fragment {
         query.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
         query.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
+
                 if (e == null  && objects.size()!= 0 ) { //if objects size is not 0
 
                     if(objects.get(0).get("UserP").equals(ParseUser.getCurrentUser()))
                     {
+                        int x = (Integer)objects.get(objects.size() - 1).get("Weight");
+                        weightT.setText("" + x);
                         CurrW.setText(objects.get(objects.size() - 1).get("Weight").toString()); //setting weight
                         CurrH.setText(objects.get(objects.size() - 1).get("Height").toString()); //setting height
                     }

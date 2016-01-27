@@ -41,7 +41,9 @@
                 android:textColor="#ffffff"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:textSize="20dp"
+                android:textIsSelectable="true" />
             <EditText
                 android:id="@+id/username_in"
                 android:layout_width="match_parent"
@@ -51,7 +53,9 @@
                 android:textColor="#ffffff"
                 android:inputType="textPersonName"
                 android:maxLines="1"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:textSize="20dp"
+                android:textIsSelectable="true" />
 
             <EditText
                 android:id="@+id/password_in"
@@ -62,7 +66,9 @@
                 android:textColor="#ffffff"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:textSize="20dp"
+                android:textIsSelectable="false" />
             <EditText
                 android:id="@+id/retypepasswrd_in"
                 android:layout_width="match_parent"
@@ -72,7 +78,9 @@
                 android:textColor="#ffffff"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:textSize="20dp"
+                android:textIsSelectable="false" />
             <EditText
                 android:id="@+id/phonenumber_in"
                 android:layout_width="match_parent"
@@ -83,6 +91,26 @@
                 android:inputType="phone"
                 android:maxLines="1"
                 android:singleLine="true" />
+            <RadioGroup android:layout_height="wrap_content" android:id="@+id/gender_group"
+                android:layout_width="match_parent">
+                <RadioButton android:text="Male"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/radio0"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:textColor="#f7fffa"
+                    android:textSize="20dp"
+                    />
+
+                <RadioButton android:text="Female"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/radio1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fdfff5"
+                    android:textSize="20dp"
+                    />
+
+            </RadioGroup>
 
 
             <Button

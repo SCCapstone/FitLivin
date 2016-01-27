@@ -106,6 +106,7 @@ public class ProfilePageFragment extends Fragment {
                 //currentName.setText(name);
                 //info.setheight(height);
                 //info.setWeight(weight);
+                //String s = ParseUser.getCurrentUser().getUsername();
 
 
 
