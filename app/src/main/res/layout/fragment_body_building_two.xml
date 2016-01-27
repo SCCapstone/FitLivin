@@ -13,7 +13,14 @@
             android:layout_width="fill_parent"
             android:orientation="vertical"
             >
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="BODY BUILDING DAY 2"
+                android:id="@+id/textView24"
+                android:layout_gravity="center_horizontal|top"
+                android:textColor="#ffffff" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="50dp"
@@ -41,7 +48,10 @@
         android:id="@+id/benchImage"
         android:layout_gravity="right|top"
         android:layout_marginBottom="150dp"
-        android:src="@drawable/bench" />
+        android:src="@drawable/bench"
+        android:layout_below="@+id/benchDetail"
+        android:layout_above="@+id/flyText"
+        />
 
     <TextView
         android:layout_width="219dp"
@@ -51,16 +61,10 @@
         android:layout_gravity="left|center_vertical"
         android:layout_marginBottom="40dp"
         android:textColor="#ffffff"
-        android:textSize="25dp" />
-
-    <ImageView
-        android:scaleType="fitXY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/flyImage"
-        android:layout_gravity="right|center_vertical"
-        android:layout_marginBottom="35dp"
-        android:src="@drawable/flyes" />
+        android:textSize="25dp"
+        android:layout_below="@+id/bench"
+        android:layout_above="@+id/flyDetail"
+        />
 
     <TextView
         android:layout_width="206dp"
@@ -69,16 +73,23 @@
         android:id="@+id/flyDetail"
         android:layout_gravity="left|center_vertical"
         android:layout_marginBottom="20dp"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:layout_below="@+id/flyText"
+        android:layout_above="@+id/flyImage"
+        />
 
-    <TextView
-        android:layout_width="177dp"
-        android:layout_height="34dp"
-        android:text="4 sets of 10-30 concentrated repetitions (Depending on skill level)."
-        android:id="@+id/pushupDetail"
-        android:layout_gravity="left|bottom"
-        android:layout_marginBottom="120dp"
-        android:textColor="#ffffff" />
+
+            <ImageView
+                android:scaleType="fitXY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/flyImage"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginBottom="35dp"
+                android:src="@drawable/flyes"
+                android:layout_below="@+id/flyDetail"
+                android:layout_above="@+id/pushupText"
+                />
 
     <TextView
         android:layout_width="132dp"
@@ -88,7 +99,24 @@
         android:layout_gravity="left|bottom"
         android:layout_marginBottom="125dp"
         android:textColor="#ffffff"
-        android:textSize="25dp" />
+        android:textSize="25dp"
+        android:layout_below="@+id/flyImage"
+        android:layout_above="@+id/pushupDetail"
+        />
+
+
+            <TextView
+                android:layout_width="177dp"
+                android:layout_height="34dp"
+                android:text="4 sets of 10-30 concentrated repetitions (Depending on skill level)."
+                android:id="@+id/pushupDetail"
+                android:layout_gravity="left|bottom"
+                android:layout_marginBottom="120dp"
+                android:textColor="#ffffff"
+                android:layout_below="@+id/pushupText"
+                android:layout_above="@+id/pushupImage"
+
+                />
 
     <ImageView
         android:scaleType="fitXY"
@@ -99,14 +127,7 @@
         android:layout_marginBottom="70dp"
         android:src="@drawable/pushup" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="BODY BUILDING"
-        android:id="@+id/textView24"
-        android:layout_gravity="center_horizontal|top"
-        android:textColor="#ffffff" />
+
 
     <Button
         android:layout_width="wrap_content"
