@@ -107,6 +107,7 @@ public class SignupActivity extends Activity {
                 user.setEmail(emailView.getText().toString());
                 user.put("phone", phnumberView.getText().toString());
 
+
                 RadioButton maleRadioButton, femaleRadioButton;
 
                 maleRadioButton = (RadioButton) findViewById(R.id.radio0);
