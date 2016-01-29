@@ -19,17 +19,33 @@
             android:id="@+id/textView3"
             android:layout_gravity="center_horizontal|top"
             android:textColor="#ffffff"
+            android:layout_marginBottom="20dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
 
         <Button
-            android:layout_width="141dp"
-            android:layout_height="wrap_content"
-            android:text="Calculate"
-            android:id="@+id/button3"
-            android:layout_gravity="right|bottom"
-            android:layout_alignTop="@+id/NutBack"
-            android:layout_alignParentEnd="true" />
+            android:layout_width="100dp"
+            android:layout_height="55dp"
+            android:text="Maintain"
+            android:id="@+id/maintainButton"
+            android:layout_below="@+id/textView3"
+            android:layout_centerHorizontal="true" />
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="55dp"
+            android:text="Weight Loss"
+            android:id="@+id/wlossButton"
+            android:layout_toStartOf="@+id/maintainButton"
+            android:layout_below="@+id/textView3"
+            />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="55dp"
+            android:text="Weight Gain"
+            android:id="@+id/wGainButton"
+            android:layout_below="@+id/textView3"
+            android:layout_toEndOf="@+id/maintainButton" />
 
         <Button
             android:layout_width="wrap_content"
@@ -45,8 +61,9 @@
             android:text="Low Physical Activity:"
             android:id="@+id/lowText"
             android:textColor="#ffffff"
+            android:layout_marginTop="20dp"
             android:layout_gravity="left|center_vertical"
-            android:layout_below="@+id/textView3"
+            android:layout_below="@+id/maintainButton"
             android:textSize="20dp"
             android:textIsSelectable="true" />
 
@@ -63,7 +80,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" calories needed a day to maintain."
+            android:text=" calories needed a day."
             android:id="@+id/lowMessage"
             android:layout_below="@+id/lowText"
             android:textColor="#ffffff"
@@ -76,6 +93,7 @@
             android:textColor="#ffffff"
             android:layout_gravity="left|center_vertical"
             android:layout_below="@+id/lowMessage"
+            android:layout_marginTop="20dp"
             android:textSize="20dp"
             android:textIsSelectable="true" />
 
@@ -92,7 +110,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text= " calories needed a day to maintain."
+            android:text= " calories needed a day."
             android:id="@+id/modMessage"
             android:layout_below="@+id/modText"
             android:textColor="#ffffff"
@@ -106,6 +124,7 @@
             android:textColor="#ffffff"
             android:layout_gravity="left|center_vertical"
             android:layout_below="@+id/modMessage"
+            android:layout_marginTop="20dp"
             android:textSize="20dp"
             android:textIsSelectable="true" />
 
@@ -122,11 +141,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text= " calories needed a day to maintain."
+            android:text= " calories needed a day."
             android:id="@+id/highMessage"
             android:layout_below="@+id/highText"
             android:textColor="#ffffff"
             android:layout_toEndOf="@+id/highCalories" />
+
+
 
     </RelativeLayout>
 

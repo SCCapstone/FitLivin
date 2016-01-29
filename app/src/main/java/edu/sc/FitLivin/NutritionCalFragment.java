@@ -45,76 +45,225 @@ public class NutritionCalFragment extends Fragment {
         //Integer test = 110;
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_nutrition_cal, container, false);
+        Button weightLoss = (Button) v.findViewById(R.id.wlossButton);
+        Button maintain = (Button) v.findViewById(R.id.maintainButton);
+        Button weightGain = (Button) v.findViewById(R.id.wGainButton);
         final TextView lowCal = (TextView) v.findViewById(R.id.lowCalories);
         final TextView modCal = (TextView) v.findViewById(R.id.modCalories);
         final TextView highCal = (TextView) v.findViewById(R.id.highCalories);
 
+        weightLoss.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ParseQuery<ParseUser> query = ParseUser.getQuery();
+                query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+                query.findInBackground(new FindCallback<ParseUser>() {
+                    public void done(List<ParseUser> objects, ParseException e) {
+                        if (e == null) {
+                            ParseUser user = objects.get(0);
+                            Log.d("QAOD", "success");
+                            Log.d("Q", "dd " + objects.size() + "dd ");
+                            String genderU = user.get("gender").toString();
 
-        ParseQuery<ParseUser> query = ParseUser.getQuery();
-        query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
-        query.findInBackground(new FindCallback<ParseUser>() {
-            public void done(List<ParseUser> objects, ParseException e) {
-                if (e == null) {
-                    ParseUser user = objects.get(0);
-                    Log.d("QAOD", "success");
-                    Log.d("Q", "dd " + objects.size() + "dd ");
-                    String genderU = user.get("gender").toString();
+                            Log.d("gender", genderU);
+                            if (genderU.equalsIgnoreCase("male")) {
+                                ParseQuery query1 = ParseQuery.getQuery("ProfileInfo"); //getting query
+                                query1.whereExists("Weight");//setting constraints
+                                query1.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
+                                query1.findInBackground(new FindCallback<ParseObject>() {
+                                    public void done(List<ParseObject> objects, ParseException e) {
 
-                    Log.d("gender", genderU);
-                   if(genderU.equalsIgnoreCase("male")){
-                       ParseQuery query1 = ParseQuery.getQuery("ProfileInfo"); //getting query
-                       query1.whereExists("Weight");//setting constraints
-                       query1.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
-                       query1.findInBackground(new FindCallback<ParseObject>() {
-                           public void done(List<ParseObject> objects, ParseException e) {
-
-                               if (e == null && objects.size() != 0) {
-                                   if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
-                                       weight = (Integer) objects.get(objects.size() - 1).get("Weight");
-                                       Log.d("F", "weightM");
-                                       Integer low = 17 * weight;
-                                       Integer mod = 19 * weight;
-                                       Integer high = 23 * weight;
-                                       lowCal.setText("" + low);
-                                       modCal.setText("" + mod);
-                                       highCal.setText("" + high);
-                                   }
-                               }
-                           }
-
-                       });
-
-                   }
-                    if(genderU.equalsIgnoreCase("female")){
-                        ParseQuery query2 = ParseQuery.getQuery("ProfileInfo"); //getting query
-                        query2.whereExists("Weight");//setting constraints
-                        query2.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
-                        query2.findInBackground(new FindCallback<ParseObject>() {
-                            public void done(List<ParseObject> objects, ParseException e) {
-
-                                if (e == null && objects.size() != 0) { //if objects size is not 0
-                                    if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
-                                        weight = (Integer) objects.get(objects.size() - 1).get("Weight");
-                                        Log.d("F", "weightM");
-                                        Integer low = 16 * weight;
-                                        Integer mod = 17 * weight;
-                                        Integer high = 20 * weight;
-                                        lowCal.setText("" + low);
-                                        modCal.setText("" + mod);
-                                        highCal.setText("" + high);
+                                        if (e == null && objects.size() != 0) {
+                                            if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
+                                                weight = (Integer) objects.get(objects.size() - 1).get("Weight");
+                                                Log.d("F", "weightM");
+                                                Integer low = 17 * weight - 550;
+                                                Integer mod = 19 * weight - 550;
+                                                Integer high = 23 * weight - 550;
+                                                lowCal.setText("" + low);
+                                                modCal.setText("" + mod);
+                                                highCal.setText("" + high);
+                                            }
+                                        }
                                     }
-                                }
+
+                                });
+
+                            }
+                            if (genderU.equalsIgnoreCase("female")) {
+                                ParseQuery query2 = ParseQuery.getQuery("ProfileInfo"); //getting query
+                                query2.whereExists("Weight");//setting constraints
+                                query2.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
+                                query2.findInBackground(new FindCallback<ParseObject>() {
+                                    public void done(List<ParseObject> objects, ParseException e) {
+
+                                        if (e == null && objects.size() != 0) { //if objects size is not 0
+                                            if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
+                                                weight = (Integer) objects.get(objects.size() - 1).get("Weight");
+                                                Log.d("F", "weightM");
+                                                Integer low = 16 * weight - 550;
+                                                Integer mod = 17 * weight - 550;
+                                                Integer high = 20 * weight - 550;
+                                                lowCal.setText("" + low);
+                                                modCal.setText("" + mod);
+                                                highCal.setText("" + high);
+                                            }
+                                        }
+                                    }
+
+                                });
                             }
 
-                        });
+                        } else {
+                            Log.d("QAOD", "wrong");
+                        }
                     }
+                });
 
-                } else {
-                    Log.d("QAOD", "wrong");
-                }
             }
         });
 
+        maintain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ParseQuery<ParseUser> query = ParseUser.getQuery();
+                query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+                query.findInBackground(new FindCallback<ParseUser>() {
+                    public void done(List<ParseUser> objects, ParseException e) {
+                        if (e == null) {
+                            ParseUser user = objects.get(0);
+                            Log.d("QAOD", "success");
+                            Log.d("Q", "dd " + objects.size() + "dd ");
+                            String genderU = user.get("gender").toString();
+
+                            Log.d("gender", genderU);
+                            if (genderU.equalsIgnoreCase("male")) {
+                                ParseQuery query1 = ParseQuery.getQuery("ProfileInfo"); //getting query
+                                query1.whereExists("Weight");//setting constraints
+                                query1.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
+                                query1.findInBackground(new FindCallback<ParseObject>() {
+                                    public void done(List<ParseObject> objects, ParseException e) {
+
+                                        if (e == null && objects.size() != 0) {
+                                            if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
+                                                weight = (Integer) objects.get(objects.size() - 1).get("Weight");
+                                                Log.d("F", "weightM");
+                                                Integer low = 17 * weight;
+                                                Integer mod = 19 * weight;
+                                                Integer high = 23 * weight;
+                                                lowCal.setText("" + low);
+                                                modCal.setText("" + mod);
+                                                highCal.setText("" + high);
+                                            }
+                                        }
+                                    }
+
+                                });
+
+                            }
+                            if (genderU.equalsIgnoreCase("female")) {
+                                ParseQuery query2 = ParseQuery.getQuery("ProfileInfo"); //getting query
+                                query2.whereExists("Weight");//setting constraints
+                                query2.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
+                                query2.findInBackground(new FindCallback<ParseObject>() {
+                                    public void done(List<ParseObject> objects, ParseException e) {
+
+                                        if (e == null && objects.size() != 0) { //if objects size is not 0
+                                            if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
+                                                weight = (Integer) objects.get(objects.size() - 1).get("Weight");
+                                                Log.d("F", "weightM");
+                                                Integer low = 16 * weight;
+                                                Integer mod = 17 * weight;
+                                                Integer high = 20 * weight;
+                                                lowCal.setText("" + low);
+                                                modCal.setText("" + mod);
+                                                highCal.setText("" + high);
+                                            }
+                                        }
+                                    }
+
+                                });
+                            }
+
+                        } else {
+                            Log.d("QAOD", "wrong");
+                        }
+                    }
+                });
+
+            }
+        });
+
+        weightGain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ParseQuery<ParseUser> query = ParseUser.getQuery();
+                query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+                query.findInBackground(new FindCallback<ParseUser>() {
+                    public void done(List<ParseUser> objects, ParseException e) {
+                        if (e == null) {
+                            ParseUser user = objects.get(0);
+                            Log.d("QAOD", "success");
+                            Log.d("Q", "dd " + objects.size() + "dd ");
+                            String genderU = user.get("gender").toString();
+
+                            Log.d("gender", genderU);
+                            if (genderU.equalsIgnoreCase("male")) {
+                                ParseQuery query1 = ParseQuery.getQuery("ProfileInfo"); //getting query
+                                query1.whereExists("Weight");//setting constraints
+                                query1.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
+                                query1.findInBackground(new FindCallback<ParseObject>() {
+                                    public void done(List<ParseObject> objects, ParseException e) {
+
+                                        if (e == null && objects.size() != 0) {
+                                            if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
+                                                weight = (Integer) objects.get(objects.size() - 1).get("Weight");
+                                                Log.d("F", "weightM");
+                                                Integer low = 17 * weight + 750;
+                                                Integer mod = 19 * weight + 750;
+                                                Integer high = 23 * weight + 750;
+                                                lowCal.setText("" + low);
+                                                modCal.setText("" + mod);
+                                                highCal.setText("" + high);
+                                            }
+                                        }
+                                    }
+
+                                });
+
+                            }
+                            if (genderU.equalsIgnoreCase("female")) {
+                                ParseQuery query2 = ParseQuery.getQuery("ProfileInfo"); //getting query
+                                query2.whereExists("Weight");//setting constraints
+                                query2.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
+                                query2.findInBackground(new FindCallback<ParseObject>() {
+                                    public void done(List<ParseObject> objects, ParseException e) {
+
+                                        if (e == null && objects.size() != 0) { //if objects size is not 0
+                                            if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
+                                                weight = (Integer) objects.get(objects.size() - 1).get("Weight");
+                                                Log.d("F", "weightM");
+                                                Integer low = 16 * weight + 750;
+                                                Integer mod = 17 * weight + 750;
+                                                Integer high = 20 * weight + 750;
+                                                lowCal.setText("" + low);
+                                                modCal.setText("" + mod);
+                                                highCal.setText("" + high);
+                                            }
+                                        }
+                                    }
+
+                                });
+                            }
+
+                        } else {
+                            Log.d("QAOD", "wrong");
+                        }
+                    }
+                });
+
+            }
+        });
 
 
 
