@@ -8,12 +8,21 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
+
+
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:orientation="vertical"
             >
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="BODY BUILDING DAY 4"
+                android:id="@+id/bbDay4"
+                android:layout_gravity="center_horizontal|top"
+                android:textColor="#ffffff" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="50dp"
@@ -21,7 +30,6 @@
         android:text="Deadlift"
         android:id="@+id/deadliftText"
         android:layout_gravity="left|center_vertical"
-        android:layout_marginBottom="175dp"
         android:textColor="#ffffff"
         android:textSize="25dp" />
 
@@ -29,7 +37,7 @@
         android:layout_width="234dp"
         android:layout_height="34dp"
         android:text="4 Sets of 8 Repetitions. (2 minute rest between sets)"
-        android:layout_marginBottom="155dp"
+        android:layout_marginBottom="15dp"
         android:id="@+id/deadliftDetail"
         android:layout_gravity="left|center_vertical"
         android:textColor="#ffffff" />
@@ -40,7 +48,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/deadliftImage"
         android:layout_gravity="right|top"
-        android:layout_marginBottom="150dp"
+        android:layout_marginBottom="50dp"
         android:src="@drawable/deadlift"
         android:layout_marginTop="20dp" />
 
@@ -53,7 +61,14 @@
         android:layout_marginBottom="40dp"
         android:textColor="#ffffff"
         android:textSize="25dp" />
-
+            <TextView
+                android:layout_width="206dp"
+                android:layout_height="49dp"
+                android:text="3 Sets of 6-10 repetitions depending on skill level."
+                android:id="@+id/pullupDetail"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginBottom="20dp"
+                android:textColor="#ffffff" />
     <ImageView
         android:scaleType="fitXY"
         android:layout_width="wrap_content"
@@ -61,16 +76,23 @@
         android:id="@+id/pullupImage"
         android:layout_gravity="right|center_vertical"
         android:layout_marginBottom="35dp"
-        android:src="@drawable/pullup" />
+        android:src="@drawable/pullup"
+        android:layout_below="@+id/pullupDetail"
+        android:layout_above="@+id/dumbbellRowText"
+        />
 
-    <TextView
-        android:layout_width="206dp"
-        android:layout_height="49dp"
-        android:text="3 Sets of 6-10 repetitions depending on skill level."
-        android:id="@+id/pullupDetail"
-        android:layout_gravity="left|center_vertical"
-        android:layout_marginBottom="20dp"
-        android:textColor="#ffffff" />
+            <TextView
+                android:layout_width="171dp"
+                android:layout_height="59dp"
+                android:text="Dumbbell Row"
+                android:id="@+id/dumbbellRowText"
+                android:layout_gravity="left|bottom"
+                android:layout_marginBottom="125dp"
+                android:textColor="#ffffff"
+                android:textSize="25dp"
+                android:layout_below="@+id/pullupImage"
+                android:layout_above="@+id/dumbbellRowDetail"
+                />
 
     <TextView
         android:layout_width="177dp"
@@ -79,17 +101,12 @@
         android:id="@+id/dumbbellRowDetail"
         android:layout_gravity="left|bottom"
         android:layout_marginBottom="120dp"
-        android:textColor="#ffffff" />
-
-    <TextView
-        android:layout_width="171dp"
-        android:layout_height="59dp"
-        android:text="Dumbbell Row"
-        android:id="@+id/dumbbellRowText"
-        android:layout_gravity="left|bottom"
-        android:layout_marginBottom="125dp"
         android:textColor="#ffffff"
-        android:textSize="25dp" />
+        android:layout_below="@+id/dumbbellRowText"
+        android:layout_above="@+id/dumbbellRowImage"
+        />
+
+
 
     <ImageView
         android:scaleType="fitXY"
@@ -100,14 +117,7 @@
         android:layout_marginBottom="70dp"
         android:src="@drawable/dbrow" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="BODY BUILDING DAY 4"
-        android:id="@+id/bbDay4"
-        android:layout_gravity="center_horizontal|top"
-        android:textColor="#ffffff" />
+
 
     <Button
         android:layout_width="wrap_content"
