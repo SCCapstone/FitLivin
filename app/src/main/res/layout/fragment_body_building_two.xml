@@ -28,7 +28,6 @@
         android:text="Barbell Bench Press"
         android:id="@+id/benchText"
         android:layout_gravity="left|center_vertical"
-        android:layout_marginBottom="175dp"
         android:textColor="#ffffff"
         android:textSize="25dp" />
 
@@ -36,7 +35,7 @@
         android:layout_width="234dp"
         android:layout_height="34dp"
         android:text="4 Sets of 10-12 Repetitions. (1 minute rest between sets)"
-        android:layout_marginBottom="155dp"
+        android:layout_marginBottom="15dp"
         android:id="@+id/benchDetail"
         android:layout_gravity="left|center_vertical"
         android:textColor="#ffffff" />
@@ -47,7 +46,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/benchImage"
         android:layout_gravity="right|top"
-        android:layout_marginBottom="150dp"
+        android:layout_marginBottom="50dp"
         android:src="@drawable/bench"
         android:layout_below="@+id/benchDetail"
         android:layout_above="@+id/flyText"
