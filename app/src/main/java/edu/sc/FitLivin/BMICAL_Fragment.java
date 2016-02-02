@@ -60,10 +60,10 @@ public class BMICAL_Fragment extends Fragment {
 
                     if(objects.get(0).get("UserP").equals(ParseUser.getCurrentUser()))
                     {
-                        int x = (Integer)objects.get(objects.size() - 1).get("Weight");
+                        int x = (Integer)objects.get(0).get("Weight");
                         weightT.setText("" + x);
-                        CurrW.setText(objects.get(objects.size() - 1).get("Weight").toString()); //setting weight
-                        CurrH.setText(objects.get(objects.size() - 1).get("Height").toString()); //setting height
+                        CurrW.setText(objects.get(0).get("Weight").toString()); //setting weight
+                        CurrH.setText(objects.get(0).get("Height").toString()); //setting height
                     }
                 }
             }
@@ -88,8 +88,8 @@ public class BMICAL_Fragment extends Fragment {
 
                             if(objects.get(0).get("UserP").equals(ParseUser.getCurrentUser()))
                             {
-                                float currweight = objects.get(objects.size() - 1).get("Weight").hashCode(); //setting weight
-                                float currheight = objects.get(objects.size() - 1).get("Height").hashCode(); //setting height
+                                float currweight = objects.get(0).get("Weight").hashCode(); //setting weight
+                                float currheight = objects.get(0).get("Height").hashCode(); //setting height
 
                                 float bmiValue = calculateBMI(currweight, currheight);
                                 if (bmiValue < 16) {
