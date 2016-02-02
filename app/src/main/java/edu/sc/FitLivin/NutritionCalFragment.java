@@ -77,9 +77,10 @@ public class NutritionCalFragment extends Fragment {
                                             if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
                                                 weight = (Integer) objects.get(objects.size() - 1).get("Weight");
                                                 Log.d("F", "weightM");
-                                                Integer low = MaleWeightLoss(weight);
-                                                Integer mod = MaleMaintain(weight);
-                                                Integer high = 23 * weight - 550;
+                                                Integer low = MaleWeightLossL(weight);
+                                                Integer mod = MaleWeightLossM(weight);
+                                                Integer high = MaleWeightLossH(weight);
+                                                //Integer high = 23 * weight - 550;
                                                 lowCal.setText("" + low);
                                                 modCal.setText("" + mod);
                                                 highCal.setText("" + high);
@@ -101,9 +102,12 @@ public class NutritionCalFragment extends Fragment {
                                             if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
                                                 weight = (Integer) objects.get(objects.size() - 1).get("Weight");
                                                 Log.d("F", "weightM");
-                                                Integer low = 16 * weight - 550;
-                                                Integer mod = 17 * weight - 550;
-                                                Integer high = 20 * weight - 550;
+                                                //Integer low = 16 * weight - 550;
+                                                Integer low = FemaleWeightLossL(weight);
+                                                //Integer mod = 17 * weight - 550;
+                                                Integer mod = FemaleWeightLossM(weight);
+                                                //Integer high = 20 * weight - 550;
+                                                Integer high = FemaleWeightLossH(weight);
                                                 lowCal.setText("" + low);
                                                 modCal.setText("" + mod);
                                                 highCal.setText("" + high);
@@ -148,9 +152,12 @@ public class NutritionCalFragment extends Fragment {
                                             if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
                                                 weight = (Integer) objects.get(objects.size() - 1).get("Weight");
                                                 Log.d("F", "weightM");
-                                                Integer low = 17 * weight;
-                                                Integer mod = 19 * weight;
-                                                Integer high = 23 * weight;
+                                                //Integer low = 17 * weight;
+                                                Integer low = MaleWeightMaintainL(weight);
+                                                //Integer mod = 19 * weight;
+                                                Integer mod = MaleWeightMaintainM(weight);
+                                                //Integer high = 23 * weight;
+                                                Integer high = MaleWeightMaintainH(weight);
                                                 lowCal.setText("" + low);
                                                 modCal.setText("" + mod);
                                                 highCal.setText("" + high);
@@ -172,9 +179,12 @@ public class NutritionCalFragment extends Fragment {
                                             if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
                                                 weight = (Integer) objects.get(objects.size() - 1).get("Weight");
                                                 Log.d("F", "weightM");
-                                                Integer low = 16 * weight;
-                                                Integer mod = 17 * weight;
-                                                Integer high = 20 * weight;
+                                                //Integer low = 16 * weight;
+                                                Integer low = FemaleWeightMaintainL(weight);
+                                                //Integer mod = 17 * weight;
+                                                Integer mod = FemaleWeightMaintainM(weight);
+                                               // Integer high = 20 * weight;
+                                                Integer high = FemaleWeightMaintainH(weight);
                                                 lowCal.setText("" + low);
                                                 modCal.setText("" + mod);
                                                 highCal.setText("" + high);
@@ -219,9 +229,12 @@ public class NutritionCalFragment extends Fragment {
                                             if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
                                                 weight = (Integer) objects.get(objects.size() - 1).get("Weight");
                                                 Log.d("F", "weightM");
-                                                Integer low = 17 * weight + 750;
-                                                Integer mod = 19 * weight + 750;
-                                                Integer high = 23 * weight + 750;
+                                                //Integer low = 17 * weight + 750;
+                                                Integer low = MaleWeightGainL(weight);
+                                                //Integer mod = 19 * weight + 750;
+                                                Integer mod = MaleWeightGainM(weight);
+                                                //Integer high = 23 * weight + 750;
+                                                Integer high = MaleWeightGainH(weight);
                                                 lowCal.setText("" + low);
                                                 modCal.setText("" + mod);
                                                 highCal.setText("" + high);
@@ -243,9 +256,12 @@ public class NutritionCalFragment extends Fragment {
                                             if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
                                                 weight = (Integer) objects.get(objects.size() - 1).get("Weight");
                                                 Log.d("F", "weightM");
-                                                Integer low = 16 * weight + 750;
-                                                Integer mod = 17 * weight + 750;
-                                                Integer high = 20 * weight + 750;
+                                                //Integer low = 16 * weight + 750;
+                                                Integer low = FemaleWeightGainL(weight);
+                                                //Integer mod = 17 * weight + 750;
+                                                Integer mod = FemaleWeightGainM(weight);
+                                                //Integer high = 20 * weight + 750;
+                                                Integer high = FemaleWeightGainH(weight);
                                                 lowCal.setText("" + low);
                                                 modCal.setText("" + mod);
                                                 highCal.setText("" + high);
@@ -285,20 +301,120 @@ public class NutritionCalFragment extends Fragment {
 
     }
 
-    public Integer MaleWeightLoss(Integer weight){
+    public Integer MaleWeightLossL (Integer weight){
         Integer weight1 = weight;
         Integer low = 17 * weight1 - 550;
 
         return low;
     }
-    public Integer MaleMaintain(Integer weight){
+    public Integer MaleWeightLossM (Integer weight){
         Integer weight1 = weight;
         Integer mod = 19 * weight1 - 550;
 
         return mod;
     }
 
+    public Integer MaleWeightLossH (Integer weight){
+        Integer weight1 = weight;
+        Integer high = 23 * weight1 - 550;
 
+        return high;
+    }
 
+    public Integer FemaleWeightLossL (Integer weight){
+        Integer weight1 = weight;
+        Integer low = 16 * weight1 - 550;
+
+        return low;
+    }
+    public Integer FemaleWeightLossM (Integer weight){
+        Integer weight1 = weight;
+        Integer mod = 17 * weight1 - 550;
+
+        return mod;
+    }
+
+    public Integer FemaleWeightLossH (Integer weight){
+        Integer weight1 = weight;
+        Integer high = 20 * weight1 - 550;
+
+        return high;
+    }
+    public Integer MaleWeightMaintainL (Integer weight){
+        Integer weight1 = weight;
+        Integer low = 17 * weight1;
+
+        return low;
+    }
+    public Integer MaleWeightMaintainM (Integer weight){
+        Integer weight1 = weight;
+        Integer mod = 19 * weight1;
+
+        return mod;
+    }
+    public Integer MaleWeightMaintainH (Integer weight){
+        Integer weight1 = weight;
+        Integer high = 23 * weight1;
+
+        return high;
+    }
+    public Integer FemaleWeightMaintainL (Integer weight){
+        Integer weight1 = weight;
+        Integer low = 16 * weight1;
+
+        return low;
+    }
+    public Integer FemaleWeightMaintainM (Integer weight){
+        Integer weight1 = weight;
+        Integer mod = 17 * weight1;
+
+        return mod;
+    }
+    public Integer FemaleWeightMaintainH (Integer weight){
+        Integer weight1 = weight;
+        Integer high = 20 * weight1;
+
+        return high;
+    }
+
+    public Integer MaleWeightGainL (Integer weight){
+        Integer weight1 = weight;
+        Integer low = 17 * weight1 +750;
+
+        return low;
+    }
+
+    public Integer MaleWeightGainM (Integer weight){
+        Integer weight1 = weight;
+        Integer mod = 19 * weight1 +750;
+
+        return mod;
+    }
+
+    public Integer MaleWeightGainH (Integer weight){
+        Integer weight1 = weight;
+        Integer high = 23 * weight1 +750;
+
+        return high;
+    }
+    public Integer FemaleWeightGainL (Integer weight){
+        Integer weight1 = weight;
+        Integer low = 16 * weight1 +750;
+
+        return low;
+    }
+    public Integer FemaleWeightGainM (Integer weight){
+        Integer weight1 = weight;
+        Integer mod = 17 * weight1 +750;
+
+        return mod;
+
+    }
+    public Integer FemaleWeightGainH (Integer weight){
+        Integer weight1 = weight;
+        Integer high = 20 * weight1 +750;
+
+        return high;
+    }
 
 }
