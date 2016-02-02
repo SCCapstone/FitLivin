@@ -11,6 +11,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,6 +56,17 @@ public class PointsPageFragment extends Fragment {
                 ft.commit();
             }
         });
+
+        String regex = "-?\\d+(\\.\\d+)?";
+
+        if (points.toString().matches(regex))  {
+            Log.i("points value", "Numeric value received. Test successful");
+            //flag=1;
+        } else {
+            //flag=-1;
+            Log.i("points value", "Non Numeric. Something is wrong.");
+        }
+
         return v;
 
     }
