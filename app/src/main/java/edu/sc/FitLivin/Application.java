@@ -15,4 +15,5 @@ public class Application extends android.app.Application{
         Parse.enableLocalDatastore(this);//enables the database
         Parse.initialize(this, getString(R.string.parse_application_Id), getString(R.string.parse_application_Key));
     }
+
 }
