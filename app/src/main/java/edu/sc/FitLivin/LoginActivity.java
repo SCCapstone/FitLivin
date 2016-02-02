@@ -1,9 +1,11 @@
 package edu.sc.FitLivin;
 
-import android.app.Activity;
-import android.app.ProgressDialog;
+import android.app.*;
+import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
+import android.test.ApplicationTestCase;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -62,6 +64,15 @@ public class LoginActivity extends Activity  {
                 dlg.setMessage("Logging in.  Please wait.");
                 dlg.show();
                 // Call the Parse login method
+
+
+              if(usernameView.getText().toString().equalsIgnoreCase("randon3")){
+                  Log.d("LOGIN", "TRUE");
+              }
+                else{
+                  Log.d("LOGIN", "FALSE");
+              }
+
                 ParseUser.logInInBackground(usernameView.getText().toString(), passwordView.getText()
                         .toString(), new LogInCallback() {
 
