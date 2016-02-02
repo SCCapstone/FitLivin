@@ -57,15 +57,7 @@ public class PointsPageFragment extends Fragment {
             }
         });
 
-        String regex = "-?\\d+(\\.\\d+)?";
 
-        if (points.toString().matches(regex))  {
-            Log.i("points value", "Numeric value received. Test successful");
-            //flag=1;
-        } else {
-            //flag=-1;
-            Log.i("points value", "Non Numeric. Something is wrong.");
-        }
 
         return v;
 
