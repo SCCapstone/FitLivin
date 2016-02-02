@@ -32,49 +32,55 @@
             android:textColor="#ffffff"
             android:textSize="32dp" />
 
-        <ImageView
-            android:scaleType="fitXY"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/militaryPressImage"
-            android:layout_below="@+id/militaryPressText"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/militarypress"
-            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="4 Sets of 8-10 Repetitions. 1 minute rest between sets"
             android:id="@+id/militaryPressDetail"
-            android:layout_below="@+id/militaryPressImage"
+            android:layout_below="@+id/militaryPressText"
             android:layout_gravity="center_horizontal"
             android:textColor="#ffffff" />
+
+        <ImageView
+            android:scaleType="fitXY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/militaryPressImage"
+            android:layout_below="@+id/militaryPressDetail"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/militarypress"
+            />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Side Lateral Raises"
             android:id="@+id/sideRaiseText"
-            android:layout_below="@+id/militaryPressDetail"
+            android:layout_below="@+id/militaryPressImage"
             android:layout_gravity="center_horizontal"
             android:textColor="#ffffff"
             android:textSize="32dp"
             />
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4 Sets of 12 very light weight repetitions. "
+        android:id="@+id/sideLatRaiseDetail"
+        android:layout_below="@+id/sideRaiseText"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffff" />
+
+
         <ImageView
             android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/sideLatImage"
-            android:layout_below="@+id/sideRaiseText"
+            android:layout_below="@+id/sideLatRaiseDetail"
             android:layout_gravity="center_horizontal"
             android:src="@drawable/dumbbelllatraise" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="4 Sets of 12 very light weight repetitions. "
-            android:id="@+id/sideLatRaiseDetail"
-            android:layout_below="@+id/sideLatImage"
-            android:layout_gravity="center_horizontal"
-            android:textColor="#ffffff" />
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -86,24 +92,25 @@
             android:textColor="#ffffff"
             android:textSize="32dp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4 sets of 10 repetitions."
+            android:id="@+id/shoulderPressDetail"
+            android:layout_below="@+id/sideLatRaiseDetail"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffffff" />
 
         <ImageView
             android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/shoulderpressImage"
-            android:layout_below="@+id/shoulderPressText"
+            android:layout_below="@+id/shoulderPressDetail"
             android:layout_gravity="center_horizontal"
             android:src="@drawable/shoulderpress" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="4 sets of 10 repetitions."
-            android:id="@+id/shoulderPressDetail"
-            android:layout_below="@+id/shoulderpressImage"
-            android:layout_gravity="center_horizontal"
-            android:textColor="#ffffff" />
+
 
 
         <Button
