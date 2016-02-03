@@ -135,7 +135,7 @@ public class BMICAL_Fragment extends Fragment {
 
     }
 
-    private float calculateBMI(float weight, float height) {
+    public float calculateBMI(double weight, double height) {
         return (float) ((weight / (height * height)) * multiplier);
     }
 }

@@ -122,8 +122,8 @@ public class TrackProgressFragment extends Fragment {
 
 
 
-                        graph.setTitle("Your Porgress");
-                        graph.setTitleColor(0xff0000ff);
+                        graph.setTitle("Your Progress");
+                        graph.setTitleColor(0xffffffff);
                        graph.getViewport().setMaxX(weight.size());
                         graph.getViewport().setBackgroundColor(0xffffffff);
                         graph.getLegendRenderer().setVisible(true);

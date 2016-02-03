@@ -16,11 +16,10 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
     }
   @Test
     public void test1() throws Exception {
-        //final int expected = 1;
-       // final int reality = 5;
-      //  assertEquals(expected, reality);
-        ParseQuery query = ParseQuery.getQuery("ProfileInfo");
-        assertEquals("randon3", ParseUser.getCurrentUser().getUsername());
+
+      ParseQuery query = ParseQuery.getQuery("ProfileInfo");
+      assertEquals("randon3", ParseUser.getCurrentUser().getUsername());
+
     }
     public void test2() throws Exception {
         //final int expected = 1;
@@ -29,8 +28,20 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         NutritionCalFragment nut = new NutritionCalFragment();
         Integer test = 100;
         Integer answer = 1150;
-        Integer testAnser = nut.MaleWeightLoss(test);
-        assertEquals(answer, testAnser);
+        Integer testAnswer = nut.MaleWeightLossL(test);
+        assertEquals(answer, testAnswer);
     }
+    public void test3() throws Exception {
 
+        BMICAL_Fragment BMI = new BMICAL_Fragment();
+        float multiplier = 703;
+
+        float weight = 150;
+        float height = 72;
+
+        float answer = (weight / (height * height));
+        Float ansMul = (float) answer * multiplier;
+        Float testAnswer = BMI.calculateBMI(weight, height);
+        assertEquals(testAnswer,ansMul,.000000001);
+    }
 }
