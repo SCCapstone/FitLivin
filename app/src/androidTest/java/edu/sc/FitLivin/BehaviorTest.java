@@ -17,8 +17,14 @@ import org.junit.Test;
 import org.junit.runner.RunWith;//test
 
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.matcher.ViewMatchers.isClickable;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.action.ViewActions.pressImeActionButton;
+import static android.support.test.espresso.action.ViewActions.pressBack;
+
 
 @RunWith(AndroidJUnit4.class)
 
@@ -44,10 +50,10 @@ public class BehaviorTest {
     }
 
     @Test
-    public void CheckToSeeIfButtonWorksOnFitnessProgramFragment(){
-        Espresso.onView(ViewMatchers.withId(R.id.StrengthTrainingButton)).perform(ViewActions.click());
-        Espresso.onView(ViewMatchers.withId(R.id.BodyBuildingButton)).perform(ViewActions.click());
-        Espresso.onView(ViewMatchers.withId(R.id.WeightLossButton)).perform(ViewActions.click());
+    public void CheckToSeeIfButtonWorksOnFitnessProgramFragment() {
+        Espresso.onView(withId(R.id.StrengthTrainingButton)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.BodyBuildingButton)).check(matches(isClickable()));
+        Espresso.onView(withId(R.id.WeightLossButton)).check(matches(isClickable()));
         Espresso.pressBack();
     }
 
