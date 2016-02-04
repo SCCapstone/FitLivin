@@ -84,7 +84,7 @@ public class MaxFragment extends Fragment {
               userMileTime.setText(+mileTime);
 
               String s = ParseUser.getCurrentUser().getUsername();
-
+//
 
               main.MaxData(bench,squat,deadLift,total,mileTime,s);
 
