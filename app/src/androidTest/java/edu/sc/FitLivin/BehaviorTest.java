@@ -43,4 +43,12 @@ public class BehaviorTest {
         onView(withId(R.id.lowCalories)).check(ViewAssertions.matches(withText("3230")));
     }
 
+    @Test
+    public void CheckToSeeIfButtonWorksOnFitnessProgramFragment(){
+        Espresso.onView(ViewMatchers.withId(R.id.StrengthTrainingButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.BodyBuildingButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.WeightLossButton)).perform(ViewActions.click());
+        Espresso.pressBack();
+    }
+
 }

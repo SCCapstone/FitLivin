@@ -44,4 +44,6 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         Float testAnswer = BMI.calculateBMI(weight, height);
         assertEquals(testAnswer,ansMul,.000000001);
     }
+
+
 }
