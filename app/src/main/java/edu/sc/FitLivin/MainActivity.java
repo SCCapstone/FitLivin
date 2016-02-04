@@ -169,16 +169,16 @@ public class MainActivity extends FragmentActivity{
 
     }
 
-    public void MaxData(Integer bench, Integer squat, Integer deadLift, Integer total,Integer miletime, String user) {
+    public void MaxData(Integer bench, Integer squat, Integer deadLift, Integer total,Integer mileTime, String user) {
         Integer bench1 = bench;
         Integer squat1 = squat;
         Integer deadLift1 = deadLift;
         Integer total1 = total;
-        Integer miletime1 = miletime;
+        Integer miletime1 = mileTime;
         // ParseUser user1 = user;
         String username1 = user;
 
-
+        Log.d("F", "maxData!!!!!!!!!!!!!!!!!!");
         // adds info to database
         max.put("bench", bench1);
         max.put("squat", squat1);
@@ -186,6 +186,18 @@ public class MainActivity extends FragmentActivity{
         max.put("big3total",total1);
         max.put("miletime",miletime1);
         max.put("username", username1);
+
+        max.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e == null) {
+                    objectID = max.getObjectId();
+                    setS(objectID);
+                } else {
+                    Log.d("F", "object failllll");
+                }
+            }
+        });
 
     }
 

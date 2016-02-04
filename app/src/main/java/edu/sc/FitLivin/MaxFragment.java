@@ -77,11 +77,11 @@ public class MaxFragment extends Fragment {
               String mil = changeMileTime.getText().toString();
               mileTime = Integer.valueOf(mil);
 
-              userBench.setText(+bench);
-              userSquat.setText(+squat);
-              userDL.setText(+deadLift);
-              userTotal.setText(+total);
-              userMileTime.setText(+mileTime);
+              userBench.setText(""+bench);
+              userSquat.setText(""+squat);
+              userDL.setText(""+deadLift);
+              userTotal.setText(""+total);
+              userMileTime.setText(""+mileTime);
 
               String s = ParseUser.getCurrentUser().getUsername();
 //
