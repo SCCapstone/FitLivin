@@ -26,11 +26,11 @@ import com.parse.SaveCallback;
 
 import java.util.List;
 
- public class MainActivity extends FragmentActivity{
+public class MainActivity extends FragmentActivity{
 
-   //Intializing varibles
+    //Intializing varibles
     public static String name;
-     public ParseUser user;
+    public ParseUser user;
     private FragmentManager fm;
     private FragmentTransaction ft;
     public static Integer weight;
@@ -38,13 +38,16 @@ import java.util.List;
     public static String s;
     public static Integer points = 0;
     private String objectID;
-     String name1 = ParseUser.getCurrentUser().getUsername();
+    String name1 = ParseUser.getCurrentUser().getUsername();
 
 
     //Creates a parse object for the database
     //Creates a query object to query through the database
     public static ParseObject profileInfo = new ParseObject("ProfileInfo");
     ParseQuery<ParseObject> query = ParseQuery.getQuery("ProfileInfo");
+
+    public static ParseObject max = new ParseObject("Max");
+    ParseQuery<ParseObject> query3 = ParseQuery.getQuery("Max");
 
     public static ParseObject pointsInfo = new ParseObject("Points");
     ParseQuery<ParseObject> query2 = ParseQuery.getQuery("Points");
@@ -64,7 +67,7 @@ import java.util.List;
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> userList, ParseException e) {
-              //Uses a for loop to look through the database for specific info
+                //Uses a for loop to look through the database for specific info
                 if (e == null) {
                     if (userList.size() > 0) {
 
@@ -103,10 +106,10 @@ import java.util.List;
                 }
             }
         });
-       //Adds the fragment for the layout
-       HomePageFragment firstFragment = new HomePageFragment();
-       FragmentManager fm1 = getFragmentManager();
-       fm1.beginTransaction().add(R.id.container, firstFragment).addToBackStack(null).commit();
+        //Adds the fragment for the layout
+        HomePageFragment firstFragment = new HomePageFragment();
+        FragmentManager fm1 = getFragmentManager();
+        fm1.beginTransaction().add(R.id.container, firstFragment).addToBackStack(null).commit();
 
     }
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -129,17 +132,17 @@ import java.util.List;
 
     }
 
-        /*****
-         *
-         * This method will allow for the Profile page to send name,
-         * weight,and height to the database.
-         *
-         */
-        public void profileData(Integer weight, Integer height, ParseUser user1) {
+    /*****
+     *
+     * This method will allow for the Profile page to send name,
+     * weight,and height to the database.
+     *
+     */
+    public void profileData(Integer weight, Integer height, ParseUser user1) {
         Log.d("F", "pdata");
-            this.weight = weight;
-            this.height = height;
-            this.user = user1;
+        this.weight = weight;
+        this.height = height;
+        this.user = user1;
 
         // adds info to database
         profileInfo.put("Weight", weight);
@@ -163,6 +166,26 @@ import java.util.List;
             }
         });
 
+
+    }
+
+    public void MaxData(Integer bench, Integer squat, Integer deadLift, Integer total,Integer miletime, String user) {
+        Integer bench1 = bench;
+        Integer squat1 = squat;
+        Integer deadLift1 = deadLift;
+        Integer total1 = total;
+        Integer miletime1 = miletime;
+        // ParseUser user1 = user;
+        String username1 = user;
+
+
+        // adds info to database
+        max.put("bench", bench1);
+        max.put("squat", squat1);
+        max.put("deadlift",deadLift1);
+        max.put("big3total",total1);
+        max.put("miletime",miletime1);
+        max.put("username", username1);
 
     }
 
@@ -200,7 +223,7 @@ import java.util.List;
      */
 
     public String getName(){
-    return name;
+        return name;
     }
     public void setName(String setName){
         this.name = setName;
@@ -225,3 +248,7 @@ import java.util.List;
     }
 
 }
+
+
+
+

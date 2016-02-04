@@ -42,7 +42,7 @@ public class ProfilePageFragment extends Fragment {
 
 
         View v = inflater.inflate(R.layout.fragment_profile__page, container, false);
-       // final TextView newText = (TextView) v.findViewById(R.id.textView25);
+        // final TextView newText = (TextView) v.findViewById(R.id.textView25);
         final TextView heightText = (TextView) v.findViewById(R.id.heightView);
         final TextView weightText = (TextView) v.findViewById(R.id.weightView);
         final TextView VeiwName = (TextView) v.findViewById(R.id.name);
@@ -59,7 +59,7 @@ public class ProfilePageFragment extends Fragment {
         Integer weight = MainActivity.weight;
 
         //currentName.setText(name);
-       // currentWeight.setText("" + weight);
+        // currentWeight.setText("" + weight);
         //currentHeight.setText("" + height);
 
         ParseQuery query = ParseQuery.getQuery("ProfileInfo"); //getting query
@@ -102,6 +102,8 @@ public class ProfilePageFragment extends Fragment {
                 height = Integer.parseInt(h);
                 String w = editWeight.getText().toString();
                 weight = Integer.parseInt(w);
+                currentHeight.setText(+height);
+                currentWeight.setText(+weight);
                 //currentName.setText(name);
                 //info.setheight(height);
                 //info.setWeight(weight);

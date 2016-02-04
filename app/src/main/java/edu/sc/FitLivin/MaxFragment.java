@@ -16,7 +16,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 
 public class MaxFragment extends Fragment {
@@ -30,32 +35,67 @@ public class MaxFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_max, container, false);
 
+
         //initialize textviews in max xml
         final TextView userBench = (TextView) v.findViewById(R.id.userBench);
         final TextView userSquat = (TextView) v. findViewById(R.id.userSquat);
         final TextView userDL = (TextView) v. findViewById(R.id.userDeadlift);
         final TextView userTotal = (TextView) v.findViewById(R.id.userTotal);
-        //sets the user's bench number
-        Integer userBench1 = 1;
-        userBench.setText(""+userBench1);
-        //sets the user's squat number
-        Integer userSquat1 = 2;
-        userSquat.setText(""+userSquat1);
-        //sets the user's deadlift number
-        Integer userDL1 = 3;
-        userDL.setText(""+userDL1);
-        //initialize userTotal1
-        Integer userTotal1 = 0;
+        final TextView userMileTime = (TextView) v.findViewById(R.id.userTime);
+        final EditText changeBench = (EditText) v.findViewById(R.id.changeBench);
+        final EditText changeSquat = (EditText) v.findViewById(R.id.changeSquat);
+        final EditText changeDeadLift = (EditText) v.findViewById(R.id.changeDeadlift);
+        final EditText changeMileTime = (EditText) v.findViewById(R.id.changeMileTime);
+        final EditText changeTotal = (EditText) v.findViewById(R.id.changeBig3);
 
-         //sums userbench, usersquat, and userdl
-        userTotal1 = userBench1 + userSquat1 + userDL1;
-        //sets usertotal to usertotal1
-        userTotal.setText(""+userTotal1);
+        ParseQuery query = ParseQuery.getQuery("Max"); //getting query
+
+
+
+        Button enterButton = (Button) v.findViewById(R.id.enterMax);
+
+      enterButton.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+
+              Integer bench;
+              Integer squat;
+              Integer deadLift;
+              Integer total;
+              Integer mileTime;
+
+              MainActivity main = new MainActivity();
+
+              String ben = changeBench.getText().toString();
+              bench = Integer.valueOf(ben);
+              String sqa = changeSquat.getText().toString();
+              squat = Integer.valueOf(sqa);
+              String dea = changeDeadLift.getText().toString();
+              deadLift = Integer.valueOf(dea);
+              String tot = changeTotal.getText().toString();
+              total = Integer.valueOf(tot);
+              String mil = changeMileTime.getText().toString();
+              mileTime = Integer.valueOf(mil);
+
+              userBench.setText(+bench);
+              userSquat.setText(+squat);
+              userDL.setText(+deadLift);
+              userTotal.setText(+total);
+              userMileTime.setText(+mileTime);
+
+              String s = ParseUser.getCurrentUser().getUsername();
+
+
+              main.MaxData(bench,squat,deadLift,total,mileTime,s);
+
+          }
+      });
 
          /*
           *On click method that exits out of max fragment and takes users back to the
           *menu. Gives functionality to the back button.
           */
+
         Button backBtn = (Button) v.findViewById(R.id.MaxBack);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override

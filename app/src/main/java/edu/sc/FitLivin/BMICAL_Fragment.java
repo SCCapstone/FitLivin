@@ -44,8 +44,8 @@ public class BMICAL_Fragment extends Fragment {
         final TextView BMI = (TextView) v.findViewById(R.id.DisplayBMI);
         final TextView CurrW = (TextView) v.findViewById(R.id.CurrWeight);
         final TextView weightT = (TextView) v.findViewById(R.id.weightTest);
-       // CurrH.setText("" + MainActivity.height);
-       // CurrW.setText("" + MainActivity.weight);
+       CurrH.setText("" + MainActivity.height);
+       CurrW.setText("" + MainActivity.weight);
         //BMI_Weight = MainActivity.weight;
         Button cal = (Button) v.findViewById(R.id.CalculateBMI);
 

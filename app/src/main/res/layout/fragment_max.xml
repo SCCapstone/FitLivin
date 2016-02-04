@@ -37,6 +37,17 @@
 
          />
 
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="37dp"
+            android:id="@+id/changeBench"
+            android:inputType="number"
+            android:layout_gravity="left|center_vertical"
+            android:background="#ffffff"
+            android:hint="Bench"
+            android:layout_below="@+id/benchText"
+            android:layout_alignParentStart="true" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,8 +57,19 @@
         android:textColor="#ffffff"
         android:textSize="20dp"
         android:layout_alignStart="@+id/MaxBack"
-        android:layout_below="@+id/benchText"
+        android:layout_below="@+id/changeBench"
         />
+
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="37dp"
+            android:id="@+id/changeSquat"
+            android:inputType="number"
+            android:layout_gravity="left|center_vertical"
+            android:background="#ffffff"
+            android:hint="Squat"
+            android:layout_below="@+id/squatText"
+            android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -58,8 +80,19 @@
         android:textSize="20dp"
         android:textColor="#ffffff"
         android:layout_alignStart="@+id/MaxBack"
-        android:layout_below="@+id/squatText"
+        android:layout_below="@+id/changeSquat"
         />
+
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="37dp"
+            android:id="@+id/changeDeadlift"
+            android:inputType="number"
+            android:layout_gravity="left|center_vertical"
+            android:background="#ffffff"
+            android:hint="Deadlift"
+            android:layout_below="@+id/deadliftText"
+            android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -70,7 +103,7 @@
         android:textColor="#ffffff"
         android:textSize="20dp"
         android:layout_alignStart="@+id/MaxBack"
-        android:layout_below="@+id/totalText"/>
+        android:layout_below="@+id/changeBig3"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -88,8 +121,19 @@
         android:id="@+id/totalText"
         android:textColor="#ffffff"
         android:textSize="35dp"
-        android:layout_below="@+id/deadliftText"
+        android:layout_below="@+id/changeDeadlift"
         android:layout_alignStart="@+id/MaxBack"/>
+
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="37dp"
+            android:id="@+id/changeBig3"
+            android:inputType="number"
+            android:layout_gravity="left|center_vertical"
+            android:background="#ffffff"
+            android:hint="Total"
+            android:layout_below="@+id/totalText"
+            android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -98,10 +142,9 @@
         android:id="@+id/userTotal"
         android:textColor="#ffffff"
         android:textSize="35dp"
-        android:text="0"
         android:layout_centerVertical="true"
         android:layout_toEndOf="@+id/totalText"
-        android:layout_below="@+id/deadliftText"
+        android:layout_below="@+id/changeDeadlift"
         />
 
     <TextView
@@ -111,9 +154,8 @@
         android:layout_gravity="right|center_vertical"
         android:textSize="20dp"
         android:textColor="#ffffff"
-        android:text="0"
         android:layout_toEndOf="@+id/deadliftText"
-        android:layout_below="@+id/squatText"/>
+        android:layout_below="@+id/changeSquat"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -122,9 +164,8 @@
         android:layout_gravity="right|top"
         android:textColor="#ffffff"
         android:textSize="20dp"
-        android:text="0"
         android:layout_toEndOf="@+id/squatText"
-        android:layout_below="@+id/benchText"/>
+        android:layout_below="@+id/changeBench"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -134,7 +175,6 @@
         android:textColor="#ffffff"
         android:textSize="20dp"
         android:textIsSelectable="true"
-        android:text="0"
         android:layout_toEndOf="@+id/benchText"
         android:layout_below="@+id/textView2"/>
 
@@ -146,9 +186,29 @@
             android:textColor="#ffffff"
             android:textSize="20dp"
             android:textIsSelectable="true"
-            android:text="0"
             android:layout_toEndOf="@+id/mileText"
-            android:layout_below="@+id/totalText"/>
+            android:layout_below="@+id/changeBig3"/>
 
-</RelativeLayout>
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="37dp"
+            android:id="@+id/changeMileTime"
+            android:inputType="number"
+            android:layout_gravity="left|center_vertical"
+            android:background="#ffffff"
+            android:hint="MileTime"
+            android:layout_below="@+id/userTime"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter"
+            android:id="@+id/enterMax"
+            android:layout_alignTop="@+id/MaxBack"
+            android:layout_alignParentEnd="true" />
+
+
+
+    </RelativeLayout>
 </FrameLayout>
