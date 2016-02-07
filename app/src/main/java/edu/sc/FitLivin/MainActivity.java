@@ -258,6 +258,14 @@ public class MainActivity extends FragmentActivity{
     public void setS(String sn){
         this.objectID = sn;
     }
+    public void onBackPressed() {
+        if(getFragmentManager().getBackStackEntryCount() == 0) {
+            super.onBackPressed();
+        }
+        else {
+            getFragmentManager().popBackStack();
+        }
+    }
 
 }
 
