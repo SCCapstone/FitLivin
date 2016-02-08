@@ -23,8 +23,11 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.jjoe64.graphview.DefaultLabelFormatter;
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.LabelFormatter;
 import com.jjoe64.graphview.LegendRenderer;
+import com.jjoe64.graphview.Viewport;
 import com.jjoe64.graphview.helper.StaticLabelsFormatter;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
@@ -35,13 +38,16 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class TrackProgressFragment extends Fragment {
 
     private ListView weightList;
+
     private customWeightAdapter customAdapter;
     final ArrayList weight = new ArrayList<String>();
+    final ArrayList dates = new ArrayList<Date>();
 
     public TrackProgressFragment() {
 
@@ -52,11 +58,21 @@ public class TrackProgressFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_track_progress, container, false);
+        final View v = inflater.inflate(R.layout.fragment_track_progress, container, false);
         //Creates back button to go back to main page
         final GraphView graph = (GraphView) v.findViewById(R.id.graph);
-
-
+        graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter(){
+            @Override
+            public String formatLabel(double value, boolean isValueX) {
+                if (isValueX) {
+                    // show normal x values
+                    return super.formatLabel(value, isValueX);
+                } else {
+                    // show currency for y values
+                    return super.formatLabel(value, isValueX) + " €";
+                }
+            }
+        });
 
         ParseQuery query2 = ParseQuery.getQuery("ProfileInfo"); //getting query
         query2.whereExists("Weight");//setting constraints
@@ -109,28 +125,58 @@ public class TrackProgressFragment extends Fragment {
                     if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
                         for (int i = 0; i < objects.size(); i++) {
                             weight.add(objects.get(i).get("Weight").toString());
+                            dates.add(objects.get(i).getCreatedAt());
+                            Log.d(dates.get(i).toString(), "done: ");
                         }
 
 
-                        LineGraphSeries<DataPoint> mSeries1 = new LineGraphSeries<DataPoint>(generateData(weight));
+                        LineGraphSeries<DataPoint> mSeries1 = new LineGraphSeries<DataPoint>(generatenewData(weight));
+                        LineGraphSeries<DataPoint> mSeries2 = new LineGraphSeries<DataPoint>(generateData(weight,dates));
+                        mSeries2.setTitle("Dates");
                         mSeries1.setTitle("Weights");
+                        mSeries1.setThickness(7);
+                        mSeries2.setThickness(7);
+                        mSeries1.isDrawDataPoints();
                         graph.addSeries(mSeries1);
+                        graph.addSeries(mSeries2);
                         StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                        label.setHorizontalLabels(new String[]{"old", "middle", "new"});
+                        label.setDynamicLabelFormatter(new LabelFormatter() {
+                            @Override
+                            public String formatLabel(double value, boolean isValueX) {
+                                if (isValueX) {
+                                    // show normal x values
+                                    return formatLabel(value, isValueX);
+                                } else {
+                                    // show currency for y values
+                                    return formatLabel(value, isValueX) + " €";
+                                }
+                            }
+
+                            @Override
+                            public void setViewport(Viewport viewport) {
+                                    graph.getViewport();
+                            }
+                        });
+                        label.setHorizontalLabels(new String[]{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "Novermber", "December"});
                         label.setVerticalLabels(new String[]{"low", "middle", "high"});
 
 
 
 
                         graph.setTitle("Your Progress");
+                        graph.setTitleTextSize(15);
+
                         graph.setTitleColor(0xffffffff);
                        graph.getViewport().setMaxX(weight.size());
                         graph.getViewport().setBackgroundColor(0xffffffff);
                         graph.getLegendRenderer().setVisible(true);
+                        graph.setHorizontalScrollBarEnabled(true);
+                        graph.scrollTo(1, 1);
                         graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
                         graph.setTitleTextSize(10);
-                        graph.getViewport().isScrollable();
+                        graph.getViewport().setMaxX(weight.size());
                         graph.getGridLabelRenderer().setLabelFormatter(label);
+
 
 
                         ArrayAdapter weightArrayAdapter =
@@ -151,14 +197,31 @@ public class TrackProgressFragment extends Fragment {
     }
 
 
-    private DataPoint[] generateData(ArrayList<String> weight) {
+    private DataPoint[] generateData(ArrayList<String> weight,ArrayList<Date> dates) {
 
         DataPoint[] values = new DataPoint[weight.size()];
         for (int i=0; i<weight.size(); i++) {
-            double x = i;
-            double y = Double.parseDouble(weight.get(i));
+
+            double x =  dates.get(i).getDate();
+            Log.d(String.valueOf(dates.get(i).getDate()), "here is the time: ");
+            double y =  Double.parseDouble(weight.get(i))/2.2;
             DataPoint v = new DataPoint(x, y);
             values[i] = v;
+
+        }
+        return values;
+    }
+    private DataPoint[] generatenewData(ArrayList<String> weight) {
+
+        DataPoint[] values = new DataPoint[weight.size()];
+        for (int i=0; i<weight.size(); i++) {
+
+            double x =  i;
+
+            double y =  Double.parseDouble(weight.get(i));
+            DataPoint v = new DataPoint(x, y);
+            values[i] = v;
+
         }
         return values;
     }

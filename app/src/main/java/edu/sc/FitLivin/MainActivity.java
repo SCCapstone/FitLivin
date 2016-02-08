@@ -261,6 +261,7 @@ public class MainActivity extends FragmentActivity{
     public void onBackPressed() {
         if(getFragmentManager().getBackStackEntryCount() == 0) {
             super.onBackPressed();
+            finish();
         }
         else {
             getFragmentManager().popBackStack();
