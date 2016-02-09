@@ -9,6 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.Timer;
 import java.util.TimerTask;
+import android.os.Handler;
+import android.widget.Button;
+import android.widget.TextView;
+import android.os.SystemClock;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,12 +29,17 @@ public class StopWatch extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    //Initialize the parameters
+    private TextView timer;
+    private Button start;
+    private Button stop;
+    private Button reset;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
-
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -102,6 +112,13 @@ public class StopWatch extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
+
+
+
+
+
+
+
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);

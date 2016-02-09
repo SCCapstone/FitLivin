@@ -33,4 +33,13 @@
         completions."
     </string>
     <string name="error_intro">Please</string>
+
+
+    <!-- Strings for the Stop Watch -->
+    <string name="timer">00:00:00 </string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="reset">Reset</string>
+
+
 </resources>
