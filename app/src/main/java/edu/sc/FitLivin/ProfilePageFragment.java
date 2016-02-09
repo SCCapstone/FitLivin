@@ -54,13 +54,13 @@ public class ProfilePageFragment extends Fragment {
 
 
 
-        //String name = MainActivity.name;
+        String name = MainActivity.name;
         final Integer height = MainActivity.height;
         Integer weight = MainActivity.weight;
 
         //currentName.setText(name);
-        // currentWeight.setText("" + weight);
-        //currentHeight.setText("" + height);
+        currentWeight.setText("" + weight);
+        currentHeight.setText("" + height);
 
         ParseQuery query = ParseQuery.getQuery("ProfileInfo"); //getting query
         query.whereExists("Weight");//setting constraints
@@ -102,8 +102,8 @@ public class ProfilePageFragment extends Fragment {
                 height = Integer.parseInt(h);
                 String w = editWeight.getText().toString();
                 weight = Integer.parseInt(w);
-                currentHeight.setText(+height);
-                currentWeight.setText(+weight);
+                currentHeight.setText(""+height);
+                currentWeight.setText(""+weight);
                 //currentName.setText(name);
                 //info.setheight(height);
                 //info.setWeight(weight);
