@@ -58,9 +58,7 @@ public class ProfilePageFragment extends Fragment {
         final Integer height = MainActivity.height;
         Integer weight = MainActivity.weight;
 
-        //currentName.setText(name);
-        currentWeight.setText("" + weight);
-        currentHeight.setText("" + height);
+
 
         ParseQuery query = ParseQuery.getQuery("ProfileInfo"); //getting query
         query.whereExists("Weight");//setting constraints
