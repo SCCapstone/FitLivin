@@ -1,0 +1,193 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background3"
+    tools:context="edu.sc.FitLivin.GoalFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linview"
+        android:layout_gravity="center_horizontal|bottom">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Goals"
+            android:id="@+id/textView2"
+            android:layout_gravity="center_horizontal|top"
+            android:textColor="#ffffff"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="40dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weight Goal: "
+            android:id="@+id/WeightText"
+            android:layout_gravity="left|top"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:layout_below="@+id/textView2"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/currentWeightGoal"
+            android:layout_gravity="right|top"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:textIsSelectable="true"
+            android:layout_toEndOf="@+id/WeightText"
+            android:layout_below="@+id/textView2"/>
+
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="37dp"
+            android:id="@+id/changeWeightGoal"
+            android:inputType="number"
+            android:layout_gravity="left|center_vertical"
+            android:background="#ffffff"
+            android:hint="WeightGoal"
+            android:layout_below="@+id/WeightText"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bench Goal: "
+            android:id="@+id/BenchText"
+            android:layout_gravity="left|top"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:layout_below="@+id/changeWeightGoal"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/currentBenchGoal"
+            android:layout_gravity="right|top"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:textIsSelectable="true"
+            android:layout_toEndOf="@+id/BenchText"
+            android:layout_below="@+id/changeWeightGoal"/>
+
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="37dp"
+            android:id="@+id/changeBenchGoal"
+            android:inputType="number"
+            android:layout_gravity="left|center_vertical"
+            android:background="#ffffff"
+            android:hint="BenchGoal"
+            android:layout_below="@+id/BenchText"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Squat Goal: "
+            android:id="@+id/SquatText"
+            android:layout_gravity="left|top"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:layout_below="@+id/changeBenchGoal"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/currentSquatGoal"
+            android:layout_gravity="right|top"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:textIsSelectable="true"
+            android:layout_toEndOf="@+id/SquatText"
+            android:layout_below="@+id/changeBenchGoal"/>
+
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="37dp"
+            android:id="@+id/changeSquatGoal"
+            android:inputType="number"
+            android:layout_gravity="left|center_vertical"
+            android:background="#ffffff"
+            android:hint="SquatGoal"
+            android:layout_below="@+id/SquatText"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DeadLift Goal: "
+            android:id="@+id/DeadLiftText"
+            android:layout_gravity="left|top"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:layout_below="@+id/changeSquatGoal"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/currentDeadLiftGoal"
+            android:layout_gravity="right|top"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:textIsSelectable="true"
+            android:layout_toEndOf="@+id/DeadLiftText"
+            android:layout_below="@+id/changeSquatGoal"/>
+
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="37dp"
+            android:id="@+id/changeDeadliftGoal"
+            android:inputType="number"
+            android:layout_gravity="left|center_vertical"
+            android:background="#ffffff"
+            android:hint="DeadLiftGoal"
+            android:layout_below="@+id/DeadLiftText"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MileTime Goal: "
+            android:id="@+id/MileTimeText"
+            android:layout_gravity="left|top"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:layout_below="@+id/changeDeadliftGoal"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/currentMileTimeGoal"
+            android:layout_gravity="right|top"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:textIsSelectable="true"
+            android:layout_toEndOf="@+id/MileTimeText"
+            android:layout_below="@+id/changeDeadliftGoal"/>
+
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="37dp"
+            android:id="@+id/changeMileTimeGoal"
+            android:inputType="number"
+            android:layout_gravity="left|center_vertical"
+            android:background="#ffffff"
+            android:hint="MileTimeGoal"
+            android:layout_below="@+id/MileTimeText"
+            android:layout_alignParentStart="true" />
+
+
+
+
+    </RelativeLayout>
+</FrameLayout>
+
+
+

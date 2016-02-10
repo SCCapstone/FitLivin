@@ -59,7 +59,20 @@
                 android:layout_height="7dp"
                 android:layout_weight="1" />
 
-    <Button
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="75dp"
+                android:text="Goals"
+                android:id="@+id/goalButton"
+                android:layout_gravity="center" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="7dp"
+                android:layout_weight="1" />
+
+
+            <Button
         android:layout_width="fill_parent"
         android:layout_height="75dp"
         android:text="Track Progress"

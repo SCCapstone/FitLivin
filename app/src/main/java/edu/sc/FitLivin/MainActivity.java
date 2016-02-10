@@ -140,13 +140,13 @@ public class MainActivity extends FragmentActivity{
      */
     public void profileData(Integer weight, Integer height, ParseUser user1) {
         Log.d("F", "pdata");
-        this.weight = weight;
-        this.height = height;
+        Integer weight1 = weight;
+        Integer height1 = height;
         this.user = user1;
 
         // adds info to database
-        profileInfo.put("Weight", weight);
-        profileInfo.put("Height", height);
+        profileInfo.put("Weight", weight1);
+        profileInfo.put("Height", height1);
         profileInfo.put("randomValue",Math.random());
         profileInfo.put("UserP",user1);
         profileInfo.put("username",user1.getUsername());
