@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +12,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+
+import java.util.List;
 
 import edu.sc.FitLivin.R;
 
@@ -50,6 +56,100 @@ public class GoalFragment extends Fragment {
         Button setSquatG = (Button) v.findViewById(R.id.setSquat);
         Button setDeadLiftG = (Button) v.findViewById(R.id.setDeadLift);
         Button setMileTimeG = (Button) v.findViewById(R.id.setMileTime);
+
+
+        Weightquery.whereExists("goalWeight");//setting constraints
+        Weightquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        Weightquery.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
+
+                if (e == null  && objects.size()!= 0 ) { //if objects size is not 0
+                    Log.d("QAOD", "weight test success");
+                   if(objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername()))
+                    {
+
+                        int x = (Integer)objects.get(0).get("goalWeight");
+                        WeightG.setText("" + x);
+
+                    }
+                }
+            }
+
+        });
+        Benchquery.whereExists("BenchGoal");//setting constraints
+        Benchquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        Benchquery.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
+
+                if (e == null  && objects.size()!= 0 ) { //if objects size is not 0
+
+                    if(objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername()))
+                    {
+
+                        int x = (Integer)objects.get(0).get("BenchGoal");
+                        BenchG.setText("" + x);
+
+                    }
+                }
+            }
+
+        });
+
+        Squatquery.whereExists("SquatGoal");//setting constraints
+        Squatquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        Squatquery.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
+
+                if (e == null  && objects.size()!= 0 ) { //if objects size is not 0
+
+                    if(objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername()))
+                    {
+
+                        int x = (Integer)objects.get(0).get("SquatGoal");
+                        SquatG.setText("" + x);
+
+                    }
+                }
+            }
+
+        });
+
+        DeadLiftquery.whereExists("DeadLiftGoal");//setting constraints
+        DeadLiftquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        DeadLiftquery.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
+
+                if (e == null  && objects.size()!= 0 ) { //if objects size is not 0
+
+                    if(objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername()))
+                    {
+
+                        int x = (Integer)objects.get(0).get("DeadLiftGoal");
+                        DLG.setText("" + x);
+
+                    }
+                }
+            }
+
+        });
+
+        MileTimequery.whereExists("MileTimeGoal");//setting constraints
+        MileTimequery.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        MileTimequery.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
+
+                if (e == null && objects.size() != 0) { //if objects size is not 0
+
+                    if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
+
+                        int x = (Integer) objects.get(0).get("MileTimeGoal");
+                        MileTimeG.setText("" + x);
+
+                    }
+                }
+            }
+
+        });
 
         setWeightG.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,7 +216,7 @@ public class GoalFragment extends Fragment {
                 MileTimeG.setText("" + mileTime);
 
                 String s = ParseUser.getCurrentUser().getUsername();
-                main.MileTimeGoal(mileTime,s);
+                main.MileTimeGoal(mileTime, s);
             }
         });
 

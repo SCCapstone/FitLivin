@@ -327,7 +327,7 @@ public class MainActivity extends FragmentActivity{
 
         Log.d("F", "DLGoal!!!!!!!!!!!!!!!!!!");
         // adds info to database
-        DeadLiftParse.put("SquatGoal", DL1);
+        DeadLiftParse.put("DeadLiftGoal", DL1);
         DeadLiftParse.put("username", username1);
 
         DeadLiftParse.saveInBackground(new SaveCallback() {
