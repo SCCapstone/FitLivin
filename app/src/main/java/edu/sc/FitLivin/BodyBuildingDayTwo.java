@@ -13,28 +13,48 @@ import android.app.FragmentTransaction;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
 
 public class BodyBuildingDayTwo extends Fragment {
 
-
+MediaPlayer mp;
     public BodyBuildingDayTwo() {
         // Required empty public constructor
     }
 
-
+private View v;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_body_building_two, container, false);
+        ImageButton ib = (ImageButton) v.findViewById(R.id.benchImage);
+       // mp = MediaPlayer.create(getActivity(), R.raw.fitfactbarbellbenchpressnew);
+        ib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(mp == null){
+                    mp = MediaPlayer.create(getActivity(), R.raw.fitfactbarbellbenchpressnew);
+                    mp.start();
+                    Log.d("QAOD", "start");
+                }
+                else{
+                    mp.stop();
+                    mp = null;
+                    Log.d("QAOD", "stop");
+                }
+
+            }
+        }
+        );
         Button backBtn = (Button) v.findViewById(R.id.BBBack);//creates button
 
 
@@ -52,23 +72,23 @@ public class BodyBuildingDayTwo extends Fragment {
             }
         });
 
-        ImageButton benchImage1;
-        benchImage1 = (ImageButton) v.findViewById(R.id.benchImage);
-        benchImage1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MediaPlayer mp = MediaPlayer.create(v.getContext(), R.raw.FitFactBarbellBenchPress);
-                mp.start();
 
-            }
-        });
         return v;
         //retur
 
     }
 
+public void onBackPressed(){
+    if (mp!=null){
+        mp.pause();
+        mp.stop();
+        }
+    super.onPause();
+
+}
+
     /*public void benchImageButton(View v){
-        MediaPlayer mp = MediaPlayer.create(v.getContext(), R.raw.FitFactBarbellBenchPress);
+        MediaPlayer mp = MediaPlayer.create(v.getContext(), R.raw.fitfactbarbellbenchbress);
         mp.start();
         **/
     }
