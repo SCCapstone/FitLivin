@@ -52,6 +52,21 @@ public class MainActivity extends FragmentActivity{
     public static ParseObject pointsInfo = new ParseObject("Points");
     ParseQuery<ParseObject> query2 = ParseQuery.getQuery("Points");
 
+    public static ParseObject weightParse = new ParseObject("WeightGoal");
+    ParseQuery<ParseObject> weightParseQuery = ParseQuery.getQuery("WeightGoal");
+
+    public static ParseObject benchParse = new ParseObject("BenchGoal");
+    ParseQuery<ParseObject> benchParseQuery = ParseQuery.getQuery("BenchGoal");
+
+    public static ParseObject squatParse = new ParseObject("SquatGoal");
+    ParseQuery<ParseObject> squatParseQuery = ParseQuery.getQuery("SquatGoal");
+
+    public static ParseObject DeadLiftParse = new ParseObject("DeadLiftGoal");
+    ParseQuery<ParseObject> DeadLiftParseQuery = ParseQuery.getQuery("DeadLiftGoal");
+
+    public static ParseObject MileTimeParse = new ParseObject("MileTimeGoal");
+    ParseQuery<ParseObject> MileTimeParseQuery = ParseQuery.getQuery("MileTimeGoal");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -226,6 +241,131 @@ public class MainActivity extends FragmentActivity{
             }
         });
 
+
+    }
+
+    public void WeightGoal(Integer weight, String user) {
+        Integer weight1 = weight;
+
+        // ParseUser user1 = user;
+        String username1 = user;
+
+        Log.d("F", "weightGoal!!!!!!!!!!!!!!!!!!");
+        // adds info to database
+        weightParse.put("goalWeight", weight1);
+        weightParse.put("username", username1);
+
+        weightParse.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e == null) {
+                    objectID = weightParse.getObjectId();
+                    setS(objectID);
+                } else {
+                    Log.d("F", "object failllll");
+                }
+            }
+        });
+
+    }
+
+    public void BenchGoal(Integer bench, String user) {
+        Integer bench1 = bench;
+
+        // ParseUser user1 = user;
+        String username1 = user;
+
+        Log.d("F", "benchGoal!!!!!!!!!!!!!!!!!!");
+        // adds info to database
+        benchParse.put("BenchGoal", bench1);
+        benchParse.put("username", username1);
+
+        benchParse.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e == null) {
+                    objectID = benchParse.getObjectId();
+                    setS(objectID);
+                } else {
+                    Log.d("F", "object failllll");
+                }
+            }
+        });
+
+    }
+
+    public void SquatGoal(Integer squat, String user) {
+        Integer squat1 = squat;
+
+        // ParseUser user1 = user;
+        String username1 = user;
+
+        Log.d("F", "squatGoal!!!!!!!!!!!!!!!!!!");
+        // adds info to database
+        squatParse.put("SquatGoal", squat1);
+        squatParse.put("username", username1);
+
+        squatParse.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e == null) {
+                    objectID = squatParse.getObjectId();
+                    setS(objectID);
+                } else {
+                    Log.d("F", "object failllll");
+                }
+            }
+        });
+
+    }
+
+    public void DeadLiftGoal(Integer DL, String user) {
+        Integer DL1 = DL;
+
+        // ParseUser user1 = user;
+        String username1 = user;
+
+        Log.d("F", "DLGoal!!!!!!!!!!!!!!!!!!");
+        // adds info to database
+        DeadLiftParse.put("SquatGoal", DL1);
+        DeadLiftParse.put("username", username1);
+
+        DeadLiftParse.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e == null) {
+                    objectID = DeadLiftParse.getObjectId();
+                    setS(objectID);
+                } else {
+                    Log.d("F", "object failllll");
+                }
+            }
+        });
+
+    }
+
+    public void MileTimeGoal(Integer mileTime, String user) {
+        Integer mileTime1 = mileTime;
+
+        // ParseUser user1 = user;
+        String username1 = user;
+
+        Log.d("F", "mileTimeGoal!!!!!!!!!!!!!!!!!!");
+        // adds info to database
+        MileTimeParse.put("MileTimeGoal", mileTime1);
+        MileTimeParse.put("username", username1);
+
+        MileTimeParse.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e == null) {
+                    objectID = MileTimeParse.getObjectId();
+                    setS(objectID);
+                } else {
+                    Log.d("F", "object failllll");
+                }
+            }
+        });
 
     }
 

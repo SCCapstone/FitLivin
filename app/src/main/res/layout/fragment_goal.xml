@@ -183,7 +183,55 @@
             android:layout_below="@+id/MileTimeText"
             android:layout_alignParentStart="true" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Weight"
+            android:id="@+id/setWeight"
+            android:layout_alignBottom="@+id/changeWeightGoal"
+            android:layout_alignStart="@+id/textView2"
+            android:layout_marginStart="43dp"
+            android:layout_alignTop="@+id/changeWeightGoal" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Bench"
+            android:id="@+id/setBench"
+            android:layout_alignBottom="@+id/changeBenchGoal"
+            android:layout_alignStart="@+id/textView2"
+            android:layout_marginStart="43dp"
+            android:layout_alignTop="@+id/changeBenchGoal" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Squat"
+            android:id="@+id/setSquat"
+            android:layout_alignBottom="@+id/changeSquatGoal"
+            android:layout_alignStart="@+id/textView2"
+            android:layout_marginStart="43dp"
+            android:layout_alignTop="@+id/changeSquatGoal" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set DeadLift"
+            android:id="@+id/setDeadLift"
+            android:layout_alignBottom="@+id/changeDeadliftGoal"
+            android:layout_alignStart="@+id/textView2"
+            android:layout_marginStart="43dp"
+            android:layout_alignTop="@+id/changeDeadliftGoal" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set MileTime"
+            android:id="@+id/setMileTime"
+            android:layout_alignBottom="@+id/changeMileTimeGoal"
+            android:layout_alignStart="@+id/textView2"
+            android:layout_marginStart="43dp"
+            android:layout_alignTop="@+id/changeMileTimeGoal" />
 
 
     </RelativeLayout>
