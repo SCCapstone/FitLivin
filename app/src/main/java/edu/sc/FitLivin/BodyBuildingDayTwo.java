@@ -10,12 +10,15 @@ package edu.sc.FitLivin;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 
 public class BodyBuildingDayTwo extends Fragment {
@@ -33,6 +36,8 @@ public class BodyBuildingDayTwo extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_body_building_two, container, false);
         Button backBtn = (Button) v.findViewById(R.id.BBBack);//creates button
+
+
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,15 +47,28 @@ public class BodyBuildingDayTwo extends Fragment {
                 ft.replace(R.id.container, fragment1);//replaces previous fragment
                 ft.addToBackStack(null);//adds to back stack
                 ft.commit();//commits it
+
+
             }
         });
 
+        ImageButton benchImage1;
+        benchImage1 = (ImageButton) v.findViewById(R.id.benchImage);
+        benchImage1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MediaPlayer mp = MediaPlayer.create(v.getContext(), R.raw.FitFactBarbellBenchPress);
+                mp.start();
 
-        return v;//return
+            }
+        });
+        return v;
+        //retur
 
     }
 
-
-
-
-}
+    /*public void benchImageButton(View v){
+        MediaPlayer mp = MediaPlayer.create(v.getContext(), R.raw.FitFactBarbellBenchPress);
+        mp.start();
+        **/
+    }
