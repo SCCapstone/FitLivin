@@ -67,6 +67,21 @@ public class MainActivity extends FragmentActivity{
     public static ParseObject MileTimeParse = new ParseObject("MileTimeGoal");
     ParseQuery<ParseObject> MileTimeParseQuery = ParseQuery.getQuery("MileTimeGoal");
 
+    public static ParseObject MaxBenchParse = new ParseObject("MaxBench");
+    ParseQuery<ParseObject> MaxBenchParseQuery = ParseQuery.getQuery("MaxBench");
+
+    public static ParseObject MaxSquatParse = new ParseObject("MaxSquat");
+    ParseQuery<ParseObject> MaxSquatParseQuery = ParseQuery.getQuery("MaxSquat");
+
+    public static ParseObject MaxDeadLiftParse = new ParseObject("MaxDeadLift");
+    ParseQuery<ParseObject> MaxDeadLiftParseQuery = ParseQuery.getQuery("MaxDeadLift");
+
+    public static ParseObject MaxBigThreeParse = new ParseObject("MaxBigThree");
+    ParseQuery<ParseObject> MaxBigThreeParseQuery = ParseQuery.getQuery("MaxBigThree");
+
+    public static ParseObject MaxMileTimeParse = new ParseObject("MaxMileTime");
+    ParseQuery<ParseObject> MaxMileTimeParseQuery = ParseQuery.getQuery("MaxMileTime");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -368,7 +383,115 @@ public class MainActivity extends FragmentActivity{
         });
 
     }
+    public void BenchMax(Integer bench, String user) {
+        Integer bench1 = bench;
 
+        // ParseUser user1 = user;
+        String username1 = user;
+        // adds info to database
+        MaxBenchParse.put("MaxBench", bench1);
+        MaxBenchParse.put("username", username1);
+
+        MaxBenchParse.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e == null) {
+                    objectID = MaxBenchParse.getObjectId();
+                    setS(objectID);
+                } else {
+                    Log.d("F", "object failllll");
+                }
+            }
+        });
+    }
+
+    public void SquatMax(Integer squat, String user) {
+        Integer squat1 = squat;
+
+        // ParseUser user1 = user;
+        String username1 = user;
+        // adds info to database
+        MaxSquatParse.put("MaxSquat", squat1);
+        MaxSquatParse.put("username", username1);
+
+        MaxSquatParse.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e == null) {
+                    objectID = MaxSquatParse.getObjectId();
+                    setS(objectID);
+                } else {
+                    Log.d("F", "object failllll");
+                }
+            }
+        });
+    }
+
+    public void DeadLiftMax(Integer deadLift, String user) {
+        Integer deadLift1 = deadLift;
+
+        // ParseUser user1 = user;
+        String username1 = user;
+        // adds info to database
+        MaxDeadLiftParse.put("MaxDeadLift", deadLift1);
+        MaxDeadLiftParse.put("username", username1);
+
+        MaxDeadLiftParse.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e == null) {
+                    objectID = MaxDeadLiftParse.getObjectId();
+                    setS(objectID);
+                } else {
+                    Log.d("F", "object failllll");
+                }
+            }
+        });
+    }
+
+    public void BigThreeMax(Integer bigThree, String user) {
+        Integer bigThree1 = bigThree;
+
+        // ParseUser user1 = user;
+        String username1 = user;
+        // adds info to database
+        MaxBigThreeParse.put("MaxBigThree", bigThree1);
+        MaxBigThreeParse.put("username", username1);
+
+        MaxBigThreeParse.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e == null) {
+                    objectID = MaxBigThreeParse.getObjectId();
+                    setS(objectID);
+                } else {
+                    Log.d("F", "object failllll");
+                }
+            }
+        });
+    }
+
+    public void MileTimeMax(Integer mileTime, String user) {
+        Integer mileTime1 = mileTime;
+
+        // ParseUser user1 = user;
+        String username1 = user;
+        // adds info to database
+        MaxMileTimeParse.put("MaxMileTime", mileTime1);
+        MaxMileTimeParse.put("username", username1);
+
+        MaxMileTimeParse.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e == null) {
+                    objectID = MaxMileTimeParse.getObjectId();
+                    setS(objectID);
+                } else {
+                    Log.d("F", "object failllll");
+                }
+            }
+        });
+    }
     /***
      *
      * Getters and Setters for name, weight, and height
