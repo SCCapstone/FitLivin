@@ -17,42 +17,21 @@
         android:text="BMI"
         android:id="@+id/profileBMIButton"
         android:layout_gravity="center"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignTop="@+id/saveButtonProfile"
+        android:layout_alignEnd="@+id/CurrH" />
+
 
         <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HeightV:"
-        android:textSize="20dp"
-        android:id="@+id/heightView"
-        android:layout_gravity="left|center_vertical"
-        android:textColor="#ffffff"
-            android:layout_below="@+id/name"
-            android:layout_alignStart="@+id/weightView" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="WeightV:"
-        android:textSize="20dp"
-        android:id="@+id/weightView"
-        android:textColor="#ffffff"
-        android:layout_below="@+id/heightView"
-        android:layout_alignEnd="@+id/saveButtonProfile"
-        android:layout_marginTop="30dp" />
-
-
-    <TextView
-        android:layout_width="130dp"
-        android:layout_height="37dp"
         android:id="@+id/name"
         android:layout_gravity="left|center_vertical"
-        android:textSize="25dp"
+        android:textSize="19dp"
         android:text="Username"
         android:textColor="#ffffff"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/profileBMIButton" />
+            android:layout_marginTop="51dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/height" />
 
     <EditText
         android:layout_width="130dp"
@@ -62,8 +41,9 @@
         android:layout_gravity="left|center_vertical"
         android:background="#ecffea"
         android:hint="Weight"
-        android:layout_below="@+id/weightView"
-        android:layout_alignParentStart="true" />
+        android:layout_above="@+id/saveButtonProfile"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="76dp" />
 
     <EditText
         android:layout_width="130dp"
@@ -88,8 +68,8 @@
         android:textSize="20dp"
         android:textIsSelectable="true"
 
-        android:layout_above="@+id/weightView"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -99,17 +79,9 @@
         android:layout_gravity="center_horizontal"
         android:textColor="#ffffff"
         android:textSize="20dp"
-        android:layout_above="@+id/weight"
-        android:layout_alignStart="@+id/CurrH" />
 
-        <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BACK"
-        android:id="@+id/profilePageBackButton"
-        android:layout_gravity="right|bottom"
-            android:layout_alignTop="@+id/profileBMIButton"
-            android:layout_alignParentEnd="true" />
+        android:layout_alignTop="@+id/weight"
+        android:layout_alignParentEnd="true" />
 
         <Button
             android:layout_width="wrap_content"
@@ -119,6 +91,25 @@
             android:layout_gravity="left"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_camera"
+            android:id="@+id/Profilepicview"
+            android:layout_alignBottom="@+id/name"
+            android:layout_alignEnd="@+id/saveButtonProfile"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:id="@+id/editprofile"
+            android:layout_below="@+id/name"
+            android:layout_alignStart="@+id/name" />
 
     </RelativeLayout>
 

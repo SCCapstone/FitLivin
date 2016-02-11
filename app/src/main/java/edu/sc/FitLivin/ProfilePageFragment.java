@@ -29,7 +29,7 @@ import com.parse.ParseUser;
 import java.util.List;
 
 public class ProfilePageFragment extends Fragment {
-
+    private Button editprofile;
     public ProfilePageFragment() {
         // Required empty public constructor
     }
@@ -42,7 +42,7 @@ public class ProfilePageFragment extends Fragment {
 
 
         View v = inflater.inflate(R.layout.fragment_profile__page, container, false);
-        // final TextView newText = (TextView) v.findViewById(R.id.textView25);
+
         final TextView heightText = (TextView) v.findViewById(R.id.heightView);
         final TextView weightText = (TextView) v.findViewById(R.id.weightView);
         final TextView VeiwName = (TextView) v.findViewById(R.id.name);
@@ -54,9 +54,7 @@ public class ProfilePageFragment extends Fragment {
 
 
 
-        String name = MainActivity.name;
-        final Integer height = MainActivity.height;
-        Integer weight = MainActivity.weight;
+
 
 
 
@@ -65,12 +63,11 @@ public class ProfilePageFragment extends Fragment {
         query.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
         query.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
-                if (e == null  && objects.size()!= 0 ) { //if objects size is not 0
+                if (e == null && objects.size() != 0) { //if objects size is not 0
 
-                    if(objects.get(0).get("UserP").equals(ParseUser.getCurrentUser()))
-                    {
-                        currentWeight.setText(objects.get(objects.size() -1).get("Weight").toString()); //setting weight
-                        currentHeight.setText(objects.get(objects.size()-1).get("Height").toString()); //setting height
+                    if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
+                        currentWeight.setText(objects.get(objects.size() - 1).get("Weight").toString()); //setting weight
+                        currentHeight.setText(objects.get(objects.size() - 1).get("Height").toString()); //setting height
                         Log.d("F", "weight");
                     }
                 } else {
@@ -89,12 +86,12 @@ public class ProfilePageFragment extends Fragment {
             public void onClick(View v)
             {
 
-                //String name = MainActivity.name;
+
                 Integer height = MainActivity.height;
                 Integer weight = MainActivity.weight;
 
                 MainActivity main = new MainActivity();
-                //name = VeiwName.getText().toString();
+
 
                 String h = editHeight.getText().toString();
                 height = Integer.parseInt(h);
@@ -102,10 +99,6 @@ public class ProfilePageFragment extends Fragment {
                 weight = Integer.parseInt(w);
                 currentHeight.setText(""+height);
                 currentWeight.setText(""+weight);
-                //currentName.setText(name);
-                //info.setheight(height);
-                //info.setWeight(weight);
-                //String s = ParseUser.getCurrentUser().getUsername();
 
 
 
@@ -127,19 +120,16 @@ public class ProfilePageFragment extends Fragment {
                 ft.commit();
             }
         });
-
-        Button backBtn = (Button) v.findViewById(R.id.profilePageBackButton);
-        backBtn.setOnClickListener(new View.OnClickListener() {
+        editprofile = (Button) v.findViewById(R.id.editprofile);
+        editprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                HomePageFragment fragment1 = new HomePageFragment();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, fragment1);
-                ft.addToBackStack(null);
-                ft.commit();
+                Editprofilefragment fragment = new Editprofilefragment();
+                FragmentManager fm = getFragmentManager();
+                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
+
 
 
         return v;

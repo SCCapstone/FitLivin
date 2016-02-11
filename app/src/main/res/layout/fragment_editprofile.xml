@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/background3"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="#800000"
+        android:id="@+id/linview"
+        android:layout_gravity="center_horizontal|bottom">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="edit your profile"
+            android:id="@+id/edityourprofile"
+            android:layout_gravity="center_horizontal|top"
+            android:textColor="#ffffff"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="40dp" />
+
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="37dp"
+            android:id="@+id/editTextname"
+            android:hint="Enter new name"
+            android:maxLines="1"
+            android:background="#ffffff"
+            android:layout_alignTop="@+id/textname"
+            android:layout_alignEnd="@+id/edityourprofile" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username:"
+            android:textSize="28dp"
+            android:textColor="#ffffff"
+            android:id="@+id/textname"
+            android:layout_marginTop="65dp"
+            android:layout_below="@+id/edityourprofile"
+            android:layout_alignStart="@+id/edityourprofile" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="28dp"
+            android:textColor="#ffffff"
+            android:text="Gender:"
+            android:id="@+id/textgender"
+            android:layout_below="@+id/editTextname"
+            android:layout_alignStart="@+id/textname"
+            android:layout_marginTop="37dp" />
+
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="37dp"
+            android:id="@+id/editgender"
+            android:maxLines="1"
+            android:maxLength="1"
+            android:hint="enter gender"
+            android:background="#ffffff"
+            android:layout_alignBottom="@+id/textgender"
+            android:layout_alignStart="@+id/editTextname" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="28dp"
+            android:textColor="#ffffff"
+            android:text="Password:"
+            android:id="@+id/editpass"
+            android:layout_below="@+id/textgender"
+            android:layout_alignStart="@+id/textgender"
+            android:layout_marginTop="37dp" />
+
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="37dp"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:hint="Password"
+            android:maxLines="1"
+            android:background="#ffffff"
+            android:id="@+id/editpasstext"
+            android:layout_alignBottom="@+id/editpass"
+            android:layout_alignStart="@+id/editgender" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="28dp"
+            android:textColor="#ffffff"
+            android:text="Phone:"
+            android:id="@+id/textView6"
+            android:layout_below="@+id/editpass"
+            android:layout_alignStart="@+id/editpass"
+            android:layout_marginTop="37dp" />
+
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="37dp"
+            android:inputType="phone"
+            android:ems="10"
+            android:maxLines="1"
+            android:maxLength="10"
+            android:hint="Phone"
+            android:background="#ffffff"
+            android:id="@+id/editphone"
+            android:layout_alignBottom="@+id/textView6"
+            android:layout_alignStart="@+id/editpasstext" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:id="@+id/checkboxname"
+            android:layout_alignTop="@+id/editTextname"
+            android:layout_alignParentEnd="true" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkboxgender"
+            android:background="#ffffff"
+            android:layout_above="@+id/editpass"
+            android:layout_alignParentEnd="true" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBoxpassword"
+            android:background="#ffffff"
+            android:layout_alignTop="@+id/editpasstext"
+            android:layout_alignParentEnd="true" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:id="@+id/checkBoxphone"
+            android:layout_alignTop="@+id/editphone"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:id="@+id/savebuttoneditprofile"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+
+    </RelativeLayout>
+
+
+
+</FrameLayout>
