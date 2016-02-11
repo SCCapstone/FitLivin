@@ -19,9 +19,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+
+import java.util.List;
 
 
 public class MaxFragment extends Fragment {
@@ -47,8 +51,184 @@ public class MaxFragment extends Fragment {
         final EditText changeDeadLift = (EditText) v.findViewById(R.id.changeDeadlift);
         final EditText changeMileTime = (EditText) v.findViewById(R.id.changeMileTime);
         final EditText changeTotal = (EditText) v.findViewById(R.id.changeBig3);
+        final  MainActivity main = new MainActivity();
+        Button setBenchMax = (Button) v.findViewById(R.id.setBench);
+        Button setSquatMax = (Button) v.findViewById(R.id.setSquat);
+        Button setDeadLiftMax = (Button) v.findViewById(R.id.setDeadLift);
+        Button setTotalMax = (Button) v.findViewById(R.id.setTotal);
+        Button setMileTimeMax = (Button) v.findViewById(R.id.setMileTime);
+        ParseQuery BenchMaxquery = ParseQuery.getQuery("MaxBench");
+        ParseQuery SquatMaxquery = ParseQuery.getQuery("MaxSquat");
+        ParseQuery DeadLiftMaxquery = ParseQuery.getQuery("MaxDeadLift");
+        ParseQuery BigThreeMaxquery = ParseQuery.getQuery("MaxBigThree");
+        ParseQuery MileTimeMaxquery = ParseQuery.getQuery("MaxMileTime");
 
-        ParseQuery query = ParseQuery.getQuery("Max"); //getting query
+        BenchMaxquery.whereExists("MaxBench");//setting constraints
+        BenchMaxquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        BenchMaxquery.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
+
+                if (e == null  && objects.size()!= 0 ) { //if objects size is not 0
+
+                    if(objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername()))
+                    {
+
+                        int x = (Integer)objects.get(0).get("MaxBench");
+                        userBench.setText("" + x);
+
+                    }
+                }
+            }
+
+        });
+
+        SquatMaxquery.whereExists("MaxSquat");//setting constraints
+        SquatMaxquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        SquatMaxquery.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
+
+                if (e == null  && objects.size()!= 0 ) { //if objects size is not 0
+
+                    if(objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername()))
+                    {
+
+                        int x = (Integer)objects.get(0).get("MaxSquat");
+                        userSquat.setText("" + x);
+
+                    }
+                }
+            }
+
+        });
+        DeadLiftMaxquery.whereExists("MaxDeadLift");//setting constraints
+        DeadLiftMaxquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        DeadLiftMaxquery.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
+
+                if (e == null  && objects.size()!= 0 ) { //if objects size is not 0
+
+                    if(objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername()))
+                    {
+
+                        int x = (Integer)objects.get(0).get("MaxDeadLift");
+                        userDL.setText("" + x);
+
+                    }
+                }
+            }
+
+        });
+        BigThreeMaxquery.whereExists("MaxBigThree");//setting constraints
+        BigThreeMaxquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        BigThreeMaxquery.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
+
+                if (e == null  && objects.size()!= 0 ) { //if objects size is not 0
+
+                    if(objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername()))
+                    {
+
+                        int x = (Integer)objects.get(0).get("MaxBigThree");
+                        userTotal.setText("" + x);
+
+                    }
+                }
+            }
+
+        });
+        MileTimeMaxquery.whereExists("MaxMileTime");//setting constraints
+        MileTimeMaxquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        MileTimeMaxquery.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
+
+                if (e == null  && objects.size()!= 0 ) { //if objects size is not 0
+
+                    if(objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername()))
+                    {
+
+                        int x = (Integer)objects.get(0).get("MaxMileTime");
+                        userMileTime.setText("" + x);
+
+                    }
+                }
+            }
+
+        });
+
+
+
+
+        setBenchMax.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Integer bench;
+                String benchS = changeBench.getText().toString();
+                bench = Integer.valueOf(benchS);
+
+                userBench.setText("" + bench);
+
+                String s = ParseUser.getCurrentUser().getUsername();
+                main.BenchMax(bench, s);
+            }
+        });
+
+        setSquatMax.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Integer squat;
+                String squatS = changeSquat.getText().toString();
+                squat = Integer.valueOf(squatS);
+
+                userSquat.setText("" + squat);
+
+                String s = ParseUser.getCurrentUser().getUsername();
+                main.SquatMax(squat, s);
+            }
+        });
+        setDeadLiftMax.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Integer deadLift;
+                String deadLiftS = changeDeadLift.getText().toString();
+                deadLift = Integer.valueOf(deadLiftS);
+
+                userDL.setText("" + deadLift);
+
+                String s = ParseUser.getCurrentUser().getUsername();
+                main.DeadLiftMax(deadLift, s);
+            }
+        });
+
+        setTotalMax.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Integer total;
+                String totalS = changeTotal.getText().toString();
+                total = Integer.valueOf(totalS);
+
+                userTotal.setText("" + total);
+
+                String s = ParseUser.getCurrentUser().getUsername();
+                main.BigThreeMax(total, s);
+            }
+        });
+
+        setMileTimeMax.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Integer miletime;
+                String mileitmeS = changeMileTime.getText().toString();
+                miletime = Integer.valueOf(mileitmeS);
+
+                userMileTime.setText("" + miletime);
+
+                String s = ParseUser.getCurrentUser().getUsername();
+                main.MileTimeMax(miletime, s);
+            }
+        });
+
+
+       /* ParseQuery query = ParseQuery.getQuery("Max"); //getting query
 
 
 
@@ -95,6 +275,7 @@ public class MaxFragment extends Fragment {
           *On click method that exits out of max fragment and takes users back to the
           *menu. Gives functionality to the back button.
           */
+
 
         Button backBtn = (Button) v.findViewById(R.id.MaxBack);
         backBtn.setOnClickListener(new View.OnClickListener() {

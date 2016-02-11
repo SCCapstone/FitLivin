@@ -48,6 +48,16 @@
             android:layout_below="@+id/benchText"
             android:layout_alignParentStart="true" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Bench"
+            android:id="@+id/setBench"
+            android:layout_alignBottom="@+id/changeBench"
+            android:layout_alignStart="@+id/textView2"
+            android:layout_marginStart="43dp"
+            android:layout_alignTop="@+id/changeBench" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -70,6 +80,15 @@
             android:hint="Squat"
             android:layout_below="@+id/squatText"
             android:layout_alignParentStart="true" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Squat"
+            android:id="@+id/setSquat"
+            android:layout_alignBottom="@+id/changeSquat"
+            android:layout_alignStart="@+id/textView2"
+            android:layout_marginStart="43dp"
+            android:layout_alignTop="@+id/changeSquat" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -93,6 +112,16 @@
             android:hint="Deadlift"
             android:layout_below="@+id/deadliftText"
             android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set DeadLift"
+            android:id="@+id/setDeadLift"
+            android:layout_alignBottom="@+id/changeDeadlift"
+            android:layout_alignStart="@+id/textView2"
+            android:layout_marginStart="43dp"
+            android:layout_alignTop="@+id/changeDeadlift" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -134,6 +163,15 @@
             android:hint="Total"
             android:layout_below="@+id/totalText"
             android:layout_alignParentStart="true" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Total"
+            android:id="@+id/setTotal"
+            android:layout_alignBottom="@+id/changeBig3"
+            android:layout_alignStart="@+id/textView2"
+            android:layout_marginStart="43dp"
+            android:layout_alignTop="@+id/changeBig3" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -199,6 +237,15 @@
             android:hint="MileTime"
             android:layout_below="@+id/userTime"
             android:layout_alignParentStart="true" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set MileTime"
+            android:id="@+id/setMileTime"
+            android:layout_alignBottom="@+id/changeMileTime"
+            android:layout_alignStart="@+id/textView2"
+            android:layout_marginStart="43dp"
+            android:layout_alignTop="@+id/changeMileTime" />
 
         <Button
             android:layout_width="wrap_content"
