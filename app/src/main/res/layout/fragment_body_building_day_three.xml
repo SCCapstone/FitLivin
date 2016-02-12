@@ -36,7 +36,7 @@
         android:textColor="#ffffff"
         android:textSize="25dp" />
 
-        <ImageView
+        <ImageButton
             android:scaleType="fitXY"
             android:layout_width="match_parent"
             android:layout_height="250dp"
@@ -44,6 +44,7 @@
             android:layout_marginBottom="10dp"
             android:layout_marginTop="30dp"
             android:src="@drawable/hammercurl"
+            android:clickable="true"
             android:layout_below="@+id/hammercurlText"
             android:layout_above="@+id/hammerCurlDetail"
             android:layout_weight="0.03" />
@@ -70,7 +71,7 @@
             android:layout_above="@+id/preacherCurlImage"
             />
 
-    <ImageView
+    <ImageButton
         android:scaleType="fitXY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -78,6 +79,7 @@
         android:layout_gravity="right|center_vertical"
         android:layout_marginBottom="35dp"
         android:src="@drawable/preachercurl"
+        android:clickable="true"
         android:layout_below="@+id/preacherCurlText"
         android:layout_above="@+id/preacherCurlDetail"
         />
@@ -117,13 +119,14 @@
         android:layout_below="@+id/closegripPushupDetail"
         android:layout_above="@+id/closegrippushupImage"/>
 
-    <ImageView
+    <ImageButton
         android:scaleType="fitXY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/closegrippushupImage"
         android:layout_gravity="right|bottom"
         android:layout_marginBottom="70dp"
+        android:clickable="true"
         android:src="@drawable/closegrippushup"
         android:layout_below="@+id/closegripPushupText"
 

@@ -79,7 +79,7 @@
         />
 
 
-            <ImageView
+            <ImageButton
                 android:scaleType="fitXY"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -87,6 +87,7 @@
                 android:layout_gravity="right|center_vertical"
                 android:layout_marginBottom="35dp"
                 android:src="@drawable/flyes"
+                android:clickable="true"
                 android:layout_below="@+id/flyDetail"
                 android:layout_above="@+id/pushupText"
                 />
@@ -118,13 +119,14 @@
 
                 />
 
-    <ImageView
+    <ImageButton
         android:scaleType="fitXY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/pushupImage"
         android:layout_gravity="right|bottom"
         android:layout_marginBottom="70dp"
+        android:clickable="true"
         android:src="@drawable/pushup" />
 
 

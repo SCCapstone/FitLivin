@@ -26,7 +26,7 @@
         android:textSize="25dp"
         android:layout_below="@+id/bbDay1"/>
 
-        <ImageView
+        <ImageButton
             android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,6 +34,7 @@
             android:layout_marginBottom="5dp"
             android:src="@drawable/squat"
             android:layout_marginTop="40dp"
+            android:clickable="true"
             android:layout_below="@+id/squatText"
             android:layout_above="@+id/benchDetail"/>
 
@@ -56,7 +57,7 @@
         android:textColor="#ffffff"
         android:textSize="25dp" />
 
-    <ImageView
+    <ImageButton
         android:scaleType="fitXY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,6 +65,7 @@
         android:layout_gravity="right|center_vertical"
         android:layout_marginBottom="35dp"
         android:src="@drawable/legextension"
+        android:clickable="true"
         android:layout_below="@+id/extensionText"
         android:layout_above="@+id/extensionDetail"/>
 
@@ -95,13 +97,14 @@
         android:textColor="#ffffff"
         android:textSize="25dp" />
 
-    <ImageView
+    <ImageButton
         android:scaleType="fitXY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/curlImage"
         android:layout_gravity="right|bottom"
         android:layout_marginBottom="70dp"
+        android:clickable="true"
         android:src="@drawable/legcurl" />
 
     <TextView

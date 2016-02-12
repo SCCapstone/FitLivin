@@ -42,7 +42,7 @@
         android:layout_gravity="left|center_vertical"
         android:textColor="#ffffff" />
 
-    <ImageView
+    <ImageButton
         android:scaleType="fitXY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,6 +50,7 @@
         android:layout_gravity="right|top"
         android:layout_marginBottom="50dp"
         android:src="@drawable/deadlift"
+        android:clickable="true"
         android:layout_marginTop="20dp" />
 
     <TextView
@@ -69,7 +70,7 @@
                 android:layout_gravity="left|center_vertical"
                 android:layout_marginBottom="20dp"
                 android:textColor="#ffffff" />
-    <ImageView
+    <ImageButton
         android:scaleType="fitXY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -77,6 +78,7 @@
         android:layout_gravity="right|center_vertical"
         android:layout_marginBottom="35dp"
         android:src="@drawable/pullup"
+        android:clickable="true"
         android:layout_below="@+id/pullupDetail"
         android:layout_above="@+id/dumbbellRowText"
         />
@@ -108,13 +110,14 @@
 
 
 
-    <ImageView
+    <ImageButton
         android:scaleType="fitXY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/dumbbellRowImage"
         android:layout_gravity="right|bottom"
         android:layout_marginBottom="70dp"
+        android:clickable="true"
         android:src="@drawable/dbrow" />
 
 

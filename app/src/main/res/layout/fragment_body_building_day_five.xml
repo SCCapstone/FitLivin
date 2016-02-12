@@ -41,13 +41,14 @@
             android:layout_gravity="center_horizontal"
             android:textColor="#ffffff" />
 
-        <ImageView
+        <ImageButton
             android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/militaryPressImage"
             android:layout_below="@+id/militaryPressDetail"
             android:layout_gravity="center_horizontal"
+            android:clickable="true"
             android:src="@drawable/militarypress"
             />
 
@@ -72,13 +73,14 @@
         android:textColor="#ffffff" />
 
 
-        <ImageView
+        <ImageButton
             android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/sideLatImage"
             android:layout_below="@+id/sideLatRaiseDetail"
             android:layout_gravity="center_horizontal"
+            android:clickable="true"
             android:src="@drawable/dumbbelllatraise" />
 
 
@@ -101,13 +103,14 @@
             android:layout_gravity="center_horizontal"
             android:textColor="#ffffff" />
 
-        <ImageView
+        <ImageButton
             android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/shoulderpressImage"
             android:layout_below="@+id/shoulderPressDetail"
             android:layout_gravity="center_horizontal"
+            android:clickable="true"
             android:src="@drawable/shoulderpress" />
 
 
