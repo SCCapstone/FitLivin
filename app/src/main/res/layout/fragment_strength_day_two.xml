@@ -26,13 +26,14 @@
                 android:textSize="32dp"
                 android:layout_gravity="center_horizontal" />
 
-            <ImageView
+            <ImageButton
                 android:scaleType="fitXY"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageView"
                 android:src="@drawable/squat"
                 android:layout_gravity="center_horizontal"
+                android:clickable="true"
                 android:layout_below="@+id/squat"
                 />
 
@@ -46,13 +47,14 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_below="@+id/imageView"/>
 
-            <ImageView
+            <ImageButton
                 android:scaleType="fitXY"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/legpresspic"
                 android:src="@drawable/legpress"
                 android:layout_gravity="center_horizontal"
+                android:clickable="true"
                 android:layout_below="@+id/legpress"/>
 
             <TextView
@@ -65,13 +67,14 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_below="@+id/legpresspic"/>
 
-            <ImageView
+            <ImageButton
                 android:scaleType="fitXY"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/calfpresspic"
                 android:src="@drawable/calfpress"
                 android:layout_gravity="center_horizontal"
+                android:clickable="true"
                 android:layout_below="@+id/flyText"/>
 
             <Button
@@ -83,11 +86,6 @@
                 android:layout_below="@+id/calfpresspic"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true" />
-
-
-
-
-
 
 
         </LinearLayout>>

@@ -17,6 +17,7 @@
             android:layout_width="fill_parent"
             android:orientation="vertical"
             >
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,12 +28,13 @@
         android:layout_centerHorizontal="true" />
        />
 
-            <ImageView
+            <ImageButton
                 android:scaleType="fitXY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
         android:src="@drawable/bench"
+                android:clickable="true"
         android:layout_below="@+id/benchText"
                 android:layout_centerHorizontal="true" />
 
@@ -59,16 +61,17 @@
                 android:layout_below="@+id/flies"
                 android:layout_centerHorizontal="true" />
 
-            <ImageView
+            <ImageButton
                 android:scaleType="fitXY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/incline"
         android:src="@drawable/incline"
+                android:clickable="true"
         android:layout_below="@+id/benchDetail"
                 android:layout_centerHorizontal="true" />
 
-            <ImageView
+            <ImageButton
 
                 android:scaleType="fitXY"
                 android:layout_width="fill_parent"
@@ -77,6 +80,7 @@
                 android:id="@+id/flies"
                 android:src="@drawable/flies"
                 android:layout_below="@+id/flyText"
+                android:clickable="true"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentEnd="true" />
 

@@ -27,13 +27,14 @@
             android:textSize="32dp"
             android:layout_gravity="center_horizontal" />
 
-        <ImageView
+        <ImageButton
             android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:id="@+id/imageView"
             android:src="@drawable/deadlift"
             android:layout_below="@+id/squat"
+            android:clickable="true"
             android:layout_gravity="center_horizontal"/>
 
         <TextView
@@ -46,14 +47,16 @@
             android:layout_below="@+id/imageView"
             android:layout_gravity="center_horizontal"/>
 
-        <ImageView
+        <ImageButton
             android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/legpresspic"
             android:src="@drawable/dbrow"
             android:layout_below="@+id/dbrow"
+            android:clickable="true"
             android:layout_gravity="center_horizontal"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -63,13 +66,15 @@
             android:textSize="32dp"
             android:layout_below="@+id/legpresspic"
             android:layout_gravity="center_horizontal"/>
-        <ImageView
+
+        <ImageButton
             android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/shrugpic"
             android:src="@drawable/shrug"
             android:layout_below="@+id/shrug"
+            android:clickable="true"
             android:layout_gravity="center_horizontal"/>
 
         <Button
@@ -81,12 +86,6 @@
             android:layout_below="@+id/calfpresspic"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true" />
-
-
-
-
-
-
 
 
 

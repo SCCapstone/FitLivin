@@ -25,13 +25,15 @@
             android:textColor="#ffffff"
             android:textSize="32dp"
             android:layout_gravity="center_horizontal"/>
-        <ImageView
+
+        <ImageButton
             android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView"
             android:src="@drawable/closegrip"
             android:layout_below="@+id/cpbench"
+            android:clickable="true"
             android:layout_gravity="center_horizontal"/>
 
         <TextView
@@ -44,13 +46,14 @@
             android:layout_below="@+id/imageView"
             android:layout_gravity="center_horizontal"/>
 
-        <ImageView
+        <ImageButton
             android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/bbcurl"
             android:src="@drawable/barbellcurl"
             android:layout_below="@+id/benchDetail"
+            android:clickable="true"
             android:layout_gravity="center_horizontal"/>
 
         <TextView
@@ -62,13 +65,15 @@
             android:textSize="32dp"
             android:layout_below="@+id/bbcurl"
             android:layout_gravity="center_horizontal"/>
-        <ImageView
+
+        <ImageButton
             android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/pushdown"
             android:src="@drawable/pushdown"
             android:layout_below="@+id/flyText"
+            android:clickable="true"
             android:layout_gravity="center_horizontal"/>
 
         <Button
@@ -80,14 +85,6 @@
             android:layout_below="@+id/calfpresspic"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true" />
-
-
-
-
-
-
-
-
 
     </LinearLayout>>
 
