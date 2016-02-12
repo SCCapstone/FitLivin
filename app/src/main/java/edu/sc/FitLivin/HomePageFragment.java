@@ -121,6 +121,8 @@ public class HomePageFragment extends Fragment{
             }
         });
 
+
+
         Button btng = (Button) v.findViewById(R.id.goalButton);
         btng.setOnClickListener(new View.OnClickListener() {
             @Override

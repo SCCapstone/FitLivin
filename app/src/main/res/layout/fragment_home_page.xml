@@ -125,6 +125,17 @@
         android:text="Max"
         android:id="@+id/MaxButton"
         android:layout_gravity="center"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="7dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:text="Stop Watch"
+                android:id="@+id/StopWatchButton"
+                android:layout_gravity="center"/>
 
             <View
                 android:layout_width="0dp"
