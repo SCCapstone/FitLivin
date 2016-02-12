@@ -35,13 +35,14 @@
                 android:textColor="#ffffff"
                 android:textSize="32dp" />
 
-            <ImageView
+            <ImageButton
                 android:scaleType="fitXY"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/jogginImage"
                 android:layout_gravity="center_horizontal"
                 android:layout_below = "@+id/warmupJogText"
+                android:clickable="true"
                 android:src="@drawable/jogging" />
 
             <TextView
@@ -63,13 +64,14 @@
                 android:textSize="32dp"
                 android:id="@+id/rowText" />
 
-            <ImageView
+            <ImageButton
                 android:scaleType="fitXY"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/rowImage"
                 android:layout_gravity="center_horizontal"
                 android:layout_below = "@+id/rowText"
+                android:clickable="true"
                 android:src="@drawable/rows" />
 
             <TextView
@@ -91,13 +93,14 @@
                 android:textColor="#ffffff"
                 android:textSize="32dp" />
 
-            <ImageView
+            <ImageButton
                 android:scaleType="fitXY"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/cardioImage"
                 android:layout_gravity="center_horizontal"
                 android:layout_below = "@+id/cardioText"
+                android:clickable="true"
                 android:src="@drawable/cardio" />
 
             <TextView
@@ -127,8 +130,5 @@
         </LinearLayout>>
 
     </ScrollView>
-
-
-
 
 </FrameLayout>

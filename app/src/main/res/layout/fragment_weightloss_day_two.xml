@@ -34,13 +34,14 @@
             android:textColor="#ffffff"
             android:textSize="32dp" />
 
-        <ImageView
+        <ImageButton
             android:scaleType="fitXY"
             android:layout_below = "@+id/warmupCycleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/cycleImage"
             android:layout_gravity="center_horizontal"
+            android:clickable="true"
             android:src="@drawable/cycle" />
 
         <TextView
@@ -62,13 +63,14 @@
             android:layout_below = "@+id/warmupDetail"
             android:id="@+id/squatText" />
 
-        <ImageView
+        <ImageButton
             android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/squatImage"
             android:layout_gravity="center_horizontal"
             android:layout_below = "@+id/squatText"
+            android:clickable="true"
             android:src="@drawable/squat" />
 
         <TextView
@@ -90,13 +92,14 @@
             android:layout_below = "@+id/squatDetail"
             android:textSize="32dp" />
 
-        <ImageView
+        <ImageButton
             android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/plankImage"
             android:layout_gravity="center_horizontal"
             android:layout_below = "@+id/plankText"
+            android:clickable="true"
             android:src="@drawable/plank" />
 
         <TextView
@@ -121,10 +124,6 @@
             android:text="BACK"
             android:id="@+id/WLBack"
             android:layout_gravity="left|bottom" />
-
-
-
-
 
     </LinearLayout>>
 

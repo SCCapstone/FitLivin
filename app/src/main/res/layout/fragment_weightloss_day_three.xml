@@ -34,13 +34,14 @@
                 android:textColor="#ffffff"
                 android:textSize="32dp" />
 
-            <ImageView
+            <ImageButton
                 android:scaleType="fitXY"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/cycleImage"
                 android:layout_gravity="center_horizontal"
                 android:layout_below = "@+id/warmupCycleText"
+                android:clickable="true"
                 android:src="@drawable/cycle" />
 
             <TextView
@@ -62,13 +63,14 @@
                 android:textSize="32dp"
                 android:id="@+id/pullupText" />
 
-            <ImageView
+            <ImageButton
                 android:scaleType="fitXY"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/pullupImage"
                 android:layout_gravity="center_horizontal"
                 android:layout_below = "@+id/pullupText"
+                android:clickable="true"
                 android:src="@drawable/pullup" />
 
             <TextView
@@ -90,13 +92,14 @@
                 android:textColor="#ffffff"
                 android:textSize="32dp" />
 
-            <ImageView
+            <ImageButton
                 android:scaleType="fitXY"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/burpeesImage"
                 android:layout_gravity="center_horizontal"
                 android:layout_below = "@+id/burpeesText"
+                android:clickable="true"
                 android:src="@drawable/burpees" />
 
             <TextView
@@ -121,8 +124,6 @@
                 android:text="BACK"
                 android:id="@+id/WLBack"
                 android:layout_gravity="left|bottom" />
-
-
 
 
         </LinearLayout>>

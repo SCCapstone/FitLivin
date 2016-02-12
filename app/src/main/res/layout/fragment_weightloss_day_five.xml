@@ -35,13 +35,14 @@
             android:textColor="#ffffff"
             android:textSize="32dp" />
 
-        <ImageView
+        <ImageButton
             android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/runningImage"
             android:layout_gravity="center_horizontal"
             android:layout_below = "@+id/warmupRunText"
+            android:clickable="true"
             android:src="@drawable/running" />
 
         <TextView
@@ -64,13 +65,14 @@
             android:textSize="32dp"
             android:id="@+id/updownsText" />
 
-        <ImageView
+        <ImageButton
             android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/powerjumpImage"
             android:layout_gravity="center_horizontal"
             android:layout_below = "@+id/updownsText"
+            android:clickable="true"
             android:src="@drawable/powerjump" />
 
         <TextView
@@ -92,13 +94,14 @@
             android:textColor="#ffffff"
             android:textSize="32dp" />
 
-        <ImageView
+        <ImageButton
             android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/burpeesImage"
             android:layout_gravity="center_horizontal"
             android:layout_below = "@+id/burpeesText"
+            android:clickable="true"
             android:src="@drawable/burpees" />
 
         <TextView
