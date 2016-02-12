@@ -29,6 +29,7 @@ import java.util.List;
 public class MainActivity extends FragmentActivity{
 
     //Intializing varibles
+    Integer value;
     public static String name;
     public ParseUser user;
     private FragmentManager fm;
@@ -54,6 +55,9 @@ public class MainActivity extends FragmentActivity{
 
     public static ParseObject weightParse = new ParseObject("WeightGoal");
     ParseQuery<ParseObject> weightParseQuery = ParseQuery.getQuery("WeightGoal");
+
+    public static ParseObject weightGainParse = new ParseObject("goalWeightGain");
+    ParseQuery<ParseObject> weightGainParseQuery = ParseQuery.getQuery("goalWeightGain");
 
     public static ParseObject benchParse = new ParseObject("BenchGoal");
     ParseQuery<ParseObject> benchParseQuery = ParseQuery.getQuery("BenchGoal");
@@ -82,8 +86,7 @@ public class MainActivity extends FragmentActivity{
     public static ParseObject MaxMileTimeParse = new ParseObject("MaxMileTime");
     ParseQuery<ParseObject> MaxMileTimeParseQuery = ParseQuery.getQuery("MaxMileTime");
 
-
-    @Override
+        @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -212,8 +215,8 @@ public class MainActivity extends FragmentActivity{
         // adds info to database
         max.put("bench", bench1);
         max.put("squat", squat1);
-        max.put("deadlift",deadLift1);
-        max.put("big3total",total1);
+        max.put("deadlift", deadLift1);
+        max.put("big3total", total1);
         max.put("miletime",miletime1);
         max.put("username", username1);
 
@@ -275,6 +278,31 @@ public class MainActivity extends FragmentActivity{
             public void done(ParseException e) {
                 if (e == null) {
                     objectID = weightParse.getObjectId();
+                    setS(objectID);
+                } else {
+                    Log.d("F", "object failllll");
+                }
+            }
+        });
+
+    }
+
+    public void WeightGainGoal(Integer weight, String user) {
+        Integer weight1 = weight;
+
+        // ParseUser user1 = user;
+        String username1 = user;
+
+        Log.d("F", "weightGainGoal!!!!!!!!!!!!!!!!!!");
+        // adds info to database
+        weightGainParse.put("goalWeightGain", weight1);
+        weightGainParse.put("username", username1);
+
+        weightGainParse.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e == null) {
+                    objectID = weightGainParse.getObjectId();
                     setS(objectID);
                 } else {
                     Log.d("F", "object failllll");
@@ -492,6 +520,37 @@ public class MainActivity extends FragmentActivity{
             }
         });
     }
+    public Integer WeightGoalTest(final Integer weightL){
+
+        ParseQuery CurrentWeightquery = ParseQuery.getQuery("ProfileInfo");
+        CurrentWeightquery.whereExists("Weight");//setting constraints
+        CurrentWeightquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        CurrentWeightquery.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
+
+                if (e == null && objects.size() != 0) { //if objects size is not 0
+
+                    if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
+
+                        int x = (Integer) objects.get(objects.size() - 1).get("Weight");
+                        //currentW.setText(Integer.toString(x));
+                        setWeight(x);
+
+
+                    }
+                }
+            }
+
+        });
+        Log.d("Q", "ddCurrentWeight  " + getWeight() + " dd ");
+        Integer currentw = getWeight();
+        if(currentw<=weightL){
+            return 1;
+        }else{
+            return 2;
+        }
+
+    }
     /***
      *
      * Getters and Setters for name, weight, and height
@@ -521,6 +580,7 @@ public class MainActivity extends FragmentActivity{
     public void setS(String sn){
         this.objectID = sn;
     }
+
     public void onBackPressed() {
         if(getFragmentManager().getBackStackEntryCount() == 0) {
             super.onBackPressed();

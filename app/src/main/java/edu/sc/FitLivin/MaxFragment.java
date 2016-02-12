@@ -228,55 +228,6 @@ public class MaxFragment extends Fragment {
         });
 
 
-       /* ParseQuery query = ParseQuery.getQuery("Max"); //getting query
-
-
-
-        Button enterButton = (Button) v.findViewById(R.id.enterMax);
-
-      enterButton.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-
-              Integer bench;
-              Integer squat;
-              Integer deadLift;
-              Integer total;
-              Integer mileTime;
-
-              MainActivity main = new MainActivity();
-
-              String ben = changeBench.getText().toString();
-              bench = Integer.valueOf(ben);
-              String sqa = changeSquat.getText().toString();
-              squat = Integer.valueOf(sqa);
-              String dea = changeDeadLift.getText().toString();
-              deadLift = Integer.valueOf(dea);
-              String tot = changeTotal.getText().toString();
-              total = Integer.valueOf(tot);
-              String mil = changeMileTime.getText().toString();
-              mileTime = Integer.valueOf(mil);
-
-              userBench.setText(""+bench);
-              userSquat.setText(""+squat);
-              userDL.setText(""+deadLift);
-              userTotal.setText(""+total);
-              userMileTime.setText(""+mileTime);
-
-              String s = ParseUser.getCurrentUser().getUsername();
-//
-
-              main.MaxData(bench,squat,deadLift,total,mileTime,s);
-
-          }
-      });
-
-         /*
-          *On click method that exits out of max fragment and takes users back to the
-          *menu. Gives functionality to the back button.
-          */
-
-
         Button backBtn = (Button) v.findViewById(R.id.MaxBack);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
