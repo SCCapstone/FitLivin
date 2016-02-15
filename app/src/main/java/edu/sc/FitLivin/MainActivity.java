@@ -36,6 +36,7 @@ public class MainActivity extends FragmentActivity{
     private FragmentTransaction ft;
     public static Integer weight;
     public static Integer bench;
+    public static Integer benchD;
     public static Integer squat;
     public static Integer deadLift;
     public static Integer mileTime;
