@@ -1,7 +1,10 @@
 package edu.sc.FitLivin;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -12,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -25,9 +29,112 @@ import edu.sc.FitLivin.R;
 
 
 public class GoalFragment extends Fragment {
+    MediaPlayer mp;
 
+private AlertDialog.Builder dialogBuilder;
 
-
+    private void weightLossDialog(){
+        dialogBuilder = new AlertDialog.Builder(getActivity());
+        dialogBuilder.setTitle("Great Job!!!!");
+        dialogBuilder.setMessage("Weight Loss Goal: Complete!");
+        mp = MediaPlayer.create(getActivity(), R.raw.applause);
+        mp.start();
+        dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                mp.stop();
+                mp = null;
+                dialog.dismiss();
+            }
+        });
+        AlertDialog dialog = dialogBuilder.create();
+        dialog.show();
+    }
+    private void weightGainDialog(){
+        dialogBuilder = new AlertDialog.Builder(getActivity());
+        dialogBuilder.setTitle("Great Job!!!!");
+        dialogBuilder.setMessage("Weight Gain Goal: Complete!");
+        mp = MediaPlayer.create(getActivity(), R.raw.applause);
+        mp.start();
+        dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                mp.stop();
+                mp = null;
+                dialog.dismiss();
+            }
+        });
+        AlertDialog dialog = dialogBuilder.create();
+        dialog.show();
+    }
+    private void benchDialog(){
+        dialogBuilder = new AlertDialog.Builder(getActivity());
+        dialogBuilder.setTitle("Great Job!!!!");
+        dialogBuilder.setMessage("Bench Press Goal: Complete!");
+        mp = MediaPlayer.create(getActivity(), R.raw.applause);
+        mp.start();
+        dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                mp.stop();
+                mp = null;
+                dialog.dismiss();
+            }
+        });
+        AlertDialog dialog = dialogBuilder.create();
+        dialog.show();
+    }
+    private void squatDialog(){
+        dialogBuilder = new AlertDialog.Builder(getActivity());
+        dialogBuilder.setTitle("Great Job!!!!");
+        dialogBuilder.setMessage("Squat Goal: Complete!");
+        mp = MediaPlayer.create(getActivity(), R.raw.applause);
+        mp.start();
+        dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                mp.stop();
+                mp = null;
+                dialog.dismiss();
+            }
+        });
+        AlertDialog dialog = dialogBuilder.create();
+        dialog.show();
+    }
+    private void deadLiftDialog(){
+        dialogBuilder = new AlertDialog.Builder(getActivity());
+        dialogBuilder.setTitle("Great Job!!!!");
+        dialogBuilder.setMessage("Dead Lift Goal: Complete!");
+        mp = MediaPlayer.create(getActivity(), R.raw.applause);
+        mp.start();
+        dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                mp.stop();
+                mp = null;
+                dialog.dismiss();
+            }
+        });
+        AlertDialog dialog = dialogBuilder.create();
+        dialog.show();
+    }
+    private void mileTimeDialog(){
+        dialogBuilder = new AlertDialog.Builder(getActivity());
+        dialogBuilder.setTitle("Great Job!!!!");
+        dialogBuilder.setMessage("Mile Time Goal: Complete!");
+        mp = MediaPlayer.create(getActivity(), R.raw.applause);
+        mp.start();
+        dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                mp.stop();
+                mp = null;
+                dialog.dismiss();
+            }
+        });
+        AlertDialog dialog = dialogBuilder.create();
+        dialog.show();
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -191,10 +298,14 @@ public class GoalFragment extends Fragment {
                        Integer value = main.WeightGoalTest(x);
                        if(value == 1){
                            Log.d("QAOD", "congratsWEIGHTLOSS");
+                           weightLossDialog();
+                           //Toast.makeText(getActivity(), "Great Job!!!.", Toast.LENGTH_SHORT).show();
 
                        }
                         if(value == 2){
-                            Log.d("QAOD", "not there yetWEIGHTLOSS");
+                           // Toast.makeText(getActivity(), "Almost!!!.", Toast.LENGTH_SHORT).show();
+                           Log.d("QAOD", "not there yetWEIGHTLOSS");
+
                         }
 
 
@@ -221,10 +332,12 @@ public class GoalFragment extends Fragment {
                         Integer value = main.WeightGainGoalTest(x);
                         if(value == 1){
                             Log.d("QAOD", "congratsWEIGHTGAIN");
+                            weightGainDialog();
 
                         }
                         if(value == 2){
                             Log.d("QAOD", "not there yetWEIGHTGAIN");
+                           // Toast.makeText(getActivity(), "Almost Bench!!!.", Toast.LENGTH_SHORT).show();
                         }
 
 
@@ -249,6 +362,7 @@ public class GoalFragment extends Fragment {
                         Log.d("QAOD", "BENCHMAXGOAL" + x);
                         if(value == 1){
                             Log.d("QAOD", "congratsBENCH");
+                            benchDialog();
 
                         }
                         if(value == 2){
@@ -277,6 +391,7 @@ public class GoalFragment extends Fragment {
                         Log.d("QAOD", "SQUATMAXGOAL" + x);
                         if(value == 1){
                             Log.d("QAOD", "congratsSQUAT");
+                            squatDialog();
 
                         }
                         if(value == 2){
@@ -306,6 +421,7 @@ public class GoalFragment extends Fragment {
                         Log.d("QAOD", "DEADLIFTMAXGOAL" + x);
                         if(value == 1){
                             Log.d("QAOD", "congratsDEADLIFT");
+                            deadLiftDialog();
 
                         }
                         if(value == 2){
@@ -335,6 +451,7 @@ public class GoalFragment extends Fragment {
                         Log.d("QAOD", "MILETIMEMAXGOAL" + x);
                         if(value == 1){
                             Log.d("QAOD", "congratsMILEITME");
+                            mileTimeDialog();
 
                         }
                         if(value == 2){
