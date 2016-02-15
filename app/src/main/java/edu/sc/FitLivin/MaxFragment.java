@@ -73,7 +73,7 @@ public class MaxFragment extends Fragment {
                     if(objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername()))
                     {
 
-                        int x = (Integer)objects.get(0).get("MaxBench");
+                        int x = (Integer)objects.get(objects.size() - 1).get("MaxBench");
                         userBench.setText("" + x);
 
                     }

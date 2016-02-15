@@ -16,4 +16,5 @@ public class Application extends android.app.Application{
         Parse.initialize(this, getString(R.string.parse_application_Id), getString(R.string.parse_application_Key));
     }
 
+
 }

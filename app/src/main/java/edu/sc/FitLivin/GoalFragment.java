@@ -68,6 +68,97 @@ public class GoalFragment extends Fragment {
         Button setDeadLiftG = (Button) v.findViewById(R.id.setDeadLift);
         Button setMileTimeG = (Button) v.findViewById(R.id.setMileTime);
 
+
+        ParseQuery MaxBench = ParseQuery.getQuery("MaxBench");
+        MaxBench.whereExists("MaxBench");//setting constraints
+        MaxBench.whereContains("username", ParseUser.getCurrentUser().getUsername());
+
+        MaxBench.findInBackground(new FindCallback<ParseObject>() {
+                                      public void done(List<ParseObject> objects, ParseException e) {
+
+                                          if (e == null && objects.size() != 0) { //if objects size is not 0
+
+                                              if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
+
+                                                  int x = (Integer) objects.get(objects.size() - 1).get("MaxBench");
+
+                                                  main.bench = x;
+
+
+
+                                              }
+
+                                          }
+
+                                      }
+
+
+                                  }
+        );
+        ParseQuery MaxSquat = ParseQuery.getQuery("MaxSquat");
+        MaxSquat.whereExists("MaxSquat");//setting constraints
+        MaxSquat.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        MaxSquat.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
+
+                if (e == null && objects.size() != 0) { //if objects size is not 0
+
+                    if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
+
+                        int x = (Integer) objects.get(objects.size() - 1).get("MaxSquat");
+                        //currentW.setText(Integer.toString(x));
+                        //setSquat(x);
+                        main.squat = x;
+                       // Log.d("Q", "ddCurrentSquat " + main.squat + " dd ");
+
+
+                    }
+                }
+            }
+
+        });
+        ParseQuery MaxDeadLift = ParseQuery.getQuery("MaxDeadLift");
+        MaxDeadLift.whereExists("MaxDeadLift");//setting constraints
+        MaxDeadLift.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        MaxDeadLift.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
+
+                if (e == null && objects.size() != 0) { //if objects size is not 0
+
+                    if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
+
+                        int x = (Integer) objects.get(objects.size() - 1).get("MaxDeadLift");
+                        //currentW.setText(Integer.toString(x));
+                        main.deadLift = x;
+
+
+
+                    }
+                }
+            }
+
+        });
+        ParseQuery MaxMileTime = ParseQuery.getQuery("MaxMileTime");
+        MaxMileTime.whereExists("MaxMileTime");//setting constraints
+        MaxMileTime.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        MaxMileTime.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
+
+                if (e == null && objects.size() != 0) { //if objects size is not 0
+
+                    if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
+
+                        int x = (Integer) objects.get(objects.size() - 1).get("MaxMileTime");
+                        //currentW.setText(Integer.toString(x));
+                        main.mileTime = x;
+
+
+                    }
+                }
+            }
+
+        });
+
        /* CurrentWeightquery.whereExists("Weight");//setting constraints
         CurrentWeightquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
         CurrentWeightquery.findInBackground(new FindCallback<ParseObject>() {
@@ -95,17 +186,15 @@ public class GoalFragment extends Fragment {
                     Log.d("QAOD", "weight test success");
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                        int x = (Integer) objects.get(objects.size() - 1).get("goalWeight");
+                        int x = (Integer) objects.get(objects.size()-1).get("goalWeight");
                         WeightG.setText("" + x);
                        Integer value = main.WeightGoalTest(x);
-                        StringBuilder validationErrorMessage =
-                                new StringBuilder(getString(R.string.error_intro));
                        if(value == 1){
-                           Log.d("QAOD", "congrats");
+                           Log.d("QAOD", "congratsWEIGHTLOSS");
 
                        }
                         if(value == 2){
-                            Log.d("QAOD", "not there yet");
+                            Log.d("QAOD", "not there yetWEIGHTLOSS");
                         }
 
 
@@ -126,8 +215,17 @@ public class GoalFragment extends Fragment {
                     Log.d("QAOD", "weight test success");
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                        int x = (Integer) objects.get(0).get("goalWeightGain");
+                        int x = (Integer) objects.get(objects.size()-1).get("goalWeightGain");
                         WeightGain.setText("" + x);
+                        //main.bench = x;
+                        Integer value = main.WeightGainGoalTest(x);
+                        if(value == 1){
+                            Log.d("QAOD", "congratsWEIGHTGAIN");
+
+                        }
+                        if(value == 2){
+                            Log.d("QAOD", "not there yetWEIGHTGAIN");
+                        }
 
 
                     }
@@ -146,6 +244,16 @@ public class GoalFragment extends Fragment {
 
                         int x = (Integer) objects.get(0).get("BenchGoal");
                         BenchG.setText("" + x);
+                        Log.d("QAOD", "BENCHMAX" + main.bench);
+                        Integer value = main.BenchGoalTest(x);
+                        Log.d("QAOD", "BENCHMAXGOAL" + x);
+                        if(value == 1){
+                            Log.d("QAOD", "congratsBENCH");
+
+                        }
+                        if(value == 2){
+                            Log.d("QAOD", "not there yetBENCH");
+                        }
 
                     }
                 }
@@ -164,6 +272,17 @@ public class GoalFragment extends Fragment {
 
                         int x = (Integer) objects.get(0).get("SquatGoal");
                         SquatG.setText("" + x);
+                        Log.d("QAOD", "SQUATMAX" + main.squat);
+                       Integer value = main.SquatGoalTest(x);
+                        Log.d("QAOD", "SQUATMAXGOAL" + x);
+                        if(value == 1){
+                            Log.d("QAOD", "congratsSQUAT");
+
+                        }
+                        if(value == 2){
+                            Log.d("QAOD", "not there yetSQUAT");
+                        }
+
 
                     }
                 }
@@ -182,6 +301,17 @@ public class GoalFragment extends Fragment {
 
                         int x = (Integer) objects.get(0).get("DeadLiftGoal");
                         DLG.setText("" + x);
+                        Log.d("QAOD", "DEADLIFTMAX" + main.deadLift);
+                       Integer value = main.DeadLiftGoalTest(x);
+                        Log.d("QAOD", "DEADLIFTMAXGOAL" + x);
+                        if(value == 1){
+                            Log.d("QAOD", "congratsDEADLIFT");
+
+                        }
+                        if(value == 2){
+                            Log.d("QAOD", "not there yetDEADLIFT");
+                        }
+
 
                     }
                 }
@@ -200,6 +330,17 @@ public class GoalFragment extends Fragment {
 
                         int x = (Integer) objects.get(0).get("MileTimeGoal");
                         MileTimeG.setText("" + x);
+                        Log.d("QAOD", "MILETIMEMAX" + main.mileTime);
+                       Integer value = main.MileTimeGoalTest(x);
+                        Log.d("QAOD", "MILETIMEMAXGOAL" + x);
+                        if(value == 1){
+                            Log.d("QAOD", "congratsMILEITME");
+
+                        }
+                        if(value == 2){
+                            Log.d("QAOD", "not there yetMILETIME");
+                        }
+
 
                     }
                 }
