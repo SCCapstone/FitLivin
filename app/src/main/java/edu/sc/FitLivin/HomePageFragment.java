@@ -131,7 +131,6 @@ public class HomePageFragment extends Fragment{
                     }
                 });
 
-
                 return v;
             }
 

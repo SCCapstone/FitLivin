@@ -1,8 +1,11 @@
 package edu.sc.FitLivin;
 
 import android.app.Application;
+import android.support.test.espresso.Espresso;
 import android.test.ApplicationTestCase;
 import org.junit.Test;
+
+import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static org.junit.Assert.*;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
@@ -44,6 +47,8 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         Float testAnswer = BMI.calculateBMI(weight, height);
         assertEquals(testAnswer,ansMul,.000000001);
     }
+
+
 
 
 }
