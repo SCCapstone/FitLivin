@@ -18,7 +18,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="BODY BUILDING DAY 2"
-                android:id="@+id/textView24"
+                android:id="@+id/bodyBuildingDay2Text"
                 android:layout_gravity="center_horizontal|top"
                 android:textColor="#ffffff" />
     <TextView

@@ -35,9 +35,11 @@ private View v;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_body_building_two, container, false);
-        ImageButton ib = (ImageButton) v.findViewById(R.id.benchImage);
+        ImageButton benchImage = (ImageButton) v.findViewById(R.id.benchImage);
+        ImageButton dumbbellFlyImage = (ImageButton) v.findViewById(R.id.flyImage);
+        ImageButton pushupImage = (ImageButton) v.findViewById(R.id.pushupImage);
        // mp = MediaPlayer.create(getActivity(), R.raw.fitfactbarbellbenchpressnew);
-        ib.setOnClickListener(new View.OnClickListener() {
+        benchImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -54,6 +56,42 @@ private View v;
 
             }
         }
+        );
+
+        dumbbellFlyImage.setOnClickListener(new View.OnClickListener() {
+                                  @Override
+                                  public void onClick(View v) {
+
+                                      if (mp == null) {
+                                          mp = MediaPlayer.create(getActivity(), R.raw.fitfactdumbbellfly);
+                                          mp.start();
+                                          Log.d("QAOD", "start");
+                                      } else {
+                                          mp.stop();
+                                          mp = null;
+                                          Log.d("QAOD", "stop");
+                                      }
+
+                                  }
+                              }
+        );
+
+        pushupImage.setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View v) {
+
+                                                    if (mp == null) {
+                                                        mp = MediaPlayer.create(getActivity(), R.raw.fitfactpushup);
+                                                        mp.start();
+                                                        Log.d("QAOD", "start");
+                                                    } else {
+                                                        mp.stop();
+                                                        mp = null;
+                                                        Log.d("QAOD", "stop");
+                                                    }
+
+                                                }
+                                            }
         );
         Button backBtn = (Button) v.findViewById(R.id.BBBack);//creates button
 
