@@ -2,14 +2,20 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/containerFitnessP"
-    android:background="@drawable/background2"
+    android:background="@drawable/background3"
     >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/linview"
-        android:layout_gravity="center_horizontal|bottom">
+
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:orientation="vertical"
+            >
 
         <TextView
             android:layout_width="wrap_content"
@@ -20,7 +26,7 @@
             android:textColor="#ffffff"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            />
+            android:textSize="35dp" />
 
 
     <TextView
@@ -31,34 +37,31 @@
         android:layout_gravity="left|top"
         android:textColor="#ffffff"
         android:textSize="20dp"
-        android:layout_alignStart="@+id/MaxBack"
+        android:gravity="right|center_vertical"
         android:layout_below="@+id/textView2"
+        android:layout_marginTop="20dp"
+        />
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set Bench"
+                android:id="@+id/setBench"
+                android:gravity="right|center_vertical"
+                android:layout_below="@+id/benchText"/>
 
-         />
-
-        <EditText
-            android:layout_width="130dp"
-            android:layout_height="37dp"
-            android:id="@+id/changeBench"
-            android:inputType="number"
-            android:layout_gravity="left|center_vertical"
-            android:background="#ffffff"
-            android:hint="Bench"
-            android:layout_below="@+id/benchText"
-            android:layout_alignParentStart="true" />
-
-        <Button
-            android:layout_width="wrap_content"
+            <TextView
+            android:layout_width="51dp"
             android:layout_height="wrap_content"
-            android:text="Set Bench"
-            android:id="@+id/setBench"
-            android:layout_alignBottom="@+id/changeBench"
-            android:layout_alignStart="@+id/textView2"
-            android:layout_marginStart="43dp"
-            android:layout_alignTop="@+id/changeBench" />
+            android:id="@+id/userBench"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:layout_toEndOf="@+id/benchText"
+            android:layout_below="@+id/textView2"
+                android:layout_marginTop="20dp"/>
 
-    <TextView
+
+            <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Current Squat (lbs):"
@@ -66,64 +69,62 @@
         android:layout_gravity="left|top"
         android:textColor="#ffffff"
         android:textSize="20dp"
-        android:layout_alignStart="@+id/MaxBack"
-        android:layout_below="@+id/changeBench"
+        android:gravity="right|center_vertical"
+        android:layout_below="@+id/setBench"
+        android:layout_marginTop="10dp"
         />
 
-        <EditText
-            android:layout_width="130dp"
-            android:layout_height="37dp"
-            android:id="@+id/changeSquat"
-            android:inputType="number"
-            android:layout_gravity="left|center_vertical"
-            android:background="#ffffff"
-            android:hint="Squat"
-            android:layout_below="@+id/squatText"
-            android:layout_alignParentStart="true" />
-        <Button
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set Squat"
+                android:id="@+id/setSquat"
+                android:layout_below="@+id/squatText"
+                android:layout_alignParentStart="true" />
+
+            <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Set Squat"
-            android:id="@+id/setSquat"
-            android:layout_alignBottom="@+id/changeSquat"
-            android:layout_alignStart="@+id/textView2"
-            android:layout_marginStart="43dp"
-            android:layout_alignTop="@+id/changeSquat" />
+            android:id="@+id/userSquat"
+            android:layout_gravity="right|top"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:layout_toEndOf="@+id/squatText"
+            android:layout_below="@+id/setBench"
+                android:layout_marginTop="10dp"/>
 
-    <TextView
+            <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Current DeadLift (lbs):"
         android:id="@+id/deadliftText"
-        android:layout_gravity="left|top"
         android:textSize="20dp"
         android:textColor="#ffffff"
-        android:layout_alignStart="@+id/MaxBack"
-        android:layout_below="@+id/changeSquat"
+        android:layout_below="@+id/setSquat"
+        android:layout_marginTop="10dp"
         />
 
-        <EditText
-            android:layout_width="130dp"
-            android:layout_height="37dp"
-            android:id="@+id/changeDeadlift"
-            android:inputType="number"
-            android:layout_gravity="left|center_vertical"
-            android:background="#ffffff"
-            android:hint="Deadlift"
-            android:layout_below="@+id/deadliftText"
-            android:layout_alignParentStart="true" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set DeadLift"
+                android:id="@+id/setDeadLift"
+                android:layout_below="@+id/deadliftText"
+                android:layout_alignParentStart="true" />
 
-        <Button
+            <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Set DeadLift"
-            android:id="@+id/setDeadLift"
-            android:layout_alignBottom="@+id/changeDeadlift"
-            android:layout_alignStart="@+id/textView2"
-            android:layout_marginStart="43dp"
-            android:layout_alignTop="@+id/changeDeadlift" />
+            android:id="@+id/userDeadlift"
+            android:layout_gravity="right|center_vertical"
+            android:textSize="20dp"
+            android:textColor="#ffffff"
+            android:layout_toEndOf="@+id/deadliftText"
+            android:layout_below="@+id/setSquat"
+                android:layout_marginTop="10dp"/>
 
-    <TextView
+
+            <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="MileTime (sec):"
@@ -131,92 +132,21 @@
         android:layout_gravity="left|top"
         android:textColor="#ffffff"
         android:textSize="20dp"
-        android:layout_alignStart="@+id/MaxBack"
-        android:layout_below="@+id/changeBig3"/>
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/setDeadLift"
+        android:layout_marginTop="10dp"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BACK"
-        android:id="@+id/MaxBack"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set MileTime"
+                android:id="@+id/setMileTime"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="83dp"
+                android:layout_below="@+id/mileText"
+                />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Big 3 Total:"
-        android:id="@+id/totalText"
-        android:textColor="#ffffff"
-        android:textSize="35dp"
-        android:layout_below="@+id/changeDeadlift"
-        android:layout_alignStart="@+id/MaxBack"/>
-
-        <EditText
-            android:layout_width="130dp"
-            android:layout_height="37dp"
-            android:id="@+id/changeBig3"
-            android:inputType="number"
-            android:layout_gravity="left|center_vertical"
-            android:background="#ffffff"
-            android:hint="Total"
-            android:layout_below="@+id/totalText"
-            android:layout_alignParentStart="true" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Set Total"
-            android:id="@+id/setTotal"
-            android:layout_alignBottom="@+id/changeBig3"
-            android:layout_alignStart="@+id/textView2"
-            android:layout_marginStart="43dp"
-            android:layout_alignTop="@+id/changeBig3" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/userTotal"
-        android:textColor="#ffffff"
-        android:textSize="35dp"
-        android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/totalText"
-        android:layout_below="@+id/changeDeadlift"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/userDeadlift"
-        android:layout_gravity="right|center_vertical"
-        android:textSize="20dp"
-        android:textColor="#ffffff"
-        android:layout_toEndOf="@+id/deadliftText"
-        android:layout_below="@+id/changeSquat"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/userSquat"
-        android:layout_gravity="right|top"
-        android:textColor="#ffffff"
-        android:textSize="20dp"
-        android:layout_toEndOf="@+id/squatText"
-        android:layout_below="@+id/changeBench"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/userBench"
-        android:layout_gravity="right|top"
-        android:textColor="#ffffff"
-        android:textSize="20dp"
-        android:textIsSelectable="true"
-        android:layout_toEndOf="@+id/benchText"
-        android:layout_below="@+id/textView2"/>
-
-        <TextView
+            <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/userTime"
@@ -225,37 +155,11 @@
             android:textSize="20dp"
             android:textIsSelectable="true"
             android:layout_toEndOf="@+id/mileText"
-            android:layout_below="@+id/changeBig3"/>
-
-        <EditText
-            android:layout_width="130dp"
-            android:layout_height="37dp"
-            android:id="@+id/changeMileTime"
-            android:inputType="number"
-            android:layout_gravity="left|center_vertical"
-            android:background="#ffffff"
-            android:hint="MileTime"
-            android:layout_below="@+id/userTime"
-            android:layout_alignParentStart="true" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Set MileTime"
-            android:id="@+id/setMileTime"
-            android:layout_alignBottom="@+id/changeMileTime"
-            android:layout_alignStart="@+id/textView2"
-            android:layout_marginStart="43dp"
-            android:layout_alignTop="@+id/changeMileTime" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Enter"
-            android:id="@+id/enterMax"
-            android:layout_alignTop="@+id/MaxBack"
-            android:layout_alignParentEnd="true" />
+            android:layout_below="@+id/setDeadLift"
+                android:layout_marginTop="10dp"/>
 
 
+        </RelativeLayout>>
 
-    </RelativeLayout>
+        </ScrollView>
 </FrameLayout>

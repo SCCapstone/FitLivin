@@ -50,18 +50,13 @@ public class MaxFragment extends Fragment {
         final TextView userBench = (TextView) v.findViewById(R.id.userBench);
         final TextView userSquat = (TextView) v. findViewById(R.id.userSquat);
         final TextView userDL = (TextView) v. findViewById(R.id.userDeadlift);
-        final TextView userTotal = (TextView) v.findViewById(R.id.userTotal);
         final TextView userMileTime = (TextView) v.findViewById(R.id.userTime);
-        final EditText changeBench = (EditText) v.findViewById(R.id.changeBench);
-        final EditText changeSquat = (EditText) v.findViewById(R.id.changeSquat);
-        final EditText changeDeadLift = (EditText) v.findViewById(R.id.changeDeadlift);
-        final EditText changeMileTime = (EditText) v.findViewById(R.id.changeMileTime);
-        final EditText changeTotal = (EditText) v.findViewById(R.id.changeBig3);
+
         final  MainActivity main = new MainActivity();
         Button setBenchMax = (Button) v.findViewById(R.id.setBench);
         Button setSquatMax = (Button) v.findViewById(R.id.setSquat);
         Button setDeadLiftMax = (Button) v.findViewById(R.id.setDeadLift);
-        Button setTotalMax = (Button) v.findViewById(R.id.setTotal);
+
         Button setMileTimeMax = (Button) v.findViewById(R.id.setMileTime);
         ParseQuery BenchMaxquery = ParseQuery.getQuery("MaxBench");
         ParseQuery SquatMaxquery = ParseQuery.getQuery("MaxSquat");
@@ -123,23 +118,7 @@ public class MaxFragment extends Fragment {
             }
 
         });
-        BigThreeMaxquery.whereExists("MaxBigThree");//setting constraints
-        BigThreeMaxquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
-        BigThreeMaxquery.findInBackground(new FindCallback<ParseObject>() {
-            public void done(List<ParseObject> objects, ParseException e) {
 
-                if (e == null && objects.size() != 0) { //if objects size is not 0
-
-                    if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
-
-                        int x = (Integer) objects.get(0).get("MaxBigThree");
-                        userTotal.setText("" + x);
-
-                    }
-                }
-            }
-
-        });
         MileTimeMaxquery.whereExists("MaxMileTime");//setting constraints
         MileTimeMaxquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
         MileTimeMaxquery.findInBackground(new FindCallback<ParseObject>() {
@@ -244,19 +223,7 @@ public class MaxFragment extends Fragment {
             }
         });
 
-        setTotalMax.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Integer total;
-                String totalS = changeTotal.getText().toString();
-                total = Integer.valueOf(totalS);
 
-                userTotal.setText("" + total);
-
-                String s = ParseUser.getCurrentUser().getUsername();
-                main.BigThreeMax(total, s);
-            }
-        });
 
             final AlertDialog.Builder builderMileTime = new AlertDialog.Builder(getActivity());
             builderMileTime.setTitle("Set Your Max");
@@ -287,18 +254,7 @@ public class MaxFragment extends Fragment {
         });
 
 
-        Button backBtn = (Button) v.findViewById(R.id.MaxBack);
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                HomePageFragment fragment1 = new HomePageFragment();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, fragment1);
-                ft.addToBackStack(null);
-                ft.commit();
-            }
-        });
+
         return v;
     }
 
