@@ -121,20 +121,20 @@ public class HomePageFragment extends Fragment{
             }
         });
 
+                Button btng = (Button) v.findViewById(R.id.goalButton);
+                btng.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        GoalFragment goal = new GoalFragment();
+                        FragmentManager fm1 = getFragmentManager();
+                        fm1.beginTransaction().replace(R.id.container, goal).addToBackStack(null).commit();
+                    }
+                });
 
 
-        Button btng = (Button) v.findViewById(R.id.goalButton);
-        btng.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                GoalFragment goal = new GoalFragment();
-                FragmentManager fm1 = getFragmentManager();
-                fm1.beginTransaction().replace(R.id.container, goal).addToBackStack(null).commit();
+                return v;
             }
-        });
+
+        }
 
 
-        return v;
-    }
-
-}

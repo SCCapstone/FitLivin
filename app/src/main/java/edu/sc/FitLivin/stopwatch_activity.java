@@ -16,7 +16,7 @@ import android.widget.Button;
 
 import edu.sc.FitLivin.R;
 
-public class stopwatch extends Activity implements View.OnClickListener
+public class stopwatch_activity extends Activity implements View.OnClickListener
 {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,7 +28,7 @@ public class stopwatch extends Activity implements View.OnClickListener
     private String mParam2;
 
 
-    public stopwatch() {
+    public stopwatch_activity() {
         // Required empty public constructor
     }
 
@@ -68,7 +68,7 @@ public class stopwatch extends Activity implements View.OnClickListener
             case R.id.start:
                 watch.setBase(SystemClock.elapsedRealtime() + timeStopped);
                 watch.start();
-                 break;
+                break;
             case R.id.stop:
                 timeStopped = watch.getBase()+SystemClock.elapsedRealtime();
                 watch.stop();

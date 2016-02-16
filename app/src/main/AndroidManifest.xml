@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.sc.FitLivin">
+    package="edu.sc.FitLivin" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -15,7 +15,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" />
@@ -45,25 +45,21 @@
             android:label="@string/title_activity_fp__wgt__loss" />
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login">
+            android:label="@string/title_activity_login" >
         </activity>
-        <activity android:name=".DispatchActivity">
+        <activity android:name=".DispatchActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignupActivity"></activity>
-        <activity android:name=".SignUporLogin"></activity>
-
-
-
-
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".SignUporLogin" />
+        <activity
+            android:name=".stopwatch_activity"
+            android:label="@string/title_activity_stopwatch_activity" >
+        </activity>
     </application>
-
-
-
-
 
 </manifest>
