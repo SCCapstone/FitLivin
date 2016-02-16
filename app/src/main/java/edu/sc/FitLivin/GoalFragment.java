@@ -158,13 +158,7 @@ private AlertDialog.Builder dialogBuilder;
         final TextView WeightG = (TextView) v.findViewById(R.id.currentWeightGoal);
         final TextView WeightGain = (TextView) v.findViewById(R.id.currentWeightGainGoal);
         final TextView MileTimeG = (TextView) v.findViewById(R.id.currentMileTimeGoal);
-        final TextView currentW = (TextView) v.findViewById(R.id.currentWeight);
-        final EditText changeBenchG = (EditText) v.findViewById(R.id.changeBenchGoal);
-        final EditText changeSquatG = (EditText) v.findViewById(R.id.changeSquatGoal);
-        final EditText changeDeadLiftG = (EditText) v.findViewById(R.id.changeDeadliftGoal);
-        final EditText changeMileTimeG = (EditText) v.findViewById(R.id.changeMileTimeGoal);
-        final EditText changeWeightG = (EditText) v.findViewById(R.id.changeWeightGoal);
-        final EditText changeWeightGain = (EditText) v.findViewById(R.id.changeWeightGainGoal);
+
 
 
         ParseQuery Weightquery = ParseQuery.getQuery("WeightGoal");

@@ -7,12 +7,15 @@
     <!-- TODO: Update blank fragment layout -->
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/linview"
-        android:layout_gravity="center_horizontal|bottom">
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:orientation="vertical"
+            >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,7 +37,15 @@
             android:textColor="#ffffff"
             android:textSize="20dp"
             android:layout_below="@+id/textView2"
+            android:layout_marginTop="20dp"
             />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set Weight"
+                android:id="@+id/setWeight"
+                android:layout_below="@+id/editnametext"
+                android:layout_alignParentStart="true" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,7 +55,8 @@
             android:textSize="20dp"
             android:textIsSelectable="true"
             android:layout_toEndOf="@+id/editnametext"
-            android:layout_below="@+id/textView2"/>
+            android:layout_below="@+id/textView2"
+            android:layout_marginTop="20dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -53,8 +65,17 @@
             android:layout_gravity="left|top"
             android:textColor="#ffffff"
             android:textSize="20dp"
-            android:layout_below="@+id/changeWeightGoal"
+            android:layout_below="@+id/setWeight"
+            android:layout_marginTop="10dp"
             />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set Weight"
+                android:id="@+id/setWeightG"
+                android:layout_below="@+id/weightGain"
+                android:layout_alignParentStart="true" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -64,30 +85,10 @@
             android:textSize="20dp"
             android:textIsSelectable="true"
             android:layout_toEndOf="@+id/weightGain"
-            android:layout_below="@+id/changeWeightGoal"/>
-        <EditText
-            android:layout_width="130dp"
-            android:layout_height="37dp"
-            android:id="@+id/changeWeightGainGoal"
-            android:inputType="number"
-            android:layout_gravity="left|center_vertical"
-            android:background="#ffffff"
-            android:hint="WeightGain"
-            android:layout_below="@+id/weightGain"
-            android:layout_alignParentStart="true"
-            />
+            android:layout_below="@+id/setWeight"
+            android:layout_marginTop="10dp"/>
 
-        <EditText
-            android:layout_width="130dp"
-            android:layout_height="37dp"
-            android:id="@+id/changeWeightGoal"
-            android:inputType="number"
-            android:layout_gravity="left|center_vertical"
-            android:background="#ffffff"
-            android:hint="WeightLoss"
-            android:layout_below="@+id/editnametext"
-            android:layout_alignParentStart="true"
-             />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -96,8 +97,17 @@
             android:layout_gravity="left|top"
             android:textColor="#ffffff"
             android:textSize="20dp"
-            android:layout_below="@+id/changeWeightGainGoal"
+            android:layout_below="@+id/setWeightG"
+            android:layout_marginTop="10dp"
             />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set Bench"
+                android:id="@+id/setBench"
+                android:layout_below="@+id/BenchText"
+                android:layout_alignParentStart="true" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -107,18 +117,10 @@
             android:textSize="20dp"
             android:textIsSelectable="true"
             android:layout_toEndOf="@+id/BenchText"
-            android:layout_below="@+id/changeWeightGainGoal"/>
+            android:layout_below="@+id/setWeightG"
+            android:layout_marginTop="10dp"/>
 
-        <EditText
-            android:layout_width="130dp"
-            android:layout_height="37dp"
-            android:id="@+id/changeBenchGoal"
-            android:inputType="number"
-            android:layout_gravity="left|center_vertical"
-            android:background="#ffffff"
-            android:hint="BenchGoal"
-            android:layout_below="@+id/BenchText"
-            android:layout_alignParentStart="true" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -127,8 +129,17 @@
             android:layout_gravity="left|top"
             android:textColor="#ffffff"
             android:textSize="20dp"
-            android:layout_below="@+id/changeBenchGoal"
+            android:layout_below="@+id/setBench"
+            android:layout_marginTop="10dp"
             />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set Squat"
+                android:id="@+id/setSquat"
+                android:layout_below="@+id/SquatText"
+                android:layout_alignParentStart="true" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -138,18 +149,10 @@
             android:textSize="20dp"
             android:textIsSelectable="true"
             android:layout_toEndOf="@+id/SquatText"
-            android:layout_below="@+id/changeBenchGoal"/>
+            android:layout_below="@+id/setBench"
+            android:layout_marginTop="10dp"/>
 
-        <EditText
-            android:layout_width="130dp"
-            android:layout_height="37dp"
-            android:id="@+id/changeSquatGoal"
-            android:inputType="number"
-            android:layout_gravity="left|center_vertical"
-            android:background="#ffffff"
-            android:hint="SquatGoal"
-            android:layout_below="@+id/SquatText"
-            android:layout_alignParentStart="true" />
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -159,8 +162,16 @@
             android:layout_gravity="left|top"
             android:textColor="#ffffff"
             android:textSize="20dp"
-            android:layout_below="@+id/changeSquatGoal"
+            android:layout_below="@+id/setSquat"
+            android:layout_marginTop="10dp"
             />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set DeadLift"
+                android:id="@+id/setDeadLift"
+                android:layout_below="@+id/DeadLiftText"
+                android:layout_alignParentStart="true" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -170,18 +181,10 @@
             android:textSize="20dp"
             android:textIsSelectable="true"
             android:layout_toEndOf="@+id/DeadLiftText"
-            android:layout_below="@+id/changeSquatGoal"/>
+            android:layout_below="@+id/setSquat"
+            android:layout_marginTop="10dp"/>
 
-        <EditText
-            android:layout_width="130dp"
-            android:layout_height="37dp"
-            android:id="@+id/changeDeadliftGoal"
-            android:inputType="number"
-            android:layout_gravity="left|center_vertical"
-            android:background="#ffffff"
-            android:hint="DeadLiftGoal"
-            android:layout_below="@+id/DeadLiftText"
-            android:layout_alignParentStart="true" />
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -191,8 +194,17 @@
             android:layout_gravity="left|top"
             android:textColor="#ffffff"
             android:textSize="20dp"
-            android:layout_below="@+id/changeDeadliftGoal"
+            android:layout_below="@+id/setDeadLift"
+            android:layout_marginTop="10dp"
             />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set MileTime"
+                android:id="@+id/setMileTime"
+                android:layout_below="@+id/MileTimeText"
+                android:layout_alignParentStart="true" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -202,89 +214,13 @@
             android:textSize="20dp"
             android:textIsSelectable="true"
             android:layout_toEndOf="@+id/MileTimeText"
-            android:layout_below="@+id/changeDeadliftGoal"/>
-
-        <EditText
-            android:layout_width="130dp"
-            android:layout_height="37dp"
-            android:id="@+id/changeMileTimeGoal"
-            android:inputType="number"
-            android:layout_gravity="left|center_vertical"
-            android:background="#ffffff"
-            android:hint="MileTimeGoal"
-            android:layout_below="@+id/MileTimeText"
-            android:layout_alignParentStart="true" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Set Weight"
-            android:id="@+id/setWeight"
-            android:layout_alignBottom="@+id/changeWeightGoal"
-            android:layout_alignStart="@+id/textView2"
-            android:layout_marginStart="43dp"
-            android:layout_alignTop="@+id/changeWeightGoal" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Set Weight"
-            android:id="@+id/setWeightG"
-            android:layout_alignBottom="@+id/changeWeightGainGoal"
-            android:layout_alignStart="@+id/textView2"
-            android:layout_marginStart="43dp"
-            android:layout_alignTop="@+id/changeWeightGainGoal" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Set Bench"
-            android:id="@+id/setBench"
-            android:layout_alignBottom="@+id/changeBenchGoal"
-            android:layout_alignStart="@+id/textView2"
-            android:layout_marginStart="43dp"
-            android:layout_alignTop="@+id/changeBenchGoal" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Set Squat"
-            android:id="@+id/setSquat"
-            android:layout_alignBottom="@+id/changeSquatGoal"
-            android:layout_alignStart="@+id/textView2"
-            android:layout_marginStart="43dp"
-            android:layout_alignTop="@+id/changeSquatGoal" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Set DeadLift"
-            android:id="@+id/setDeadLift"
-            android:layout_alignBottom="@+id/changeDeadliftGoal"
-            android:layout_alignStart="@+id/textView2"
-            android:layout_marginStart="43dp"
-            android:layout_alignTop="@+id/changeDeadliftGoal" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Set MileTime"
-            android:id="@+id/setMileTime"
-            android:layout_alignBottom="@+id/changeMileTimeGoal"
-            android:layout_alignStart="@+id/textView2"
-            android:layout_marginStart="43dp"
-            android:layout_alignTop="@+id/changeMileTimeGoal" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/currentWeight"
-            android:layout_alignParentBottom="true"
-            android:layout_alignEnd="@+id/setSquat"
-            android:layout_marginBottom="49dp" />
+            android:layout_below="@+id/setDeadLift"
+            android:layout_marginTop="10dp"/>
 
 
-    </RelativeLayout>
+        </RelativeLayout>>
+
+</ScrollView>
 </FrameLayout>
 
 

@@ -161,6 +161,11 @@ public class MaxFragment extends Fragment {
                         return;
                     }
                 });
+                builderBench.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        return;
+                    } });
                 AlertDialog dialog = builderBench.create();
                 dialog.show();
             }
