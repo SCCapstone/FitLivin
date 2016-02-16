@@ -60,7 +60,7 @@ MediaPlayer mp;
                                   public void onClick(View v) {
 
                                       if(mp == null){
-                                          mp = MediaPlayer.create(getActivity(), R.raw.fitfactmilitarypress);
+                                          mp = MediaPlayer.create(getActivity(), R.raw.fitfactsidelatraise);
                                           mp.start();
                                           Log.d("QAOD", "start");
                                       }
