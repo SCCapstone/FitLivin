@@ -7,19 +7,22 @@
 
 package edu.sc.FitLivin;
 
+
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 
 public class StrengthDayFive extends Fragment {
-
-
+MediaPlayer mp;
 
 
     public StrengthDayFive() {
@@ -36,6 +39,68 @@ public class StrengthDayFive extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_strength_day_five, container, false);
+        ImageButton benchImage = (ImageButton) v.findViewById(R.id.closeGripBenchImage);
+        ImageButton squat = (ImageButton) v.findViewById(R.id.squatImage);
+        ImageButton legpress = (ImageButton) v.findViewById(R.id.legpresspic);
+
+
+
+        benchImage.setOnClickListener(new View.OnClickListener() {
+                                  @Override
+                                  public void onClick(View v) {
+
+                                      if(mp == null){
+                                          mp = MediaPlayer.create(getActivity(), R.raw.fitfactbarbellbenchpressnew);
+                                          mp.start();
+                                          Log.d("QAOD", "start");
+                                      }
+                                      else{
+                                          mp.stop();
+                                          mp = null;
+                                          Log.d("QAOD", "stop");
+                                      }
+
+                                  }
+                              }
+        );
+
+        squat.setOnClickListener(new View.OnClickListener() {
+                                  @Override
+                                  public void onClick(View v) {
+
+                                      if(mp == null){
+                                          mp = MediaPlayer.create(getActivity(), R.raw.fitfactbarbellbacksquat);
+                                          mp.start();
+                                          Log.d("QAOD", "start");
+                                      }
+                                      else{
+                                          mp.stop();
+                                          mp = null;
+                                          Log.d("QAOD", "stop");
+                                      }
+
+                                  }
+                              }
+        );
+
+        legpress.setOnClickListener(new View.OnClickListener() {
+                                  @Override
+                                  public void onClick(View v) {
+
+                                      if(mp == null){
+                                          mp = MediaPlayer.create(getActivity(), R.raw.fitfactlegpress);
+                                          mp.start();
+                                          Log.d("QAOD", "start");
+                                      }
+                                      else{
+                                          mp.stop();
+                                          mp = null;
+                                          Log.d("QAOD", "stop");
+                                      }
+
+                                  }
+                              }
+        );
 
         //Initializes back button for strength day 5
         Button backBtn = (Button) v.findViewById(R.id.Sday5BACK);

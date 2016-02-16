@@ -39,7 +39,7 @@
             android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView"
+            android:id="@+id/closeGripBenchImage"
             android:src="@drawable/bench"
             android:layout_below="@+id/bench"
             android:clickable="true"
@@ -52,7 +52,7 @@
             android:id="@+id/squat"
             android:textColor="#ffffff"
             android:textSize="32dp"
-            android:layout_below="@+id/imageView"
+            android:layout_below="@+id/closeGripBenchImage"
             android:layout_gravity="center_horizontal"/>
 
         <ImageButton
