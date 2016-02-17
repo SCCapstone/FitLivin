@@ -129,5 +129,14 @@ public class BehaviorTest {
                 .check(matches(isDisplayed()));
     }
 
-
+    @Test
+    public void CheckBBday3(){
+        Espresso.onView(withId(R.id.hammerCurlImage)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.preacherCurlImage)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.closegrippushupImage)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.BBBack)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onView(withId(R.id.completeDay3bb)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+    }
 }
