@@ -138,6 +138,7 @@ public class MaxFragment extends Fragment {
         });
 
             final AlertDialog.Builder builderBench = new AlertDialog.Builder(getActivity());
+
             builderBench.setTitle("Set Your Max");
             builderBench.setMessage("Please Enter Your Bench Max:");
 
@@ -148,6 +149,7 @@ public class MaxFragment extends Fragment {
         setBenchMax.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 builderBench.setPositiveButton("SET", new DialogInterface.OnClickListener() {
 
                     @Override
@@ -157,17 +159,19 @@ public class MaxFragment extends Fragment {
                         String s = ParseUser.getCurrentUser().getUsername();
                         userBench.setText("" + bench);
                         main.BenchMax(bench, s);
-                        //main.benchD = test;
-                        return;
+                        dialog.cancel();
+
                     }
                 });
                 builderBench.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
 
-                        return;
-                    } });
-                AlertDialog dialog = builderBench.create();
-                dialog.show();
+                    }
+
+                });
+                builderBench.show();
+
             }
         });
 
