@@ -1,4 +1,4 @@
-/*package edu.sc.FitLivin;
+package edu.sc.FitLivin;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -84,4 +84,3 @@ public class stopwatch extends Activity implements View.OnClickListener
 
     }
 }
-*/

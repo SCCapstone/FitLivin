@@ -4,6 +4,7 @@ package edu.sc.FitLivin;
  * Created by Owner on 2/2/2016.
  */
 
+import android.provider.MediaStore;
 import android.support.test.espresso.Espresso;
 import android.support.test.espresso.ViewAction;
 import android.support.test.espresso.action.ViewActions;
@@ -11,6 +12,8 @@ import android.support.test.espresso.assertion.ViewAssertions;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -59,11 +62,28 @@ public class BehaviorTest {
     }
     @Test
     public void CheckLoginPage(){
-        String username = "lawsonz@email.sc.edu";
+        String username = "school@email.sc.edu";
         String password = "abcdefg";
         Espresso.onView(withId(R.id.login_username_input)).perform(typeText(username));
         Espresso.onView(withId(R.id.login_password_input)).perform(typeText(password));
         Espresso.onView(withId(R.id.email_login_button)).perform(ViewActions.click());
 
     }
+
+    @Test
+    public void CheckSignUp(){
+        String email_in = "school@email.sc.edu";
+        String username_in = "schoolTime";
+        String password_in = "abcdef";
+        String retypepasswrd_in = "abcdef";
+        String phonenumber_in = "867-5309";
+        //need to find button test case
+
+        Espresso.onView(withId(R.id.email_in)).perform(typeText(email_in));
+        Espresso.onView(withId(R.id.password_in)).perform(typeText(email_in));
+        Espresso.onView(withId(R.id.retypepasswrd_in)).perform(typeText(email_in));
+        Espresso.onView(withId(R.id.phonenumber_in)).perform(typeText(email_in));
+        Espresso.onView(withId(R.id.email_signup_button_in)).perform(ViewActions.click());
+    }
+
 }
