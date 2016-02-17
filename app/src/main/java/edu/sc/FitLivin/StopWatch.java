@@ -1,22 +1,13 @@
 package edu.sc.FitLivin;
 
 import android.app.Activity;
-import android.content.DialogInterface;
-import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.os.SystemClock;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Chronometer;
-import android.widget.TextView;
 import android.widget.Button;
+import android.widget.Chronometer;
 
-
-import edu.sc.FitLivin.R;
-
-public class stopwatch extends Activity implements View.OnClickListener
+class stopwatch extends Activity implements View.OnClickListener
 {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
