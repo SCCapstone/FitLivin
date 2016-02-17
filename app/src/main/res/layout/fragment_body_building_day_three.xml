@@ -23,7 +23,6 @@
             android:id="@+id/bbDay3"
             android:layout_gravity="center_horizontal|top"
             android:textColor="#ffffff"
-
             android:layout_above="@+id/hammercurlText"/>
         <TextView
         android:layout_width="wrap_content"
@@ -31,10 +30,19 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Hammer Curl"
         android:id="@+id/hammercurlText"
-        android:layout_gravity="left|center_vertical"
-
+        android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
         android:textColor="#ffffff"
         android:textSize="25dp" />
+
+        <TextView
+            android:layout_width="234dp"
+            android:layout_height="34dp"
+            android:layout_marginLeft="35dp"
+            android:text="4 Sets of 10-12 Repetitions "
+            android:id="@+id/hammerCurlDetail"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffffff" />
 
         <ImageButton
             android:scaleType="fitXY"
@@ -42,35 +50,39 @@
             android:layout_height="250dp"
             android:id="@+id/hammerCurlImage"
             android:layout_marginBottom="10dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/hammercurl"
             android:clickable="true"
             android:layout_below="@+id/hammercurlText"
             android:layout_above="@+id/hammerCurlDetail"
             android:layout_weight="0.03" />
 
-        <TextView
-        android:layout_width="234dp"
-        android:layout_height="34dp"
-        android:text="4 Sets of 10-12 Repetitions. "
-        android:layout_marginBottom="20dp"
-        android:id="@+id/hammerCurlDetail"
-        android:layout_gravity="left|center_vertical"
-        android:textColor="#ffffff" />
 
         <TextView
         android:layout_width="219dp"
         android:layout_height="63dp"
         android:text="Preacher Curl"
         android:id="@+id/preacherCurlText"
-        android:layout_gravity="left|center_vertical"
-        android:layout_marginBottom="10dp"
+        android:layout_gravity="center_horizontal"
+
         android:textColor="#ffffff"
         android:textSize="25dp"
             android:layout_below="@+id/hammerCurlDetail"
             android:layout_above="@+id/preacherCurlImage"
+            android:layout_marginLeft="35dp"
             />
+        <TextView
+            android:layout_width="206dp"
+            android:layout_height="49dp"
+            android:text="4 Sets of 10-12 repititions  "
+            android:id="@+id/preacherCurlDetail"
+            android:layout_gravity="left|center_vertical"
 
+            android:textColor="#ffffff"
+            android:layout_below="@+id/preacherCurlImage"
+            android:layout_above="@+id/closegripPushupDetail"
+            android:layout_marginLeft="125dp"
+            />
     <ImageButton
         android:scaleType="fitXY"
         android:layout_width="wrap_content"
@@ -84,22 +96,12 @@
         android:layout_above="@+id/preacherCurlDetail"
         />
 
-    <TextView
-        android:layout_width="206dp"
-        android:layout_height="49dp"
-        android:text="4 Sets of 10-12 repititions.  "
-        android:id="@+id/preacherCurlDetail"
-        android:layout_gravity="left|center_vertical"
-        android:layout_marginBottom="20dp"
-        android:textColor="#ffffff"
-        android:layout_below="@+id/preacherCurlImage"
-        android:layout_above="@+id/closegripPushupDetail"
-        />
+
 
     <TextView
         android:layout_width="177dp"
         android:layout_height="58dp"
-        android:text="4 sets of 5-15 concentrated repetitions (Depending on skill level)."
+        android:text="4 sets of 5-15 concentrated repetitions (Depending on skill level)"
         android:id="@+id/closegripPushupDetail"
         android:layout_gravity="left|bottom"
         android:layout_marginBottom="90dp"
