@@ -38,7 +38,7 @@ public class GoalFragment extends Fragment {
     private static final int TEXT_ID5 = 0;
 
 private AlertDialog.Builder dialogBuilder;
-
+//
     private void weightLossDialog(){
         dialogBuilder = new AlertDialog.Builder(getActivity());
         dialogBuilder.setTitle("Great Job!!!!");
