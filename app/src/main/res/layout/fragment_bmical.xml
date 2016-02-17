@@ -2,7 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/containerFitnessP"
-    android:background="@drawable/background2"
+    android:background="@drawable/background3"
     >
 
     <RelativeLayout
@@ -10,6 +10,8 @@
         android:layout_height="match_parent"
         android:id="@+id/linview"
         android:layout_gravity="center_horizontal|bottom">
+
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -48,7 +50,9 @@
             android:textColor="#ffffff"
             android:layout_below="@+id/textView2"
             android:layout_toEndOf="@+id/DisplayBMI"
-            android:layout_alignParentStart="true"/>
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="35dp"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -60,7 +64,9 @@
             android:textColor="#ffffff"
             android:layout_centerVertical="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/weightView"/>
+            android:layout_below="@+id/weightView"
+            android:layout_marginTop="35dp"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -72,6 +78,7 @@
             android:textColor="#faf8f1"
             android:textSize="20dp"
             android:textIsSelectable="true"
+
 
             android:layout_alignBottom="@+id/weightView"
             android:layout_toEndOf="@+id/weightView" />
@@ -87,6 +94,7 @@
             style="@android:style/TextAppearance.Large"
             android:layout_below="@+id/CurrWeight"
             android:layout_alignStart="@+id/CurrWeight"
+            android:layout_marginTop="35dp"
 
             />
 
@@ -98,7 +106,7 @@
             android:id="@+id/DisplayBMI"
             android:layout_gravity="center"
             android:textColor="#ffffff"
-            android:textSize="20dp"
+            android:textSize="40dp"
             android:textIsSelectable="true"
             android:layout_below="@+id/CurrHeight"
             android:layout_alignStart="@+id/textView2"
@@ -113,7 +121,9 @@
             android:id="@+id/weightTest"
             android:textColor="#ffffff"
             android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:textSize="40dp"
+            />
 
     </RelativeLayout>
 
