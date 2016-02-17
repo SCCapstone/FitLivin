@@ -13,6 +13,7 @@ import android.support.test.espresso.assertion.ViewAssertions;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
+import android.text.style.ClickableSpan;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -23,6 +24,7 @@ import org.junit.runner.RunWith;//test
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.matcher.ViewMatchers.assertThat;
+import static android.support.test.espresso.matcher.ViewMatchers.isChecked;
 import static android.support.test.espresso.matcher.ViewMatchers.isClickable;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
@@ -129,5 +131,52 @@ public class BehaviorTest {
                 .check(matches(isDisplayed()));
     }
 
+    @Test
+    public void CheckBBday3(){
+        Espresso.onView(withId(R.id.hammerCurlImage)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.preacherCurlImage)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.closegrippushupImage)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.BBBack)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onView(withId(R.id.completeDay3bb)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+    }
+    @Test
+    public void CheckBBday2(){
+        Espresso.onView(withId(R.id.benchImage)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.flyImage)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.pushupImage)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.BBBack)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onView(withId(R.id.completeDay2bb)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+    }
 
+    @Test
+    public void CheckBBday1(){
+        Espresso.onView(withId(R.id.squatImage)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.legExtensionImage)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.curlImage)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.BBBack)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onView(withId(R.id.completeDay1bb)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+    }
+    //need to complete
+    @Test
+    public void CheckEditProfile(){
+        String username = "school@email.sc.edu";
+        String gender = "male";
+        String password = "abcdefg";
+        String phone = "867-5309";
+
+
+        Espresso.onView(withId(R.id.editnametext)).perform(typeText(username));
+        Espresso.onView(withId(R.id.editgender)).perform(typeText(gender));
+        Espresso.onView(withId(R.id.editpasstext)).perform(typeText(password));
+        Espresso.onView(withId(R.id.editphone)).perform(typeText(phone));
+        Espresso.onView(withId(R.id.savebuttoneditprofile)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+
+    }
 }

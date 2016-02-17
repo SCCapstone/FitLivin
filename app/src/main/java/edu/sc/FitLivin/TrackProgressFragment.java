@@ -12,6 +12,7 @@ package edu.sc.FitLivin;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,14 +24,14 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.jjoe64.graphview.DefaultLabelFormatter;
 import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.LabelFormatter;
 import com.jjoe64.graphview.LegendRenderer;
-import com.jjoe64.graphview.Viewport;
 import com.jjoe64.graphview.helper.StaticLabelsFormatter;
 import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.DataPointInterface;
 import com.jjoe64.graphview.series.LineGraphSeries;
+import com.jjoe64.graphview.series.OnDataPointTapListener;
+import com.jjoe64.graphview.series.Series;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -54,46 +55,14 @@ public class TrackProgressFragment extends Fragment {
     }
 
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fragment_track_progress, container, false);
         //Creates back button to go back to main page
         final GraphView graph = (GraphView) v.findViewById(R.id.graph);
-        graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter(){
-            @Override
-            public String formatLabel(double value, boolean isValueX) {
-                if (isValueX) {
-                    // show normal x values
-                    return super.formatLabel(value, isValueX);
-                } else {
-                    // show currency for y values
-                    return super.formatLabel(value, isValueX) + " €";
-                }
-            }
-        });
 
-        ParseQuery query2 = ParseQuery.getQuery("ProfileInfo"); //getting query
-        query2.whereExists("Weight");//setting constraints
-        query2.whereExists("Height");//setting constraints
-        query2.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
-        query2.findInBackground(new FindCallback<ParseObject>() {
-            public void done(List<ParseObject> objects, ParseException e) {
-                if (e == null) {
-                    double start = objects.get(0).get("Weight").hashCode();
-                    String starts = objects.get(0).get("Weight").toString();
-                    //double end = objects.get(objects.size()).get("Weight").hashCode();
-                    LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[]{//new DataPoint(start,62)
-                    });
-                    series.appendData(new DataPoint(start,63),false,500);
-                    graph.addSeries(series);
-                    Log.d(starts, "done: ");
-                }
-            }
-
-
-        });
 
 
 
@@ -131,52 +100,53 @@ public class TrackProgressFragment extends Fragment {
 
 
                         LineGraphSeries<DataPoint> mSeries1 = new LineGraphSeries<DataPoint>(generatenewData(weight));
-                        LineGraphSeries<DataPoint> mSeries2 = new LineGraphSeries<DataPoint>(generateData(weight,dates));
+                        LineGraphSeries<DataPoint> mSeries2 = new LineGraphSeries<DataPoint>(generateData(weight, dates));
                         mSeries2.setTitle("Dates");
                         mSeries1.setTitle("Weights");
                         mSeries1.setThickness(7);
                         mSeries2.setThickness(7);
+                        mSeries2.setColor(Color.YELLOW);
+                        mSeries1.setColor(Color.RED);
                         mSeries1.isDrawDataPoints();
-                        graph.addSeries(mSeries1);
-                        graph.addSeries(mSeries2);
-                        StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                        label.setDynamicLabelFormatter(new LabelFormatter() {
+                        mSeries1.setOnDataPointTapListener(new OnDataPointTapListener() {
                             @Override
-                            public String formatLabel(double value, boolean isValueX) {
-                                if (isValueX) {
-                                    // show normal x values
-                                    return formatLabel(value, isValueX);
-                                } else {
-                                    // show currency for y values
-                                    return formatLabel(value, isValueX) + " €";
-                                }
-                            }
-
-                            @Override
-                            public void setViewport(Viewport viewport) {
-                                    graph.getViewport();
+                            public void onTap(Series series, DataPointInterface dataPoint) {
+                                Toast.makeText(getActivity(), "this is the data point: " + dataPoint, Toast.LENGTH_SHORT).show();
                             }
                         });
-                        label.setHorizontalLabels(new String[]{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "Novermber", "December"});
-                        label.setVerticalLabels(new String[]{"low", "middle", "high"});
+                       mSeries2.setDrawDataPoints(true);
+                        mSeries1.setDrawDataPoints(true);
+
+
+                       graph.addSeries(mSeries1);
+                       // graph.addSeries(mSeries2);
 
 
 
+                        StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                        label.setHorizontalLabels(new String[]{"0","Jan", "Feb", "March"});
+                        label.setVerticalLabels(new String[]{"0", "100", "150", "200", "250"});
 
-                        graph.setTitle("Your Progress");
-                        graph.setTitleTextSize(15);
 
-                        graph.setTitleColor(0xffffffff);
-                       graph.getViewport().setMaxX(weight.size());
-                        graph.getViewport().setBackgroundColor(0xffffffff);
-                        graph.getLegendRenderer().setVisible(true);
-                        graph.setHorizontalScrollBarEnabled(true);
-                        graph.scrollTo(1, 1);
-                        graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
-                        graph.setTitleTextSize(10);
+
+                        graph.getGridLabelRenderer().setVerticalLabelsSecondScaleColor(Color.WHITE);
+                        graph.getGridLabelRenderer().setHorizontalAxisTitleColor(Color.WHITE);
+                        graph.getGridLabelRenderer().setLabelsSpace(2);
+
                         graph.getViewport().setMaxX(weight.size());
-                        graph.getGridLabelRenderer().setLabelFormatter(label);
+                        graph.getGridLabelRenderer().setGridColor(Color.WHITE);
+                        graph.getViewport().setScrollable(true);
+                        graph.getViewport().setScrollable(true);
+                        graph.getLegendRenderer().isVisible();
+                        graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
+                        graph.getLegendRenderer().setBackgroundColor(Color.WHITE);
 
+                        graph.getViewport().setMaxX(weight.size());
+
+                        graph.getGridLabelRenderer().setLabelFormatter(label);
+                        graph.getGridLabelRenderer().setVerticalLabelsColor(Color.WHITE);
+                        graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.WHITE);
+                        graph.getGridLabelRenderer().setGridColor(Color.GRAY);
 
 
                         ArrayAdapter weightArrayAdapter =
@@ -186,7 +156,7 @@ public class TrackProgressFragment extends Fragment {
 
 
                     } else {
-                        Toast.makeText(getActivity(),"Did not load",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "Did not load", Toast.LENGTH_LONG).show();
                     }
                 }
             }
@@ -200,29 +170,33 @@ public class TrackProgressFragment extends Fragment {
     private DataPoint[] generateData(ArrayList<String> weight,ArrayList<Date> dates) {
 
         DataPoint[] values = new DataPoint[weight.size()];
-        for (int i=0; i<weight.size(); i++) {
 
-            double x =  dates.get(i).getDate();
-            Log.d(String.valueOf(dates.get(i).getDate()), "here is the time: ");
-            double y =  Double.parseDouble(weight.get(i))/2.2;
-            DataPoint v = new DataPoint(x, y);
-            values[i] = v;
 
-        }
+            for (int i = 0; i < weight.size(); i++) {
+
+                double x = dates.get(i).getMonth();
+                Log.d(String.valueOf(dates.get(i).getDate()), "here is the time: ");
+                double y = Double.parseDouble(weight.get(i));
+                DataPoint v = new DataPoint(x, y);
+                values[i] = v;
+
+            }
         return values;
     }
     private DataPoint[] generatenewData(ArrayList<String> weight) {
 
         DataPoint[] values = new DataPoint[weight.size()];
-        for (int i=0; i<weight.size(); i++) {
 
-            double x =  i;
+            for (int i = 0; i < weight.size(); i++) {
 
-            double y =  Double.parseDouble(weight.get(i));
-            DataPoint v = new DataPoint(x, y);
-            values[i] = v;
+                double x = i;
 
-        }
+                double y = Double.parseDouble(weight.get(i));
+                DataPoint v = new DataPoint(x, y);
+                values[i] = v;
+
+            }
+
         return values;
     }
 
