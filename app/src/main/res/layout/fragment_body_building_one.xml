@@ -14,17 +14,36 @@
         android:layout_width="fill_parent"
         android:orientation="vertical"
         >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="BODY BUILDING DAY 1"
+            android:id="@+id/bbDay01"
+            android:layout_gravity="center_horizontal|top"
+            android:textColor="#ffffff"
+            android:layout_above="@+id/squatTextText"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Barbell Back Squat"
         android:id="@+id/squatText"
-        android:layout_gravity="left|center_vertical"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="5dp"
         android:textColor="#ffffff"
         android:textSize="25dp"
         android:layout_below="@+id/bbDay1"/>
+
+        <TextView
+            android:layout_width="234dp"
+            android:layout_height="34dp"
+            android:text="4 Sets of 10-12 Repetitions. (1 minute rest between sets)"
+            android:id="@+id/benchDetail"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:textColor="#ffffff" />
 
         <ImageButton
             android:scaleType="fitXY"
@@ -38,25 +57,26 @@
             android:layout_below="@+id/squatText"
             android:layout_above="@+id/benchDetail"/>
 
-        <TextView
-        android:layout_width="234dp"
-        android:layout_height="34dp"
-        android:text="4 Sets of 10-12 Repetitions. (1 minute rest between sets)"
-        android:layout_marginBottom="55dp"
-        android:id="@+id/benchDetail"
-        android:layout_gravity="left|center_vertical"
-        android:textColor="#ffffff" />
 
         <TextView
         android:layout_width="220dp"
         android:layout_height="63dp"
         android:text="Leg Extensions"
         android:id="@+id/extensionText"
-        android:layout_gravity="left|center_vertical"
-        android:layout_marginBottom="40dp"
+        android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+
         android:textColor="#ffffff"
         android:textSize="25dp" />
+        <TextView
+            android:layout_width="206dp"
+            android:layout_height="49dp"
+            android:text="4 Sets of 15 repetitions. "
+            android:id="@+id/extensionDetail"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
 
+            android:textColor="#ffffff" />
     <ImageButton
         android:scaleType="fitXY"
         android:layout_width="wrap_content"
@@ -69,33 +89,27 @@
         android:layout_below="@+id/extensionText"
         android:layout_above="@+id/extensionDetail"/>
 
-    <TextView
-        android:layout_width="206dp"
-        android:layout_height="49dp"
-        android:text="4 Sets of 15 repetitions. "
-        android:id="@+id/extensionDetail"
-        android:layout_gravity="left|center_vertical"
-        android:layout_marginBottom="20dp"
-        android:textColor="#ffffff" />
+        <TextView
+            android:layout_width="178dp"
+            android:layout_height="59dp"
+            android:text="Hamstring Curl"
+            android:id="@+id/hamstringText"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:textColor="#ffffff"
+            android:textSize="25dp" />
 
     <TextView
         android:layout_width="177dp"
         android:layout_height="34dp"
         android:text="4 sets of 15 repetitions."
         android:id="@+id/hamstringDetail"
-        android:layout_gravity="left|bottom"
-        android:layout_marginBottom="120dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+
         android:textColor="#ffffff" />
 
-    <TextView
-        android:layout_width="178dp"
-        android:layout_height="59dp"
-        android:text="Hamstring Curl"
-        android:id="@+id/hamstringText"
-        android:layout_gravity="left|bottom"
-        android:layout_marginBottom="125dp"
-        android:textColor="#ffffff"
-        android:textSize="25dp" />
+
 
     <ImageButton
         android:scaleType="fitXY"
@@ -107,15 +121,7 @@
         android:clickable="true"
         android:src="@drawable/legcurl" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="BODY BUILDING DAY 1"
-        android:id="@+id/bbDay1"
-        android:layout_gravity="center_horizontal|top"
-        android:textColor="#ffffff"
-        android:layout_above="@+id/squatText"/>
+
 
     <Button
         android:layout_width="wrap_content"
