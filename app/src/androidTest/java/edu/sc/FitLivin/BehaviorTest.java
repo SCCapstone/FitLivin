@@ -4,6 +4,7 @@ package edu.sc.FitLivin;
  * Created by Owner on 2/2/2016.
  */
 
+import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.support.test.espresso.Espresso;
 import android.support.test.espresso.ViewAction;
@@ -21,7 +22,9 @@ import org.junit.runner.RunWith;//test
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.typeText;
+import static android.support.test.espresso.matcher.ViewMatchers.assertThat;
 import static android.support.test.espresso.matcher.ViewMatchers.isClickable;
+import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
@@ -55,9 +58,12 @@ public class BehaviorTest {
 
     @Test
     public void CheckToSeeIfButtonWorksOnFitnessProgramFragment() {
-        Espresso.onView(withId(R.id.StrengthTrainingButton)).perform(ViewActions.click());
-        Espresso.onView(withId(R.id.BodyBuildingButton)).check(matches(isClickable()));
-        Espresso.onView(withId(R.id.WeightLossButton)).check(matches(isClickable()));
+        Espresso.onView(withId(R.id.StrengthTrainingButton)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onView(withId(R.id.BodyBuildingButton)).check(matches(isClickable()))
+                .check(matches(isDisplayed()));
+        Espresso.onView(withId(R.id.WeightLossButton)).check(matches(isClickable()))
+                .check(matches(isDisplayed()));
         Espresso.pressBack();
     }
     @Test
@@ -66,7 +72,8 @@ public class BehaviorTest {
         String password = "abcdefg";
         Espresso.onView(withId(R.id.login_username_input)).perform(typeText(username));
         Espresso.onView(withId(R.id.login_password_input)).perform(typeText(password));
-        Espresso.onView(withId(R.id.email_login_button)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.email_login_button)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
 
     }
 
@@ -80,21 +87,37 @@ public class BehaviorTest {
         //need to find button test case
 
         Espresso.onView(withId(R.id.email_in)).perform(typeText(email_in));
-        Espresso.onView(withId(R.id.password_in)).perform(typeText(email_in));
-        Espresso.onView(withId(R.id.retypepasswrd_in)).perform(typeText(email_in));
-        Espresso.onView(withId(R.id.phonenumber_in)).perform(typeText(email_in));
-        Espresso.onView(withId(R.id.email_signup_button_in)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.username_in)).perform(typeText(username_in));
+        Espresso.onView(withId(R.id.password_in)).perform(typeText(password_in));
+        Espresso.onView(withId(R.id.retypepasswrd_in)).perform(typeText(retypepasswrd_in));
+        Espresso.onView(withId(R.id.phonenumber_in)).perform(typeText(phonenumber_in));
+        Espresso.onView(withId(R.id.email_signup_button_in)).perform(ViewActions.click()).check(matches(isDisplayed()));
+
+
+        ;
     }
 
     @Test
     public void CheckSignUpOrLogin(){
-        Espresso.onView(withId(R.id.email_login_button)).perform(ViewActions.click());
-        Espresso.onView(withId(R.id.email_signin_button)).perform(ViewActions.click());
-        Espresso.onView(withId(R.id.forgotPassView)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.email_login_button)).perform(ViewActions.click())
+        .check(matches(isDisplayed()));
+        Espresso.onView(withId(R.id.email_signin_button)).perform(ViewActions.click())
+        .check(matches(isDisplayed()));
+        Espresso.onView(withId(R.id.forgotPassView)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
 
     }
 
-
+    @Test
+    public void CheckBBday5(){
+        Espresso.onView(withId(R.id.militaryPressImage)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.sideLatImage)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.shoulderpressImage)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.BBBack)).perform(ViewActions.click())
+            .check(matches(isDisplayed()));
+        Espresso.onView(withId(R.id.completeDay5bb)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+    }
 
 
 }

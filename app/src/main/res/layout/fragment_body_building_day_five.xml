@@ -20,7 +20,9 @@
             android:text="BODY BUILDING DAY 5"
             android:id="@+id/bbDay5"
             android:layout_gravity="center_horizontal|top"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
