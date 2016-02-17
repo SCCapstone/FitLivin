@@ -139,4 +139,14 @@ public class BehaviorTest {
         Espresso.onView(withId(R.id.completeDay3bb)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
     }
+    @Test
+    public void CheckBBday2(){
+        Espresso.onView(withId(R.id.benchImage)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.flyImage)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.pushupImage)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.BBBack)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onView(withId(R.id.completeDay2bb)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+    }
 }
