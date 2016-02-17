@@ -86,4 +86,13 @@ public class BehaviorTest {
         Espresso.onView(withId(R.id.email_signup_button_in)).perform(ViewActions.click());
     }
 
+    @Test
+    public void CheckSignUpOrLogin(){
+        Espresso.onView(withId(R.id.email_login_button)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.email_signin_button)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.forgotPassView)).perform(ViewActions.click());
+
+    }
+
+
 }
