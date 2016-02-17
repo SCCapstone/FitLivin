@@ -15,11 +15,11 @@
             android:layout_width="fill_parent"
             android:orientation="vertical"
             >
-    <com.jjoe64.graphview.GraphView
-        android:layout_width="match_parent"
-        android:layout_height="200dip"
-        android:id="@+id/graph"
-        android:textColor="#ffffff"/>
+            <com.jjoe64.graphview.GraphView
+             android:layout_width="match_parent"
+             android:layout_height="200dip"
+             android:id="@+id/graph"
+                 android:textColor="#ffffff"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -42,9 +42,11 @@
             android:layout_height="232dp"
             android:id="@+id/listView2"
             android:textAlignment="center"
+            android:animateLayoutChanges="true"
+
             android:layout_gravity="center_horizontal|bottom" />
 
-</LinearLayout>>
+</LinearLayout>
 
     </ScrollView>
 

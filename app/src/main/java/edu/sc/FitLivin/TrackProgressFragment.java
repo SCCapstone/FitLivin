@@ -24,13 +24,14 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.jjoe64.graphview.DefaultLabelFormatter;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.LegendRenderer;
-import com.jjoe64.graphview.helper.DateAsXAxisLabelFormatter;
 import com.jjoe64.graphview.helper.StaticLabelsFormatter;
 import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.DataPointInterface;
 import com.jjoe64.graphview.series.LineGraphSeries;
+import com.jjoe64.graphview.series.OnDataPointTapListener;
+import com.jjoe64.graphview.series.Series;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -61,39 +62,7 @@ public class TrackProgressFragment extends Fragment {
         final View v = inflater.inflate(R.layout.fragment_track_progress, container, false);
         //Creates back button to go back to main page
         final GraphView graph = (GraphView) v.findViewById(R.id.graph);
-        graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter(){
-            @Override
-            public String formatLabel(double value, boolean isValueX) {
-                if (isValueX) {
-                    // show normal x values
-                    return super.formatLabel(value, isValueX);
-                } else {
-                    // show currency for y values
-                    return super.formatLabel(value, isValueX) + " €";
-                }
-            }
-        });
 
-        ParseQuery query2 = ParseQuery.getQuery("ProfileInfo"); //getting query
-        query2.whereExists("Weight");//setting constraints
-        query2.whereExists("Height");//setting constraints
-        query2.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
-        query2.findInBackground(new FindCallback<ParseObject>() {
-            public void done(List<ParseObject> objects, ParseException e) {
-                if (e == null) {
-                    double start = objects.get(0).get("Weight").hashCode();
-                    String starts = objects.get(0).get("Weight").toString();
-                    //double end = objects.get(objects.size()).get("Weight").hashCode();
-                    LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[]{//new DataPoint(start,62)
-                    });
-                    series.appendData(new DataPoint(start,63),false,500);
-                    graph.addSeries(series);
-                    Log.d(starts, "done: ");
-                }
-            }
-
-
-        });
 
 
 
@@ -136,30 +105,41 @@ public class TrackProgressFragment extends Fragment {
                         mSeries1.setTitle("Weights");
                         mSeries1.setThickness(7);
                         mSeries2.setThickness(7);
+                        mSeries2.setColor(Color.YELLOW);
+                        mSeries1.setColor(Color.RED);
                         mSeries1.isDrawDataPoints();
+                        mSeries1.setOnDataPointTapListener(new OnDataPointTapListener() {
+                            @Override
+                            public void onTap(Series series, DataPointInterface dataPoint) {
+                                Toast.makeText(getActivity(), "this is the data point: " + dataPoint, Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                       mSeries2.setDrawDataPoints(true);
+                        mSeries1.setDrawDataPoints(true);
 
 
-                        graph.addSeries(mSeries1);
-                        // graph.addSeries(mSeries2);
-                        DateAsXAxisLabelFormatter label2;
+                       graph.addSeries(mSeries1);
+                       // graph.addSeries(mSeries2);
+
 
 
                         StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                        label.setHorizontalLabels(new String[]{"Jan", "Feb", "March"});
-                        label.setVerticalLabels(new String[]{"0", "50", "100", "150", "200"});
+                        label.setHorizontalLabels(new String[]{"0","Jan", "Feb", "March"});
+                        label.setVerticalLabels(new String[]{"0", "100", "150", "200", "250"});
+
 
 
                         graph.getGridLabelRenderer().setVerticalLabelsSecondScaleColor(Color.WHITE);
-                        graph.getGridLabelRenderer().setPadding(5);
                         graph.getGridLabelRenderer().setHorizontalAxisTitleColor(Color.WHITE);
                         graph.getGridLabelRenderer().setLabelsSpace(2);
 
                         graph.getViewport().setMaxX(weight.size());
-                        graph.getViewport().setBackgroundColor(0xffffffff);
+                        graph.getGridLabelRenderer().setGridColor(Color.WHITE);
                         graph.getViewport().setScrollable(true);
-
+                        graph.getViewport().setScrollable(true);
+                        graph.getLegendRenderer().isVisible();
                         graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
-                        graph.getLegendRenderer().setBackgroundColor(Color.GREEN);
+                        graph.getLegendRenderer().setBackgroundColor(Color.WHITE);
 
                         graph.getViewport().setMaxX(weight.size());
 
@@ -167,6 +147,7 @@ public class TrackProgressFragment extends Fragment {
                         graph.getGridLabelRenderer().setVerticalLabelsColor(Color.WHITE);
                         graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.WHITE);
                         graph.getGridLabelRenderer().setGridColor(Color.GRAY);
+
 
                         ArrayAdapter weightArrayAdapter =
                                 new ArrayAdapter<String>(getActivity(),
@@ -195,7 +176,7 @@ public class TrackProgressFragment extends Fragment {
 
                 double x = dates.get(i).getMonth();
                 Log.d(String.valueOf(dates.get(i).getDate()), "here is the time: ");
-                double y = Double.parseDouble(weight.get(i)) / 2.2;
+                double y = Double.parseDouble(weight.get(i));
                 DataPoint v = new DataPoint(x, y);
                 values[i] = v;
 
