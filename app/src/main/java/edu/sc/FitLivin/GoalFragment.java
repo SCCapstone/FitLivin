@@ -355,7 +355,7 @@ private AlertDialog.Builder dialogBuilder;
 
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                        int x = (Integer) objects.get(0).get("BenchGoal");
+                        int x = (Integer) objects.get(objects.size()-1).get("BenchGoal");
                         BenchG.setText("" + x);
                         Log.d("QAOD", "BENCHMAX" + main.bench);
                         Integer value = main.BenchGoalTest(x);
@@ -384,7 +384,7 @@ private AlertDialog.Builder dialogBuilder;
 
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                        int x = (Integer) objects.get(0).get("SquatGoal");
+                        int x = (Integer) objects.get(objects.size()-1).get("SquatGoal");
                         SquatG.setText("" + x);
                         Log.d("QAOD", "SQUATMAX" + main.squat);
                        Integer value = main.SquatGoalTest(x);
@@ -414,7 +414,7 @@ private AlertDialog.Builder dialogBuilder;
 
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                        int x = (Integer) objects.get(0).get("DeadLiftGoal");
+                        int x = (Integer) objects.get(objects.size()-1).get("DeadLiftGoal");
                         DLG.setText("" + x);
                         Log.d("QAOD", "DEADLIFTMAX" + main.deadLift);
                        Integer value = main.DeadLiftGoalTest(x);
