@@ -1,3 +1,4 @@
+package edu.sc.FitLivin;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -29,7 +29,6 @@
         android:layout_height="wrap_content"
         android:text="Strength Training"
         android:id="@+id/StrengthTrainingButton"
-        android:layout_marginTop="100dp"
         android:background="#ff3c39"
         android:clickable="true"
         android:layout_below="@+id/basedOnGoalsText"

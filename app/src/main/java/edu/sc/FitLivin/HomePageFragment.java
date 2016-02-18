@@ -10,6 +10,7 @@ package edu.sc.FitLivin;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.util.Log;
@@ -131,7 +132,18 @@ public class HomePageFragment extends Fragment{
                     }
                 });
 
+        Button stopWatch  = (Button) v.findViewById(R.id.StopWatchButton);
+        stopWatch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(getActivity(), stopwatch_activity.class);
+                getActivity().startActivity(myIntent);
+            }
+        });
+
+
                 return v;
+
             }
 
         }

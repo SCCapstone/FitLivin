@@ -70,12 +70,11 @@ public class MaxFragment extends Fragment {
         BenchMaxquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
-                if (e == null  && objects.size()!= 0 ) { //if objects size is not 0
+                if (e == null && objects.size() != 0) { //if objects size is not 0
 
-                    if(objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername()))
-                    {
+                    if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                        int x = (Integer)objects.get(objects.size() - 1).get("MaxBench");
+                        int x = (Integer) objects.get(objects.size() - 1).get("MaxBench");
                         userBench.setText("" + x);
 
                     }
@@ -137,130 +136,154 @@ public class MaxFragment extends Fragment {
 
         });
 
-            final AlertDialog.Builder builderBench = new AlertDialog.Builder(getActivity());
-
-            builderBench.setTitle("Set Your Max");
-            builderBench.setMessage("Please Enter Your Bench Max:");
-
-            // Use an EditText view to get user input.
-            final EditText input = new EditText(getActivity());
-            input.setId(TEXT_ID);
-            builderBench.setView(input);
-        setBenchMax.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                builderBench.setPositiveButton("SET", new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        String value = input.getText().toString();
-                        Integer bench = Integer.valueOf(value);
-                        String s = ParseUser.getCurrentUser().getUsername();
-                        userBench.setText("" + bench);
-                        main.BenchMax(bench, s);
-                        dialog.cancel();
-
-                    }
-                });
-                builderBench.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-
-                    }
-
-                });
-                builderBench.show();
-
-            }
-        });
-
-            final AlertDialog.Builder builderSquat = new AlertDialog.Builder(getActivity());
-            builderSquat.setTitle("Set Your Max");
-            builderSquat.setMessage("Please Enter Your Squat Max:");
-
-            // Use an EditText view to get user input.
-            final EditText input1 = new EditText(getActivity());
-            input1.setId(TEXT_ID1);
-            builderSquat.setView(input1);
-        setSquatMax.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                builderSquat.setPositiveButton("SET", new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        String value = input1.getText().toString();
-                        Integer squat = Integer.valueOf(value);
-                        String s = ParseUser.getCurrentUser().getUsername();
-                        userSquat.setText("" + squat);
-                        main.SquatMax(squat, s);
-                        //main.benchD = test;
-                        return;
-                    }
-                });
-                AlertDialog dialog = builderSquat.create();
-                dialog.show();
-            }
-        });
-            final AlertDialog.Builder builderDeadLift = new AlertDialog.Builder(getActivity());
-            builderDeadLift.setTitle("Set Your Max");
-            builderDeadLift.setMessage("Please Enter Your Dead Lift Max:");
-
-            // Use an EditText view to get user input.
-            final EditText input2 = new EditText(getActivity());
-            input2.setId(TEXT_ID2);
-            builderDeadLift.setView(input2);
-        setDeadLiftMax.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                builderDeadLift.setPositiveButton("SET", new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        String value = input2.getText().toString();
-                        Integer deadLift = Integer.valueOf(value);
-                        String s = ParseUser.getCurrentUser().getUsername();
-                        userDL.setText("" + deadLift);
-                        main.DeadLiftMax(deadLift, s);
-                        //main.benchD = test;
-                        return;
-                    }
-                });
-                AlertDialog dialog = builderDeadLift.create();
-                dialog.show();
-            }
-        });
 
 
+            setBenchMax.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
+                    builder1.setTitle("Set Your Max");
+                    builder1.setMessage("Enter Your Bench Max.");
+                    final EditText input = new EditText(getActivity());
+                    input.setId(TEXT_ID);
+                    builder1.setView(input);
+                    builder1.setCancelable(true);
 
-            final AlertDialog.Builder builderMileTime = new AlertDialog.Builder(getActivity());
-            builderMileTime.setTitle("Set Your Max");
-            builderMileTime.setMessage("Please Enter Your Best Mile Time:");
+                    builder1.setPositiveButton(
+                            "SET",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    String value = input.getText().toString();
+                                    Integer bench = Integer.valueOf(value);
+                                    String s = ParseUser.getCurrentUser().getUsername();
+                                    userBench.setText("" + bench);
+                                    main.BenchMax(bench, s);
+                                    dialog.cancel();
+                                }
+                            });
 
-            // Use an EditText view to get user input.
-            final EditText input3 = new EditText(getActivity());
-            input3.setId(TEXT_ID3);
-            builderMileTime.setView(input3);
-        setMileTimeMax.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                builderMileTime.setPositiveButton("SET", new DialogInterface.OnClickListener() {
+                    builder1.setNegativeButton(
+                            "Cancel",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
 
-                    @Override
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        String value = input3.getText().toString();
-                        Integer mileTime = Integer.valueOf(value);
-                        String s = ParseUser.getCurrentUser().getUsername();
-                        userMileTime.setText("" + mileTime);
-                        main.MileTimeMax(mileTime, s);
-                        return;
-                    }
-                });
-                AlertDialog dialog = builderMileTime.create();
-                dialog.show();
-            }
-        });
+                    AlertDialog alert11 = builder1.create();
+                    alert11.show();
+                }
+            });
+
+            setSquatMax.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
+                    builder1.setTitle("Set Your Max");
+                    builder1.setMessage("Enter Your Squat Max.");
+                    final EditText input = new EditText(getActivity());
+                    input.setId(TEXT_ID);
+                    builder1.setView(input);
+                    builder1.setCancelable(true);
+
+                    builder1.setPositiveButton(
+                            "SET",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    String value = input.getText().toString();
+                                    Integer squat = Integer.valueOf(value);
+                                    String s = ParseUser.getCurrentUser().getUsername();
+                                    userSquat.setText("" + squat);
+                                    main.SquatMax(squat, s);
+                                    dialog.cancel();
+                                }
+                            });
+
+                    builder1.setNegativeButton(
+                            "Cancel",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+
+                    AlertDialog alert11 = builder1.create();
+                    alert11.show();
+                }
+            });
+
+            setDeadLiftMax.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
+                    builder1.setTitle("Set Your Max");
+                    builder1.setMessage("Enter Your Dead Lift Max.");
+                    final EditText input = new EditText(getActivity());
+                    input.setId(TEXT_ID);
+                    builder1.setView(input);
+                    builder1.setCancelable(true);
+
+                    builder1.setPositiveButton(
+                            "SET",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    String value = input.getText().toString();
+                                    Integer deadLift = Integer.valueOf(value);
+                                    String s = ParseUser.getCurrentUser().getUsername();
+                                    userDL.setText("" + deadLift);
+                                    main.DeadLiftMax(deadLift, s);
+                                    dialog.cancel();
+                                }
+                            });
+
+                    builder1.setNegativeButton(
+                            "Cancel",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+
+                    AlertDialog alert11 = builder1.create();
+                    alert11.show();
+                }
+            });
+
+            setMileTimeMax.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
+                    builder1.setTitle("Set Your Max");
+                    builder1.setMessage("Enter Your Best Mile Time.");
+                    final EditText input = new EditText(getActivity());
+                    input.setId(TEXT_ID);
+                    builder1.setView(input);
+                    builder1.setCancelable(true);
+
+                    builder1.setPositiveButton(
+                            "SET",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    String value = input.getText().toString();
+                                    Integer miletime = Integer.valueOf(value);
+                                    String s = ParseUser.getCurrentUser().getUsername();
+                                    userMileTime.setText("" + miletime);
+                                    main.MileTimeMax(miletime, s);
+                                    dialog.cancel();
+                                }
+                            });
+
+                    builder1.setNegativeButton(
+                            "Cancel",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+
+                    AlertDialog alert11 = builder1.create();
+                    alert11.show();}
+            });
 
 
 
