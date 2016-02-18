@@ -43,7 +43,7 @@ public class stopwatch_activity extends Activity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_stopwatch);
+        setContentView(R.layout.activity_stopwatch_activity);
         startChron = (Button)findViewById(R.id.start);
         stopChron = (Button)findViewById(R.id.stop);
         resetChron = (Button) findViewById(R.id.reset);
@@ -53,15 +53,7 @@ public class stopwatch_activity extends Activity implements View.OnClickListener
         resetChron.setOnClickListener(this);
 
 
-
-    }
-    //reset
-    public void resetButtonClick(View v) {
-        watch.setBase(SystemClock.elapsedRealtime());
-        timeStopped = 0;
-
-
-    }
+ }
     @Override
     public void onClick(View arg0) {
         switch (arg0.getId()){
