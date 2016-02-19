@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.app.Fragment;
 import android.os.SystemClock;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.View.OnClickListener;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Chronometer;
@@ -16,16 +18,8 @@ import android.widget.Button;
 
 import edu.sc.FitLivin.R;
 
-public class stopwatch_activity extends Activity implements View.OnClickListener
+public class stopwatch_activity extends Activity implements OnClickListener
 {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
 
     public stopwatch_activity() {
@@ -36,43 +30,43 @@ public class stopwatch_activity extends Activity implements View.OnClickListener
     Button startChron;
     Button stopChron;
     Button resetChron;
-    private Chronometer watch;
-    long timeStopped = 0;
+    private Chronometer chron;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stopwatch_activity);
-        startChron = (Button)findViewById(R.id.start);
-        stopChron = (Button)findViewById(R.id.stop);
-        resetChron = (Button) findViewById(R.id.reset);
-        watch = (Chronometer) findViewById(R.id.chronometer);
+        buttons();
+     }
+    //set variables to buttons
+    public void buttons(){
+
+    startChron = (Button)findViewById(R.id.start);
         startChron.setOnClickListener(this);
+    stopChron = (Button)findViewById(R.id.stop);
         stopChron.setOnClickListener(this);
+    resetChron = (Button) findViewById(R.id.reset);
         resetChron.setOnClickListener(this);
+    chron = (Chronometer) findViewById(R.id.chronometer);
 
-
- }
-    @Override
-    public void onClick(View arg0) {
-        switch (arg0.getId()){
-            case R.id.start:
-                watch.setBase(SystemClock.elapsedRealtime() + timeStopped);
-                watch.start();
-                break;
-            case R.id.stop:
-                timeStopped = watch.getBase()+SystemClock.elapsedRealtime();
-                watch.stop();
-                break;
-            case R.id.reset:
-                watch.setBase(SystemClock.elapsedRealtime() + timeStopped);
-                watch.start();
-                break;
-
-
-
+}
+    //if else if statement to handle starting and stopping the stopwatch
+    public void onClick(View v){
+        if(v == startChron){
+            chron.start();
+        }
+        else if (v == stopChron){
+            chron.stop();
+        }
+        else if (v == resetChron){
+            chron.setBase(SystemClock.elapsedRealtime());
         }
 
     }
+
+
+
+
 }

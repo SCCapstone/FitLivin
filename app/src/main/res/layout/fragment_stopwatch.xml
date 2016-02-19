@@ -33,10 +33,13 @@
         android:layout_centerVertical="true" />
 
     <Chronometer
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
         android:id="@+id/chronometer"
-        android:layout_above="@+id/start"
+        android:textColor="#ffffff"
+        android:textSize="50dp"
+
+        android:layout_above="@+id/reset"
         android:layout_alignParentEnd="true" />
 
 

@@ -10,16 +10,17 @@
         android:id="@+id/start"
         android:layout_height="55dp"
         android:layout_width="100dp"
-        android:layout_centerVertical="true"
         android:layout_marginLeft="38dp"
-        android:text="@string/start" />
+        android:text="@string/start"
+        android:layout_below="@+id/chronometer"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/stop"
-        android:layout_height="55dp"
+        android:layout_height="45dp"
         android:layout_width="100dp"
         android:clickable="true"
-        android:layout_marginTop="275dp"
+        android:layout_marginTop="200dp"
         android:layout_marginLeft="270dp"
         android:text="@string/stop" />
 
@@ -32,11 +33,16 @@
         android:text="@string/reset"
         android:layout_centerVertical="true" />
 
+
+
     <Chronometer
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
         android:id="@+id/chronometer"
-        android:layout_above="@+id/start"
+        android:textColor="#ffffff"
+        android:textSize="50dp"
+
+        android:layout_above="@+id/reset"
         android:layout_alignParentEnd="true" />
 
 
