@@ -9,18 +9,20 @@
         android:layout_height="match_parent"
         android:backgroundTint="#800000"
         android:id="@+id/linview"
-        android:layout_gravity="center_horizontal|bottom">
+        android:layout_gravity="center_horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="edit your profile"
+            android:text="Edit Your Profile"
             android:id="@+id/edityourprofile"
-            android:layout_gravity="center_horizontal|top"
+            android:layout_gravity="center_horizontal"
             android:textColor="#ffffff"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:textSize="40dp" />
+            android:textSize="40dp"
+
+            />
 
         <EditText
             android:layout_width="130dp"
@@ -30,7 +32,9 @@
             android:maxLines="1"
             android:background="#ffffff"
             android:layout_alignTop="@+id/textname"
-            android:layout_alignEnd="@+id/edityourprofile" />
+            android:layout_alignStart="@+id/savebuttoneditprofile"
+            android:layout_marginLeft="170dp"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -39,9 +43,11 @@
             android:textSize="28dp"
             android:textColor="#ffffff"
             android:id="@+id/textname"
-            android:layout_marginTop="65dp"
+            android:layout_marginTop="64dp"
             android:layout_below="@+id/edityourprofile"
-            android:layout_alignStart="@+id/edityourprofile" />
+
+
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -118,8 +124,11 @@
             android:layout_height="wrap_content"
             android:background="#ffffff"
             android:id="@+id/checkboxname"
+            android:layout_alignParentEnd="true"
+
             android:layout_alignTop="@+id/editTextname"
-            android:layout_alignParentEnd="true" />
+
+            />
 
         <CheckBox
             android:layout_width="wrap_content"
@@ -151,7 +160,16 @@
             android:text="Save"
             android:id="@+id/savebuttoneditprofile"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_gravity="left|bottom"  />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BACK"
+            android:id="@+id/Back"
+            android:layout_gravity="right|bottom"
+            android:layout_alignParentBottom="true"
+            android:layout_alignEnd="@+id/checkBoxphone" />
 
 
     </RelativeLayout>

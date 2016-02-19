@@ -2,9 +2,11 @@ package edu.sc.FitLivin;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -28,6 +30,7 @@ public class Editprofilefragment extends Fragment {
     private CheckBox checkphone;
     private CheckBox checkpass;
     private Button buttonsave;
+    private Button backbutton;
     private String password = "Password";
     private String username = "username";
     private String phone = "phone";
@@ -52,9 +55,26 @@ public class Editprofilefragment extends Fragment {
         checkphone = (CheckBox)v.findViewById(R.id.checkBoxphone);
         checkpass = (CheckBox)v.findViewById(R.id.checkBoxpassword);
         buttonsave = (Button)v.findViewById(R.id.savebuttoneditprofile);
+        backbutton = (Button)v.findViewById(R.id.Back);
         final ParseUser curruser = ParseUser.getCurrentUser();
 
-        buttonsave.setOnClickListener(new View.OnClickListener() {
+/***BACK BUTTON ISSUES
+       backbutton.setOnClickListener(new OnClickListener() {
+           @Override
+           public void onClick(View v) {
+
+           }
+
+           ProfilePageFragment fragment1 = new ProfilePageFragment();
+           FragmentManager fm = getFragmentManager();
+           FragmentTransaction ft = fm.beginTransaction();
+           ft.replace(R.id.container, fragment1);//replaces fragment with previous
+           ft.addToBackStack(null);
+           ft.commit();
+       })
+       ;
+**/
+        buttonsave.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(!isEmpty(nametext)&& isEmptyCheckbox(checkname)){
@@ -122,6 +142,9 @@ public class Editprofilefragment extends Fragment {
 
         return v;
     }
+
+
+
     private boolean isEmpty(EditText etText) {
         if (etText.getText().toString().trim().length() > 0) {
             return false;
@@ -140,4 +163,6 @@ public class Editprofilefragment extends Fragment {
     private void issaved(String something){
         Toast.makeText(getActivity(),something+" has been updated",Toast.LENGTH_SHORT).show();
     }
+
+
 }
