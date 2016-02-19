@@ -54,7 +54,7 @@ public class MainActivity extends FragmentActivity{
 
     ListView listView;
     ArrayAdapter<String> listAdapter;
-    String fragmentArray[] = {"FRAGMENT 1", "FRAGMENT 2"};
+    String fragmentArray[] = {"Home Page", "Profile", "Points", "BMI", "Nutrition", "Goals", "Max", "Track Progress", "Fitness Program"};
     DrawerLayout drawerLayout;
 
 
@@ -121,13 +121,34 @@ public class MainActivity extends FragmentActivity{
                     Fragment fragment;
                     switch(position){
                         case 0:
-                            fragment = new BMICAL_Fragment();
+                            fragment = new HomePageFragment();
                             break;
                         case 1:
+                            fragment = new ProfilePageFragment();
+                            break;
+                        case 2:
+                            fragment = new PointsPageFragment();
+                            break;
+                        case 3:
+                            fragment = new BMICAL_Fragment();
+                            break;
+                        case 4:
                             fragment = new NutritionCalFragment();
                             break;
+                        case 5:
+                            fragment = new GoalFragment();
+                            break;
+                        case 6:
+                            fragment = new MaxFragment();
+                            break;
+                        case 7:
+                            fragment = new TrackProgressFragment();
+                            break;
+                        case 8:
+                            fragment = new FitnessProgramFragment();
+                            break;
                         default:
-                            fragment = new BMICAL_Fragment();
+                            fragment = new HomePageFragment();
                     }
                     FragmentManager fragmentManager = getFragmentManager();
                     fragmentManager.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
