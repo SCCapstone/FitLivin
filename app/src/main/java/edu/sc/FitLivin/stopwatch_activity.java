@@ -10,9 +10,6 @@ import android.view.View;
 import android.widget.Chronometer;
 import android.widget.Button;
 
-
-import edu.sc.FitLivin.R;
-
 public class stopwatch_activity extends Activity implements OnClickListener
 {
 
