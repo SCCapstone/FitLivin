@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/containerFitnessP"
-    android:background="@drawable/background2"
+    android:background="@drawable/background3"
     >
 
     <RelativeLayout
@@ -18,7 +18,9 @@
         android:id="@+id/profileBMIButton"
         android:layout_gravity="center"
         android:layout_alignTop="@+id/saveButtonProfile"
-        android:layout_alignEnd="@+id/CurrH" />
+        android:layout_alignEnd="@+id/CurrH"
+        android:layout_marginLeft="30dp"
+        />
 
 
         <TextView
@@ -29,9 +31,11 @@
         android:textSize="19dp"
         android:text="Username"
         android:textColor="#ffffff"
-            android:layout_marginTop="51dp"
+            android:layout_marginTop="80dp"
+
+            android:layout_marginLeft="30dp"
             android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/height" />
+            android:layout_toEndOf="@+id/saveButtonProfile" />
 
     <EditText
         android:layout_width="130dp"
@@ -43,7 +47,9 @@
         android:hint="Weight"
         android:layout_above="@+id/saveButtonProfile"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="76dp" />
+        android:layout_marginBottom="76dp"
+        android:layout_marginLeft="50dp"
+        />
 
     <EditText
         android:layout_width="130dp"
@@ -54,7 +60,9 @@
         android:background="#f5ffee"
         android:hint="Height"
         android:layout_centerVertical="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="50dp"
+        />
 
 
 
@@ -69,7 +77,9 @@
         android:textIsSelectable="true"
 
         android:layout_centerVertical="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="50dp"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -81,7 +91,9 @@
         android:textSize="20dp"
 
         android:layout_alignTop="@+id/weight"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="50dp"
+        />
 
         <Button
             android:layout_width="wrap_content"
@@ -90,7 +102,9 @@
             android:id="@+id/saveButtonProfile"
             android:layout_gravity="left"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="50dp"
+            />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -108,8 +122,9 @@
             android:layout_height="wrap_content"
             android:text="Edit Profile"
             android:id="@+id/editprofile"
+            android:layout_marginLeft="32dp"
             android:layout_below="@+id/name"
-            android:layout_alignStart="@+id/name" />
+            android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
 
