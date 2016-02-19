@@ -8,14 +8,18 @@
 
 package edu.sc.FitLivin;
 
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -51,6 +55,7 @@ public class MainActivity extends FragmentActivity{
     ListView listView;
     ArrayAdapter<String> listAdapter;
     String fragmentArray[] = {"FRAGMENT 1", "FRAGMENT 2"};
+    DrawerLayout drawerLayout;
 
 
     String name1 = ParseUser.getCurrentUser().getUsername();
@@ -108,6 +113,30 @@ public class MainActivity extends FragmentActivity{
      listView = (ListView)findViewById(R.id.listView);
        listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, fragmentArray);
             listView.setAdapter(listAdapter);
+            drawerLayout = (DrawerLayout) findViewById(R.id.drawerview);
+
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Fragment fragment;
+                    switch(position){
+                        case 0:
+                            fragment = new BMICAL_Fragment();
+                            break;
+                        case 1:
+                            fragment = new NutritionCalFragment();
+                            break;
+                        default:
+                            fragment = new BMICAL_Fragment();
+                    }
+                    FragmentManager fragmentManager = getFragmentManager();
+                    fragmentManager.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                    drawerLayout.closeDrawers();
+                   /* HomePageFragment firstFragment = new HomePageFragment();
+                    FragmentManager fm1 = getFragmentManager();
+                    fm1.beginTransaction().add(R.id.container, firstFragment).addToBackStack(null).commit();*/
+                }
+            });
 
 
         //initializes the query object for the Profile databse
