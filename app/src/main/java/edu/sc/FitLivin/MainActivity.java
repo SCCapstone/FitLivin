@@ -16,6 +16,8 @@ import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -23,6 +25,7 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
+
 
 import java.util.List;
 
@@ -44,6 +47,11 @@ public class MainActivity extends FragmentActivity{
     public static String s;
     public static Integer points = 0;
     private String objectID;
+
+    ListView listView;
+    ArrayAdapter<String> listAdapter;
+    String fragmentArray[] = {"FRAGMENT 1", "FRAGMENT 2"};
+
 
     String name1 = ParseUser.getCurrentUser().getUsername();
 
@@ -97,6 +105,9 @@ public class MainActivity extends FragmentActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+     listView = (ListView)findViewById(R.id.listView);
+       listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, fragmentArray);
+            listView.setAdapter(listAdapter);
 
 
         //initializes the query object for the Profile databse
