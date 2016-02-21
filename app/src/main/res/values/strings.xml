@@ -42,5 +42,11 @@
     <string name="reset">Reset</string>
     <string name="title_activity_stopwatch_activity">stopwatch_activity</string>
 
+    <string-array name="graphspinner">
+        <item>Weight</item>
+        <item>Max</item>
+        <item>Goals</item>
+    </string-array>
+
 
 </resources>

@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.jjoe64.graphview.GraphView;
@@ -51,6 +52,7 @@ public class TrackProgressFragment extends Fragment {
     final ArrayList maxbench = new ArrayList<String>();
     final ArrayList maxdeadlift = new ArrayList<String>();
     final ArrayList maxmiletime = new ArrayList<String>();
+    ArrayAdapter<CharSequence> spinnerAdapter;
 
     public TrackProgressFragment() {
 
@@ -65,8 +67,12 @@ public class TrackProgressFragment extends Fragment {
         //Creates back button to go back to main page
         final GraphView graph = (GraphView) v.findViewById(R.id.graph);
 
-
-
+        final Spinner gspinner = (Spinner) v.findViewById(R.id.spinner_dropdown);
+        gspinner.setPrompt("Select your graph");
+        spinnerAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.graphspinner,android.R.layout.simple_spinner_item);
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        gspinner.setAdapter(spinnerAdapter);
+        gspinner.setBackgroundColor(Color.CYAN);
 
 
 
