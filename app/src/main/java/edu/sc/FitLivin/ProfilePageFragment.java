@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ import java.util.List;
 
 public class ProfilePageFragment extends Fragment {
     private Button editprofile;
+    private ImageButton profileChangebutton;
     public ProfilePageFragment() {
         // Required empty public constructor
     }
@@ -51,6 +53,8 @@ public class ProfilePageFragment extends Fragment {
         //final TextView currentName = (TextView) v.findViewById(R.id.CurrN);
         final TextView currentHeight = (TextView) v.findViewById(R.id.CurrH);
         final TextView currentWeight = (TextView) v.findViewById(R.id.CurrW);
+        profileChangebutton = (ImageButton) v.findViewById(R.id.Profilepicview);
+
 
 
 

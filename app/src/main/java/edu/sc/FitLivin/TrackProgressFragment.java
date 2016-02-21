@@ -10,8 +10,6 @@ package edu.sc.FitLivin;
 
 
 import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,7 +17,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -49,6 +46,11 @@ public class TrackProgressFragment extends Fragment {
     private customWeightAdapter customAdapter;
     final ArrayList weight = new ArrayList<String>();
     final ArrayList dates = new ArrayList<Date>();
+    final ArrayList maxweight = new ArrayList<String>();
+    final ArrayList maxsquats = new ArrayList<String>();
+    final ArrayList maxbench = new ArrayList<String>();
+    final ArrayList maxdeadlift = new ArrayList<String>();
+    final ArrayList maxmiletime = new ArrayList<String>();
 
     public TrackProgressFragment() {
 
@@ -67,20 +69,10 @@ public class TrackProgressFragment extends Fragment {
 
 
 
-        Button backBtn = (Button) v.findViewById(R.id.TPBack);
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                HomePageFragment fragment1 = new HomePageFragment();
-                FragmentManager fm = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, fragment1);//replaces fragment with previous
-                ft.addToBackStack(null);
-                ft.commit();
-            }
-        });
+
 
         weightList = (ListView) v.findViewById(R.id.listView2);
+
 
         final ListAdapter adapter;
         ParseQuery query = ParseQuery.getQuery("ProfileInfo"); //getting query
@@ -99,8 +91,8 @@ public class TrackProgressFragment extends Fragment {
                         }
 
 
-                        LineGraphSeries<DataPoint> mSeries1 = new LineGraphSeries<DataPoint>(generatenewData(weight));
-                        LineGraphSeries<DataPoint> mSeries2 = new LineGraphSeries<DataPoint>(generateData(weight, dates));
+                        LineGraphSeries<DataPoint> mSeries1 = new LineGraphSeries<DataPoint>(WeightvsDategenerator(weight));
+                        LineGraphSeries<DataPoint> mSeries2 = new LineGraphSeries<DataPoint>(WeightGenerator(weight, dates));
                         mSeries2.setTitle("Dates");
                         mSeries1.setTitle("Weights");
                         mSeries1.setThickness(7);
@@ -167,7 +159,7 @@ public class TrackProgressFragment extends Fragment {
     }
 
 
-    private DataPoint[] generateData(ArrayList<String> weight,ArrayList<Date> dates) {
+    private DataPoint[] WeightGenerator(ArrayList<String> weight, ArrayList<Date> dates) {
 
         DataPoint[] values = new DataPoint[weight.size()];
 
@@ -183,7 +175,7 @@ public class TrackProgressFragment extends Fragment {
             }
         return values;
     }
-    private DataPoint[] generatenewData(ArrayList<String> weight) {
+    private DataPoint[] WeightvsDategenerator(ArrayList<String> weight) {
 
         DataPoint[] values = new DataPoint[weight.size()];
 

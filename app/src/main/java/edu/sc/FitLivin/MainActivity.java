@@ -59,6 +59,7 @@ public class MainActivity extends FragmentActivity{
 
 
     String name1 = ParseUser.getCurrentUser().getUsername();
+    ParseUser curruser = ParseUser.getCurrentUser();
 
 
     //Creates a parse object for the database
@@ -427,6 +428,7 @@ public class MainActivity extends FragmentActivity{
         // adds info to database
         weightParse.put("goalWeight", weight1);
         weightParse.put("username", username1);
+        weightParse.put("author",curruser);
 
         weightParse.saveInBackground(new SaveCallback() {
             @Override
@@ -452,6 +454,7 @@ public class MainActivity extends FragmentActivity{
         // adds info to database
         weightGainParse.put("goalWeightGain", weight1);
         weightGainParse.put("username", username1);
+        weightGainParse.put("author",curruser);
 
         weightGainParse.saveInBackground(new SaveCallback() {
             @Override
@@ -477,6 +480,7 @@ public class MainActivity extends FragmentActivity{
         // adds info to database
         benchParse.put("BenchGoal", bench1);
         benchParse.put("username", username1);
+        benchParse.put("author",curruser);
 
         benchParse.saveInBackground(new SaveCallback() {
             @Override
@@ -502,6 +506,7 @@ public class MainActivity extends FragmentActivity{
         // adds info to database
         squatParse.put("SquatGoal", squat1);
         squatParse.put("username", username1);
+        squatParse.put("author",curruser);
 
         squatParse.saveInBackground(new SaveCallback() {
             @Override
@@ -527,6 +532,7 @@ public class MainActivity extends FragmentActivity{
         // adds info to database
         DeadLiftParse.put("DeadLiftGoal", DL1);
         DeadLiftParse.put("username", username1);
+        DeadLiftParse.put("author",curruser);
 
         DeadLiftParse.saveInBackground(new SaveCallback() {
             @Override
@@ -552,6 +558,7 @@ public class MainActivity extends FragmentActivity{
         // adds info to database
         MileTimeParse.put("MileTimeGoal", mileTime1);
         MileTimeParse.put("username", username1);
+        MileTimeParse.put("author",curruser);
 
         MileTimeParse.saveInBackground(new SaveCallback() {
             @Override
@@ -574,6 +581,7 @@ public class MainActivity extends FragmentActivity{
         // adds info to database
         MaxBenchParse.put("MaxBench", bench1);
         MaxBenchParse.put("username", username1);
+        MaxBenchParse.put("author",curruser);
 
         MaxBenchParse.saveInBackground(new SaveCallback() {
             @Override
@@ -596,6 +604,7 @@ public class MainActivity extends FragmentActivity{
         // adds info to database
         MaxSquatParse.put("MaxSquat", squat1);
         MaxSquatParse.put("username", username1);
+        MaxSquatParse.put("author",curruser);
 
         MaxSquatParse.saveInBackground(new SaveCallback() {
             @Override
@@ -618,6 +627,7 @@ public class MainActivity extends FragmentActivity{
         // adds info to database
         MaxDeadLiftParse.put("MaxDeadLift", deadLift1);
         MaxDeadLiftParse.put("username", username1);
+        MaxDeadLiftParse.put("author", curruser);
 
         MaxDeadLiftParse.saveInBackground(new SaveCallback() {
             @Override
@@ -640,6 +650,7 @@ public class MainActivity extends FragmentActivity{
         // adds info to database
         MaxBigThreeParse.put("MaxBigThree", bigThree1);
         MaxBigThreeParse.put("username", username1);
+        MaxBigThreeParse.put("author",curruser);
 
         MaxBigThreeParse.saveInBackground(new SaveCallback() {
             @Override
@@ -662,6 +673,7 @@ public class MainActivity extends FragmentActivity{
         // adds info to database
         MaxMileTimeParse.put("MaxMileTime", mileTime1);
         MaxMileTimeParse.put("username", username1);
+        MaxMileTimeParse.put("author",curruser);
 
         MaxMileTimeParse.saveInBackground(new SaveCallback() {
             @Override
