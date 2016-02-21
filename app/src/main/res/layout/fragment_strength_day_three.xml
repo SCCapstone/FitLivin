@@ -88,6 +88,13 @@
             android:layout_alignParentStart="true" />
 
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Workout Complete!"
+            android:id="@+id/completeDay3s"
+            android:layout_gravity="right|bottom" />
+
 
     </LinearLayout>>
 
