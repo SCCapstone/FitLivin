@@ -1,13 +1,10 @@
 package edu.sc.FitLivin;
 
-import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.media.MediaPlayer;
-import android.net.Uri;
-import android.os.Bundle;
 import android.app.Fragment;
+import android.content.DialogInterface;
+import android.media.MediaPlayer;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -24,8 +20,6 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 import java.util.List;
-
-import edu.sc.FitLivin.R;
 
 
 public class GoalFragment extends Fragment {
@@ -154,6 +148,8 @@ private AlertDialog.Builder dialogBuilder;
         final TextView WeightGain = (TextView) v.findViewById(R.id.currentWeightGainGoal);
         final TextView MileTimeG = (TextView) v.findViewById(R.id.currentMileTimeGoal);
 
+        ParseQuery queryuser = ParseUser.getQuery();
+        ParseUser user = ParseUser.getCurrentUser();
 
 
         ParseQuery Weightquery = ParseQuery.getQuery("WeightGoal");
@@ -173,7 +169,7 @@ private AlertDialog.Builder dialogBuilder;
 
         ParseQuery MaxBench = ParseQuery.getQuery("MaxBench");
         MaxBench.whereExists("MaxBench");//setting constraints
-        MaxBench.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        MaxBench.whereMatchesQuery("author", queryuser);
 
         MaxBench.findInBackground(new FindCallback<ParseObject>() {
                                       public void done(List<ParseObject> objects, ParseException e) {
@@ -197,8 +193,10 @@ private AlertDialog.Builder dialogBuilder;
                                   }
         );
         ParseQuery MaxSquat = ParseQuery.getQuery("MaxSquat");
+
+        queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser());
         MaxSquat.whereExists("MaxSquat");//setting constraints
-        MaxSquat.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        MaxSquat.whereMatchesQuery("author", queryuser);
         MaxSquat.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -220,7 +218,7 @@ private AlertDialog.Builder dialogBuilder;
         });
         ParseQuery MaxDeadLift = ParseQuery.getQuery("MaxDeadLift");
         MaxDeadLift.whereExists("MaxDeadLift");//setting constraints
-        MaxDeadLift.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        MaxDeadLift.whereMatchesQuery("author",queryuser);
         MaxDeadLift.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -240,7 +238,7 @@ private AlertDialog.Builder dialogBuilder;
         });
         ParseQuery MaxMileTime = ParseQuery.getQuery("MaxMileTime");
         MaxMileTime.whereExists("MaxMileTime");//setting constraints
-        MaxMileTime.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        MaxMileTime.whereMatchesQuery("author", queryuser);
         MaxMileTime.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -278,7 +276,7 @@ private AlertDialog.Builder dialogBuilder;
         });*/
 
         Weightquery.whereExists("goalWeight");//setting constraints
-        Weightquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        Weightquery.whereMatchesQuery("author", queryuser);
         Weightquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -309,7 +307,7 @@ private AlertDialog.Builder dialogBuilder;
         });
 
         WeightGainquery.whereExists("goalWeightGain");//setting constraints
-        WeightGainquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        WeightGainquery.whereMatchesQuery("author", queryuser);
         WeightGainquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -338,7 +336,7 @@ private AlertDialog.Builder dialogBuilder;
 
         });
         Benchquery.whereExists("BenchGoal");//setting constraints
-        Benchquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        Benchquery.whereMatchesQuery("author", queryuser);
         Benchquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -367,7 +365,7 @@ private AlertDialog.Builder dialogBuilder;
         });
 
         Squatquery.whereExists("SquatGoal");//setting constraints
-        Squatquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        Squatquery.whereMatchesQuery("author", queryuser);
         Squatquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -397,7 +395,7 @@ private AlertDialog.Builder dialogBuilder;
         });
 
         DeadLiftquery.whereExists("DeadLiftGoal");//setting constraints
-        DeadLiftquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        DeadLiftquery.whereMatchesQuery("author", queryuser);
         DeadLiftquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -427,7 +425,7 @@ private AlertDialog.Builder dialogBuilder;
         });
 
         MileTimequery.whereExists("MileTimeGoal");//setting constraints
-        MileTimequery.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        MileTimequery.whereMatchesQuery("author",queryuser);
         MileTimequery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
