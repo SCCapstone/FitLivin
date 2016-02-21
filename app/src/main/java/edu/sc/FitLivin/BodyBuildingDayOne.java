@@ -93,6 +93,16 @@ public class BodyBuildingDayOne extends Fragment {
                                   }
                               }
         );
+        Button complete = (Button) v.findViewById(R.id.completeDay1bb);//creates complete button
+        complete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Integer points = MainActivity.points;
+                points = points + 50;//adds points for completed workout
+                MainActivity main = new MainActivity();
+                main.pointsData(points);
+            }
+        });
 
 
         Button backBtn = (Button) v.findViewById(R.id.BBBack);//creates buttons
@@ -105,17 +115,6 @@ public class BodyBuildingDayOne extends Fragment {
                 ft.replace(R.id.container, fragment1);//replaces previous fragment
                 ft.addToBackStack(null);//adds to the back stack
                 ft.commit();//commits it
-            }
-        });
-
-        Button completeBtn = (Button) v.findViewById(R.id.completeDay1bb);//creates complete button
-        completeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Integer points = MainActivity.points;
-                points = points + 50;//adds points for completed workout
-                MainActivity main = new MainActivity();
-                main.pointsData(points);
             }
         });
 
