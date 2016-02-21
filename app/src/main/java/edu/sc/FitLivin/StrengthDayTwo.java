@@ -122,6 +122,17 @@ MediaPlayer mp;
         });
 
 
+        Button complete = (Button) v.findViewById(R.id.completeDay2s);//creates complete button
+        complete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Integer points = MainActivity.points;
+                points = points + 50;//adds points for completed workout
+                MainActivity main = new MainActivity();
+                main.pointsData(points);
+            }
+        });
+
         return v;
     }
 
