@@ -8,11 +8,10 @@
 
 package edu.sc.FitLivin;
 
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -136,8 +135,9 @@ public class HomePageFragment extends Fragment{
         stopWatch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(getActivity(), stopwatch_activity.class);
-                getActivity().startActivity(myIntent);
+                StopwatchFragment stop = new StopwatchFragment();
+                FragmentManager fm1 = getFragmentManager();
+                fm1.beginTransaction().replace(R.id.container, stop).addToBackStack(null).commit();
             }
         });
 

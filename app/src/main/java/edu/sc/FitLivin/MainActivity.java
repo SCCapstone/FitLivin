@@ -54,7 +54,7 @@ public class MainActivity extends FragmentActivity{
 
     ListView listView;
     ArrayAdapter<String> listAdapter;
-    String fragmentArray[] = {"Home Page", "Profile", "Points", "BMI", "Nutrition", "Goals", "Max", "Track Progress", "Fitness Program"};
+    String fragmentArray[] = {"Home Page", "Profile", "Points", "BMI", "Nutrition", "Goals", "Max", "Track Progress", "Fitness Program","Stop Watch"};
     DrawerLayout drawerLayout;
 
 
@@ -114,6 +114,7 @@ public class MainActivity extends FragmentActivity{
      listView = (ListView)findViewById(R.id.listView);
        listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, fragmentArray);
             listView.setAdapter(listAdapter);
+
             drawerLayout = (DrawerLayout) findViewById(R.id.drawerview);
 
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -147,6 +148,9 @@ public class MainActivity extends FragmentActivity{
                             break;
                         case 8:
                             fragment = new FitnessProgramFragment();
+                            break;
+                        case 9:
+                            fragment = new StopwatchFragment();
                             break;
                         default:
                             fragment = new HomePageFragment();

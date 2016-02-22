@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -148,7 +149,7 @@ private AlertDialog.Builder dialogBuilder;
         final TextView WeightGain = (TextView) v.findViewById(R.id.currentWeightGainGoal);
         final TextView MileTimeG = (TextView) v.findViewById(R.id.currentMileTimeGoal);
 
-        ParseQuery queryuser = ParseUser.getQuery();
+
         ParseUser user = ParseUser.getCurrentUser();
 
 
@@ -166,6 +167,8 @@ private AlertDialog.Builder dialogBuilder;
         Button setDeadLiftG = (Button) v.findViewById(R.id.setDeadLift);
         Button setMileTimeG = (Button) v.findViewById(R.id.setMileTime);
 
+        ParseQuery queryuser = ParseUser.getQuery();
+        queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
 
         ParseQuery MaxBench = ParseQuery.getQuery("MaxBench");
         MaxBench.whereExists("MaxBench");//setting constraints
@@ -194,9 +197,9 @@ private AlertDialog.Builder dialogBuilder;
         );
         ParseQuery MaxSquat = ParseQuery.getQuery("MaxSquat");
 
-        queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser());
+
         MaxSquat.whereExists("MaxSquat");//setting constraints
-        MaxSquat.whereMatchesQuery("author", queryuser);
+       MaxSquat.whereMatchesQuery("author", queryuser);
         MaxSquat.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -218,7 +221,7 @@ private AlertDialog.Builder dialogBuilder;
         });
         ParseQuery MaxDeadLift = ParseQuery.getQuery("MaxDeadLift");
         MaxDeadLift.whereExists("MaxDeadLift");//setting constraints
-        MaxDeadLift.whereMatchesQuery("author",queryuser);
+        MaxDeadLift.whereMatchesQuery("author", queryuser);
         MaxDeadLift.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -238,7 +241,7 @@ private AlertDialog.Builder dialogBuilder;
         });
         ParseQuery MaxMileTime = ParseQuery.getQuery("MaxMileTime");
         MaxMileTime.whereExists("MaxMileTime");//setting constraints
-        MaxMileTime.whereMatchesQuery("author", queryuser);
+       MaxMileTime.whereMatchesQuery("author", queryuser);
         MaxMileTime.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -275,16 +278,14 @@ private AlertDialog.Builder dialogBuilder;
 
         });*/
 
-        Weightquery.whereExists("goalWeight");//setting constraints
-        Weightquery.whereMatchesQuery("author", queryuser);
+        Weightquery.whereMatchesQuery("author",queryuser);
         Weightquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
-
+                    Toast.makeText(getActivity(),"the object size is: "+ objects.size(),Toast.LENGTH_SHORT).show();
                 if (e == null && objects.size() != 0) { //if objects size is not 0
                     Log.d("QAOD", "weight test success");
-                    if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                        int x = (Integer) objects.get(objects.size() - 1).get("goalWeight");
+                        int x = (Integer) objects.get(0).get("goalWeight");
                         WeightG.setText("" + x);
                         Integer value = main.WeightGoalTest(x);
                         if (value == 1) {
@@ -300,7 +301,10 @@ private AlertDialog.Builder dialogBuilder;
                         }
 
 
-                    }
+
+                }
+                else {
+                    Toast.makeText(getActivity(),"You have not set any goals yet", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -406,9 +410,10 @@ private AlertDialog.Builder dialogBuilder;
                         int x = (Integer) objects.get(objects.size() - 1).get("DeadLiftGoal");
                         DLG.setText("" + x);
                         Log.d("QAOD", "DEADLIFTMAX" + main.deadLift);
-                        Integer value = main.DeadLiftGoalTest(x);
+                        //Integer value = main.DeadLiftGoalTest(x);
                         Log.d("QAOD", "DEADLIFTMAXGOAL" + x);
-                        if (value == 1) {
+
+                        /*if (value == 1) {
                             Log.d("QAOD", "congratsDEADLIFT");
                             //deadLiftDialog();
 
@@ -416,7 +421,7 @@ private AlertDialog.Builder dialogBuilder;
                         if (value == 2) {
                             Log.d("QAOD", "not there yetDEADLIFT");
                         }
-
+                        */
 
                     }
                 }
