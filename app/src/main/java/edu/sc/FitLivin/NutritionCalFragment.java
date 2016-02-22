@@ -57,6 +57,7 @@ public class NutritionCalFragment extends Fragment {
             public void onClick(View v) {
                 ParseQuery<ParseUser> query = ParseUser.getQuery();
                 query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+                query.orderByDescending("createdAt");
                 query.findInBackground(new FindCallback<ParseUser>() {
                     public void done(List<ParseUser> objects, ParseException e) {
                         if (e == null) {
@@ -75,7 +76,7 @@ public class NutritionCalFragment extends Fragment {
 
                                         if (e == null && objects.size() != 0) {
                                             if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
-                                                weight = (Integer) objects.get(objects.size() - 1).get("Weight");
+                                                weight = (Integer) objects.get(0).get("Weight");
                                                 Log.d("F", "weightM");
                                                 Integer low = MaleWeightLossL(weight);
                                                 Integer mod = MaleWeightLossM(weight);
@@ -100,7 +101,7 @@ public class NutritionCalFragment extends Fragment {
 
                                         if (e == null && objects.size() != 0) { //if objects size is not 0
                                             if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
-                                                weight = (Integer) objects.get(objects.size() - 1).get("Weight");
+                                                weight = (Integer) objects.get(0).get("Weight");
                                                 Log.d("F", "weightM");
                                                 //Integer low = 16 * weight - 550;
                                                 Integer low = FemaleWeightLossL(weight);
@@ -150,7 +151,7 @@ public class NutritionCalFragment extends Fragment {
 
                                         if (e == null && objects.size() != 0) {
                                             if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
-                                                weight = (Integer) objects.get(objects.size() - 1).get("Weight");
+                                                weight = (Integer) objects.get(0).get("Weight");
                                                 Log.d("F", "weightM");
                                                 //Integer low = 17 * weight;
                                                 Integer low = MaleWeightMaintainL(weight);
@@ -177,7 +178,7 @@ public class NutritionCalFragment extends Fragment {
 
                                         if (e == null && objects.size() != 0) { //if objects size is not 0
                                             if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
-                                                weight = (Integer) objects.get(objects.size() - 1).get("Weight");
+                                                weight = (Integer) objects.get(0).get("Weight");
                                                 Log.d("F", "weightM");
                                                 //Integer low = 16 * weight;
                                                 Integer low = FemaleWeightMaintainL(weight);
@@ -227,7 +228,7 @@ public class NutritionCalFragment extends Fragment {
 
                                         if (e == null && objects.size() != 0) {
                                             if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
-                                                weight = (Integer) objects.get(objects.size() - 1).get("Weight");
+                                                weight = (Integer) objects.get(0).get("Weight");
                                                 Log.d("F", "weightM");
                                                 //Integer low = 17 * weight + 750;
                                                 Integer low = MaleWeightGainL(weight);
@@ -254,7 +255,7 @@ public class NutritionCalFragment extends Fragment {
 
                                         if (e == null && objects.size() != 0) { //if objects size is not 0
                                             if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
-                                                weight = (Integer) objects.get(objects.size() - 1).get("Weight");
+                                                weight = (Integer) objects.get(0).get("Weight");
                                                 Log.d("F", "weightM");
                                                 //Integer low = 16 * weight + 750;
                                                 Integer low = FemaleWeightGainL(weight);

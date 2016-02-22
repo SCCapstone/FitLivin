@@ -52,6 +52,7 @@ public class BMICAL_Fragment extends Fragment {
         ParseQuery query = ParseQuery.getQuery("ProfileInfo"); //getting query
         query.whereExists("Weight");//setting constraints
         query.whereExists("Height");//setting constraints
+        query.orderByDescending("createdAt");
         query.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
         query.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
@@ -81,6 +82,7 @@ public class BMICAL_Fragment extends Fragment {
                 ParseQuery query = ParseQuery.getQuery("ProfileInfo"); //getting query
                 query.whereExists("Weight");//setting constraints
                 query.whereExists("Height");//setting constraints
+                query.orderByDescending("createdAt");
                 query.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
                 query.findInBackground(new FindCallback<ParseObject>() {
                     public void done(List<ParseObject> objects, ParseException e) {

@@ -24,7 +24,8 @@ import java.util.List;
 
 
 public class GoalFragment extends Fragment {
-    MediaPlayer mp;
+   MainActivity main = new MainActivity();
+
     private static final int TEXT_ID = 0;
 
 private AlertDialog.Builder dialogBuilder;
@@ -33,16 +34,23 @@ private AlertDialog.Builder dialogBuilder;
         dialogBuilder = new AlertDialog.Builder(getActivity());
         dialogBuilder.setTitle("Great Job!!!!");
         dialogBuilder.setMessage("Weight Loss Goal: Complete!");
-        mp = MediaPlayer.create(getActivity(), R.raw.applause);
-        mp.start();
+        main.mp = null;
+        main.mp = MediaPlayer.create(getActivity(), R.raw.applause);
+        main.mp.start();
+       // mp.start();
         dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                mp.stop();
-                mp = null;
+
+                // mp = null;
                 dialog.dismiss();
+                main.mp.stop();
             }
+
+
         });
+        //mp = null;
+
         AlertDialog dialog = dialogBuilder.create();
         dialog.show();
     }
@@ -50,13 +58,14 @@ private AlertDialog.Builder dialogBuilder;
         dialogBuilder = new AlertDialog.Builder(getActivity());
         dialogBuilder.setTitle("Great Job!!!!");
         dialogBuilder.setMessage("Weight Gain Goal: Complete!");
-        mp = MediaPlayer.create(getActivity(), R.raw.applause);
-        mp.start();
+        main.mp=null;
+        main.mp = MediaPlayer.create(getActivity(), R.raw.applause);
+        main.mp.start();
         dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                mp.stop();
-                mp = null;
+                main.mp.stop();
+
                 dialog.dismiss();
             }
         });
@@ -67,13 +76,15 @@ private AlertDialog.Builder dialogBuilder;
         dialogBuilder = new AlertDialog.Builder(getActivity());
         dialogBuilder.setTitle("Great Job!!!!");
         dialogBuilder.setMessage("Bench Press Goal: Complete!");
-        mp = MediaPlayer.create(getActivity(), R.raw.applause);
-        mp.start();
+        main.mp.stop();
+        main.mp = MediaPlayer.create(getActivity(), R.raw.applause);
+        main.mp.start();
+       // mp.start();
         dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                mp.stop();
-                mp = null;
+                main.mp.stop();
+
                 dialog.dismiss();
             }
         });
@@ -84,13 +95,13 @@ private AlertDialog.Builder dialogBuilder;
         dialogBuilder = new AlertDialog.Builder(getActivity());
         dialogBuilder.setTitle("Great Job!!!!");
         dialogBuilder.setMessage("Squat Goal: Complete!");
-        mp = MediaPlayer.create(getActivity(), R.raw.applause);
-        mp.start();
+        main.mp = MediaPlayer.create(getActivity(), R.raw.applause);
+        main.mp.start();
         dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                mp.stop();
-                mp = null;
+                main.mp.stop();
+
                 dialog.dismiss();
             }
         });
@@ -101,13 +112,13 @@ private AlertDialog.Builder dialogBuilder;
         dialogBuilder = new AlertDialog.Builder(getActivity());
         dialogBuilder.setTitle("Great Job!!!!");
         dialogBuilder.setMessage("Dead Lift Goal: Complete!");
-        mp = MediaPlayer.create(getActivity(), R.raw.applause);
-        mp.start();
+        main.mp = MediaPlayer.create(getActivity(), R.raw.applause);
+        main.mp.start();
         dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                mp.stop();
-                mp = null;
+                main.mp.stop();
+
                 dialog.dismiss();
             }
         });
@@ -118,13 +129,13 @@ private AlertDialog.Builder dialogBuilder;
         dialogBuilder = new AlertDialog.Builder(getActivity());
         dialogBuilder.setTitle("Great Job!!!!");
         dialogBuilder.setMessage("Mile Time Goal: Complete!");
-        mp = MediaPlayer.create(getActivity(), R.raw.applause);
-        mp.start();
+       main.mp = MediaPlayer.create(getActivity(), R.raw.applause);
+        main.mp.start();
         dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                mp.stop();
-                mp = null;
+                main.mp.stop();
+
                 dialog.dismiss();
             }
         });
@@ -173,6 +184,7 @@ private AlertDialog.Builder dialogBuilder;
         ParseQuery MaxBench = ParseQuery.getQuery("MaxBench");
         MaxBench.whereExists("MaxBench");//setting constraints
         MaxBench.whereMatchesQuery("author", queryuser);
+        MaxBench.orderByDescending("createdAt");
 
         MaxBench.findInBackground(new FindCallback<ParseObject>() {
                                       public void done(List<ParseObject> objects, ParseException e) {
@@ -181,7 +193,7 @@ private AlertDialog.Builder dialogBuilder;
 
                                               if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                                                  int x = (Integer) objects.get(objects.size() - 1).get("MaxBench");
+                                                  int x = (Integer) objects.get(0).get("MaxBench");
 
                                                   main.bench = x;
 
@@ -196,10 +208,9 @@ private AlertDialog.Builder dialogBuilder;
                                   }
         );
         ParseQuery MaxSquat = ParseQuery.getQuery("MaxSquat");
-
-
         MaxSquat.whereExists("MaxSquat");//setting constraints
        MaxSquat.whereMatchesQuery("author", queryuser);
+        MaxSquat.orderByDescending("createdAt");
         MaxSquat.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -207,7 +218,7 @@ private AlertDialog.Builder dialogBuilder;
 
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                        int x = (Integer) objects.get(objects.size() - 1).get("MaxSquat");
+                        int x = (Integer) objects.get(0).get("MaxSquat");
                         //currentW.setText(Integer.toString(x));
                         //setSquat(x);
                         main.squat = x;
@@ -222,6 +233,7 @@ private AlertDialog.Builder dialogBuilder;
         ParseQuery MaxDeadLift = ParseQuery.getQuery("MaxDeadLift");
         MaxDeadLift.whereExists("MaxDeadLift");//setting constraints
         MaxDeadLift.whereMatchesQuery("author", queryuser);
+        MaxDeadLift.orderByDescending("createdAt");
         MaxDeadLift.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -229,7 +241,7 @@ private AlertDialog.Builder dialogBuilder;
 
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                        int x = (Integer) objects.get(objects.size() - 1).get("MaxDeadLift");
+                        int x = (Integer) objects.get(0).get("MaxDeadLift");
                         //currentW.setText(Integer.toString(x));
                         main.deadLift = x;
 
@@ -241,7 +253,8 @@ private AlertDialog.Builder dialogBuilder;
         });
         ParseQuery MaxMileTime = ParseQuery.getQuery("MaxMileTime");
         MaxMileTime.whereExists("MaxMileTime");//setting constraints
-       MaxMileTime.whereMatchesQuery("author", queryuser);
+        MaxMileTime.whereMatchesQuery("author", queryuser);
+        MaxMileTime.orderByDescending("createdAt");
         MaxMileTime.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -249,7 +262,7 @@ private AlertDialog.Builder dialogBuilder;
 
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                        int x = (Integer) objects.get(objects.size() - 1).get("MaxMileTime");
+                        int x = (Integer) objects.get(0).get("MaxMileTime");
                         //currentW.setText(Integer.toString(x));
                         main.mileTime = x;
 
@@ -260,51 +273,34 @@ private AlertDialog.Builder dialogBuilder;
 
         });
 
-       /* CurrentWeightquery.whereExists("Weight");//setting constraints
-        CurrentWeightquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
-        CurrentWeightquery.findInBackground(new FindCallback<ParseObject>() {
-            public void done(List<ParseObject> objects, ParseException e) {
 
-                if (e == null && objects.size() != 0) { //if objects size is not 0
-
-                    if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
-
-                        int x = (Integer) objects.get(objects.size() - 1).get("Weight");
-                        //currentW.setText(Integer.toString(x));
-
-                    }
-                }
-            }
-
-        });*/
-
-        Weightquery.whereMatchesQuery("author",queryuser);
+        Weightquery.whereMatchesQuery("author", queryuser);
+        Weightquery.orderByDescending("createdAt");
         Weightquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
-                    Toast.makeText(getActivity(),"the object size is: "+ objects.size(),Toast.LENGTH_SHORT).show();
+
                 if (e == null && objects.size() != 0) { //if objects size is not 0
                     Log.d("QAOD", "weight test success");
 
-                        int x = (Integer) objects.get(0).get("goalWeight");
-                        WeightG.setText("" + x);
-                        Integer value = main.WeightGoalTest(x);
-                        if (value == 1) {
-                            Log.d("QAOD", "congratsWEIGHTLOSS");
-                            //weightLossDialog();
-                            //Toast.makeText(getActivity(), "Great Job!!!.", Toast.LENGTH_SHORT).show();
+                    int x = (Integer) objects.get(0).get("goalWeight");
+                    WeightG.setText("" + x);
+                    Integer value = main.WeightGoalTest(x);
+                    if (value == 1) {
+                        Log.d("QAOD", "congratsWEIGHTLOSS");
+                        weightLossDialog();
+                        main.mp.stop();
+                        //Toast.makeText(getActivity(), "Great Job!!!.", Toast.LENGTH_SHORT).show();
 
-                        }
-                        if (value == 2) {
-                            // Toast.makeText(getActivity(), "Almost!!!.", Toast.LENGTH_SHORT).show();
-                            Log.d("QAOD", "not there yetWEIGHTLOSS");
+                    }
+                    if (value == 2) {
+                        // Toast.makeText(getActivity(), "Almost!!!.", Toast.LENGTH_SHORT).show();
+                        Log.d("QAOD", "not there yetWEIGHTLOSS");
 
-                        }
+                    }
 
 
-
-                }
-                else {
-                    Toast.makeText(getActivity(),"You have not set any goals yet", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getActivity(), "You have not set any goals yet", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -312,20 +308,20 @@ private AlertDialog.Builder dialogBuilder;
 
         WeightGainquery.whereExists("goalWeightGain");//setting constraints
         WeightGainquery.whereMatchesQuery("author", queryuser);
+        WeightGainquery.orderByDescending("createdAt");
         WeightGainquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
                 if (e == null && objects.size() != 0) { //if objects size is not 0
-                    Log.d("QAOD", "weight test success");
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                        int x = (Integer) objects.get(objects.size() - 1).get("goalWeightGain");
+                        int x = (Integer) objects.get(0).get("goalWeightGain");
                         WeightGain.setText("" + x);
                         //main.bench = x;
                         Integer value = main.WeightGainGoalTest(x);
                         if (value == 1) {
                             Log.d("QAOD", "congratsWEIGHTGAIN");
-                            // weightGainDialog();
+                            weightGainDialog();
 
                         }
                         if (value == 2) {
@@ -341,6 +337,7 @@ private AlertDialog.Builder dialogBuilder;
         });
         Benchquery.whereExists("BenchGoal");//setting constraints
         Benchquery.whereMatchesQuery("author", queryuser);
+        Benchquery.orderByDescending("createdAt");
         Benchquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -348,7 +345,7 @@ private AlertDialog.Builder dialogBuilder;
 
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                        int x = (Integer) objects.get(objects.size() - 1).get("BenchGoal");
+                        int x = (Integer) objects.get(0).get("BenchGoal");
                         BenchG.setText("" + x);
                         Log.d("QAOD", "BENCHMAX" + main.bench);
                         Integer value = main.BenchGoalTest(x);
@@ -370,6 +367,7 @@ private AlertDialog.Builder dialogBuilder;
 
         Squatquery.whereExists("SquatGoal");//setting constraints
         Squatquery.whereMatchesQuery("author", queryuser);
+        Squatquery.orderByDescending("createdAt");
         Squatquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -377,14 +375,14 @@ private AlertDialog.Builder dialogBuilder;
 
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                        int x = (Integer) objects.get(objects.size() - 1).get("SquatGoal");
+                        int x = (Integer) objects.get(0).get("SquatGoal");
                         SquatG.setText("" + x);
                         Log.d("QAOD", "SQUATMAX" + main.squat);
                         Integer value = main.SquatGoalTest(x);
                         Log.d("QAOD", "SQUATMAXGOAL" + x);
                         if (value == 1) {
                             Log.d("QAOD", "congratsSQUAT");
-                            //squatDialog();
+                            squatDialog();
 
                         }
                         if (value == 2) {
@@ -400,6 +398,7 @@ private AlertDialog.Builder dialogBuilder;
 
         DeadLiftquery.whereExists("DeadLiftGoal");//setting constraints
         DeadLiftquery.whereMatchesQuery("author", queryuser);
+        DeadLiftquery.orderByDescending("createdAt");
         DeadLiftquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -407,21 +406,21 @@ private AlertDialog.Builder dialogBuilder;
 
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                        int x = (Integer) objects.get(objects.size() - 1).get("DeadLiftGoal");
+                        int x = (Integer) objects.get(0).get("DeadLiftGoal");
                         DLG.setText("" + x);
                         Log.d("QAOD", "DEADLIFTMAX" + main.deadLift);
-                        //Integer value = main.DeadLiftGoalTest(x);
+                        Integer value = main.DeadLiftGoalTest(x);
                         Log.d("QAOD", "DEADLIFTMAXGOAL" + x);
 
-                        /*if (value == 1) {
+                        if (value == 1) {
                             Log.d("QAOD", "congratsDEADLIFT");
-                            //deadLiftDialog();
+                            deadLiftDialog();
 
                         }
                         if (value == 2) {
                             Log.d("QAOD", "not there yetDEADLIFT");
                         }
-                        */
+
 
                     }
                 }
@@ -431,6 +430,7 @@ private AlertDialog.Builder dialogBuilder;
 
         MileTimequery.whereExists("MileTimeGoal");//setting constraints
         MileTimequery.whereMatchesQuery("author",queryuser);
+        MileTimequery.orderByDescending("createdAt");
         MileTimequery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -445,7 +445,7 @@ private AlertDialog.Builder dialogBuilder;
                         Log.d("QAOD", "MILETIMEMAXGOAL" + x);
                         if (value == 1) {
                             Log.d("QAOD", "congratsMILEITME");
-                            //mileTimeDialog();
+                            mileTimeDialog();
 
                         }
                         if (value == 2) {

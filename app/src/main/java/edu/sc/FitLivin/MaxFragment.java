@@ -63,10 +63,13 @@ public class MaxFragment extends Fragment {
         ParseQuery DeadLiftMaxquery = ParseQuery.getQuery("MaxDeadLift");
         ParseQuery BigThreeMaxquery = ParseQuery.getQuery("MaxBigThree");
         ParseQuery MileTimeMaxquery = ParseQuery.getQuery("MaxMileTime");
+            ParseQuery queryuser = ParseUser.getQuery();
+            queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
 
 
         BenchMaxquery.whereExists("MaxBench");//setting constraints
-        BenchMaxquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        BenchMaxquery.whereMatchesQuery("author", queryuser);
+            BenchMaxquery.orderByDescending("createdAt");
         BenchMaxquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -74,7 +77,7 @@ public class MaxFragment extends Fragment {
 
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                        int x = (Integer) objects.get(objects.size() - 1).get("MaxBench");
+                        int x = (Integer) objects.get(0).get("MaxBench");
                         userBench.setText("" + x);
 
                     }
@@ -84,7 +87,9 @@ public class MaxFragment extends Fragment {
         });
 
         SquatMaxquery.whereExists("MaxSquat");//setting constraints
-        SquatMaxquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
+            SquatMaxquery.whereMatchesQuery("author", queryuser);
+            SquatMaxquery.orderByDescending("createdAt");
+        //SquatMaxquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
         SquatMaxquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -101,7 +106,8 @@ public class MaxFragment extends Fragment {
 
         });
         DeadLiftMaxquery.whereExists("MaxDeadLift");//setting constraints
-        DeadLiftMaxquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
+            DeadLiftMaxquery.whereMatchesQuery("author", queryuser);
+            DeadLiftMaxquery.orderByDescending("createdAt");
         DeadLiftMaxquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -119,7 +125,8 @@ public class MaxFragment extends Fragment {
         });
 
         MileTimeMaxquery.whereExists("MaxMileTime");//setting constraints
-        MileTimeMaxquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
+            MileTimeMaxquery.whereMatchesQuery("author", queryuser);
+            MileTimeMaxquery.orderByDescending("createdAt");
         MileTimeMaxquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 

@@ -47,6 +47,7 @@ public class PointsPageFragment extends Fragment {
         ParseQuery Points = ParseQuery.getQuery("Points");
         Points.whereExists("CurrentPoints");//setting constraints
         Points.whereMatchesQuery("author", queryuser);
+        Points.orderByDescending("createdAt");
 
         Points.findInBackground(new FindCallback<ParseObject>() {
                                     public void done(List<ParseObject> objects, ParseException e) {
@@ -55,7 +56,7 @@ public class PointsPageFragment extends Fragment {
 
                                             if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                                                int x = (Integer) objects.get(objects.size() - 1).get("CurrentPoints");
+                                                int x = (Integer) objects.get(0).get("CurrentPoints");
 
                                                 // main.bench = x;
                                                 currentPoints.setText("" +x);

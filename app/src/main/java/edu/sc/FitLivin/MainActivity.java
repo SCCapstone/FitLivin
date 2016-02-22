@@ -12,6 +12,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
@@ -51,6 +52,7 @@ public class MainActivity extends FragmentActivity{
     public static String s;
     public static Integer points = 0;
     private String objectID;
+    public static MediaPlayer mp;
 
     ListView listView;
     ArrayAdapter<String> listAdapter;
