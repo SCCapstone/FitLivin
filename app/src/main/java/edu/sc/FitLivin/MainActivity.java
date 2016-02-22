@@ -400,12 +400,15 @@ public class MainActivity extends FragmentActivity{
      *
      */
 
-    public void pointsData(Integer points) {
+    public void pointsData(Integer points, String user) {
         Log.d("F", "pdata");
-        this.points = points;
+        Integer points1 = points;
+        String username1 = user;
 
         //adds info to database
-        pointsInfo.put("CurrentPoints", this.points);
+        pointsInfo.put("CurrentPoints",points1);
+        pointsInfo.put("username", username1);
+        pointsInfo.put("author",curruser);
 
         pointsInfo.saveInBackground(new SaveCallback() {
             @Override

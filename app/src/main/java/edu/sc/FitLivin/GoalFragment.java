@@ -624,7 +624,7 @@ private AlertDialog.Builder dialogBuilder;
                                 Integer squat = Integer.valueOf(value);
                                 String s = ParseUser.getCurrentUser().getUsername();
                                 SquatG.setText("" + squat);
-                                main.WeightGoal(squat, s);
+                                main.SquatGoal(squat, s);
                                 dialog.cancel();
                             }
                         });

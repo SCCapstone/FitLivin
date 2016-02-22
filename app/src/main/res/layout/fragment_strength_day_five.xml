@@ -59,7 +59,7 @@
             android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/legpresspic"
+            android:id="@+id/squatImage"
             android:src="@drawable/squat"
             android:layout_below="@+id/squat"
             android:clickable="true"
@@ -72,14 +72,14 @@
             android:id="@+id/ohp"
             android:textColor="#ffffff"
             android:textSize="32dp"
-            android:layout_below="@+id/legpresspic"
+            android:layout_below="@+id/squatImage"
             android:layout_gravity="center_horizontal"/>
 
         <ImageButton
             android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/ohppic"
+            android:id="@+id/legpresspic"
             android:src="@drawable/militarypress"
             android:layout_below="@+id/ohp"
             android:clickable="true"
@@ -91,7 +91,7 @@
             android:text="BACK"
             android:id="@+id/Sday5BACK"
             android:layout_gravity="left|bottom"
-            android:layout_below="@+id/calfpresspic"
+            android:layout_below="@+id/legpresspic"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true" />
 

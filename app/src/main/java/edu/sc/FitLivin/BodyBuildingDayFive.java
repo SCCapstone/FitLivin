@@ -7,8 +7,10 @@
 
 package edu.sc.FitLivin;
 
+import android.app.AlertDialog;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -19,13 +21,37 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+
+import java.util.List;
+
 public class BodyBuildingDayFive extends Fragment {
 
 MediaPlayer mp;
     public BodyBuildingDayFive() {
         // Required empty public constructor
     }
+    private AlertDialog.Builder dialogBuilder;
+    //
+    private void weightLossDialog(){
+        dialogBuilder = new AlertDialog.Builder(getActivity());
+        dialogBuilder.setTitle("Great Job!!!!");
+        dialogBuilder.setMessage("You Earned 50 Points!");
 
+        dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                dialog.dismiss();
+            }
+        });
+        AlertDialog dialog = dialogBuilder.create();
+        dialog.show();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -105,12 +131,43 @@ MediaPlayer mp;
         });
         Button complete = (Button) v.findViewById(R.id.completeDay5bb);//creates complete button
         complete.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
-                Integer points = MainActivity.points;
-                points = points + 50;//adds points for completed workout
-                MainActivity main = new MainActivity();
-                main.pointsData(points);
+                ParseQuery queryuser = ParseUser.getQuery();
+                queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
+
+                ParseQuery Points = ParseQuery.getQuery("Points");
+                Points.whereExists("CurrentPoints");//setting constraints
+                Points.whereMatchesQuery("author", queryuser);
+
+                Points.findInBackground(new FindCallback<ParseObject>() {
+                                            public void done(List<ParseObject> objects, ParseException e) {
+
+                                                if (e == null && objects.size() != 0) { //if objects size is not 0
+
+                                                    if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
+
+                                                        int x = (Integer) objects.get(objects.size() - 1).get("CurrentPoints");
+                                                        MainActivity main = new MainActivity();
+                                                        main.points = x;
+                                                        // main.bench = x;
+                                                        // currentPoints.setText("" +x);
+                                                        Integer points = main.points;
+                                                        points = points + 50;//adds points for completed workout
+
+                                                        String s = ParseUser.getCurrentUser().getUsername();
+                                                        main.pointsData(points,s);
+                                                        weightLossDialog();
+
+                                                    }
+
+                                                }
+
+                                            }
+
+
+                                        }
+                );
+
             }
         });
 

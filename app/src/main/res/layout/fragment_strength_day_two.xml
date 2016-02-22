@@ -30,7 +30,7 @@
                 android:scaleType="fitXY"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/closeGripBenchImage"
+                android:id="@+id/squatImage"
                 android:src="@drawable/squat"
                 android:layout_gravity="center_horizontal"
                 android:clickable="true"

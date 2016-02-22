@@ -2,7 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/containerFitnessP"
-    android:background="@drawable/background2">
+    android:background="@drawable/trophy">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -34,27 +34,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="You have:"
-            android:id="@+id/youHavePointsView"
-            android:background="#060605"
-            android:layout_gravity="center_vertical"
-            android:textColor="#ffffff"
-            android:layout_marginTop="111dp"
-            android:layout_below="@+id/pointsHeadingView"
-            android:layout_toStartOf="@+id/pointsHeadingView" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/PointsView"
             android:layout_gravity="center_vertical"
             android:textColor="#ffffff"
             android:text="Points"
-            android:textSize="20dp"
-            android:layout_alignBottom="@+id/youHavePointsView"
-            android:layout_toEndOf="@+id/pointsHeadingView" />
+            android:textSize="80dp"
+            android:layout_below="@+id/pointsHeadingView"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="83dp" />
 
         <TextView
             android:layout_width="347dp"

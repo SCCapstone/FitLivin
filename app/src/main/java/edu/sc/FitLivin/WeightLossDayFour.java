@@ -19,6 +19,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.parse.ParseUser;
+
 public class WeightLossDayFour extends Fragment {
 
     MediaPlayer mp;
@@ -112,7 +114,8 @@ public class WeightLossDayFour extends Fragment {
                 Integer points = MainActivity.points;
                 points = points + 50;//adds points for completed workout
                 MainActivity main = new MainActivity();
-                main.pointsData(points);
+                String s = ParseUser.getCurrentUser().getUsername();
+                main.pointsData(points,s);
             }
         });
 

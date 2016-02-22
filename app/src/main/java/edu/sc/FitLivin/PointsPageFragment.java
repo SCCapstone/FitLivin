@@ -17,6 +17,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+
+import java.util.List;
+
 public class PointsPageFragment extends Fragment {
 
 
@@ -33,7 +41,37 @@ public class PointsPageFragment extends Fragment {
 
         final TextView currentPoints = (TextView) v.findViewById(R.id.PointsView);
 
-        Integer points;
+        ParseQuery queryuser = ParseUser.getQuery();
+        queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
+
+        ParseQuery Points = ParseQuery.getQuery("Points");
+        Points.whereExists("CurrentPoints");//setting constraints
+        Points.whereMatchesQuery("author", queryuser);
+
+        Points.findInBackground(new FindCallback<ParseObject>() {
+                                    public void done(List<ParseObject> objects, ParseException e) {
+
+                                        if (e == null && objects.size() != 0) { //if objects size is not 0
+
+                                            if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
+
+                                                int x = (Integer) objects.get(objects.size() - 1).get("CurrentPoints");
+
+                                                // main.bench = x;
+                                                currentPoints.setText("" +x);
+
+
+                                            }
+
+                                        }
+
+                                    }
+
+
+                                }
+        );
+
+       /* Integer points;
         //Calls main class
         MainActivity main = new MainActivity();
         // sets points to static points in main class
@@ -42,7 +80,7 @@ public class PointsPageFragment extends Fragment {
         main.pointsData(points);
         //sets the text view to points
         currentPoints.setText("" + points);
-
+*/
         //Creates back button to go back to home page
         Button backBtn = (Button) v.findViewById(R.id.PointsBack);
         backBtn.setOnClickListener(new View.OnClickListener() {

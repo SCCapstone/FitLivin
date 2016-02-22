@@ -38,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/runningImage"
-            android:src="@drawable/running"
+            android:src="@drawable/runner"
             android:layout_gravity="center_horizontal"
             android:clickable="true"
             android:layout_below="@+id/warmupRunText" />
