@@ -10,8 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Chronometer;
 
-public class StopwatchFragment extends Fragment
-{
+public class StopwatchFragment extends Fragment implements OnClickListener {
 
 
     public StopwatchFragment() {
@@ -30,48 +29,32 @@ public class StopwatchFragment extends Fragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-     }
+    }
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_stopwatch_main, container, false);
-        chron = (Chronometer) v.findViewById(R.id.chronometer);
         startChron = (Button)v.findViewById(R.id.start);
-        startChron.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                chron.start();
-            }
-        });
-        stopChron = (Button) v.findViewById(R.id.stop);
-        stopChron.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                chron.stop();
-            }
-        });
-        resetChron = (Button) v.findViewById(R.id.reset);
-        resetChron.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                chron.setBase(SystemClock.elapsedRealtime());
-            }
-        });
-
-
-
-
-
-
+               startChron.setOnClickListener(this);
+        stopChron = (Button)v.findViewById(R.id.stop);
+               stopChron.setOnClickListener(this);
+        resetChron = (Button)v.findViewById(R.id.reset);
+               resetChron.setOnClickListener(this);
+        chron = (Chronometer) v.findViewById(R.id.chronometer);
         return v;
     }
-    //set variables to buttons
 
-    //if else if statement to handle starting and stopping the stopwatch
-
-
-
-
-
+    @Override
+    public void onClick(View v) {
+        if (v == startChron){
+            chron.start();
+        }
+        else if (v == stopChron){
+            chron.stop();
+        }
+        else if (v == resetChron){
+            chron.setBase(SystemClock.elapsedRealtime());
+        }
+    }
 }

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/containerFitnessP"
-    android:background="@drawable/background2"
+    android:background="@drawable/background3"
     >
 
     <RelativeLayout
@@ -19,8 +19,11 @@
         android:text="Choose your Fitness Program:"
         android:id="@+id/chooseFitnessProgramText"
         android:textColor="#ffffff"
+        android:layout_gravity="center_horizontal"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        />
 
 
 
@@ -29,19 +32,20 @@
         android:layout_height="wrap_content"
         android:text="Strength Training"
         android:id="@+id/StrengthTrainingButton"
-        android:background="#ff3c39"
+
         android:clickable="true"
-        android:layout_below="@+id/basedOnGoalsText"
-        android:layout_alignParentStart="true" />
+        android:layout_alignBaseline="@+id/BodyBuildingButton"
+        android:layout_alignBottom="@+id/BodyBuildingButton"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="300dp"
+        />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="BodyBuilding"
         android:id="@+id/BodyBuildingButton"
-        android:background="#2c6bff"
         android:clickable="true"
-
         android:layout_above="@+id/bodyBuildingText"
         android:layout_alignParentStart="true" />
 
@@ -50,7 +54,6 @@
         android:layout_height="wrap_content"
         android:text="Weight Loss"
         android:id="@+id/WeightLossButton"
-        android:background="#8bff14"
         android:clickable="true"
         android:layout_above="@+id/weightLossText"
         android:layout_alignParentStart="true" />
