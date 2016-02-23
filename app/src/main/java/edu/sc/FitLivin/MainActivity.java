@@ -30,6 +30,7 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
+import android.app.Activity;
 
 
 import java.util.List;
@@ -53,6 +54,7 @@ public class MainActivity extends FragmentActivity{
     public static Integer points = 0;
     private String objectID;
     public static MediaPlayer mp;
+
 
     ListView listView;
     ArrayAdapter<String> listAdapter;
@@ -112,6 +114,8 @@ public class MainActivity extends FragmentActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
      listView = (ListView)findViewById(R.id.listView);
        listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, fragmentArray);

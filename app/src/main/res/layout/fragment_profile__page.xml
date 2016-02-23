@@ -31,11 +31,10 @@
         android:textSize="19dp"
         android:text="Username"
         android:textColor="#ffffff"
-            android:layout_marginTop="80dp"
 
             android:layout_marginLeft="30dp"
             android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/saveButtonProfile" />
+            android:layout_alignStart="@+id/editprofile" />
 
     <EditText
         android:layout_width="130dp"
@@ -107,15 +106,14 @@
             />
 
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_camera"
+            android:layout_width="150dp"
+            android:layout_height="170dp"
+            android:src="@drawable/cameraapp"
+
+            android:scaleType="centerCrop"
             android:id="@+id/Profilepicview"
-            android:layout_alignBottom="@+id/name"
-            android:layout_alignEnd="@+id/saveButtonProfile"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            />
+            android:layout_below="@+id/editprofile"
+            android:layout_alignEnd="@+id/CurrH" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -125,7 +123,7 @@
             android:id="@+id/editprofile"
             android:layout_marginLeft="32dp"
             android:layout_below="@+id/name"
-            android:layout_centerHorizontal="true" />
+            android:layout_alignParentStart="true" />
 
     </RelativeLayout>
 

@@ -10,6 +10,7 @@ package edu.sc.FitLivin;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,10 +28,19 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Bundle;
+import android.widget.ImageView;
+//import com.tutorialsface.roundimage.R;
+
 
 import java.util.List;
 
 public class ProfilePageFragment extends Fragment {
+
+    ImageView imageView1;
+    RoundImage roundedImage;
     private Button editprofile;
     private ImageButton profileChangebutton;
     public ProfilePageFragment() {
@@ -44,6 +55,12 @@ public class ProfilePageFragment extends Fragment {
 
 
         View v = inflater.inflate(R.layout.fragment_profile__page, container, false);
+
+        imageView1 = (ImageButton) v.findViewById(R.id.Profilepicview);
+        Bitmap bm = BitmapFactory.decodeResource(getResources(),R.drawable.don);
+        roundedImage = new RoundImage(bm);
+        imageView1.setImageDrawable(roundedImage);
+        imageView1.setBackgroundColor(Color.TRANSPARENT);
 
         final TextView heightText = (TextView) v.findViewById(R.id.heightView);
         final TextView weightText = (TextView) v.findViewById(R.id.weightView);
