@@ -36,7 +36,8 @@ public class WeightLossDayFour extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         //Required
-        View v = inflater.inflate(R.layout.fragment_weightloss_day_three, container, false);
+        View v = inflater.inflate(R.layout.fragment_weightloss_day_four, container, false);
+
         ImageButton jog = (ImageButton) v.findViewById(R.id.jogginImage);
         ImageButton rows = (ImageButton) v.findViewById(R.id.rowImage);
         ImageButton cardio = (ImageButton) v.findViewById(R.id.cardioImage);

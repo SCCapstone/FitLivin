@@ -38,6 +38,7 @@ public class WeightLossDayThree extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_weightloss_day_three, container, false);
+
         ImageButton cycle = (ImageButton) v.findViewById(R.id.cycleImage);
         ImageButton pullup = (ImageButton) v.findViewById(R.id.pullupImage);
         ImageButton burpee = (ImageButton) v.findViewById(R.id.burpeesImage);

@@ -36,7 +36,8 @@ MediaPlayer mp;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_weightloss_day_three, container, false);
+        View v = inflater.inflate(R.layout.fragment_weightloss_day_one, container, false);
+
         ImageButton running = (ImageButton) v.findViewById(R.id.runningImage);
         ImageButton lunges = (ImageButton) v.findViewById(R.id.lungesImage);
         ImageButton jumprope = (ImageButton) v.findViewById(R.id.jumpRopeImage);
