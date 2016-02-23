@@ -283,12 +283,25 @@ private AlertDialog.Builder dialogBuilder;
                     Log.d("QAOD", "weight test success");
 
                     int x = (Integer) objects.get(0).get("goalWeight");
-                    WeightG.setText("" + x);
+                    if (x == 0) {
+                        WeightG.setText("");
+                    } else {
+                        WeightG.setText("" + x);
+                    }
+
+                    //main.bench = x;
+                    if (x > 0) {
                     Integer value = main.WeightGoalTest(x);
                     if (value == 1) {
                         Log.d("QAOD", "congratsWEIGHTLOSS");
+                        Integer points = MainActivity.points;
+                        points = points + 100;
+                        String s = ParseUser.getCurrentUser().getUsername();
+                        main.pointsData(points, s);
                         weightLossDialog();
-                        main.mp.stop();
+                        main.WeightGoal(0, s);
+                        WeightG.setText("");
+
                         //Toast.makeText(getActivity(), "Great Job!!!.", Toast.LENGTH_SHORT).show();
 
                     }
@@ -300,9 +313,9 @@ private AlertDialog.Builder dialogBuilder;
 
 
                 } else {
-                    Toast.makeText(getActivity(), "You have not set any goals yet", Toast.LENGTH_SHORT).show();
-                }
-            }
+                        Toast.makeText(getActivity(), "You have not set any goals yet", Toast.LENGTH_SHORT).show();
+                    }
+            }}
 
         });
 
@@ -316,20 +329,33 @@ private AlertDialog.Builder dialogBuilder;
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
                         int x = (Integer) objects.get(0).get("goalWeightGain");
-                        WeightGain.setText("" + x);
+                        if (x == 0) {
+                            WeightGain.setText("");
+                        } else {
+                            WeightGain.setText("" + x);
+                        }
+
                         //main.bench = x;
-                        Integer value = main.WeightGainGoalTest(x);
-                        if (value == 1) {
-                            Log.d("QAOD", "congratsWEIGHTGAIN");
-                            weightGainDialog();
+                        if (x > 0) {
+                            Integer value = main.WeightGainGoalTest(x);
+                            if (value == 1) {
+                                Log.d("QAOD", "congratsWEIGHTGAIN");
+                                Integer points = MainActivity.points;
+                                points = points + 100;
+                                String s = ParseUser.getCurrentUser().getUsername();
+                                main.pointsData(points, s);
+                                weightGainDialog();
+                                main.WeightGainGoal(0, s);
+                                WeightGain.setText("");
+
+
+                            }
+                            if (value == 2) {
+                                Log.d("QAOD", "not there yetWEIGHTGAIN");
+                                // Toast.makeText(getActivity(), "Almost Bench!!!.", Toast.LENGTH_SHORT).show();
+                            }
 
                         }
-                        if (value == 2) {
-                            Log.d("QAOD", "not there yetWEIGHTGAIN");
-                            // Toast.makeText(getActivity(), "Almost Bench!!!.", Toast.LENGTH_SHORT).show();
-                        }
-
-
                     }
                 }
             }
@@ -346,19 +372,31 @@ private AlertDialog.Builder dialogBuilder;
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
                         int x = (Integer) objects.get(0).get("BenchGoal");
-                        BenchG.setText("" + x);
-                        Log.d("QAOD", "BENCHMAX" + main.bench);
-                        Integer value = main.BenchGoalTest(x);
-                        Log.d("QAOD", "BENCHMAXGOAL" + x);
-                        if (value == 1) {
-                            Log.d("QAOD", "congratsBENCH");
-                            benchDialog();
+                        if (x == 0) {
+                            BenchG.setText("");
+                        } else {
+                            BenchG.setText("" + x);
+                        }
+                        if (x > 0) {
+                            Log.d("QAOD", "BENCHMAX" + main.bench);
+                            Integer value = main.BenchGoalTest(x);
+                            Log.d("QAOD", "BENCHMAXGOAL" + x);
+                            if (value == 1) {
+                                Log.d("QAOD", "congratsBENCH");
+                                Integer points = MainActivity.points;
+                                points = points + 100;
+                                String s = ParseUser.getCurrentUser().getUsername();
+                                main.pointsData(points, s);
+                                benchDialog();
+                                main.BenchGoal(0, s);
+                                BenchG.setText("");
+
+                            }
+                            if (value == 2) {
+                                Log.d("QAOD", "not there yetBENCH");
+                            }
 
                         }
-                        if (value == 2) {
-                            Log.d("QAOD", "not there yetBENCH");
-                        }
-
                     }
                 }
             }
@@ -376,20 +414,32 @@ private AlertDialog.Builder dialogBuilder;
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
                         int x = (Integer) objects.get(0).get("SquatGoal");
-                        SquatG.setText("" + x);
-                        Log.d("QAOD", "SQUATMAX" + main.squat);
-                        Integer value = main.SquatGoalTest(x);
-                        Log.d("QAOD", "SQUATMAXGOAL" + x);
-                        if (value == 1) {
-                            Log.d("QAOD", "congratsSQUAT");
-                            squatDialog();
+                        if (x == 0) {
+                            SquatG.setText("");
+                        } else {
+                            SquatG.setText("" + x);
+                        }
+                        if (x > 0) {
+                            Log.d("QAOD", "SQUATMAX" + main.squat);
+                            Integer value = main.SquatGoalTest(x);
+                            Log.d("QAOD", "SQUATMAXGOAL" + x);
+                            if (value == 1) {
+                                Log.d("QAOD", "congratsSQUAT");
+                                Integer points = MainActivity.points;
+                                points = points + 100;
+                                String s = ParseUser.getCurrentUser().getUsername();
+                                main.pointsData(points, s);
+                                squatDialog();
+                                main.SquatGoal(0, s);
+                                SquatG.setText("");
+
+                            }
+                            if (value == 2) {
+                                Log.d("QAOD", "not there yetSQUAT");
+                            }
+
 
                         }
-                        if (value == 2) {
-                            Log.d("QAOD", "not there yetSQUAT");
-                        }
-
-
                     }
                 }
             }
@@ -407,21 +457,34 @@ private AlertDialog.Builder dialogBuilder;
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
                         int x = (Integer) objects.get(0).get("DeadLiftGoal");
-                        DLG.setText("" + x);
-                        Log.d("QAOD", "DEADLIFTMAX" + main.deadLift);
-                        Integer value = main.DeadLiftGoalTest(x);
-                        Log.d("QAOD", "DEADLIFTMAXGOAL" + x);
+                        if (x == 0) {
+                            DLG.setText("");
+                        } else {
+                            DLG.setText("" + x);
+                        }
+                        if (x > 0) {
+                            Log.d("QAOD", "DEADLIFTMAX" + main.deadLift);
+                            Integer value = main.DeadLiftGoalTest(x);
+                            Log.d("QAOD", "DEADLIFTMAXGOAL" + x);
 
-                        if (value == 1) {
-                            Log.d("QAOD", "congratsDEADLIFT");
-                            deadLiftDialog();
+                            if (value == 1) {
+                                Log.d("QAOD", "congratsDEADLIFT");
+                                Integer points = MainActivity.points;
+                                points = points + 100;
+                                String s = ParseUser.getCurrentUser().getUsername();
+                                main.pointsData(points, s);
+                                deadLiftDialog();
+                                main.DeadLiftGoal(0, s);
+                                DLG.setText("");
+
+
+                            }
+                            if (value == 2) {
+                                Log.d("QAOD", "not there yetDEADLIFT");
+                            }
+
 
                         }
-                        if (value == 2) {
-                            Log.d("QAOD", "not there yetDEADLIFT");
-                        }
-
-
                     }
                 }
             }
@@ -429,7 +492,7 @@ private AlertDialog.Builder dialogBuilder;
         });
 
         MileTimequery.whereExists("MileTimeGoal");//setting constraints
-        MileTimequery.whereMatchesQuery("author",queryuser);
+        MileTimequery.whereMatchesQuery("author", queryuser);
         MileTimequery.orderByDescending("createdAt");
         MileTimequery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
@@ -439,68 +502,43 @@ private AlertDialog.Builder dialogBuilder;
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
                         int x = (Integer) objects.get(0).get("MileTimeGoal");
-                        MileTimeG.setText("" + x);
-                        Log.d("QAOD", "MILETIMEMAX" + main.mileTime);
-                        Integer value = main.MileTimeGoalTest(x);
-                        Log.d("QAOD", "MILETIMEMAXGOAL" + x);
-                        if (value == 1) {
-                            Log.d("QAOD", "congratsMILEITME");
-                            mileTimeDialog();
-
+                        if (x == 0) {
+                            MileTimeG.setText("");
+                        } else {
+                            MileTimeG.setText("" + x);
                         }
-                        if (value == 2) {
-                            Log.d("QAOD", "not there yetMILETIME");
-                        }
+                        if (x > 0) {
+                            Log.d("QAOD", "MILETIMEMAX" + main.mileTime);
+                            Integer value = main.MileTimeGoalTest(x);
+                            Log.d("QAOD", "MILETIMEMAXGOAL" + x);
+                            if (value == 1) {
+                                Log.d("QAOD", "congratsMILEITME");
+                                Integer points = MainActivity.points;
+                                points = points + 100;
+                                String s = ParseUser.getCurrentUser().getUsername();
+                                main.pointsData(points, s);
+                                mileTimeDialog();
+                                main.MileTimeGoal(0, s);
+                                MileTimeG.setText("");
+
+                            }
+                            if (value == 2) {
+                                Log.d("QAOD", "not there yetMILETIME");
+                            }
 
 
-                    }
+                    }}
                 }
             }
 
         });
 
-         setWeightG.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
-                 builder1.setTitle("Set Your Max");
-                 builder1.setMessage("Enter Your Goal Wieght.");
-                 final EditText input = new EditText(getActivity());
-                 input.setId(TEXT_ID);
-                 builder1.setView(input);
-                 builder1.setCancelable(true);
-
-                 builder1.setPositiveButton(
-                         "SET",
-                         new DialogInterface.OnClickListener() {
-                             public void onClick(DialogInterface dialog, int id) {
-                                 String value = input.getText().toString();
-                                 Integer weight = Integer.valueOf(value);
-                                 String s = ParseUser.getCurrentUser().getUsername();
-                                 WeightG.setText("" + weight);
-                                 main.WeightGoal(weight, s);
-                                 dialog.cancel();
-                             }
-                         });
-
-                 builder1.setNegativeButton(
-                         "Cancel",
-                         new DialogInterface.OnClickListener() {
-                             public void onClick(DialogInterface dialog, int id) {
-                                 dialog.cancel();
-                             }
-                         });
-
-                 AlertDialog alert11 = builder1.create();
-                 alert11.show();
-             }
-         });
-        setWeightGain.setOnClickListener(new View.OnClickListener() {
+        setWeightG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
-                builder1.setTitle("Set Your Max");
-                builder1.setMessage("Enter Your Goal Wieght.");
+                builder1.setTitle("Set Your Goal");
+                builder1.setMessage("Enter Your Goal Weight.");
                 final EditText input = new EditText(getActivity());
                 input.setId(TEXT_ID);
                 builder1.setView(input);
@@ -513,7 +551,55 @@ private AlertDialog.Builder dialogBuilder;
                                 String value = input.getText().toString();
                                 Integer weight = Integer.valueOf(value);
                                 String s = ParseUser.getCurrentUser().getUsername();
-                                WeightGain.setText("" + weight);
+                                if (weight == 0) {
+                                    WeightG.setText("");
+                                } else {
+
+
+                                    WeightG.setText("" + weight);
+                                }
+                                main.WeightGoal(weight, s);
+                                dialog.cancel();
+                            }
+                        });
+
+                builder1.setNegativeButton(
+                        "Cancel",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog alert11 = builder1.create();
+                 alert11.show();
+            }
+        });
+        setWeightGain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
+                builder1.setTitle("Set Your Goal");
+                builder1.setMessage("Enter Your Goal Weight.");
+                final EditText input = new EditText(getActivity());
+                input.setId(TEXT_ID);
+                builder1.setView(input);
+                builder1.setCancelable(true);
+
+                builder1.setPositiveButton(
+                        "SET",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                String value = input.getText().toString();
+                                Integer weight = Integer.valueOf(value);
+                                String s = ParseUser.getCurrentUser().getUsername();
+                                if (weight == 0) {
+                                    WeightGain.setText("");
+                                } else {
+
+
+                                    WeightGain.setText("" + weight);
+                                }
                                 main.WeightGainGoal(weight, s);
                                 dialog.cancel();
                             }
@@ -536,7 +622,7 @@ private AlertDialog.Builder dialogBuilder;
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
-                builder1.setTitle("Set Your Max");
+                builder1.setTitle("Set Your Goal");
                 builder1.setMessage("Enter Your Bench Goal.");
                 final EditText input = new EditText(getActivity());
                 input.setId(TEXT_ID);
@@ -550,7 +636,11 @@ private AlertDialog.Builder dialogBuilder;
                                 String value = input.getText().toString();
                                 Integer bench = Integer.valueOf(value);
                                 String s = ParseUser.getCurrentUser().getUsername();
-                                BenchG.setText("" + bench);
+                                if (bench == 0) {
+                                    BenchG.setText("");
+                                } else {
+                                    BenchG.setText("" + bench);
+                                }
                                 main.BenchGoal(bench, s);
                                 dialog.cancel();
                             }
@@ -568,48 +658,13 @@ private AlertDialog.Builder dialogBuilder;
                 alert11.show();
             }
         });
-        setWeightG.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
-                builder1.setTitle("Set Your Max");
-                builder1.setMessage("Enter Your Goal Wieght.");
-                final EditText input = new EditText(getActivity());
-                input.setId(TEXT_ID);
-                builder1.setView(input);
-                builder1.setCancelable(true);
 
-                builder1.setPositiveButton(
-                        "SET",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                String value = input.getText().toString();
-                                Integer weight = Integer.valueOf(value);
-                                String s = ParseUser.getCurrentUser().getUsername();
-                                WeightG.setText("" + weight);
-                                main.WeightGoal(weight, s);
-                                dialog.cancel();
-                            }
-                        });
-
-                builder1.setNegativeButton(
-                        "Cancel",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
-
-                AlertDialog alert11 = builder1.create();
-                alert11.show();
-            }
-        });
 
         setSquatG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
-                builder1.setTitle("Set Your Max");
+                builder1.setTitle("Set Your Goal");
                 builder1.setMessage("Enter Your Squat Goal.");
                 final EditText input = new EditText(getActivity());
                 input.setId(TEXT_ID);
@@ -623,7 +678,13 @@ private AlertDialog.Builder dialogBuilder;
                                 String value = input.getText().toString();
                                 Integer squat = Integer.valueOf(value);
                                 String s = ParseUser.getCurrentUser().getUsername();
-                                SquatG.setText("" + squat);
+                                if (squat == 0) {
+                                    SquatG.setText("");
+                                } else {
+
+
+                                    SquatG.setText("" + squat);
+                                }
                                 main.SquatGoal(squat, s);
                                 dialog.cancel();
                             }
@@ -646,7 +707,7 @@ private AlertDialog.Builder dialogBuilder;
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
-                builder1.setTitle("Set Your Max");
+                builder1.setTitle("Set Your Goal");
                 builder1.setMessage("Enter Your Dead Lift Goal.");
                 final EditText input = new EditText(getActivity());
                 input.setId(TEXT_ID);
@@ -660,7 +721,13 @@ private AlertDialog.Builder dialogBuilder;
                                 String value = input.getText().toString();
                                 Integer weight = Integer.valueOf(value);
                                 String s = ParseUser.getCurrentUser().getUsername();
-                                DLG.setText("" + weight);
+                                if (weight == 0) {
+                                    DLG.setText("");
+                                } else {
+
+
+                                    DLG.setText("" + weight);
+                                }
                                 main.DeadLiftGoal(weight, s);
                                 dialog.cancel();
                             }
@@ -682,7 +749,7 @@ private AlertDialog.Builder dialogBuilder;
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
-                builder1.setTitle("Set Your Max");
+                builder1.setTitle("Set Your Goal");
                 builder1.setMessage("Enter Your Mile Time Goal.");
                 final EditText input = new EditText(getActivity());
                 input.setId(TEXT_ID);
@@ -696,7 +763,13 @@ private AlertDialog.Builder dialogBuilder;
                                 String value = input.getText().toString();
                                 Integer time = Integer.valueOf(value);
                                 String s = ParseUser.getCurrentUser().getUsername();
-                                MileTimeG.setText("" + time);
+                                if (time == 0) {
+                                    MileTimeG.setText("");
+                                } else {
+
+
+                                    MileTimeG.setText("" + time);
+                                }
                                 main.MileTimeGoal(time, s);
                                 dialog.cancel();
                             }
