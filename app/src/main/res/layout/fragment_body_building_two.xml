@@ -33,16 +33,7 @@
         android:textColor="#ffffff"
         android:textSize="25dp" />
 
-    <TextView
-        android:layout_width="234dp"
-        android:layout_height="34dp"
-        android:text="4 Sets of 10-12 Repetitions. (1 minute rest between sets)"
-        android:layout_marginBottom="15dp"
-        android:id="@+id/benchDetail"
-        android:layout_gravity="center_horizontal"
-        android:textColor="#ffffff"
-        android:layout_marginLeft="20dp"
-        />
+
 
     <ImageButton
         android:scaleType="fitXY"
@@ -50,12 +41,22 @@
         android:layout_height="wrap_content"
         android:id="@+id/benchImage"
         android:layout_gravity="right|top"
-        android:layout_marginBottom="50dp"
         android:src="@drawable/bench"
         android:clickable="true"
-        android:layout_below="@+id/benchDetail"
-        android:layout_above="@+id/flyText"
+        android:layout_below="@+id/benchText"
+        android:layout_above="@+id/benchDetail"
         />
+
+            <TextView
+                android:layout_width="234dp"
+                android:layout_height="34dp"
+                android:text="4 Sets of 10-12 Repetitions. (1 minute rest between sets)"
+                android:id="@+id/benchDetail"
+                android:layout_gravity="center_horizontal"
+                android:layout_below="@+id/benchImage"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="20dp"
+                />
 
     <TextView
         android:layout_width="219dp"
@@ -65,21 +66,9 @@
         android:layout_gravity="center_horizontal"
         android:textColor="#ffffff"
         android:textSize="25dp"
-        android:layout_below="@+id/bench"
+        android:layout_below="@+id/benchDetail"
         android:layout_above="@+id/flyDetail"
         android:layout_marginLeft="20dp"
-        />
-
-    <TextView
-        android:layout_width="206dp"
-        android:layout_height="49dp"
-        android:text="4 Sets of 15 lighter weight repetitions "
-        android:id="@+id/flyDetail"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="20dp"
-        android:textColor="#ffffff"
-        android:layout_below="@+id/flyText"
-        android:layout_above="@+id/flyImage"
         />
 
 
@@ -92,7 +81,19 @@
                 android:layout_marginBottom="35dp"
                 android:src="@drawable/flyes"
                 android:clickable="true"
-                android:layout_below="@+id/flyDetail"
+                android:layout_below="@+id/flyText"
+                android:layout_above="@+id/flyDetail"
+                />
+
+            <TextView
+                android:layout_width="206dp"
+                android:layout_height="49dp"
+                android:text="4 Sets of 15 lighter weight repetitions "
+                android:id="@+id/flyDetail"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:textColor="#ffffff"
+                android:layout_below="@+id/flyImage"
                 android:layout_above="@+id/pushupText"
                 />
 
@@ -105,23 +106,11 @@
         android:layout_marginBottom="125dp"
         android:textColor="#ffffff"
         android:textSize="25dp"
-        android:layout_below="@+id/flyImage"
-        android:layout_above="@+id/pushupDetail"
+        android:layout_below="@+id/flyDetail"
+        android:layout_above="@+id/pushupImage"
         />
 
 
-            <TextView
-                android:layout_width="177dp"
-                android:layout_height="34dp"
-                android:text="4 sets of 10-30 concentrated repetitions (Depending on skill level)"
-                android:id="@+id/pushupDetail"
-                android:layout_gravity="left|bottom"
-                android:layout_marginBottom="120dp"
-                android:textColor="#ffffff"
-                android:layout_below="@+id/pushupText"
-                android:layout_above="@+id/pushupImage"
-
-                />
 
     <ImageButton
         android:scaleType="fitXY"
@@ -132,6 +121,18 @@
         android:layout_marginBottom="70dp"
         android:clickable="true"
         android:src="@drawable/pushup" />
+
+            <TextView
+                android:layout_width="177dp"
+                android:layout_height="34dp"
+                android:text="4 sets of 10-30 concentrated repetitions (Depending on skill level)"
+                android:id="@+id/pushupDetail"
+                android:layout_gravity="left|bottom"
+                android:layout_marginBottom="120dp"
+                android:textColor="#ffffff"
+                android:layout_below="@+id/pushupImage"
+                android:layout_above="@+id/completeDay2bb"
+                />
 
 
 
