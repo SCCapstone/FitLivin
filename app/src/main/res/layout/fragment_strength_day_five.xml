@@ -48,6 +48,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="5 Sets of 2 heavy (relative) reps."
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/benchPressDescription"
+            android:textColor="#ffffff"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Squat"
             android:id="@+id/squat"
             android:textColor="#ffffff"
@@ -68,6 +78,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="5 Sets of 2 heavy (relative) reps."
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/squatDescription"
+            android:textColor="#ffffff"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Overhead Press"
             android:id="@+id/ohp"
             android:textColor="#ffffff"
@@ -84,6 +104,16 @@
             android:layout_below="@+id/ohp"
             android:clickable="true"
             android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="5 Sets of 5 reps."
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/legPressDescrpition"
+            android:textColor="#ffffff"
+            />
 
         <Button
             android:layout_width="wrap_content"

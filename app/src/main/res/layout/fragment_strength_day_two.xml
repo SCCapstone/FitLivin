@@ -40,6 +40,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="5 Sets of 2 heavy (relative) reps."
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/squatDescription"
+                android:textColor="#ffffff"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Leg Press"
                 android:id="@+id/legpress"
                 android:textColor="#ffffff"
@@ -56,6 +66,16 @@
                 android:layout_gravity="center_horizontal"
                 android:clickable="true"
                 android:layout_below="@+id/legpress"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="5 Sets of 5 reps."
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/legPressDescrpition"
+                android:textColor="#ffffff"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -77,6 +97,16 @@
                 android:clickable="true"
                 android:layout_below="@+id/flyText"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="4 Sets of 8 reps."
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/calfPressDescription"
+                android:textColor="#ffffff"
+                />
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -94,6 +124,8 @@
                 android:text="Workout Complete!"
                 android:id="@+id/completeDay2s"
                 android:layout_gravity="right|bottom" />
+
+
 
 
         </LinearLayout>>

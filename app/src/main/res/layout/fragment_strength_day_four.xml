@@ -39,6 +39,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="5 Sets of 5 reps."
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/closeGripBenchDescription"
+            android:textColor="#ffffff"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Barbell Curl"
             android:id="@+id/benchDetail"
             android:textColor="#ffffff"
@@ -59,6 +69,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="4 Sets of 12 reps."
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/barbellCurlDescription"
+            android:textColor="#ffffff"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Tricep Pushdown"
             android:id="@+id/flyText"
             android:textColor="#ffffff"
@@ -75,6 +95,16 @@
             android:layout_below="@+id/flyText"
             android:clickable="true"
             android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="4 Sets of 8 reps."
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/tricepPushdownDescription"
+            android:textColor="#ffffff"
+            />
 
         <Button
             android:layout_width="wrap_content"

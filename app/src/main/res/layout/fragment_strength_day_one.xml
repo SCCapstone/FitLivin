@@ -38,6 +38,17 @@
         android:layout_below="@+id/benchText"
                 android:layout_centerHorizontal="true" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="5 Sets of 2 heavy(relative) reps."
+                android:layout_gravity="center_horizontal"
+                android:layout_below = "@+id/closeGripBenchImage"
+                android:id="@+id/benchPressDescription"
+                android:textColor="#ffffff"
+                />
+
 
 
 
@@ -48,7 +59,7 @@
                 android:id="@+id/flyText"
                 android:textColor="#ffffff"
                 android:textSize="32dp"
-                android:layout_below="@+id/closeGripBenchImage"
+                android:layout_below="@+id/benchPressDescription"
                 android:layout_centerHorizontal="true" />
 
             <TextView
@@ -58,7 +69,7 @@
                 android:id="@+id/benchDetail"
                 android:textColor="#ffffff"
                 android:textSize="32dp"
-                android:layout_below="@+id/flies"
+                android:layout_below="@+id/fliesDescription"
                 android:layout_centerHorizontal="true" />
 
             <ImageButton
@@ -71,18 +82,39 @@
         android:layout_below="@+id/benchDetail"
                 android:layout_centerHorizontal="true" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="3 Sets of 8 reps."
+                android:layout_gravity="center_horizontal"
+                android:layout_below = "@+id/incline"
+                android:id="@+id/inclineBenchDescription"
+                android:textColor="#ffffff"
+                />
+
             <ImageButton
 
                 android:scaleType="fitXY"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-
                 android:id="@+id/flies"
                 android:src="@drawable/flies"
                 android:layout_below="@+id/flyText"
                 android:clickable="true"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="3 Sets of 12 reps."
+                android:id="@+id/fliesDescription"
+                android:layout_gravity="center_horizontal"
+                android:layout_below = "@+id/flies"
+                android:textColor="#ffffff"
+                />
 
             <Button
                 android:layout_width="wrap_content"
@@ -101,7 +133,10 @@
                 android:layout_height="wrap_content"
                 android:text="Workout Complete!"
                 android:id="@+id/completeDay1s"
+                android:layout_below="@+id/incline"
                 android:layout_gravity="right|bottom" />
+
+
 
 
         </RelativeLayout>>
