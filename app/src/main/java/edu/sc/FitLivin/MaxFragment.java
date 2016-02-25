@@ -46,6 +46,7 @@ public class MaxFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_max, container, false);
 
 
+
         //initialize textviews in max xml
         final TextView userBench = (TextView) v.findViewById(R.id.userBench);
         final TextView userSquat = (TextView) v. findViewById(R.id.userSquat);
@@ -53,6 +54,7 @@ public class MaxFragment extends Fragment {
         final TextView userMileTime = (TextView) v.findViewById(R.id.userTime);
 
         final  MainActivity main = new MainActivity();
+
         Button setBenchMax = (Button) v.findViewById(R.id.setBench);
         Button setSquatMax = (Button) v.findViewById(R.id.setSquat);
         Button setDeadLiftMax = (Button) v.findViewById(R.id.setDeadLift);

@@ -311,6 +311,8 @@ public class MainActivity extends FragmentActivity{
         fm1.beginTransaction().add(R.id.container, firstFragment).addToBackStack(null).commit();
 
     }
+
+
     public boolean onCreateOptionsMenu(Menu menu) {
 
         // Inflate the menu; this adds items to the action bar if it is present.

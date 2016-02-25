@@ -22,9 +22,10 @@
         android:layout_width="100dp"
         android:clickable="true"
         android:layout_marginLeft="270dp"
-        android:text="@string/stopz"
+
         android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/start" />
+        android:layout_alignEnd="@+id/start"
+        android:text="Stop" />
 
     <Button
         android:id="@+id/reset"
