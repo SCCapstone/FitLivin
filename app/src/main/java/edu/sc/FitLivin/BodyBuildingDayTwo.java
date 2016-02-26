@@ -8,8 +8,10 @@
 
 package edu.sc.FitLivin;
 
+import android.app.AlertDialog;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -30,6 +32,22 @@ import java.util.List;
 
 
 public class BodyBuildingDayTwo extends Fragment {
+
+    private AlertDialog.Builder dialogBuilder;
+    //
+    private void bodybuild2Dialog(){
+        dialogBuilder = new AlertDialog.Builder(getActivity());
+        dialogBuilder.setTitle("Congratulations!");
+        dialogBuilder.setMessage("You Earned 50 Points!");
+        dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        AlertDialog dialog = dialogBuilder.create();
+        dialog.show();
+    }
 
 MediaPlayer mp;
     public BodyBuildingDayTwo() {
@@ -128,6 +146,8 @@ private View v;
 
                                                         String s = ParseUser.getCurrentUser().getUsername();
                                                         main.pointsData(points,s);
+
+                                                        bodybuild2Dialog();
 
 
                                                     }

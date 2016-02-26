@@ -37,15 +37,13 @@ MediaPlayer mp;
     }
     private AlertDialog.Builder dialogBuilder;
     //
-    private void weightLossDialog(){
+    private void bodybuild5Dialog(){
         dialogBuilder = new AlertDialog.Builder(getActivity());
-        dialogBuilder.setTitle("Great Job!!!!");
+        dialogBuilder.setTitle("Congratulations!");
         dialogBuilder.setMessage("You Earned 50 Points!");
-
         dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
                 dialog.dismiss();
             }
         });
@@ -156,7 +154,7 @@ MediaPlayer mp;
 
                                                         String s = ParseUser.getCurrentUser().getUsername();
                                                         main.pointsData(points,s);
-                                                        weightLossDialog();
+                                                        bodybuild5Dialog();
 
                                                     }
 
