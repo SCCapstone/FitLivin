@@ -62,7 +62,8 @@ public class TrackProgressFragment extends Fragment {
 
     public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        ParseQuery userquery = ParseUser.getQuery();
+        userquery.whereEqualTo("objectId",ParseUser.getCurrentUser().getObjectId());
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fragment_track_progress, container, false);
         //Creates back button to go back to main page
@@ -99,40 +100,10 @@ public class TrackProgressFragment extends Fragment {
     }
 
 
-    private DataPoint[] WeightGenerator(ArrayList<String> weight, ArrayList<Date> dates) {
-
-        DataPoint[] values = new DataPoint[weight.size()];
-
-
-            for (int i = 0; i < weight.size(); i++) {
-
-                double x = dates.get(i).getMonth();
-                Log.d(String.valueOf(dates.get(i).getDate()), "here is the time: ");
-                double y = Double.parseDouble(weight.get(i));
-                DataPoint v = new DataPoint(x, y);
-                values[i] = v;
-
-            }
-        return values;
-    }
-    private DataPoint[] WeightvsDategenerator(ArrayList<String> weight) {
-
-        DataPoint[] values = new DataPoint[weight.size()];
-
-            for (int i = 0; i < weight.size(); i++) {
-
-                double x = i;
-
-                double y = Double.parseDouble(weight.get(i));
-                DataPoint v = new DataPoint(x, y);
-                values[i] = v;
-
-            }
-
-        return values;
-    }
     public void openAnotherGraph(int position){
         if (position == 0){
+            weight.clear();
+            weightList.setAdapter(null);
             graph.removeAllSeries();
             ParseQuery query = ParseQuery.getQuery("ProfileInfo"); //getting query
             query.whereExists("Weight");//setting constraints
@@ -176,7 +147,20 @@ public class TrackProgressFragment extends Fragment {
                             StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
                             label.setHorizontalLabels(new String[]{"0", "Jan", "Feb", "March"});
                             label.setVerticalLabels(new String[]{"0", "100", "150", "200", "250"});
+                           /* graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter(getActivity(),dates.get()) {
+                                @Override
+                                public String formatLabel(double value, boolean isValueX) {
+                                    if (isValueX) {
+                                        // show normal x values
+                                        return super.formatLabel(value, isValueX);
+                                    } else {
+                                        // show currency for y values
+                                        return super.formatLabel(value, isValueX) + " €";
+                                    }
+                                }
+                            });
 
+*/
 
                             graph.getGridLabelRenderer().setVerticalLabelsSecondScaleColor(Color.WHITE);
                             graph.getGridLabelRenderer().setHorizontalAxisTitleColor(Color.WHITE);
@@ -214,8 +198,136 @@ public class TrackProgressFragment extends Fragment {
 
         }
         else if (position == 1){
-            Toast.makeText(getActivity(),"You selected this position: "+ position,Toast.LENGTH_SHORT).show();
+            maxweight.clear();
+            weightList.setAdapter(null);
+            graph.removeAllSeries();
+            ParseQuery query = ParseQuery.getQuery("MaxBench"); //getting query
+            ParseQuery userquery = ParseUser.getQuery();
+            userquery.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
+            query.whereMatchesQuery("author",userquery);
+            query.findInBackground(new FindCallback<ParseObject>() {
+                public void done(List<ParseObject> objects, ParseException e) {
+                    if (e == null && objects.size() != 0) { //if objects size is not 0
+
+                        if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
+                            for (int i = 0; i < objects.size(); i++) {
+                                maxweight.add(objects.get(i).get("MaxBench").toString());
+                                dates.add(objects.get(i).getCreatedAt());
+                                Log.d(dates.get(i).toString(), "done: ");
+                            }
+                            ArrayAdapter weightArrayAdapter =
+                                    new ArrayAdapter<String>(getActivity(),
+                                            R.layout.text_view, maxweight);
+                            weightList.setAdapter(weightArrayAdapter);
+
+
+                            LineGraphSeries<DataPoint> mSeries3 = new LineGraphSeries<DataPoint>(Maxweightgenerator(maxweight));
+                            LineGraphSeries<DataPoint> mSeries4 = new LineGraphSeries<DataPoint>(WeightGenerator(weight, dates));
+                            mSeries3.setTitle("Max bench");
+                            mSeries3.setThickness(7);
+                            mSeries4.setThickness(7);
+                            mSeries3.setColor(Color.YELLOW);
+                            mSeries4.setColor(Color.RED);
+                            mSeries3.isDrawDataPoints();
+                            mSeries3.setOnDataPointTapListener(new OnDataPointTapListener() {
+                                @Override
+                                public void onTap(Series series, DataPointInterface dataPoint) {
+                                    Toast.makeText(getActivity(), "this is the data point: " + dataPoint, Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                            mSeries4.setDrawDataPoints(true);
+                            mSeries3.setDrawDataPoints(true);
+
+
+                            graph.addSeries(mSeries3);
+                            // graph.addSeries(mSeries2);
+
+
+                            StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                            label.setHorizontalLabels(new String[]{"0", "Jan", "Feb", "March"});
+                            label.setVerticalLabels(new String[]{"0", "100", "150", "200", "250"});
+
+
+                            graph.getGridLabelRenderer().setVerticalLabelsSecondScaleColor(Color.WHITE);
+                            graph.getGridLabelRenderer().setHorizontalAxisTitleColor(Color.WHITE);
+                            graph.getGridLabelRenderer().setLabelsSpace(2);
+
+                            graph.getViewport().setMaxX(maxweight.size());
+                            graph.getGridLabelRenderer().setGridColor(Color.WHITE);
+                            graph.getViewport().setScrollable(true);
+                            graph.getViewport().setScrollable(true);
+                            graph.getLegendRenderer().isVisible();
+                            graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
+                            graph.getLegendRenderer().setBackgroundColor(Color.WHITE);
+
+                            graph.getViewport().setMaxX(maxweight.size());
+
+                            graph.getGridLabelRenderer().setLabelFormatter(label);
+                            graph.getGridLabelRenderer().setVerticalLabelsColor(Color.WHITE);
+                            graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.WHITE);
+                            graph.getGridLabelRenderer().setGridColor(Color.GRAY);
+
+
+
+
+
+                        } else {
+                            Toast.makeText(getActivity(), "Did not load", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
+
+            });
         }
+    }
+
+    private DataPoint[] WeightGenerator(ArrayList<String> weight, ArrayList<Date> dates) {
+
+        DataPoint[] values = new DataPoint[weight.size()];
+
+
+        for (int i = 0; i < weight.size(); i++) {
+
+            double x = dates.get(i).getMonth();
+            Log.d(String.valueOf(dates.get(i).getDate()), "here is the time: ");
+            double y = Double.parseDouble(weight.get(i));
+            DataPoint v = new DataPoint(x, y);
+            values[i] = v;
+
+        }
+        return values;
+    }
+    private DataPoint[] WeightvsDategenerator(ArrayList<String> weight) {
+
+        DataPoint[] values = new DataPoint[weight.size()];
+
+        for (int i = 0; i < weight.size(); i++) {
+
+            double x = i;
+
+            double y = Double.parseDouble(weight.get(i));
+            DataPoint v = new DataPoint(x, y);
+            values[i] = v;
+
+        }
+
+        return values;
+    }
+    private DataPoint[] Maxweightgenerator(ArrayList<String> maxweight) {
+
+        DataPoint[] values = new DataPoint[maxweight.size()];
+
+        for (int i = 0; i < maxweight.size(); i++) {
+
+            double x = i;
+
+            double y = Double.parseDouble(maxweight.get(i));
+            DataPoint v = new DataPoint(x, y);
+            values[i] = v;
+
+        }
+
+        return values;
     }
 
 
