@@ -44,8 +44,15 @@
 
     <string-array name="graphspinner">
         <item>Weight</item>
-        <item>Max</item>
-        <item>Goals</item>
+        <item>Max Bench</item>
+        <item>Max Squats</item>
+        <item>Max Deadlifts</item>
+        <item>Max MileTime</item>
+        <item>Bench Squat goal</item>
+        <item>Deadlift goal</item>
+        <item>Weight goal</item>
+
+
     </string-array>
 
 

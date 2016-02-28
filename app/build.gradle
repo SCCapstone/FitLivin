@@ -39,4 +39,5 @@ dependencies {
     androidTestCompile 'com.android.support.test:rules:0.4'
     compile 'de.hdodenhof:circleimageview:2.0.0'
 
+
 }

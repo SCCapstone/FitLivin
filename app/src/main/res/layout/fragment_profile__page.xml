@@ -123,8 +123,8 @@
             android:text="Edit Profile"
             android:id="@+id/editprofile"
             android:layout_marginLeft="32dp"
-            android:layout_below="@+id/name"
-            android:layout_alignParentStart="true" />
+            android:layout_alignBottom="@+id/profilepicview"
+            android:layout_alignStart="@+id/height" />
 
     </RelativeLayout>
 

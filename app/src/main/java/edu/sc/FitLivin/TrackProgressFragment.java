@@ -48,11 +48,12 @@ public class TrackProgressFragment extends Fragment {
     private customWeightAdapter customAdapter;
     final ArrayList weight = new ArrayList<String>();
     final ArrayList dates = new ArrayList<Date>();
-    final ArrayList maxweight = new ArrayList<String>();
+    final ArrayList maxBenchweight = new ArrayList<String>();
     final ArrayList maxsquats = new ArrayList<String>();
-    final ArrayList maxbench = new ArrayList<String>();
     final ArrayList maxdeadlift = new ArrayList<String>();
     final ArrayList maxmiletime = new ArrayList<String>();
+    final ArrayList weightGoal = new ArrayList<String>();
+    final ArrayList squatgoal = new ArrayList<String>();
     ArrayAdapter<CharSequence> spinnerAdapter;
 
     public TrackProgressFragment() {
@@ -121,7 +122,7 @@ public class TrackProgressFragment extends Fragment {
                             }
 
 
-                            LineGraphSeries<DataPoint> mSeries1 = new LineGraphSeries<DataPoint>(WeightvsDategenerator(weight));
+                            LineGraphSeries<DataPoint> mSeries1 = new LineGraphSeries<DataPoint>(Datagenerator(weight));
                             LineGraphSeries<DataPoint> mSeries2 = new LineGraphSeries<DataPoint>(WeightGenerator(weight, dates));
                             mSeries2.setTitle("Dates");
                             mSeries1.setTitle("Weights");
@@ -198,7 +199,7 @@ public class TrackProgressFragment extends Fragment {
 
         }
         else if (position == 1){
-            maxweight.clear();
+            maxBenchweight.clear();
             weightList.setAdapter(null);
             graph.removeAllSeries();
             ParseQuery query = ParseQuery.getQuery("MaxBench"); //getting query
@@ -211,17 +212,17 @@ public class TrackProgressFragment extends Fragment {
 
                         if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
                             for (int i = 0; i < objects.size(); i++) {
-                                maxweight.add(objects.get(i).get("MaxBench").toString());
+                                maxBenchweight.add(objects.get(i).get("MaxBench").toString());
                                 dates.add(objects.get(i).getCreatedAt());
                                 Log.d(dates.get(i).toString(), "done: ");
                             }
                             ArrayAdapter weightArrayAdapter =
                                     new ArrayAdapter<String>(getActivity(),
-                                            R.layout.text_view, maxweight);
+                                            R.layout.text_view, maxBenchweight);
                             weightList.setAdapter(weightArrayAdapter);
 
 
-                            LineGraphSeries<DataPoint> mSeries3 = new LineGraphSeries<DataPoint>(Maxweightgenerator(maxweight));
+                            LineGraphSeries<DataPoint> mSeries3 = new LineGraphSeries<DataPoint>(Datagenerator(maxBenchweight));
                             LineGraphSeries<DataPoint> mSeries4 = new LineGraphSeries<DataPoint>(WeightGenerator(weight, dates));
                             mSeries3.setTitle("Max bench");
                             mSeries3.setThickness(7);
@@ -252,7 +253,7 @@ public class TrackProgressFragment extends Fragment {
                             graph.getGridLabelRenderer().setHorizontalAxisTitleColor(Color.WHITE);
                             graph.getGridLabelRenderer().setLabelsSpace(2);
 
-                            graph.getViewport().setMaxX(maxweight.size());
+                            graph.getViewport().setMaxX(maxBenchweight.size());
                             graph.getGridLabelRenderer().setGridColor(Color.WHITE);
                             graph.getViewport().setScrollable(true);
                             graph.getViewport().setScrollable(true);
@@ -260,7 +261,7 @@ public class TrackProgressFragment extends Fragment {
                             graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
                             graph.getLegendRenderer().setBackgroundColor(Color.WHITE);
 
-                            graph.getViewport().setMaxX(maxweight.size());
+                            graph.getViewport().setMaxX(maxBenchweight.size());
 
                             graph.getGridLabelRenderer().setLabelFormatter(label);
                             graph.getGridLabelRenderer().setVerticalLabelsColor(Color.WHITE);
@@ -278,6 +279,258 @@ public class TrackProgressFragment extends Fragment {
                 }
 
             });
+        }
+        else if (position == 2){
+            maxsquats.clear();
+            weightList.setAdapter(null);
+            graph.removeAllSeries();
+            ParseQuery query = ParseQuery.getQuery("MaxSquat"); //getting query
+            ParseQuery userquery = ParseUser.getQuery();
+            userquery.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
+            query.whereMatchesQuery("author",userquery);
+            query.findInBackground(new FindCallback<ParseObject>() {
+                public void done(List<ParseObject> objects, ParseException e) {
+                    if (e == null && objects.size() != 0) { //if objects size is not 0
+
+                        if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
+                            for (int i = 0; i < objects.size(); i++) {
+                                maxsquats.add(objects.get(i).get("MaxSquat").toString());
+                                dates.add(objects.get(i).getCreatedAt());
+                                Log.d(dates.get(i).toString(), "done: ");
+                            }
+                            ArrayAdapter weightArrayAdapter =
+                                    new ArrayAdapter<String>(getActivity(),
+                                            R.layout.text_view, maxsquats);
+                            weightList.setAdapter(weightArrayAdapter);
+
+
+                            LineGraphSeries<DataPoint> mSeries3 = new LineGraphSeries<DataPoint>(Datagenerator(maxsquats));
+                            LineGraphSeries<DataPoint> mSeries4 = new LineGraphSeries<DataPoint>(WeightGenerator(weight, dates));
+                            mSeries3.setTitle("Max bench");
+                            mSeries3.setThickness(7);
+                            mSeries4.setThickness(7);
+                            mSeries3.setColor(Color.CYAN);
+                            mSeries4.setColor(Color.RED);
+                            mSeries3.isDrawDataPoints();
+                            mSeries3.setOnDataPointTapListener(new OnDataPointTapListener() {
+                                @Override
+                                public void onTap(Series series, DataPointInterface dataPoint) {
+                                    Toast.makeText(getActivity(), "this is the data point: " + dataPoint, Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                            mSeries4.setDrawDataPoints(true);
+                            mSeries3.setDrawDataPoints(true);
+
+
+                            graph.addSeries(mSeries3);
+                            // graph.addSeries(mSeries2);
+
+
+                            StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                            label.setHorizontalLabels(new String[]{"0", "Jan", "Feb", "March"});
+                            label.setVerticalLabels(new String[]{"0", "100", "150", "200", "250"});
+
+
+                            graph.getGridLabelRenderer().setVerticalLabelsSecondScaleColor(Color.WHITE);
+                            graph.getGridLabelRenderer().setHorizontalAxisTitleColor(Color.WHITE);
+                            graph.getGridLabelRenderer().setLabelsSpace(2);
+
+                            graph.getViewport().setMaxX(maxsquats.size());
+                            graph.getGridLabelRenderer().setGridColor(Color.WHITE);
+                            graph.getViewport().setScrollable(true);
+                            graph.getViewport().setScrollable(true);
+                            graph.getLegendRenderer().isVisible();
+                            graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
+                            graph.getLegendRenderer().setBackgroundColor(Color.WHITE);
+
+                            graph.getViewport().setMaxX(maxsquats.size());
+
+                            graph.getGridLabelRenderer().setLabelFormatter(label);
+                            graph.getGridLabelRenderer().setVerticalLabelsColor(Color.WHITE);
+                            graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.WHITE);
+                            graph.getGridLabelRenderer().setGridColor(Color.GRAY);
+
+
+
+
+
+                        } else {
+                            Toast.makeText(getActivity(), "Did not load", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
+
+            });
+        }
+        else if(position ==3){
+            maxdeadlift.clear();
+            weightList.setAdapter(null);
+            graph.removeAllSeries();
+            ParseQuery query = ParseQuery.getQuery("MaxDeadLift"); //getting query
+            ParseQuery userquery = ParseUser.getQuery();
+            userquery.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
+            query.whereMatchesQuery("author",userquery);
+            query.findInBackground(new FindCallback<ParseObject>() {
+                public void done(List<ParseObject> objects, ParseException e) {
+                    if (e == null && objects.size() != 0) { //if objects size is not 0
+
+                        if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
+                            for (int i = 0; i < objects.size(); i++) {
+                                maxdeadlift.add(objects.get(i).get("MaxDeadLift").toString());
+                                dates.add(objects.get(i).getCreatedAt());
+                                Log.d(dates.get(i).toString(), "done: ");
+                            }
+                            ArrayAdapter weightArrayAdapter =
+                                    new ArrayAdapter<String>(getActivity(),
+                                            R.layout.text_view, maxdeadlift);
+                            weightList.setAdapter(weightArrayAdapter);
+
+
+                            LineGraphSeries<DataPoint> mSeries3 = new LineGraphSeries<DataPoint>(Datagenerator(maxdeadlift));
+                            LineGraphSeries<DataPoint> mSeries4 = new LineGraphSeries<DataPoint>(WeightGenerator(weight, dates));
+                            mSeries3.setTitle("Max Deadlift");
+                            mSeries3.setThickness(7);
+                            mSeries4.setThickness(7);
+                            mSeries3.setColor(Color.BLUE);
+                            mSeries4.setColor(Color.RED);
+                            mSeries3.isDrawDataPoints();
+                            mSeries3.setOnDataPointTapListener(new OnDataPointTapListener() {
+                                @Override
+                                public void onTap(Series series, DataPointInterface dataPoint) {
+                                    Toast.makeText(getActivity(), "this is the data point: " + dataPoint, Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                            mSeries4.setDrawDataPoints(true);
+                            mSeries3.setDrawDataPoints(true);
+
+
+                            graph.addSeries(mSeries3);
+                            // graph.addSeries(mSeries2);
+
+
+                            StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                            label.setHorizontalLabels(new String[]{"0", "Jan", "Feb", "March"});
+                            label.setVerticalLabels(new String[]{"0", "100", "150", "200", "250"});
+
+
+                            graph.getGridLabelRenderer().setVerticalLabelsSecondScaleColor(Color.WHITE);
+                            graph.getGridLabelRenderer().setHorizontalAxisTitleColor(Color.WHITE);
+                            graph.getGridLabelRenderer().setLabelsSpace(2);
+
+                            graph.getViewport().setMaxX(maxdeadlift.size());
+                            graph.getGridLabelRenderer().setGridColor(Color.WHITE);
+                            graph.getViewport().setScrollable(true);
+                            graph.getViewport().setScrollable(true);
+                            graph.getLegendRenderer().isVisible();
+                            graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
+                            graph.getLegendRenderer().setBackgroundColor(Color.WHITE);
+
+                            graph.getViewport().setMaxX(maxdeadlift.size());
+
+                            graph.getGridLabelRenderer().setLabelFormatter(label);
+                            graph.getGridLabelRenderer().setVerticalLabelsColor(Color.WHITE);
+                            graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.WHITE);
+                            graph.getGridLabelRenderer().setGridColor(Color.GRAY);
+
+
+
+
+
+                        } else {
+                            Toast.makeText(getActivity(), "Did not load", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
+
+            });
+
+        }
+        else if(position ==4){
+            maxmiletime.clear();
+            weightList.setAdapter(null);
+            graph.removeAllSeries();
+            ParseQuery query = ParseQuery.getQuery("MaxMileTime"); //getting query
+            ParseQuery userquery = ParseUser.getQuery();
+            userquery.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
+            query.whereMatchesQuery("author",userquery);
+            query.findInBackground(new FindCallback<ParseObject>() {
+                public void done(List<ParseObject> objects, ParseException e) {
+                    if (e == null && objects.size() != 0) { //if objects size is not 0
+
+                        if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
+                            for (int i = 0; i < objects.size(); i++) {
+                                maxmiletime.add(objects.get(i).get("MaxMileTime").toString());
+                                dates.add(objects.get(i).getCreatedAt());
+                                Log.d(dates.get(i).toString(), "done: ");
+                            }
+                            ArrayAdapter weightArrayAdapter =
+                                    new ArrayAdapter<String>(getActivity(),
+                                            R.layout.text_view, maxmiletime);
+                            weightList.setAdapter(weightArrayAdapter);
+
+
+                            LineGraphSeries<DataPoint> mSeries3 = new LineGraphSeries<DataPoint>(Datagenerator(maxmiletime));
+                            LineGraphSeries<DataPoint> mSeries4 = new LineGraphSeries<DataPoint>(WeightGenerator(weight, dates));
+                            mSeries3.setTitle("Max Mile Time");
+                            mSeries3.setThickness(7);
+                            mSeries4.setThickness(7);
+                            mSeries3.setColor(Color.GREEN);
+                            mSeries4.setColor(Color.RED);
+                            mSeries3.isDrawDataPoints();
+                            mSeries3.setOnDataPointTapListener(new OnDataPointTapListener() {
+                                @Override
+                                public void onTap(Series series, DataPointInterface dataPoint) {
+                                    Toast.makeText(getActivity(), "this is the data point: " + dataPoint, Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                            mSeries4.setDrawDataPoints(true);
+                            mSeries3.setDrawDataPoints(true);
+
+
+                            graph.addSeries(mSeries3);
+                            // graph.addSeries(mSeries2);
+
+
+                            StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                            label.setHorizontalLabels(new String[]{"0", "Jan", "Feb", "March"});
+                            label.setVerticalLabels(new String[]{"0", "100", "150", "200", "250"});
+
+
+                            graph.getGridLabelRenderer().setVerticalLabelsSecondScaleColor(Color.WHITE);
+                            graph.getGridLabelRenderer().setHorizontalAxisTitleColor(Color.WHITE);
+                            graph.getGridLabelRenderer().setLabelsSpace(2);
+
+                            graph.getViewport().setMaxX(maxmiletime.size());
+                            graph.getGridLabelRenderer().setGridColor(Color.WHITE);
+                            graph.getViewport().setScrollable(true);
+                            graph.getViewport().setScrollable(true);
+                            graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
+                            graph.getLegendRenderer().setBackgroundColor(Color.WHITE);
+
+                            graph.getViewport().setMaxX(maxmiletime.size());
+
+                            graph.getGridLabelRenderer().setLabelFormatter(label);
+                            graph.getGridLabelRenderer().setVerticalLabelsColor(Color.WHITE);
+                            graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.WHITE);
+                            graph.getGridLabelRenderer().setGridColor(Color.GRAY);
+
+
+
+
+
+                        } else {
+                            Toast.makeText(getActivity(), "Did not load", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
+
+            });
+        }
+        else if(position ==5){
+
+        }
+        else if(position ==6){
+
         }
     }
 
@@ -297,7 +550,7 @@ public class TrackProgressFragment extends Fragment {
         }
         return values;
     }
-    private DataPoint[] WeightvsDategenerator(ArrayList<String> weight) {
+    private DataPoint[] Datagenerator(ArrayList<String> weight) {
 
         DataPoint[] values = new DataPoint[weight.size()];
 
@@ -313,22 +566,11 @@ public class TrackProgressFragment extends Fragment {
 
         return values;
     }
-    private DataPoint[] Maxweightgenerator(ArrayList<String> maxweight) {
 
-        DataPoint[] values = new DataPoint[maxweight.size()];
 
-        for (int i = 0; i < maxweight.size(); i++) {
 
-            double x = i;
 
-            double y = Double.parseDouble(maxweight.get(i));
-            DataPoint v = new DataPoint(x, y);
-            values[i] = v;
 
-        }
-
-        return values;
-    }
 
 
 }
