@@ -30,23 +30,33 @@ import com.parse.ParseUser;
 
 import java.util.List;
 
+import static android.content.DialogInterface.*;
+
 
 public class BodyBuildingDayTwo extends Fragment {
 
     private AlertDialog.Builder dialogBuilder;
+
+
+
     //
     private void bodybuild2Dialog(){
-        dialogBuilder = new AlertDialog.Builder(getActivity());
-        dialogBuilder.setTitle("Congratulations!");
-        dialogBuilder.setMessage("You Earned 50 Points!");
-        dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-        AlertDialog dialog = dialogBuilder.create();
-        dialog.show();
+
+        dialogBuilder.setMessage("Congratulations!")
+                .setPositiveButton("You earned 50 points! Click ok to continue!", new OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+
+
+                .setTitle("Workout Complete")
+                .setIcon(R.mipmap.ic_launcher)
+                .create();
+        dialogBuilder.show();
+
     }
 
 MediaPlayer mp;
@@ -121,7 +131,20 @@ private View v;
         );
         Button complete = (Button) v.findViewById(R.id.completeDay2bb);//creates complete button
         complete.setOnClickListener(new View.OnClickListener() {
+
+
+            public void completeDay2bb(View view){
+
+
+
+
+            }
+
             public void onClick(View v) {
+
+
+
+
                 ParseQuery queryuser = ParseUser.getQuery();
                 queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
 
