@@ -296,6 +296,7 @@ private AlertDialog.Builder dialogBuilder;
                         Log.d("QAOD", "congratsWEIGHTLOSS");
                         Integer points = MainActivity.points;
                         points = points + 100;
+                        MainActivity.points = points;
                         String s = ParseUser.getCurrentUser().getUsername();
                         main.pointsData(points, s);
                         weightLossDialog();
@@ -312,9 +313,7 @@ private AlertDialog.Builder dialogBuilder;
                     }
 
 
-                } else {
-                        Toast.makeText(getActivity(), "You have not set any goals yet", Toast.LENGTH_SHORT).show();
-                    }
+                }
             }}
 
         });
@@ -342,6 +341,7 @@ private AlertDialog.Builder dialogBuilder;
                                 Log.d("QAOD", "congratsWEIGHTGAIN");
                                 Integer points = MainActivity.points;
                                 points = points + 100;
+                                MainActivity.points = points;
                                 String s = ParseUser.getCurrentUser().getUsername();
                                 main.pointsData(points, s);
                                 weightGainDialog();
@@ -385,6 +385,7 @@ private AlertDialog.Builder dialogBuilder;
                                 Log.d("QAOD", "congratsBENCH");
                                 Integer points = MainActivity.points;
                                 points = points + 100;
+                                MainActivity.points = points;
                                 String s = ParseUser.getCurrentUser().getUsername();
                                 main.pointsData(points, s);
                                 benchDialog();
@@ -427,6 +428,7 @@ private AlertDialog.Builder dialogBuilder;
                                 Log.d("QAOD", "congratsSQUAT");
                                 Integer points = MainActivity.points;
                                 points = points + 100;
+                                MainActivity.points = points;
                                 String s = ParseUser.getCurrentUser().getUsername();
                                 main.pointsData(points, s);
                                 squatDialog();
@@ -471,6 +473,7 @@ private AlertDialog.Builder dialogBuilder;
                                 Log.d("QAOD", "congratsDEADLIFT");
                                 Integer points = MainActivity.points;
                                 points = points + 100;
+                                MainActivity.points = points;
                                 String s = ParseUser.getCurrentUser().getUsername();
                                 main.pointsData(points, s);
                                 deadLiftDialog();
@@ -515,6 +518,7 @@ private AlertDialog.Builder dialogBuilder;
                                 Log.d("QAOD", "congratsMILEITME");
                                 Integer points = MainActivity.points;
                                 points = points + 100;
+                                MainActivity.points = points;
                                 String s = ParseUser.getCurrentUser().getUsername();
                                 main.pointsData(points, s);
                                 mileTimeDialog();

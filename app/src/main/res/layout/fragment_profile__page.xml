@@ -105,6 +105,25 @@
             android:layout_marginLeft="50dp"
             />
 
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:id="@+id/editprofile"
+            android:layout_marginLeft="32dp"
+            android:layout_alignBottom="@+id/profilepicview"
+            android:layout_alignStart="@+id/height" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Take Pic"
+            android:id="@+id/pic"
+            android:onClick="process"
+            android:layout_below="@+id/profilepicview"
+            android:layout_toEndOf="@+id/name" />
+
         <de.hdodenhof.circleimageview.CircleImageView
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/profilepicview"
@@ -116,15 +135,12 @@
             android:layout_below="@+id/name"
             android:layout_alignEnd="@+id/CurrH" />
 
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Edit Profile"
-            android:id="@+id/editprofile"
-            android:layout_marginLeft="32dp"
-            android:layout_alignBottom="@+id/profilepicview"
-            android:layout_alignStart="@+id/height" />
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/test"
+            android:layout_below="@+id/pic"
+            android:layout_alignStart="@+id/profilepicview" />
 
     </RelativeLayout>
 
