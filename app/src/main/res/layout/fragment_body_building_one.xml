@@ -25,7 +25,7 @@
             android:layout_above="@+id/squatTextText"/>
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Barbell Back Squat"
         android:id="@+id/squatText"
@@ -46,8 +46,8 @@
             android:layout_above="@+id/benchDetail"/>
 
         <TextView
-            android:layout_width="234dp"
-            android:layout_height="34dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="4 Sets of 10-12 Repetitions. (1 minute rest between sets)"
             android:id="@+id/benchDetail"
             android:layout_gravity="center_horizontal"
@@ -57,8 +57,8 @@
 
 
         <TextView
-        android:layout_width="220dp"
-        android:layout_height="63dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
         android:text="Leg Extensions"
         android:id="@+id/extensionText"
         android:layout_gravity="center_horizontal"
@@ -111,8 +111,8 @@
             android:src="@drawable/legcurl" />
 
         <TextView
-            android:layout_width="177dp"
-            android:layout_height="34dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="4 sets of 15 repetitions."
             android:id="@+id/hamstringDetail"
             android:layout_gravity="center_horizontal"
