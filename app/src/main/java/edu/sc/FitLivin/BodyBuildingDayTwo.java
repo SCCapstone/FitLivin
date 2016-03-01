@@ -129,22 +129,9 @@ private View v;
                                                 }
                                             }
         );
-        Button complete = (Button) v.findViewById(R.id.completeDay2bb);//creates complete button
+        Button complete = (Button) v.findViewById(R.id.completeDay4bb);//creates complete button
         complete.setOnClickListener(new View.OnClickListener() {
-
-
-            public void completeDay2bb(View view){
-
-
-
-
-            }
-
             public void onClick(View v) {
-
-
-
-
                 ParseQuery queryuser = ParseUser.getQuery();
                 queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
 
@@ -171,7 +158,6 @@ private View v;
                                                         main.pointsData(points,s);
 
                                                         bodybuild2Dialog();
-
 
                                                     }
 
