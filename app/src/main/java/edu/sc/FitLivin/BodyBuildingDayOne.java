@@ -44,6 +44,7 @@ public class BodyBuildingDayOne extends Fragment {
             dialogBuilder = new AlertDialog.Builder(getActivity());
             dialogBuilder.setMessage("You Earned 50 Points!");
             dialogBuilder.setTitle("Congratulations!");
+            dialogBuilder.setIcon(R.mipmap.ic_launcher);
             dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
@@ -51,7 +52,7 @@ public class BodyBuildingDayOne extends Fragment {
                 }
             });
             AlertDialog dialog = dialogBuilder.create();
-            dialogBuilder.setIcon(R.mipmap.ic_launcher);
+
             dialog.show();
         }
 
