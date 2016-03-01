@@ -323,12 +323,12 @@ public class MainActivity extends FragmentActivity{
 
 
     public boolean onCreateOptionsMenu(Menu menu) {
-
+         String s = ParseUser.getCurrentUser().getUsername();
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
-
-
-
+        MenuItem menuItem = menu.findItem(R.id.uName);
+        menuItem .setTitle(s);
+       // menuItem.setClickable(true);
         return true;
     }
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -337,6 +337,14 @@ public class MainActivity extends FragmentActivity{
             ParseUser.getCurrentUser().logOut();
             startActivity(new Intent(MainActivity.this, DispatchActivity.class));
             return true;
+        }
+        if(id == R.id.uName){
+            ProfilePageFragment fragment6 = new ProfilePageFragment();
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.container, fragment6);
+            ft.addToBackStack(null);
+            ft.commit();
         }
         return onOptionsItemSelected(item);
 
