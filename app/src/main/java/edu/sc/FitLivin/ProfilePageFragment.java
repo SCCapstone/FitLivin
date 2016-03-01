@@ -138,7 +138,13 @@ public class ProfilePageFragment extends Fragment {
 
 
                 String h = editHeight.getText().toString();
-                height = Integer.parseInt(h);
+                /*try {
+                    height = Integer.parseInt(h);
+                    Log.d("Q", "Is a number " + height + " dd ");
+                }
+                catch (NumberFormatException e){
+                    Log.d("Q", "Is not a number " + height + " dd ");
+                }*/
                 String w = editWeight.getText().toString();
                 weight = Integer.parseInt(w);
                 currentHeight.setText("" + height);

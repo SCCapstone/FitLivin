@@ -291,30 +291,31 @@ private AlertDialog.Builder dialogBuilder;
 
                     //main.bench = x;
                     if (x > 0) {
-                    Integer value = main.WeightGoalTest(x);
-                    if (value == 1) {
-                        Log.d("QAOD", "congratsWEIGHTLOSS");
-                        Integer points = MainActivity.points;
-                        points = points + 100;
-                        MainActivity.points = points;
-                        String s = ParseUser.getCurrentUser().getUsername();
-                        main.pointsData(points, s);
-                        weightLossDialog();
-                        main.WeightGoal(0, s);
-                        WeightG.setText("");
+                        Integer value = main.WeightGoalTest(x);
+                        if (value == 1) {
+                            Log.d("QAOD", "congratsWEIGHTLOSS");
+                            Integer points = MainActivity.points;
+                            points = points + 100;
+                            MainActivity.points = points;
+                            String s = ParseUser.getCurrentUser().getUsername();
+                            main.pointsData(points, s);
+                            weightLossDialog();
+                            main.WeightGoal(0, s);
+                            WeightG.setText("");
 
-                        //Toast.makeText(getActivity(), "Great Job!!!.", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getActivity(), "Great Job!!!.", Toast.LENGTH_SHORT).show();
+
+                        }
+                        if (value == 2) {
+                            // Toast.makeText(getActivity(), "Almost!!!.", Toast.LENGTH_SHORT).show();
+                            Log.d("QAOD", "not there yetWEIGHTLOSS");
+
+                        }
+
 
                     }
-                    if (value == 2) {
-                        // Toast.makeText(getActivity(), "Almost!!!.", Toast.LENGTH_SHORT).show();
-                        Log.d("QAOD", "not there yetWEIGHTLOSS");
-
-                    }
-
-
                 }
-            }}
+            }
 
         });
 
@@ -531,7 +532,8 @@ private AlertDialog.Builder dialogBuilder;
                             }
 
 
-                    }}
+                        }
+                    }
                 }
             }
 
@@ -552,18 +554,33 @@ private AlertDialog.Builder dialogBuilder;
                         "SET",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                Integer weight;
+                                MainActivity m = new MainActivity();
+                                m.ExcTest = 1;
                                 String value = input.getText().toString();
-                                Integer weight = Integer.valueOf(value);
-                                String s = ParseUser.getCurrentUser().getUsername();
-                                if (weight == 0) {
-                                    WeightG.setText("");
-                                } else {
+                                try {
+                                    weight = Integer.parseInt(value);
+                                    Log.d("Q", "Is a number " + weight + " dd ");
+                                } catch (NumberFormatException e) {
+                                    Log.d("Q", "Is not a number ");
+                                    m.ExcTest = 2;
+                                    Toast.makeText(getActivity(),"Invalid Number", Toast.LENGTH_LONG)
+                                            .show();
 
-
-                                    WeightG.setText("" + weight);
                                 }
-                                main.WeightGoal(weight, s);
-                                dialog.cancel();
+                                if (m.ExcTest == 1) {
+                                    Integer weight2 = Integer.valueOf(value);
+                                    String s = ParseUser.getCurrentUser().getUsername();
+                                    if (weight2 == 0) {
+                                        WeightG.setText("");
+                                    } else {
+
+
+                                        WeightG.setText("" + weight2);
+                                    }
+                                    main.WeightGoal(weight2, s);
+                                    dialog.cancel();
+                                }
                             }
                         });
 
@@ -576,7 +593,8 @@ private AlertDialog.Builder dialogBuilder;
                         });
 
                 AlertDialog alert11 = builder1.create();
-                 alert11.show();
+                alert11.show();
+
             }
         });
         setWeightGain.setOnClickListener(new View.OnClickListener() {

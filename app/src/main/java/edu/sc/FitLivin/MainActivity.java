@@ -62,6 +62,7 @@ public class MainActivity extends FragmentActivity{
     public static Integer points = 0;
     private String objectID;
     public static MediaPlayer mp;
+    public static Integer ExcTest;
 
 
     ListView listView;
