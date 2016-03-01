@@ -42,20 +42,20 @@ public class BodyBuildingDayTwo extends Fragment {
     //
     private void bodybuild2Dialog(){
 
-        dialogBuilder.setMessage("Congratulations!")
-                .setPositiveButton("You earned 50 points! Click ok to continue!", new OnClickListener() {
 
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                })
+            dialogBuilder = new AlertDialog.Builder(getActivity());
+            dialogBuilder.setTitle("Congratulations!");
+            dialogBuilder.setMessage("You Earned 50 Points!");
+            dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+            AlertDialog dialog = dialogBuilder.create();
+            dialogBuilder.setIcon(R.mipmap.ic_launcher);
+            dialog.show();
 
-
-                .setTitle("Workout Complete")
-                .setIcon(R.mipmap.ic_launcher)
-                .create();
-        dialogBuilder.show();
 
     }
 

@@ -36,7 +36,7 @@ public class BodyBuildingDayFour extends Fragment {
 
 
     private AlertDialog.Builder dialogBuilder;
-    //
+
     private void bodybuild4Dialog(){
         dialogBuilder = new AlertDialog.Builder(getActivity());
         dialogBuilder.setTitle("Congratulations!");
@@ -48,6 +48,7 @@ public class BodyBuildingDayFour extends Fragment {
             }
         });
         AlertDialog dialog = dialogBuilder.create();
+        dialogBuilder.setIcon(R.mipmap.ic_launcher);
         dialog.show();
     }
 

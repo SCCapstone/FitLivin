@@ -40,18 +40,21 @@ public class BodyBuildingDayOne extends Fragment {
     private AlertDialog.Builder dialogBuilder;
     //
     private void bodybuild1Dialog(){
-        dialogBuilder = new AlertDialog.Builder(getActivity());
-        dialogBuilder.setTitle("Congratulations!");
-        dialogBuilder.setMessage("You Earned 50 Points!");
-        dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-        AlertDialog dialog = dialogBuilder.create();
-        dialog.show();
-    }
+
+            dialogBuilder = new AlertDialog.Builder(getActivity());
+            dialogBuilder.setMessage("You Earned 50 Points!");
+            dialogBuilder.setTitle("Congratulations!");
+            dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+            AlertDialog dialog = dialogBuilder.create();
+            dialogBuilder.setIcon(R.mipmap.ic_launcher);
+            dialog.show();
+        }
+
 
 
     @Override
