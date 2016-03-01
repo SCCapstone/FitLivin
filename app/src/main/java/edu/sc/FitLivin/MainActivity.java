@@ -324,6 +324,7 @@ public class MainActivity extends FragmentActivity{
 
     public boolean onCreateOptionsMenu(Menu menu) {
          String s = ParseUser.getCurrentUser().getUsername();
+        Log.d("FUsername ", s);
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         MenuItem menuItem = menu.findItem(R.id.uName);
@@ -345,6 +346,7 @@ public class MainActivity extends FragmentActivity{
             ft.replace(R.id.container, fragment6);
             ft.addToBackStack(null);
             ft.commit();
+            return true;
         }
         return onOptionsItemSelected(item);
 

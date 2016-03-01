@@ -606,7 +606,7 @@ private AlertDialog.Builder dialogBuilder;
                 final EditText input = new EditText(getActivity());
                 input.setId(TEXT_ID);
                 builder1.setView(input);
-                builder1.setCancelable(true);
+                builder1.setCancelable(true);//
 
                 builder1.setPositiveButton(
                         "SET",
