@@ -31,7 +31,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Weight Loss Goal: "
+            android:text="Weight Loss Goal (lbs): "
             android:id="@+id/editnametext"
             android:layout_gravity="left|top"
             android:textColor="#ffffff"
@@ -60,7 +60,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Weight Gain Goal: "
+            android:text="Weight Gain Goal (lbs): "
             android:id="@+id/weightGain"
             android:layout_gravity="left|top"
             android:textColor="#ffffff"
@@ -92,7 +92,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bench Goal: "
+            android:text="Bench Goal (lbs): "
             android:id="@+id/BenchText"
             android:layout_gravity="left|top"
             android:textColor="#ffffff"
@@ -124,7 +124,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Squat Goal: "
+            android:text="Squat Goal (lbs): "
             android:id="@+id/SquatText"
             android:layout_gravity="left|top"
             android:textColor="#ffffff"
@@ -157,7 +157,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DeadLift Goal: "
+            android:text="DeadLift Goal (lbs): "
             android:id="@+id/DeadLiftText"
             android:layout_gravity="left|top"
             android:textColor="#ffffff"
@@ -189,7 +189,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="MileTime Goal: "
+            android:text="MileTime Goal (sec): "
             android:id="@+id/MileTimeText"
             android:layout_gravity="left|top"
             android:textColor="#ffffff"
