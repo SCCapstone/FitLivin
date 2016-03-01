@@ -564,7 +564,7 @@ private AlertDialog.Builder dialogBuilder;
                                 } catch (NumberFormatException e) {
                                     Log.d("Q", "Is not a number ");
                                     m.ExcTest = 2;
-                                    Toast.makeText(getActivity(),"Invalid Number", Toast.LENGTH_LONG)
+                                    Toast.makeText(getActivity(), "Invalid Number", Toast.LENGTH_LONG)
                                             .show();
 
                                 }
@@ -612,18 +612,37 @@ private AlertDialog.Builder dialogBuilder;
                         "SET",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                Integer weight;
                                 String value = input.getText().toString();
-                                Integer weight = Integer.valueOf(value);
-                                String s = ParseUser.getCurrentUser().getUsername();
-                                if (weight == 0) {
-                                    WeightGain.setText("");
-                                } else {
+                                MainActivity m = new MainActivity();
+                                m.ExcTest = 1;
+                                try {
+                                    weight = Integer.valueOf(value);
 
 
-                                    WeightGain.setText("" + weight);
+                                } catch (NumberFormatException e) {
+                                    m.ExcTest = 2;
+                                    Toast.makeText(getActivity(), "Invalid Number", Toast.LENGTH_LONG)
+                                            .show();
+
+
                                 }
-                                main.WeightGainGoal(weight, s);
-                                dialog.cancel();
+
+                                if (m.ExcTest == 1) {
+                                    Integer weight2 = Integer.valueOf(value);
+                                    String s = ParseUser.getCurrentUser().getUsername();
+
+
+                                    if (weight2 == 0) {
+                                        WeightGain.setText("");
+                                    } else {
+
+
+                                        WeightGain.setText("" + weight2);
+                                    }
+                                    main.WeightGainGoal(weight2, s);
+                                    dialog.cancel();
+                                }
                             }
                         });
 
@@ -655,16 +674,32 @@ private AlertDialog.Builder dialogBuilder;
                         "SET",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                Integer bench;
                                 String value = input.getText().toString();
-                                Integer bench = Integer.valueOf(value);
-                                String s = ParseUser.getCurrentUser().getUsername();
-                                if (bench == 0) {
-                                    BenchG.setText("");
-                                } else {
-                                    BenchG.setText("" + bench);
+                                MainActivity m = new MainActivity();
+                                m.ExcTest = 1;
+
+                                try {
+                                    bench = Integer.valueOf(value);
+
+                                } catch (NumberFormatException e) {
+                                    m.ExcTest = 2;
+                                    Toast.makeText(getActivity(), "Invalid Number", Toast.LENGTH_LONG)
+                                            .show();
                                 }
-                                main.BenchGoal(bench, s);
-                                dialog.cancel();
+                                if (m.ExcTest == 1) {
+                                    Integer bench2 = Integer.valueOf(value);
+                                    String s = ParseUser.getCurrentUser().getUsername();
+
+
+                                    if (bench2 == 0) {
+                                        BenchG.setText("");
+                                    } else {
+                                        BenchG.setText("" + bench2);
+                                    }
+                                    main.BenchGoal(bench2, s);
+                                    dialog.cancel();
+                                }
                             }
                         });
 
