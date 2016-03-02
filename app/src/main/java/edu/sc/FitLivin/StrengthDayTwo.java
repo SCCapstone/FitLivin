@@ -150,35 +150,26 @@ MediaPlayer mp;
         });
 
 
-        Button complete = (Button) v.findViewById(R.id.completeDay2s);//creates complete button
+        Button complete = (Button) v.findViewById(R.id.completeDay2s);
         complete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ParseQuery queryuser = ParseUser.getQuery();
                 queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
-
                 ParseQuery Points = ParseQuery.getQuery("Points");
-                Points.whereExists("CurrentPoints");//setting constraints
+                Points.whereExists("CurrentPoints");//constraints
                 Points.whereMatchesQuery("author", queryuser);
-
                 Points.findInBackground(new FindCallback<ParseObject>() {
                                             public void done(List<ParseObject> objects, ParseException e) {
-
-                                                if (e == null && objects.size() != 0) { //if objects size is not 0
-
+                                                if (e == null && objects.size() != 0) {
                                                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
-
                                                         int x = (Integer) objects.get(objects.size() - 1).get("CurrentPoints");
                                                         MainActivity main = new MainActivity();
                                                         main.points = x;
-                                                        // main.bench = x;
-                                                        // currentPoints.setText("" +x);
                                                         Integer points = main.points;
-                                                        points = points + 50;//adds points for completed workout
-
+                                                        points = points + 50;
                                                         String s = ParseUser.getCurrentUser().getUsername();
                                                         main.pointsData(points,s);
-
 
                                                         StrengthD2dialog();
                                                     }
