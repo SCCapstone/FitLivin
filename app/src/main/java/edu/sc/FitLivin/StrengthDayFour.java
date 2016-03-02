@@ -8,8 +8,10 @@
 package edu.sc.FitLivin;
 
 
+import android.app.AlertDialog;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -34,6 +36,30 @@ public class StrengthDayFour extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
 MediaPlayer mp;
+
+
+    private AlertDialog.Builder dBuilder;
+
+
+    private void StrengthD4dialog(){
+        dBuilder = new AlertDialog.Builder(getActivity());
+        dBuilder.setTitle("Congratulations!");
+        dBuilder.setMessage("You earned 50 points!");
+        dBuilder.setIcon(R.mipmap.ic_launcher);
+        dBuilder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        dBuilder.create();
+        dBuilder.show();
+
+    }
+
+
+
+
     public StrengthDayFour() {
         // Required empty public constructor
     }
@@ -156,6 +182,7 @@ MediaPlayer mp;
                                                         String s = ParseUser.getCurrentUser().getUsername();
                                                         main.pointsData(points,s);
 
+                                                        StrengthD4dialog();
 
                                                     }
 

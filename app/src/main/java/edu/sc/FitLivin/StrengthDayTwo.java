@@ -7,8 +7,10 @@
 
 package edu.sc.FitLivin;
 
+import android.app.AlertDialog;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -34,7 +36,24 @@ public class StrengthDayTwo extends Fragment {
 
 MediaPlayer mp;
 
+    private AlertDialog.Builder dBuilder;
 
+
+    private void StrengthD2dialog(){
+        dBuilder = new AlertDialog.Builder(getActivity());
+        dBuilder.setTitle("Congratulations!");
+        dBuilder.setMessage("You earned 50 points!");
+        dBuilder.setIcon(R.mipmap.ic_launcher);
+        dBuilder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        dBuilder.create();
+        dBuilder.show();
+
+    }
 
 
     public StrengthDayTwo() {
@@ -161,6 +180,7 @@ MediaPlayer mp;
                                                         main.pointsData(points,s);
 
 
+                                                        StrengthD2dialog();
                                                     }
 
                                                 }
