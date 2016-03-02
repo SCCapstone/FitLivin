@@ -618,8 +618,6 @@ private AlertDialog.Builder dialogBuilder;
                                 m.ExcTest = 1;
                                 try {
                                     weight = Integer.valueOf(value);
-
-
                                 } catch (NumberFormatException e) {
                                     m.ExcTest = 2;
                                     Toast.makeText(getActivity(), "Invalid Number", Toast.LENGTH_LONG)
@@ -732,19 +730,31 @@ private AlertDialog.Builder dialogBuilder;
                         "SET",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                Integer squat;
                                 String value = input.getText().toString();
-                                Integer squat = Integer.valueOf(value);
+                                MainActivity m = new MainActivity();
+                                m.ExcTest = 1;
+                                try {
+                                    squat = Integer.valueOf(value);
+
+                                } catch (NumberFormatException e) {
+                                    m.ExcTest = 2;
+                                    Toast.makeText(getActivity(), "Invalid Number", Toast.LENGTH_LONG)
+                                            .show();
+                                }
+                                if (m.ExcTest == 1) {
+                                Integer squat2 = Integer.valueOf(value);
                                 String s = ParseUser.getCurrentUser().getUsername();
-                                if (squat == 0) {
+                                if (squat2 == 0) {
                                     SquatG.setText("");
                                 } else {
 
 
-                                    SquatG.setText("" + squat);
+                                    SquatG.setText("" + squat2);
                                 }
-                                main.SquatGoal(squat, s);
+                                main.SquatGoal(squat2, s);
                                 dialog.cancel();
-                            }
+                            }}
                         });
 
                 builder1.setNegativeButton(
@@ -775,7 +785,19 @@ private AlertDialog.Builder dialogBuilder;
                         "SET",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                Integer dl;
                                 String value = input.getText().toString();
+                                MainActivity m = new MainActivity();
+                                m.ExcTest = 1;
+                                try {
+                                    dl = Integer.valueOf(value);
+
+                                } catch (NumberFormatException e) {
+                                    m.ExcTest = 2;
+                                    Toast.makeText(getActivity(), "Invalid Number", Toast.LENGTH_LONG)
+                                            .show();
+                                }
+                                if (m.ExcTest == 1) {
                                 Integer weight = Integer.valueOf(value);
                                 String s = ParseUser.getCurrentUser().getUsername();
                                 if (weight == 0) {
@@ -787,7 +809,7 @@ private AlertDialog.Builder dialogBuilder;
                                 }
                                 main.DeadLiftGoal(weight, s);
                                 dialog.cancel();
-                            }
+                            }}
                         });
 
                 builder1.setNegativeButton(
@@ -817,7 +839,19 @@ private AlertDialog.Builder dialogBuilder;
                         "SET",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                Integer mile;
                                 String value = input.getText().toString();
+                                MainActivity m = new MainActivity();
+                                m.ExcTest = 1;
+                                try {
+                                    mile = Integer.valueOf(value);
+
+                                } catch (NumberFormatException e) {
+                                    m.ExcTest = 2;
+                                    Toast.makeText(getActivity(), "Invalid Number", Toast.LENGTH_LONG)
+                                            .show();
+                                }
+                                if (m.ExcTest == 1) {
                                 Integer time = Integer.valueOf(value);
                                 String s = ParseUser.getCurrentUser().getUsername();
                                 if (time == 0) {
@@ -829,7 +863,7 @@ private AlertDialog.Builder dialogBuilder;
                                 }
                                 main.MileTimeGoal(time, s);
                                 dialog.cancel();
-                            }
+                            }}
                         });
 
                 builder1.setNegativeButton(

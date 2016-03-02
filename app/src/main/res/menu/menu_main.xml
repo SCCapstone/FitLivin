@@ -2,16 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="edu.sc.FitLivin.MainActivity">
+    tools:context="edu.sc.FitLivin.MainActivity"
+    >
 
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="Log out"
+
                  />
 
     <item
         android:id="@+id/uName"
         android:title="Log out"
-        android:showAsAction="always" />
+        android:showAsAction="always"
+        />
 </menu>

@@ -332,12 +332,28 @@ public class MainActivity extends FragmentActivity{
        // menuItem.setClickable(true);
         return true;
     }
+   // @Override
+   /* public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.menu_item1:
+                Intent intent = new Intent(this, ActivityForItemOne.class);
+                this.startActivity(intent);
+                break;
+            case R.id.menu_item2:
+                // another startActivity, this is for item with id "menu_item2"
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+        return true;
+    }*/
+   @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if(id == R.id.action_settings){
             ParseUser.getCurrentUser().logOut();
             startActivity(new Intent(MainActivity.this, DispatchActivity.class));
-            return true;
         }
         if(id == R.id.uName){
             ProfilePageFragment fragment6 = new ProfilePageFragment();
