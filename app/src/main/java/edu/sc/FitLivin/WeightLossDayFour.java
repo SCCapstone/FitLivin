@@ -7,8 +7,10 @@
 
 package edu.sc.FitLivin;
 
+import android.app.AlertDialog;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -28,7 +30,22 @@ public class WeightLossDayFour extends Fragment {
     public WeightLossDayFour() {
         // Required empty public constructor
     }
+    private AlertDialog.Builder dBuilder;
+    private void WeightLD1dialog(){
+        dBuilder = new AlertDialog.Builder(getActivity());
+        dBuilder.setTitle("Congratulations!");
+        dBuilder.setMessage("You earned 50 points!");
+        dBuilder.setIcon(R.mipmap.ic_launcher);
+        dBuilder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        dBuilder.create();
+        dBuilder.show();
 
+    }
     /*
      *Creates the view of our fragment.
      */
@@ -96,18 +113,7 @@ public class WeightLossDayFour extends Fragment {
 
                                   }
                               });
-        Button backBtn = (Button) v.findViewById(R.id.WLBack);
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FPWGTLossFragment fragment1 = new FPWGTLossFragment();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, fragment1);
-                ft.addToBackStack(null);
-                ft.commit();
-            }
-        });
+
         Button complete = (Button) v.findViewById(R.id.completeDay4w);//creates complete button
         complete.setOnClickListener(new View.OnClickListener() {
             @Override

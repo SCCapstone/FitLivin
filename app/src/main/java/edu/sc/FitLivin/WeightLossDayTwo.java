@@ -37,7 +37,7 @@ MediaPlayer mp;
     private AlertDialog.Builder dBuilder;
 
 
-    private void WeightLD1dialog(){
+    private void WeightLD2dialog(){
         dBuilder = new AlertDialog.Builder(getActivity());
         dBuilder.setTitle("Congratulations!");
         dBuilder.setMessage("You earned 50 points!");
@@ -158,7 +158,7 @@ MediaPlayer mp;
                                                         String s = ParseUser.getCurrentUser().getUsername();
                                                         main.pointsData(points, s);
 
-                                                        WeightLD1dialog();
+                                                        WeightLD2dialog();
                                                     }
 
                                                 }
