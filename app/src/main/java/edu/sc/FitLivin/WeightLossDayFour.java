@@ -21,7 +21,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
+
+import java.util.List;
 
 public class WeightLossDayFour extends Fragment {
 
@@ -31,7 +37,7 @@ public class WeightLossDayFour extends Fragment {
         // Required empty public constructor
     }
     private AlertDialog.Builder dBuilder;
-    private void WeightLD1dialog(){
+    private void WeightLD4dialog(){
         dBuilder = new AlertDialog.Builder(getActivity());
         dBuilder.setTitle("Congratulations!");
         dBuilder.setMessage("You earned 50 points!");
@@ -114,18 +120,43 @@ public class WeightLossDayFour extends Fragment {
                                   }
                               });
 
-        Button complete = (Button) v.findViewById(R.id.completeDay4w);//creates complete button
-        complete.setOnClickListener(new View.OnClickListener() {
+        //Add points to point page
+        Button complete1 = (Button) v.findViewById(R.id.completeDay4w);
+        complete1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Integer points = MainActivity.points;
-                points = points + 50;//adds points for completed workout
-                MainActivity main = new MainActivity();
-                String s = ParseUser.getCurrentUser().getUsername();
-                main.pointsData(points,s);
+                ParseQuery queryuser = ParseUser.getQuery();
+                queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
+                ParseQuery Points = ParseQuery.getQuery("Points");
+                Points.whereExists("CurrentPoints");//setting constraints
+                Points.whereMatchesQuery("author", queryuser);
+                Points.findInBackground(new FindCallback<ParseObject>() {
+                                            public void done(List<ParseObject> objects, ParseException e) {
+                                                if (e == null && objects.size() != 0) { //if objects size is not 0
+                                                    if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
+                                                        int x = (Integer) objects.get(objects.size() - 1).get("CurrentPoints");
+                                                        MainActivity main = new MainActivity();
+                                                        main.points = x;
+                                                        Integer points = main.points;
+                                                        points = points + 50;//adds points for completed workout
+                                                        String s = ParseUser.getCurrentUser().getUsername();
+                                                        main.pointsData(points, s);
+
+                                                        WeightLD4dialog();
+                                                    }
+
+                                                }
+
+                                            }
+
+
+                                        }
+
+
+                );
+
             }
         });
-
         return v;
     }
 

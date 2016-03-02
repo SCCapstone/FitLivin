@@ -134,7 +134,7 @@ public class WeightLossDayThree extends Fragment {
         });
 
         //Add points to point page
-        Button complete = (Button) v.findViewById(R.id.completeDay2w);
+        Button complete = (Button) v.findViewById(R.id.completeDay3w);
         complete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

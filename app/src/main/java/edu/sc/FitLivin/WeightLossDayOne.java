@@ -135,7 +135,7 @@ MediaPlayer mp;
             }
         });
         //Add points to point page
-        Button complete1 = (Button) v.findViewById(R.id.completeDay2w);
+        Button complete1 = (Button) v.findViewById(R.id.completeDay1w);
         complete1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
