@@ -323,6 +323,8 @@ public class MainActivity extends FragmentActivity{
 
 
     public boolean onCreateOptionsMenu(Menu menu) {
+        this.getActionBar()
+                .setTitle("Home");
          String s = ParseUser.getCurrentUser().getUsername();
         Log.d("FUsername ", s);
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -332,22 +334,7 @@ public class MainActivity extends FragmentActivity{
        // menuItem.setClickable(true);
         return true;
     }
-   // @Override
-   /* public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()) {
-            case R.id.menu_item1:
-                Intent intent = new Intent(this, ActivityForItemOne.class);
-                this.startActivity(intent);
-                break;
-            case R.id.menu_item2:
-                // another startActivity, this is for item with id "menu_item2"
-                break;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
 
-        return true;
-    }*/
    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();

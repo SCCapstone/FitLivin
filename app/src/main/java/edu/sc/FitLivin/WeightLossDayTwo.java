@@ -65,7 +65,8 @@ MediaPlayer mp;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment.
         View v = inflater.inflate(R.layout.fragment_weightloss_day_two, container, false);
-
+        getActivity().getActionBar()
+                .setTitle("Day 2");
         ImageButton cycle = (ImageButton) v.findViewById(R.id.cycleImage);
         ImageButton squat = (ImageButton) v.findViewById(R.id.squatImage);
         ImageButton plank = (ImageButton) v.findViewById(R.id.plankImage);

@@ -67,6 +67,8 @@ public class TrackProgressFragment extends Fragment {
         userquery.whereEqualTo("objectId",ParseUser.getCurrentUser().getObjectId());
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fragment_track_progress, container, false);
+        getActivity().getActionBar()
+                .setTitle("Track Progress");
         //Creates back button to go back to main page
        graph = (GraphView) v.findViewById(R.id.graph);
 

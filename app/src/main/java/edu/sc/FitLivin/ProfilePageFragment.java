@@ -67,6 +67,8 @@ public class ProfilePageFragment extends Fragment {
 
 
         View v = inflater.inflate(R.layout.fragment_profile__page, container, false);
+        getActivity().getActionBar()
+                .setTitle("Profile");
        MainActivity main = new MainActivity();
            p = (Button) v.findViewById(R.id.pic);
         iv = (ImageView)v.findViewById(R.id.test);

@@ -149,6 +149,8 @@ private AlertDialog.Builder dialogBuilder;
 
 
         View v = inflater.inflate(R.layout.fragment_goal, container, false);
+        getActivity().getActionBar()
+                .setTitle("Goals");
         final  MainActivity main = new MainActivity();
 
 

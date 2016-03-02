@@ -24,6 +24,8 @@ public class FPWGTLossFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_fp__wgt__loss, container, false);
         Button btn = (Button) v.findViewById(R.id.backButtonWeightLoss);
+        getActivity().getActionBar()
+                .setTitle("Weight Loss");
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

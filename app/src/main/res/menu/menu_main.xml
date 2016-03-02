@@ -14,7 +14,7 @@
 
     <item
         android:id="@+id/uName"
-        android:title="Log out"
+        android:title=""
         android:showAsAction="always"
         />
 </menu>

@@ -74,6 +74,8 @@ private View v;
         ImageButton benchImage = (ImageButton) v.findViewById(R.id.benchImage);
         ImageButton dumbbellFlyImage = (ImageButton) v.findViewById(R.id.flyImage);
         ImageButton pushupImage = (ImageButton) v.findViewById(R.id.pushupImage);
+        getActivity().getActionBar()
+                .setTitle("Day 2");
        // mp = MediaPlayer.create(getActivity(), R.raw.fitfactbarbellbenchpressnew);
         benchImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,7 +131,7 @@ private View v;
                                                 }
                                             }
         );
-        Button complete = (Button) v.findViewById(R.id.completeDay4bb);//creates complete button
+        Button complete = (Button) v.findViewById(R.id.completeDay2bb);//creates complete button
         complete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 ParseQuery queryuser = ParseUser.getQuery();

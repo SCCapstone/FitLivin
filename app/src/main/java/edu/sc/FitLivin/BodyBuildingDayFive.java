@@ -63,6 +63,8 @@ MediaPlayer mp;
         ImageButton militaryPress = (ImageButton) v.findViewById(R.id.militaryPressImage);
         ImageButton sideLatRaise = (ImageButton) v.findViewById(R.id.sideLatImage);
         ImageButton shoulderPress = (ImageButton) v.findViewById(R.id.shoulderpressImage);
+        getActivity().getActionBar()
+                .setTitle("Day 5");
 
         militaryPress.setOnClickListener(new View.OnClickListener() {
                                   @Override

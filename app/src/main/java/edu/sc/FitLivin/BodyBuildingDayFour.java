@@ -67,7 +67,8 @@ public class BodyBuildingDayFour extends Fragment {
         ImageButton deadlift = (ImageButton) v.findViewById(R.id.deadliftImage);
         ImageButton pullup = (ImageButton) v.findViewById(R.id.pullupImage);
         ImageButton dbrow = (ImageButton) v.findViewById(R.id.dumbbellRowImage);
-
+        getActivity().getActionBar()
+                .setTitle("Day 4");
 
         deadlift.setOnClickListener(new View.OnClickListener() {
                                   @Override
