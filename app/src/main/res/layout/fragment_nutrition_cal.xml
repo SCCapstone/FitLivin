@@ -8,8 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/linview"
-        >
+        android:id="@+id/linview">
 
         <TextView
             android:layout_width="wrap_content"
@@ -74,7 +73,7 @@
             android:text=""
             android:id="@+id/lowCalories"
             android:layout_below="@+id/lowText"
-            android:textColor="#ffffff"
+            android:textColor="#fe080f"
             android:layout_alignParentStart="true" />
 
         <TextView
@@ -104,7 +103,7 @@
             android:text=""
             android:id="@+id/modCalories"
             android:layout_below="@+id/modText"
-            android:textColor="#ffffff"
+            android:textColor="#fe080f"
             android:layout_alignParentStart="true" />
 
         <TextView
@@ -135,7 +134,7 @@
             android:text=""
             android:id="@+id/highCalories"
             android:layout_below="@+id/highText"
-            android:textColor="#ffffff"
+            android:textColor="#fe080f"
             android:layout_alignParentStart="true" />
 
         <TextView

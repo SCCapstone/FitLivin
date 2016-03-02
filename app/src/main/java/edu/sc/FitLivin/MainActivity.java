@@ -122,6 +122,7 @@ public class MainActivity extends FragmentActivity{
         @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
 
@@ -325,6 +326,9 @@ public class MainActivity extends FragmentActivity{
     public boolean onCreateOptionsMenu(Menu menu) {
         this.getActionBar()
                 .setTitle("Home");
+        this.getActionBar().setDisplayUseLogoEnabled(true);
+        this.getActionBar().setDisplayShowHomeEnabled(true);
+        this.getActionBar().setIcon(R.mipmap.ic_launcher);
          String s = ParseUser.getCurrentUser().getUsername();
         Log.d("FUsername ", s);
         // Inflate the menu; this adds items to the action bar if it is present.

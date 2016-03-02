@@ -29,6 +29,8 @@ public class FitnessProgramFragment extends Fragment {
         Button btn = (Button) v.findViewById(R.id.StrengthTrainingButton);
         getActivity().getActionBar()
                 .setTitle("Fitness Program");
+
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
