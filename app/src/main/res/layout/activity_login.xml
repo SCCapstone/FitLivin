@@ -43,9 +43,8 @@
                 android:textColor="#ffffff"
                 android:inputType="textPersonName"
                 android:maxLines="1"
-                android:singleLine="true" />
-
-
+                android:singleLine="true"
+                />
 
             <EditText
                 android:id="@+id/password"
@@ -56,9 +55,8 @@
                 android:textColor="#ffffff"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:singleLine="true" />
-
-
+                android:singleLine="true"
+                />
 
             <Button
                 android:id="@+id/email_login"

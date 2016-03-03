@@ -13,15 +13,7 @@
         android:layout_width="fill_parent"
         android:orientation="vertical"
         >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="BODY BUILDING DAY 5"
-            android:id="@+id/bbDay5"
-            android:layout_gravity="center_horizontal|top"
-            android:textColor="#ffffff"
-            />
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -30,7 +22,7 @@
             android:text="Military Press"
             android:id="@+id/militaryPressText"
             android:layout_gravity="center_horizontal"
-            android:layout_below="@+id/bbDay5"
+            android:layout_above="@+id/militaryPressImage"
             android:textColor="#ffffff"
             android:textSize="32dp"
             />
@@ -42,7 +34,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/militaryPressImage"
-            android:layout_below="@+id/militaryPressDetail"
+            android:layout_below="@+id/militaryPressText"
+            android:layout_above="@+id/militaryPressDetail"
             android:layout_gravity="center_horizontal"
             android:clickable="true"
             android:src="@drawable/militarypress"
@@ -53,7 +46,8 @@
             android:layout_height="wrap_content"
             android:text="4 Sets of 8-10 Repetitions. 1 minute rest between sets"
             android:id="@+id/militaryPressDetail"
-            android:layout_below="@+id/militaryPressText"
+            android:layout_below="@+id/militaryPressImage"
+            android:layout_above="@+id/sideRaiseText"
             android:layout_gravity="center_horizontal"
             android:textColor="#ffffff"
             />
@@ -63,7 +57,8 @@
             android:layout_height="wrap_content"
             android:text="Side Lateral Raises"
             android:id="@+id/sideRaiseText"
-            android:layout_below="@+id/militaryPressImage"
+            android:layout_below="@+id/militaryPressDetail"
+            android:layout_above="@+id/sideLatImage"
             android:layout_gravity="center_horizontal"
             android:textColor="#ffffff"
             android:textSize="32dp"
@@ -75,7 +70,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/sideLatImage"
-            android:layout_below="@+id/sideLatRaiseDetail"
+            android:layout_below="@+id/sideRaiseText"
+            android:layout_above="@+id/sideLatRaiseDetail"
             android:layout_gravity="center_horizontal"
             android:clickable="true"
             android:src="@drawable/dumbbelllatraise"
@@ -86,7 +82,8 @@
             android:layout_height="wrap_content"
             android:text="4 Sets of 12 very light weight repetitions. "
             android:id="@+id/sideLatRaiseDetail"
-            android:layout_below="@+id/sideRaiseText"
+            android:layout_below="@+id/sideLatImage"
+            android:layout_above="@+id/shoulderPressText"
             android:layout_gravity="center_horizontal"
             android:textColor="#ffffff"
             />
@@ -98,6 +95,7 @@
             android:text="Shoulder Press"
             android:id="@+id/shoulderPressText"
             android:layout_below="@+id/sideLatRaiseDetail"
+            android:layout_above="@+id/shoulderpressImage"
             android:layout_gravity="center_horizontal"
             android:textColor="#ffffff"
             android:textSize="32dp"
@@ -110,7 +108,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/shoulderpressImage"
-            android:layout_below="@+id/shoulderPressDetail"
+            android:layout_below="@+id/shoulderPressText"
+            android:layout_above="@+id/shoulderPressDetail"
             android:layout_gravity="center_horizontal"
             android:clickable="true"
             android:src="@drawable/shoulderpress"
@@ -121,7 +120,7 @@
             android:layout_height="wrap_content"
             android:text="4 sets of 10 repetitions."
             android:id="@+id/shoulderPressDetail"
-            android:layout_below="@+id/sideLatRaiseDetail"
+            android:layout_below="@+id/shoulderpressImage"
             android:layout_gravity="center_horizontal"
             android:textColor="#ffffff"
             />

@@ -24,7 +24,9 @@
             android:id="@+id/cpbench"
             android:textColor="#ffffff"
             android:textSize="32dp"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_above="@+id/closeGripBenchImage"
+            android:layout_gravity="center_horizontal"
+            />
 
         <ImageButton
             android:scaleType="fitXY"
@@ -33,14 +35,18 @@
             android:id="@+id/closeGripBenchImage"
             android:src="@drawable/closegrip"
             android:layout_below="@+id/cpbench"
+            android:layout_above="@+id/closeGripBenchDescription"
             android:clickable="true"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal"
+            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="5 Sets of 5 reps."
+            android:layout_below="@+id/closeGripBenchImage"
+            android:layout_above="@+id/benchDetail"
             android:layout_gravity="center_horizontal"
             android:id="@+id/closeGripBenchDescription"
             android:textColor="#ffffff"
@@ -53,8 +59,10 @@
             android:id="@+id/benchDetail"
             android:textColor="#ffffff"
             android:textSize="32dp"
-            android:layout_below="@+id/closeGripBenchImage"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_below="@+id/closeGripBenchDescription"
+            android:layout_above="@+id/bbcurl"
+            android:layout_gravity="center_horizontal"
+            />
 
         <ImageButton
             android:scaleType="fitXY"
@@ -63,8 +71,10 @@
             android:id="@+id/bbcurl"
             android:src="@drawable/barbellcurl"
             android:layout_below="@+id/benchDetail"
+            android:layout_above="@+id/barbellCurlDescription"
             android:clickable="true"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -73,6 +83,8 @@
             android:text="4 Sets of 12 reps."
             android:layout_gravity="center_horizontal"
             android:id="@+id/barbellCurlDescription"
+            android:layout_below="@+id/bbcurl"
+            android:layout_above="@+id/flyText"
             android:textColor="#ffffff"
             />
 
@@ -83,8 +95,10 @@
             android:id="@+id/flyText"
             android:textColor="#ffffff"
             android:textSize="32dp"
-            android:layout_below="@+id/bbcurl"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_below="@+id/barbellCurlDescription"
+            android:layout_above="@+id/pushdown"
+            android:layout_gravity="center_horizontal"
+            />
 
         <ImageButton
             android:scaleType="fitXY"
@@ -93,8 +107,10 @@
             android:id="@+id/pushdown"
             android:src="@drawable/pushdown"
             android:layout_below="@+id/flyText"
+            android:layout_above="@+id/tricepPushdownDescription"
             android:clickable="true"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -102,6 +118,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="4 Sets of 8 reps."
             android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/pushdown"
             android:id="@+id/tricepPushdownDescription"
             android:textColor="#ffffff"
             />
@@ -114,7 +131,8 @@
             android:layout_gravity="left|bottom"
             android:layout_below="@+id/calfpresspic"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            />
 
 
         <Button
@@ -122,7 +140,8 @@
             android:layout_height="wrap_content"
             android:text="Workout Complete!"
             android:id="@+id/completeDay4s"
-            android:layout_gravity="right|bottom" />
+            android:layout_gravity="right|bottom"
+            />
 
     </LinearLayout>>
 

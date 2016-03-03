@@ -11,18 +11,7 @@
         android:id="@+id/linview"
         android:layout_gravity="center_horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Edit Your Profile"
-            android:id="@+id/edityourprofile"
-            android:layout_gravity="center_horizontal"
-            android:textColor="#ffffff"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:textSize="40dp"
 
-            />
 
         <EditText
             android:layout_width="130dp"
@@ -44,9 +33,6 @@
             android:textColor="#ffffff"
             android:id="@+id/textname"
             android:layout_marginTop="64dp"
-            android:layout_below="@+id/edityourprofile"
-
-
             />
 
         <TextView
@@ -58,7 +44,8 @@
             android:id="@+id/textgender"
             android:layout_below="@+id/editTextname"
             android:layout_alignStart="@+id/textname"
-            android:layout_marginTop="37dp" />
+            android:layout_marginTop="37dp"
+            />
 
         <EditText
             android:layout_width="130dp"
@@ -125,9 +112,7 @@
             android:background="#ffffff"
             android:id="@+id/checkboxname"
             android:layout_alignParentEnd="true"
-
             android:layout_alignTop="@+id/editTextname"
-
             />
 
         <CheckBox

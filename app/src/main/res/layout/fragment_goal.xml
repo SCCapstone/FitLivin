@@ -16,16 +16,6 @@
             android:layout_width="fill_parent"
             android:orientation="vertical"
             >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Goals"
-            android:id="@+id/textView2"
-            android:layout_gravity="center_horizontal|top"
-            android:textColor="#ffffff"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:textSize="40dp" />
 
 
         <TextView
@@ -36,16 +26,18 @@
             android:layout_gravity="left|top"
             android:textColor="#ffffff"
             android:textSize="20dp"
-            android:layout_below="@+id/textView2"
             android:layout_marginTop="20dp"
             />
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Set Weight"
                 android:id="@+id/setWeight"
                 android:layout_below="@+id/editnametext"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -56,7 +48,9 @@
             android:textIsSelectable="true"
             android:layout_toEndOf="@+id/editnametext"
             android:layout_below="@+id/textView2"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp"
+            />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -68,13 +62,15 @@
             android:layout_below="@+id/setWeight"
             android:layout_marginTop="10dp"
             />
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Set Weight"
                 android:id="@+id/setWeightG"
                 android:layout_below="@+id/weightGain"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                />
 
         <TextView
             android:layout_width="wrap_content"
@@ -86,7 +82,8 @@
             android:textIsSelectable="true"
             android:layout_toEndOf="@+id/weightGain"
             android:layout_below="@+id/setWeight"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            />
 
 
         <TextView
@@ -100,13 +97,15 @@
             android:layout_below="@+id/setWeightG"
             android:layout_marginTop="10dp"
             />
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Set Bench"
                 android:id="@+id/setBench"
                 android:layout_below="@+id/BenchText"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                />
 
         <TextView
             android:layout_width="wrap_content"
@@ -118,7 +117,8 @@
             android:textIsSelectable="true"
             android:layout_toEndOf="@+id/BenchText"
             android:layout_below="@+id/setWeightG"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            />
 
 
         <TextView
@@ -132,13 +132,15 @@
             android:layout_below="@+id/setBench"
             android:layout_marginTop="10dp"
             />
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Set Squat"
                 android:id="@+id/setSquat"
                 android:layout_below="@+id/SquatText"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                />
 
         <TextView
             android:layout_width="wrap_content"
@@ -150,7 +152,8 @@
             android:textIsSelectable="true"
             android:layout_toEndOf="@+id/SquatText"
             android:layout_below="@+id/setBench"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            />
 
 
 
@@ -165,13 +168,16 @@
             android:layout_below="@+id/setSquat"
             android:layout_marginTop="10dp"
             />
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Set DeadLift"
                 android:id="@+id/setDeadLift"
                 android:layout_below="@+id/DeadLiftText"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -182,7 +188,8 @@
             android:textIsSelectable="true"
             android:layout_toEndOf="@+id/DeadLiftText"
             android:layout_below="@+id/setSquat"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            />
 
 
 
@@ -197,13 +204,15 @@
             android:layout_below="@+id/setDeadLift"
             android:layout_marginTop="10dp"
             />
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Set MileTime"
                 android:id="@+id/setMileTime"
                 android:layout_below="@+id/MileTimeText"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                />
 
         <TextView
             android:layout_width="wrap_content"
@@ -215,7 +224,8 @@
             android:textIsSelectable="true"
             android:layout_toEndOf="@+id/MileTimeText"
             android:layout_below="@+id/setDeadLift"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            />
 
 
         </RelativeLayout>>

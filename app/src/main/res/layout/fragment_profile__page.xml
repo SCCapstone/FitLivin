@@ -31,10 +31,9 @@
         android:textSize="19dp"
         android:text="Username"
         android:textColor="#ffffff"
-
-            android:layout_marginLeft="30dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/editprofile" />
+        android:layout_marginLeft="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/editprofile" />
 
     <EditText
         android:layout_width="130dp"

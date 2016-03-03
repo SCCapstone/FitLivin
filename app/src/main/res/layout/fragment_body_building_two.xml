@@ -13,16 +13,7 @@
             android:layout_width="fill_parent"
             android:orientation="vertical"
             >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="BODY BUILDING DAY 2"
-                android:id="@+id/bodyBuildingDay2Text"
-                android:layout_gravity="center_horizontal|top"
-                android:textColor="#ffffff"
-                android:layout_marginBottom="10dp"
-                />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,6 +21,7 @@
         android:text="Barbell Bench Press"
         android:id="@+id/benchText"
         android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/benchImage"
         android:textColor="#ffffff"
         android:textSize="25dp" />
 
@@ -40,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/benchImage"
-        android:layout_gravity="right|top"
+        android:layout_gravity="center_horizontal"
         android:src="@drawable/bench"
         android:clickable="true"
         android:layout_below="@+id/benchText"
@@ -54,6 +46,7 @@
                 android:id="@+id/benchDetail"
                 android:layout_gravity="center_horizontal"
                 android:layout_below="@+id/benchImage"
+                android:layout_above="@+id/flyText"
                 android:textColor="#ffffff"
                 />
 
@@ -66,7 +59,7 @@
         android:textColor="#ffffff"
         android:textSize="25dp"
         android:layout_below="@+id/benchDetail"
-        android:layout_above="@+id/flyDetail"
+        android:layout_above="@+id/flyImage"
         />
 
 
@@ -75,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/flyImage"
-                android:layout_gravity="right|center_vertical"
+                android:layout_gravity="center_horizontal"
                 android:src="@drawable/flyes"
                 android:clickable="true"
                 android:layout_below="@+id/flyText"
@@ -103,6 +96,7 @@
                 android:textColor="#ffffff"
                 android:textSize="25dp"
                 android:layout_below="@+id/flyDetail"
+                android:layout_above="@+id/pushupImage"
                 />
 
 
@@ -116,6 +110,7 @@
                 android:layout_gravity="center_horizontal"
                 android:clickable="true"
                 android:layout_below="@+id/pushupText"
+                android:layout_above="@+id/pushupDetail"
                 android:src="@drawable/pushup" />
 
 

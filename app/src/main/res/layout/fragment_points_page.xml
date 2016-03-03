@@ -10,26 +10,14 @@
         android:id="@+id/linview"
         >
 
-        <TextView
-
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="POINTS"
-            android:id="@+id/pointsHeadingView"
-            android:layout_gravity="center_horizontal|top"
-            android:textColor="#ffffff"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
-
         <Button
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="Back"
             android:id="@+id/PointsBack"
             android:layout_alignParentBottom="true"
-            android:layout_gravity="center_horizontal|bottom" />
+            android:layout_gravity="center_horizontal|bottom"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,9 +28,9 @@
             android:textColor="#ffffff"
             android:text="Points"
             android:textSize="80dp"
-            android:layout_below="@+id/pointsHeadingView"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="83dp" />
+            android:layout_marginTop="83dp"
+            />
 
         <TextView
             android:layout_width="347dp"
@@ -53,7 +41,8 @@
             android:textStyle="normal|bold|italic"
             android:textColor="#ffffff"
             android:layout_above="@+id/arnoldText"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            />
 
         <TextView
             android:layout_width="178dp"
@@ -63,7 +52,8 @@
             android:textColor="#ffffff"
             android:layout_gravity="right|center_vertical"
             android:layout_above="@+id/PointsBack"
-            android:layout_centerHorizontal="true" />#ffffff" />
+            android:layout_centerHorizontal="true"
+            />
 
 
     </RelativeLayout>

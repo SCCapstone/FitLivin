@@ -16,22 +16,14 @@
         android:orientation="vertical"
         android:weightSum="1">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="BODY BUILDING DAY 3"
-            android:id="@+id/bbDay3"
-            android:layout_gravity="center_horizontal|top"
-            android:textColor="#ffffff"
-            android:layout_above="@+id/hammercurlText"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Hammer Curl"
         android:id="@+id/hammercurlText"
+        android:layout_above="@+id/hammerCurlImage"
         android:layout_gravity="center_horizontal"
         android:textColor="#ffffff"
         android:textSize="25dp" />
@@ -46,28 +38,31 @@
             android:clickable="true"
             android:layout_below="@+id/hammercurlText"
             android:layout_above="@+id/hammerCurlDetail"
-            android:layout_weight="0.03" />
+            android:layout_gravity="center_horizontal"
+            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="4 Sets of 10-12 Repetitions "
             android:id="@+id/hammerCurlDetail"
+            android:layout_below="@+id/hammerCurlImage"
+            android:layout_above="@+id/preacherCurlText"
             android:layout_gravity="center_horizontal"
             android:textColor="#ffffff" />
 
 
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Preacher Curl"
         android:id="@+id/preacherCurlText"
         android:layout_gravity="center_horizontal"
         android:textColor="#ffffff"
         android:textSize="25dp"
-            android:layout_below="@+id/hammerCurlDetail"
-            android:layout_above="@+id/preacherCurlImage"
+        android:layout_below="@+id/hammerCurlDetail"
+        android:layout_above="@+id/preacherCurlImage"
             />
 
 
@@ -77,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/preacherCurlImage"
-        android:layout_gravity="right|center_vertical"
+        android:layout_gravity="center_horizontal"
         android:src="@drawable/preachercurl"
         android:clickable="true"
         android:layout_below="@+id/preacherCurlText"
@@ -89,7 +84,7 @@
             android:layout_height="wrap_content"
             android:text="4 Sets of 10-12 repititions  "
             android:id="@+id/preacherCurlDetail"
-            android:layout_gravity="left|center_vertical"
+            android:layout_gravity="center_horizontal"
             android:textColor="#ffffff"
             android:layout_below="@+id/preacherCurlImage"
             android:layout_above="@+id/closegripPushupText"
@@ -102,7 +97,7 @@
         android:layout_height="wrap_content"
         android:text="Close Grip Push-up"
         android:id="@+id/closegripPushupText"
-        android:layout_gravity="left|bottom"
+        android:layout_gravity="center_horizontal"
         android:textColor="#ffffff"
         android:textSize="25dp"
         android:layout_below="@+id/preacherCurlDetail"
@@ -113,10 +108,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/closegrippushupImage"
-        android:layout_gravity="right|bottom"
+        android:layout_gravity="center_horizontal"
         android:clickable="true"
         android:src="@drawable/closegrippushup"
         android:layout_below="@+id/closegripPushupText"
+        android:layout_above="@+id/closegripPushupDetail"
         />
 
         <TextView
@@ -124,9 +120,9 @@
             android:layout_height="wrap_content"
             android:text="4 sets of 5-15 concentrated repetitions (Depending on skill level)"
             android:id="@+id/closegripPushupDetail"
-            android:layout_gravity="left|bottom"
+            android:layout_gravity="center_horizontal"
             android:textColor="#ffffff"
-            android:layout_below="@+id/closeGripBenchImagel"
+            android:layout_below="@+id/closegrippushupImage"
             android:layout_above="@+id/completeDay3bb"/>
 
 

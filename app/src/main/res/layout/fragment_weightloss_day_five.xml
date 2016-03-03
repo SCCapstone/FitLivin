@@ -19,21 +19,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="WEIGHT LOSS DAY 5"
-            android:id="@+id/wlDay5"
-            android:layout_gravity="center_horizontal|top"
-            android:textColor="#ffffff" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="1 mile warm up run"
             android:id="@+id/warmupRunText"
             android:layout_gravity="center_horizontal"
-            android:layout_below = "@+id/w1Day5"
             android:textColor="#ffffff"
-            android:textSize="32dp" />
+            android:textSize="32dp"
+            />
 
         <ImageButton
             android:scaleType="fitXY"
@@ -43,7 +34,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_below = "@+id/warmupRunText"
             android:clickable="true"
-            android:src="@drawable/running" />
+            android:src="@drawable/running"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -52,7 +44,8 @@
             android:id="@+id/warmupDetail"
             android:layout_gravity="center_horizontal"
             android:textColor="#ffffff"
-            android:text="Choice of treadmill or laps around track" />
+            android:text="Choice of treadmill or laps around track"
+            />
 
 
         <TextView
@@ -63,7 +56,8 @@
             android:layout_below = "@+id/warmupDetail"
             android:textColor="#ffffff"
             android:textSize="32dp"
-            android:id="@+id/updownsText" />
+            android:id="@+id/updownsText"
+            />
 
         <ImageButton
             android:scaleType="fitXY"
@@ -73,7 +67,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_below = "@+id/updownsText"
             android:clickable="true"
-            android:src="@drawable/powerjump" />
+            android:src="@drawable/powerjump"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -82,7 +77,8 @@
             android:id="@+id/powerjumpDetail"
             android:layout_gravity="center_horizontal"
             android:layout_below = "@+id/powerjumpImage"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -92,7 +88,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_below = "@+id/powerjumpDetail"
             android:textColor="#ffffff"
-            android:textSize="32dp" />
+            android:textSize="32dp"
+            />
 
         <ImageButton
             android:scaleType="fitXY"
@@ -102,7 +99,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_below = "@+id/burpeesText"
             android:clickable="true"
-            android:src="@drawable/burpees" />
+            android:src="@drawable/burpees"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -111,21 +109,24 @@
             android:id="@+id/burpiesDetail"
             android:layout_gravity="center_horizontal"
             android:layout_below = "@+id/burpeesImage"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Workout Complete!"
             android:id="@+id/completeDay5w"
-            android:layout_gravity="right|bottom" />
+            android:layout_gravity="right|bottom"
+            />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="BACK"
             android:id="@+id/WLBack"
-            android:layout_gravity="left|bottom" />
+            android:layout_gravity="left|bottom"
+            />
 
     </LinearLayout>>
 
