@@ -1,35 +1,36 @@
-package edu.sc.FitLivin;
 
-import android.app.AlertDialog;
-import android.app.Fragment;
-import android.content.DialogInterface;
-import android.media.MediaPlayer;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+        package edu.sc.FitLivin;
 
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
+        import android.app.AlertDialog;
+        import android.app.Fragment;
+        import android.content.DialogInterface;
+        import android.media.MediaPlayer;
+        import android.os.Bundle;
+        import android.util.Log;
+        import android.view.LayoutInflater;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.Button;
+        import android.widget.EditText;
+        import android.widget.TextView;
+        import android.widget.Toast;
 
-import java.util.List;
+        import com.parse.FindCallback;
+        import com.parse.ParseException;
+        import com.parse.ParseObject;
+        import com.parse.ParseQuery;
+        import com.parse.ParseUser;
+
+        import java.util.List;
 
 
 public class GoalFragment extends Fragment {
-   MainActivity main = new MainActivity();
+    MainActivity main = new MainActivity();
 
     private static final int TEXT_ID = 0;
 
-private AlertDialog.Builder dialogBuilder;
-//
+    private AlertDialog.Builder dialogBuilder;
+    //
     private void weightLossDialog(){
         dialogBuilder = new AlertDialog.Builder(getActivity());
         dialogBuilder.setTitle("Great Job!!!!");
@@ -37,7 +38,7 @@ private AlertDialog.Builder dialogBuilder;
         main.mp = null;
         main.mp = MediaPlayer.create(getActivity(), R.raw.applause);
         main.mp.start();
-       // mp.start();
+        // mp.start();
         dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -79,7 +80,7 @@ private AlertDialog.Builder dialogBuilder;
         main.mp.stop();
         main.mp = MediaPlayer.create(getActivity(), R.raw.applause);
         main.mp.start();
-       // mp.start();
+        // mp.start();
         dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -129,7 +130,7 @@ private AlertDialog.Builder dialogBuilder;
         dialogBuilder = new AlertDialog.Builder(getActivity());
         dialogBuilder.setTitle("Great Job!!!!");
         dialogBuilder.setMessage("Mile Time Goal: Complete!");
-       main.mp = MediaPlayer.create(getActivity(), R.raw.applause);
+        main.mp = MediaPlayer.create(getActivity(), R.raw.applause);
         main.mp.start();
         dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
@@ -211,7 +212,7 @@ private AlertDialog.Builder dialogBuilder;
         );
         ParseQuery MaxSquat = ParseQuery.getQuery("MaxSquat");
         MaxSquat.whereExists("MaxSquat");//setting constraints
-       MaxSquat.whereMatchesQuery("author", queryuser);
+        MaxSquat.whereMatchesQuery("author", queryuser);
         MaxSquat.orderByDescending("createdAt");
         MaxSquat.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
@@ -608,7 +609,7 @@ private AlertDialog.Builder dialogBuilder;
                 final EditText input = new EditText(getActivity());
                 input.setId(TEXT_ID);
                 builder1.setView(input);
-                builder1.setCancelable(true);//
+                builder1.setCancelable(true);
 
                 builder1.setPositiveButton(
                         "SET",
