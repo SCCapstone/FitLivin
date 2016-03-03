@@ -45,6 +45,8 @@ public class StopwatchFragment extends Fragment implements OnClickListener {
                resetChron.setOnClickListener(this);
         chron = (Chronometer) v.findViewById(R.id.chronometer);
         return v;
+
+
     }
 
     @Override

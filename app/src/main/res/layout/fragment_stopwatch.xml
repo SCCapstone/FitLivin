@@ -8,8 +8,8 @@
 
     <Button
         android:id="@+id/start"
-        android:layout_height="55dp"
-        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:layout_marginLeft="38dp"
         android:text="@string/start"
         android:layout_below="@+id/reset"
@@ -18,8 +18,8 @@
 
     <Button
         android:id="@+id/stop"
-        android:layout_height="55dp"
-        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:clickable="true"
         android:layout_marginLeft="270dp"
         android:text="@string/stop"
@@ -28,8 +28,8 @@
 
     <Button
         android:id="@+id/reset"
-        android:layout_height="55dp"
-        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:clickable="true"
         android:layout_marginLeft="150dp"
         android:text="@string/reset"
@@ -46,5 +46,16 @@
         android:layout_above="@+id/reset"
         android:layout_alignParentEnd="true" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/stopwatchBack"
+        android:clickable="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+
+
+        />
 
 </RelativeLayout>

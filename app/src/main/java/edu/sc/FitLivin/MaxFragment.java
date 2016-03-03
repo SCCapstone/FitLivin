@@ -46,6 +46,8 @@ public class MaxFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_max, container, false);
 
+
+
             getActivity().getActionBar()
                     .setTitle("Max");
 

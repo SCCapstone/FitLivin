@@ -3,6 +3,8 @@
 
         import android.app.AlertDialog;
         import android.app.Fragment;
+        import android.app.FragmentManager;
+        import android.app.FragmentTransaction;
         import android.content.DialogInterface;
         import android.media.MediaPlayer;
         import android.os.Bundle;
@@ -775,6 +777,7 @@ public class GoalFragment extends Fragment {
         setDeadLiftG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
                 builder1.setTitle("Set Your Goal");
                 builder1.setMessage("Enter Your Dead Lift Goal.");
