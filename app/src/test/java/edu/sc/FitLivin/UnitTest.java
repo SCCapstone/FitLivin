@@ -31,14 +31,10 @@ public class UnitTest {
     public UnitTest() {
 
     }
+
+
     @Test
     public void test1() throws Exception {
-
-        ParseQuery query = ParseQuery.getQuery("ProfileInfo");
-        assertEquals("randon3", ParseUser.getCurrentUser().getUsername());
-
-    }
-    public void test2() throws Exception {
         //final int expected = 1;
         // final int reality = 5;
         //  assertEquals(expected, reality);
@@ -48,7 +44,8 @@ public class UnitTest {
         Integer testAnswer = nut.MaleWeightLossL(test);
         assertEquals(answer, testAnswer);
     }
-    public void test3() throws Exception {
+    @Test
+    public void test2() throws Exception {
 
         BMICAL_Fragment BMI = new BMICAL_Fragment();
         float multiplier = 703;

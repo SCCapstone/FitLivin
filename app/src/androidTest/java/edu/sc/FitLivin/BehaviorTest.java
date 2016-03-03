@@ -45,7 +45,7 @@ public class BehaviorTest {
 
     @Test
     public void ShouldBeAbleToVerifyNameInProfilePage(){
-        String na = "randon3";
+        String na = "randon10";
         Espresso.onView(ViewMatchers.withId(R.id.profileButton)).perform(ViewActions.click());
         onView(withId(R.id.name)).check(ViewAssertions.matches(withText(na)));
     }

@@ -345,8 +345,10 @@ public class MainActivity extends FragmentActivity{
         if(id == R.id.action_settings){
             ParseUser.getCurrentUser().logOut();
             startActivity(new Intent(MainActivity.this, DispatchActivity.class));
+            return true;
         }
-        if(id == R.id.uName){
+
+        else if(id == R.id.uName){
             ProfilePageFragment fragment6 = new ProfilePageFragment();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();

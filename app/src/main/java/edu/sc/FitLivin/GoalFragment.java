@@ -35,7 +35,6 @@ public class GoalFragment extends Fragment {
         dialogBuilder = new AlertDialog.Builder(getActivity());
         dialogBuilder.setTitle("Great Job!!!!");
         dialogBuilder.setMessage("Weight Loss Goal: Complete!");
-        main.mp = null;
         main.mp = MediaPlayer.create(getActivity(), R.raw.applause);
         main.mp.start();
         // mp.start();
@@ -59,7 +58,6 @@ public class GoalFragment extends Fragment {
         dialogBuilder = new AlertDialog.Builder(getActivity());
         dialogBuilder.setTitle("Great Job!!!!");
         dialogBuilder.setMessage("Weight Gain Goal: Complete!");
-        main.mp=null;
         main.mp = MediaPlayer.create(getActivity(), R.raw.applause);
         main.mp.start();
         dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -77,7 +75,6 @@ public class GoalFragment extends Fragment {
         dialogBuilder = new AlertDialog.Builder(getActivity());
         dialogBuilder.setTitle("Great Job!!!!");
         dialogBuilder.setMessage("Bench Press Goal: Complete!");
-        main.mp.stop();
         main.mp = MediaPlayer.create(getActivity(), R.raw.applause);
         main.mp.start();
         // mp.start();
@@ -89,6 +86,7 @@ public class GoalFragment extends Fragment {
                 dialog.dismiss();
             }
         });
+
         AlertDialog dialog = dialogBuilder.create();
         dialog.show();
     }
@@ -113,6 +111,7 @@ public class GoalFragment extends Fragment {
         dialogBuilder = new AlertDialog.Builder(getActivity());
         dialogBuilder.setTitle("Great Job!!!!");
         dialogBuilder.setMessage("Dead Lift Goal: Complete!");
+
         main.mp = MediaPlayer.create(getActivity(), R.raw.applause);
         main.mp.start();
         dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
