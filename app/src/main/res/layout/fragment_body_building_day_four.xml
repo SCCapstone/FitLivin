@@ -16,14 +16,6 @@
             android:orientation="vertical"
             >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="BODY BUILDING DAY 4"
-                android:id="@+id/bbDay4"
-                android:layout_gravity="center_horizontal|top"
-                android:textColor="#ffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,6 +23,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Deadlift"
         android:id="@+id/deadliftText"
+        android:layout_above="@+id/deadliftImage"
         android:layout_gravity="center_horizontal"
         android:textColor="#ffffff"
         android:textSize="25dp" />
@@ -41,6 +34,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/deadliftImage"
+        android:layout_above="@+id/deadliftDetail"
+        android:layout_below="@+id/deadliftText"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/deadlift"
         android:clickable="true"
@@ -51,6 +46,8 @@
                 android:layout_height="wrap_content"
                 android:text="4 Sets of 8 Repetitions. (2 minute rest between sets)"
                 android:id="@+id/deadliftDetail"
+                android:layout_below="@+id/deadliftImage"
+                android:layout_above="@+id/pullupText"
                 android:layout_gravity="center_horizontal"
                 android:textColor="#ffffff"
                 />
@@ -60,6 +57,8 @@
         android:layout_height="wrap_content"
         android:text="Pull-ups"
         android:id="@+id/pullupText"
+        android:layout_below="@+id/deadliftDetail"
+        android:layout_above="@+id/pullupImage"
         android:layout_gravity="center_horizontal"
         android:textColor="#ffffff"
         android:textSize="25dp"
@@ -84,7 +83,10 @@
                 android:text="3 Sets of 6-10 repetitions depending on skill level."
                 android:id="@+id/pullupDetail"
                 android:layout_gravity="center_horizontal"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:layout_below="@+id/pullupImage"
+                android:layout_above="@+id/dumbbellRowText"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -95,7 +97,7 @@
                 android:textColor="#ffffff"
                 android:textSize="25dp"
                 android:layout_below="@+id/pullupDetail"
-                android:layout_above="@+id/dumbbellRowDetail"
+                android:layout_above="@+id/dumbbellRowImage"
                 />
 
 
@@ -104,6 +106,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/dumbbellRowImage"
+        android:layout_below="@+id/dumbbellRowText"
+        android:layout_above="@+id/dumbbellRowDetail"
         android:layout_gravity="center_horizontal"
         android:clickable="true"
         android:src="@drawable/dbrow"

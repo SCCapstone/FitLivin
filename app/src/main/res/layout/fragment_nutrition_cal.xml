@@ -10,24 +10,12 @@
         android:layout_height="fill_parent"
         android:id="@+id/linview">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Nutrition Calculator"
-            android:id="@+id/textView3"
-            android:layout_gravity="center_horizontal|top"
-            android:textColor="#ffffff"
-            android:layout_marginBottom="20dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
 
         <Button
             android:layout_width="100dp"
             android:layout_height="55dp"
             android:text="Maintain"
             android:id="@+id/maintainButton"
-            android:layout_below="@+id/textView3"
             android:layout_centerHorizontal="true" />
         <Button
             android:layout_width="100dp"
@@ -35,7 +23,6 @@
             android:text="Weight Loss"
             android:id="@+id/wlossButton"
             android:layout_toStartOf="@+id/maintainButton"
-            android:layout_below="@+id/textView3"
             />
 
         <Button
@@ -43,7 +30,6 @@
             android:layout_height="55dp"
             android:text="Weight Gain"
             android:id="@+id/wGainButton"
-            android:layout_below="@+id/textView3"
             android:layout_toEndOf="@+id/maintainButton" />
 
         <Button

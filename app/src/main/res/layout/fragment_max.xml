@@ -17,17 +17,6 @@
             android:orientation="vertical"
             >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="MAX"
-            android:id="@+id/textView2"
-            android:layout_gravity="center_horizontal|top"
-            android:textColor="#ffffff"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:textSize="35dp" />
-
 
     <TextView
         android:layout_width="wrap_content"
@@ -38,7 +27,6 @@
         android:textColor="#ffffff"
         android:textSize="20dp"
         android:gravity="right|center_vertical"
-        android:layout_below="@+id/textView2"
         android:layout_marginTop="20dp"
         />
 

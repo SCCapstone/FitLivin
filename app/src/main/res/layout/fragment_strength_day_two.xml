@@ -24,7 +24,8 @@
                 android:id="@+id/squat"
                 android:textColor="#ffffff"
                 android:textSize="32dp"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                />
 
             <ImageButton
                 android:scaleType="fitXY"
@@ -55,7 +56,8 @@
                 android:textColor="#ffffff"
                 android:textSize="32dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_below="@+id/closeGripBenchImage"/>
+                android:layout_below="@+id/closeGripBenchImage"
+                />
 
             <ImageButton
                 android:scaleType="fitXY"
@@ -65,7 +67,8 @@
                 android:src="@drawable/legpress"
                 android:layout_gravity="center_horizontal"
                 android:clickable="true"
-                android:layout_below="@+id/legpress"/>
+                android:layout_below="@+id/legpress"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -85,7 +88,8 @@
                 android:textColor="#ffffff"
                 android:textSize="32dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_below="@+id/legpresspic"/>
+                android:layout_below="@+id/legpresspic"
+                />
 
             <ImageButton
                 android:scaleType="fitXY"
@@ -95,7 +99,8 @@
                 android:src="@drawable/calfpress"
                 android:layout_gravity="center_horizontal"
                 android:clickable="true"
-                android:layout_below="@+id/flyText"/>
+                android:layout_below="@+id/flyText"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -115,7 +120,8 @@
                 android:layout_gravity="left|bottom"
                 android:layout_below="@+id/calfpresspic"
                 android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                />
 
 
             <Button
@@ -123,7 +129,8 @@
                 android:layout_height="wrap_content"
                 android:text="Workout Complete!"
                 android:id="@+id/completeDay2s"
-                android:layout_gravity="right|bottom" />
+                android:layout_gravity="right|bottom"
+                />
 
 
 

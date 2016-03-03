@@ -14,15 +14,7 @@
         android:layout_width="fill_parent"
         android:orientation="vertical"
         >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="BODY BUILDING DAY 1"
-            android:id="@+id/bbDay01"
-            android:layout_gravity="center_horizontal|top"
-            android:textColor="#ffffff"
-            android:layout_above="@+id/squatTextText"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,7 +24,8 @@
         android:layout_gravity="center_horizontal"
         android:textColor="#ffffff"
         android:textSize="25dp"
-        android:layout_below="@+id/bbDay1"/>
+        android:layout_above="@+id/squatImage"
+        />
 
 
         <ImageButton
@@ -42,8 +35,10 @@
             android:id="@+id/squatImage"
             android:src="@drawable/squat"
             android:clickable="true"
+            android:layout_gravity="center_horizontal"
             android:layout_below="@+id/squatText"
-            android:layout_above="@+id/benchDetail"/>
+            android:layout_above="@+id/benchDetail"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -52,18 +47,20 @@
             android:id="@+id/benchDetail"
             android:layout_gravity="center_horizontal"
             android:layout_below="@+id/squatImage"
+            android:layout_above="@+id/extensionText"
             android:layout_marginLeft="20dp"
             android:textColor="#ffffff" />
 
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Leg Extensions"
         android:id="@+id/extensionText"
         android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="20dp"
-
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/benchDetail"
+        android:layout_above="@+id/legExtensionImage"
         android:textColor="#ffffff"
         android:textSize="25dp" />
 
@@ -72,10 +69,12 @@
         android:scaleType="fitXY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:id="@+id/legExtensionImage"
         android:src="@drawable/legextension"
         android:clickable="true"
         android:layout_below="@+id/extensionText"
+        android:layout_above="@+id/extensionDetail"
         />
 
         <TextView
@@ -86,7 +85,9 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="20dp"
             android:layout_below="@+id/legExtensionImage"
-            android:textColor="#ffffff" />
+            android:layout_above="@+id/hamstringText"
+            android:textColor="#ffffff"
+            />
 
         <TextView
             android:layout_width="178dp"
@@ -97,7 +98,9 @@
             android:layout_marginLeft="20dp"
             android:textColor="#ffffff"
             android:layout_below="@+id/extensionDetail"
-            android:textSize="25dp" />
+            android:layout_above="@+id/curlImage"
+            android:textSize="25dp"
+            />
 
 
 
@@ -105,10 +108,12 @@
         android:scaleType="fitXY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:id="@+id/curlImage"
         android:clickable="true"
-            android:layout_below="@+id/hamstringText"
-            android:src="@drawable/legcurl" />
+        android:layout_below="@+id/hamstringText"
+        android:layout_above="@+id/hamstringDetail"
+        android:src="@drawable/legcurl" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -117,7 +122,7 @@
             android:id="@+id/hamstringDetail"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="20dp"
-
+            android:layout_below="@+id/curlImage"
             android:textColor="#ffffff" />
 
 
