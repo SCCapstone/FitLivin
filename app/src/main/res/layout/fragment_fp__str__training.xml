@@ -2,59 +2,46 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/containerFitnessP"
-    android:background="@drawable/background2"
+    android:background="@drawable/background3"
     >
 
+
+
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text=" Day 1 "
-        android:id="@+id/day1Strength"
-        android:layout_below="@+id/strengthTitle"
+        android:text=" Day 3 "
+        android:id="@+id/day3Strength"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="125dp"
+        android:layout_marginBottom="25dp"
         android:layout_gravity="center"
-        android:background="#ff1b12"
         />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text=" Day 1 "
+        android:id="@+id/day1Strength"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="125dp"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text=" Day 2 "
         android:id="@+id/day2Strength"
         android:layout_below="@+id/day1Strength"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="75dp"
-        android:layout_alignStart="@+id/day1Strength"
         android:layout_gravity="center"
-        android:background="#ff271e"
+        android:height="@dimen/activity_vertical_margin"
         />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=" Day 3 "
-        android:id="@+id/day3Strength"
-        android:layout_below="@+id/day2Strength"
-        android:layout_marginBottom="25dp"
-        android:layout_alignStart="@+id/day2Strength"
-        android:layout_gravity="center"
-        android:background="#ff1d19"
-        />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Day 4 "
-        android:id="@+id/day4Strength"
-        android:layout_below="@+id/day3Strength"
-        android:layout_alignStart="@+id/day3Strength"
-        android:layout_marginBottom="-25dp"
-        android:layout_gravity="center"
-        android:background="#ff2219"
-        />
-
-    <Button
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="Day 5"
         android:id="@+id/day5Strength"
@@ -62,7 +49,17 @@
         android:layout_alignStart="@+id/day4Strength"
         android:layout_marginBottom="-75dp"
         android:layout_gravity="center"
-        android:background="#ff1f18"
+        />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text=" Day 4 "
+        android:id="@+id/day4Strength"
+        android:layout_below="@+id/day3Strength"
+        android:layout_alignStart="@+id/day3Strength"
+        android:layout_marginBottom="-25dp"
+        android:layout_gravity="center"
         />
 
     <Button
