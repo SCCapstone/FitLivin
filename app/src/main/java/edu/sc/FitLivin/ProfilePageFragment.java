@@ -186,7 +186,12 @@ public class ProfilePageFragment extends Fragment {
             }
         });
 */
-        
+        takepic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), CameraActivity.class));
+            }
+        });
 
 
         return v;
