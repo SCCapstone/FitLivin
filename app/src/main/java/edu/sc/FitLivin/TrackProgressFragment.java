@@ -10,6 +10,8 @@ package edu.sc.FitLivin;
 
 
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +20,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -64,10 +67,26 @@ public class TrackProgressFragment extends Fragment {
 
     public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
         ParseQuery userquery = ParseUser.getQuery();
         userquery.whereEqualTo("objectId",ParseUser.getCurrentUser().getObjectId());
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fragment_track_progress, container, false);
+
+        Button backBtn = (Button) v.findViewById(R.id.trackprogressBack);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HomePageFragment fragment1 = new HomePageFragment();
+                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.replace(R.id.container, fragment1);
+                ft.addToBackStack(null);
+                ft.commit();
+            }
+        });
+
         getActivity().getActionBar()
                 .setTitle("Track Progress");
         //Creates back button to go back to main page
