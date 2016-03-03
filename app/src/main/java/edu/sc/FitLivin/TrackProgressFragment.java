@@ -23,6 +23,7 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.jjoe64.graphview.DefaultLabelFormatter;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.LegendRenderer;
 import com.jjoe64.graphview.helper.StaticLabelsFormatter;
@@ -119,37 +120,81 @@ public class TrackProgressFragment extends Fragment {
                         if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
                             for (int i = 0; i < objects.size(); i++) {
                                 weight.add(objects.get(i).get("Weight").toString());
-                                dates.add(objects.get(i).getCreatedAt());
+                                dates.add(objects.get(i).getCreatedAt().getMonth());
+
                                 Log.d(dates.get(i).toString(), "done: ");
                             }
 
+                            if(weight.size() < 2){
+                                Toast.makeText(getActivity().getApplicationContext(),"You need to add more data to graph",Toast.LENGTH_LONG).show();
+                            }
+                            else {
 
-                            LineGraphSeries<DataPoint> mSeries1 = new LineGraphSeries<DataPoint>(Datagenerator(weight));
-                            LineGraphSeries<DataPoint> mSeries2 = new LineGraphSeries<DataPoint>(WeightGenerator(weight, dates));
-                            mSeries2.setTitle("Dates");
-                            mSeries1.setTitle("Weights");
-                            mSeries1.setThickness(7);
-                            mSeries2.setThickness(7);
-                            mSeries2.setColor(Color.YELLOW);
-                            mSeries1.setColor(Color.RED);
-                            mSeries1.isDrawDataPoints();
-                            mSeries1.setOnDataPointTapListener(new OnDataPointTapListener() {
-                                @Override
-                                public void onTap(Series series, DataPointInterface dataPoint) {
-                                    Toast.makeText(getActivity(), "this is the data point: " + dataPoint, Toast.LENGTH_SHORT).show();
+
+                                LineGraphSeries<DataPoint> mSeries1 = new LineGraphSeries<DataPoint>(Datagenerator(weight));
+                                LineGraphSeries<DataPoint> mSeries2 = new LineGraphSeries<DataPoint>(WeightGenerator(weight, dates));
+                                mSeries2.setTitle("Dates");
+                                mSeries1.setTitle("Weights");
+                                mSeries1.setThickness(7);
+                                mSeries2.setThickness(7);
+                                mSeries2.setColor(Color.YELLOW);
+                                mSeries1.setColor(Color.RED);
+                                mSeries1.isDrawDataPoints();
+                                mSeries1.setOnDataPointTapListener(new OnDataPointTapListener() {
+                                    @Override
+                                    public void onTap(Series series, DataPointInterface dataPoint) {
+                                        Toast.makeText(getActivity(), "this is the data point: " + dataPoint, Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                                mSeries2.setDrawDataPoints(true);
+                                mSeries1.setDrawDataPoints(true);
+
+
+                                //graph.addSeries(mSeries1);
+                                graph.addSeries(mSeries2);
+
+
+                                graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter() {
+                                    @Override
+                                    public String formatLabel(double value, boolean isValueX) {
+                                        if (isValueX) {
+                                            //for (int i = 0; i < dates.size(); i++) {
+                                            //value = Double.parseDouble(dates.get(i).toString());
+                                            return super.formatLabel(value, isValueX);
+                                            // }
+
+
+                                        } else {
+
+                                            //for (int i = 0; i < weight.size(); i++) {
+                                            //value =  Double.parseDouble(weight.get(i).toString());
+                                            return super.formatLabel(value, isValueX);
+                                            //}
+
+
+                                        }
+
+                                    }
+                                });
+
+                                if (weight.size() == 1) {
+                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                                    label.setHorizontalLabels(new String[]{"0", "Jan"});
+                                    graph.getGridLabelRenderer().setLabelFormatter(label);
+                                } else if (weight.size() == 2) {
+                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                                    label.setHorizontalLabels(new String[]{"Jan", "Feb"});
+                                    graph.getGridLabelRenderer().setLabelFormatter(label);
+                                } else if (weight.size() == 3) {
+                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                                    label.setHorizontalLabels(new String[]{"Jan", "Feb", "March"});
+                                    graph.getGridLabelRenderer().setLabelFormatter(label);
+                                } else if (weight.size() == 4) {
+                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                                    label.setHorizontalLabels(new String[]{"Jan", "Feb", "March", "April"});
+                                    graph.getGridLabelRenderer().setLabelFormatter(label);
                                 }
-                            });
-                            mSeries2.setDrawDataPoints(true);
-                            mSeries1.setDrawDataPoints(true);
 
-
-                            graph.addSeries(mSeries1);
-                            // graph.addSeries(mSeries2);
-
-
-                            StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                            label.setHorizontalLabels(new String[]{"0", "Jan", "Feb", "March"});
-                            label.setVerticalLabels(new String[]{"0", "100", "150", "200", "250"});
                            /* graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter(getActivity(),dates.get()) {
                                 @Override
                                 public String formatLabel(double value, boolean isValueX) {
@@ -165,25 +210,21 @@ public class TrackProgressFragment extends Fragment {
 
 */
 
-                            graph.getGridLabelRenderer().setVerticalLabelsSecondScaleColor(Color.WHITE);
-                            graph.getGridLabelRenderer().setHorizontalAxisTitleColor(Color.WHITE);
-                            graph.getGridLabelRenderer().setLabelsSpace(2);
+                                graph.getGridLabelRenderer().setVerticalLabelsSecondScaleColor(Color.WHITE);
+                                graph.getGridLabelRenderer().setHorizontalAxisTitleColor(Color.WHITE);
+                                graph.getGridLabelRenderer().setLabelsSpace(2);
 
-                            graph.getViewport().setMaxX(weight.size());
-                            graph.getGridLabelRenderer().setGridColor(Color.WHITE);
-                            graph.getViewport().setScrollable(true);
-                            graph.getViewport().setScrollable(true);
-                            graph.getLegendRenderer().isVisible();
-                            graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
-                            graph.getLegendRenderer().setBackgroundColor(Color.WHITE);
-
-                            graph.getViewport().setMaxX(weight.size());
-
-                            graph.getGridLabelRenderer().setLabelFormatter(label);
-                            graph.getGridLabelRenderer().setVerticalLabelsColor(Color.WHITE);
-                            graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.WHITE);
-                            graph.getGridLabelRenderer().setGridColor(Color.GRAY);
-
+                                graph.getGridLabelRenderer().setGridColor(Color.WHITE);
+                                graph.getViewport().setScrollable(true);
+                                graph.getViewport().setScrollable(true);
+                                graph.getLegendRenderer().isVisible();
+                                graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
+                                graph.getLegendRenderer().setBackgroundColor(Color.WHITE);
+                                graph.getGridLabelRenderer().setLabelHorizontalHeight(weight.size());
+                                graph.getGridLabelRenderer().setVerticalLabelsColor(Color.WHITE);
+                                graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.WHITE);
+                                graph.getGridLabelRenderer().setGridColor(Color.GRAY);
+                            }
 
                             ArrayAdapter weightArrayAdapter =
                                     new ArrayAdapter<String>(getActivity(),
@@ -223,55 +264,96 @@ public class TrackProgressFragment extends Fragment {
                                             R.layout.text_view, maxBenchweight);
                             weightList.setAdapter(weightArrayAdapter);
 
+                            if(maxBenchweight.size() < 2){
+                                Toast.makeText(getActivity().getApplicationContext(),"You need to add more data to graph",Toast.LENGTH_LONG).show();
+                            }
+                            else {
 
-                            LineGraphSeries<DataPoint> mSeries3 = new LineGraphSeries<DataPoint>(Datagenerator(maxBenchweight));
-                            LineGraphSeries<DataPoint> mSeries4 = new LineGraphSeries<DataPoint>(WeightGenerator(weight, dates));
-                            mSeries3.setTitle("Max bench");
-                            mSeries3.setThickness(7);
-                            mSeries4.setThickness(7);
-                            mSeries3.setColor(Color.YELLOW);
-                            mSeries4.setColor(Color.RED);
-                            mSeries3.isDrawDataPoints();
-                            mSeries3.setOnDataPointTapListener(new OnDataPointTapListener() {
-                                @Override
-                                public void onTap(Series series, DataPointInterface dataPoint) {
-                                    Toast.makeText(getActivity(), "this is the data point: " + dataPoint, Toast.LENGTH_SHORT).show();
+                                LineGraphSeries<DataPoint> mSeries3 = new LineGraphSeries<DataPoint>(Datagenerator(maxBenchweight));
+                                LineGraphSeries<DataPoint> mSeries4 = new LineGraphSeries<DataPoint>(WeightGenerator(weight, dates));
+                                mSeries3.setTitle("Max bench");
+                                mSeries3.setThickness(7);
+                                mSeries4.setThickness(7);
+                                mSeries3.setColor(Color.YELLOW);
+                                mSeries4.setColor(Color.RED);
+                                mSeries3.isDrawDataPoints();
+                                mSeries3.setOnDataPointTapListener(new OnDataPointTapListener() {
+                                    @Override
+                                    public void onTap(Series series, DataPointInterface dataPoint) {
+                                        Toast.makeText(getActivity(), "this is the data point: " + dataPoint, Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                                mSeries4.setDrawDataPoints(true);
+                                mSeries3.setDrawDataPoints(true);
+
+
+                                graph.addSeries(mSeries3);
+                                // graph.addSeries(mSeries2);
+
+
+                                graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter() {
+                                    @Override
+                                    public String formatLabel(double value, boolean isValueX) {
+                                        if (isValueX) {
+                                            //for (int i = 0; i < dates.size(); i++) {
+                                            //value = Double.parseDouble(dates.get(i).toString());
+                                            return super.formatLabel(value, isValueX);
+                                            // }
+
+
+                                        } else {
+
+                                            //for (int i = 0; i < weight.size(); i++) {
+                                            //value =  Double.parseDouble(weight.get(i).toString());
+                                            return super.formatLabel(value, isValueX);
+                                            //}
+
+
+                                        }
+
+                                    }
+                                });
+
+                                if (maxBenchweight.size() == 1) {
+                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                                    label.setHorizontalLabels(new String[]{"0", "Jan"});
+                                    graph.getGridLabelRenderer().setLabelFormatter(label);
+                                } else if (maxBenchweight.size() == 2) {
+                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                                    label.setHorizontalLabels(new String[]{"Jan", "Feb"});
+                                    graph.getGridLabelRenderer().setLabelFormatter(label);
+                                } else if (maxBenchweight.size() == 3) {
+                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                                    label.setHorizontalLabels(new String[]{"Jan", "Feb", "March"});
+                                    graph.getGridLabelRenderer().setLabelFormatter(label);
+                                } else if (maxBenchweight.size() == 4) {
+                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                                    label.setHorizontalLabels(new String[]{"Jan", "Feb", "March", "April"});
+                                    graph.getGridLabelRenderer().setLabelFormatter(label);
                                 }
-                            });
-                            mSeries4.setDrawDataPoints(true);
-                            mSeries3.setDrawDataPoints(true);
 
 
-                            graph.addSeries(mSeries3);
-                            // graph.addSeries(mSeries2);
+                                graph.getGridLabelRenderer().setVerticalLabelsSecondScaleColor(Color.WHITE);
+                                graph.getGridLabelRenderer().setHorizontalAxisTitleColor(Color.WHITE);
+                                graph.getGridLabelRenderer().setLabelsSpace(2);
+
+                                graph.getViewport().setMaxX(maxBenchweight.size());
+                                graph.getGridLabelRenderer().setGridColor(Color.WHITE);
+                                graph.getViewport().setScrollable(true);
+                                graph.getViewport().setScrollable(true);
+                                graph.getLegendRenderer().isVisible();
+                                graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
+                                graph.getLegendRenderer().setBackgroundColor(Color.WHITE);
+
+                                graph.getViewport().setMaxX(maxBenchweight.size());
 
 
-                            StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                            label.setHorizontalLabels(new String[]{"0", "Jan", "Feb", "March"});
-                            label.setVerticalLabels(new String[]{"0", "100", "150", "200", "250"});
+                                graph.getGridLabelRenderer().setVerticalLabelsColor(Color.WHITE);
+                                graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.WHITE);
+                                graph.getGridLabelRenderer().setGridColor(Color.GRAY);
 
 
-                            graph.getGridLabelRenderer().setVerticalLabelsSecondScaleColor(Color.WHITE);
-                            graph.getGridLabelRenderer().setHorizontalAxisTitleColor(Color.WHITE);
-                            graph.getGridLabelRenderer().setLabelsSpace(2);
-
-                            graph.getViewport().setMaxX(maxBenchweight.size());
-                            graph.getGridLabelRenderer().setGridColor(Color.WHITE);
-                            graph.getViewport().setScrollable(true);
-                            graph.getViewport().setScrollable(true);
-                            graph.getLegendRenderer().isVisible();
-                            graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
-                            graph.getLegendRenderer().setBackgroundColor(Color.WHITE);
-
-                            graph.getViewport().setMaxX(maxBenchweight.size());
-
-                            graph.getGridLabelRenderer().setLabelFormatter(label);
-                            graph.getGridLabelRenderer().setVerticalLabelsColor(Color.WHITE);
-                            graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.WHITE);
-                            graph.getGridLabelRenderer().setGridColor(Color.GRAY);
-
-
-
+                            }
 
 
                         } else {
@@ -305,56 +387,93 @@ public class TrackProgressFragment extends Fragment {
                                             R.layout.text_view, maxsquats);
                             weightList.setAdapter(weightArrayAdapter);
 
+                            if(maxsquats.size() < 2){
+                                Toast.makeText(getActivity().getApplicationContext(),"You need to add more data to graph",Toast.LENGTH_LONG).show();
+                            }
+                            else {
+                                LineGraphSeries<DataPoint> mSeries3 = new LineGraphSeries<DataPoint>(Datagenerator(maxsquats));
+                                LineGraphSeries<DataPoint> mSeries4 = new LineGraphSeries<DataPoint>(WeightGenerator(weight, dates));
+                                mSeries3.setTitle("Max squats");
+                                mSeries3.setThickness(7);
+                                mSeries4.setThickness(7);
+                                mSeries3.setColor(Color.CYAN);
+                                mSeries4.setColor(Color.RED);
+                                mSeries3.isDrawDataPoints();
+                                mSeries3.setOnDataPointTapListener(new OnDataPointTapListener() {
+                                    @Override
+                                    public void onTap(Series series, DataPointInterface dataPoint) {
+                                        Toast.makeText(getActivity(), "this is the data point: " + dataPoint, Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                                mSeries4.setDrawDataPoints(true);
+                                mSeries3.setDrawDataPoints(true);
 
-                            LineGraphSeries<DataPoint> mSeries3 = new LineGraphSeries<DataPoint>(Datagenerator(maxsquats));
-                            LineGraphSeries<DataPoint> mSeries4 = new LineGraphSeries<DataPoint>(WeightGenerator(weight, dates));
-                            mSeries3.setTitle("Max bench");
-                            mSeries3.setThickness(7);
-                            mSeries4.setThickness(7);
-                            mSeries3.setColor(Color.CYAN);
-                            mSeries4.setColor(Color.RED);
-                            mSeries3.isDrawDataPoints();
-                            mSeries3.setOnDataPointTapListener(new OnDataPointTapListener() {
-                                @Override
-                                public void onTap(Series series, DataPointInterface dataPoint) {
-                                    Toast.makeText(getActivity(), "this is the data point: " + dataPoint, Toast.LENGTH_SHORT).show();
+
+                                graph.addSeries(mSeries3);
+                                // graph.addSeries(mSeries2);
+                                graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter() {
+                                    @Override
+                                    public String formatLabel(double value, boolean isValueX) {
+                                        if (isValueX) {
+                                            //for (int i = 0; i < dates.size(); i++) {
+                                            //value = Double.parseDouble(dates.get(i).toString());
+                                            return super.formatLabel(value, isValueX);
+                                            // }
+
+
+                                        } else {
+
+                                            //for (int i = 0; i < weight.size(); i++) {
+                                            //value =  Double.parseDouble(weight.get(i).toString());
+                                            return super.formatLabel(value, isValueX);
+                                            //}
+
+
+                                        }
+
+                                    }
+                                });
+
+                                if (maxsquats.size() == 1) {
+                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                                    label.setHorizontalLabels(new String[]{"0", "Jan"});
+                                    graph.getGridLabelRenderer().setLabelFormatter(label);
+                                } else if (maxsquats.size() == 2) {
+                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                                    label.setHorizontalLabels(new String[]{"Jan", "Feb"});
+                                    graph.getGridLabelRenderer().setLabelFormatter(label);
+                                } else if (maxsquats.size() == 3) {
+                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                                    label.setHorizontalLabels(new String[]{"Jan", "Feb", "March"});
+                                    graph.getGridLabelRenderer().setLabelFormatter(label);
+                                } else if (maxsquats.size() == 4) {
+                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                                    label.setHorizontalLabels(new String[]{"Jan", "Feb", "March", "April"});
+                                    graph.getGridLabelRenderer().setLabelFormatter(label);
                                 }
-                            });
-                            mSeries4.setDrawDataPoints(true);
-                            mSeries3.setDrawDataPoints(true);
-
-
-                            graph.addSeries(mSeries3);
-                            // graph.addSeries(mSeries2);
-
-
-                            StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                            label.setHorizontalLabels(new String[]{"0", "Jan", "Feb", "March"});
-                            label.setVerticalLabels(new String[]{"0", "100", "150", "200", "250"});
-
-
-                            graph.getGridLabelRenderer().setVerticalLabelsSecondScaleColor(Color.WHITE);
-                            graph.getGridLabelRenderer().setHorizontalAxisTitleColor(Color.WHITE);
-                            graph.getGridLabelRenderer().setLabelsSpace(2);
-
-                            graph.getViewport().setMaxX(maxsquats.size());
-                            graph.getGridLabelRenderer().setGridColor(Color.WHITE);
-                            graph.getViewport().setScrollable(true);
-                            graph.getViewport().setScrollable(true);
-                            graph.getLegendRenderer().isVisible();
-                            graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
-                            graph.getLegendRenderer().setBackgroundColor(Color.WHITE);
-
-                            graph.getViewport().setMaxX(maxsquats.size());
-
-                            graph.getGridLabelRenderer().setLabelFormatter(label);
-                            graph.getGridLabelRenderer().setVerticalLabelsColor(Color.WHITE);
-                            graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.WHITE);
-                            graph.getGridLabelRenderer().setGridColor(Color.GRAY);
 
 
 
+                                graph.getGridLabelRenderer().setVerticalLabelsSecondScaleColor(Color.WHITE);
+                                graph.getGridLabelRenderer().setHorizontalAxisTitleColor(Color.WHITE);
+                                graph.getGridLabelRenderer().setLabelsSpace(2);
 
+                                graph.getViewport().setMaxX(maxsquats.size());
+                                graph.getGridLabelRenderer().setGridColor(Color.WHITE);
+                                graph.getViewport().setScrollable(true);
+                                graph.getViewport().setScrollable(true);
+                                graph.getLegendRenderer().isVisible();
+                                graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
+                                graph.getLegendRenderer().setBackgroundColor(Color.WHITE);
+
+                                graph.getViewport().setMaxX(maxsquats.size());
+
+                                graph.getGridLabelRenderer().setVerticalLabelsColor(Color.WHITE);
+                                graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.WHITE);
+                                graph.getGridLabelRenderer().setGridColor(Color.GRAY);
+
+
+                            }
 
                         } else {
                             Toast.makeText(getActivity(), "Did not load", Toast.LENGTH_LONG).show();
@@ -386,57 +505,92 @@ public class TrackProgressFragment extends Fragment {
                                     new ArrayAdapter<String>(getActivity(),
                                             R.layout.text_view, maxdeadlift);
                             weightList.setAdapter(weightArrayAdapter);
+                            if(maxdeadlift.size() < 2){
+                                Toast.makeText(getActivity().getApplicationContext(),"You need to add more data to graph",Toast.LENGTH_LONG).show();
+                            }
+                            else {
+
+                                LineGraphSeries<DataPoint> mSeries3 = new LineGraphSeries<DataPoint>(Datagenerator(maxdeadlift));
+                                LineGraphSeries<DataPoint> mSeries4 = new LineGraphSeries<DataPoint>(WeightGenerator(weight, dates));
+                                mSeries3.setTitle("Max Deadlift");
+                                mSeries3.setThickness(7);
+                                mSeries4.setThickness(7);
+                                mSeries3.setColor(Color.BLUE);
+                                mSeries4.setColor(Color.RED);
+                                mSeries3.isDrawDataPoints();
+                                mSeries3.setOnDataPointTapListener(new OnDataPointTapListener() {
+                                    @Override
+                                    public void onTap(Series series, DataPointInterface dataPoint) {
+                                        Toast.makeText(getActivity(), "this is the data point: " + dataPoint, Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                                mSeries4.setDrawDataPoints(true);
+                                mSeries3.setDrawDataPoints(true);
 
 
-                            LineGraphSeries<DataPoint> mSeries3 = new LineGraphSeries<DataPoint>(Datagenerator(maxdeadlift));
-                            LineGraphSeries<DataPoint> mSeries4 = new LineGraphSeries<DataPoint>(WeightGenerator(weight, dates));
-                            mSeries3.setTitle("Max Deadlift");
-                            mSeries3.setThickness(7);
-                            mSeries4.setThickness(7);
-                            mSeries3.setColor(Color.BLUE);
-                            mSeries4.setColor(Color.RED);
-                            mSeries3.isDrawDataPoints();
-                            mSeries3.setOnDataPointTapListener(new OnDataPointTapListener() {
-                                @Override
-                                public void onTap(Series series, DataPointInterface dataPoint) {
-                                    Toast.makeText(getActivity(), "this is the data point: " + dataPoint, Toast.LENGTH_SHORT).show();
+                                graph.addSeries(mSeries3);
+                                // graph.addSeries(mSeries2);
+                                graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter() {
+                                    @Override
+                                    public String formatLabel(double value, boolean isValueX) {
+                                        if (isValueX) {
+                                            //for (int i = 0; i < dates.size(); i++) {
+                                            //value = Double.parseDouble(dates.get(i).toString());
+                                            return super.formatLabel(value, isValueX);
+                                            // }
+
+
+                                        } else {
+
+                                            //for (int i = 0; i < weight.size(); i++) {
+                                            //value =  Double.parseDouble(weight.get(i).toString());
+                                            return super.formatLabel(value, isValueX);
+                                            //}
+
+
+                                        }
+
+                                    }
+                                });
+
+                                if (maxdeadlift.size() == 1) {
+                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                                    label.setHorizontalLabels(new String[]{"0", "Jan"});
+                                    graph.getGridLabelRenderer().setLabelFormatter(label);
+                                } else if (maxdeadlift.size() == 2) {
+                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                                    label.setHorizontalLabels(new String[]{"Jan", "Feb"});
+                                    graph.getGridLabelRenderer().setLabelFormatter(label);
+                                } else if (maxdeadlift.size() == 3) {
+                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                                    label.setHorizontalLabels(new String[]{"Jan", "Feb", "March"});
+                                    graph.getGridLabelRenderer().setLabelFormatter(label);
+                                } else if (maxdeadlift.size() == 4) {
+                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                                    label.setHorizontalLabels(new String[]{"Jan", "Feb", "March", "April"});
+                                    graph.getGridLabelRenderer().setLabelFormatter(label);
                                 }
-                            });
-                            mSeries4.setDrawDataPoints(true);
-                            mSeries3.setDrawDataPoints(true);
 
 
-                            graph.addSeries(mSeries3);
-                            // graph.addSeries(mSeries2);
-
-
-                            StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                            label.setHorizontalLabels(new String[]{"0", "Jan", "Feb", "March"});
-                            label.setVerticalLabels(new String[]{"0", "100", "150", "200", "250"});
-
-
-                            graph.getGridLabelRenderer().setVerticalLabelsSecondScaleColor(Color.WHITE);
-                            graph.getGridLabelRenderer().setHorizontalAxisTitleColor(Color.WHITE);
-                            graph.getGridLabelRenderer().setLabelsSpace(2);
-
-                            graph.getViewport().setMaxX(maxdeadlift.size());
-                            graph.getGridLabelRenderer().setGridColor(Color.WHITE);
-                            graph.getViewport().setScrollable(true);
-                            graph.getViewport().setScrollable(true);
-                            graph.getLegendRenderer().isVisible();
-                            graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
-                            graph.getLegendRenderer().setBackgroundColor(Color.WHITE);
-
-                            graph.getViewport().setMaxX(maxdeadlift.size());
-
-                            graph.getGridLabelRenderer().setLabelFormatter(label);
-                            graph.getGridLabelRenderer().setVerticalLabelsColor(Color.WHITE);
-                            graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.WHITE);
-                            graph.getGridLabelRenderer().setGridColor(Color.GRAY);
+                                graph.getGridLabelRenderer().setVerticalLabelsSecondScaleColor(Color.WHITE);
+                                graph.getGridLabelRenderer().setHorizontalAxisTitleColor(Color.WHITE);
 
 
 
+                                graph.getGridLabelRenderer().setGridColor(Color.WHITE);
+                                graph.getViewport().setScrollable(true);
+                                graph.getViewport().setScrollable(true);
+                                graph.getLegendRenderer().isVisible();
+                                graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
 
+
+
+                                graph.getGridLabelRenderer().setVerticalLabelsColor(Color.WHITE);
+                                graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.WHITE);
+                                graph.getGridLabelRenderer().setGridColor(Color.GRAY);
+
+
+                            }
 
                         } else {
                             Toast.makeText(getActivity(), "Did not load", Toast.LENGTH_LONG).show();
@@ -469,55 +623,94 @@ public class TrackProgressFragment extends Fragment {
                                     new ArrayAdapter<String>(getActivity(),
                                             R.layout.text_view, maxmiletime);
                             weightList.setAdapter(weightArrayAdapter);
+                            if(maxmiletime.size() < 2){
+                                Toast.makeText(getActivity().getApplicationContext(),"You need to add more data to graph",Toast.LENGTH_LONG).show();
+                            }
+                            else {
+
+                                LineGraphSeries<DataPoint> mSeries3 = new LineGraphSeries<DataPoint>(Datagenerator(maxmiletime));
+                                LineGraphSeries<DataPoint> mSeries4 = new LineGraphSeries<DataPoint>(WeightGenerator(weight, dates));
+                                mSeries3.setTitle("Max Mile Time");
+                                mSeries3.setThickness(7);
+                                mSeries4.setThickness(7);
+                                mSeries3.setColor(Color.GREEN);
+                                mSeries4.setColor(Color.RED);
+                                mSeries3.isDrawDataPoints();
+                                mSeries3.setOnDataPointTapListener(new OnDataPointTapListener() {
+                                    @Override
+                                    public void onTap(Series series, DataPointInterface dataPoint) {
+                                        Toast.makeText(getActivity(), "this is the data point: " + dataPoint, Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                                mSeries4.setDrawDataPoints(true);
+                                mSeries3.setDrawDataPoints(true);
 
 
-                            LineGraphSeries<DataPoint> mSeries3 = new LineGraphSeries<DataPoint>(Datagenerator(maxmiletime));
-                            LineGraphSeries<DataPoint> mSeries4 = new LineGraphSeries<DataPoint>(WeightGenerator(weight, dates));
-                            mSeries3.setTitle("Max Mile Time");
-                            mSeries3.setThickness(7);
-                            mSeries4.setThickness(7);
-                            mSeries3.setColor(Color.GREEN);
-                            mSeries4.setColor(Color.RED);
-                            mSeries3.isDrawDataPoints();
-                            mSeries3.setOnDataPointTapListener(new OnDataPointTapListener() {
-                                @Override
-                                public void onTap(Series series, DataPointInterface dataPoint) {
-                                    Toast.makeText(getActivity(), "this is the data point: " + dataPoint, Toast.LENGTH_SHORT).show();
+                                graph.addSeries(mSeries3);
+                                // graph.addSeries(mSeries2);
+                                graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter() {
+                                    @Override
+                                    public String formatLabel(double value, boolean isValueX) {
+                                        if (isValueX) {
+                                            //for (int i = 0; i < dates.size(); i++) {
+                                            //value = Double.parseDouble(dates.get(i).toString());
+                                            return super.formatLabel(value, isValueX);
+                                            // }
+
+
+                                        } else {
+
+                                            //for (int i = 0; i < weight.size(); i++) {
+                                            //value =  Double.parseDouble(weight.get(i).toString());
+                                            return super.formatLabel(value, isValueX);
+                                            //}
+
+
+                                        }
+
+                                    }
+                                });
+
+                                if (maxmiletime.size() == 1) {
+                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                                    label.setHorizontalLabels(new String[]{"0", "Jan"});
+                                    graph.getGridLabelRenderer().setLabelFormatter(label);
+                                } else if (maxmiletime.size() == 2) {
+                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                                    label.setHorizontalLabels(new String[]{"Jan", "Feb"});
+                                    graph.getGridLabelRenderer().setLabelFormatter(label);
+                                } else if (maxmiletime.size() == 3) {
+                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                                    label.setHorizontalLabels(new String[]{"Jan", "Feb", "March"});
+                                    graph.getGridLabelRenderer().setLabelFormatter(label);
+                                } else if (maxmiletime.size() == 4) {
+                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
+                                    label.setHorizontalLabels(new String[]{"Jan", "Feb", "March", "April"});
+                                    graph.getGridLabelRenderer().setLabelFormatter(label);
                                 }
-                            });
-                            mSeries4.setDrawDataPoints(true);
-                            mSeries3.setDrawDataPoints(true);
-
-
-                            graph.addSeries(mSeries3);
-                            // graph.addSeries(mSeries2);
-
-
-                            StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                            label.setHorizontalLabels(new String[]{"0", "Jan", "Feb", "March"});
-                            label.setVerticalLabels(new String[]{"0", "100", "150", "200", "250"});
-
-
-                            graph.getGridLabelRenderer().setVerticalLabelsSecondScaleColor(Color.WHITE);
-                            graph.getGridLabelRenderer().setHorizontalAxisTitleColor(Color.WHITE);
-                            graph.getGridLabelRenderer().setLabelsSpace(2);
-
-                            graph.getViewport().setMaxX(maxmiletime.size());
-                            graph.getGridLabelRenderer().setGridColor(Color.WHITE);
-                            graph.getViewport().setScrollable(true);
-                            graph.getViewport().setScrollable(true);
-                            graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
-                            graph.getLegendRenderer().setBackgroundColor(Color.WHITE);
-
-                            graph.getViewport().setMaxX(maxmiletime.size());
-
-                            graph.getGridLabelRenderer().setLabelFormatter(label);
-                            graph.getGridLabelRenderer().setVerticalLabelsColor(Color.WHITE);
-                            graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.WHITE);
-                            graph.getGridLabelRenderer().setGridColor(Color.GRAY);
 
 
 
+                                graph.getGridLabelRenderer().setVerticalLabelsSecondScaleColor(Color.WHITE);
+                                graph.getGridLabelRenderer().setHorizontalAxisTitleColor(Color.WHITE);
+                                graph.getGridLabelRenderer().setLabelsSpace(2);
+
+                                graph.getViewport().setMaxX(maxmiletime.size());
+                                graph.getGridLabelRenderer().setGridColor(Color.WHITE);
+                                graph.getViewport().setScrollable(true);
+                                graph.getViewport().setScrollable(true);
+                                graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
+                                graph.getLegendRenderer().setBackgroundColor(Color.WHITE);
+
+                                graph.getViewport().setMaxX(maxmiletime.size());
+
+
+                                graph.getGridLabelRenderer().setVerticalLabelsColor(Color.WHITE);
+                                graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.WHITE);
+                                graph.getGridLabelRenderer().setGridColor(Color.GRAY);
+
+
+                            }
 
 
                         } else {
@@ -542,9 +735,8 @@ public class TrackProgressFragment extends Fragment {
 
 
         for (int i = 0; i < weight.size(); i++) {
-
-            double x = dates.get(i).getMonth();
-            Log.d(String.valueOf(dates.get(i).getDate()), "here is the time: ");
+            double x = i;
+            //double x = Double.parseDouble(dates.get(i).toString());
             double y = Double.parseDouble(weight.get(i));
             DataPoint v = new DataPoint(x, y);
             values[i] = v;

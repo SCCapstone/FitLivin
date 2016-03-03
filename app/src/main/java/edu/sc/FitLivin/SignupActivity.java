@@ -124,8 +124,7 @@ public class SignupActivity extends Activity {
                     @Override
                     public void done(ParseException e) {
                         dlg.dismiss();
-                        if (e != null) {
-                            // Show the error message
+                        if (e != null) {                                                       // Show the error message
                             Toast.makeText(SignupActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
                         } else {
                             // Start an intent for the dispatch activity

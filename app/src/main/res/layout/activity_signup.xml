@@ -42,6 +42,7 @@
                 android:textColor="#ffffff"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
+                android:maxLength="22"
                 android:singleLine="true"
                 android:textSize="20dp"
                 android:textIsSelectable="true" />
@@ -54,6 +55,7 @@
                 android:textColor="#ffffff"
                 android:inputType="textPersonName"
                 android:maxLines="1"
+                android:maxLength="10"
                 android:singleLine="true"
                 android:textSize="20dp"
                 android:textIsSelectable="true" />
@@ -67,6 +69,7 @@
                 android:textColor="#ffffff"
                 android:inputType="textPassword"
                 android:maxLines="1"
+                android:maxLength="10"
                 android:singleLine="true"
                 android:textSize="20dp"
                 android:textIsSelectable="false" />
@@ -79,6 +82,7 @@
                 android:textColor="#ffffff"
                 android:inputType="textPassword"
                 android:maxLines="1"
+                android:maxLength="10"
                 android:singleLine="true"
                 android:textSize="20dp"
                 android:textIsSelectable="false" />
@@ -90,6 +94,7 @@
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:inputType="phone"
+                android:maxLength="10"
                 android:maxLines="1"
                 android:singleLine="true" />
             <RadioGroup android:layout_height="wrap_content" android:id="@+id/gender_group"

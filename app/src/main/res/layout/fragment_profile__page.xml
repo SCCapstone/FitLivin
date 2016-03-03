@@ -16,11 +16,10 @@
         android:layout_height="wrap_content"
         android:text="BMI"
         android:id="@+id/profileBMIButton"
-        android:layout_gravity="center"
-        android:layout_alignTop="@+id/saveButtonProfile"
-        android:layout_alignEnd="@+id/CurrH"
-        android:layout_marginLeft="30dp"
-        />
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal"
+
+        android:layout_centerHorizontal="true" />
 
 
         <TextView
@@ -31,9 +30,9 @@
         android:textSize="19dp"
         android:text="Username"
         android:textColor="#ffffff"
-        android:layout_marginLeft="30dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/editprofile" />
+
+
+            android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="130dp"
@@ -73,7 +72,6 @@
         android:text="Height"
         android:textSize="20dp"
         android:textIsSelectable="true"
-
         android:layout_centerVertical="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="50dp"
@@ -100,8 +98,8 @@
             android:id="@+id/saveButtonProfile"
             android:layout_gravity="left"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignEnd="@+id/CurrH"
             />
 
         <Button
@@ -110,7 +108,9 @@
             android:layout_height="wrap_content"
             android:text="Edit Profile"
             android:id="@+id/editprofile"
-            android:layout_marginLeft="32dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+
             android:layout_alignBottom="@+id/profilepicview"
             android:layout_alignStart="@+id/height" />
 
@@ -121,7 +121,10 @@
             android:id="@+id/pic"
             android:onClick="process"
             android:layout_below="@+id/profilepicview"
-            android:layout_toEndOf="@+id/name" />
+            android:layout_gravity="center_horizontal"
+
+
+            android:layout_centerHorizontal="true" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -132,14 +135,18 @@
             app:civ_border_width="2dp"
             app:civ_border_color="#c28585"
             android:layout_below="@+id/name"
-            android:layout_alignEnd="@+id/CurrH" />
+            android:layout_gravity="center_horizontal"
+            android:layout_centerHorizontal="true" />
+
+            />
 
         <ImageView
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:id="@+id/test"
             android:layout_below="@+id/pic"
-            android:layout_alignStart="@+id/profilepicview" />
+            android:layout_alignStart="@+id/profilepicview"
+            />
 
     </RelativeLayout>
 

@@ -7,19 +7,16 @@
 
 package edu.sc.FitLivin;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -39,7 +36,6 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 import java.io.File;
-import java.net.URI;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -94,6 +90,7 @@ public class ProfilePageFragment extends Fragment {
         final EditText editHeight = (EditText) v.findViewById(R.id.height);
         final EditText editWeight = (EditText) v.findViewById(R.id.weight);
         //final TextView currentName = (TextView) v.findViewById(R.id.CurrN);
+        final Button takepic = (Button) v.findViewById(R.id.pic);
         final TextView currentHeight = (TextView) v.findViewById(R.id.CurrH);
         final TextView currentWeight = (TextView) v.findViewById(R.id.CurrW);
 
@@ -189,6 +186,12 @@ public class ProfilePageFragment extends Fragment {
             }
         });
 */
+        takepic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), CameraActivity.class));
+            }
+        });
 
 
         return v;

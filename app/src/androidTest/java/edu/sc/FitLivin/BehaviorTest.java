@@ -45,26 +45,26 @@ public class BehaviorTest {
 
     @Test
     public void ShouldBeAbleToVerifyNameInProfilePage(){
-        String na = "randon3";
-        Espresso.onView(ViewMatchers.withId(R.id.profileButton)).perform(ViewActions.click());
-        onView(withId(R.id.name)).check(ViewAssertions.matches(withText(na)));
+        String na = "randon10";
+        Espresso.onData(ViewMatchers.withId(R.id.profileButton)).perform(ViewActions.click());
+        Espresso.onData(withId(R.id.name)).check(ViewAssertions.matches(withText(na)));
     }
     @Test
     public void ShouldBeAbleToVerifyLowCaloriesForMaintain(){
         Integer na = 3230;
         String s = na.toString();
-        Espresso.onView(ViewMatchers.withId(R.id.nutritionButton)).perform(ViewActions.click());
-        Espresso.onView(ViewMatchers.withId(R.id.maintainButton)).perform(ViewActions.click());
-        onView(withId(R.id.lowCalories)).check(ViewAssertions.matches(withText("3230")));
+        Espresso.onData(ViewMatchers.withId(R.id.nutritionButton)).perform(ViewActions.click());
+        Espresso.onData(ViewMatchers.withId(R.id.maintainButton)).perform(ViewActions.click());
+        Espresso.onData(withId(R.id.lowCalories)).check(ViewAssertions.matches(withText("3230")));
     }
 
     @Test
     public void CheckToSeeIfButtonWorksOnFitnessProgramFragment() {
         Espresso.onView(withId(R.id.StrengthTrainingButton)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
-        Espresso.onView(withId(R.id.BodyBuildingButton)).check(matches(isClickable()))
+        Espresso.onData(withId(R.id.BodyBuildingButton)).check(matches(isClickable()))
                 .check(matches(isDisplayed()));
-        Espresso.onView(withId(R.id.WeightLossButton)).check(matches(isClickable()))
+        Espresso.onData(withId(R.id.WeightLossButton)).check(matches(isClickable()))
                 .check(matches(isDisplayed()));
         Espresso.pressBack();
     }
@@ -72,9 +72,9 @@ public class BehaviorTest {
     public void CheckLoginPage(){
         String username = "school@email.sc.edu";
         String password = "abcdefg";
-        Espresso.onView(withId(R.id.login_username_input)).perform(typeText(username));
-        Espresso.onView(withId(R.id.login_password_input)).perform(typeText(password));
-        Espresso.onView(withId(R.id.email_login_button)).perform(ViewActions.click())
+        Espresso.onData(withId(R.id.login_username_input)).perform(typeText(username));
+        Espresso.onData(withId(R.id.login_password_input)).perform(typeText(password));
+        Espresso.onData(withId(R.id.email_login_button)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
 
     }
@@ -88,12 +88,12 @@ public class BehaviorTest {
         String phonenumber_in = "867-5309";
         //need to find button test case
 
-        Espresso.onView(withId(R.id.email_in)).perform(typeText(email_in));
-        Espresso.onView(withId(R.id.username_in)).perform(typeText(username_in));
-        Espresso.onView(withId(R.id.password_in)).perform(typeText(password_in));
-        Espresso.onView(withId(R.id.retypepasswrd_in)).perform(typeText(retypepasswrd_in));
-        Espresso.onView(withId(R.id.phonenumber_in)).perform(typeText(phonenumber_in));
-        Espresso.onView(withId(R.id.email_signup_button_in)).perform(ViewActions.click()).check(matches(isDisplayed()));
+        Espresso.onData(withId(R.id.email_in)).perform(typeText(email_in));
+        Espresso.onData(withId(R.id.username_in)).perform(typeText(username_in));
+        Espresso.onData(withId(R.id.password_in)).perform(typeText(password_in));
+        Espresso.onData(withId(R.id.retypepasswrd_in)).perform(typeText(retypepasswrd_in));
+        Espresso.onData(withId(R.id.phonenumber_in)).perform(typeText(phonenumber_in));
+        Espresso.onData(withId(R.id.email_signup_button_in)).perform(ViewActions.click()).check(matches(isDisplayed()));
 
 
         ;
@@ -101,65 +101,65 @@ public class BehaviorTest {
 
     @Test
     public void CheckSignUpOrLogin(){
-        Espresso.onView(withId(R.id.email_login_button)).perform(ViewActions.click())
+        Espresso.onData(withId(R.id.email_login_button)).perform(ViewActions.click())
         .check(matches(isDisplayed()));
-        Espresso.onView(withId(R.id.email_signin_button)).perform(ViewActions.click())
+        Espresso.onData(withId(R.id.email_signin_button)).perform(ViewActions.click())
         .check(matches(isDisplayed()));
-        Espresso.onView(withId(R.id.forgotPassView)).perform(ViewActions.click())
+        Espresso.onData(withId(R.id.forgotPassView)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
 
     }
 
     @Test
     public void CheckBBday5(){
-        Espresso.onView(withId(R.id.militaryPressImage)).perform(ViewActions.click());
-        Espresso.onView(withId(R.id.sideLatImage)).perform(ViewActions.click());
-        Espresso.onView(withId(R.id.shoulderpressImage)).perform(ViewActions.click());
-        Espresso.onView(withId(R.id.BBBack)).perform(ViewActions.click())
+        Espresso.onData(withId(R.id.militaryPressImage)).perform(ViewActions.click());
+        Espresso.onData(withId(R.id.sideLatImage)).perform(ViewActions.click());
+        Espresso.onData(withId(R.id.shoulderpressImage)).perform(ViewActions.click());
+        Espresso.onData(withId(R.id.BBBack)).perform(ViewActions.click())
             .check(matches(isDisplayed()));
-        Espresso.onView(withId(R.id.completeDay5bb)).perform(ViewActions.click())
+        Espresso.onData(withId(R.id.completeDay5bb)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
     }
     @Test
     public void CheckBBday4(){
-        Espresso.onView(withId(R.id.deadliftImage)).perform(ViewActions.click());
-        Espresso.onView(withId(R.id.pullupImage)).perform(ViewActions.click());
-        Espresso.onView(withId(R.id.dumbbellRowImage)).perform(ViewActions.click());
-        Espresso.onView(withId(R.id.BBBack)).perform(ViewActions.click())
+        Espresso.onData(withId(R.id.deadliftImage)).perform(ViewActions.click());
+        Espresso.onData(withId(R.id.pullupImage)).perform(ViewActions.click());
+        Espresso.onData(withId(R.id.dumbbellRowImage)).perform(ViewActions.click());
+        Espresso.onData(withId(R.id.BBBack)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
-        Espresso.onView(withId(R.id.completeDay4bb)).perform(ViewActions.click())
+        Espresso.onData(withId(R.id.completeDay4bb)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
     }
 
     @Test
     public void CheckBBday3(){
-        Espresso.onView(withId(R.id.hammerCurlImage)).perform(ViewActions.click());
-        Espresso.onView(withId(R.id.preacherCurlImage)).perform(ViewActions.click());
-        Espresso.onView(withId(R.id.closegrippushupImage)).perform(ViewActions.click());
-        Espresso.onView(withId(R.id.BBBack)).perform(ViewActions.click())
+        Espresso.onData(withId(R.id.hammerCurlImage)).perform(ViewActions.click());
+        Espresso.onData(withId(R.id.preacherCurlImage)).perform(ViewActions.click());
+        Espresso.onData(withId(R.id.closegrippushupImage)).perform(ViewActions.click());
+        Espresso.onData(withId(R.id.BBBack)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
-        Espresso.onView(withId(R.id.completeDay3bb)).perform(ViewActions.click())
+        Espresso.onData(withId(R.id.completeDay3bb)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
     }
     @Test
     public void CheckBBday2(){
-        Espresso.onView(withId(R.id.benchImage)).perform(ViewActions.click());
-        Espresso.onView(withId(R.id.flyImage)).perform(ViewActions.click());
-        Espresso.onView(withId(R.id.pushupImage)).perform(ViewActions.click());
-        Espresso.onView(withId(R.id.BBBack)).perform(ViewActions.click())
+        Espresso.onData(withId(R.id.benchImage)).perform(ViewActions.click());
+        Espresso.onData(withId(R.id.flyImage)).perform(ViewActions.click());
+        Espresso.onData(withId(R.id.pushupImage)).perform(ViewActions.click());
+        Espresso.onData(withId(R.id.BBBack)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
-        Espresso.onView(withId(R.id.completeDay2bb)).perform(ViewActions.click())
+        Espresso.onData(withId(R.id.completeDay2bb)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
     }
 
     @Test
     public void CheckBBday1(){
-        Espresso.onView(withId(R.id.squatImage)).perform(ViewActions.click());
-        Espresso.onView(withId(R.id.legExtensionImage)).perform(ViewActions.click());
-        Espresso.onView(withId(R.id.curlImage)).perform(ViewActions.click());
-        Espresso.onView(withId(R.id.BBBack)).perform(ViewActions.click())
+        Espresso.onData(withId(R.id.squatImage)).perform(ViewActions.click());
+        Espresso.onData(withId(R.id.legExtensionImage)).perform(ViewActions.click());
+        Espresso.onData(withId(R.id.curlImage)).perform(ViewActions.click());
+        Espresso.onData(withId(R.id.BBBack)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
-        Espresso.onView(withId(R.id.completeDay1bb)).perform(ViewActions.click())
+        Espresso.onData(withId(R.id.completeDay1bb)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
     }
     //need to complete
@@ -171,11 +171,11 @@ public class BehaviorTest {
         String phone = "867-5309";
 
 
-        Espresso.onView(withId(R.id.editnametext)).perform(typeText(username));
-        Espresso.onView(withId(R.id.editgender)).perform(typeText(gender));
-        Espresso.onView(withId(R.id.editpasstext)).perform(typeText(password));
-        Espresso.onView(withId(R.id.editphone)).perform(typeText(phone));
-        Espresso.onView(withId(R.id.savebuttoneditprofile)).perform(ViewActions.click())
+        Espresso.onData(withId(R.id.editnametext)).perform(typeText(username));
+        Espresso.onData(withId(R.id.editgender)).perform(typeText(gender));
+        Espresso.onData(withId(R.id.editpasstext)).perform(typeText(password));
+        Espresso.onData(withId(R.id.editphone)).perform(typeText(phone));
+        Espresso.onData(withId(R.id.savebuttoneditprofile)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
 
     }

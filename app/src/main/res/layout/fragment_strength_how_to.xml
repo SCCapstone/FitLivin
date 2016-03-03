@@ -2,11 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context="edu.sc.FitLivin.StrengthHowTo"
     android:id="@+id/containerFitnessP"
-    android:background="@drawable/background2">
+    android:background="@drawable/background3">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+         />
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"/>
@@ -33,12 +33,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="
 
-
-
-
-
         All major lifts (Bench press, Deadlift, and Squat) will follow the Hepburn method.
-    This method was created by Doug Hepburn for people to use to help make continuous strength
+    This method was created by Doug Hepburn to help people make continuous strength
     gains throughout their lifting career. Here&apos;s how it works:
     You will bench press and squat twice a week and deadlift once a week. Pick a weight that is
     80% of your 1 rep max. Warm up with two to three sets then do the following:
@@ -58,8 +54,16 @@
             "
         android:id="@+id/textView24"
         android:layout_gravity="right|center_vertical"
-        android:background="#f70c0c" />
+        android:textColor="#FFFFFF" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BACK"
+            android:id="@+id/Sdayhow2back"
+            android:layout_gravity="bottom"
+            android:layout_alignParentBottom="true"
+            />
 
     </LinearLayout>>
 
