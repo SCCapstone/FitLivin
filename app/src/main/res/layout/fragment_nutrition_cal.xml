@@ -16,12 +16,14 @@
             android:layout_height="55dp"
             android:text="Maintain"
             android:id="@+id/maintainButton"
+            android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true" />
         <Button
             android:layout_width="100dp"
             android:layout_height="55dp"
             android:text="Weight Loss"
             android:id="@+id/wlossButton"
+            android:layout_marginTop="20dp"
             android:layout_toStartOf="@+id/maintainButton"
             />
 
@@ -30,6 +32,7 @@
             android:layout_height="55dp"
             android:text="Weight Gain"
             android:id="@+id/wGainButton"
+            android:layout_marginTop="20dp"
             android:layout_toEndOf="@+id/maintainButton" />
 
         <Button
