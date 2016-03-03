@@ -78,8 +78,8 @@
         />
 
         <TextView
-            android:layout_width="206dp"
-            android:layout_height="49dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="4 Sets of 15 repetitions. "
             android:id="@+id/extensionDetail"
             android:layout_gravity="center_horizontal"
@@ -90,8 +90,8 @@
             />
 
         <TextView
-            android:layout_width="178dp"
-            android:layout_height="59dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Hamstring Curl"
             android:id="@+id/hamstringText"
             android:layout_gravity="center_horizontal"

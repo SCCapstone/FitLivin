@@ -1,73 +1,68 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/containerFitnessP"
-    android:background="@drawable/background2"
+    android:background="@drawable/background3"
     >
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Weight Loss"
-        android:id="@+id/weightLossTitle"
-        android:background="#1fff28"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center_horizontal"
-        android:textIsSelectable="false" />
-
     <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Day 1"
-        android:id="@+id/day1WeightLoss"
-        android:layout_marginBottom="125dp"
-        android:layout_gravity="center"
-        android:background="#1aff13" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Day 4"
-        android:id="@+id/day4WeightLoss"
-        android:layout_marginBottom="-25dp"
-        android:layout_gravity="center"
-        android:background="#1aff31" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Day 3"
+        android:text=" Day 3 "
         android:id="@+id/day3WeightLoss"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp"
         android:layout_gravity="center"
-        android:background="#14ff29" />
+        />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text=" Day 1 "
+        android:id="@+id/day1WeightLoss"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="125dp"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text=" Day 2 "
+        android:id="@+id/day2WeightLoss"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="75dp"
+        android:layout_gravity="center"
+        android:height="@dimen/activity_vertical_margin"
+        />
+
+    <Button
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="Day 5"
         android:id="@+id/day5WeightLoss"
+        android:layout_alignParentBottom="true"
         android:layout_marginBottom="-75dp"
         android:layout_gravity="center"
-        android:background="#25ff30" />
+        />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Day 2"
-        android:id="@+id/day2WeightLoss"
-        android:layout_marginBottom="75dp"
+        android:text=" Day 4 "
+        android:id="@+id/day4WeightLoss"
+
+        android:layout_marginBottom="-25dp"
         android:layout_gravity="center"
-        android:background="#16ff1a" />
+        />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="BACK"
         android:id="@+id/backButtonWeightLoss"
-        android:layout_gravity="center_horizontal|bottom" />
-
+        android:layout_gravity="center_horizontal|bottom"
+        />
 </FrameLayout>
