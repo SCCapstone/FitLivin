@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -47,6 +48,7 @@ private File imageFile;
                 .setTitle("Points");
 
 
+
         final TextView currentPoints = (TextView) v.findViewById(R.id.PointsView);
 
         ParseQuery queryuser = ParseUser.getQuery();
@@ -67,7 +69,7 @@ private File imageFile;
                                                 int x = (Integer) objects.get(0).get("CurrentPoints");
 
                                                 // main.bench = x;
-                                                currentPoints.setText("" +x);
+                                                currentPoints.setText("" + x);
 
 
                                             }
@@ -79,6 +81,7 @@ private File imageFile;
 
                                 }
         );
+
 
        /* Integer points;
         //Calls main class
@@ -103,7 +106,18 @@ private File imageFile;
                 ft.commit();
             }
         });
-
+        Button leaderbtn = (Button) v.findViewById(R.id.leaderButton);
+        leaderbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PointsLeader fragment1 = new PointsLeader();
+                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.replace(R.id.container, fragment1);
+                ft.addToBackStack(null);
+                ft.commit();
+            }
+        });
 
 
         return v;

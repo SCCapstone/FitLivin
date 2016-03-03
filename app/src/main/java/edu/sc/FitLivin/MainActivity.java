@@ -58,6 +58,7 @@ public class MainActivity extends FragmentActivity{
     public static Integer deadLift;
     public static Integer mileTime;
     public static Integer height;
+    public static Integer leader;
     public static String s;
     public static Integer points = 0;
     private String objectID;

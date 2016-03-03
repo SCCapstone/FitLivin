@@ -46,8 +46,8 @@ public class BehaviorTest {
     @Test
     public void ShouldBeAbleToVerifyNameInProfilePage(){
         String na = "randon10";
-        Espresso.onData(ViewMatchers.withId(R.id.profileButton)).perform(ViewActions.click());
-        Espresso.onData(withId(R.id.name)).check(ViewAssertions.matches(withText(na)));
+        Espresso.onView(ViewMatchers.withId(R.id.profileButton)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.name)).check(ViewAssertions.matches(withText(na)));
     }
     @Test
     public void ShouldBeAbleToVerifyLowCaloriesForMaintain(){
@@ -60,11 +60,12 @@ public class BehaviorTest {
 
     @Test
     public void CheckToSeeIfButtonWorksOnFitnessProgramFragment() {
+
         Espresso.onView(withId(R.id.StrengthTrainingButton)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
         Espresso.onData(withId(R.id.BodyBuildingButton)).check(matches(isClickable()))
                 .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.WeightLossButton)).check(matches(isClickable()))
+              Espresso.onData(withId(R.id.WeightLossButton)).check(matches(isClickable()))
                 .check(matches(isDisplayed()));
         Espresso.pressBack();
     }

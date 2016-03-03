@@ -45,7 +45,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ProfilePageFragment extends Fragment {
 
     ImageView imageView1;
-    RoundImage roundedImage;
+
     private Button editprofile;
     Button p;
     ImageView iv;
@@ -80,8 +80,7 @@ public class ProfilePageFragment extends Fragment {
         });
         imageView1 = (CircleImageView) v.findViewById(R.id.profilepicview);
         Bitmap bm = BitmapFactory.decodeResource(getResources(),R.drawable.don);
-        roundedImage = new RoundImage(bm);
-        imageView1.setImageDrawable(roundedImage);
+
         imageView1.setBackgroundColor(Color.TRANSPARENT);
 
         final TextView heightText = (TextView) v.findViewById(R.id.heightView);
