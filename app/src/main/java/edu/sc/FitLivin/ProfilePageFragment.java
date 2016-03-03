@@ -7,13 +7,20 @@
 
 package edu.sc.FitLivin;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +38,8 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
+import java.io.File;
+import java.net.URI;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -42,6 +51,9 @@ public class ProfilePageFragment extends Fragment {
     ImageView imageView1;
     RoundImage roundedImage;
     private Button editprofile;
+    Button p;
+    ImageView iv;
+    static final int CAM_REQUEST = 1;
     private ImageButton profileChangebutton;
     public ProfilePageFragment() {
         // Required empty public constructor
@@ -55,7 +67,21 @@ public class ProfilePageFragment extends Fragment {
 
 
         View v = inflater.inflate(R.layout.fragment_profile__page, container, false);
+        getActivity().getActionBar()
+                .setTitle("Profile");
+       MainActivity main = new MainActivity();
+           p = (Button) v.findViewById(R.id.pic);
+        iv = (ImageView)v.findViewById(R.id.test);
 
+        p.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                File file = getFile();
+                camera_intent.putExtra(MediaStore.EXTRA_OUTPUT,Uri.fromFile(file));
+                startActivityForResult(camera_intent,CAM_REQUEST);
+            }
+        });
         imageView1 = (CircleImageView) v.findViewById(R.id.profilepicview);
         Bitmap bm = BitmapFactory.decodeResource(getResources(),R.drawable.don);
         roundedImage = new RoundImage(bm);
@@ -71,7 +97,7 @@ public class ProfilePageFragment extends Fragment {
         final TextView currentHeight = (TextView) v.findViewById(R.id.CurrH);
         final TextView currentWeight = (TextView) v.findViewById(R.id.CurrW);
 
-
+        //pic = (Button) v.findViewById(R.id.pic);
 
 
 
@@ -114,11 +140,17 @@ public class ProfilePageFragment extends Fragment {
 
 
                 String h = editHeight.getText().toString();
-                height = Integer.parseInt(h);
+                /*try {
+                    height = Integer.parseInt(h);
+                    Log.d("Q", "Is a number " + height + " dd ");
+                }
+                catch (NumberFormatException e){
+                    Log.d("Q", "Is not a number " + height + " dd ");
+                }*/
                 String w = editWeight.getText().toString();
                 weight = Integer.parseInt(w);
-                currentHeight.setText(""+height);
-                currentWeight.setText(""+weight);
+                currentHeight.setText("" + height);
+                currentWeight.setText("" + weight);
 
 
 
@@ -149,11 +181,30 @@ public class ProfilePageFragment extends Fragment {
                 fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
-
+       /* final MainActivity main1 = new MainActivity();
+        pic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+           main1.launchCamera(v);
+            }
+        });
+*/
 
 
         return v;
     }
+private File getFile(){
+    File folder = new File("sdcard/fitLivin_app");
+    if(!folder.exists()){
+        folder.mkdir();
+    }
+    File image_file = new File(folder, "FL_image.jpg");
+            return image_file;
+}
 
-
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        String path = "sdcard/fitLivin/FL_image.jpg";
+        iv.setImageDrawable(Drawable.createFromPath(path));
+    }
 }

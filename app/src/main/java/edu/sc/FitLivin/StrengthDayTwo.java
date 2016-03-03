@@ -7,8 +7,10 @@
 
 package edu.sc.FitLivin;
 
+import android.app.AlertDialog;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -34,7 +36,24 @@ public class StrengthDayTwo extends Fragment {
 
 MediaPlayer mp;
 
+    private AlertDialog.Builder dBuilder;
 
+
+    private void StrengthD2dialog(){
+        dBuilder = new AlertDialog.Builder(getActivity());
+        dBuilder.setTitle("Congratulations!");
+        dBuilder.setMessage("You earned 50 points!");
+        dBuilder.setIcon(R.mipmap.ic_launcher);
+        dBuilder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        dBuilder.create();
+        dBuilder.show();
+
+    }
 
 
     public StrengthDayTwo() {
@@ -51,6 +70,8 @@ MediaPlayer mp;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_strength_day_two, container, false);
+        getActivity().getActionBar()
+                .setTitle("Day 2");
         ImageButton backSquat = (ImageButton) v.findViewById(R.id.squatImage);
         ImageButton legPress = (ImageButton) v.findViewById(R.id.legpresspic);
         ImageButton calfPress = (ImageButton) v.findViewById(R.id.calfpresspic);
@@ -131,36 +152,29 @@ MediaPlayer mp;
         });
 
 
-        Button complete = (Button) v.findViewById(R.id.completeDay2s);//creates complete button
+        Button complete = (Button) v.findViewById(R.id.completeDay2s);
         complete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ParseQuery queryuser = ParseUser.getQuery();
                 queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
-
                 ParseQuery Points = ParseQuery.getQuery("Points");
-                Points.whereExists("CurrentPoints");//setting constraints
+                Points.whereExists("CurrentPoints");//constraints
                 Points.whereMatchesQuery("author", queryuser);
-
+                Points.orderByDescending("createdAt");
                 Points.findInBackground(new FindCallback<ParseObject>() {
                                             public void done(List<ParseObject> objects, ParseException e) {
-
-                                                if (e == null && objects.size() != 0) { //if objects size is not 0
-
+                                                if (e == null && objects.size() != 0) {
                                                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
-
-                                                        int x = (Integer) objects.get(objects.size() - 1).get("CurrentPoints");
+                                                        int x = (Integer) objects.get(0).get("CurrentPoints");
                                                         MainActivity main = new MainActivity();
                                                         main.points = x;
-                                                        // main.bench = x;
-                                                        // currentPoints.setText("" +x);
                                                         Integer points = main.points;
-                                                        points = points + 50;//adds points for completed workout
-
+                                                        points = points + 50;
                                                         String s = ParseUser.getCurrentUser().getUsername();
                                                         main.pointsData(points,s);
 
-
+                                                        StrengthD2dialog();
                                                     }
 
                                                 }

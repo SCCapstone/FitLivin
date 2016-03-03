@@ -23,29 +23,25 @@ public class FPSTRTrainingFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_fp__str__training, container, false);
         Button btn = (Button) v.findViewById(R.id.backButtonStrength);
+        getActivity().getActionBar()
+                .setTitle("Strength Training");
 
         Button day1 = (Button) v.findViewById(R.id.day1Strength);
         day1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                StrengthDayOne strengthDay1 = new StrengthDayOne();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, strengthDay1);
-                ft.addToBackStack(null);
-                ft.commit();
+                StrengthDayOne fragment = new StrengthDayOne();
+                FragmentManager fm = getFragmentManager();
+                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
         Button day2 = (Button) v.findViewById(R.id.day2Strength);
         day2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                StrengthDayTwo strengthDay2 = new StrengthDayTwo();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, strengthDay2);
-                ft.addToBackStack(null);
-                ft.commit();
+                StrengthDayTwo fragment = new StrengthDayTwo();
+                FragmentManager fm = getFragmentManager();
+                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
 
@@ -53,36 +49,27 @@ public class FPSTRTrainingFragment extends Fragment {
         day3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                StrengthDayThree strengthDay3 = new StrengthDayThree();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, strengthDay3);
-                ft.addToBackStack(null);
-                ft.commit();
+                StrengthDayThree fragment = new StrengthDayThree();
+                FragmentManager fm = getFragmentManager();
+                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
         Button day4 = (Button) v.findViewById(R.id.day4Strength);
         day4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                StrengthDayFour strengthDay4 = new StrengthDayFour();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, strengthDay4);
-                ft.addToBackStack(null);
-                ft.commit();
+                StrengthDayFour fragment = new StrengthDayFour();
+                FragmentManager fm = getFragmentManager();
+                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
         Button day5 = (Button) v.findViewById(R.id.day5Strength);
         day5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                StrengthDayFive strengthDay5 = new StrengthDayFive();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, strengthDay5);
-                ft.addToBackStack(null);
-                ft.commit();
+                StrengthDayFive fragment = new StrengthDayFive();
+                FragmentManager fm = getFragmentManager();
+                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
         btn.setOnClickListener(new View.OnClickListener() {

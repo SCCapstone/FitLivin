@@ -27,15 +27,16 @@ public class FitnessProgramFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_fitness_program, container, false);
         Button btn = (Button) v.findViewById(R.id.StrengthTrainingButton);
+        getActivity().getActionBar()
+                .setTitle("Fitness Program");
+
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FPSTRTrainingFragment fragment = new FPSTRTrainingFragment();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, fragment);
-                ft.addToBackStack(null);
-                ft.commit();
+                FragmentManager fm = getFragmentManager();
+                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
 
@@ -43,24 +44,18 @@ public class FitnessProgramFragment extends Fragment {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FPBodyBuildingFragment fragment1 = new FPBodyBuildingFragment();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, fragment1);
-                ft.addToBackStack(null);
-                ft.commit();
+                FPBodyBuildingFragment fragment = new FPBodyBuildingFragment();
+                FragmentManager fm = getFragmentManager();
+                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
         Button btn3 = (Button) v.findViewById(R.id.WeightLossButton);
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               FPWGTLossFragment fragment2 = new FPWGTLossFragment();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, fragment2);
-                ft.addToBackStack(null);
-                ft.commit();
+               FPWGTLossFragment fragment = new FPWGTLossFragment();
+                FragmentManager fm = getFragmentManager();
+                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
         // Inflate the layout for this fragment

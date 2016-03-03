@@ -149,6 +149,8 @@ private AlertDialog.Builder dialogBuilder;
 
 
         View v = inflater.inflate(R.layout.fragment_goal, container, false);
+        getActivity().getActionBar()
+                .setTitle("Goals");
         final  MainActivity main = new MainActivity();
 
 
@@ -291,31 +293,31 @@ private AlertDialog.Builder dialogBuilder;
 
                     //main.bench = x;
                     if (x > 0) {
-                    Integer value = main.WeightGoalTest(x);
-                    if (value == 1) {
-                        Log.d("QAOD", "congratsWEIGHTLOSS");
-                        Integer points = MainActivity.points;
-                        points = points + 100;
-                        String s = ParseUser.getCurrentUser().getUsername();
-                        main.pointsData(points, s);
-                        weightLossDialog();
-                        main.WeightGoal(0, s);
-                        WeightG.setText("");
+                        Integer value = main.WeightGoalTest(x);
+                        if (value == 1) {
+                            Log.d("QAOD", "congratsWEIGHTLOSS");
+                            Integer points = MainActivity.points;
+                            points = points + 100;
+                            MainActivity.points = points;
+                            String s = ParseUser.getCurrentUser().getUsername();
+                            main.pointsData(points, s);
+                            weightLossDialog();
+                            main.WeightGoal(0, s);
+                            WeightG.setText("");
 
-                        //Toast.makeText(getActivity(), "Great Job!!!.", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getActivity(), "Great Job!!!.", Toast.LENGTH_SHORT).show();
+
+                        }
+                        if (value == 2) {
+                            // Toast.makeText(getActivity(), "Almost!!!.", Toast.LENGTH_SHORT).show();
+                            Log.d("QAOD", "not there yetWEIGHTLOSS");
+
+                        }
+
 
                     }
-                    if (value == 2) {
-                        // Toast.makeText(getActivity(), "Almost!!!.", Toast.LENGTH_SHORT).show();
-                        Log.d("QAOD", "not there yetWEIGHTLOSS");
-
-                    }
-
-
-                } else {
-                        Toast.makeText(getActivity(), "You have not set any goals yet", Toast.LENGTH_SHORT).show();
-                    }
-            }}
+                }
+            }
 
         });
 
@@ -342,6 +344,7 @@ private AlertDialog.Builder dialogBuilder;
                                 Log.d("QAOD", "congratsWEIGHTGAIN");
                                 Integer points = MainActivity.points;
                                 points = points + 100;
+                                MainActivity.points = points;
                                 String s = ParseUser.getCurrentUser().getUsername();
                                 main.pointsData(points, s);
                                 weightGainDialog();
@@ -385,6 +388,7 @@ private AlertDialog.Builder dialogBuilder;
                                 Log.d("QAOD", "congratsBENCH");
                                 Integer points = MainActivity.points;
                                 points = points + 100;
+                                MainActivity.points = points;
                                 String s = ParseUser.getCurrentUser().getUsername();
                                 main.pointsData(points, s);
                                 benchDialog();
@@ -427,6 +431,7 @@ private AlertDialog.Builder dialogBuilder;
                                 Log.d("QAOD", "congratsSQUAT");
                                 Integer points = MainActivity.points;
                                 points = points + 100;
+                                MainActivity.points = points;
                                 String s = ParseUser.getCurrentUser().getUsername();
                                 main.pointsData(points, s);
                                 squatDialog();
@@ -471,6 +476,7 @@ private AlertDialog.Builder dialogBuilder;
                                 Log.d("QAOD", "congratsDEADLIFT");
                                 Integer points = MainActivity.points;
                                 points = points + 100;
+                                MainActivity.points = points;
                                 String s = ParseUser.getCurrentUser().getUsername();
                                 main.pointsData(points, s);
                                 deadLiftDialog();
@@ -515,6 +521,7 @@ private AlertDialog.Builder dialogBuilder;
                                 Log.d("QAOD", "congratsMILEITME");
                                 Integer points = MainActivity.points;
                                 points = points + 100;
+                                MainActivity.points = points;
                                 String s = ParseUser.getCurrentUser().getUsername();
                                 main.pointsData(points, s);
                                 mileTimeDialog();
@@ -527,7 +534,8 @@ private AlertDialog.Builder dialogBuilder;
                             }
 
 
-                    }}
+                        }
+                    }
                 }
             }
 
@@ -548,18 +556,33 @@ private AlertDialog.Builder dialogBuilder;
                         "SET",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                Integer weight;
+                                MainActivity m = new MainActivity();
+                                m.ExcTest = 1;
                                 String value = input.getText().toString();
-                                Integer weight = Integer.valueOf(value);
-                                String s = ParseUser.getCurrentUser().getUsername();
-                                if (weight == 0) {
-                                    WeightG.setText("");
-                                } else {
+                                try {
+                                    weight = Integer.parseInt(value);
+                                    Log.d("Q", "Is a number " + weight + " dd ");
+                                } catch (NumberFormatException e) {
+                                    Log.d("Q", "Is not a number ");
+                                    m.ExcTest = 2;
+                                    Toast.makeText(getActivity(), "Invalid Number", Toast.LENGTH_LONG)
+                                            .show();
 
-
-                                    WeightG.setText("" + weight);
                                 }
-                                main.WeightGoal(weight, s);
-                                dialog.cancel();
+                                if (m.ExcTest == 1) {
+                                    Integer weight2 = Integer.valueOf(value);
+                                    String s = ParseUser.getCurrentUser().getUsername();
+                                    if (weight2 == 0) {
+                                        WeightG.setText("");
+                                    } else {
+
+
+                                        WeightG.setText("" + weight2);
+                                    }
+                                    main.WeightGoal(weight2, s);
+                                    dialog.cancel();
+                                }
                             }
                         });
 
@@ -572,7 +595,8 @@ private AlertDialog.Builder dialogBuilder;
                         });
 
                 AlertDialog alert11 = builder1.create();
-                 alert11.show();
+                alert11.show();
+
             }
         });
         setWeightGain.setOnClickListener(new View.OnClickListener() {
@@ -584,24 +608,41 @@ private AlertDialog.Builder dialogBuilder;
                 final EditText input = new EditText(getActivity());
                 input.setId(TEXT_ID);
                 builder1.setView(input);
-                builder1.setCancelable(true);
+                builder1.setCancelable(true);//
 
                 builder1.setPositiveButton(
                         "SET",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                Integer weight;
                                 String value = input.getText().toString();
-                                Integer weight = Integer.valueOf(value);
-                                String s = ParseUser.getCurrentUser().getUsername();
-                                if (weight == 0) {
-                                    WeightGain.setText("");
-                                } else {
+                                MainActivity m = new MainActivity();
+                                m.ExcTest = 1;
+                                try {
+                                    weight = Integer.valueOf(value);
+                                } catch (NumberFormatException e) {
+                                    m.ExcTest = 2;
+                                    Toast.makeText(getActivity(), "Invalid Number", Toast.LENGTH_LONG)
+                                            .show();
 
 
-                                    WeightGain.setText("" + weight);
                                 }
-                                main.WeightGainGoal(weight, s);
-                                dialog.cancel();
+
+                                if (m.ExcTest == 1) {
+                                    Integer weight2 = Integer.valueOf(value);
+                                    String s = ParseUser.getCurrentUser().getUsername();
+
+
+                                    if (weight2 == 0) {
+                                        WeightGain.setText("");
+                                    } else {
+
+
+                                        WeightGain.setText("" + weight2);
+                                    }
+                                    main.WeightGainGoal(weight2, s);
+                                    dialog.cancel();
+                                }
                             }
                         });
 
@@ -633,16 +674,32 @@ private AlertDialog.Builder dialogBuilder;
                         "SET",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                Integer bench;
                                 String value = input.getText().toString();
-                                Integer bench = Integer.valueOf(value);
-                                String s = ParseUser.getCurrentUser().getUsername();
-                                if (bench == 0) {
-                                    BenchG.setText("");
-                                } else {
-                                    BenchG.setText("" + bench);
+                                MainActivity m = new MainActivity();
+                                m.ExcTest = 1;
+
+                                try {
+                                    bench = Integer.valueOf(value);
+
+                                } catch (NumberFormatException e) {
+                                    m.ExcTest = 2;
+                                    Toast.makeText(getActivity(), "Invalid Number", Toast.LENGTH_LONG)
+                                            .show();
                                 }
-                                main.BenchGoal(bench, s);
-                                dialog.cancel();
+                                if (m.ExcTest == 1) {
+                                    Integer bench2 = Integer.valueOf(value);
+                                    String s = ParseUser.getCurrentUser().getUsername();
+
+
+                                    if (bench2 == 0) {
+                                        BenchG.setText("");
+                                    } else {
+                                        BenchG.setText("" + bench2);
+                                    }
+                                    main.BenchGoal(bench2, s);
+                                    dialog.cancel();
+                                }
                             }
                         });
 
@@ -675,19 +732,31 @@ private AlertDialog.Builder dialogBuilder;
                         "SET",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                Integer squat;
                                 String value = input.getText().toString();
-                                Integer squat = Integer.valueOf(value);
+                                MainActivity m = new MainActivity();
+                                m.ExcTest = 1;
+                                try {
+                                    squat = Integer.valueOf(value);
+
+                                } catch (NumberFormatException e) {
+                                    m.ExcTest = 2;
+                                    Toast.makeText(getActivity(), "Invalid Number", Toast.LENGTH_LONG)
+                                            .show();
+                                }
+                                if (m.ExcTest == 1) {
+                                Integer squat2 = Integer.valueOf(value);
                                 String s = ParseUser.getCurrentUser().getUsername();
-                                if (squat == 0) {
+                                if (squat2 == 0) {
                                     SquatG.setText("");
                                 } else {
 
 
-                                    SquatG.setText("" + squat);
+                                    SquatG.setText("" + squat2);
                                 }
-                                main.SquatGoal(squat, s);
+                                main.SquatGoal(squat2, s);
                                 dialog.cancel();
-                            }
+                            }}
                         });
 
                 builder1.setNegativeButton(
@@ -718,7 +787,19 @@ private AlertDialog.Builder dialogBuilder;
                         "SET",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                Integer dl;
                                 String value = input.getText().toString();
+                                MainActivity m = new MainActivity();
+                                m.ExcTest = 1;
+                                try {
+                                    dl = Integer.valueOf(value);
+
+                                } catch (NumberFormatException e) {
+                                    m.ExcTest = 2;
+                                    Toast.makeText(getActivity(), "Invalid Number", Toast.LENGTH_LONG)
+                                            .show();
+                                }
+                                if (m.ExcTest == 1) {
                                 Integer weight = Integer.valueOf(value);
                                 String s = ParseUser.getCurrentUser().getUsername();
                                 if (weight == 0) {
@@ -730,7 +811,7 @@ private AlertDialog.Builder dialogBuilder;
                                 }
                                 main.DeadLiftGoal(weight, s);
                                 dialog.cancel();
-                            }
+                            }}
                         });
 
                 builder1.setNegativeButton(
@@ -760,7 +841,19 @@ private AlertDialog.Builder dialogBuilder;
                         "SET",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                Integer mile;
                                 String value = input.getText().toString();
+                                MainActivity m = new MainActivity();
+                                m.ExcTest = 1;
+                                try {
+                                    mile = Integer.valueOf(value);
+
+                                } catch (NumberFormatException e) {
+                                    m.ExcTest = 2;
+                                    Toast.makeText(getActivity(), "Invalid Number", Toast.LENGTH_LONG)
+                                            .show();
+                                }
+                                if (m.ExcTest == 1) {
                                 Integer time = Integer.valueOf(value);
                                 String s = ParseUser.getCurrentUser().getUsername();
                                 if (time == 0) {
@@ -772,7 +865,7 @@ private AlertDialog.Builder dialogBuilder;
                                 }
                                 main.MileTimeGoal(time, s);
                                 dialog.cancel();
-                            }
+                            }}
                         });
 
                 builder1.setNegativeButton(

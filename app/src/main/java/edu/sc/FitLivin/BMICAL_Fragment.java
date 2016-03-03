@@ -39,6 +39,8 @@ public class BMICAL_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_bmical, container, false);
+        getActivity().getActionBar()
+                .setTitle("BMI");
 
         final TextView CurrH = (TextView) v.findViewById(R.id.CurrHeight);
         final TextView BMI = (TextView) v.findViewById(R.id.DisplayBMI);

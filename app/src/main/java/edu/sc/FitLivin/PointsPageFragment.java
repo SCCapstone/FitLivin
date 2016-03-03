@@ -10,7 +10,10 @@ package edu.sc.FitLivin;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +26,7 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
+import java.io.File;
 import java.util.List;
 
 public class PointsPageFragment extends Fragment {
@@ -32,12 +36,16 @@ public class PointsPageFragment extends Fragment {
         // Required empty public constructor
     }
 
-
+private File imageFile;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_points_page, container, false);
+
+        getActivity().getActionBar()
+                .setTitle("Points");
+
 
         final TextView currentPoints = (TextView) v.findViewById(R.id.PointsView);
 
@@ -101,4 +109,6 @@ public class PointsPageFragment extends Fragment {
         return v;
 
     }
+
+
 }

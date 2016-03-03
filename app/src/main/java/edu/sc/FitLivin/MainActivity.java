@@ -11,9 +11,15 @@ package edu.sc.FitLivin;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
@@ -31,8 +37,10 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 import android.app.Activity;
+import android.widget.Toast;
 
 
+import java.io.File;
 import java.util.List;
 
 public class MainActivity extends FragmentActivity{
@@ -54,6 +62,7 @@ public class MainActivity extends FragmentActivity{
     public static Integer points = 0;
     private String objectID;
     public static MediaPlayer mp;
+    public static Integer ExcTest;
 
 
     ListView listView;
@@ -113,6 +122,7 @@ public class MainActivity extends FragmentActivity{
         @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
 
@@ -314,19 +324,35 @@ public class MainActivity extends FragmentActivity{
 
 
     public boolean onCreateOptionsMenu(Menu menu) {
-
+        this.getActionBar()
+                .setTitle("Home");
+        this.getActionBar().setDisplayUseLogoEnabled(true);
+        this.getActionBar().setDisplayShowHomeEnabled(true);
+        this.getActionBar().setIcon(R.mipmap.ic_launcher);
+         String s = ParseUser.getCurrentUser().getUsername();
+        Log.d("FUsername ", s);
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
-
-
-
+        MenuItem menuItem = menu.findItem(R.id.uName);
+        menuItem .setTitle(s);
+       // menuItem.setClickable(true);
         return true;
     }
+
+   @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if(id == R.id.action_settings){
             ParseUser.getCurrentUser().logOut();
             startActivity(new Intent(MainActivity.this, DispatchActivity.class));
+        }
+        if(id == R.id.uName){
+            ProfilePageFragment fragment6 = new ProfilePageFragment();
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.container, fragment6);
+            ft.addToBackStack(null);
+            ft.commit();
             return true;
         }
         return onOptionsItemSelected(item);
@@ -688,7 +714,7 @@ public class MainActivity extends FragmentActivity{
         // adds info to database
         MaxMileTimeParse.put("MaxMileTime", mileTime1);
         MaxMileTimeParse.put("username", username1);
-        MaxMileTimeParse.put("author",curruser);
+        MaxMileTimeParse.put("author", curruser);
 
         MaxMileTimeParse.saveInBackground(new SaveCallback() {
             @Override
@@ -791,7 +817,7 @@ public class MainActivity extends FragmentActivity{
     public Integer SquatGoalTest(final Integer weightG){
 
 
-        Log.d("Q", "ddCurrentSquatMax  " + squat+ " dd ");
+        Log.d("Q", "ddCurrentSquatMax  " + squat + " dd ");
         Integer currentS = squat;
         if(currentS>=weightG){
             return 1;
@@ -823,6 +849,7 @@ public class MainActivity extends FragmentActivity{
         }
 
     }
+
     /***
      *
      * Getters and Setters for name, weight, and height
@@ -853,7 +880,17 @@ public class MainActivity extends FragmentActivity{
     public void setS(String sn){
         this.objectID = sn;
     }
+   public void launchCamera(View view){
+       Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+       startActivityForResult(intent, 1);
+   }
 
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        if(requestCode == 1 && resultCode == RESULT_OK){
+            Bundle extras = data.getExtras();
+            Bitmap photo = (Bitmap) extras.get("data");
+        }
+    }
     public void onBackPressed() {
         if(getFragmentManager().getBackStackEntryCount() == 0) {
             super.onBackPressed();

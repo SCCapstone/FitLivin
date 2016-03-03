@@ -39,6 +39,7 @@ public class BodyBuildingDayThree extends Fragment {
         dialogBuilder = new AlertDialog.Builder(getActivity());
         dialogBuilder.setTitle("Congratulations!");
         dialogBuilder.setMessage("You Earned 50 Points!");
+        dialogBuilder.setIcon(R.mipmap.ic_launcher);
         dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -66,7 +67,8 @@ public class BodyBuildingDayThree extends Fragment {
         ImageButton hammerCurl = (ImageButton) v.findViewById(R.id.hammerCurlImage);
         ImageButton preacherCurl = (ImageButton) v.findViewById(R.id.preacherCurlImage);
         ImageButton pushupClose = (ImageButton) v.findViewById(R.id.closegrippushupImage);
-
+        getActivity().getActionBar()
+                .setTitle("Day 3");
         hammerCurl.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -131,6 +133,7 @@ public class BodyBuildingDayThree extends Fragment {
                 ParseQuery Points = ParseQuery.getQuery("Points");
                 Points.whereExists("CurrentPoints");//setting constraints
                 Points.whereMatchesQuery("author", queryuser);
+                Points.orderByDescending("createdAt");
 
                 Points.findInBackground(new FindCallback<ParseObject>() {
                                             public void done(List<ParseObject> objects, ParseException e) {
@@ -139,7 +142,7 @@ public class BodyBuildingDayThree extends Fragment {
 
                                                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                                                        int x = (Integer) objects.get(objects.size() - 1).get("CurrentPoints");
+                                                        int x = (Integer) objects.get(0).get("CurrentPoints");
                                                         MainActivity main = new MainActivity();
                                                         main.points = x;
                                                         // main.bench = x;
@@ -164,6 +167,7 @@ public class BodyBuildingDayThree extends Fragment {
 
             }
         });
+
 
         Button backBtn = (Button) v.findViewById(R.id.BBBack);//creates button
         backBtn.setOnClickListener(new View.OnClickListener() {

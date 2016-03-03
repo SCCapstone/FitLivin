@@ -40,18 +40,22 @@ public class BodyBuildingDayOne extends Fragment {
     private AlertDialog.Builder dialogBuilder;
     //
     private void bodybuild1Dialog(){
-        dialogBuilder = new AlertDialog.Builder(getActivity());
-        dialogBuilder.setTitle("Congratulations!");
-        dialogBuilder.setMessage("You Earned 50 Points!");
-        dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-        AlertDialog dialog = dialogBuilder.create();
-        dialog.show();
-    }
+
+            dialogBuilder = new AlertDialog.Builder(getActivity());
+            dialogBuilder.setMessage("You Earned 50 Points!");
+            dialogBuilder.setTitle("Congratulations!");
+            dialogBuilder.setIcon(R.mipmap.ic_launcher);
+            dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+            AlertDialog dialog = dialogBuilder.create();
+
+            dialog.show();
+        }
+
 
 
     @Override
@@ -62,7 +66,8 @@ public class BodyBuildingDayOne extends Fragment {
         ImageButton squat = (ImageButton) v.findViewById(R.id.squatImage);
         ImageButton legExtension = (ImageButton) v.findViewById(R.id.legExtensionImage);
         ImageButton legCurl = (ImageButton) v.findViewById(R.id.curlImage);
-
+        getActivity().getActionBar()
+                .setTitle("Day 1");
         squat.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -126,6 +131,7 @@ public class BodyBuildingDayOne extends Fragment {
                 ParseQuery Points = ParseQuery.getQuery("Points");
                 Points.whereExists("CurrentPoints");//setting constraints
                 Points.whereMatchesQuery("author", queryuser);
+                Points.orderByDescending("createdAt");
 
                 Points.findInBackground(new FindCallback<ParseObject>() {
                                             public void done(List<ParseObject> objects, ParseException e) {
@@ -134,7 +140,7 @@ public class BodyBuildingDayOne extends Fragment {
 
                                                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                                                        int x = (Integer) objects.get(objects.size() - 1).get("CurrentPoints");
+                                                        int x = (Integer) objects.get(0).get("CurrentPoints");
                                                         MainActivity main = new MainActivity();
                                                         main.points = x;
                                                         // main.bench = x;

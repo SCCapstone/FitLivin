@@ -22,6 +22,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -45,7 +46,8 @@ public class MaxFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_max, container, false);
 
-
+            getActivity().getActionBar()
+                    .setTitle("Max");
 
         //initialize textviews in max xml
         final TextView userBench = (TextView) v.findViewById(R.id.userBench);
@@ -162,12 +164,27 @@ public class MaxFragment extends Fragment {
                             "SET",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
+                                    Integer bench;
+                                    MainActivity m = new MainActivity();
+                                    m.ExcTest = 1;
                                     String value = input.getText().toString();
-                                    Integer bench = Integer.valueOf(value);
-                                    String s = ParseUser.getCurrentUser().getUsername();
-                                    userBench.setText("" + bench);
-                                    main.BenchMax(bench, s);
-                                    dialog.cancel();
+                                    try {
+                                        bench = Integer.parseInt(value);
+                                        Log.d("Q", "Is a number " + bench + " dd ");
+                                    } catch (NumberFormatException e) {
+                                        Log.d("Q", "Is not a number ");
+                                        m.ExcTest = 2;
+                                        Toast.makeText(getActivity(), "Invalid Number", Toast.LENGTH_LONG)
+                                                .show();
+
+                                    }
+                                    if (m.ExcTest == 1) {
+                                        Integer bench2 = Integer.valueOf(value);
+                                        String s = ParseUser.getCurrentUser().getUsername();
+                                        userBench.setText("" + bench2);
+                                        main.BenchMax(bench2, s);
+                                        dialog.cancel();
+                                    }
                                 }
                             });
 
@@ -199,12 +216,27 @@ public class MaxFragment extends Fragment {
                             "SET",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
+                                    Integer squat;
+                                    MainActivity m = new MainActivity();
+                                    m.ExcTest = 1;
                                     String value = input.getText().toString();
-                                    Integer squat = Integer.valueOf(value);
-                                    String s = ParseUser.getCurrentUser().getUsername();
-                                    userSquat.setText("" + squat);
-                                    main.SquatMax(squat, s);
-                                    dialog.cancel();
+                                    try {
+                                        squat = Integer.parseInt(value);
+                                        Log.d("Q", "Is a number " + squat + " dd ");
+                                    } catch (NumberFormatException e) {
+                                        Log.d("Q", "Is not a number ");
+                                        m.ExcTest = 2;
+                                        Toast.makeText(getActivity(), "Invalid Number", Toast.LENGTH_LONG)
+                                                .show();
+
+                                    }
+                                    if (m.ExcTest == 1) {
+                                        Integer squat2 = Integer.valueOf(value);
+                                        String s = ParseUser.getCurrentUser().getUsername();
+                                        userSquat.setText("" + squat2);
+                                        main.SquatMax(squat2, s);
+                                        dialog.cancel();
+                                    }
                                 }
                             });
 
@@ -236,13 +268,27 @@ public class MaxFragment extends Fragment {
                             "SET",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
+                                    Integer dl;
+                                    MainActivity m = new MainActivity();
+                                    m.ExcTest = 1;
                                     String value = input.getText().toString();
+                                    try {
+                                        dl = Integer.parseInt(value);
+                                        Log.d("Q", "Is a number " + dl + " dd ");
+                                    } catch (NumberFormatException e) {
+                                        Log.d("Q", "Is not a number ");
+                                        m.ExcTest = 2;
+                                        Toast.makeText(getActivity(), "Invalid Number", Toast.LENGTH_LONG)
+                                                .show();
+
+                                    }
+                                    if (m.ExcTest == 1) {
                                     Integer deadLift = Integer.valueOf(value);
                                     String s = ParseUser.getCurrentUser().getUsername();
                                     userDL.setText("" + deadLift);
                                     main.DeadLiftMax(deadLift, s);
                                     dialog.cancel();
-                                }
+                                }}
                             });
 
                     builder1.setNegativeButton(
@@ -273,12 +319,27 @@ public class MaxFragment extends Fragment {
                             "SET",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
+                                    Integer mile;
+                                    MainActivity m = new MainActivity();
+                                    m.ExcTest = 1;
                                     String value = input.getText().toString();
-                                    Integer miletime = Integer.valueOf(value);
-                                    String s = ParseUser.getCurrentUser().getUsername();
-                                    userMileTime.setText("" + miletime);
-                                    main.MileTimeMax(miletime, s);
-                                    dialog.cancel();
+                                    try {
+                                        mile = Integer.parseInt(value);
+                                        Log.d("Q", "Is a number " + mile + " dd ");
+                                    } catch (NumberFormatException e) {
+                                        Log.d("Q", "Is not a number ");
+                                        m.ExcTest = 2;
+                                        Toast.makeText(getActivity(), "Invalid Number", Toast.LENGTH_LONG)
+                                                .show();
+
+                                    }
+                                    if (m.ExcTest == 1) {
+                                        Integer miletime = Integer.valueOf(value);
+                                        String s = ParseUser.getCurrentUser().getUsername();
+                                        userMileTime.setText("" + miletime);
+                                        main.MileTimeMax(miletime, s);
+                                        dialog.cancel();
+                                    }
                                 }
                             });
 
@@ -291,7 +352,8 @@ public class MaxFragment extends Fragment {
                             });
 
                     AlertDialog alert11 = builder1.create();
-                    alert11.show();}
+                    alert11.show();
+                }
             });
 
 

@@ -57,6 +57,8 @@ public class Editprofilefragment extends Fragment {
         buttonsave = (Button)v.findViewById(R.id.savebuttoneditprofile);
         backbutton = (Button)v.findViewById(R.id.Back);
         final ParseUser curruser = ParseUser.getCurrentUser();
+        getActivity().getActionBar()
+                .setTitle("Edit");
 
 /***BACK BUTTON ISSUES
        backbutton.setOnClickListener(new OnClickListener() {

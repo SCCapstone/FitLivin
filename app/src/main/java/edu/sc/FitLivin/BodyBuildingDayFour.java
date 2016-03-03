@@ -36,7 +36,7 @@ public class BodyBuildingDayFour extends Fragment {
 
 
     private AlertDialog.Builder dialogBuilder;
-    //
+
     private void bodybuild4Dialog(){
         dialogBuilder = new AlertDialog.Builder(getActivity());
         dialogBuilder.setTitle("Congratulations!");
@@ -48,6 +48,7 @@ public class BodyBuildingDayFour extends Fragment {
             }
         });
         AlertDialog dialog = dialogBuilder.create();
+        dialogBuilder.setIcon(R.mipmap.ic_launcher);
         dialog.show();
     }
 
@@ -66,7 +67,8 @@ public class BodyBuildingDayFour extends Fragment {
         ImageButton deadlift = (ImageButton) v.findViewById(R.id.deadliftImage);
         ImageButton pullup = (ImageButton) v.findViewById(R.id.pullupImage);
         ImageButton dbrow = (ImageButton) v.findViewById(R.id.dumbbellRowImage);
-
+        getActivity().getActionBar()
+                .setTitle("Day 4");
 
         deadlift.setOnClickListener(new View.OnClickListener() {
                                   @Override
@@ -146,6 +148,7 @@ public class BodyBuildingDayFour extends Fragment {
                 ParseQuery Points = ParseQuery.getQuery("Points");
                 Points.whereExists("CurrentPoints");//setting constraints
                 Points.whereMatchesQuery("author", queryuser);
+                Points.orderByDescending("createdAt");
 
                 Points.findInBackground(new FindCallback<ParseObject>() {
                                             public void done(List<ParseObject> objects, ParseException e) {
@@ -154,7 +157,7 @@ public class BodyBuildingDayFour extends Fragment {
 
                                                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                                                        int x = (Integer) objects.get(objects.size() - 1).get("CurrentPoints");
+                                                        int x = (Integer) objects.get(0).get("CurrentPoints");
                                                         MainActivity main = new MainActivity();
                                                         main.points = x;
                                                         // main.bench = x;

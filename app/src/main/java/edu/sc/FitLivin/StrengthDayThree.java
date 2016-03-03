@@ -7,8 +7,10 @@
 
 package edu.sc.FitLivin;
 
+import android.app.AlertDialog;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -33,6 +35,24 @@ public class StrengthDayThree extends Fragment {
 
 MediaPlayer mp;
 
+    private AlertDialog.Builder dBuilder;
+
+
+    private void StrengthD3dialog(){
+        dBuilder = new AlertDialog.Builder(getActivity());
+        dBuilder.setTitle("Congratulations!");
+        dBuilder.setMessage("You earned 50 points!");
+        dBuilder.setIcon(R.mipmap.ic_launcher);
+        dBuilder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        dBuilder.create();
+        dBuilder.show();
+
+    }
 
     public StrengthDayThree() {
         // Required empty public constructor
@@ -48,7 +68,8 @@ MediaPlayer mp;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_strength_day_three, container, false);
-
+        getActivity().getActionBar()
+                .setTitle("Day 3");
         ImageButton deadlift = (ImageButton) v.findViewById(R.id.deadliftImage);
         ImageButton dbrow = (ImageButton) v.findViewById(R.id.rowImage);
         ImageButton shrug = (ImageButton) v.findViewById(R.id.shrugpic);
@@ -141,6 +162,7 @@ MediaPlayer mp;
                 ParseQuery Points = ParseQuery.getQuery("Points");
                 Points.whereExists("CurrentPoints");//setting constraints
                 Points.whereMatchesQuery("author", queryuser);
+                Points.orderByDescending("createdAt");
 
                 Points.findInBackground(new FindCallback<ParseObject>() {
                                             public void done(List<ParseObject> objects, ParseException e) {
@@ -149,7 +171,7 @@ MediaPlayer mp;
 
                                                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                                                        int x = (Integer) objects.get(objects.size() - 1).get("CurrentPoints");
+                                                        int x = (Integer) objects.get(0).get("CurrentPoints");
                                                         MainActivity main = new MainActivity();
                                                         main.points = x;
                                                         // main.bench = x;
@@ -160,7 +182,10 @@ MediaPlayer mp;
                                                         String s = ParseUser.getCurrentUser().getUsername();
                                                         main.pointsData(points,s);
 
+                                                        StrengthD3dialog();
 
+
+                                                        
                                                     }
 
                                                 }

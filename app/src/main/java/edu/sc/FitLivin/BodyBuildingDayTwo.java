@@ -30,23 +30,33 @@ import com.parse.ParseUser;
 
 import java.util.List;
 
+import static android.content.DialogInterface.*;
+
 
 public class BodyBuildingDayTwo extends Fragment {
 
     private AlertDialog.Builder dialogBuilder;
+
+
+
     //
     private void bodybuild2Dialog(){
-        dialogBuilder = new AlertDialog.Builder(getActivity());
-        dialogBuilder.setTitle("Congratulations!");
-        dialogBuilder.setMessage("You Earned 50 Points!");
-        dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-        AlertDialog dialog = dialogBuilder.create();
-        dialog.show();
+
+
+            dialogBuilder = new AlertDialog.Builder(getActivity());
+            dialogBuilder.setTitle("Congratulations!");
+            dialogBuilder.setMessage("You Earned 50 Points!");
+            dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+            AlertDialog dialog = dialogBuilder.create();
+            dialogBuilder.setIcon(R.mipmap.ic_launcher);
+            dialog.show();
+
+
     }
 
 MediaPlayer mp;
@@ -64,6 +74,8 @@ private View v;
         ImageButton benchImage = (ImageButton) v.findViewById(R.id.benchImage);
         ImageButton dumbbellFlyImage = (ImageButton) v.findViewById(R.id.flyImage);
         ImageButton pushupImage = (ImageButton) v.findViewById(R.id.pushupImage);
+        getActivity().getActionBar()
+                .setTitle("Day 2");
        // mp = MediaPlayer.create(getActivity(), R.raw.fitfactbarbellbenchpressnew);
         benchImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,6 +140,7 @@ private View v;
                 ParseQuery Points = ParseQuery.getQuery("Points");
                 Points.whereExists("CurrentPoints");//setting constraints
                 Points.whereMatchesQuery("author", queryuser);
+                Points.orderByDescending("createdAt");
 
                 Points.findInBackground(new FindCallback<ParseObject>() {
                                             public void done(List<ParseObject> objects, ParseException e) {
@@ -136,7 +149,7 @@ private View v;
 
                                                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                                                        int x = (Integer) objects.get(objects.size() - 1).get("CurrentPoints");
+                                                        int x = (Integer) objects.get(0).get("CurrentPoints");
                                                         MainActivity main = new MainActivity();
                                                         main.points = x;
                                                         // main.bench = x;
@@ -148,7 +161,6 @@ private View v;
                                                         main.pointsData(points,s);
 
                                                         bodybuild2Dialog();
-
 
                                                     }
 

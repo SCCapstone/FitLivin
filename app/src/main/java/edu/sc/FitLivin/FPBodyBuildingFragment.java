@@ -20,7 +20,8 @@ public class FPBodyBuildingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_fp__body__building, container, false);
-
+        getActivity().getActionBar()
+                .setTitle("Body Building");
 
         Button btn = (Button) v.findViewById(R.id.backBodyBuilding);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -39,24 +40,18 @@ public class FPBodyBuildingFragment extends Fragment {
         day1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BodyBuildingDayOne bodyB1 = new BodyBuildingDayOne();
+                BodyBuildingDayOne fragment = new BodyBuildingDayOne();
                 FragmentManager fm = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, bodyB1);
-                ft.addToBackStack(null);
-                ft.commit();
+                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
         Button day2 = (Button) v.findViewById(R.id.day2BodyBuilding);
         day2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BodyBuildingDayTwo bodyB2 = new BodyBuildingDayTwo();
+                BodyBuildingDayTwo fragment = new BodyBuildingDayTwo();
                 FragmentManager fm = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, bodyB2);
-                ft.addToBackStack(null);
-                ft.commit();
+                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
 
@@ -64,36 +59,28 @@ public class FPBodyBuildingFragment extends Fragment {
         day3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BodyBuildingDayThree bodyB3 = new BodyBuildingDayThree();
+                BodyBuildingDayThree fragment = new BodyBuildingDayThree();
                 FragmentManager fm = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, bodyB3);
-                ft.addToBackStack(null);
-                ft.commit();
+                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
         Button day4 = (Button) v.findViewById(R.id.day4BodyBuilding);
         day4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BodyBuildingDayFour bodyB4 = new BodyBuildingDayFour();
+                BodyBuildingDayFour fragment = new BodyBuildingDayFour();
                 FragmentManager fm = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, bodyB4);
-                ft.addToBackStack(null);
-                ft.commit();
+                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+
             }
         });
         Button day5 = (Button) v.findViewById(R.id.day5BodyBuilding);
         day5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BodyBuildingDayFive bodyB5 = new BodyBuildingDayFive();
+                BodyBuildingDayFive fragment = new BodyBuildingDayFive();
                 FragmentManager fm = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, bodyB5);
-                ft.addToBackStack(null);
-                ft.commit();
+                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
         // Inflate the layout for this fragment
