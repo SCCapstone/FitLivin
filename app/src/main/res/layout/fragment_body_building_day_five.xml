@@ -123,6 +123,7 @@
             android:layout_below="@+id/shoulderpressImage"
             android:layout_gravity="center_horizontal"
             android:textColor="#ffffff"
+
             />
 
         <Button
