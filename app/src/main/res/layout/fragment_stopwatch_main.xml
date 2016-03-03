@@ -12,20 +12,19 @@
         android:layout_width="100dp"
         android:layout_marginLeft="38dp"
         android:text="@string/start"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/reset"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignTop="@+id/reset"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/stop"
         android:layout_height="45dp"
         android:layout_width="100dp"
         android:clickable="true"
-        android:layout_marginLeft="270dp"
-
-        android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/start"
-        android:text="Stop" />
+        android:layout_marginRight="40dp"
+        android:text="Stop"
+        android:layout_alignBottom="@+id/reset"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/chronometer" />
 
     <Button
         android:id="@+id/reset"
