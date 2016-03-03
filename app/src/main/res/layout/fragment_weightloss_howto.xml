@@ -1,6 +1,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="edu.sc.FitLivin.WeightlossHowto">
+    android:layout_height="match_parent" tools:context="edu.sc.FitLivin.WeightlossHowto"
+    android:background="@drawable/background3"
+    >
 
     <!-- TODO: Update blank fragment layout -->
     <TextView android:layout_width="match_parent" android:layout_height="match_parent"
@@ -33,6 +35,14 @@
             This fabulous workout is based off the masterful weightloss plans from the man the myth the legend.. Richard Simmons. Mr. Simmons has some of the most unique easy to do weightloss routines that will trim down even the largest of the guts. He is truly a man who knows his weightloss programs and who also has an amazing haircut!
 
 
+
+
+
+
+
+
+
+
             "
             android:id="@+id/textView24"
             android:layout_gravity="right|center_vertical"
@@ -43,8 +53,8 @@
             android:layout_height="wrap_content"
             android:text="BACK"
             android:id="@+id/Wlhowtoback"
-            android:layout_gravity="bottom"
-            android:layout_alignParentBottom="true"
+
+            android:layout_gravity="center_horizontal|bottom"
             />
 
     </LinearLayout>>
