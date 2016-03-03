@@ -77,7 +77,6 @@ public class GoalFragment extends Fragment {
         dialogBuilder = new AlertDialog.Builder(getActivity());
         dialogBuilder.setTitle("Great Job!!!!");
         dialogBuilder.setMessage("Bench Press Goal: Complete!");
-        main.mp.stop();
         main.mp = MediaPlayer.create(getActivity(), R.raw.applause);
         main.mp.start();
         // mp.start();
