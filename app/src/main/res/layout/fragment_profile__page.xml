@@ -148,6 +148,15 @@
             android:layout_alignStart="@+id/profilepicview"
             />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BMI"
+            android:id="@+id/bmiView"
+            android:layout_above="@+id/profileBMIButton"
+            android:textColor="#ffffff"
+            android:layout_alignEnd="@+id/test" />
+
     </RelativeLayout>
 
 

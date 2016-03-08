@@ -1,23 +1,8 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/containerFitnessP"
-    android:background="@drawable/background3">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/linview"
-        >
-
-        <Button
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:text="Back"
-            android:id="@+id/PointsBack"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="center_horizontal|bottom"
-            />
+    android:background="#ffffff">
 
         <TextView
             android:layout_width="wrap_content"
@@ -25,46 +10,95 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/PointsView"
             android:layout_gravity="center_vertical"
-            android:textColor="#ffffff"
+            android:textColor="#ffe90e"
             android:text="Points"
-            android:textSize="80dp"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="83dp"
-            />
+            android:textSize="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Leaderboard:"
+        android:id="@+id/LeaderTitle"
+        android:textSize="20dp"
+        android:layout_below="@+id/PointsView"
+        android:background="#f71106"
+        android:autoText="true" />
 
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/listView4"
+            android:divider="@null"
+            android:layout_gravity="center"
+            android:textStyle="normal|italic"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/LeaderTitle"
+            android:layout_above="@+id/arnoldQuote" />
         <TextView
-            android:layout_width="347dp"
-            android:layout_height="84dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="&quot;Strength does not come from winning. Your struggles develop your strengths. When you go through hardships and decide not to surrender, that is strength.&quot;"
             android:id="@+id/arnoldQuote"
             android:layout_gravity="center"
             android:textStyle="normal|bold|italic"
-            android:textColor="#ffffff"
+            android:textColor="#010101"
             android:layout_above="@+id/arnoldText"
             android:layout_centerHorizontal="true"
             />
 
         <TextView
-            android:layout_width="178dp"
-            android:layout_height="92dp"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
             android:text="-Arnold Schwarzenegger"
             android:id="@+id/arnoldText"
-            android:textColor="#ffffff"
-            android:layout_gravity="right|center_vertical"
-            android:layout_above="@+id/PointsBack"
-            android:layout_centerHorizontal="true"
-            />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Leaderboard"
-            android:id="@+id/leaderButton"
+            android:textColor="#010101"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You are #"
+        android:id="@+id/YouAre"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/position"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/YouAre" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="with"
+        android:id="@+id/with"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="numberPts"
+        android:id="@+id/numberPts"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="points!"
+        android:id="@+id/points"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/PointsView" />
 
 
-    </RelativeLayout>
+</RelativeLayout>
 
-</FrameLayout>
+
 

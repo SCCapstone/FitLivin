@@ -72,6 +72,7 @@ public class NutritionCalFragment extends Fragment {
                             if (genderU.equalsIgnoreCase("male")) {
                                 ParseQuery query1 = ParseQuery.getQuery("ProfileInfo"); //getting query
                                 query1.whereExists("Weight");//setting constraints
+                                query1.orderByDescending("createdAt");
                                 query1.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
                                 query1.findInBackground(new FindCallback<ParseObject>() {
                                     public void done(List<ParseObject> objects, ParseException e) {
@@ -97,6 +98,7 @@ public class NutritionCalFragment extends Fragment {
                             if (genderU.equalsIgnoreCase("female")) {
                                 ParseQuery query2 = ParseQuery.getQuery("ProfileInfo"); //getting query
                                 query2.whereExists("Weight");//setting constraints
+                                query2.orderByDescending("createdAt");
                                 query2.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
                                 query2.findInBackground(new FindCallback<ParseObject>() {
                                     public void done(List<ParseObject> objects, ParseException e) {
@@ -135,6 +137,7 @@ public class NutritionCalFragment extends Fragment {
             public void onClick(View v) {
                 ParseQuery<ParseUser> query = ParseUser.getQuery();
                 query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+                query.orderByDescending("createdAt");
                 query.findInBackground(new FindCallback<ParseUser>() {
                     public void done(List<ParseUser> objects, ParseException e) {
                         if (e == null) {
@@ -147,6 +150,7 @@ public class NutritionCalFragment extends Fragment {
                             if (genderU.equalsIgnoreCase("male")) {
                                 ParseQuery query1 = ParseQuery.getQuery("ProfileInfo"); //getting query
                                 query1.whereExists("Weight");//setting constraints
+                                query1.orderByDescending("createdAt");
                                 query1.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
                                 query1.findInBackground(new FindCallback<ParseObject>() {
                                     public void done(List<ParseObject> objects, ParseException e) {
@@ -174,6 +178,7 @@ public class NutritionCalFragment extends Fragment {
                             if (genderU.equalsIgnoreCase("female")) {
                                 ParseQuery query2 = ParseQuery.getQuery("ProfileInfo"); //getting query
                                 query2.whereExists("Weight");//setting constraints
+                                query2.orderByDescending("createdAt");
                                 query2.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
                                 query2.findInBackground(new FindCallback<ParseObject>() {
                                     public void done(List<ParseObject> objects, ParseException e) {
@@ -212,6 +217,7 @@ public class NutritionCalFragment extends Fragment {
             public void onClick(View v) {
                 ParseQuery<ParseUser> query = ParseUser.getQuery();
                 query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+                query.orderByDescending("createdAt");
                 query.findInBackground(new FindCallback<ParseUser>() {
                     public void done(List<ParseUser> objects, ParseException e) {
                         if (e == null) {
@@ -224,6 +230,7 @@ public class NutritionCalFragment extends Fragment {
                             if (genderU.equalsIgnoreCase("male")) {
                                 ParseQuery query1 = ParseQuery.getQuery("ProfileInfo"); //getting query
                                 query1.whereExists("Weight");//setting constraints
+                                query1.orderByDescending("createdAt");
                                 query1.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
                                 query1.findInBackground(new FindCallback<ParseObject>() {
                                     public void done(List<ParseObject> objects, ParseException e) {
@@ -251,6 +258,7 @@ public class NutritionCalFragment extends Fragment {
                             if (genderU.equalsIgnoreCase("female")) {
                                 ParseQuery query2 = ParseQuery.getQuery("ProfileInfo"); //getting query
                                 query2.whereExists("Weight");//setting constraints
+                                query2.orderByDescending("createdAt");
                                 query2.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
                                 query2.findInBackground(new FindCallback<ParseObject>() {
                                     public void done(List<ParseObject> objects, ParseException e) {

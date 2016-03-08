@@ -17,7 +17,9 @@ import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +30,9 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 public class PointsPageFragment extends Fragment {
@@ -85,31 +90,96 @@ private File imageFile;
 
 
               //Creates back button to go back to home page
-        Button backBtn = (Button) v.findViewById(R.id.PointsBack);
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                HomePageFragment fragment1 = new HomePageFragment();
-                FragmentManager fm = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, fragment1);//replaces fragment with previous
-                ft.addToBackStack(null);
-                ft.commit();
-            }
-        });
-        Button leaderbtn = (Button) v.findViewById(R.id.leaderButton);
-        leaderbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PointsLeader fragment1 = new PointsLeader();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, fragment1);
-                ft.addToBackStack(null);
-                ft.commit();
-            }
-        });
 
+        MainActivity main2 = new MainActivity();
+        final ArrayList<String> arrayList;
+        arrayList = new ArrayList<String>();
+        final ArrayList<String> arrayList2;
+        arrayList2 = new ArrayList<String>();
+        final ArrayList<Integer> arrayList3;
+        arrayList3 = new ArrayList<Integer>();
+        final ArrayAdapter<String> adapter;
+       final ListView list;
+        list = (ListView) v.findViewById(R.id.listView4);
+
+
+        adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, arrayList2);
+
+        list.setAdapter(adapter);
+        //MainActivity main = new MainActivity();
+        main2.leader = 1;
+
+        final HashMap<Integer, String> myMap = new HashMap<Integer, String>();
+        ParseQuery Points2 = ParseQuery.getQuery("Points");
+        Points2.whereExists("CurrentPoints");
+        Points2.whereExists("username");//setting constraints
+        Points2.orderByDescending("createdAt");
+
+        Points2.findInBackground(new FindCallback<ParseObject>() {
+                                     public void done(List<ParseObject> objects, ParseException e) {
+                                         MainActivity main = new MainActivity();
+                                         main.leader = 0;
+                                         while (main.leader != objects.size() - 1) {
+
+                                             if (e == null && objects.size() != 0) { //if objects size is not 0
+                                                 String x = (String) objects.get(main.leader).get("username");
+                                                 Integer y = (Integer) objects.get(main.leader).get("CurrentPoints");
+                                                 if (arrayList.contains(x)) {
+
+                                                 } else {
+                                                     arrayList.add(x);
+                                                     arrayList3.add(y);
+                                                     myMap.put(y, x);
+                                                     // adapter.notifyDataSetChanged();
+
+                                                 }
+
+
+                                             }
+                                             main.leader++;
+                                         }
+                                      /*  for (Map.Entry<String,Integer> t : myMap.entrySet()) {
+                                            //to get key
+                                            String s =  t.getKey();
+                                            //and to get value
+                                            Integer i = t.getValue();
+                                            Log.d("Q", s +" " + i + " dd ");
+                                        }*/
+
+                                         Collections.sort(arrayList3);
+
+                                         // String str = new String(charArray);
+                                         Integer place = 1;
+                                         for (Integer i = arrayList3.size() - 1; i >= 0; i--) {
+                                             Integer pts = arrayList3.get(i);
+                                             String uname = myMap.get(pts);
+                                             uname += " ";
+                                             //String padded = String.format("%-20s", uname);
+                                             Integer space = 19 - uname.length();
+                                             for (Integer y = 0; y < space; y++) {
+                                                 uname += ".";
+                                             }
+                                             System.out.println(uname);
+                                             String padded = uname;
+                                             if (place <= 9) {
+                                                 String s = "  " + place + ".) " + padded + " " + pts;
+                                                 System.out.println(s);
+                                                 arrayList2.add(s);
+                                             } else {
+                                                 String s = place + ".) " + padded + " " + pts;
+                                                 System.out.println(s);
+                                                 arrayList2.add(s);
+                                             }
+                                             place++;
+                                         }
+
+                                         adapter.notifyDataSetChanged();
+
+                                     }
+
+                                 }
+
+        );
 
         return v;
 

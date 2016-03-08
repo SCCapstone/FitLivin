@@ -45,6 +45,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ProfilePageFragment extends Fragment {
 
     ImageView imageView1;
+    private float multiplier = 703;
 
     private Button editprofile;
     Button p;
@@ -92,6 +93,7 @@ public class ProfilePageFragment extends Fragment {
         final Button takepic = (Button) v.findViewById(R.id.pic);
         final TextView currentHeight = (TextView) v.findViewById(R.id.CurrH);
         final TextView currentWeight = (TextView) v.findViewById(R.id.CurrW);
+        final TextView BMI = (TextView) v.findViewById(R.id.bmiView);
 
         //pic = (Button) v.findViewById(R.id.pic);
 
@@ -156,6 +158,28 @@ public class ProfilePageFragment extends Fragment {
             }
         });
 
+        ParseQuery query2 = ParseQuery.getQuery("ProfileInfo"); //getting query
+        query2.whereExists("Weight");//setting constraints
+        query2.whereExists("Height");//setting constraints
+        query2.orderByDescending("createdAt");
+        query2.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
+        query2.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
+                if (e == null && objects.size() != 0) { //if objects size is not 0
+
+                    if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
+                        float currweight = objects.get(0).get("Weight").hashCode(); //setting weight
+                        float currheight = objects.get(0).get("Height").hashCode(); //setting height
+
+                        float bmiValue = calculateBMI(currweight, currheight);
+                        BMI.setText(""+bmiValue);
+
+                    }
+                }
+            }
+
+        });
+
         Button btn = (Button) v.findViewById(R.id.profileBMIButton);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -205,6 +229,9 @@ private File getFile(){
     File image_file = new File(folder, "FL_image.jpg");
             return image_file;
 }
+    public float calculateBMI(double weight, double height) {
+        return (float) ((weight / (height * height)) * multiplier);
+    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

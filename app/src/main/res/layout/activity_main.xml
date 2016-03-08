@@ -19,7 +19,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="left"
         android:id="@+id/listView"
-        android:background="#ffffff"
+        android:background="#f71106"
         >
 
     </ListView>
