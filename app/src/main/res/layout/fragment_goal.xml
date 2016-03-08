@@ -47,7 +47,6 @@
             android:textSize="20dp"
             android:textIsSelectable="true"
             android:layout_toEndOf="@+id/editnametext"
-            android:layout_below="@+id/textView2"
             android:layout_marginTop="20dp"
             />
 

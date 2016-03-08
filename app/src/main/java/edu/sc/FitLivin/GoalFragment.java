@@ -169,7 +169,6 @@ public class GoalFragment extends Fragment {
 
 
         ParseQuery Weightquery = ParseQuery.getQuery("WeightGoal");
-        ParseQuery CurrentWeightquery = ParseQuery.getQuery("ProfileInfo");
         ParseQuery WeightGainquery = ParseQuery.getQuery("goalWeightGain");
         ParseQuery Benchquery = ParseQuery.getQuery("BenchGoal");
         ParseQuery Squatquery = ParseQuery.getQuery("SquatGoal");
@@ -185,9 +184,33 @@ public class GoalFragment extends Fragment {
         ParseQuery queryuser = ParseUser.getQuery();
         queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
 
+        ParseQuery CurrentWeightquery = ParseQuery.getQuery("ProfileInfo");
+        CurrentWeightquery.whereExists("Weight");//setting constraints
+        CurrentWeightquery.orderByDescending("createdAt");
+        CurrentWeightquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
+
+        CurrentWeightquery.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
+
+                if (e == null && objects.size() != 0) { //if objects size is not 0
+
+                    if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
+
+                        int x = (Integer) objects.get(0).get("Weight");
+                        //currentW.setText(Integer.toString(x));
+                        main.weightPro = x;
+
+                    }
+
+                }
+            }
+
+        });
+
         ParseQuery MaxBench = ParseQuery.getQuery("MaxBench");
         MaxBench.whereExists("MaxBench");//setting constraints
         MaxBench.whereMatchesQuery("author", queryuser);
+        MaxBench.whereContains("username", ParseUser.getCurrentUser().getUsername());
         MaxBench.orderByDescending("createdAt");
 
         MaxBench.findInBackground(new FindCallback<ParseObject>() {
@@ -198,6 +221,7 @@ public class GoalFragment extends Fragment {
                                               if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
                                                   int x = (Integer) objects.get(0).get("MaxBench");
+                                                  System.out.println("bench x = " + x);
 
                                                   main.bench = x;
 
@@ -214,6 +238,7 @@ public class GoalFragment extends Fragment {
         ParseQuery MaxSquat = ParseQuery.getQuery("MaxSquat");
         MaxSquat.whereExists("MaxSquat");//setting constraints
         MaxSquat.whereMatchesQuery("author", queryuser);
+        MaxSquat.whereContains("username", ParseUser.getCurrentUser().getUsername());
         MaxSquat.orderByDescending("createdAt");
         MaxSquat.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
@@ -237,6 +262,7 @@ public class GoalFragment extends Fragment {
         ParseQuery MaxDeadLift = ParseQuery.getQuery("MaxDeadLift");
         MaxDeadLift.whereExists("MaxDeadLift");//setting constraints
         MaxDeadLift.whereMatchesQuery("author", queryuser);
+        MaxDeadLift.whereContains("username", ParseUser.getCurrentUser().getUsername());
         MaxDeadLift.orderByDescending("createdAt");
         MaxDeadLift.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
@@ -258,6 +284,7 @@ public class GoalFragment extends Fragment {
         ParseQuery MaxMileTime = ParseQuery.getQuery("MaxMileTime");
         MaxMileTime.whereExists("MaxMileTime");//setting constraints
         MaxMileTime.whereMatchesQuery("author", queryuser);
+        MaxMileTime.whereContains("username", ParseUser.getCurrentUser().getUsername());
         MaxMileTime.orderByDescending("createdAt");
         MaxMileTime.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
@@ -278,45 +305,48 @@ public class GoalFragment extends Fragment {
         });
 
 
+
+        Weightquery.whereExists("goalWeight");//setting constraints
         Weightquery.whereMatchesQuery("author", queryuser);
+        Weightquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
         Weightquery.orderByDescending("createdAt");
         Weightquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
                 if (e == null && objects.size() != 0) { //if objects size is not 0
-                    Log.d("QAOD", "weight test success");
-
-                    int x = (Integer) objects.get(0).get("goalWeight");
-                    if (x == 0) {
-                        WeightG.setText("");
-                    } else {
-                        WeightG.setText("" + x);
-                    }
-
-                    //main.bench = x;
-                    if (x > 0) {
-                        Integer value = main.WeightGoalTest(x);
-                        if (value == 1) {
-                            Log.d("QAOD", "congratsWEIGHTLOSS");
-                            Integer points = MainActivity.points;
-                            points = points + 100;
-                            MainActivity.points = points;
-                            String s = ParseUser.getCurrentUser().getUsername();
-                            main.pointsData(points, s);
-                            weightLossDialog();
-                            main.WeightGoal(0, s);
+                    if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
+                        int x = (Integer) objects.get(0).get("goalWeight");
+                        if (x == 0) {
                             WeightG.setText("");
-
-                            //Toast.makeText(getActivity(), "Great Job!!!.", Toast.LENGTH_SHORT).show();
-
-                        }
-                        if (value == 2) {
-                            // Toast.makeText(getActivity(), "Almost!!!.", Toast.LENGTH_SHORT).show();
-                            Log.d("QAOD", "not there yetWEIGHTLOSS");
+                        } else {
+                            WeightG.setText("" + x);
 
                         }
 
+                        if (x > 0) {
+                            Integer value = main.WeightGoalTest(x);
+                            System.out.println("value 2 " + value);
+                            if (value == 1) {
+                                Log.d("QAOD", "congratsWEIGHTGoal");
+                                System.out.println("test 13");
+                                Integer points = MainActivity.points;
+                                points = points + 100;
+                                MainActivity.points = points;
+                                String s = ParseUser.getCurrentUser().getUsername();
+                                main.pointsData(points, s);
+                                weightLossDialog();
+                                main.WeightGoal(0, s);
+                                WeightG.setText("");
 
+
+                            }
+                            if (value == 2) {
+                                Log.d("QAOD", "not there yetWEIGHTloss");
+
+                                // Toast.makeText(getActivity(), "Almost Bench!!!.", Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
                     }
                 }
             }
@@ -325,6 +355,7 @@ public class GoalFragment extends Fragment {
 
         WeightGainquery.whereExists("goalWeightGain");//setting constraints
         WeightGainquery.whereMatchesQuery("author", queryuser);
+        WeightGainquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
         WeightGainquery.orderByDescending("createdAt");
         WeightGainquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
@@ -398,7 +429,7 @@ public class GoalFragment extends Fragment {
                                 BenchG.setText("");
 
                             }
-                            if (value == 2) {
+                           else if (value == 2) {
                                 Log.d("QAOD", "not there yetBENCH");
                             }
 

@@ -52,15 +52,18 @@ public class MainActivity extends FragmentActivity{
     private FragmentManager fm;
     private FragmentTransaction ft;
     public static Integer weight;
-    public static Integer bench;
+    public static Integer weightPro = 0;
+    public static Integer bench = 0;
     public static Integer benchD;
-    public static Integer squat;
-    public static Integer deadLift;
-    public static Integer mileTime;
+    public static Integer squat = 0;
+    public static Integer deadLift = 0;
+    public static Integer mileTime = 0;
     public static Integer height;
     public static Integer leader;
     public static String s;
     public static Integer points = 0;
+    public static Integer c = 0;
+    public static Integer pointsL;
     private String objectID;
     public static MediaPlayer mp;
     public static Integer ExcTest;
@@ -138,7 +141,7 @@ public class MainActivity extends FragmentActivity{
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Fragment fragment;
-                    switch(position){
+                    switch (position) {
                         case 0:
                             fragment = new HomePageFragment();
                             break;
@@ -209,6 +212,7 @@ public class MainActivity extends FragmentActivity{
         });
             ParseQuery MaxBench = ParseQuery.getQuery("MaxBench");
             MaxBench.whereExists("MaxBench");//setting constraints
+            MaxBench.orderByDescending("createdAt");
             MaxBench.whereContains("username", ParseUser.getCurrentUser().getUsername());
 
             MaxBench.findInBackground(new FindCallback<ParseObject>() {
@@ -218,10 +222,9 @@ public class MainActivity extends FragmentActivity{
 
                                                   if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                                                      int x = (Integer) objects.get(objects.size() - 1).get("MaxBench");
+                                                      int x = (Integer) objects.get(0).get("MaxBench");
 
-                                                       bench = x;
-                                                      Log.d("Q", "ddCurrentBenchMax3  " + bench + " dd ");
+                                                      bench = x;
 
 
                                                   }
@@ -235,7 +238,9 @@ public class MainActivity extends FragmentActivity{
             );
             ParseQuery MaxSquat = ParseQuery.getQuery("MaxSquat");
             MaxSquat.whereExists("MaxSquat");//setting constraints
+            MaxSquat.orderByDescending("createdAt");
             MaxSquat.whereContains("username", ParseUser.getCurrentUser().getUsername());
+
             MaxSquat.findInBackground(new FindCallback<ParseObject>() {
                 public void done(List<ParseObject> objects, ParseException e) {
 
@@ -243,13 +248,10 @@ public class MainActivity extends FragmentActivity{
 
                         if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                            int x = (Integer) objects.get(objects.size() - 1).get("MaxSquat");
+                            int x = (Integer) objects.get(0).get("MaxSquat");
                             //currentW.setText(Integer.toString(x));
                             //setSquat(x);
                             squat = x;
-                            Log.d("Q", "ddCurrentSquatMax " + squat + " dd ");
-
-
                         }
                     }
                 }
@@ -257,7 +259,9 @@ public class MainActivity extends FragmentActivity{
             });
             ParseQuery MaxDeadLift = ParseQuery.getQuery("MaxDeadLift");
             MaxDeadLift.whereExists("MaxDeadLift");//setting constraints
+            MaxDeadLift.orderByDescending("createdAt");
             MaxDeadLift.whereContains("username", ParseUser.getCurrentUser().getUsername());
+
             MaxDeadLift.findInBackground(new FindCallback<ParseObject>() {
                 public void done(List<ParseObject> objects, ParseException e) {
 
@@ -265,10 +269,9 @@ public class MainActivity extends FragmentActivity{
 
                         if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                            int x = (Integer) objects.get(objects.size() - 1).get("MaxDeadLift");
+                            int x = (Integer) objects.get(0).get("MaxDeadLift");
                             //currentW.setText(Integer.toString(x));
                             deadLift = x;
-
 
 
                         }
@@ -278,7 +281,9 @@ public class MainActivity extends FragmentActivity{
             });
             ParseQuery MaxMileTime = ParseQuery.getQuery("MaxMileTime");
             MaxMileTime.whereExists("MaxMileTime");//setting constraints
+            MaxMileTime.orderByDescending("createdAt");
             MaxMileTime.whereContains("username", ParseUser.getCurrentUser().getUsername());
+
             MaxMileTime.findInBackground(new FindCallback<ParseObject>() {
                 public void done(List<ParseObject> objects, ParseException e) {
 
@@ -286,7 +291,7 @@ public class MainActivity extends FragmentActivity{
 
                         if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                            int x = (Integer) objects.get(objects.size() - 1).get("MaxMileTime");
+                            int x = (Integer) objects.get(0).get("MaxMileTime");
                             //currentW.setText(Integer.toString(x));
                             mileTime = x;
 
@@ -377,10 +382,10 @@ public class MainActivity extends FragmentActivity{
         // adds info to database
         profileInfo.put("Weight", weight1);
         profileInfo.put("Height", height1);
-        profileInfo.put("randomValue",Math.random());
-        profileInfo.put("UserP",user1);
-        profileInfo.put("username",user1.getUsername());
-        profileInfo.put("ObjectId",user1.getObjectId());
+        profileInfo.put("randomValue", Math.random());
+        profileInfo.put("UserP", user1);
+        profileInfo.put("username", user1.getUsername());
+        profileInfo.put("ObjectId", user1.getObjectId());
 
 
 
@@ -733,42 +738,26 @@ public class MainActivity extends FragmentActivity{
     }
     public Integer WeightGoalTest(final Integer weightL){
 
-        ParseQuery CurrentWeightquery = ParseQuery.getQuery("ProfileInfo");
-        CurrentWeightquery.whereExists("Weight");//setting constraints
-        CurrentWeightquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
 
-        CurrentWeightquery.findInBackground(new FindCallback<ParseObject>() {
-            public void done(List<ParseObject> objects, ParseException e) {
+          Integer currentw = weightPro;
 
-                if (e == null && objects.size() != 0) { //if objects size is not 0
+          if (currentw <= weightL)
+          {
+              return 1;
+          }
+        else {
 
-                    if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
-
-                        int x = (Integer) objects.get(objects.size() - 1).get("Weight");
-                        //currentW.setText(Integer.toString(x));
-                        setWeight(x);
-
-
-                    }
-                }
-            }
-
-        });
-        Log.d("Q", "ddCurrentWeight  " + getWeight() + " dd ");
-
-        Integer currentw = getWeight();
-        if(currentw<=weightL){
-            return 1;
-        }else{
-            return 2;
-        }
+              return 2;
+          }
 
     }
     public Integer WeightGainGoalTest(final Integer weightG){
 
         ParseQuery CurrentWeightquery = ParseQuery.getQuery("ProfileInfo");
         CurrentWeightquery.whereExists("Weight");//setting constraints
+        CurrentWeightquery.orderByDescending("createdAt");
         CurrentWeightquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
+
 
        //final  SaveData data = new SaveData();
 
@@ -780,7 +769,7 @@ public class MainActivity extends FragmentActivity{
 
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                        int x = (Integer) objects.get(objects.size() - 1).get("Weight");
+                        int x = (Integer) objects.get(0).get("Weight");
                         //currentW.setText(Integer.toString(x));
                         setWeight(x);
 
@@ -791,13 +780,13 @@ public class MainActivity extends FragmentActivity{
 
         });
 
-        Log.d("Q", "ddCurrentWeight  " + getWeight() + " dd ");
-        Log.d("Q", "Test 2");
-        BenchGoalTest(1);
+        //BenchGoalTest(1);
         Integer currentw = getWeight();
         if(currentw>=weightG){
+
             return 1;
         }else{
+
             return 2;
         }
 
@@ -808,6 +797,7 @@ public class MainActivity extends FragmentActivity{
        Log.d("Q", "ddCurrentBenchMax2  " + bench + " dd ");
 
        Integer currentB = bench;
+
         if(currentB>=weightG){
             return 1;
         }else{
@@ -820,7 +810,6 @@ public class MainActivity extends FragmentActivity{
     public Integer SquatGoalTest(final Integer weightG){
 
 
-        Log.d("Q", "ddCurrentSquatMax  " + squat + " dd ");
         Integer currentS = squat;
         if(currentS>=weightG){
             return 1;
@@ -831,8 +820,7 @@ public class MainActivity extends FragmentActivity{
     }
    public Integer DeadLiftGoalTest(final Integer weightG){
 
-        Log.d("Q", "ddCurrentDeadLift  " + deadLift + " dd ");
-        Integer currentD = deadLift;
+       Integer currentD = deadLift;
         if(currentD>=weightG){
             return 1;
         }else{
@@ -843,8 +831,10 @@ public class MainActivity extends FragmentActivity{
 
     public Integer MileTimeGoalTest(final Integer weightG){
 
-        Log.d("Q", "ddCurrentMILETIME  " + mileTime + " dd ");
         Integer currentM = mileTime;
+       if(currentM == 0){
+           return 2;
+       }
         if(currentM<=weightG){
             return 1;
         }else{
@@ -877,6 +867,13 @@ public class MainActivity extends FragmentActivity{
     public void setHeight(Integer setHeight){
         this.height = setHeight;
     }
+
+    public Integer getC(){
+        return c;
+    }
+    public void setC(Integer setC){
+        this.c = setC;
+    }
     public String getS(){
         return objectID;
     }
@@ -903,6 +900,9 @@ public class MainActivity extends FragmentActivity{
             getFragmentManager().popBackStack();
         }
     }
+
+
+
 
 }
 

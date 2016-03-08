@@ -83,17 +83,7 @@ private File imageFile;
         );
 
 
-       /* Integer points;
-        //Calls main class
-        MainActivity main = new MainActivity();
-        // sets points to static points in main class
-        points = MainActivity.points;
-
-        main.pointsData(points);
-        //sets the text view to points
-        currentPoints.setText("" + points);
-*/
-        //Creates back button to go back to home page
+              //Creates back button to go back to home page
         Button backBtn = (Button) v.findViewById(R.id.PointsBack);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
