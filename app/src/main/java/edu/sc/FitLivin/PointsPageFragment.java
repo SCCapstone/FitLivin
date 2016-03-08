@@ -57,6 +57,7 @@ private File imageFile;
         ParseQuery Points = ParseQuery.getQuery("Points");
         Points.whereExists("CurrentPoints");//setting constraints
         Points.whereMatchesQuery("author", queryuser);
+        Points.whereContains("username", ParseUser.getCurrentUser().getUsername());
         Points.orderByDescending("createdAt");
 
         Points.findInBackground(new FindCallback<ParseObject>() {

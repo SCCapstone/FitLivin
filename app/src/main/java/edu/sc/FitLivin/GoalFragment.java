@@ -184,6 +184,35 @@ public class GoalFragment extends Fragment {
         ParseQuery queryuser = ParseUser.getQuery();
         queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
 
+
+
+        ParseQuery Points = ParseQuery.getQuery("Points");
+        Points.whereExists("CurrentPoints");//setting constraints
+        Points.whereMatchesQuery("author", queryuser);
+        Points.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        Points.orderByDescending("createdAt");
+
+        Points.findInBackground(new FindCallback<ParseObject>() {
+                                    public void done(List<ParseObject> objects, ParseException e) {
+
+                                        if (e == null && objects.size() != 0) { //if objects size is not 0
+
+                                            if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
+
+                                                int x = (Integer) objects.get(0).get("CurrentPoints");
+                                                main.points = x;
+
+
+                                            }
+
+                                        }
+
+                                    }
+
+
+                                }
+        );//
+
         ParseQuery CurrentWeightquery = ParseQuery.getQuery("ProfileInfo");
         CurrentWeightquery.whereExists("Weight");//setting constraints
         CurrentWeightquery.orderByDescending("createdAt");
@@ -329,9 +358,9 @@ public class GoalFragment extends Fragment {
                             if (value == 1) {
                                 Log.d("QAOD", "congratsWEIGHTGoal");
                                 System.out.println("test 13");
-                                Integer points = MainActivity.points;
+                                Integer points = main.points;
                                 points = points + 100;
-                                MainActivity.points = points;
+                                main.points = points;
                                 String s = ParseUser.getCurrentUser().getUsername();
                                 main.pointsData(points, s);
                                 weightLossDialog();
@@ -375,9 +404,9 @@ public class GoalFragment extends Fragment {
                             Integer value = main.WeightGainGoalTest(x);
                             if (value == 1) {
                                 Log.d("QAOD", "congratsWEIGHTGAIN");
-                                Integer points = MainActivity.points;
+                                Integer points = main.points;
                                 points = points + 100;
-                                MainActivity.points = points;
+                                main.points = points;
                                 String s = ParseUser.getCurrentUser().getUsername();
                                 main.pointsData(points, s);
                                 weightGainDialog();
@@ -419,9 +448,9 @@ public class GoalFragment extends Fragment {
                             Log.d("QAOD", "BENCHMAXGOAL" + x);
                             if (value == 1) {
                                 Log.d("QAOD", "congratsBENCH");
-                                Integer points = MainActivity.points;
+                                Integer points = main.points;
                                 points = points + 100;
-                                MainActivity.points = points;
+                                main.points = points;
                                 String s = ParseUser.getCurrentUser().getUsername();
                                 main.pointsData(points, s);
                                 benchDialog();
@@ -462,9 +491,9 @@ public class GoalFragment extends Fragment {
                             Log.d("QAOD", "SQUATMAXGOAL" + x);
                             if (value == 1) {
                                 Log.d("QAOD", "congratsSQUAT");
-                                Integer points = MainActivity.points;
+                                Integer points = main.points;
                                 points = points + 100;
-                                MainActivity.points = points;
+                                main.points = points;
                                 String s = ParseUser.getCurrentUser().getUsername();
                                 main.pointsData(points, s);
                                 squatDialog();
@@ -507,9 +536,9 @@ public class GoalFragment extends Fragment {
 
                             if (value == 1) {
                                 Log.d("QAOD", "congratsDEADLIFT");
-                                Integer points = MainActivity.points;
+                                Integer points = main.points;
                                 points = points + 100;
-                                MainActivity.points = points;
+                                main.points = points;
                                 String s = ParseUser.getCurrentUser().getUsername();
                                 main.pointsData(points, s);
                                 deadLiftDialog();
@@ -552,9 +581,9 @@ public class GoalFragment extends Fragment {
                             Log.d("QAOD", "MILETIMEMAXGOAL" + x);
                             if (value == 1) {
                                 Log.d("QAOD", "congratsMILEITME");
-                                Integer points = MainActivity.points;
+                                Integer points = main.points;
                                 points = points + 100;
-                                MainActivity.points = points;
+                                main.points = points;
                                 String s = ParseUser.getCurrentUser().getUsername();
                                 main.pointsData(points, s);
                                 mileTimeDialog();

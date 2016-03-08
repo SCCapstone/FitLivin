@@ -139,41 +139,41 @@ MediaPlayer mp;
                 queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
 
                 ParseQuery Points = ParseQuery.getQuery("Points");
-                Points.whereExists("CurrentPoints");//setting constraints
-                Points.whereMatchesQuery("author", queryuser);
-                Points.orderByDescending("createdAt");
+        Points.whereExists("CurrentPoints");//setting constraints
+        Points.whereMatchesQuery("author", queryuser);
+        Points.orderByDescending("createdAt");
 
-                Points.findInBackground(new FindCallback<ParseObject>() {
-                                            public void done(List<ParseObject> objects, ParseException e) {
+        Points.findInBackground(new FindCallback<ParseObject>() {
+                                    public void done(List<ParseObject> objects, ParseException e) {
 
-                                                if (e == null && objects.size() != 0) { //if objects size is not 0
+                                        if (e == null && objects.size() != 0) { //if objects size is not 0
 
-                                                    if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
+                                            if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                                                        int x = (Integer) objects.get(0).get("CurrentPoints");
-                                                        MainActivity main = new MainActivity();
-                                                        main.points = x;
-                                                        // main.bench = x;
-                                                        // currentPoints.setText("" +x);
-                                                        Integer points = main.points;
-                                                        points = points + 50;//adds points for completed workout
+                                                int x = (Integer) objects.get(0).get("CurrentPoints");
+                                                MainActivity main = new MainActivity();
+                                                main.points = x;
+                                                // main.bench = x;
+                                                // currentPoints.setText("" +x);
+                                                Integer points = main.points;
+                                                points = points + 50;//adds points for completed workout
 
-                                                        String s = ParseUser.getCurrentUser().getUsername();
-                                                        main.pointsData(points,s);
-                                                        bodybuild5Dialog();
-
-                                                    }
-
-                                                }
+                                                String s = ParseUser.getCurrentUser().getUsername();
+                                                main.pointsData(points,s);
+                                                bodybuild5Dialog();
 
                                             }
 
-
                                         }
-                );//
 
-            }
-        });
+                                    }
+
+
+                                }
+        );//
+
+    }
+});
 
         return v;//return
     }
