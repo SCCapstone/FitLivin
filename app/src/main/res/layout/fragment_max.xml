@@ -29,14 +29,19 @@
         android:gravity="right|center_vertical"
         android:layout_marginTop="20dp"
         />
-
+<EditText
+    android:layout_width="130dp"
+    android:layout_height="30dp"
+    android:inputType="number"
+    />
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Set Bench"
                 android:id="@+id/setBench"
                 android:gravity="right|center_vertical"
-                android:layout_below="@+id/benchText"/>
+                android:layout_below="@+id/benchText"
+                />
 
             <TextView
             android:layout_width="51dp"
@@ -45,7 +50,7 @@
             android:textColor="#ffffff"
             android:textSize="20dp"
             android:layout_toEndOf="@+id/benchText"
-            android:layout_below="@+id/textView2"
+
                 android:layout_marginTop="20dp"/>
 
 
