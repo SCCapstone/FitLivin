@@ -33,7 +33,9 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 public class PointsPageFragment extends Fragment {
 
@@ -55,6 +57,8 @@ private File imageFile;
 
 
         final TextView currentPoints = (TextView) v.findViewById(R.id.PointsView);
+        final TextView position = (TextView) v.findViewById(R.id.position);
+        final String name1 = ParseUser.getCurrentUser().getUsername();
 
         ParseQuery queryuser = ParseUser.getQuery();
         queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
@@ -127,6 +131,7 @@ private File imageFile;
                                                  if (arrayList.contains(x)) {
 
                                                  } else {
+
                                                      arrayList.add(x);
                                                      arrayList3.add(y);
                                                      myMap.put(y, x);
@@ -138,13 +143,7 @@ private File imageFile;
                                              }
                                              main.leader++;
                                          }
-                                      /*  for (Map.Entry<String,Integer> t : myMap.entrySet()) {
-                                            //to get key
-                                            String s =  t.getKey();
-                                            //and to get value
-                                            Integer i = t.getValue();
-                                            Log.d("Q", s +" " + i + " dd ");
-                                        }*/
+
 
                                          Collections.sort(arrayList3);
 
@@ -153,8 +152,11 @@ private File imageFile;
                                          for (Integer i = arrayList3.size() - 1; i >= 0; i--) {
                                              Integer pts = arrayList3.get(i);
                                              String uname = myMap.get(pts);
+                                             if (uname.equalsIgnoreCase(name1)) {
+                                                 position.setText("" + place);
+                                             }
+                                             // myMap.remove(pts);
                                              uname += " ";
-                                             //String padded = String.format("%-20s", uname);
                                              Integer space = 19 - uname.length();
                                              for (Integer y = 0; y < space; y++) {
                                                  uname += ".";

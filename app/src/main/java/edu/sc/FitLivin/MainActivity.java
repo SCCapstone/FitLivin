@@ -61,6 +61,7 @@ public class MainActivity extends FragmentActivity{
     public static Integer height;
     public static Integer leader;
     public static String s;
+    public static Integer y;
     public static Integer points = 0;
     public static Integer c = 0;
     public static Integer pointsL;

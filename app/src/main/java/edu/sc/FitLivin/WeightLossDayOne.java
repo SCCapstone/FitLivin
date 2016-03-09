@@ -124,30 +124,8 @@ MediaPlayer mp;
         );
 
 
-        Button complete = (Button) v.findViewById(R.id.completeDay1w);//creates complete button
-        complete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Integer points = MainActivity.points;
-                points = points + 50;//adds points for completed workout
-                MainActivity main = new MainActivity();
-                String s = ParseUser.getCurrentUser().getUsername();
-                main.pointsData(points, s);
-            }
-        });
 
-        Button backBtn = (Button) v.findViewById(R.id.BBBack);//creates button
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FPWGTLossFragment fragment1 = new FPWGTLossFragment();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, fragment1);//replaces previous fragment
-                ft.addToBackStack(null);//adds to back stack
-                ft.commit();//commits it
-            }
-        });
+
 
         //Add points to point page
         Button complete1 = (Button) v.findViewById(R.id.completeDay1w);

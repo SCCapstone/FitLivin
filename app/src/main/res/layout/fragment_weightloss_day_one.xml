@@ -118,13 +118,7 @@
             android:layout_gravity="right|bottom"
             />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BACK"
-            android:id="@+id/WLBack"
-            android:layout_gravity="left|bottom"
-            />
+
 
 
 
