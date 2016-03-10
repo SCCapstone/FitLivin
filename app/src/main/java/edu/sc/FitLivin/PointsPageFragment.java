@@ -130,7 +130,18 @@ private File imageFile;
                                                  Integer y = (Integer) objects.get(main.leader).get("CurrentPoints");
                                                  if (arrayList.contains(x)) {
 
-                                                 } else {
+                                                 } else if(arrayList3.contains(y)){
+                                                     y = y+5;
+                                                     arrayList.add(x);
+                                                     arrayList3.add(y);
+                                                     myMap.put(y, x);
+
+                                                     String s = ParseUser.getCurrentUser().getUsername();
+                                                     main.pointsData(y, x);
+                                                     // adapter.notifyDataSetChanged();
+
+                                                 }
+                                                 else {
 
                                                      arrayList.add(x);
                                                      arrayList3.add(y);
@@ -154,6 +165,7 @@ private File imageFile;
                                              String uname = myMap.get(pts);
                                              if (uname.equalsIgnoreCase(name1)) {
                                                  position.setText("" + place);
+                                                 currentPoints.setText("" + pts);
                                              }
                                              // myMap.remove(pts);
                                              uname += " ";

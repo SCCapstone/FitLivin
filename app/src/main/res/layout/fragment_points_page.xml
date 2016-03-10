@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/position"
-        android:textColor="#ffe90e"
+        android:textColor="#e8b91a"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/YouAre" />
 
@@ -76,7 +76,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/PointsView"
         android:layout_gravity="center_vertical"
-        android:textColor="#ffe90e"
+        android:textColor="#e8b91a"
         android:text="Points"
         android:layout_below="@+id/YouAre"
         android:layout_centerHorizontal="true"

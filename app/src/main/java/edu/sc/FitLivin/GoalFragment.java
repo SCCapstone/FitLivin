@@ -428,6 +428,7 @@ public class GoalFragment extends Fragment {
         });
         Benchquery.whereExists("BenchGoal");//setting constraints
         Benchquery.whereMatchesQuery("author", queryuser);
+        WeightGainquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
         Benchquery.orderByDescending("createdAt");
         Benchquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
