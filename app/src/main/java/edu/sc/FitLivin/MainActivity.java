@@ -41,6 +41,7 @@ import android.widget.Toast;
 
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends FragmentActivity{
@@ -188,8 +189,6 @@ public class MainActivity extends FragmentActivity{
 
         //initializes the query object for the Profile databse
      ParseQuery<ParseObject> query = ParseQuery.getQuery("ProfileInfo");
-
-
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> userList, ParseException e) {
@@ -211,6 +210,44 @@ public class MainActivity extends FragmentActivity{
                 }
             }
         });
+          /*  ParseQuery queryuser = ParseUser.getQuery();
+            queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
+            ParseQuery Points = ParseQuery.getQuery("Points");
+            Points.whereExists("CurrentPoints");//setting constraints
+            Points.whereMatchesQuery("author", queryuser);
+            Points.whereContains("username", ParseUser.getCurrentUser().getUsername());
+            Points.orderByDescending("createdAt");
+            final ArrayList<String> arrayList5;
+            arrayList5 = new ArrayList<String>();
+            Points.findInBackground(new FindCallback<ParseObject>() {
+                                        public void done(List<ParseObject> objects, ParseException e) {
+                                            Integer p = 0;
+                                            while( p != objects.size() - 1) {
+
+                                                if (e == null && objects.size() != 0) { //if objects size is not 0
+
+                                                    String x = (String) objects.get(p).get("username");
+                                                    if(arrayList5.contains(x)){
+
+                                                    }else {
+                                                        arrayList5.add(x);
+                                                        System.out.println("arrayList 5 "+x);
+                                                    }
+                                                }
+                                                p++;
+                                            }
+
+
+
+                                        }
+
+
+                                    }
+            );
+            String s = ParseUser.getCurrentUser().getUsername();
+            if(!arrayList5.contains(s)){
+                pointsData(0, s);
+            }*/
             ParseQuery MaxBench = ParseQuery.getQuery("MaxBench");
             MaxBench.whereExists("MaxBench");//setting constraints
             MaxBench.orderByDescending("createdAt");
@@ -302,27 +339,8 @@ public class MainActivity extends FragmentActivity{
                 }
 
             });
-            query2.findInBackground(new FindCallback<ParseObject>() {
-            @Override
-            public void done(List<ParseObject> userList2, ParseException e) {
 
-                if (e == null) {
-                    if (userList2.size() > 0) {
-
-                        for (int i = 0; i < userList2.size(); i++) {
-                            ParseObject p = userList2.get(i);
-
-                            points = p.getInt("CurrentPoints");
-
-                        }
-                    }
-                    //newText.setText(name);
-                } else {
-
-                }
-            }
-        });
-        //Adds the fragment for the layout
+            //Adds the fragment for the layout
         HomePageFragment firstFragment = new HomePageFragment();
         FragmentManager fm1 = getFragmentManager();
         fm1.beginTransaction().add(R.id.container, firstFragment).addToBackStack(null).commit();
@@ -342,6 +360,8 @@ public class MainActivity extends FragmentActivity{
         getMenuInflater().inflate(R.menu.menu_main, menu);
         MenuItem menuItem = menu.findItem(R.id.uName);
         menuItem .setTitle(s);
+
+
        // menuItem.setClickable(true);
         return true;
     }
@@ -364,6 +384,8 @@ public class MainActivity extends FragmentActivity{
             ft.commit();
             return true;
         }
+
+
         return onOptionsItemSelected(item);
 
     }
@@ -843,7 +865,11 @@ public class MainActivity extends FragmentActivity{
         }
 
     }
-
+    public void myFancyMethod(View v) {
+        BMICAL_Fragment fragment3 = new BMICAL_Fragment();
+        FragmentManager fm = getFragmentManager();
+        fm.beginTransaction().replace(R.id.container, fragment3).addToBackStack(null).commit();
+    }
     /***
      *
      * Getters and Setters for name, weight, and height

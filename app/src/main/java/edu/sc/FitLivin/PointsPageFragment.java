@@ -59,38 +59,9 @@ private File imageFile;
         final TextView currentPoints = (TextView) v.findViewById(R.id.PointsView);
         final TextView position = (TextView) v.findViewById(R.id.position);
         final String name1 = ParseUser.getCurrentUser().getUsername();
-
-        ParseQuery queryuser = ParseUser.getQuery();
-        queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
-
-        ParseQuery Points = ParseQuery.getQuery("Points");
-        Points.whereExists("CurrentPoints");//setting constraints
-        Points.whereMatchesQuery("author", queryuser);
-        Points.whereContains("username", ParseUser.getCurrentUser().getUsername());
-        Points.orderByDescending("createdAt");
-
-        Points.findInBackground(new FindCallback<ParseObject>() {
-                                    public void done(List<ParseObject> objects, ParseException e) {
-
-                                        if (e == null && objects.size() != 0) { //if objects size is not 0
-
-                                            if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
-
-                                                int x = (Integer) objects.get(0).get("CurrentPoints");
-
-                                                // main.bench = x;
-                                                currentPoints.setText("" + x);
+        final MainActivity main5 = new MainActivity();
 
 
-                                            }
-
-                                        }
-
-                                    }
-
-
-                                }
-        );
 
 
               //Creates back button to go back to home page

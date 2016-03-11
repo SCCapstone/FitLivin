@@ -11,8 +11,13 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 import com.parse.SignUpCallback;
+
+import java.util.Random;
 
 /**
  * Created by pkcho on 1/13/2016.
@@ -26,6 +31,8 @@ public class SignupActivity extends Activity {
     private EditText passwordAgainView;
     private EditText emailView;
     private EditText phnumberView;
+    private String objectID;
+    private String userName;
 
 
     @Override
@@ -33,12 +40,15 @@ public class SignupActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-
+        final Random randomGenerator = new Random();
+        final ParseObject pointsInfo = new ParseObject("Points");
+        final ParseQuery<ParseObject> query2 = ParseQuery.getQuery("Points");
         usernameView = (EditText) findViewById(R.id.username_in);
         passwordView = (EditText) findViewById(R.id.password_in);
         passwordAgainView = (EditText) findViewById(R.id.retypepasswrd_in);
         emailView = (EditText) findViewById(R.id.email_in);
         phnumberView = (EditText) findViewById(R.id.phonenumber_in);
+
 
         RadioButton maleRadioButton, femaleRadioButton;
 
@@ -102,6 +112,7 @@ public class SignupActivity extends Activity {
                 // Set up a new Parse user
                 ParseUser user = new ParseUser();
                 user.setUsername(usernameView.getText().toString());
+                userName = usernameView.getText().toString();
                 user.setPassword(passwordView.getText().toString());
                 user.setEmail(emailView.getText().toString());
                 user.put("phone", phnumberView.getText().toString());
@@ -128,6 +139,28 @@ public class SignupActivity extends Activity {
                             Toast.makeText(SignupActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
                         } else {
                             // Start an intent for the dispatch activity
+                            Log.d("F", "pdata");
+                            ParseUser curruser = ParseUser.getCurrentUser();
+
+                            Integer points1 = randomGenerator.nextInt(75);
+                            String username1 = userName;
+
+                            //adds info to database
+                            pointsInfo.put("CurrentPoints",points1);
+                            pointsInfo.put("username", username1);
+                            pointsInfo.put("author",curruser);
+
+                            pointsInfo.saveInBackground(new SaveCallback() {
+                                @Override
+                                public void done(ParseException e) {
+                                    if (e == null) {
+                                        objectID = pointsInfo.getObjectId();
+                                        setS(objectID);
+                                    } else {
+                                        Log.d("F", "object failllll");
+                                    }
+                                }
+                            });
                             Intent intent = new Intent(SignupActivity.this, DispatchActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
@@ -153,5 +186,11 @@ public class SignupActivity extends Activity {
         } else {
             return false;
         }
+    }
+    public String getS(){
+        return objectID;
+    }
+    public void setS(String sn){
+        this.objectID = sn;
     }
 }

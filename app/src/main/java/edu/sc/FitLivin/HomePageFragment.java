@@ -34,6 +34,7 @@ public class HomePageFragment extends Fragment{
         View v = inflater.inflate(R.layout.fragment_home_page, container, false);
         getActivity().getActionBar()
                 .setTitle("Home");
+
         //Sets button for fitnessProgram
         //Sets onClick listener to display fragment
         Button btn = (Button) v.findViewById(R.id.fitnessProgramButton);
