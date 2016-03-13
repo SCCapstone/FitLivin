@@ -15,6 +15,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -349,11 +351,14 @@ public class MainActivity extends FragmentActivity{
 
 
     public boolean onCreateOptionsMenu(Menu menu) {
+
         this.getActionBar()
                 .setTitle("FitLivin");
         this.getActionBar().setDisplayUseLogoEnabled(true);
         this.getActionBar().setDisplayShowHomeEnabled(true);
         this.getActionBar().setIcon(R.mipmap.ic_launcher);
+
+        this.getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#d10200")));
          String s = ParseUser.getCurrentUser().getUsername();
         Log.d("FUsername ", s);
         // Inflate the menu; this adds items to the action bar if it is present.

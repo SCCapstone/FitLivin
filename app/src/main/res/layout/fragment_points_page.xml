@@ -2,7 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/containerFitnessP"
-    android:background="#ffffff">
+    android:background="#19010101">
 
 
     <TextView
@@ -12,7 +12,7 @@
         android:id="@+id/LeaderTitle"
         android:textSize="20dp"
         android:layout_below="@+id/PointsView"
-        android:background="#f71106"
+        android:background="#d10200"
         android:autoText="true" />
 
         <ListView
