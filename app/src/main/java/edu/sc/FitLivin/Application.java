@@ -1,6 +1,8 @@
 package edu.sc.FitLivin;
 
 import com.parse.Parse;
+import com.parse.ParseInstallation;
+import com.parse.PushService;
 
 /**
  * Created by pkcho on 1/13/2016.
@@ -14,6 +16,7 @@ public class Application extends android.app.Application{
 
         Parse.enableLocalDatastore(this);//enables the database
         Parse.initialize(this, getString(R.string.parse_application_Id), getString(R.string.parse_application_Key));
+
     }
 
 

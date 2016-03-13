@@ -341,7 +341,7 @@ public class MainActivity extends FragmentActivity{
             });
 
             //Adds the fragment for the layout
-        HomePageFragment firstFragment = new HomePageFragment();
+        PointsPageFragment firstFragment = new PointsPageFragment();
         FragmentManager fm1 = getFragmentManager();
         fm1.beginTransaction().add(R.id.container, firstFragment).addToBackStack(null).commit();
 
@@ -350,7 +350,7 @@ public class MainActivity extends FragmentActivity{
 
     public boolean onCreateOptionsMenu(Menu menu) {
         this.getActionBar()
-                .setTitle("Home");
+                .setTitle("FitLivin");
         this.getActionBar().setDisplayUseLogoEnabled(true);
         this.getActionBar().setDisplayShowHomeEnabled(true);
         this.getActionBar().setIcon(R.mipmap.ic_launcher);
