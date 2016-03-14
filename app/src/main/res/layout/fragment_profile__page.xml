@@ -42,12 +42,12 @@
         android:inputType="number"
         android:layout_gravity="left|center_vertical"
         android:background="#ecffea"
-        android:hint="Weight"
+        android:hint="Weight in pounds"
         android:layout_above="@+id/saveButtonProfile"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="76dp"
         android:layout_marginLeft="50dp"
-        />
+        android:layout_toStartOf="@+id/bmiView" />
 
     <EditText
         android:layout_width="130dp"
@@ -56,7 +56,7 @@
         android:inputType="number"
         android:layout_gravity="left|center_vertical"
         android:background="#f5ffee"
-        android:hint="Height"
+        android:hint="Height in inches"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="50dp"
