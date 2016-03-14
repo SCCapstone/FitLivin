@@ -152,7 +152,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Under"
+            android:text=""
             android:id="@+id/underBmi"
             android:layout_below="@+id/textView4"
             android:layout_toStartOf="@+id/normal"
@@ -172,7 +172,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Normal"
+            android:text=""
             android:id="@+id/normalBmi"
             android:layout_below="@+id/textView4"
             android:layout_toStartOf="@+id/over"
@@ -191,7 +191,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Over"
+            android:text=""
             android:id="@+id/overBmi"
             android:layout_below="@+id/textView4"
             android:layout_toStartOf="@+id/obese"
@@ -219,7 +219,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Obese"
+            android:text=""
             android:id="@+id/obeseBmi"
             android:layout_below="@+id/textView4"
             android:layout_toStartOf="@+id/extra"

@@ -97,8 +97,12 @@ public class ProfilePageFragment extends Fragment {
         final TextView currentHeight = (TextView) v.findViewById(R.id.CurrH);
         final TextView currentWeight = (TextView) v.findViewById(R.id.CurrW);
         final TextView BMI = (TextView) v.findViewById(R.id.bmiView);
+        final TextView underBMI = (TextView) v.findViewById(R.id.underBmi);
+        final TextView normalBMI = (TextView) v.findViewById(R.id.normalBmi);
+        final TextView overBMI = (TextView) v.findViewById(R.id.overBmi);
+        final TextView obeseBMI = (TextView) v.findViewById(R.id.obeseBmi);
         Button setWeightPro = (Button) v.findViewById(R.id.weightButton);
-        Button setHeightPro = (Button) v.findViewById(R.id.heightButton);
+
 
         //pic = (Button) v.findViewById(R.id.pic);
 
@@ -143,8 +147,34 @@ public class ProfilePageFragment extends Fragment {
                         float currweight = objects.get(0).get("Weight").hashCode(); //setting weight
                         float currheight = objects.get(0).get("Height").hashCode(); //setting height
 
-                        float bmiValue = calculateBMI(currweight, currheight);
-                        BMI.setText("" + bmiValue);
+                        float bmiV = calculateBMI(currweight, currheight);
+                        float bmiValue = (float)Math.round(bmiV * 1000f) / 1000f;
+                        if(bmiValue<18){
+                            underBMI.setText(""+bmiValue);
+                            normalBMI.setText("");
+                            overBMI.setText("");
+                            obeseBMI.setText("");
+                        }
+                        else if(bmiValue<25){
+                            normalBMI.setText(""+bmiValue);
+                            underBMI.setText("");
+                            overBMI.setText("");
+                            obeseBMI.setText("");
+                        }
+                        else if(bmiValue<30){
+                            overBMI.setText(""+bmiValue);
+                            underBMI.setText("");
+                            normalBMI.setText("");
+                            obeseBMI.setText("");
+                        }
+                        else{
+                            obeseBMI.setText(""+bmiValue);
+                            underBMI.setText("");
+                            normalBMI.setText("");
+                            overBMI.setText("");
+
+                        }
+                        BMI.setText("" + bmiV);
 
                     }
                 }
@@ -185,6 +215,34 @@ public class ProfilePageFragment extends Fragment {
                 currentWeight.setText("" + w);
                 currentHeight.setText("" + h);
                 main.profileData(w, h, ParseUser.getCurrentUser());
+                float bmiV = calculateBMI(w, h);
+                String.format("%.3g%n", bmiV);
+                float bmiValue = (float)Math.round(bmiV * 1000f) / 1000f;
+                if(bmiValue<18){
+                    underBMI.setText(""+bmiValue);
+                    normalBMI.setText("");
+                    overBMI.setText("");
+                    obeseBMI.setText("");
+                }
+                else if(bmiValue<25){
+                    normalBMI.setText(""+bmiValue);
+                    underBMI.setText("");
+                    overBMI.setText("");
+                    obeseBMI.setText("");
+                }
+                else if(bmiValue<30){
+                    overBMI.setText(""+bmiValue);
+                    underBMI.setText("");
+                    normalBMI.setText("");
+                    obeseBMI.setText("");
+                }
+                else{
+                    obeseBMI.setText(""+bmiValue);
+                    underBMI.setText("");
+                    normalBMI.setText("");
+                    overBMI.setText("");
+
+                }
                 dialog.cancel();
                 // Do something with value!
             }
@@ -242,6 +300,7 @@ private File getFile(){
             return image_file;
 }
     public float calculateBMI(double weight, double height) {
+
         return (float) ((weight / (height * height)) * multiplier);
     }
 
