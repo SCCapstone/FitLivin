@@ -7,9 +7,11 @@
 
 package edu.sc.FitLivin;
 
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -26,6 +28,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,6 +48,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ProfilePageFragment extends Fragment {
 
     ImageView imageView1;
+    private static final int TEXT_ID = 0;
+    private static final int TEXT_ID2 = 0;
     private float multiplier = 703;
 
     private Button editprofile;
@@ -68,7 +73,6 @@ public class ProfilePageFragment extends Fragment {
                 .setTitle("Profile");
        MainActivity main = new MainActivity();
            p = (Button) v.findViewById(R.id.pic);
-        iv = (ImageView)v.findViewById(R.id.test);
 
         p.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,13 +91,14 @@ public class ProfilePageFragment extends Fragment {
         final TextView heightText = (TextView) v.findViewById(R.id.heightView);
         final TextView weightText = (TextView) v.findViewById(R.id.weightView);
         final TextView VeiwName = (TextView) v.findViewById(R.id.name);
-        final EditText editHeight = (EditText) v.findViewById(R.id.height);
-        final EditText editWeight = (EditText) v.findViewById(R.id.weight);
+
         //final TextView currentName = (TextView) v.findViewById(R.id.CurrN);
         final Button takepic = (Button) v.findViewById(R.id.pic);
         final TextView currentHeight = (TextView) v.findViewById(R.id.CurrH);
         final TextView currentWeight = (TextView) v.findViewById(R.id.CurrW);
         final TextView BMI = (TextView) v.findViewById(R.id.bmiView);
+        Button setWeightPro = (Button) v.findViewById(R.id.weightButton);
+        Button setHeightPro = (Button) v.findViewById(R.id.heightButton);
 
         //pic = (Button) v.findViewById(R.id.pic);
 
@@ -105,6 +110,7 @@ public class ProfilePageFragment extends Fragment {
         ParseQuery query = ParseQuery.getQuery("ProfileInfo"); //getting query
         query.whereExists("Weight");//setting constraints
         query.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
+        query.orderByDescending("createdAt");
         query.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
                 if (e == null && objects.size() != 0) { //if objects size is not 0
@@ -122,41 +128,7 @@ public class ProfilePageFragment extends Fragment {
         });
 
 
-        Button btn2 = (Button) v.findViewById(R.id.saveButtonProfile);
-        VeiwName.setText(ParseUser.getCurrentUser().getUsername());
-        btn2.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
 
-
-                Integer height = MainActivity.height;
-                Integer weight = MainActivity.weight;
-
-                MainActivity main = new MainActivity();
-
-
-                String h = editHeight.getText().toString();
-                /*try {
-                    height = Integer.parseInt(h);
-                    Log.d("Q", "Is a number " + height + " dd ");
-                }
-                catch (NumberFormatException e){
-                    Log.d("Q", "Is not a number " + height + " dd ");
-                }*/
-                String w = editWeight.getText().toString();
-                weight = Integer.parseInt(w);
-                currentHeight.setText("" + height);
-                currentWeight.setText("" + weight);
-
-
-
-                main.profileData(weight, height, ParseUser.getCurrentUser());
-
-
-            }
-        });
 
         ParseQuery query2 = ParseQuery.getQuery("ProfileInfo"); //getting query
         query2.whereExists("Weight");//setting constraints
@@ -172,27 +144,67 @@ public class ProfilePageFragment extends Fragment {
                         float currheight = objects.get(0).get("Height").hashCode(); //setting height
 
                         float bmiValue = calculateBMI(currweight, currheight);
-                        BMI.setText(""+bmiValue);
+                        BMI.setText("" + bmiValue);
 
                     }
                 }
             }
 
         });
-
-        Button btn = (Button) v.findViewById(R.id.profileBMIButton);
-        btn.setOnClickListener(new View.OnClickListener() {
+        setWeightPro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BMICAL_Fragment fragment1 = new BMICAL_Fragment();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, fragment1);
-                ft.addToBackStack(null);
-                ft.commit();
+
+
+         final String POPUP_TITLE="Attributes";
+        final String POPUP_TEXT="Please enter your weight and height";
+        final String WEIGHT_HINT="Weight(lbs)";
+        final String HEIGHT_HINT="Height(in)";
+
+        AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+
+        alert.setTitle(POPUP_TITLE);
+        alert.setMessage(POPUP_TEXT);
+
+        // Set an EditText view to get user input
+        final EditText WEIGHT = new EditText(getActivity());
+        WEIGHT.setHint(WEIGHT_HINT);
+        final EditText HEIGHT = new EditText(getActivity());
+        HEIGHT.setHint(HEIGHT_HINT);
+        LinearLayout layout = new LinearLayout(getContext());
+        layout.setOrientation(LinearLayout.VERTICAL);
+        layout.addView(WEIGHT);
+        layout.addView(HEIGHT);
+        alert.setView(layout);
+
+        alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                MainActivity main = new MainActivity();
+                int w = Integer.parseInt(WEIGHT.getText().toString());
+                int h = Integer.parseInt(HEIGHT.getText().toString());
+                currentWeight.setText("" + w);
+                currentHeight.setText("" + h);
+                main.profileData(w, h, ParseUser.getCurrentUser());
+                dialog.cancel();
+                // Do something with value!
             }
         });
-        editprofile = (Button) v.findViewById(R.id.editprofile);
+
+        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                // Canceled.
+                dialog.cancel();
+            }
+        });
+
+        alert.show();
+            }
+        });
+
+
+
+
+      /*  editprofile = (Button) v.findViewById(R.id.editprofile);
         editprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -200,7 +212,7 @@ public class ProfilePageFragment extends Fragment {
                 FragmentManager fm = getFragmentManager();
                 fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
             }
-        });
+        });*/
        /* final MainActivity main1 = new MainActivity();
         pic.setOnClickListener(new View.OnClickListener() {
             @Override

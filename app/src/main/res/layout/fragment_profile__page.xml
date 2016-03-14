@@ -6,29 +6,6 @@
     >
 
     <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Edit Profile"
-        android:id="@+id/editprofile"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-
-        android:layout_alignBottom="@+id/profilepicview"
-        android:layout_gravity="left|bottom" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Save"
-        android:id="@+id/saveButtonProfile"
-        android:layout_gravity="right|bottom"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignEnd="@+id/CurrH"
-        />
-
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Take Pic"
@@ -72,9 +49,10 @@
             android:layout_gravity="left|center_vertical"
             android:textSize="19dp"
             android:text="Username"
-            android:textColor="#ffffff"
+            android:textColor="#010101"
             android:layout_below="@+id/profilepicview"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:singleLine="true" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="40dp"
@@ -155,7 +133,7 @@
             />
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="95dp"
             android:text=""
             android:id="@+id/textView4"
             android:layout_below="@+id/CurrHinch"
@@ -166,40 +144,88 @@
             android:layout_height="wrap_content"
             android:text="Under"
             android:id="@+id/under"
-            android:layout_below="@+id/textView4"
+            android:layout_below="@+id/underBmi"
             android:layout_toStartOf="@+id/normal"
             android:background="#46d4e8"
             android:textSize="20dp"
             android:textIsSelectable="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Under"
+            android:id="@+id/underBmi"
+            android:layout_below="@+id/textView4"
+            android:layout_toStartOf="@+id/normal"
+            android:textColor="#46d4e8"
+            android:textSize="20dp"
+           />
 
         <TextView
             android:layout_width="85dp"
         android:layout_height="wrap_content"
         android:text="Normal"
         android:id="@+id/normal"
-        android:layout_below="@+id/textView4"
+        android:layout_below="@+id/normalBmi"
         android:layout_toStartOf="@+id/textView4"
             android:background="#31e83c"
             android:textSize="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Normal"
+            android:id="@+id/normalBmi"
+            android:layout_below="@+id/textView4"
+            android:layout_toStartOf="@+id/over"
+            android:textColor="#31e83c"
+            android:textSize="20dp"
+            />
         <TextView
             android:layout_width="85dp"
             android:layout_height="wrap_content"
             android:text="Over"
             android:id="@+id/over"
-            android:layout_below="@+id/textView4"
+            android:layout_below="@+id/overBmi"
             android:layout_toEndOf="@+id/textView4"
             android:background="#e8b72c"
             android:textSize="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Over"
+            android:id="@+id/overBmi"
+            android:layout_below="@+id/textView4"
+            android:layout_toStartOf="@+id/obese"
+            android:textColor="#e8b72c"
+            android:textSize="20dp"
+            />
 
         <TextView
             android:layout_width="85dp"
             android:layout_height="wrap_content"
             android:text="Obese"
             android:id="@+id/obese"
-            android:layout_below="@+id/textView4"
+            android:layout_below="@+id/obeseBmi"
             android:layout_toEndOf="@+id/over"
             android:background="#e80407"
             android:textSize="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:id="@+id/extra"
+            android:layout_below="@+id/obeseBmi"
+            android:layout_toEndOf="@+id/obese"
+            android:textSize="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Obese"
+            android:id="@+id/obeseBmi"
+            android:layout_below="@+id/textView4"
+            android:layout_toStartOf="@+id/extra"
+            android:textColor="#e80407"
+            android:textSize="20dp"
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -245,14 +271,19 @@
 
 </ScrollView>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change Attributes"
+        android:id="@+id/weightButton"
+        android:layout_gravity="left|bottom" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/textView"
-        android:layout_gravity="right|center_vertical" />
-
-
+        android:layout_gravity="left|bottom" />
 
 
 </FrameLayout>
