@@ -84,7 +84,7 @@ public class ProfilePageFragment extends Fragment {
             }
         });
         imageView1 = (CircleImageView) v.findViewById(R.id.profilepicview);
-        Bitmap bm = BitmapFactory.decodeResource(getResources(),R.drawable.don);
+      //  Bitmap bm = BitmapFactory.decodeResource(getResources(),R.drawable.don);
 
         imageView1.setBackgroundColor(Color.TRANSPARENT);
 
@@ -100,8 +100,10 @@ public class ProfilePageFragment extends Fragment {
         final TextView normalBMI = (TextView) v.findViewById(R.id.normalBmi);
         final TextView overBMI = (TextView) v.findViewById(R.id.overBmi);
         final TextView obeseBMI = (TextView) v.findViewById(R.id.obeseBmi);
+        final TextView name = (TextView) v.findViewById(R.id.name);
         Button setWeightPro = (Button) v.findViewById(R.id.weightButton);
-
+        String s = ParseUser.getCurrentUser().getUsername();
+        name.setText(s);
 
         //pic = (Button) v.findViewById(R.id.pic);
 
