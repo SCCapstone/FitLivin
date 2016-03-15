@@ -15,6 +15,7 @@ import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -62,6 +63,7 @@ public class MaxFragment extends Fragment {
         Button setBenchMax = (Button) v.findViewById(R.id.setBench);
         Button setSquatMax = (Button) v.findViewById(R.id.setSquat);
         Button setDeadLiftMax = (Button) v.findViewById(R.id.setDeadLift);
+            userSquat.setInputType(InputType.TYPE_CLASS_NUMBER);
 
         Button setMileTimeMax = (Button) v.findViewById(R.id.setMileTime);
         ParseQuery BenchMaxquery = ParseQuery.getQuery("MaxBench");
@@ -158,7 +160,7 @@ public class MaxFragment extends Fragment {
                     builder1.setTitle("Set Your Max");
                     builder1.setMessage("Enter Your Bench Max.");
                     final EditText input = new EditText(getActivity());
-                    input.setId(TEXT_ID);
+                    input.setInputType(InputType.TYPE_CLASS_NUMBER);
                     builder1.setView(input);
                     builder1.setCancelable(true);
 
@@ -210,7 +212,7 @@ public class MaxFragment extends Fragment {
                     builder1.setTitle("Set Your Max");
                     builder1.setMessage("Enter Your Squat Max.");
                     final EditText input = new EditText(getActivity());
-                    input.setId(TEXT_ID);
+                    input.setInputType(InputType.TYPE_CLASS_NUMBER);
                     builder1.setView(input);
                     builder1.setCancelable(true);
 
@@ -262,7 +264,7 @@ public class MaxFragment extends Fragment {
                     builder1.setTitle("Set Your Max");
                     builder1.setMessage("Enter Your Dead Lift Max.");
                     final EditText input = new EditText(getActivity());
-                    input.setId(TEXT_ID);
+                    input.setInputType(InputType.TYPE_CLASS_NUMBER);
                     builder1.setView(input);
                     builder1.setCancelable(true);
 
@@ -313,7 +315,7 @@ public class MaxFragment extends Fragment {
                     builder1.setTitle("Set Your Max");
                     builder1.setMessage("Enter Your Best Mile Time.");
                     final EditText input = new EditText(getActivity());
-                    input.setId(TEXT_ID);
+                    input.setInputType(InputType.TYPE_CLASS_NUMBER);
                     builder1.setView(input);
                     builder1.setCancelable(true);
 
