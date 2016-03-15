@@ -33,7 +33,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_below = "@+id/warmupCycleText"
                 android:clickable="true"
-                android:src="@drawable/cycle"
+                android:src="@drawable/cycling3"
                 />
 
             <TextView

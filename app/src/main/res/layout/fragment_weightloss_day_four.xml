@@ -33,7 +33,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_below = "@+id/warmupJogText"
                 android:clickable="true"
-                android:src="@drawable/jogging"
+                android:src="@drawable/cardio"
                 />
 
             <TextView
@@ -65,7 +65,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_below = "@+id/rowText"
                 android:clickable="true"
-                android:src="@drawable/rows"
+                android:src="@drawable/row2"
                 />
 
             <TextView

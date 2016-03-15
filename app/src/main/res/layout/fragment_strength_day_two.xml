@@ -96,7 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/calfpresspic"
-                android:src="@drawable/calfpress"
+                android:src="@drawable/calfpress3"
                 android:layout_gravity="center_horizontal"
                 android:clickable="true"
                 android:layout_below="@+id/flyText"

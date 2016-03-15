@@ -1,6 +1,6 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="wrap_content"
-    android:layout_height="wrap_content" tools:context="edu.sc.FitLivin.BodyBuildingDayOne"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="edu.sc.FitLivin.BodyBuildingDayOne"
     android:id="@+id/containerFitnessP"
     android:background="#010100"
     >
@@ -33,7 +33,7 @@
             android:id="@+id/cycleImage"
             android:layout_gravity="center_horizontal"
             android:clickable="true"
-            android:src="@drawable/cycle"
+            android:src="@drawable/cycling3"
             />
 
         <TextView
