@@ -7,7 +7,9 @@
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        android:fillViewport="false"
+        android:background="#010100">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_height="fill_parent"
@@ -30,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/runningImage"
-            android:src="@drawable/runner"
+            android:src="@drawable/cardio"
             android:layout_gravity="center_horizontal"
             android:clickable="true"
             android:layout_below="@+id/warmupRunText"

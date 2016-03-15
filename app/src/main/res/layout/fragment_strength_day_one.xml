@@ -97,14 +97,14 @@
 
             <ImageButton
                 android:scaleType="fitXY"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/flies"
                 android:src="@drawable/flies"
                 android:layout_below="@+id/flyText"
                 android:clickable="true"
                 android:layout_centerHorizontal="true"
-                android:layout_alignParentEnd="true"
+
                 />
 
             <TextView

@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/flyImage"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/flyes"
+                android:src="@drawable/flyes2"
                 android:clickable="true"
                 android:layout_below="@+id/flyText"
                 android:layout_above="@+id/flyDetail"

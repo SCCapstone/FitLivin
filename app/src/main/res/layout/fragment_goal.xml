@@ -9,7 +9,8 @@
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        android:background="#010100">
 
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_height="fill_parent"
@@ -30,7 +31,7 @@
             />
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Set Weight"
                 android:id="@+id/setWeight"
@@ -64,7 +65,7 @@
             />
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Set Weight"
                 android:id="@+id/setWeightG"
@@ -100,7 +101,7 @@
             />
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Set Bench"
                 android:id="@+id/setBench"
@@ -136,7 +137,7 @@
             />
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Set Squat"
                 android:id="@+id/setSquat"
@@ -173,7 +174,7 @@
             />
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Set DeadLift"
                 android:id="@+id/setDeadLift"
@@ -210,7 +211,7 @@
             />
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Set MileTime"
                 android:id="@+id/setMileTime"

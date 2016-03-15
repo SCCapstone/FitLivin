@@ -105,7 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/pushdown"
-            android:src="@drawable/pushdown"
+            android:src="@drawable/pushdown2"
             android:layout_below="@+id/flyText"
             android:layout_above="@+id/tricepPushdownDescription"
             android:clickable="true"

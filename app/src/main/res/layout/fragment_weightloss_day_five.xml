@@ -34,7 +34,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_below = "@+id/warmupRunText"
             android:clickable="true"
-            android:src="@drawable/running"
+            android:src="@drawable/cardio"
             />
 
         <TextView

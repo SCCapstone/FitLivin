@@ -4,17 +4,34 @@
     android:id="@+id/containerFitnessP"
     android:background="#010100">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BACK"
+        android:id="@+id/Sday3BACK"
+        android:layout_gravity="left|bottom"
+        android:layout_below="@+id/calfpresspic"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Workout Complete!"
+        android:id="@+id/completeDay3s"
+        android:layout_gravity="right|bottom"
+        />
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_height="fill_parent"
-        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
         android:orientation="vertical"
         >
 
@@ -97,7 +114,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/shrugpic"
-            android:src="@drawable/shrug"
+            android:src="@drawable/shrugs2"
             android:layout_below="@+id/shrug"
             android:clickable="true"
             android:layout_gravity="center_horizontal"
@@ -113,29 +130,12 @@
             android:textColor="#ffffff"
             />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BACK"
-            android:id="@+id/Sday3BACK"
-            android:layout_gravity="left|bottom"
-            android:layout_below="@+id/calfpresspic"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            />
 
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Workout Complete!"
-            android:id="@+id/completeDay3s"
-            android:layout_gravity="right|bottom"
-            />
 
 
     </LinearLayout>>
 
     </ScrollView>
+
 
 </FrameLayout>
