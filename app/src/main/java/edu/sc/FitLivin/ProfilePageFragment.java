@@ -96,7 +96,6 @@ public class ProfilePageFragment extends Fragment {
         final Button takepic = (Button) v.findViewById(R.id.pic);
         final TextView currentHeight = (TextView) v.findViewById(R.id.CurrH);
         final TextView currentWeight = (TextView) v.findViewById(R.id.CurrW);
-        final TextView BMI = (TextView) v.findViewById(R.id.bmiView);
         final TextView underBMI = (TextView) v.findViewById(R.id.underBmi);
         final TextView normalBMI = (TextView) v.findViewById(R.id.normalBmi);
         final TextView overBMI = (TextView) v.findViewById(R.id.overBmi);
@@ -174,7 +173,7 @@ public class ProfilePageFragment extends Fragment {
                             overBMI.setText("");
 
                         }
-                        BMI.setText("" + bmiV);
+
 
                     }
                 }

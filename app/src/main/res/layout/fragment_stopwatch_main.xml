@@ -2,7 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/StopWatch"
-    android:background="@drawable/background3">
+    android:background="#000101">
 
 
 
@@ -13,7 +13,8 @@
         android:layout_marginLeft="38dp"
         android:text="@string/start"
         android:layout_alignTop="@+id/reset"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:background="#46d4e8" />
 
     <Button
         android:id="@+id/stop"
@@ -24,7 +25,9 @@
         android:text="Stop"
         android:layout_alignBottom="@+id/reset"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/chronometer" />
+        android:layout_below="@+id/chronometer"
+        android:background="#46d4e8"
+        android:allowUndo="true" />
 
     <Button
         android:id="@+id/reset"
@@ -34,7 +37,8 @@
         android:layout_marginLeft="150dp"
         android:text="@string/reset"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="#46d4e8" />
 
 
 

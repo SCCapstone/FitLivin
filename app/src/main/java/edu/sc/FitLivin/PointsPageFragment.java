@@ -11,6 +11,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -144,15 +145,15 @@ private File imageFile;
                                              for (Integer y = 0; y < space; y++) {
                                                  uname += ".";
                                              }
-                                             System.out.println(uname);
+                                            // System.out.println(uname);
                                              String padded = uname;
                                              if (place <= 9) {
                                                  String s = "  " + place + ".) " + padded + " " + pts;
-                                                 System.out.println(s);
+                                                 //System.out.println(s);
                                                  arrayList2.add(s);
                                              } else {
                                                  String s = place + ".) " + padded + " " + pts;
-                                                 System.out.println(s);
+                                                 //System.out.println(s);
                                                  arrayList2.add(s);
                                              }
                                              place++;

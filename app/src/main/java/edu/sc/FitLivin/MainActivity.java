@@ -75,7 +75,7 @@ public class MainActivity extends FragmentActivity{
 
     ListView listView;
     ArrayAdapter<String> listAdapter;
-    String fragmentArray[] = {"Home Page", "Profile", "Points", "BMI", "Nutrition", "Goals", "Max", "Track Progress", "Fitness Program","Stop Watch"};
+    String fragmentArray[] = {"Profile", "Points", "Nutrition", "Goals", "Max", "Track Progress", "Fitness Program","Stop Watch"};
     DrawerLayout drawerLayout;
 
 
@@ -146,34 +146,30 @@ public class MainActivity extends FragmentActivity{
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Fragment fragment;
                     switch (position) {
+
                         case 0:
-                            fragment = new HomePageFragment();
-                            break;
-                        case 1:
                             fragment = new ProfilePageFragment();
                             break;
-                        case 2:
+                        case 1:
                             fragment = new PointsPageFragment();
                             break;
-                        case 3:
-                            fragment = new BMICAL_Fragment();
-                            break;
-                        case 4:
+
+                        case 2:
                             fragment = new NutritionCalFragment();
                             break;
-                        case 5:
+                        case 3:
                             fragment = new GoalFragment();
                             break;
-                        case 6:
+                        case 4:
                             fragment = new MaxFragment();
                             break;
-                        case 7:
+                        case 5:
                             fragment = new TrackProgressFragment();
                             break;
-                        case 8:
+                        case 6:
                             fragment = new FitnessProgramFragment();
                             break;
-                        case 9:
+                        case 7:
                             fragment = new StopwatchFragment();
                             break;
                         default:
@@ -358,7 +354,8 @@ public class MainActivity extends FragmentActivity{
         this.getActionBar().setDisplayShowHomeEnabled(true);
         this.getActionBar().setIcon(R.mipmap.ic_launcher);
 
-        this.getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#d10200")));
+        this.getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#46d4e8")));
+
          String s = ParseUser.getCurrentUser().getUsername();
         Log.d("FUsername ", s);
         // Inflate the menu; this adds items to the action bar if it is present.

@@ -2,20 +2,21 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/containerFitnessP"
-    android:background="@drawable/background2"
+
     >
 
 
 
         <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:background="#010100">
 
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:orientation="vertical"
-            >
+            android:background="#010100">
 
 
     <TextView
@@ -31,16 +32,23 @@
         />
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Set Bench"
                 android:id="@+id/setBench"
-                android:gravity="right|center_vertical"
                 android:layout_below="@+id/benchText"
-                />
+                android:background="#46d4e8" />
 
 
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/userBench"
+                android:layout_gravity="right|top"
+                android:textColor="#46d4e8"
+                android:textSize="20dp"
+                android:layout_toEndOf="@+id/benchText"
+                android:layout_marginTop="20dp"/>
 
             <TextView
         android:layout_width="wrap_content"
@@ -58,19 +66,20 @@
         />
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Set Squat"
                 android:id="@+id/setSquat"
                 android:layout_below="@+id/squatText"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:background="#46d4e8" />
 
             <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/userSquat"
             android:layout_gravity="right|top"
-            android:textColor="#ffffff"
+            android:textColor="#46d4e8"
             android:textSize="20dp"
             android:layout_toEndOf="@+id/squatText"
             android:layout_below="@+id/setBench"
@@ -88,12 +97,13 @@
         />
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Set DeadLift"
                 android:id="@+id/setDeadLift"
                 android:layout_below="@+id/deadliftText"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:background="#46d4e8" />
 
             <TextView
             android:layout_width="wrap_content"
@@ -101,7 +111,7 @@
             android:id="@+id/userDeadlift"
             android:layout_gravity="right|center_vertical"
             android:textSize="20dp"
-            android:textColor="#ffffff"
+            android:textColor="#46d4e8"
             android:layout_toEndOf="@+id/deadliftText"
             android:layout_below="@+id/setSquat"
                 android:layout_marginTop="10dp"/>
@@ -120,21 +130,21 @@
         android:layout_marginTop="10dp"/>
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Set MileTime"
                 android:id="@+id/setMileTime"
                 android:layout_alignParentStart="true"
                 android:layout_marginBottom="83dp"
                 android:layout_below="@+id/mileText"
-                />
+                android:background="#46d4e8" />
 
             <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/userTime"
             android:layout_gravity="right|top"
-            android:textColor="#ffffff"
+            android:textColor="#46d4e8"
             android:textSize="20dp"
             android:textIsSelectable="true"
             android:layout_toEndOf="@+id/mileText"

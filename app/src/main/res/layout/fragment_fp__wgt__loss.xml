@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/containerFitnessP"
-    android:background="@drawable/background3"
+    android:background="#010100"
     >
 
     <Button
@@ -15,7 +15,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp"
         android:layout_gravity="center"
-        />
+        android:background="#46d4e8" />
 
     <Button
         android:layout_width="300dp"
@@ -25,7 +25,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="125dp"
         android:layout_gravity="center"
-        />
+        android:background="#46d4e8" />
 
     <Button
         android:layout_width="300dp"
@@ -36,7 +36,7 @@
         android:layout_marginBottom="75dp"
         android:layout_gravity="center"
         android:height="@dimen/activity_vertical_margin"
-        />
+        android:background="#46d4e8" />
 
     <Button
         android:layout_width="300dp"
@@ -46,7 +46,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="-75dp"
         android:layout_gravity="center"
-        />
+        android:background="#46d4e8" />
 
     <Button
         android:layout_width="300dp"
@@ -56,7 +56,7 @@
 
         android:layout_marginBottom="-25dp"
         android:layout_gravity="center"
-        />
+        android:background="#46d4e8" />
 
     <Button
         android:layout_width="wrap_content"

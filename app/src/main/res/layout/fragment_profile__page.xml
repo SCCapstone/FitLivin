@@ -2,33 +2,22 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/containerFitnessP"
-    android:background="#ffffff"
+    android:background="#010101"
     >
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Take Pic"
-        android:id="@+id/pic"
-        android:onClick="process"
-        android:layout_gravity="center_horizontal|bottom"
-
-
-        android:layout_below="@+id/profilepicview"
-        android:layout_centerHorizontal="true" />
 
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_gravity="left|bottom"
-        android:fillViewport="false"
+        android:fillViewport="true"
         android:id="@+id/s">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:id="@+id/linview"
+        android:background="#b3010101"
         >
 
 
@@ -49,7 +38,7 @@
             android:layout_gravity="left|center_vertical"
             android:textSize="19dp"
             android:text="Username"
-            android:textColor="#010101"
+            android:textColor="#ffffff"
             android:layout_below="@+id/profilepicview"
             android:layout_centerHorizontal="true"
             android:singleLine="true" />
@@ -65,7 +54,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/CurrWdescrip"
             android:text="Weight: "
-            android:textColor="#010101"
+            android:textColor="#ffffff"
             android:textSize="23dp"
             android:layout_alignTop="@+id/CurrW"
             android:layout_toStartOf="@+id/CurrW" />
@@ -76,7 +65,7 @@
             android:id="@+id/CurrW"
             android:text="0"
             android:layout_gravity="center"
-            android:textColor="#010101"
+            android:textColor="#ffffff"
             android:textSize="30dp"
             android:layout_above="@+id/textView3"
             android:layout_centerHorizontal="true" />
@@ -86,7 +75,7 @@
             android:id="@+id/CurrWlbs"
             android:text="(lbs)"
             android:layout_gravity="center"
-            android:textColor="#010101"
+            android:textColor="#ffffff"
             android:textSize="30dp"
             android:layout_toEndOf="@+id/CurrW"
             android:layout_below="@+id/textView1"
@@ -105,7 +94,7 @@
             android:id="@+id/CurrHdescrip"
             android:text="Height: "
             android:layout_gravity="center"
-            android:textColor="#010101"
+            android:textColor="#ffffff"
             android:textSize="23dp"
             android:layout_below="@+id/textView3"
             android:layout_toStartOf="@+id/CurrH" />
@@ -115,7 +104,7 @@
             android:id="@+id/CurrH"
             android:text="0"
             android:layout_gravity="center"
-            android:textColor="#010101"
+            android:textColor="#ffffff"
             android:textSize="30dp"
             android:layout_above="@+id/textView4"
             android:layout_centerHorizontal="true" />
@@ -125,7 +114,7 @@
             android:id="@+id/CurrHinch"
             android:text="(in)"
             android:layout_gravity="center"
-            android:textColor="#010101"
+            android:textColor="#ffffff"
             android:textSize="30dp"
             android:layout_toEndOf="@+id/CurrH"
             android:layout_below="@+id/textView3"
@@ -260,30 +249,31 @@
 
             />
 
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="BMI"
-            android:id="@+id/bmiView"
-            android:textColor="#ffffff" />
+            android:text="Take Pic"
+            android:id="@+id/pic"
+            android:background="#46d4e8"
+            android:layout_alignParentBottom="true"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Attributes"
+            android:id="@+id/weightButton"
+            android:background="#46d4e8"
+            android:layout_gravity="left|bottom"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
 
 </ScrollView>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Change Attributes"
-        android:id="@+id/weightButton"
-        android:layout_gravity="left|bottom" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textView"
-        android:layout_gravity="left|bottom" />
+
 
 
 </FrameLayout>
