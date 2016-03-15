@@ -47,14 +47,6 @@
                 android:layout_gravity="right|center_vertical"
                 android:textColor="#FFFFFF" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="BACK"
-                android:id="@+id/Bbhowtoback"
-                android:layout_gravity="bottom"
-                android:layout_alignParentBottom="true"
-                />
 
         </LinearLayout>>
 

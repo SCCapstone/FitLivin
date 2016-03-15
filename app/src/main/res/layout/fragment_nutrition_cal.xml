@@ -39,13 +39,6 @@
             android:layout_toEndOf="@+id/maintainButton"
             android:background="#46d4e8" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BACK"
-            android:id="@+id/NutBack"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="left|bottom" />
 
         <TextView
             android:layout_width="wrap_content"

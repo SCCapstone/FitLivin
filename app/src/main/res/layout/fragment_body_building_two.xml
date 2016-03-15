@@ -125,8 +125,6 @@
                 android:layout_below="@+id/pushupImage"
                 />
 
-
-
             <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -134,12 +132,6 @@
         android:id="@+id/completeDay2bb"
         android:layout_gravity="right|bottom" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BACK"
-        android:id="@+id/BBBack"
-        android:layout_gravity="left|bottom" />
 </LinearLayout>>
 
     </ScrollView>

@@ -58,14 +58,7 @@
         android:background="#010100"
         android:autoText="true" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BACK"
-            android:id="@+id/Sdayhow2back"
-            android:layout_gravity="bottom"
-            android:layout_alignParentBottom="true"
-            />
+
 
     </LinearLayout>>
 

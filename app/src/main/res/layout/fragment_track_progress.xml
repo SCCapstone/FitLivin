@@ -53,17 +53,9 @@
             android:id="@+id/listView2"
             android:textAlignment="center"
             android:animateLayoutChanges="true"
-                android:textColor="#ffffff"
+            android:textColor="#ffffff"
             android:layout_gravity="center_horizontal|bottom" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Back"
-                android:id="@+id/trackprogressBack"
-                android:layout_gravity="left|bottom"
-
-                android:clickable="true" />
 
 </LinearLayout>
 

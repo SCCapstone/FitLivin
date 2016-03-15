@@ -62,20 +62,13 @@
         android:layout_gravity="center"
         android:background="#46d4e8" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BACK"
-        android:id="@+id/backButtonStrength"
-        android:layout_gravity="left|bottom"
-        />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="How To"
         android:id="@+id/howTo"
-        android:layout_gravity="right|bottom"
+        android:layout_gravity="center_horizontal|bottom"
         android:background="#46d4e8" />
 
 </FrameLayout>
