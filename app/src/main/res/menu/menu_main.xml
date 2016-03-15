@@ -16,4 +16,9 @@
         android:title=""
         android:showAsAction="always|withText"
         />
+    <item
+        android:id="@+id/editprofile"
+        android:title="Edit Account Settings"
+        android:showAsAction="never"
+        />
 </menu>

@@ -73,7 +73,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/preacherCurlImage"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/preachercurl"
+        android:src="@drawable/preachercurl2"
         android:clickable="true"
         android:layout_below="@+id/preacherCurlText"
         android:layout_above="@+id/preacherCurlDetail"

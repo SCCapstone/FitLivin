@@ -2,7 +2,6 @@ package edu.sc.FitLivin;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -79,46 +78,46 @@ public class Editprofilefragment extends Fragment {
         buttonsave.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!isEmpty(nametext)&& isEmptyCheckbox(checkname)){
-                    Toast.makeText(getActivity(),"You must check the box to save the changes",Toast.LENGTH_SHORT).show();
+                if(!isEmpty(nametext) && isEmptyCheckbox(checkname)){
+                    Toast.makeText(getActivity(),"please check the box",Toast.LENGTH_SHORT).show();
                 }
-                else if(isEmpty(nametext)&&!isEmptyCheckbox(checkname)){
-                    Toast.makeText(getActivity(),"You must entersomething",Toast.LENGTH_SHORT).show();
-                }
-                else if (!isEmpty(nametext) && !isEmptyCheckbox(checkname)){
-                    curruser.setUsername(nametext.getText().toString());
-                    issaved(username);
+                else {
+                    if (!isEmpty(nametext) && !isEmptyCheckbox(checkname)) {
+                        curruser.setUsername(nametext.getText().toString());
+                        issaved(username);
+                    }
                 }
 
 
                 if(!isEmpty(gendertext) && isEmptyCheckbox(checkgender)){
-                    Toast.makeText(getActivity(),"You must check the box to save the changes",Toast.LENGTH_SHORT).show();
-                }else if (isEmpty(gendertext) && !isEmptyCheckbox(checkgender)){
-                    Toast.makeText(getActivity(),"You must entersomething",Toast.LENGTH_SHORT).show();
-                }else if(!isEmpty(gendertext) && !isEmptyCheckbox(checkgender)){
-                    curruser.put("gender",gendertext.getText().toString());
-                    issaved(gender);
+                    Toast.makeText(getActivity(),"please check the box to save the changes",Toast.LENGTH_SHORT).show();
+                }else {
+                    if(!isEmpty(gendertext) && !isEmptyCheckbox(checkgender)) {
+                        curruser.put("gender", gendertext.getText().toString());
+                        issaved(gender);
+                    }
                 }
                 if(!isEmpty(passwordtext) && isEmptyCheckbox(checkpass)){
-                    Toast.makeText(getActivity(),"You must check the box to save the changes",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),"please check the box to save the changes",Toast.LENGTH_SHORT).show();
 
-                }else if (isEmpty(passwordtext) && !isEmptyCheckbox(checkpass)){
-                    Toast.makeText(getActivity(),"You must entersomething",Toast.LENGTH_SHORT).show();
-
-                }
-                else if (!isEmpty(passwordtext) && !isEmptyCheckbox(checkpass)){
-                    curruser.setPassword(passwordtext.getText().toString());
-                    issaved(password);
+                }else {
+                    if (!isEmpty(passwordtext) && !isEmptyCheckbox(checkpass)) {
+                        curruser.setPassword(passwordtext.getText().toString());
+                        issaved(password);
+                    }
                 }
                 if(!isEmpty(phonetext) && isEmptyCheckbox(checkphone)){
                     Toast.makeText(getActivity(),"You must check the box to save the changes",Toast.LENGTH_SHORT).show();
                 }
-                else if (isEmpty(phonetext)&& !isEmptyCheckbox(checkphone)){
-                    Toast.makeText(getActivity(),"You must entersomething",Toast.LENGTH_SHORT).show();
-                }
-                else if (!isEmpty(phonetext) && !isEmptyCheckbox(checkphone)){
-                    curruser.put("phone",phonetext.getText().toString());
-                    issaved(phone);
+                else {
+                    if (isEmpty(phonetext) && !isEmptyCheckbox(checkphone)) {
+                        Toast.makeText(getActivity(), "You must entersomething", Toast.LENGTH_SHORT).show();
+                    }
+                    else  {
+                        curruser.put("phone", phonetext.getText().toString());
+                        issaved(phone);
+                    }
+
                 }
 
                curruser.saveInBackground(new SaveCallback() {

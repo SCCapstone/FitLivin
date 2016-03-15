@@ -9,12 +9,8 @@ package edu.sc.FitLivin;
 
 import android.app.AlertDialog;
 import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -202,7 +198,7 @@ public class ProfilePageFragment extends Fragment {
         WEIGHT.setHint(WEIGHT_HINT);
         final EditText HEIGHT = new EditText(getActivity());
         HEIGHT.setHint(HEIGHT_HINT);
-        LinearLayout layout = new LinearLayout(getContext());
+        LinearLayout layout = new LinearLayout(getActivity());
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.addView(WEIGHT);
         layout.addView(HEIGHT);

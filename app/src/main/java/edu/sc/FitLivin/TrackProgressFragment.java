@@ -97,11 +97,26 @@ public class TrackProgressFragment extends Fragment {
         spinnerAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.graphspinner,android.R.layout.simple_spinner_item);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         gspinner.setAdapter(spinnerAdapter);
-        gspinner.setBackgroundColor(Color.LTGRAY);
+        gspinner.setBackgroundColor(Color.CYAN);
       gspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
           @Override
           public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
               openAnotherGraph(position);
+              if(position == 0){
+                  gspinner.setBackgroundColor(Color.YELLOW);
+              }
+              else if(position == 1){
+                  gspinner.setBackgroundColor(Color.RED);
+              }
+              else if(position ==2){
+                  gspinner.setBackgroundColor(Color.CYAN);
+              }
+              else if(position == 3){
+                  gspinner.setBackgroundColor(Color.MAGENTA);
+              }
+              else if(position ==4 ){
+                  gspinner.setBackgroundColor(Color.GREEN);
+              }
           }
 
           @Override
@@ -125,6 +140,7 @@ public class TrackProgressFragment extends Fragment {
 
     public void openAnotherGraph(int position){
         if (position == 0){
+
             weight.clear();
             weightList.setAdapter(null);
             graph.removeAllSeries();
