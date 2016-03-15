@@ -2,7 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/containerFitnessP"
-    android:background="#19010101">
+    android:background="#b3010101">
 
 
     <TextView
@@ -12,8 +12,9 @@
         android:id="@+id/LeaderTitle"
         android:textSize="20dp"
         android:layout_below="@+id/PointsView"
-        android:background="#d10200"
-        android:autoText="true" />
+        android:background="#54e4d7"
+        android:autoText="true"
+        android:textColor="#ffffff" />
 
         <ListView
             android:layout_width="wrap_content"
@@ -21,10 +22,12 @@
             android:id="@+id/listView4"
             android:divider="@null"
             android:layout_gravity="center"
+            android:textColor="@android:color/white"
             android:textStyle="normal|italic"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/LeaderTitle"
-            android:layout_above="@+id/arnoldQuote" />
+            android:layout_above="@+id/arnoldQuote"
+            android:touchscreenBlocksFocus="false" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,7 +35,7 @@
             android:id="@+id/arnoldQuote"
             android:layout_gravity="center"
             android:textStyle="normal|bold|italic"
-            android:textColor="#010101"
+            android:textColor="#54e4d7"
             android:layout_above="@+id/arnoldText"
             android:layout_centerHorizontal="true"
             />
@@ -42,7 +45,7 @@
             android:layout_height="20dp"
             android:text="-Arnold Schwarzenegger"
             android:id="@+id/arnoldText"
-            android:textColor="#010101"
+            android:textColor="#54e4d7"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true" />
 
@@ -51,6 +54,7 @@
         android:layout_height="wrap_content"
         android:text="You are ranked # "
         android:id="@+id/YouAre"
+        android:textColor="#ffffff"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -67,6 +71,7 @@
         android:layout_height="wrap_content"
         android:text="with "
         android:id="@+id/with"
+        android:textColor="#ffffff"
         android:layout_below="@+id/YouAre"
         android:layout_toLeftOf="@+id/PointsView"
          />
@@ -88,6 +93,7 @@
         android:layout_height="wrap_content"
         android:text=" points!"
         android:id="@+id/points"
+        android:textColor="#ffffff"
         android:layout_toEndOf="@+id/PointsView"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/YouAre"/>

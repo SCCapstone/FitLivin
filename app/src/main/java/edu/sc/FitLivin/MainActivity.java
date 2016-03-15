@@ -358,7 +358,8 @@ public class MainActivity extends FragmentActivity{
         this.getActionBar().setDisplayShowHomeEnabled(true);
         this.getActionBar().setIcon(R.mipmap.ic_launcher);
 
-        this.getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#d10200")));
+        this.getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#54e4d7")));
+
          String s = ParseUser.getCurrentUser().getUsername();
         Log.d("FUsername ", s);
         // Inflate the menu; this adds items to the action bar if it is present.
