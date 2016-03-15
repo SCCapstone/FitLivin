@@ -31,6 +31,17 @@
             app:civ_border_color="#d10200"
             android:layout_gravity="center_horizontal"
             android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Take Pic"
+            android:id="@+id/pic"
+            android:background="#46d4e8"
+            android:layout_alignBaseline="@+id/textView1"
+            android:layout_alignBottom="@+id/textView1"
+            android:layout_toEndOf="@+id/overBmi" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -108,6 +119,23 @@
             android:textSize="30dp"
             android:layout_above="@+id/textView4"
             android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Attributes"
+            android:id="@+id/weightButton"
+            android:background="#46d4e8"
+            android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/CurrH"
+
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true" />
+
+
+
+
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -168,6 +196,7 @@
             android:textColor="#31e83c"
             android:textSize="20dp"
             />
+
         <TextView
             android:layout_width="85dp"
             android:layout_height="wrap_content"
@@ -249,24 +278,9 @@
 
             />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Take Pic"
-            android:id="@+id/pic"
-            android:background="#46d4e8"
-            android:layout_alignParentBottom="true"
-            />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Change Attributes"
-            android:id="@+id/weightButton"
-            android:background="#46d4e8"
-            android:layout_gravity="left|bottom"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true" />
+
+
 
     </RelativeLayout>
 
