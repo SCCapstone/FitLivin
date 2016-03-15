@@ -54,7 +54,9 @@
             "
         android:id="@+id/textView24"
         android:layout_gravity="right|center_vertical"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:background="#010100"
+        android:autoText="true" />
 
         <Button
             android:layout_width="wrap_content"

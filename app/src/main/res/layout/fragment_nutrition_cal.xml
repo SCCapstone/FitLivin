@@ -8,7 +8,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/linview">
+        android:id="@+id/linview"
+        android:background="#010100">
 
 
         <Button
@@ -17,7 +18,8 @@
             android:text="Maintain"
             android:id="@+id/maintainButton"
             android:layout_marginTop="20dp"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:background="#46d4e8" />
         <Button
             android:layout_width="100dp"
             android:layout_height="55dp"
@@ -25,7 +27,8 @@
             android:id="@+id/wlossButton"
             android:layout_marginTop="20dp"
             android:layout_toStartOf="@+id/maintainButton"
-            android:textColor="#ec091d" />
+            android:textColor="#010101"
+            android:background="#46d4e8" />
 
         <Button
             android:layout_width="100dp"
@@ -33,7 +36,8 @@
             android:text="Weight Gain"
             android:id="@+id/wGainButton"
             android:layout_marginTop="20dp"
-            android:layout_toEndOf="@+id/maintainButton" />
+            android:layout_toEndOf="@+id/maintainButton"
+            android:background="#46d4e8" />
 
         <Button
             android:layout_width="wrap_content"
@@ -62,7 +66,7 @@
             android:text=""
             android:id="@+id/lowCalories"
             android:layout_below="@+id/lowText"
-            android:textColor="#fe080f"
+            android:textColor="#46d4e8"
             android:layout_alignParentStart="true" />
 
         <TextView
@@ -92,7 +96,7 @@
             android:text=""
             android:id="@+id/modCalories"
             android:layout_below="@+id/modText"
-            android:textColor="#fe080f"
+            android:textColor="#46d4e8"
             android:layout_alignParentStart="true" />
 
         <TextView
@@ -123,8 +127,9 @@
             android:text=""
             android:id="@+id/highCalories"
             android:layout_below="@+id/highText"
-            android:textColor="#fe080f"
-            android:layout_alignParentStart="true" />
+            android:textColor="#46d4e8"
+            android:layout_alignParentStart="true"
+            android:singleLine="true" />
 
         <TextView
             android:layout_width="wrap_content"
