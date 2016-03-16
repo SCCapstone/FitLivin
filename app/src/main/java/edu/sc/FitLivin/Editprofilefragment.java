@@ -1,15 +1,17 @@
 package edu.sc.FitLivin;
 
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.parse.ParseException;
@@ -21,23 +23,17 @@ import com.parse.SaveCallback;
  */
 public class Editprofilefragment extends Fragment {
     private EditText nametext;
-    private EditText gendertext;
     private EditText phonetext;
     private EditText passwordtext;
-    private CheckBox checkname;
-    private CheckBox checkgender;
-    private CheckBox checkphone;
-    private CheckBox checkpass;
-    private Button buttonsave;
-    private Button backbutton;
+    private ImageButton buttonsave;
+    private EditText reenterpass;
+    private ImageButton buttonexit;
     private String password = "Password";
     private String username = "username";
     private String phone = "phone";
-    private String gender = "gender";
+    private ParseUser curruser = ParseUser.getCurrentUser();
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
 
 
 
@@ -46,96 +42,111 @@ public class Editprofilefragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_editprofile, container, false);
         nametext = (EditText)v.findViewById(R.id.editTextname);
-        gendertext = (EditText)v.findViewById(R.id.editgender);
         passwordtext = (EditText)v.findViewById(R.id.editpasstext);
         phonetext = (EditText)v.findViewById(R.id.editphone);
-        checkgender = (CheckBox)v.findViewById(R.id.checkboxgender);
-        checkname = (CheckBox)v.findViewById(R.id.checkboxname);
-        checkphone = (CheckBox)v.findViewById(R.id.checkBoxphone);
-        checkpass = (CheckBox)v.findViewById(R.id.checkBoxpassword);
-        buttonsave = (Button)v.findViewById(R.id.savebuttoneditprofile);
+        reenterpass = (EditText)v.findViewById(R.id.reditpassword);
+
+        buttonsave = (ImageButton)v.findViewById(R.id.savebuttoneditprofile);
      //   backbutton = (Button)v.findViewById(R.id.Back);
-        final ParseUser curruser = ParseUser.getCurrentUser();
-        getActivity().getActionBar()
-                .setTitle("Edit");
 
-/***BACK BUTTON ISSUES
-       backbutton.setOnClickListener(new OnClickListener() {
-           @Override
-           public void onClick(View v) {
-
-           }
-
-           ProfilePageFragment fragment1 = new ProfilePageFragment();
-           FragmentManager fm = getFragmentManager();
-           FragmentTransaction ft = fm.beginTransaction();
-           ft.replace(R.id.container, fragment1);//replaces fragment with previous
-           ft.addToBackStack(null);
-           ft.commit();
-       })
-       ;
-**/
-        buttonsave.setOnClickListener(new OnClickListener() {
+        buttonexit = (ImageButton)v.findViewById(R.id.exiteditprofile);
+        buttonexit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!isEmpty(nametext) && isEmptyCheckbox(checkname)){
-                    Toast.makeText(getActivity(),"please check the box",Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    if (!isEmpty(nametext) && !isEmptyCheckbox(checkname)) {
-                        curruser.setUsername(nametext.getText().toString());
-                        issaved(username);
+
+                final String POPUP_TITLE="Attention!";
+                final String POPUP_TEXT="Are You Sure?";
+
+                AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+
+                alert.setTitle(POPUP_TITLE);
+                alert.setMessage(POPUP_TEXT);
+
+
+                // Set an EditText view to get user input
+                LinearLayout layout = new LinearLayout(getActivity());
+                layout.setOrientation(LinearLayout.VERTICAL);
+                alert.setView(layout);
+                alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+
+                        ProfilePageFragment fragment = new ProfilePageFragment();
+                        FragmentManager fragmentManager = getFragmentManager();
+                        fragmentManager.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
+                        // Do something with value!
+                    }
+                });
+                alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                alert.show();
+            }
+
+        });
+        buttonsave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean validationError = false;
+                StringBuilder validationErrorMessage =
+                        new StringBuilder(getResources().getString(R.string.error_intro));
+
+                if (!isEmpty(passwordtext) && !isEmpty(reenterpass)) {
+                    if (!isMatching(reenterpass, passwordtext)) {
+
+                            curruser.setPassword(reenterpass.getText().toString());
+
+                    }
+                    else {
+                        Toast.makeText(getActivity(),"Enter the same password twice",Toast.LENGTH_SHORT).show();
                     }
                 }
-
-
-                if(!isEmpty(gendertext) && isEmptyCheckbox(checkgender)){
-                    Toast.makeText(getActivity(),"please check the box to save the changes",Toast.LENGTH_SHORT).show();
-                }else {
-                    if(!isEmpty(gendertext) && !isEmptyCheckbox(checkgender)) {
-                        curruser.put("gender", gendertext.getText().toString());
-                        issaved(gender);
-                    }
+                if (!isEmpty(nametext)) {
+                    curruser.setUsername(nametext.getText().toString());
                 }
-                if(!isEmpty(passwordtext) && isEmptyCheckbox(checkpass)){
-                    Toast.makeText(getActivity(),"please check the box to save the changes",Toast.LENGTH_SHORT).show();
-
-                }else {
-                    if (!isEmpty(passwordtext) && !isEmptyCheckbox(checkpass)) {
-                        curruser.setPassword(passwordtext.getText().toString());
-                        issaved(password);
-                    }
+                if(!isEmpty(phonetext)){
+                    curruser.put("phone", phonetext.getText().toString());
                 }
-                if(!isEmpty(phonetext) && isEmptyCheckbox(checkphone)){
-                    Toast.makeText(getActivity(),"You must check the box to save the changes",Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    if (isEmpty(phonetext) && !isEmptyCheckbox(checkphone)) {
-                        Toast.makeText(getActivity(), "You must entersomething", Toast.LENGTH_SHORT).show();
-                    }
-                    else  {
-                        curruser.put("phone", phonetext.getText().toString());
-                        issaved(phone);
-                    }
+                validationErrorMessage.append(".");
 
+                // If there is a validation error, display the error
+                if (validationError) {
+                    Toast.makeText(getActivity(), validationErrorMessage.toString(), Toast.LENGTH_LONG)
+                            .show();
+                    return;
                 }
 
-               curruser.saveInBackground(new SaveCallback() {
-                   @Override
-                   public void done(ParseException e) {
-                       if(e != null){
-                           Toast.makeText(getActivity(),"Cannot connect to the database, please try again later",Toast.LENGTH_SHORT).show();
-                       }else{
-                           ProfilePageFragment fragment = new ProfilePageFragment();
-                           FragmentManager fm = getFragmentManager();
-                           fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
-                       }
+                // Set up a progress dialog
+                final ProgressDialog dlg = new ProgressDialog(getActivity());
+                dlg.setTitle("Please wait.");
+                dlg.setMessage("Saving Information.");
+                dlg.show();
 
-                   }
-               });
+                // Set up a new Parse user
 
 
 
+
+                // Call the Parse signup method
+                curruser.saveInBackground(new SaveCallback() {
+
+                    @Override
+                    public void done(ParseException e) {
+                        dlg.dismiss();
+                        if (e == null) {                                                       // Show the error message
+                            Toast.makeText(getActivity(), "Info Saved", Toast.LENGTH_LONG).show();
+                            ProfilePageFragment fragment = new ProfilePageFragment();
+                            FragmentManager fragmentManager = getFragmentManager();
+                            fragmentManager.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
+                            // Do something with value!
+                        } else {
+                            Toast.makeText(getActivity(), "Something Went Wrong", Toast.LENGTH_LONG).show();
+
+                        }
+                    }
+                });
             }
         });
 
@@ -153,14 +164,15 @@ public class Editprofilefragment extends Fragment {
             return true;
         }
     }
-    private boolean isEmptyCheckbox(CheckBox checkBox){
-        if(checkBox.isChecked()){
+    private boolean isMatching(EditText etText1, EditText etText2) {
+        if (etText1.getText().toString().equals(etText2.getText().toString())) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
+
+
     private void issaved(String something){
         Toast.makeText(getActivity(),something+" has been updated",Toast.LENGTH_SHORT).show();
     }

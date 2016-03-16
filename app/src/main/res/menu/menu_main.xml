@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="edu.sc.FitLivin.MainActivity"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="edu.sc.FitLivin.MainActivity">
 
     <item
         android:id="@+id/action_settings"
@@ -15,10 +14,5 @@
         android:id="@+id/uName"
         android:title=""
         android:showAsAction="always|withText"
-        />
-    <item
-        android:id="@+id/editprofile"
-        android:title="Edit Account Settings"
-        android:showAsAction="never"
         />
 </menu>

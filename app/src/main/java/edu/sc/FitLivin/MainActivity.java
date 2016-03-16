@@ -11,16 +11,12 @@ package edu.sc.FitLivin;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
@@ -38,12 +34,7 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
-import android.app.Activity;
-import android.widget.Toast;
 
-
-import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends FragmentActivity{
@@ -377,7 +368,7 @@ public class MainActivity extends FragmentActivity{
             return true;
         }
 
-        else if(id == R.id.uName){
+       if(id == R.id.uName){
             ProfilePageFragment fragment6 = new ProfilePageFragment();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
@@ -386,6 +377,7 @@ public class MainActivity extends FragmentActivity{
             ft.commit();
             return true;
         }
+
 
 
         return onOptionsItemSelected(item);

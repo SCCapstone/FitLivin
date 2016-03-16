@@ -1,154 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:background="@drawable/background3"
+    android:background="#010101"
+    android:orientation="vertical"
     android:layout_height="match_parent">
+
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:backgroundTint="#800000"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:id="@+id/linview"
-        android:layout_gravity="center_horizontal">
 
+        >
 
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="EDIT PROFILE"
+            android:textColor="#46d4e8"
+            android:layout_marginTop="50dp"
+            android:textSize="50dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/textView" />
         <EditText
-            android:layout_width="130dp"
+            android:layout_width="match_parent"
             android:layout_height="37dp"
+            android:maxLines="1"
+            android:maxLength="10"
+            android:inputType="textPersonName"
             android:id="@+id/editTextname"
+            android:textSize="25dp"
+            android:textColor="#46d4e8"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
             android:hint="Enter new name"
+            android:textColorHint="#46d4e8"
+            android:background="#010101"
+            android:layout_above="@+id/reditpassword"
+            />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
             android:maxLines="1"
-            android:background="#ffffff"
-            android:layout_alignTop="@+id/textname"
-            android:layout_alignStart="@+id/savebuttoneditprofile"
-            android:layout_marginLeft="170dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Username:"
-            android:textSize="28dp"
-            android:textColor="#ffffff"
-            android:id="@+id/textname"
-            android:layout_marginTop="64dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="28dp"
-            android:textColor="#ffffff"
-            android:text="Gender:"
-            android:id="@+id/textgender"
-            android:layout_below="@+id/editTextname"
-            android:layout_alignStart="@+id/textname"
-            android:layout_marginTop="37dp"
+            android:maxLength="10"
+            android:inputType="textVisiblePassword"
+            android:id="@+id/reditpassword"
+            android:textSize="25dp"
+            android:textColor="#46d4e8"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:hint="Enter new password"
+            android:textColorHint="#46d4e8"
+            android:background="#010101"
+            android:layout_above="@+id/editpasstext"
             />
 
         <EditText
-            android:layout_width="130dp"
+            android:layout_width="match_parent"
             android:layout_height="37dp"
-            android:id="@+id/editgender"
-            android:maxLines="1"
-            android:maxLength="1"
-            android:hint="enter gender"
-            android:background="#ffffff"
-            android:layout_alignBottom="@+id/textgender"
-            android:layout_alignStart="@+id/editTextname" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="28dp"
-            android:textColor="#ffffff"
-            android:text="Password:"
-            android:id="@+id/editpass"
-            android:layout_below="@+id/textgender"
-            android:layout_alignStart="@+id/textgender"
-            android:layout_marginTop="37dp" />
-
-        <EditText
-            android:layout_width="130dp"
-            android:layout_height="37dp"
-            android:inputType="textPassword"
-            android:ems="10"
-            android:hint="Password"
-            android:maxLines="1"
-            android:background="#ffffff"
-            android:id="@+id/editpasstext"
-            android:layout_alignBottom="@+id/editpass"
-            android:layout_alignStart="@+id/editgender" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="28dp"
-            android:textColor="#ffffff"
-            android:text="Phone:"
-            android:id="@+id/textView6"
-            android:layout_below="@+id/editpass"
-            android:layout_alignStart="@+id/editpass"
-            android:layout_marginTop="37dp" />
-
-        <EditText
-            android:layout_width="130dp"
-            android:layout_height="37dp"
-            android:inputType="phone"
             android:ems="10"
             android:maxLines="1"
             android:maxLength="10"
-            android:hint="Phone"
-            android:background="#ffffff"
-            android:id="@+id/editphone"
-            android:layout_alignBottom="@+id/textView6"
-            android:layout_alignStart="@+id/editpasstext" />
-
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#ffffff"
-            android:id="@+id/checkboxname"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@+id/editTextname"
+            android:hint="Enter password again"
+            android:textSize="25dp"
+            android:textColor="#46d4e8"
+            android:inputType="textVisiblePassword"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:textColorHint="#46d4e8"
+            android:background="#010101"
+            android:id="@+id/editpasstext"
+            android:layout_centerVertical="true"
             />
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/checkboxgender"
-            android:background="#ffffff"
-            android:layout_above="@+id/editpass"
-            android:layout_alignParentEnd="true" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:ems="10"
+            android:maxLines="1"
+            android:maxLength="10"
+            android:hint="Enter your phone"
+            android:textSize="25dp"
+            android:textColor="#46d4e8"
+            android:inputType="phone"
+            android:textColorHint="#46d4e8"
+            android:background="#010101"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:id="@+id/editphone"
+            android:layout_below="@+id/editpasstext"
+            />
 
-        <CheckBox
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/checkBoxpassword"
-            android:background="#ffffff"
-            android:layout_alignTop="@+id/editpasstext"
-            android:layout_alignParentEnd="true" />
-
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#ffffff"
-            android:id="@+id/checkBoxphone"
-            android:layout_alignTop="@+id/editphone"
-            android:layout_alignParentEnd="true" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Save"
+            android:background="#010101"
             android:id="@+id/savebuttoneditprofile"
+            android:src="@drawable/ic_launcher"
+            android:layout_gravity="left|bottom"
+            android:layout_marginBottom="54dp"
             android:layout_alignParentBottom="true"
-            android:layout_gravity="left|bottom"  />
+            android:layout_alignEnd="@+id/editphone"
+            android:clickable="true"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#010101"
+            android:id="@+id/exiteditprofile"
+            android:src="@drawable/ic_launcher2"
+            android:layout_gravity="left|bottom"
+            android:layout_alignTop="@+id/savebuttoneditprofile"
+            android:layout_alignStart="@+id/editphone"
+            android:clickable="true"/>
+
+
 
 
     </RelativeLayout>
+
 
 
 

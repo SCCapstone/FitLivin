@@ -41,6 +41,14 @@
             android:layout_alignBaseline="@+id/textView1"
             android:layout_alignBottom="@+id/textView1"
             android:layout_toEndOf="@+id/overBmi" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editprofilebutton"
+            android:text="editProfile"
+            android:background="#46d4e8"
+            android:layout_alignTop="@+id/pic"
+            android:layout_toEndOf="@+id/textView1" />
 
         <TextView
             android:layout_width="wrap_content"
