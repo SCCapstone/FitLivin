@@ -116,8 +116,8 @@ public class BehaviorTest {
         Espresso.onData(withId(R.id.militaryPressImage)).perform(ViewActions.click());
         Espresso.onData(withId(R.id.sideLatImage)).perform(ViewActions.click());
         Espresso.onData(withId(R.id.shoulderpressImage)).perform(ViewActions.click());
-        Espresso.onData(withId(R.id.BBBack)).perform(ViewActions.click())
-            .check(matches(isDisplayed()));
+       // Espresso.onData(withId(R.id.BBBack)).perform(ViewActions.click())
+         //   .check(matches(isDisplayed()));
         Espresso.onData(withId(R.id.completeDay5bb)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
     }
@@ -126,8 +126,8 @@ public class BehaviorTest {
         Espresso.onData(withId(R.id.deadliftImage)).perform(ViewActions.click());
         Espresso.onData(withId(R.id.pullupImage)).perform(ViewActions.click());
         Espresso.onData(withId(R.id.dumbbellRowImage)).perform(ViewActions.click());
-        Espresso.onData(withId(R.id.BBBack)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
+      //  Espresso.onData(withId(R.id.BBBack)).perform(ViewActions.click())
+            //    .check(matches(isDisplayed()));
         Espresso.onData(withId(R.id.completeDay4bb)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
     }
@@ -137,8 +137,8 @@ public class BehaviorTest {
         Espresso.onData(withId(R.id.hammerCurlImage)).perform(ViewActions.click());
         Espresso.onData(withId(R.id.preacherCurlImage)).perform(ViewActions.click());
         Espresso.onData(withId(R.id.closegrippushupImage)).perform(ViewActions.click());
-        Espresso.onData(withId(R.id.BBBack)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
+     //   Espresso.onData(withId(R.id.BBBack)).perform(ViewActions.click())
+     //           .check(matches(isDisplayed()));
         Espresso.onData(withId(R.id.completeDay3bb)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
     }
@@ -147,8 +147,8 @@ public class BehaviorTest {
         Espresso.onData(withId(R.id.benchImage)).perform(ViewActions.click());
         Espresso.onData(withId(R.id.flyImage)).perform(ViewActions.click());
         Espresso.onData(withId(R.id.pushupImage)).perform(ViewActions.click());
-        Espresso.onData(withId(R.id.BBBack)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
+       // Espresso.onData(withId(R.id.BBBack)).perform(ViewActions.click())
+       //         .check(matches(isDisplayed()));
         Espresso.onData(withId(R.id.completeDay2bb)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
     }
@@ -158,8 +158,8 @@ public class BehaviorTest {
         Espresso.onData(withId(R.id.squatImage)).perform(ViewActions.click());
         Espresso.onData(withId(R.id.legExtensionImage)).perform(ViewActions.click());
         Espresso.onData(withId(R.id.curlImage)).perform(ViewActions.click());
-        Espresso.onData(withId(R.id.BBBack)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
+     //   Espresso.onData(withId(R.id.BBBack)).perform(ViewActions.click())
+     //           .check(matches(isDisplayed()));
         Espresso.onData(withId(R.id.completeDay1bb)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
     }
