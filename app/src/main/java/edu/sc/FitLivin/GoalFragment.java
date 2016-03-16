@@ -8,6 +8,7 @@
         import android.content.DialogInterface;
         import android.media.MediaPlayer;
         import android.os.Bundle;
+        import android.text.InputType;
         import android.util.Log;
         import android.view.LayoutInflater;
         import android.view.View;
@@ -611,7 +612,7 @@ public class GoalFragment extends Fragment {
                 builder1.setTitle("Set Your Goal");
                 builder1.setMessage("Enter Your Goal Weight.");
                 final EditText input = new EditText(getActivity());
-                input.setId(TEXT_ID);
+                input.setInputType(InputType.TYPE_CLASS_NUMBER);
                 builder1.setView(input);
                 builder1.setCancelable(true);
 
@@ -669,7 +670,7 @@ public class GoalFragment extends Fragment {
                 builder1.setTitle("Set Your Goal");
                 builder1.setMessage("Enter Your Goal Weight.");
                 final EditText input = new EditText(getActivity());
-                input.setId(TEXT_ID);
+                input.setInputType(InputType.TYPE_CLASS_NUMBER);
                 builder1.setView(input);
                 builder1.setCancelable(true);
 
@@ -729,7 +730,7 @@ public class GoalFragment extends Fragment {
                 builder1.setTitle("Set Your Goal");
                 builder1.setMessage("Enter Your Bench Goal.");
                 final EditText input = new EditText(getActivity());
-                input.setId(TEXT_ID);
+                input.setInputType(InputType.TYPE_CLASS_NUMBER);
                 builder1.setView(input);
                 builder1.setCancelable(true);
 
@@ -787,7 +788,7 @@ public class GoalFragment extends Fragment {
                 builder1.setTitle("Set Your Goal");
                 builder1.setMessage("Enter Your Squat Goal.");
                 final EditText input = new EditText(getActivity());
-                input.setId(TEXT_ID);
+                input.setInputType(InputType.TYPE_CLASS_NUMBER);
                 builder1.setView(input);
                 builder1.setCancelable(true);
 
@@ -843,7 +844,7 @@ public class GoalFragment extends Fragment {
                 builder1.setTitle("Set Your Goal");
                 builder1.setMessage("Enter Your Dead Lift Goal.");
                 final EditText input = new EditText(getActivity());
-                input.setId(TEXT_ID);
+                input.setInputType(InputType.TYPE_CLASS_NUMBER);
                 builder1.setView(input);
                 builder1.setCancelable(true);
 
@@ -897,7 +898,7 @@ public class GoalFragment extends Fragment {
                 builder1.setTitle("Set Your Goal");
                 builder1.setMessage("Enter Your Mile Time Goal.");
                 final EditText input = new EditText(getActivity());
-                input.setId(TEXT_ID);
+                input.setInputType(InputType.TYPE_CLASS_NUMBER);
                 builder1.setView(input);
                 builder1.setCancelable(true);
 

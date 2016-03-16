@@ -54,7 +54,7 @@ public class Editprofilefragment extends Fragment {
         checkphone = (CheckBox)v.findViewById(R.id.checkBoxphone);
         checkpass = (CheckBox)v.findViewById(R.id.checkBoxpassword);
         buttonsave = (Button)v.findViewById(R.id.savebuttoneditprofile);
-        backbutton = (Button)v.findViewById(R.id.Back);
+     //   backbutton = (Button)v.findViewById(R.id.Back);
         final ParseUser curruser = ParseUser.getCurrentUser();
         getActivity().getActionBar()
                 .setTitle("Edit");

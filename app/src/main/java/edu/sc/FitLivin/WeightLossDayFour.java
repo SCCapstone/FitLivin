@@ -121,7 +121,7 @@ public class WeightLossDayFour extends Fragment {
                                   }
                               });
 
-        Button backBtn = (Button) v.findViewById(R.id.WLBack);//creates button
+        /**   Button backBtn = (Button) v.findViewById(R.id.WLBack);//creates button
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -132,7 +132,7 @@ public class WeightLossDayFour extends Fragment {
                 ft.addToBackStack(null);//adds to back stack
                 ft.commit();//commits it
             }
-        });
+        });**/
 
         //Add points to point page
         Button complete1 = (Button) v.findViewById(R.id.completeDay4w);

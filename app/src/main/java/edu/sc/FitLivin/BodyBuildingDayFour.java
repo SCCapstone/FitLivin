@@ -126,7 +126,7 @@ public class BodyBuildingDayFour extends Fragment {
         );
 
 
-        Button backBtn = (Button) v.findViewById(R.id.BBBack);//creates button
+        /** Button backBtn = (Button) v.findViewById(R.id.BBBack);//creates button
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -137,7 +137,7 @@ public class BodyBuildingDayFour extends Fragment {
                 ft.addToBackStack(null);//adds to back stack
                 ft.commit();//commits it
             }
-        });
+        });**/
 
         Button complete = (Button) v.findViewById(R.id.completeDay4bb);//creates complete button
         complete.setOnClickListener(new View.OnClickListener() {

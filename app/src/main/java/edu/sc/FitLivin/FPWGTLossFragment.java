@@ -23,10 +23,10 @@ public class FPWGTLossFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_fp__wgt__loss, container, false);
-        Button btn = (Button) v.findViewById(R.id.backButtonWeightLoss);
+     //   Button btn = (Button) v.findViewById(R.id.backButtonWeightLoss);
         getActivity().getActionBar()
                 .setTitle("Weight Loss");
-        btn.setOnClickListener(new View.OnClickListener() {
+     /**   btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FitnessProgramFragment fragment1 = new FitnessProgramFragment();
@@ -36,7 +36,7 @@ public class FPWGTLossFragment extends Fragment {
                 ft.addToBackStack(null);
                 ft.commit();
             }
-        });
+        });**/
 
         Button day1 = (Button) v.findViewById(R.id.day1WeightLoss);
         day1.setOnClickListener(new View.OnClickListener() {

@@ -74,7 +74,7 @@ public class TrackProgressFragment extends Fragment {
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fragment_track_progress, container, false);
 
-        Button backBtn = (Button) v.findViewById(R.id.trackprogressBack);
+      /**  Button backBtn = (Button) v.findViewById(R.id.trackprogressBack);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,7 +85,7 @@ public class TrackProgressFragment extends Fragment {
                 ft.addToBackStack(null);
                 ft.commit();
             }
-        });
+        });**/
 
         getActivity().getActionBar()
                 .setTitle("Track Progress");

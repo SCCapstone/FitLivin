@@ -23,7 +23,7 @@ public class FPBodyBuildingFragment extends Fragment {
         getActivity().getActionBar()
                 .setTitle("Body Building");
 
-        Button btn = (Button) v.findViewById(R.id.backBodyBuilding);
+        /**    Button btn = (Button) v.findViewById(R.id.backBodyBuilding);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,7 +34,7 @@ public class FPBodyBuildingFragment extends Fragment {
                 ft.addToBackStack(null);
                 ft.commit();
             }
-        });
+        });**/
 
         Button day1 = (Button) v.findViewById(R.id.day1BodyBuilding);
         day1.setOnClickListener(new View.OnClickListener() {

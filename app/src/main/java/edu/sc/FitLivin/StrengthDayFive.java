@@ -136,13 +136,13 @@ MediaPlayer mp;
         );
 
         //Initializes back button for strength day 5
-        Button backBtn = (Button) v.findViewById(R.id.Sday5BACK);
+        /**  Button backBtn = (Button) v.findViewById(R.id.Sday5BACK);
 
             /*
              *On click method that exits out of Strength day five and takes users back to the
              *strength training menu. Gives functionality to the back button.
              */
-        backBtn.setOnClickListener(new View.OnClickListener() {
+       /** backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FPSTRTrainingFragment fragment1 = new FPSTRTrainingFragment();
@@ -152,7 +152,7 @@ MediaPlayer mp;
                 ft.addToBackStack(null);
                 ft.commit();
             }
-        });
+        });**/
 
         Button complete = (Button) v.findViewById(R.id.completeDay5s);//creates complete button
         complete.setOnClickListener(new View.OnClickListener() {

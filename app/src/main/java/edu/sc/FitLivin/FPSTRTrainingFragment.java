@@ -22,7 +22,7 @@ public class FPSTRTrainingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_fp__str__training, container, false);
-        Button btn = (Button) v.findViewById(R.id.backButtonStrength);
+     //   Button btn = (Button) v.findViewById(R.id.backButtonStrength);
         getActivity().getActionBar()
                 .setTitle("Strength Training");
 
@@ -72,6 +72,7 @@ public class FPSTRTrainingFragment extends Fragment {
                 fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
+        /**
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,7 +83,7 @@ public class FPSTRTrainingFragment extends Fragment {
                 ft.addToBackStack(null);
                 ft.commit();
             }
-        });
+        });**/
         // Inflate the layout for this fragment
         Button howTo = (Button) v.findViewById(R.id.howTo);
         howTo.setOnClickListener(new View.OnClickListener() {

@@ -121,7 +121,7 @@ public class WeightLossDayThree extends Fragment {
                                   }
                               }
         );
-        Button backBtn = (Button) v.findViewById(R.id.WLBack);
+        /**     Button backBtn = (Button) v.findViewById(R.id.WLBack);
         backBtn.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -132,7 +132,7 @@ public class WeightLossDayThree extends Fragment {
                 ft.addToBackStack(null);
                 ft.commit();
             }
-        });
+        });**/
 
         //Add points to point page
         Button complete = (Button) v.findViewById(R.id.completeDay3w);

@@ -133,7 +133,7 @@ MediaPlayer mp;
 
 
         //Initializes back button for strength day 2
-        Button backBtn = (Button) v.findViewById(R.id.Sday2BACK);
+        /**    Button backBtn = (Button) v.findViewById(R.id.Sday2BACK);
         backBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -141,7 +141,7 @@ MediaPlayer mp;
              *On click method that exits out of Strength day two and takes users back to the
              *strength training menu. Gives functionality to the back button.
              */
-            public void onClick(View v) {
+        /**      public void onClick(View v) {
                 FPSTRTrainingFragment fragment1 = new FPSTRTrainingFragment();
                 FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
                 FragmentTransaction ft = fm.beginTransaction();
@@ -149,7 +149,7 @@ MediaPlayer mp;
                 ft.addToBackStack(null);
                 ft.commit();
             }
-        });
+        });**/
 
 
         Button complete = (Button) v.findViewById(R.id.completeDay2s);

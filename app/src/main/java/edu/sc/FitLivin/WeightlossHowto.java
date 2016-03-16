@@ -32,7 +32,7 @@ public class WeightlossHowto extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_weightloss_howto, container, false);
 
-        Button backBtn = (Button) v.findViewById(R.id.Wlhowtoback);
+     /**   Button backBtn = (Button) v.findViewById(R.id.Wlhowtoback);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,7 +43,7 @@ public class WeightlossHowto extends Fragment {
                 ft.addToBackStack(null);
                 ft.commit();
             }
-        });
+        });**/
         return v;
     }
     }

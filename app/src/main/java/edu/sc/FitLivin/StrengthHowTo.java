@@ -35,7 +35,7 @@ public class StrengthHowTo extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_strength_how_to, container, false);
 
-        Button backBtn = (Button) v.findViewById(R.id.Sdayhow2back);
+      /**  Button backBtn = (Button) v.findViewById(R.id.Sdayhow2back);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +46,7 @@ public class StrengthHowTo extends Fragment {
                 ft.addToBackStack(null);
                 ft.commit();
             }
-        });
+        });**/
         return v;
     }
 

@@ -168,7 +168,7 @@ public class BodyBuildingDayThree extends Fragment {
             }
         });
 
-
+/**
         Button backBtn = (Button) v.findViewById(R.id.BBBack);//creates button
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -181,7 +181,7 @@ public class BodyBuildingDayThree extends Fragment {
                 ft.commit();//commits it
             }
         });
-
+**/
 
         return v;//return
     }

@@ -31,7 +31,7 @@ public class BodyBuildingHowto extends Fragment {
         View v = inflater.inflate(R.layout.fragment_body_building_howto, container, false);
 
 
-        Button backBtn = (Button) v.findViewById(R.id.Bbhowtoback);
+        /**  Button backBtn = (Button) v.findViewById(R.id.Bbhowtoback);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,7 +42,7 @@ public class BodyBuildingHowto extends Fragment {
                 ft.addToBackStack(null);
                 ft.commit();
             }
-        });
+        });**/
         return v;
     }
 

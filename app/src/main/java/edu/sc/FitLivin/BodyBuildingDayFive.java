@@ -120,6 +120,7 @@ MediaPlayer mp;
                                   }
                               }
         );
+        /**
         Button backBtn = (Button) v.findViewById(R.id.BBBack);//creates button
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,7 +132,7 @@ MediaPlayer mp;
                 ft.addToBackStack(null);//adds to back stack
                 ft.commit();//commits it
             }
-        });
+        });**/
         Button complete = (Button) v.findViewById(R.id.completeDay5bb);//creates complete button
         complete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

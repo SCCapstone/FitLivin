@@ -294,7 +294,7 @@ public class NutritionCalFragment extends Fragment {
 
 
 
-        //Creates back button to go back to main page
+        /**   //Creates back button to go back to main page
         Button backBtn = (Button) v.findViewById(R.id.NutBack);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -306,7 +306,7 @@ public class NutritionCalFragment extends Fragment {
                 ft.addToBackStack(null);
                 ft.commit();
             }
-        });
+        });**/
         return v;
 
 

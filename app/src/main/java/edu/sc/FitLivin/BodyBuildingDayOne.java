@@ -167,7 +167,7 @@ public class BodyBuildingDayOne extends Fragment {
             }
         });
 
-
+/**
         Button backBtn = (Button) v.findViewById(R.id.BBBack);//creates buttons
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -180,7 +180,7 @@ public class BodyBuildingDayOne extends Fragment {
                 ft.commit();//commits it
             }
         });
-
+**/
 
         return v;//return
 

@@ -175,7 +175,7 @@ private View v;
             }
         });
 
-        Button backBtn = (Button) v.findViewById(R.id.BBBack);//creates button
+        /**    Button backBtn = (Button) v.findViewById(R.id.BBBack);//creates button
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -189,7 +189,7 @@ private View v;
 
             }
         });
-
+**/
 
         return v;
         //retur

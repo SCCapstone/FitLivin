@@ -125,7 +125,7 @@ MediaPlayer mp;
                                   }
                               }
         );
-        Button backBtn = (Button) v.findViewById(R.id.WLBack);
+    /**    Button backBtn = (Button) v.findViewById(R.id.WLBack);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -136,7 +136,7 @@ MediaPlayer mp;
                 ft.addToBackStack(null);
                 ft.commit();
             }
-        });
+        });**/
         //Add points to point page
         Button complete = (Button) v.findViewById(R.id.completeDay2w);
         complete.setOnClickListener(new View.OnClickListener() {

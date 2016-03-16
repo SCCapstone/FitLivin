@@ -120,7 +120,7 @@ public class BMICAL_Fragment extends Fragment {
             }
         });
 
-        Button btn = (Button) v.findViewById(R.id.BmiBack);
+     /**   Button btn = (Button) v.findViewById(R.id.BmiBack);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -131,7 +131,7 @@ public class BMICAL_Fragment extends Fragment {
                 ft.addToBackStack(null);
                 ft.commit();
             }
-        });
+        });**/
 
 
         return v;
