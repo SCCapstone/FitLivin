@@ -61,64 +61,9 @@ public class PointsLeader extends Fragment {
 
         list.setAdapter(adapter);
         //MainActivity main = new MainActivity();
-        main.leader = 1;
-
-        final HashMap<Integer, String> myMap = new HashMap<Integer, String>();
-        ParseQuery Points = ParseQuery.getQuery("Points");
-        Points.whereExists("CurrentPoints");
-        Points.whereExists("username");//setting constraints
-        Points.orderByDescending("createdAt");
-
-        Points.findInBackground(new FindCallback<ParseObject>() {
-                                    public void done(List<ParseObject> objects, ParseException e) {
-                                        MainActivity main = new MainActivity();
-                                        main.leader = 0;
-                                        while (main.leader != objects.size() - 1) {
-
-                                            if (e == null && objects.size() != 0) { //if objects size is not 0
-                                                String x = (String) objects.get(main.leader).get("username");
-                                                Integer y = (Integer) objects.get(main.leader).get("CurrentPoints");
-                                                if (arrayList.contains(x)) {
-
-                                                } else {
-                                                    arrayList.add(x);
-                                                    arrayList3.add(y);
-                                                    myMap.put(y, x);
-                                                    // adapter.notifyDataSetChanged();
-
-                                                }
 
 
-                                            }
-                                            main.leader++;
-                                        }
-                                      /*  for (Map.Entry<String,Integer> t : myMap.entrySet()) {
-                                            //to get key
-                                            String s =  t.getKey();
-                                            //and to get value
-                                            Integer i = t.getValue();
-                                            Log.d("Q", s +" " + i + " dd ");
-                                        }*/
 
-                                        Collections.sort(arrayList3);
-
-                                       // String str = new String(charArray);
-                                        for (Integer i = arrayList3.size()-1; i >=0; i--) {
-                                            Integer pts = arrayList3.get(i);
-                                            String uname = myMap.get(pts);
-                                            String padded = String.format("%-20s", uname);
-                                            String s = padded+" "+ pts;
-
-                                            System.out.println(s);
-                                            arrayList2.add(s);
-                                        }
-                                        adapter.notifyDataSetChanged();
-
-                                    }
-
-                                }
-
-        );
 
 
 

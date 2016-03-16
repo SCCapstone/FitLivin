@@ -174,12 +174,12 @@ MediaPlayer mp;
 
                                                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                                                        int x = (Integer) objects.get(0).get("CurrentPoints");
+                                                        Double x = (Double) objects.get(0).get("CurrentPoints");
                                                           MainActivity main = new MainActivity();
                                                         main.points = x;
                                                         // main.bench = x;
                                                        // currentPoints.setText("" +x);
-                                                        Integer points = main.points;
+                                                        Double points = main.points;
                                                         points = points + 50;//adds points for completed workout
 
                                                         String s = ParseUser.getCurrentUser().getUsername();

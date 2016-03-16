@@ -56,7 +56,7 @@ public class MainActivity extends FragmentActivity{
     public static Integer leader;
     public static String s;
     public static Integer y;
-    public static Integer points = 0;
+    public static Double points = 0.0;
     public static Integer c = 0;
     public static Integer pointsL;
     private String objectID;
@@ -330,7 +330,7 @@ public class MainActivity extends FragmentActivity{
             });
 
             //Adds the fragment for the layout
-        PointsPageFragment firstFragment = new PointsPageFragment();
+        FitnessProgramFragment firstFragment = new FitnessProgramFragment();
         FragmentManager fm1 = getFragmentManager();
         fm1.beginTransaction().add(R.id.container, firstFragment).addToBackStack(null).commit();
 
@@ -459,9 +459,9 @@ public class MainActivity extends FragmentActivity{
      *
      */
 
-    public void pointsData(Integer points, String user) {
+    public void pointsData(Double points, String user) {
         Log.d("F", "pdata");
-        Integer points1 = points;
+        Double points1 = points;
         String username1 = user;
 
         //adds info to database
