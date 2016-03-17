@@ -209,10 +209,10 @@ public class ProfilePageFragment extends Fragment {
 
         // Set an EditText view to get user input
         final EditText WEIGHT = new EditText(getActivity());
-                WEIGHT.setInputType(InputType.TYPE_CLASS_NUMBER);
+
         WEIGHT.setHint(WEIGHT_HINT);
         final EditText HEIGHT = new EditText(getActivity());
-                HEIGHT.setInputType(InputType.TYPE_CLASS_NUMBER);
+
         HEIGHT.setHint(HEIGHT_HINT);
         LinearLayout layout = new LinearLayout(getActivity());
         layout.setOrientation(LinearLayout.VERTICAL);
