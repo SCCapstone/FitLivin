@@ -69,7 +69,6 @@ public class MaxFragment extends Fragment {
         ParseQuery BenchMaxquery = ParseQuery.getQuery("MaxBench");
         ParseQuery SquatMaxquery = ParseQuery.getQuery("MaxSquat");
         ParseQuery DeadLiftMaxquery = ParseQuery.getQuery("MaxDeadLift");
-        ParseQuery BigThreeMaxquery = ParseQuery.getQuery("MaxBigThree");
         ParseQuery MileTimeMaxquery = ParseQuery.getQuery("MaxMileTime");
             ParseQuery queryuser = ParseUser.getQuery();
             queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
@@ -94,7 +93,7 @@ public class MaxFragment extends Fragment {
 
         });
 
-        SquatMaxquery.whereExists("MaxSquat");//setting constraints
+            SquatMaxquery.whereExists("MaxSquat");//setting constraints
             SquatMaxquery.whereMatchesQuery("author", queryuser);
             SquatMaxquery.orderByDescending("createdAt");
         //SquatMaxquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
