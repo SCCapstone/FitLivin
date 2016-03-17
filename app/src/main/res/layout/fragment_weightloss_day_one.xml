@@ -117,6 +117,7 @@
             android:layout_height="wrap_content"
             android:text="Workout Complete!"
             android:id="@+id/completeDay1w"
+            android:layout_below = "@+id/jumpropeDetail"
             android:layout_gravity="right|bottom"
             />
 

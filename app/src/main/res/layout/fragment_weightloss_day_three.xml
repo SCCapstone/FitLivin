@@ -115,6 +115,7 @@
                 android:layout_height="wrap_content"
                 android:text="Workout Complete!"
                 android:id="@+id/completeDay3w"
+                android:layout_below = "@+id/burpeesDetail"
                 android:layout_gravity="right|bottom"
                 />
 

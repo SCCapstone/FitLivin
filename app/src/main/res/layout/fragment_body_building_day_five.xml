@@ -131,6 +131,7 @@
             android:layout_height="wrap_content"
             android:text="Workout Complete!"
             android:id="@+id/completeDay5bb"
+            android:layout_below = "@+id/shoulderPressDetail"
             android:layout_gravity="right|bottom"
             />
 

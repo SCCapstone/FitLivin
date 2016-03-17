@@ -115,6 +115,7 @@
             android:layout_height="wrap_content"
             android:text="Workout Complete!"
             android:id="@+id/completeDay2w"
+            android:layout_below = "@+id/plankDetail"
             android:layout_gravity="right|bottom"
             />
 

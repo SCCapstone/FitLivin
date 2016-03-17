@@ -124,7 +124,7 @@
                 android:layout_height="wrap_content"
                 android:text="Workout Complete!"
                 android:id="@+id/completeDay1s"
-                android:layout_below="@+id/incline"
+                android:layout_below = "@+id/fliesDescription"
                 android:layout_gravity="right|bottom"
                 />
 
