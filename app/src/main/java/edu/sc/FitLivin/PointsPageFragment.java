@@ -72,8 +72,8 @@ private File imageFile;
         arrayList = new ArrayList<String>();
         final ArrayList<String> arrayList2;
         arrayList2 = new ArrayList<String>();
-        final ArrayList<Integer> arrayList3;
-        arrayList3 = new ArrayList<Integer>();
+        final ArrayList<Double> arrayList3;
+        arrayList3 = new ArrayList<Double>();
         final ArrayAdapter<String> adapter;
        final ListView list;
         list = (ListView) v.findViewById(R.id.listView4);
@@ -85,7 +85,7 @@ private File imageFile;
         //MainActivity main = new MainActivity();
         main2.leader = 1;
 
-        final HashMap<Integer, String> myMap = new HashMap<Integer, String>();
+        final HashMap<Double, String> myMap = new HashMap<Double, String>();
         ParseQuery Points2 = ParseQuery.getQuery("Points");
         Points2.whereExists("CurrentPoints");
         Points2.whereExists("username");//setting constraints
@@ -98,23 +98,14 @@ private File imageFile;
                                          while (main.leader != objects.size() - 1) {
 
                                              if (e == null && objects.size() != 0) { //if objects size is not 0
+
                                                  String x = (String) objects.get(main.leader).get("username");
-                                                 Integer y = (Integer) objects.get(main.leader).get("CurrentPoints");
+                                                 Double y = (Double) objects.get(main.leader).get("CurrentPoints");
+
                                                  if (arrayList.contains(x)) {
-
-                                                 } else if(arrayList3.contains(y)){
-                                                     y = y+5;
-                                                     arrayList.add(x);
-                                                     arrayList3.add(y);
-                                                     myMap.put(y, x);
-
-                                                     String s = ParseUser.getCurrentUser().getUsername();
-                                                     main.pointsData(y, x);
-                                                     // adapter.notifyDataSetChanged();
-
+                                                     System.out.println("Sign up points3 "+y);
                                                  }
                                                  else {
-
                                                      arrayList.add(x);
                                                      arrayList3.add(y);
                                                      myMap.put(y, x);
@@ -133,26 +124,28 @@ private File imageFile;
                                          // String str = new String(charArray);
                                          Integer place = 1;
                                          for (Integer i = arrayList3.size() - 1; i >= 0; i--) {
-                                             Integer pts = arrayList3.get(i);
+                                             Double pts = arrayList3.get(i);
                                              String uname = myMap.get(pts);
                                              if (uname.equalsIgnoreCase(name1)) {
                                                  position.setText("" + place);
-                                                 currentPoints.setText("" + pts);
+                                                 int a = (int) Math.round(pts);
+                                                 currentPoints.setText("" + a);
                                              }
                                              // myMap.remove(pts);
                                              uname += " ";
                                              Integer space = 19 - uname.length();
+                                             int b = (int) Math.round(pts);
                                              for (Integer y = 0; y < space; y++) {
                                                  uname += ".";
                                              }
                                             // System.out.println(uname);
                                              String padded = uname;
                                              if (place <= 9) {
-                                                 String s = "  " + place + ".) " + padded + " " + pts;
+                                                 String s = "  " + place + ".) " + padded + " " + b;
                                                  //System.out.println(s);
                                                  arrayList2.add(s);
                                              } else {
-                                                 String s = place + ".) " + padded + " " + pts;
+                                                 String s = place + ".) " + padded + " " + b;
                                                  //System.out.println(s);
                                                  arrayList2.add(s);
                                              }

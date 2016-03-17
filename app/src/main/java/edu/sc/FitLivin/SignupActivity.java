@@ -142,7 +142,13 @@ public class SignupActivity extends Activity {
                             Log.d("F", "pdata");
                             ParseUser curruser = ParseUser.getCurrentUser();
 
-                            Integer points1 = randomGenerator.nextInt(75);
+                            double points1 = 5;
+                            double start = 0;
+                            double end = .4;
+                            double random = new Random().nextDouble();
+                            double result = start + (random * (end - start));
+                            points1 = points1+result;
+                            System.out.println("Sign up points "+points1);
                             String username1 = userName;
 
                             //adds info to database

@@ -200,7 +200,7 @@ public class GoalFragment extends Fragment {
 
                                             if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                                                int x = (Integer) objects.get(0).get("CurrentPoints");
+                                                Double x = (Double) objects.get(0).get("CurrentPoints");
                                                 main.points = x;
 
 
@@ -359,7 +359,7 @@ public class GoalFragment extends Fragment {
                             if (value == 1) {
                                 Log.d("QAOD", "congratsWEIGHTGoal");
                                 System.out.println("test 13");
-                                Integer points = main.points;
+                                Double points = main.points;
                                 points = points + 100;
                                 main.points = points;
                                 String s = ParseUser.getCurrentUser().getUsername();
@@ -405,7 +405,7 @@ public class GoalFragment extends Fragment {
                             Integer value = main.WeightGainGoalTest(x);
                             if (value == 1) {
                                 Log.d("QAOD", "congratsWEIGHTGAIN");
-                                Integer points = main.points;
+                                Double points = main.points;
                                 points = points + 100;
                                 main.points = points;
                                 String s = ParseUser.getCurrentUser().getUsername();
@@ -450,7 +450,7 @@ public class GoalFragment extends Fragment {
                             Log.d("QAOD", "BENCHMAXGOAL" + x);
                             if (value == 1) {
                                 Log.d("QAOD", "congratsBENCH");
-                                Integer points = main.points;
+                                Double points = main.points;
                                 points = points + 100;
                                 main.points = points;
                                 String s = ParseUser.getCurrentUser().getUsername();
@@ -493,7 +493,7 @@ public class GoalFragment extends Fragment {
                             Log.d("QAOD", "SQUATMAXGOAL" + x);
                             if (value == 1) {
                                 Log.d("QAOD", "congratsSQUAT");
-                                Integer points = main.points;
+                                Double points = main.points;
                                 points = points + 100;
                                 main.points = points;
                                 String s = ParseUser.getCurrentUser().getUsername();
@@ -538,7 +538,7 @@ public class GoalFragment extends Fragment {
 
                             if (value == 1) {
                                 Log.d("QAOD", "congratsDEADLIFT");
-                                Integer points = main.points;
+                                Double points = main.points;
                                 points = points + 100;
                                 main.points = points;
                                 String s = ParseUser.getCurrentUser().getUsername();
@@ -583,7 +583,7 @@ public class GoalFragment extends Fragment {
                             Log.d("QAOD", "MILETIMEMAXGOAL" + x);
                             if (value == 1) {
                                 Log.d("QAOD", "congratsMILEITME");
-                                Integer points = main.points;
+                                Double points = main.points;
                                 points = points + 100;
                                 main.points = points;
                                 String s = ParseUser.getCurrentUser().getUsername();
