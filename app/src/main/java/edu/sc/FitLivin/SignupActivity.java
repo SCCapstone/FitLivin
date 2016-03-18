@@ -143,7 +143,7 @@ public class SignupActivity extends Activity {
                             ParseUser curruser = ParseUser.getCurrentUser();
 
                             double points1 = 5;
-                            double start = 0;
+                            double start =.001;
                             double end = .4;
                             double random = new Random().nextDouble();
                             double result = start + (random * (end - start));
