@@ -85,6 +85,19 @@ public class FPWGTLossFragment extends Fragment {
             }
         });
         // Inflate the layout for this fragment
+        Button howTo = (Button) v.findViewById(R.id.howTo);
+        howTo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                WeightlossHowto howTo = new WeightlossHowto();
+                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.replace(R.id.container, howTo);
+                ft.addToBackStack(null);
+                ft.commit();
+            }
+        });
+
         return v;
     }
 }
