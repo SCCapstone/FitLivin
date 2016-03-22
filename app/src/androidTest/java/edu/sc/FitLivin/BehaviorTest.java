@@ -8,6 +8,7 @@ import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.support.test.espresso.Espresso;
 import android.support.test.espresso.ViewAction;
+import android.support.test.espresso.ViewAssertion;
 import android.support.test.espresso.action.ViewActions;
 import android.support.test.espresso.assertion.ViewAssertions;
 import android.support.test.espresso.matcher.ViewMatchers;
@@ -180,4 +181,10 @@ public class BehaviorTest {
                 .check(matches(isDisplayed()));
 
     }
+//Need to finish
+    @Test
+    public void checkStopWatch(){
+        Espresso.onData(withId(R.id.start)).perform(ViewActions.click());
+    }
+
 }
