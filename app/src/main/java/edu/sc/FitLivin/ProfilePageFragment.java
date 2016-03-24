@@ -148,10 +148,13 @@ public class ProfilePageFragment extends Fragment {
         ParseQuery query2 = ParseQuery.getQuery("ProfileInfo"); //getting query
         query2.whereExists("Weight");//setting constraints
         query2.whereExists("Height");//setting constraints
+        final EditText input = new EditText(getActivity());
+        input.setInputType(InputType.TYPE_CLASS_NUMBER);
         query2.orderByDescending("createdAt");
         query2.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
         query2.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
+
                 if (e == null && objects.size() != 0) { //if objects size is not 0
 
                     if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
@@ -202,6 +205,8 @@ public class ProfilePageFragment extends Fragment {
         final String WEIGHT_HINT="Weight(lbs)";
         final String HEIGHT_HINT="Height(in)";
 
+
+
         AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
 
         alert.setTitle(POPUP_TITLE);
@@ -209,9 +214,10 @@ public class ProfilePageFragment extends Fragment {
 
         // Set an EditText view to get user input
         final EditText WEIGHT = new EditText(getActivity());
-
+                input.setInputType(InputType.TYPE_CLASS_NUMBER);
         WEIGHT.setHint(WEIGHT_HINT);
         final EditText HEIGHT = new EditText(getActivity());
+                input.setInputType(InputType.TYPE_CLASS_NUMBER);
 
         HEIGHT.setHint(HEIGHT_HINT);
         LinearLayout layout = new LinearLayout(getActivity());
