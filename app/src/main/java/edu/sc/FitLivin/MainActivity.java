@@ -290,7 +290,7 @@ public class MainActivity extends FragmentActivity{
             });
 
             //Adds the fragment for the layout
-        HomePageFragment firstFragment = new HomePageFragment();
+        PointsPageFragment firstFragment = new PointsPageFragment();
         FragmentManager fm1 = getFragmentManager();
         fm1.beginTransaction().add(R.id.container, firstFragment).addToBackStack(null).commit();
 
