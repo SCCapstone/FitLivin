@@ -193,30 +193,12 @@ public class BehaviorTest {
                 .check(matches(isDisplayed()));
 
     }
-
-    @Test
-    public void CheckProfilePage(){
-
-        Espresso.onData(withId(R.id.pic)).perform();
-        Espresso.onData(withId(R.id.editprofilebutton)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.weightButton)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.weightButton)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
-    }
-
-
-
     @Test
     public void CheckWLD1(){
-        Espresso.onData(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo());
+        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo());
         Espresso.onData(withId(R.id.runningImage)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
-       Espresso.onData(withId(R.id.lungesImage)).perform(ViewActions.click())
-               .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.jumpRopeImage)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.raw.fitfactcardio)).perform(pressImeActionButton());
     }
 
 

@@ -92,7 +92,7 @@ public class Editprofilefragment extends Fragment {
                 boolean validationError = false;
                 StringBuilder validationErrorMessage =
                         new StringBuilder(getResources().getString(R.string.error_intro));
-
+//
                 if (!isEmpty(passwordtext) && !isEmpty(reenterpass)) {
                     if (!isMatching(reenterpass, passwordtext)) {
 

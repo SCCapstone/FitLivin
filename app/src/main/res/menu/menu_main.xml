@@ -19,6 +19,7 @@
         android:id="@+id/home"
         android:title="home"
         android:orderInCategory="100"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_launcher"
+        android:showAsAction="always"
         />
 </menu>
