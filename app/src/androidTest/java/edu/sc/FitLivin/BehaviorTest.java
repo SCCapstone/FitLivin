@@ -67,10 +67,9 @@ public class BehaviorTest {
 
         Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo());
         Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.click());
+
         Espresso.onView(withId(R.id.StrengthTrainingButton)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
-        onView(withId(R.id.linview)).perform(ViewActions.pressBack());
-
        /* Espresso.onData(withId(R.id.BodyBuildingButton)).check(matches(isClickable()))
                 .check(matches(isDisplayed()));
               Espresso.onData(withId(R.id.WeightLossButton)).check(matches(isClickable()))
@@ -197,13 +196,9 @@ public class BehaviorTest {
     @Test
     public void CheckWLD1(){
         Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo());
-        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.click());
-        Espresso.onView(withId(R.id.WeightLossButton)).perform(ViewActions.click());
-        Espresso.onView(withId(R.id.day2WeightLoss)).perform(ViewActions.click());
-        Espresso.onView(withId(R.id.cycleImage)).perform(ViewActions.scrollTo());
-        Espresso.onView(withId(R.id.cycleImage)).perform(ViewActions.click());
-
-        //Espresso.onData(withId(R.raw.fitfactcardio)).perform(pressImeActionButton());
+        Espresso.onData(withId(R.id.runningImage)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.raw.fitfactcardio)).perform(pressImeActionButton());
     }
 
 

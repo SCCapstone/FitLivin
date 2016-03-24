@@ -19,6 +19,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.Menu;
@@ -311,6 +312,15 @@ public class MainActivity extends FragmentActivity{
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         MenuItem menuItem = menu.findItem(R.id.uName);
+        MenuItem menuItem2 = menu.findItem(R.id.home);
+
+        menuItem2.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                drawerLayout.openDrawer(GravityCompat.START);  // OPEN DRAWER
+                return true;
+            }
+        });
         menuItem .setTitle(s);
 
 
@@ -336,13 +346,7 @@ public class MainActivity extends FragmentActivity{
             ft.commit();
             return true;
         }
-       if(id == R.id.list){
-           drawerLayout = (DrawerLayout)this.findViewById(R.id.drawerview);
-           listView = (ListView)this.findViewById(R.id.listView);
-           drawerLayout.openDrawer(listView);
 
-
-       }
 
 
         return onOptionsItemSelected(item);

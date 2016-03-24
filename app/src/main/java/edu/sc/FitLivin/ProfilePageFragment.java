@@ -13,12 +13,13 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,7 +33,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
+import com.parse.GetDataCallback;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
@@ -108,8 +111,27 @@ public class ProfilePageFragment extends Fragment {
         //pic = (Button) v.findViewById(R.id.pic);
 
 
-
-
+        ParseQuery<ParseUser> query3 = ParseUser.getQuery();
+        query3.whereEqualTo("objectId",ParseUser.getCurrentUser().getObjectId());
+        query3.findInBackground(new FindCallback<ParseUser>() {
+            @Override
+            public void done(List<ParseUser> objects, ParseException e) {
+                if(e == null && objects.size()!=0) {
+                    ParseFile file = objects.get(0).getParseFile("Images");
+                    if(file != null) {
+                        file.getDataInBackground(new GetDataCallback() {
+                            @Override
+                            public void done(byte[] data, ParseException e) {
+                                if (e == null && data != null) {
+                                    Bitmap bm = decodeSampledBitmapFromParse(data, 50, 50);
+                                    imageView1.setImageBitmap(bm);
+                                }
+                            }
+                        });
+                    }
+                }
+            }
+        });
 
 
         ParseQuery query = ParseQuery.getQuery("ProfileInfo"); //getting query
@@ -140,6 +162,17 @@ public class ProfilePageFragment extends Fragment {
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, frag);
                 ft.addToBackStack(null);
+                ft.commit();
+            }
+        });
+        takepic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CameraFragment frag = new CameraFragment();
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.replace(R.id.container, frag);
+
                 ft.commit();
             }
         });
@@ -321,5 +354,42 @@ private File getFile(){
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         String path = "sdcard/fitLivin/FL_image.jpg";
         iv.setImageDrawable(Drawable.createFromPath(path));
+    }
+    public static int calculateInSampleSize(
+            BitmapFactory.Options options, int reqWidth, int reqHeight) {
+        // Raw height and width of image
+        final int height = options.outHeight;
+        final int width = options.outWidth;
+        int inSampleSize = 1;
+
+        if (height > reqHeight || width > reqWidth) {
+
+            final int halfHeight = height / 2;
+            final int halfWidth = width / 2;
+
+            // Calculate the largest inSampleSize value that is a power of 2 and keeps both
+            // height and width larger than the requested height and width.
+            while ((halfHeight / inSampleSize) > reqHeight
+                    && (halfWidth / inSampleSize) > reqWidth) {
+                inSampleSize *= 2;
+            }
+        }
+
+        return inSampleSize;
+    }
+    public static Bitmap decodeSampledBitmapFromParse(byte[] data,
+                                                      int reqWidth, int reqHeight) {
+
+        // First decode with inJustDecodeBounds=true to check dimensions
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeByteArray(data,0,data.length,options);
+
+        // Calculate inSampleSize
+        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+
+        // Decode bitmap with inSampleSize set
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeByteArray(data,0,data.length, options);
     }
 }

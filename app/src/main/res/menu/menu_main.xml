@@ -16,10 +16,9 @@
         android:showAsAction="always|withText"
         />
     <item
-        android:id="@+id/list"
-        android:title=""
-        android:orderInCategory="0"
-        android:showAsAction="always|withText"
-        android:icon="@drawable/ic_launcher"
+        android:id="@+id/home"
+        android:title="home"
+        android:orderInCategory="100"
+        android:icon="@mipmap/ic_launcher"
         />
 </menu>
