@@ -21,7 +21,6 @@ import android.provider.MediaStore;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -121,7 +120,6 @@ public class MainActivity extends FragmentActivity{
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-
 
 
      listView = (ListView)findViewById(R.id.listView);
