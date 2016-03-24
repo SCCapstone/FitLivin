@@ -14,9 +14,11 @@ import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.text.style.ClickableSpan;
+import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import org.hamcrest.Matcher;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;//test
@@ -26,6 +28,7 @@ import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.matcher.ViewMatchers.assertThat;
 import static android.support.test.espresso.matcher.ViewMatchers.isChecked;
 import static android.support.test.espresso.matcher.ViewMatchers.isClickable;
+import static android.support.test.espresso.matcher.ViewMatchers.isDescendantOfA;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
@@ -117,6 +120,7 @@ public class BehaviorTest {
 
     @Test
     public void CheckBBday5(){
+        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo());
         Espresso.onData(withId(R.id.militaryPressImage)).perform(ViewActions.click());
         Espresso.onData(withId(R.id.sideLatImage)).perform(ViewActions.click());
         Espresso.onData(withId(R.id.shoulderpressImage)).perform(ViewActions.click());
@@ -127,6 +131,7 @@ public class BehaviorTest {
     }
     @Test
     public void CheckBBday4(){
+        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo());
         Espresso.onData(withId(R.id.deadliftImage)).perform(ViewActions.click());
         Espresso.onData(withId(R.id.pullupImage)).perform(ViewActions.click());
         Espresso.onData(withId(R.id.dumbbellRowImage)).perform(ViewActions.click());
@@ -138,6 +143,7 @@ public class BehaviorTest {
 
     @Test
     public void CheckBBday3(){
+        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo());
         Espresso.onData(withId(R.id.hammerCurlImage)).perform(ViewActions.click());
         Espresso.onData(withId(R.id.preacherCurlImage)).perform(ViewActions.click());
         Espresso.onData(withId(R.id.closegrippushupImage)).perform(ViewActions.click());
@@ -148,6 +154,7 @@ public class BehaviorTest {
     }
     @Test
     public void CheckBBday2(){
+        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo());
         Espresso.onData(withId(R.id.benchImage)).perform(ViewActions.click());
         Espresso.onData(withId(R.id.flyImage)).perform(ViewActions.click());
         Espresso.onData(withId(R.id.pushupImage)).perform(ViewActions.click());
@@ -159,6 +166,7 @@ public class BehaviorTest {
 
     @Test
     public void CheckBBday1(){
+        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo());
         Espresso.onData(withId(R.id.squatImage)).perform(ViewActions.click());
         Espresso.onData(withId(R.id.legExtensionImage)).perform(ViewActions.click());
         Espresso.onData(withId(R.id.curlImage)).perform(ViewActions.click());
@@ -181,6 +189,18 @@ public class BehaviorTest {
         Espresso.onData(withId(R.id.editphone)).perform(typeText(phone));
         Espresso.onData(withId(R.id.savebuttoneditprofile)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.id.exiteditprofile)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
 
     }
+    @Test
+    public void CheckWLD1(){
+        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo());
+        Espresso.onData(withId(R.id.runningImage)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.raw.fitfactcardio)).perform(pressImeActionButton());
+    }
+
+
+
 }
