@@ -229,6 +229,8 @@ public class ProfilePageFragment extends Fragment {
         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
                 MainActivity main = new MainActivity();
+                final EditText input = new EditText(getActivity());
+                input.setInputType(InputType.TYPE_CLASS_NUMBER);
                 int w = Integer.parseInt(WEIGHT.getText().toString());
                 int h = Integer.parseInt(HEIGHT.getText().toString());
                 currentWeight.setText("" + w);
