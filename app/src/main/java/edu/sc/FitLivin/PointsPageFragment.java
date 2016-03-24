@@ -8,21 +8,13 @@
 package edu.sc.FitLivin;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -34,13 +26,11 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 public class PointsPageFragment extends Fragment {
 
-
+private String x;
     public PointsPageFragment() {
         // Required empty public constructor
     }
@@ -82,6 +72,7 @@ private File imageFile;
         adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, arrayList2);
 
         list.setAdapter(adapter);
+        adapter.clear();
         //MainActivity main = new MainActivity();
         main2.leader = 1;
 
@@ -99,13 +90,17 @@ private File imageFile;
 
                                              if (e == null && objects.size() != 0) { //if objects size is not 0
 
-                                                 String x = (String) objects.get(main.leader).get("username");
+                                                 ParseUser user1 = objects.get(main.leader).getParseUser("author");
+                                                 try {
+                                                     x = user1.fetchIfNeeded().getUsername();
+                                                 } catch (ParseException E) {
+
+                                                 }
                                                  Double y = (Double) objects.get(main.leader).get("CurrentPoints");
 
                                                  if (arrayList.contains(x)) {
-                                                     System.out.println("Sign up points3 "+y);
-                                                 }
-                                                 else {
+                                                     System.out.println("Sign up points3 " + y);
+                                                 } else {
                                                      arrayList.add(x);
                                                      arrayList3.add(y);
                                                      myMap.put(y, x);
@@ -138,7 +133,7 @@ private File imageFile;
                                              for (Integer y = 0; y < space; y++) {
                                                  uname += ".";
                                              }
-                                            // System.out.println(uname);
+                                             // System.out.println(uname);
                                              String padded = uname;
                                              if (place <= 9) {
                                                  String s = "  " + place + ".) " + padded + " " + b;
