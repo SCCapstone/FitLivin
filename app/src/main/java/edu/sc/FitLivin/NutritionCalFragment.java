@@ -11,6 +11,7 @@ package edu.sc.FitLivin;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -47,9 +48,9 @@ public class NutritionCalFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_nutrition_cal, container, false);
         getActivity().getActionBar()
                 .setTitle("Nutrition");
-        Button weightLoss = (Button) v.findViewById(R.id.wlossButton);
-        Button maintain = (Button) v.findViewById(R.id.maintainButton);
-        Button weightGain = (Button) v.findViewById(R.id.wGainButton);
+        final Button weightLoss = (Button) v.findViewById(R.id.wlossButton);
+        final Button maintain = (Button) v.findViewById(R.id.maintainButton);
+        final Button weightGain = (Button) v.findViewById(R.id.wGainButton);
         final TextView lowCal = (TextView) v.findViewById(R.id.lowCalories);
         final TextView modCal = (TextView) v.findViewById(R.id.modCalories);
         final TextView highCal = (TextView) v.findViewById(R.id.highCalories);
@@ -57,6 +58,10 @@ public class NutritionCalFragment extends Fragment {
         weightLoss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                weightLoss.setTextColor(Color.GREEN);
+                maintain.setTextColor(Color.BLACK);
+                weightGain.setTextColor(Color.BLACK);
+
                 ParseQuery<ParseUser> query = ParseUser.getQuery();
                 query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
                 query.orderByDescending("createdAt");
@@ -135,6 +140,9 @@ public class NutritionCalFragment extends Fragment {
         maintain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                maintain.setTextColor(Color.GREEN);
+                weightLoss.setTextColor(Color.BLACK);
+                weightGain.setTextColor(Color.BLACK);
                 ParseQuery<ParseUser> query = ParseUser.getQuery();
                 query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
                 query.orderByDescending("createdAt");
@@ -215,6 +223,9 @@ public class NutritionCalFragment extends Fragment {
         weightGain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                weightGain.setTextColor(Color.GREEN);
+                maintain.setTextColor(Color.BLACK);
+                weightLoss.setTextColor(Color.BLACK);
                 ParseQuery<ParseUser> query = ParseUser.getQuery();
                 query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
                 query.orderByDescending("createdAt");

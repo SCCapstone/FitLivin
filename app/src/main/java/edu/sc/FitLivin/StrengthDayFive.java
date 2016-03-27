@@ -83,7 +83,7 @@ MediaPlayer mp;
                                   public void onClick(View v) {
 
                                       if(mp == null){
-                                          mp = MediaPlayer.create(getActivity(), R.raw.fitfactbarbellbenchpressnew);
+                                          mp = MediaPlayer.create(getActivity(), R.raw.fitfactbarbellbenchpress);
                                           mp.start();
                                           Log.d("QAOD", "start");
                                       }

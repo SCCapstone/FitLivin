@@ -19,7 +19,8 @@
             android:id="@+id/maintainButton"
             android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true"
-            android:background="#46d4e8" />
+            android:background="#46d4e8"
+            />
         <Button
             android:layout_width="100dp"
             android:layout_height="55dp"
@@ -27,7 +28,7 @@
             android:id="@+id/wlossButton"
             android:layout_marginTop="20dp"
             android:layout_toStartOf="@+id/maintainButton"
-            android:textColor="#010101"
+            android:textColor="#000100"
             android:background="#46d4e8" />
 
         <Button
