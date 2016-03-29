@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context="edu.sc.FitLivin.BodyBuildingDayFive"
     android:id="@+id/containerFitnessP"
-    android:background="#010100"
+    android:background="#212121"
     >
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
@@ -133,6 +133,7 @@
             android:id="@+id/completeDay5bb"
             android:layout_below = "@+id/shoulderPressDetail"
             android:layout_gravity="right|bottom"
+            android:background="#ff6655"
             />
 
 

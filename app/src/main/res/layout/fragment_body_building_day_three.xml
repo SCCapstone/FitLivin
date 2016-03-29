@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context="edu.sc.FitLivin.BodyBuildingDayThree"
     android:id="@+id/containerFitnessP"
-    android:background="#010100"
+    android:background="#212121"
 
     >
 
@@ -132,7 +132,8 @@
         android:text="Workout Complete!"
         android:id="@+id/completeDay3bb"
         android:layout_below = "@+id/closegripPushupDetail"
-        android:layout_gravity="right|bottom" />
+        android:layout_gravity="right|bottom"
+        android:background="#ff6655"/>
 
     </LinearLayout>>
 

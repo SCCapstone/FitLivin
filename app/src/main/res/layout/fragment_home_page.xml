@@ -7,7 +7,7 @@
     <!-- TODO: Update blank fragment layout -->
     <TextView android:layout_width="match_parent" android:layout_height="match_parent"
         android:text="@string/hello_blank_fragment"
-        android:background="@drawable/background3"
+        android:background="#212121"
         android:clickable="true"
         android:contextClickable="false"
         android:onClick="ChangeFragment" />
