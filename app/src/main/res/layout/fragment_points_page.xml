@@ -6,21 +6,24 @@
 
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="Leaderboard:"
         android:id="@+id/LeaderTitle"
+        android:layout_gravity="center"
         android:textSize="20dp"
         android:layout_below="@+id/PointsView"
-        android:background="#46d4e8"
+        android:background="#010101"
+        android:layout_centerHorizontal="true"
         android:autoText="true"
-        android:textColor="#010101" />
+        android:textColor="#46d4e8" />
 
         <ListView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="120dp"
             android:id="@+id/listView4"
-            android:divider="@null"
+            android:divider="#010101"
+            android:dividerHeight="10dp"
             android:layout_gravity="center"
             android:textColor="@android:color/white"
             android:textStyle="normal|italic"

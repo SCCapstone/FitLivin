@@ -127,22 +127,24 @@ private File imageFile;
                                                  currentPoints.setText("" + a);
                                              }
                                              // myMap.remove(pts);
-                                             uname += " ";
-                                             Integer space = 19 - uname.length();
+
+                                            // Integer space = 19 - uname.length();
                                              int b = (int) Math.round(pts);
-                                             for (Integer y = 0; y < space; y++) {
+                                            /* for (Integer y = 0; y < space; y++) {
                                                  uname += ".";
-                                             }
+                                             }*/
                                              // System.out.println(uname);
                                              String padded = uname;
                                              if (place <= 9) {
-                                                 String s = "  " + place + ".) " + padded + " " + b;
+                                                 String s = "  " + place + ".) " + padded + ": " + b+" pts";
                                                  //System.out.println(s);
                                                  arrayList2.add(s);
+
                                              } else {
-                                                 String s = place + ".) " + padded + " " + b;
+                                                 String s = place + ".) " + padded + ": " + b+ " pts";
                                                  //System.out.println(s);
                                                  arrayList2.add(s);
+
                                              }
                                              place++;
                                          }
