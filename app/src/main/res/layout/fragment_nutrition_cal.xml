@@ -2,14 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/containerFitnessP"
-    android:background="@drawable/background3"
+    android:background="#212121"
     >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:id="@+id/linview"
-        android:background="#010100">
+        android:background="#212121">
 
 
         <Button
@@ -19,26 +19,27 @@
             android:id="@+id/maintainButton"
             android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true"
-            android:background="#46d4e8"
+            android:background="#ff6655"
             />
         <Button
             android:layout_width="100dp"
             android:layout_height="55dp"
             android:text="Weight Loss"
             android:id="@+id/wlossButton"
-            android:layout_marginTop="20dp"
-            android:layout_toStartOf="@+id/maintainButton"
             android:textColor="#000100"
-            android:background="#46d4e8" />
+            android:background="#ff6655"
+            android:layout_above="@+id/lowText"
+            android:layout_alignEnd="@+id/lowMessage" />
 
         <Button
             android:layout_width="100dp"
             android:layout_height="55dp"
             android:text="Weight Gain"
             android:id="@+id/wGainButton"
-            android:layout_marginTop="20dp"
-            android:layout_toEndOf="@+id/maintainButton"
-            android:background="#46d4e8" />
+            android:background="#ff6655"
+            android:layout_marginRight="40dp"
+            android:layout_above="@+id/lowText"
+            android:layout_alignParentEnd="true" />
 
 
         <TextView
