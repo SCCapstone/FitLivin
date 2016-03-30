@@ -50,12 +50,21 @@
 
             <ListView
             android:layout_width="wrap_content"
-            android:layout_height="232dp"
+            android:layout_height="wrap_content"
             android:id="@+id/listView2"
             android:textAlignment="center"
             android:animateLayoutChanges="true"
             android:textColor="#ffffff"
             android:layout_gravity="center_horizontal|bottom" />
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/listView3"
+                android:textAlignment="center"
+                android:animateLayoutChanges="true"
+                android:textColor="#ffffff"
+                android:layout_below="@+id/listView2"
+                android:layout_gravity="center_horizontal|bottom" />
 
 
 </LinearLayout>
