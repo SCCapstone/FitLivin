@@ -27,6 +27,8 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 
@@ -132,6 +134,13 @@ MediaPlayer mp;
         complete1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MainActivity main1 = new MainActivity();
+                System.out.println("Workout Day 1 1");
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                Date date = new Date();
+                String time = sdf.format(date);
+                main1.workoutPro(time,"Weight Loss Day One: ");
+                System.out.println("Workout Day 1 2");
                 ParseQuery queryuser = ParseUser.getQuery();
                 queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
                 ParseQuery Points = ParseQuery.getQuery("Points");
@@ -149,7 +158,6 @@ MediaPlayer mp;
                                                         points = points + 50;//adds points for completed workout
                                                         String s = ParseUser.getCurrentUser().getUsername();
                                                         main.pointsData(points, s);
-
                                                         WeightLD1dialog();
                                                     }
 

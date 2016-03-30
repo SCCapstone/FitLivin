@@ -30,12 +30,12 @@ import java.util.List;
 
 public class PointsPageFragment extends Fragment {
 
-private String x;
+    private String x;
     public PointsPageFragment() {
         // Required empty public constructor
     }
 
-private File imageFile;
+    private File imageFile;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
@@ -55,7 +55,7 @@ private File imageFile;
 
 
 
-              //Creates back button to go back to home page
+        //Creates back button to go back to home page
 
         MainActivity main2 = new MainActivity();
         final ArrayList<String> arrayList;
@@ -65,7 +65,7 @@ private File imageFile;
         final ArrayList<Double> arrayList3;
         arrayList3 = new ArrayList<Double>();
         final ArrayAdapter<String> adapter;
-       final ListView list;
+        final ListView list;
         list = (ListView) v.findViewById(R.id.listView4);
 
 
@@ -128,7 +128,7 @@ private File imageFile;
                                              }
                                              // myMap.remove(pts);
 
-                                            // Integer space = 19 - uname.length();
+                                             // Integer space = 19 - uname.length();
                                              int b = (int) Math.round(pts);
                                             /* for (Integer y = 0; y < space; y++) {
                                                  uname += ".";

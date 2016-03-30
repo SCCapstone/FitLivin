@@ -43,6 +43,7 @@ import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 public class TrackProgressFragment extends Fragment {
@@ -89,6 +90,62 @@ public class TrackProgressFragment extends Fragment {
 
         getActivity().getActionBar()
                 .setTitle("Track Progress");
+
+        final ArrayList<String> arrayList2;
+        arrayList2 = new ArrayList<String>();
+        final ArrayList<String> arrayList3;
+        arrayList3 = new ArrayList<String>();
+        final ArrayList<String> arrayList5;
+        arrayList5 = new ArrayList<String>();
+        final ArrayAdapter<String> adapter1;
+        final ListView list;
+        list = (ListView) v.findViewById(R.id.listView3);
+
+
+        adapter1 = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, arrayList5);
+        list.setAdapter(adapter1);
+        adapter1.clear();
+
+
+
+       // final HashMap<String, String> myMap = new HashMap<String, String>();
+        ParseQuery workout2 = ParseQuery.getQuery("WorkoutProgress");
+        workout2.whereExists("workout");
+        workout2.whereExists("date");//setting constraints
+        workout2.orderByDescending("createdAt");
+
+        workout2.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
+                MainActivity main = new MainActivity();
+                main.leader = 0;
+                while (main.leader != objects.size() - 1) {
+
+                    if (e == null && objects.size() != 0) { //if objects size is not 0
+                        ParseUser curruser = ParseUser.getCurrentUser();
+                        ParseUser user1 = objects.get(main.leader).getParseUser("author");
+
+                        String w = (String) objects.get(main.leader).get("workout");
+                        String d = (String) objects.get(main.leader).get("date");
+                        if (user1 == curruser) {
+                            System.out.println("workout test");
+                            arrayList2.add(w);
+                            arrayList3.add(d);
+                            // adapter.notifyDataSetChanged();
+
+                        }
+
+
+                    }
+                    main.leader++;
+                }
+                for (Integer i = 0; i < arrayList2.size()-1; i++) {
+                    String data = (arrayList2.get(i)+" " + " "+arrayList3.get(i));
+                    System.out.println(arrayList2.get(i)+" " + " "+arrayList3.get(i));
+                    arrayList5.add(data);
+                    System.out.println("size " + arrayList5.size());
+                }
+                adapter1.notifyDataSetChanged();
+            }});
         //Creates back button to go back to main page
        graph = (GraphView) v.findViewById(R.id.graph);
 

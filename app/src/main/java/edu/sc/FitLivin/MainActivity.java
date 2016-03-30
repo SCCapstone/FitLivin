@@ -116,65 +116,68 @@ public class MainActivity extends FragmentActivity{
     public static ParseObject MaxMileTimeParse = new ParseObject("MaxMileTime");
     ParseQuery<ParseObject> MaxMileTimeParseQuery = ParseQuery.getQuery("MaxMileTime");
 
-        @Override
+    //public static ParseObject WorkoutParse = new ParseObject("WorkoutProgress");
+  //  ParseQuery<ParseObject> WorkoutParseQuery = ParseQuery.getQuery("WorkoutProgress");
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
 
 
-     listView = (ListView)findViewById(R.id.listView);
-       listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, fragmentArray);
-            listView.setAdapter(listAdapter);
+        listView = (ListView)findViewById(R.id.listView);
+        listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, fragmentArray);
+        listView.setAdapter(listAdapter);
 
-            drawerLayout = (DrawerLayout) findViewById(R.id.drawerview);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawerview);
 
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Fragment fragment;
-                    switch (position) {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Fragment fragment;
+                switch (position) {
 
-                        case 0:
-                            fragment = new ProfilePageFragment();
-                            break;
-                        case 1:
-                            fragment = new PointsPageFragment();
-                            break;
+                    case 0:
+                        fragment = new ProfilePageFragment();
+                        break;
+                    case 1:
+                        fragment = new PointsPageFragment();
+                        break;
 
-                        case 2:
-                            fragment = new NutritionCalFragment();
-                            break;
-                        case 3:
-                            fragment = new GoalFragment();
-                            break;
-                        case 4:
-                            fragment = new MaxFragment();
-                            break;
-                        case 5:
-                            fragment = new TrackProgressFragment();
-                            break;
-                        case 6:
-                            fragment = new FitnessProgramFragment();
-                            break;
-                        case 7:
-                            fragment = new StopwatchFragment();
-                            break;
-                        default:
-                            fragment = new HomePageFragment();
-                    }
-                    FragmentManager fragmentManager = getFragmentManager();
-                    fragmentManager.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
-                    drawerLayout.closeDrawers();
+                    case 2:
+                        fragment = new NutritionCalFragment();
+                        break;
+                    case 3:
+                        fragment = new GoalFragment();
+                        break;
+                    case 4:
+                        fragment = new MaxFragment();
+                        break;
+                    case 5:
+                        fragment = new TrackProgressFragment();
+                        break;
+                    case 6:
+                        fragment = new FitnessProgramFragment();
+                        break;
+                    case 7:
+                        fragment = new StopwatchFragment();
+                        break;
+                    default:
+                        fragment = new HomePageFragment();
+                }
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                drawerLayout.closeDrawers();
                    /* HomePageFragment firstFragment = new HomePageFragment();
                     FragmentManager fm1 = getFragmentManager();
                     fm1.beginTransaction().add(R.id.container, firstFragment).addToBackStack(null).commit();*/
-                }
-            });
+            }
+        });
 
 
         //initializes the query object for the Profile databse
-     ParseQuery<ParseObject> query = ParseQuery.getQuery("ProfileInfo");
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("ProfileInfo");
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> userList, ParseException e) {
@@ -197,99 +200,99 @@ public class MainActivity extends FragmentActivity{
             }
         });
 
-            ParseQuery MaxBench = ParseQuery.getQuery("MaxBench");
-            MaxBench.whereExists("MaxBench");//setting constraints
-            MaxBench.orderByDescending("createdAt");
-            MaxBench.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        ParseQuery MaxBench = ParseQuery.getQuery("MaxBench");
+        MaxBench.whereExists("MaxBench");//setting constraints
+        MaxBench.orderByDescending("createdAt");
+        MaxBench.whereContains("username", ParseUser.getCurrentUser().getUsername());
 
-            MaxBench.findInBackground(new FindCallback<ParseObject>() {
-                                          public void done(List<ParseObject> objects, ParseException e) {
+        MaxBench.findInBackground(new FindCallback<ParseObject>() {
+                                      public void done(List<ParseObject> objects, ParseException e) {
 
-                                              if (e == null && objects.size() != 0) { //if objects size is not 0
+                                          if (e == null && objects.size() != 0) { //if objects size is not 0
 
-                                                  if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
+                                              if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                                                      int x = (Integer) objects.get(0).get("MaxBench");
+                                                  int x = (Integer) objects.get(0).get("MaxBench");
 
-                                                      bench = x;
+                                                  bench = x;
 
-
-                                                  }
 
                                               }
 
                                           }
 
-
                                       }
-            );
-            ParseQuery MaxSquat = ParseQuery.getQuery("MaxSquat");
-            MaxSquat.whereExists("MaxSquat");//setting constraints
-            MaxSquat.orderByDescending("createdAt");
-            MaxSquat.whereContains("username", ParseUser.getCurrentUser().getUsername());
 
-            MaxSquat.findInBackground(new FindCallback<ParseObject>() {
-                public void done(List<ParseObject> objects, ParseException e) {
 
-                    if (e == null && objects.size() != 0) { //if objects size is not 0
+                                  }
+        );
+        ParseQuery MaxSquat = ParseQuery.getQuery("MaxSquat");
+        MaxSquat.whereExists("MaxSquat");//setting constraints
+        MaxSquat.orderByDescending("createdAt");
+        MaxSquat.whereContains("username", ParseUser.getCurrentUser().getUsername());
 
-                        if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
+        MaxSquat.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
 
-                            int x = (Integer) objects.get(0).get("MaxSquat");
-                            //currentW.setText(Integer.toString(x));
-                            //setSquat(x);
-                            squat = x;
-                        }
+                if (e == null && objects.size() != 0) { //if objects size is not 0
+
+                    if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
+
+                        int x = (Integer) objects.get(0).get("MaxSquat");
+                        //currentW.setText(Integer.toString(x));
+                        //setSquat(x);
+                        squat = x;
                     }
                 }
+            }
 
-            });
-            ParseQuery MaxDeadLift = ParseQuery.getQuery("MaxDeadLift");
-            MaxDeadLift.whereExists("MaxDeadLift");//setting constraints
-            MaxDeadLift.orderByDescending("createdAt");
-            MaxDeadLift.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        });
+        ParseQuery MaxDeadLift = ParseQuery.getQuery("MaxDeadLift");
+        MaxDeadLift.whereExists("MaxDeadLift");//setting constraints
+        MaxDeadLift.orderByDescending("createdAt");
+        MaxDeadLift.whereContains("username", ParseUser.getCurrentUser().getUsername());
 
-            MaxDeadLift.findInBackground(new FindCallback<ParseObject>() {
-                public void done(List<ParseObject> objects, ParseException e) {
+        MaxDeadLift.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
 
-                    if (e == null && objects.size() != 0) { //if objects size is not 0
+                if (e == null && objects.size() != 0) { //if objects size is not 0
 
-                        if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
+                    if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                            int x = (Integer) objects.get(0).get("MaxDeadLift");
-                            //currentW.setText(Integer.toString(x));
-                            deadLift = x;
+                        int x = (Integer) objects.get(0).get("MaxDeadLift");
+                        //currentW.setText(Integer.toString(x));
+                        deadLift = x;
 
 
-                        }
                     }
                 }
+            }
 
-            });
-            ParseQuery MaxMileTime = ParseQuery.getQuery("MaxMileTime");
-            MaxMileTime.whereExists("MaxMileTime");//setting constraints
-            MaxMileTime.orderByDescending("createdAt");
-            MaxMileTime.whereContains("username", ParseUser.getCurrentUser().getUsername());
+        });
+        ParseQuery MaxMileTime = ParseQuery.getQuery("MaxMileTime");
+        MaxMileTime.whereExists("MaxMileTime");//setting constraints
+        MaxMileTime.orderByDescending("createdAt");
+        MaxMileTime.whereContains("username", ParseUser.getCurrentUser().getUsername());
 
-            MaxMileTime.findInBackground(new FindCallback<ParseObject>() {
-                public void done(List<ParseObject> objects, ParseException e) {
+        MaxMileTime.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
 
-                    if (e == null && objects.size() != 0) { //if objects size is not 0
+                if (e == null && objects.size() != 0) { //if objects size is not 0
 
-                        if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
+                    if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                            int x = (Integer) objects.get(0).get("MaxMileTime");
-                            //currentW.setText(Integer.toString(x));
-                            mileTime = x;
+                        int x = (Integer) objects.get(0).get("MaxMileTime");
+                        //currentW.setText(Integer.toString(x));
+                        mileTime = x;
 
 
-                        }
                     }
                 }
+            }
 
-            });
+        });
 
-            //Adds the fragment for the layout
+        //Adds the fragment for the layout
         PointsPageFragment firstFragment = new PointsPageFragment();
         FragmentManager fm1 = getFragmentManager();
         fm1.beginTransaction().add(R.id.container, firstFragment).addToBackStack(null).commit();
@@ -307,7 +310,7 @@ public class MainActivity extends FragmentActivity{
 
         this.getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#46d4e8")));
 
-         String s = ParseUser.getCurrentUser().getUsername();
+        String s = ParseUser.getCurrentUser().getUsername();
         Log.d("FUsername ", s);
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -324,11 +327,11 @@ public class MainActivity extends FragmentActivity{
         menuItem .setTitle(s);
 
 
-       // menuItem.setClickable(true);
+        // menuItem.setClickable(true);
         return true;
     }
 
-   @Override
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if(id == R.id.action_settings){
@@ -337,7 +340,7 @@ public class MainActivity extends FragmentActivity{
             return true;
         }
 
-       if(id == R.id.uName){
+        if(id == R.id.uName){
             ProfilePageFragment fragment6 = new ProfilePageFragment();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
@@ -700,19 +703,31 @@ public class MainActivity extends FragmentActivity{
             }
         });
     }
+    public void workoutPro(String date, String workout) {
+        ParseObject WorkoutParse = new ParseObject("WorkoutProgress");
+        String date1 = date;
+
+        // ParseUser user1 = user;
+        String workout1 = workout;
+        // adds info to database
+        WorkoutParse.put("workout", workout1);
+        WorkoutParse.put("date", date1);
+        WorkoutParse.put("author", curruser);
+        WorkoutParse.saveInBackground();
+    }
     public Integer WeightGoalTest(final Integer weightL){
 
 
-          Integer currentw = weightPro;
+        Integer currentw = weightPro;
 
-          if (currentw <= weightL)
-          {
-              return 1;
-          }
+        if (currentw <= weightL)
+        {
+            return 1;
+        }
         else {
 
-              return 2;
-          }
+            return 2;
+        }
 
     }
     public Integer WeightGainGoalTest(final Integer weightG){
@@ -723,7 +738,7 @@ public class MainActivity extends FragmentActivity{
         CurrentWeightquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
 
 
-       //final  SaveData data = new SaveData();
+        //final  SaveData data = new SaveData();
 
         CurrentWeightquery.findInBackground(new FindCallback<ParseObject>() {
 
@@ -755,12 +770,12 @@ public class MainActivity extends FragmentActivity{
         }
 
     }
-   public Integer BenchGoalTest(final Integer weightG) {
+    public Integer BenchGoalTest(final Integer weightG) {
 
 
-       Log.d("Q", "ddCurrentBenchMax2  " + bench + " dd ");
+        Log.d("Q", "ddCurrentBenchMax2  " + bench + " dd ");
 
-       Integer currentB = bench;
+        Integer currentB = bench;
 
         if(currentB>=weightG){
             return 1;
@@ -782,9 +797,9 @@ public class MainActivity extends FragmentActivity{
         }
 
     }
-   public Integer DeadLiftGoalTest(final Integer weightG){
+    public Integer DeadLiftGoalTest(final Integer weightG){
 
-       Integer currentD = deadLift;
+        Integer currentD = deadLift;
         if(currentD>=weightG){
             return 1;
         }else{
@@ -796,9 +811,9 @@ public class MainActivity extends FragmentActivity{
     public Integer MileTimeGoalTest(final Integer weightG){
 
         Integer currentM = mileTime;
-       if(currentM == 0){
-           return 2;
-       }
+        if(currentM == 0){
+            return 2;
+        }
         if(currentM<=weightG){
             return 1;
         }else{
@@ -848,10 +863,10 @@ public class MainActivity extends FragmentActivity{
     public void setS(String sn){
         this.objectID = sn;
     }
-   public void launchCamera(View view){
-       Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-       startActivityForResult(intent, 1);
-   }
+    public void launchCamera(View view){
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, 1);
+    }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         if(requestCode == 1 && resultCode == RESULT_OK){
