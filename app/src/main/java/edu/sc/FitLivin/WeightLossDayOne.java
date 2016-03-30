@@ -136,7 +136,7 @@ MediaPlayer mp;
             public void onClick(View v) {
                 MainActivity main1 = new MainActivity();
                 System.out.println("Workout Day 1 1");
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
                 Date date = new Date();
                 String time = sdf.format(date);
                 main1.workoutPro(time,"Weight Loss Day One: ");

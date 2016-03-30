@@ -126,6 +126,7 @@ public class MainActivity extends FragmentActivity{
         setContentView(R.layout.activity_main);
 
 
+
         listView = (ListView)findViewById(R.id.listView);
         listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, fragmentArray);
         listView.setAdapter(listAdapter);
@@ -304,9 +305,9 @@ public class MainActivity extends FragmentActivity{
 
         this.getActionBar()
                 .setTitle("FitLivin");
-        this.getActionBar().setDisplayUseLogoEnabled(true);
-        this.getActionBar().setDisplayShowHomeEnabled(true);
-        this.getActionBar().setIcon(R.mipmap.ic_launcher);
+        //this.getActionBar().setDisplayUseLogoEnabled(true);
+        //this.getActionBar().setDisplayShowHomeEnabled(true);
+        //this.getActionBar().setIcon(R.mipmap.ic_launcher);
 
         this.getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#46d4e8")));
 
@@ -682,26 +683,15 @@ public class MainActivity extends FragmentActivity{
 
 
     public void MileTimeMax(Integer mileTime, String user) {
-        Integer mileTime1 = mileTime;
-
-        // ParseUser user1 = user;
+        ParseObject MaxMileTimeParse1 = new ParseObject("MaxMileTime");
+        Integer mileTime1 = mileTime;        // ParseUser user1 = user;
         String username1 = user;
         // adds info to database
-        MaxMileTimeParse.put("MaxMileTime", mileTime1);
-        MaxMileTimeParse.put("username", username1);
-        MaxMileTimeParse.put("author", curruser);
+        MaxMileTimeParse1.put("MaxMileTime", mileTime1);
+        MaxMileTimeParse1.put("username", username1);
+        MaxMileTimeParse1.put("author", curruser);
 
-        MaxMileTimeParse.saveInBackground(new SaveCallback() {
-            @Override
-            public void done(ParseException e) {
-                if (e == null) {
-                    objectID = MaxMileTimeParse.getObjectId();
-                    setS(objectID);
-                } else {
-                    Log.d("F", "object failllll");
-                }
-            }
-        });
+        MaxMileTimeParse1.saveInBackground();
     }
     public void workoutPro(String date, String workout) {
         ParseObject WorkoutParse = new ParseObject("WorkoutProgress");

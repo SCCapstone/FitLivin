@@ -27,6 +27,8 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class BodyBuildingDayFive extends Fragment {
@@ -136,6 +138,11 @@ MediaPlayer mp;
         Button complete = (Button) v.findViewById(R.id.completeDay5bb);//creates complete button
         complete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                MainActivity main1 = new MainActivity();
+                SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+                Date date = new Date();
+                String time = sdf.format(date);
+                main1.workoutPro(time,"Body Building Day Five: ");
                 ParseQuery queryuser = ParseUser.getQuery();
                 queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
 

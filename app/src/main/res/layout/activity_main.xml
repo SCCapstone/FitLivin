@@ -4,7 +4,10 @@
     android:screenOrientation="portrait"
     android:id="@+id/drawerview"
     android:layout_gravity="center_horizontal|top"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
 
 
    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
