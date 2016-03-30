@@ -10,8 +10,6 @@ package edu.sc.FitLivin;
 
 
 import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,7 +18,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -154,8 +151,8 @@ public class TrackProgressFragment extends Fragment {
 
                         if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
                             for (int i = 0; i < objects.size(); i++) {
-                                weight.add(objects.get(i).get("Weight").toString());
-                                dates.add(objects.get(i).getCreatedAt().getMonth());
+                                weight.add(objects.get(objects.size()-1).get("Weight").toString());
+                                dates.add(objects.get(objects.size()-1).getCreatedAt().getMonth());
 
                                 Log.d(dates.get(i).toString(), "done: ");
                             }
@@ -290,8 +287,8 @@ public class TrackProgressFragment extends Fragment {
 
                         if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
                             for (int i = 0; i < objects.size(); i++) {
-                                maxBenchweight.add(objects.get(i).get("MaxBench").toString());
-                                dates.add(objects.get(i).getCreatedAt());
+                                maxBenchweight.add(objects.get(objects.size()-1).get("MaxBench").toString());
+                                dates.add(objects.get(objects.size()-1).getCreatedAt());
                                 Log.d(dates.get(i).toString(), "done: ");
                             }
                             ArrayAdapter weightArrayAdapter =
@@ -413,8 +410,8 @@ public class TrackProgressFragment extends Fragment {
 
                         if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
                             for (int i = 0; i < objects.size(); i++) {
-                                maxsquats.add(objects.get(i).get("MaxSquat").toString());
-                                dates.add(objects.get(i).getCreatedAt());
+                                maxsquats.add(objects.get(objects.size()-1).get("MaxSquat").toString());
+                                dates.add(objects.get(objects.size()-1).getCreatedAt());
                                 Log.d(dates.get(i).toString(), "done: ");
                             }
                             ArrayAdapter weightArrayAdapter =
@@ -532,8 +529,8 @@ public class TrackProgressFragment extends Fragment {
 
                         if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
                             for (int i = 0; i < objects.size(); i++) {
-                                maxdeadlift.add(objects.get(i).get("MaxDeadLift").toString());
-                                dates.add(objects.get(i).getCreatedAt());
+                                maxdeadlift.add(objects.get(objects.size()-1).get("MaxDeadLift").toString());
+                                dates.add(objects.get(objects.size()-1).getCreatedAt());
                                 Log.d(dates.get(i).toString(), "done: ");
                             }
                             ArrayAdapter weightArrayAdapter =
@@ -650,8 +647,8 @@ public class TrackProgressFragment extends Fragment {
 
                         if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
                             for (int i = 0; i < objects.size(); i++) {
-                                maxmiletime.add(objects.get(i).get("MaxMileTime").toString());
-                                dates.add(objects.get(i).getCreatedAt());
+                                maxmiletime.add(objects.get(objects.size()-1).get("MaxMileTime").toString());
+                                dates.add(objects.get(objects.size()-1).getCreatedAt());
                                 Log.d(dates.get(i).toString(), "done: ");
                             }
                             ArrayAdapter weightArrayAdapter =
