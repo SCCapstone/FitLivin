@@ -10,222 +10,226 @@
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="#212121">
+        android:background="#212121"><![CDATA[
 
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_height="fill_parent"
-            android:layout_width="fill_parent"
-            android:orientation="vertical"
-            android:background="#212121">
+        >
+
+]]></ScrollView>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        android:background="#212121"
+        android:layout_gravity="right|bottom">
 
 
-        <TextView
-            android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weight Loss Goal (lbs): "
+        android:id="@+id/editnametext"
+        android:layout_gravity="left|top"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:layout_alignTop="@+id/currentWeightGoal"
+        android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="Weight Loss Goal (lbs): "
-            android:id="@+id/editnametext"
-            android:layout_gravity="left|top"
-            android:textColor="#ffffff"
-            android:textSize="20dp"
-            android:layout_alignTop="@+id/currentWeightGoal"
+            android:text="Set Weight"
+            android:id="@+id/setWeight"
+            android:background="#46d4e8"
+            android:layout_below="@+id/editnametext"
+            android:layout_alignStart="@+id/setWeightG" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/currentWeightGoal"
+        android:layout_gravity="right|top"
+        android:textColor="#46d4e8"
+        android:textSize="20dp"
+        android:textIsSelectable="true"
+        android:layout_toEndOf="@+id/editnametext"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weight Gain Goal (lbs): "
+        android:id="@+id/weightGain"
+        android:layout_gravity="left|top"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:layout_below="@+id/setWeight"
+        android:layout_alignStart="@+id/editnametext" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Set Weight"
+            android:id="@+id/setWeightG"
+            android:background="#46d4e8"
+            android:layout_below="@+id/currentWeightGainGoal"
             android:layout_centerHorizontal="true" />
 
-            <Button
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="Set Weight"
-                android:id="@+id/setWeight"
-                android:background="#46d4e8"
-                android:layout_below="@+id/editnametext"
-                android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/currentWeightGainGoal"
+        android:layout_gravity="right|top"
+        android:textColor="#46d4e8"
+        android:textSize="20dp"
+        android:textIsSelectable="true"
+        android:layout_toEndOf="@+id/weightGain"
+        android:layout_below="@+id/setWeight"
+        android:layout_marginTop="10dp"
+        />
 
-        <TextView
-            android:layout_width="wrap_content"
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bench Goal (lbs): "
+        android:id="@+id/BenchText"
+        android:layout_gravity="left|top"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:layout_alignTop="@+id/currentBenchGoal"
+        android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:id="@+id/currentWeightGoal"
-            android:layout_gravity="right|top"
-            android:textColor="#46d4e8"
-            android:textSize="20dp"
-            android:textIsSelectable="true"
-            android:layout_toEndOf="@+id/editnametext"
-            android:layout_marginTop="20dp"
-            />
+            android:text="Set Bench"
+            android:id="@+id/setBench"
+            android:background="#46d4e8"
+            android:layout_below="@+id/BenchText"
+            android:layout_alignStart="@+id/setWeightG" />
 
-        <TextView
-            android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/currentBenchGoal"
+        android:layout_gravity="right|top"
+        android:textColor="#46d4e8"
+        android:textSize="20dp"
+        android:textIsSelectable="true"
+        android:layout_toEndOf="@+id/BenchText"
+        android:layout_below="@+id/setWeightG"
+        android:layout_marginTop="10dp"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Squat Goal (lbs): "
+        android:id="@+id/SquatText"
+        android:layout_gravity="left|top"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:layout_below="@+id/setBench"
+        android:layout_alignStart="@+id/BenchText" />
+
+        <Button
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="Weight Gain Goal (lbs): "
-            android:id="@+id/weightGain"
-            android:layout_gravity="left|top"
-            android:textColor="#ffffff"
-            android:textSize="20dp"
-            android:layout_below="@+id/setWeight"
-            android:layout_alignStart="@+id/editnametext" />
+            android:text="Set Squat"
+            android:id="@+id/setSquat"
+            android:background="#46d4e8"
+            android:layout_below="@+id/currentSquatGoal"
+            android:layout_alignStart="@+id/setBench" />
 
-            <Button
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="Set Weight"
-                android:id="@+id/setWeightG"
-                android:background="#46d4e8"
-                android:layout_below="@+id/weightGain"
-                android:layout_alignStart="@+id/setWeight" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/currentSquatGoal"
+        android:layout_gravity="right|top"
+        android:textColor="#46d4e8"
+        android:textSize="20dp"
+        android:textIsSelectable="true"
+        android:layout_toEndOf="@+id/SquatText"
+        android:layout_below="@+id/setBench"
+        android:layout_marginTop="10dp"
+        />
 
-        <TextView
-            android:layout_width="wrap_content"
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DeadLift Goal (lbs): "
+        android:id="@+id/DeadLiftText"
+        android:layout_gravity="left|top"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:layout_alignTop="@+id/currentDeadLiftGoal"
+        android:layout_alignStart="@+id/SquatText" />
+
+        <Button
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:id="@+id/currentWeightGainGoal"
-            android:layout_gravity="right|top"
-            android:textColor="#46d4e8"
-            android:textSize="20dp"
-            android:textIsSelectable="true"
-            android:layout_toEndOf="@+id/weightGain"
-            android:layout_below="@+id/setWeight"
-            android:layout_marginTop="10dp"
-            />
+            android:text="Set DeadLift"
+            android:id="@+id/setDeadLift"
+            android:background="#46d4e8"
+            android:layout_centerVertical="true"
+            android:layout_alignStart="@+id/setSquat" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/currentDeadLiftGoal"
+        android:layout_gravity="right|top"
+        android:textColor="#46d4e8"
+        android:textSize="20dp"
+        android:textIsSelectable="true"
+        android:layout_toEndOf="@+id/DeadLiftText"
+        android:layout_below="@+id/setSquat"
+        android:layout_marginTop="10dp"
+        />
 
 
-        <TextView
-            android:layout_width="wrap_content"
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MileTime Goal (sec): "
+        android:id="@+id/MileTimeText"
+        android:layout_gravity="left|top"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:layout_below="@+id/currentMileTimeGoal"
+        android:layout_alignEnd="@+id/weightGain" />
+
+        <Button
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="Bench Goal (lbs): "
-            android:id="@+id/BenchText"
-            android:layout_gravity="left|top"
-            android:textColor="#ffffff"
-            android:textSize="20dp"
-            android:layout_alignTop="@+id/currentBenchGoal"
-            android:layout_centerHorizontal="true" />
+            android:text="Set MileTime"
+            android:id="@+id/setMileTime"
+            android:background="#46d4e8"
+            android:layout_below="@+id/MileTimeText"
+            android:layout_alignStart="@+id/setDeadLift"
+            android:layout_marginTop="50dp" />
 
-            <Button
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="Set Bench"
-                android:id="@+id/setBench"
-                android:background="#46d4e8"
-                android:layout_below="@+id/BenchText"
-                android:layout_alignStart="@+id/setWeightG" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/currentBenchGoal"
-            android:layout_gravity="right|top"
-            android:textColor="#46d4e8"
-            android:textSize="20dp"
-            android:textIsSelectable="true"
-            android:layout_toEndOf="@+id/BenchText"
-            android:layout_below="@+id/setWeightG"
-            android:layout_marginTop="10dp"
-            />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/currentMileTimeGoal"
+        android:layout_gravity="right|top"
+        android:textColor="#46d4e8"
+        android:textSize="20dp"
+        android:textIsSelectable="true"
+        android:layout_toEndOf="@+id/MileTimeText"
+        android:layout_below="@+id/setDeadLift"
+        android:layout_marginTop="10dp"
+        />
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Squat Goal (lbs): "
-            android:id="@+id/SquatText"
-            android:layout_gravity="left|top"
-            android:textColor="#ffffff"
-            android:textSize="20dp"
-            android:layout_below="@+id/setBench"
-            android:layout_alignStart="@+id/BenchText" />
-
-            <Button
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="Set Squat"
-                android:id="@+id/setSquat"
-                android:background="#46d4e8"
-                android:layout_below="@+id/currentSquatGoal"
-                android:layout_alignStart="@+id/setBench" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/currentSquatGoal"
-            android:layout_gravity="right|top"
-            android:textColor="#46d4e8"
-            android:textSize="20dp"
-            android:textIsSelectable="true"
-            android:layout_toEndOf="@+id/SquatText"
-            android:layout_below="@+id/setBench"
-            android:layout_marginTop="10dp"
-            />
-
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="DeadLift Goal (lbs): "
-            android:id="@+id/DeadLiftText"
-            android:layout_gravity="left|top"
-            android:textColor="#ffffff"
-            android:textSize="20dp"
-            android:layout_alignTop="@+id/currentDeadLiftGoal"
-            android:layout_centerHorizontal="true" />
-
-            <Button
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="Set DeadLift"
-                android:id="@+id/setDeadLift"
-                android:background="#46d4e8"
-                android:layout_below="@+id/DeadLiftText"
-                android:layout_alignStart="@+id/setSquat" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/currentDeadLiftGoal"
-            android:layout_gravity="right|top"
-            android:textColor="#46d4e8"
-            android:textSize="20dp"
-            android:textIsSelectable="true"
-            android:layout_toEndOf="@+id/DeadLiftText"
-            android:layout_below="@+id/setSquat"
-            android:layout_marginTop="10dp"
-            />
-
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="MileTime Goal (sec): "
-            android:id="@+id/MileTimeText"
-            android:layout_gravity="left|top"
-            android:textColor="#ffffff"
-            android:textSize="20dp"
-            android:layout_alignTop="@+id/currentMileTimeGoal"
-            android:layout_centerHorizontal="true" />
-
-            <Button
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="Set MileTime"
-                android:id="@+id/setMileTime"
-                android:background="#46d4e8"
-                android:layout_below="@+id/MileTimeText"
-                android:layout_alignStart="@+id/setDeadLift" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/currentMileTimeGoal"
-            android:layout_gravity="right|top"
-            android:textColor="#46d4e8"
-            android:textSize="20dp"
-            android:textIsSelectable="true"
-            android:layout_toEndOf="@+id/MileTimeText"
-            android:layout_below="@+id/setDeadLift"
-            android:layout_marginTop="10dp"
-            />
-
-
-        </RelativeLayout>>
-
-</ScrollView>
+    </RelativeLayout>
 </FrameLayout>
 
 
