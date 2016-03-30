@@ -62,7 +62,7 @@ public class PointsLeader extends Fragment {
         list.setAdapter(adapter);
         //MainActivity main = new MainActivity();
 
-
+//
 
 
 
