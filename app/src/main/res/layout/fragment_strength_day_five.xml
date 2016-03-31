@@ -138,7 +138,7 @@
             android:id="@+id/completeDay5s"
             android:layout_below = "@+id/legPressDescrpition"
             android:layout_gravity="right|bottom"
-            android:background="#ff6655"
+            android:background="#46d4e8"
             />
 
 

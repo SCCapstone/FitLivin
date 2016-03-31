@@ -133,7 +133,7 @@
             android:id="@+id/completeDay5bb"
             android:layout_below = "@+id/shoulderPressDetail"
             android:layout_gravity="right|bottom"
-            android:background="#ff6655"
+            android:background="#46d4e8"
             />
 
 

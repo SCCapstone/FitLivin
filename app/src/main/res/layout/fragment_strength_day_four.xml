@@ -131,7 +131,7 @@
             android:id="@+id/completeDay4s"
             android:layout_below = "@+id/tricepPushdownDescription"
             android:layout_gravity="right|bottom"
-            android:background="#ff6655"
+            android:background="#46d4e8"
             />
 
     </LinearLayout>>
