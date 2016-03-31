@@ -16,7 +16,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp"
         android:layout_gravity="center"
-        android:background="#46d4e8" />
+        android:background="#e89633" />
 
     <Button
         android:layout_width="300dp"
@@ -26,7 +26,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="125dp"
         android:layout_gravity="center"
-        android:background="#46d4e8" />
+        android:background="#e8d839" />
 
     <Button
         android:layout_width="300dp"
@@ -38,7 +38,7 @@
         android:layout_marginBottom="75dp"
         android:layout_gravity="center"
         android:height="@dimen/activity_vertical_margin"
-        android:background="#46d4e8" />
+        android:background="#e8b63a" />
 
     <Button
         android:layout_width="300dp"
@@ -49,7 +49,7 @@
         android:layout_alignStart="@+id/day4Strength"
         android:layout_marginBottom="-75dp"
         android:layout_gravity="center"
-        android:background="#46d4e8" />
+        android:background="#e8260e" />
 
     <Button
         android:layout_width="300dp"
@@ -60,7 +60,7 @@
         android:layout_alignStart="@+id/day3Strength"
         android:layout_marginBottom="-25dp"
         android:layout_gravity="center"
-        android:background="#46d4e8" />
+        android:background="#e86f14" />
 
 
     <Button
@@ -69,6 +69,6 @@
         android:text="How To"
         android:id="@+id/howTo"
         android:layout_gravity="center_horizontal|bottom"
-        android:background="#46d4e8" />
+        android:background="#e89633" />
 
 </FrameLayout>

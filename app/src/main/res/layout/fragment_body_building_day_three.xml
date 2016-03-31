@@ -133,7 +133,7 @@
         android:id="@+id/completeDay3bb"
         android:layout_below = "@+id/closegripPushupDetail"
         android:layout_gravity="right|bottom"
-        android:background="#46d4e8"/>
+        android:background="#e89633"/>
 
     </LinearLayout>>
 

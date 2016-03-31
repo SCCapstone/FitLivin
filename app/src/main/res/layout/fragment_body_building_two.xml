@@ -130,9 +130,9 @@
         android:layout_height="wrap_content"
         android:text="Workout Complete!"
         android:id="@+id/completeDay2bb"
-                android:layout_below = "@+id/pushupDetail"
-        android:background="#46d4e8"
-                android:layout_gravity="right|bottom" />
+        android:layout_below = "@+id/pushupDetail"
+        android:background="#e89633"
+        android:layout_gravity="right|bottom" />
 
 </LinearLayout>>
 

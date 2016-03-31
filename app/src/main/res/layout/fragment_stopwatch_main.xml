@@ -14,7 +14,7 @@
         android:text="@string/start"
         android:layout_alignTop="@+id/reset"
         android:layout_alignParentStart="true"
-        android:background="#ff6655" />
+        android:background="#e89633" />
 
     <Button
         android:id="@+id/stop"
@@ -26,7 +26,7 @@
         android:layout_alignBottom="@+id/reset"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/chronometer"
-        android:background="#ff6655"
+        android:background="#e89633"
         android:allowUndo="true" />
 
     <Button
@@ -38,7 +38,7 @@
         android:text="@string/reset"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:background="#ff6655" />
+        android:background="#e89633" />
 
 
 

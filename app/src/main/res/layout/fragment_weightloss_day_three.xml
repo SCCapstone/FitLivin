@@ -117,7 +117,7 @@
                 android:id="@+id/completeDay3w"
                 android:layout_below = "@+id/burpeesDetail"
                 android:layout_gravity="right|bottom"
-                android:background="#46d4e8"
+                android:background="#e89633"
                 />
 
 

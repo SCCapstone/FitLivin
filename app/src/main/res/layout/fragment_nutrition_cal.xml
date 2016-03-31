@@ -19,7 +19,7 @@
             android:id="@+id/maintainButton"
             android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true"
-            android:background="#ff6655"
+            android:background="#e89633"
             />
         <Button
             android:layout_width="100dp"
@@ -27,7 +27,7 @@
             android:text="Weight Loss"
             android:id="@+id/wlossButton"
             android:textColor="#000100"
-            android:background="#ff6655"
+            android:background="#e89633"
             android:layout_above="@+id/lowText"
             android:layout_alignEnd="@+id/lowMessage" />
 
@@ -36,7 +36,7 @@
             android:layout_height="55dp"
             android:text="Weight Gain"
             android:id="@+id/wGainButton"
-            android:background="#ff6655"
+            android:background="#e89633"
             android:layout_marginRight="40dp"
             android:layout_above="@+id/lowText"
             android:layout_alignParentEnd="true" />

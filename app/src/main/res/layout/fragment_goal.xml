@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:text="Set Weight"
             android:id="@+id/setWeight"
-            android:background="#46d4e8"
+            android:background="#e89633"
             android:layout_below="@+id/editnametext"
             android:layout_alignStart="@+id/setWeightG"
             />
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:text="Set Weight"
             android:id="@+id/setWeightG"
-            android:background="#46d4e8"
+            android:background="#e89633"
             android:layout_below="@+id/currentWeightGainGoal"
             android:layout_centerHorizontal="true"
             />
@@ -110,7 +110,7 @@
             android:layout_height="wrap_content"
             android:text="Set Bench"
             android:id="@+id/setBench"
-            android:background="#46d4e8"
+            android:background="#e89633"
             android:layout_below="@+id/BenchText"
             android:layout_alignStart="@+id/setWeightG" />
 
@@ -143,7 +143,7 @@
             android:layout_height="wrap_content"
             android:text="Set Squat"
             android:id="@+id/setSquat"
-            android:background="#46d4e8"
+            android:background="#e89633"
             android:layout_below="@+id/currentSquatGoal"
             android:layout_alignStart="@+id/setBench" />
 
@@ -178,7 +178,7 @@
             android:layout_height="wrap_content"
             android:text="Set DeadLift"
             android:id="@+id/setDeadLift"
-            android:background="#46d4e8"
+            android:background="#e89633"
             android:layout_centerVertical="true"
             android:layout_below="@+id/DeadLiftText"
 
@@ -214,7 +214,7 @@
             android:layout_height="wrap_content"
             android:text="Set MileTime"
             android:id="@+id/setMileTime"
-            android:background="#46d4e8"
+            android:background="#e89633"
             android:layout_below="@+id/MileTimeText"
             android:layout_alignStart="@+id/setDeadLift"
 
