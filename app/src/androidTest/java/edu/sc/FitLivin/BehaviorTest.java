@@ -193,13 +193,96 @@ public class BehaviorTest {
                 .check(matches(isDisplayed()));
 
     }
+
+    @Test
+    public void bodybuildingCheck(){
+
+    }
+    @Test
+    public void strCheck(){
+
+    }
+    @Test
+    public void weightlossCheck(){
+
+    }
+    @Test
+    public void goalCheck(){
+
+    }
+    @Test
+    public void homepageCheck(){
+
+    }
+    @Test
+    public void maxcalcCheck(){
+
+    }
+    @Test
+    public void nutritioncalcCheck(){
+
+    }
+    @Test
+    public void pointspagecheck(){
+
+    }
+    @Test public void profilepagecheck(){
+
+    }
+    @Test
+      public void stopwatchcheck(){
+
+    }
+    @Test
+    public void trackProgresscheck(){
+
+    }
     @Test
     public void CheckWLD1(){
         Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo());
         Espresso.onData(withId(R.id.runningImage)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.raw.fitfactcardio)).perform(pressImeActionButton());
+        Espresso.onData(withId(R.raw.fitfactcardio)).perform(ViewActions.click());
     }
+
+
+    @Test
+    public void CheckWLD2(){
+
+    }
+    @Test
+    public void CheckWLD3(){
+
+    }
+    @Test
+    public void CheckWLD4(){
+
+    }
+    @Test
+    public void CheckWLD5(){
+
+    }
+    @Test
+    public void StrengthDay1(){
+
+    }
+    @Test
+    public void StrengthDay2(){
+
+    }
+    @Test
+    public void StrengthDay3(){
+
+    }
+    @Test
+    public void StrengthDay4(){
+
+    }
+    @Test
+    public void StrengthDay5(){
+
+    }
+
 
 
 

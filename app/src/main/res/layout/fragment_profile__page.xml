@@ -157,8 +157,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/CurrHinch"
             android:text="(in)"
-            android:inputType="number"
-            android:digits="1234567890"
+            
             android:layout_gravity="center"
             android:textColor="#ffffff"
             android:textSize="30dp"
