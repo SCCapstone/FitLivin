@@ -40,7 +40,6 @@ import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 
 public class TrackProgressFragment extends Fragment {
@@ -213,8 +212,8 @@ public class TrackProgressFragment extends Fragment {
 
                         if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
                             for (int i = 0; i < objects.size(); i++) {
-                                weight.add(objects.get(objects.size()-1).get("Weight").toString());
-                                dates.add(objects.get(objects.size()-1).getCreatedAt().getMonth());
+                                weight.add(objects.get(i).get("Weight").toString());
+                                dates.add(objects.get(i).getCreatedAt().getMonth());
 
                                 Log.d(dates.get(i).toString(), "done: ");
                             }
@@ -349,8 +348,8 @@ public class TrackProgressFragment extends Fragment {
 
                         if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
                             for (int i = 0; i < objects.size(); i++) {
-                                maxBenchweight.add(objects.get(objects.size()-1).get("MaxBench").toString());
-                                dates.add(objects.get(objects.size()-1).getCreatedAt());
+                                maxBenchweight.add(objects.get(i).get("MaxBench").toString());
+                                dates.add(objects.get(i).getCreatedAt());
                                 Log.d(dates.get(i).toString(), "done: ");
                             }
                             ArrayAdapter weightArrayAdapter =
@@ -472,8 +471,8 @@ public class TrackProgressFragment extends Fragment {
 
                         if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
                             for (int i = 0; i < objects.size(); i++) {
-                                maxsquats.add(objects.get(objects.size()-1).get("MaxSquat").toString());
-                                dates.add(objects.get(objects.size()-1).getCreatedAt());
+                                maxsquats.add(objects.get(i).get("MaxSquat").toString());
+                                dates.add(objects.get(i).getCreatedAt());
                                 Log.d(dates.get(i).toString(), "done: ");
                             }
                             ArrayAdapter weightArrayAdapter =
@@ -591,8 +590,8 @@ public class TrackProgressFragment extends Fragment {
 
                         if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
                             for (int i = 0; i < objects.size(); i++) {
-                                maxdeadlift.add(objects.get(objects.size()-1).get("MaxDeadLift").toString());
-                                dates.add(objects.get(objects.size()-1).getCreatedAt());
+                                maxdeadlift.add(objects.get(i).get("MaxDeadLift").toString());
+                                dates.add(objects.get(i).getCreatedAt());
                                 Log.d(dates.get(i).toString(), "done: ");
                             }
                             ArrayAdapter weightArrayAdapter =
@@ -709,8 +708,8 @@ public class TrackProgressFragment extends Fragment {
 
                         if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
                             for (int i = 0; i < objects.size(); i++) {
-                                maxmiletime.add(objects.get(objects.size()-1).get("MaxMileTime").toString());
-                                dates.add(objects.get(objects.size()-1).getCreatedAt());
+                                maxmiletime.add(objects.get(i).get("MaxMileTime").toString());
+                                dates.add(objects.get(i).getCreatedAt());
                                 Log.d(dates.get(i).toString(), "done: ");
                             }
                             ArrayAdapter weightArrayAdapter =
