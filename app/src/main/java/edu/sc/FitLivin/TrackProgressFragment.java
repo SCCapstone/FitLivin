@@ -211,11 +211,11 @@ public class TrackProgressFragment extends Fragment {
                     if (e == null && objects.size() != 0) { //if objects size is not 0
 
                         if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
-                            for (int i = 0; i < objects.size(); i++) {
+                            for (int i = objects.size() -1; i >= 0 ; i--) {
                                 weight.add(objects.get(i).get("Weight").toString());
                                 dates.add(objects.get(i).getCreatedAt().getMonth());
 
-                                Log.d(dates.get(i).toString(), "done: ");
+                               // Log.d(dates.get(i).toString(), "done: ");
                             }
 
                             if(weight.size() < 2){
@@ -347,10 +347,11 @@ public class TrackProgressFragment extends Fragment {
                     if (e == null && objects.size() != 0) { //if objects size is not 0
 
                         if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
-                            for (int i = 0; i < objects.size(); i++) {
+
+                            for (int i = objects.size() -1; i >= 0 ; i--) {
                                 maxBenchweight.add(objects.get(i).get("MaxBench").toString());
                                 dates.add(objects.get(i).getCreatedAt());
-                                Log.d(dates.get(i).toString(), "done: ");
+
                             }
                             ArrayAdapter weightArrayAdapter =
                                     new ArrayAdapter<String>(getActivity(),
@@ -470,7 +471,7 @@ public class TrackProgressFragment extends Fragment {
                     if (e == null && objects.size() != 0) { //if objects size is not 0
 
                         if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
-                            for (int i = 0; i < objects.size(); i++) {
+                            for (int i = objects.size() -1; i >= 0 ; i--) {
                                 maxsquats.add(objects.get(i).get("MaxSquat").toString());
                                 dates.add(objects.get(i).getCreatedAt());
                                 Log.d(dates.get(i).toString(), "done: ");
@@ -589,7 +590,7 @@ public class TrackProgressFragment extends Fragment {
                     if (e == null && objects.size() != 0) { //if objects size is not 0
 
                         if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
-                            for (int i = 0; i < objects.size(); i++) {
+                            for (int i = objects.size() -1; i >= 0 ; i--) {
                                 maxdeadlift.add(objects.get(i).get("MaxDeadLift").toString());
                                 dates.add(objects.get(i).getCreatedAt());
                                 Log.d(dates.get(i).toString(), "done: ");
@@ -707,7 +708,7 @@ public class TrackProgressFragment extends Fragment {
                     if (e == null && objects.size() != 0) { //if objects size is not 0
 
                         if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
-                            for (int i = 0; i < objects.size(); i++) {
+                            for (int i = objects.size() -1; i >= 0 ; i--) {
                                 maxmiletime.add(objects.get(i).get("MaxMileTime").toString());
                                 dates.add(objects.get(i).getCreatedAt());
                                 Log.d(dates.get(i).toString(), "done: ");
