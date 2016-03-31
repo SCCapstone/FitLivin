@@ -26,7 +26,6 @@ import android.widget.Toast;
 import com.jjoe64.graphview.DefaultLabelFormatter;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.LegendRenderer;
-import com.jjoe64.graphview.helper.StaticLabelsFormatter;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.DataPointInterface;
 import com.jjoe64.graphview.series.LineGraphSeries;
@@ -269,7 +268,7 @@ public class TrackProgressFragment extends Fragment {
 
                                     }
                                 });
-
+                        /*
                                 if (weight.size() == 1) {
                                     StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
                                     label.setHorizontalLabels(new String[]{"0", "Jan"});
@@ -287,7 +286,7 @@ public class TrackProgressFragment extends Fragment {
                                     label.setHorizontalLabels(new String[]{"Jan", "Feb", "March", "April"});
                                     graph.getGridLabelRenderer().setLabelFormatter(label);
                                 }
-
+                               */
                            /* graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter(getActivity(),dates.get()) {
                                 @Override
                                 public String formatLabel(double value, boolean isValueX) {
@@ -408,23 +407,7 @@ public class TrackProgressFragment extends Fragment {
                                     }
                                 });
 
-                                if (maxBenchweight.size() == 1) {
-                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                                    label.setHorizontalLabels(new String[]{"0", "Jan"});
-                                    graph.getGridLabelRenderer().setLabelFormatter(label);
-                                } else if (maxBenchweight.size() == 2) {
-                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                                    label.setHorizontalLabels(new String[]{"Jan", "Feb"});
-                                    graph.getGridLabelRenderer().setLabelFormatter(label);
-                                } else if (maxBenchweight.size() == 3) {
-                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                                    label.setHorizontalLabels(new String[]{"Jan", "Feb", "March"});
-                                    graph.getGridLabelRenderer().setLabelFormatter(label);
-                                } else if (maxBenchweight.size() == 4) {
-                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                                    label.setHorizontalLabels(new String[]{"Jan", "Feb", "March", "April"});
-                                    graph.getGridLabelRenderer().setLabelFormatter(label);
-                                }
+
 
 
                                 graph.getGridLabelRenderer().setVerticalLabelsSecondScaleColor(Color.WHITE);
@@ -528,23 +511,7 @@ public class TrackProgressFragment extends Fragment {
                                     }
                                 });
 
-                                if (maxsquats.size() == 1) {
-                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                                    label.setHorizontalLabels(new String[]{"0", "Jan"});
-                                    graph.getGridLabelRenderer().setLabelFormatter(label);
-                                } else if (maxsquats.size() == 2) {
-                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                                    label.setHorizontalLabels(new String[]{"Jan", "Feb"});
-                                    graph.getGridLabelRenderer().setLabelFormatter(label);
-                                } else if (maxsquats.size() == 3) {
-                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                                    label.setHorizontalLabels(new String[]{"Jan", "Feb", "March"});
-                                    graph.getGridLabelRenderer().setLabelFormatter(label);
-                                } else if (maxsquats.size() == 4) {
-                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                                    label.setHorizontalLabels(new String[]{"Jan", "Feb", "March", "April"});
-                                    graph.getGridLabelRenderer().setLabelFormatter(label);
-                                }
+
 
 
 
@@ -647,23 +614,6 @@ public class TrackProgressFragment extends Fragment {
                                     }
                                 });
 
-                                if (maxdeadlift.size() == 1) {
-                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                                    label.setHorizontalLabels(new String[]{"0", "Jan"});
-                                    graph.getGridLabelRenderer().setLabelFormatter(label);
-                                } else if (maxdeadlift.size() == 2) {
-                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                                    label.setHorizontalLabels(new String[]{"Jan", "Feb"});
-                                    graph.getGridLabelRenderer().setLabelFormatter(label);
-                                } else if (maxdeadlift.size() == 3) {
-                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                                    label.setHorizontalLabels(new String[]{"Jan", "Feb", "March"});
-                                    graph.getGridLabelRenderer().setLabelFormatter(label);
-                                } else if (maxdeadlift.size() == 4) {
-                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                                    label.setHorizontalLabels(new String[]{"Jan", "Feb", "March", "April"});
-                                    graph.getGridLabelRenderer().setLabelFormatter(label);
-                                }
 
 
                                 graph.getGridLabelRenderer().setVerticalLabelsSecondScaleColor(Color.WHITE);
@@ -765,23 +715,6 @@ public class TrackProgressFragment extends Fragment {
                                     }
                                 });
 
-                                if (maxmiletime.size() == 1) {
-                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                                    label.setHorizontalLabels(new String[]{"0", "Jan"});
-                                    graph.getGridLabelRenderer().setLabelFormatter(label);
-                                } else if (maxmiletime.size() == 2) {
-                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                                    label.setHorizontalLabels(new String[]{"Jan", "Feb"});
-                                    graph.getGridLabelRenderer().setLabelFormatter(label);
-                                } else if (maxmiletime.size() == 3) {
-                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                                    label.setHorizontalLabels(new String[]{"Jan", "Feb", "March"});
-                                    graph.getGridLabelRenderer().setLabelFormatter(label);
-                                } else if (maxmiletime.size() == 4) {
-                                    StaticLabelsFormatter label = new StaticLabelsFormatter(graph);
-                                    label.setHorizontalLabels(new String[]{"Jan", "Feb", "March", "April"});
-                                    graph.getGridLabelRenderer().setLabelFormatter(label);
-                                }
 
 
 
