@@ -131,7 +131,7 @@
         android:text="Workout Complete!"
         android:id="@+id/completeDay2bb"
                 android:layout_below = "@+id/pushupDetail"
-        android:background="#ff6655"
+        android:background="#46d4e8"
                 android:layout_gravity="right|bottom" />
 
 </LinearLayout>>

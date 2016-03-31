@@ -613,72 +613,45 @@ public class MainActivity extends FragmentActivity{
 
     }
     public void BenchMax(Integer bench, String user) {
+        ParseObject MaxBenchParse1 = new ParseObject("MaxBench");
         Integer bench1 = bench;
 
         // ParseUser user1 = user;
         String username1 = user;
         // adds info to database
-        MaxBenchParse.put("MaxBench", bench1);
-        MaxBenchParse.put("username", username1);
-        MaxBenchParse.put("author",curruser);
+        MaxBenchParse1.put("MaxBench", bench1);
+        MaxBenchParse1.put("username", username1);
+        MaxBenchParse1.put("author",curruser);
 
-        MaxBenchParse.saveInBackground(new SaveCallback() {
-            @Override
-            public void done(ParseException e) {
-                if (e == null) {
-                    objectID = MaxBenchParse.getObjectId();
-                    setS(objectID);
-                } else {
-                    Log.d("F", "object failllll");
-                }
-            }
-        });
+        MaxBenchParse1.saveInBackground();
     }
 
     public void SquatMax(Integer squat, String user) {
+        ParseObject MaxSquatParse1 = new ParseObject("MaxSquat");
         Integer squat1 = squat;
 
         // ParseUser user1 = user;
         String username1 = user;
         // adds info to database
-        MaxSquatParse.put("MaxSquat", squat1);
-        MaxSquatParse.put("username", username1);
-        MaxSquatParse.put("author",curruser);
+        MaxSquatParse1.put("MaxSquat", squat1);
+        MaxSquatParse1.put("username", username1);
+        MaxSquatParse1.put("author",curruser);
 
-        MaxSquatParse.saveInBackground(new SaveCallback() {
-            @Override
-            public void done(ParseException e) {
-                if (e == null) {
-                    objectID = MaxSquatParse.getObjectId();
-                    setS(objectID);
-                } else {
-                    Log.d("F", "object failllll");
-                }
-            }
-        });
+        MaxSquatParse1.saveInBackground();
     }
 
     public void DeadLiftMax(Integer deadLift, String user) {
+        ParseObject MaxDeadLiftParse1 = new ParseObject("MaxDeadLift");
         Integer deadLift1 = deadLift;
 
         // ParseUser user1 = user;
         String username1 = user;
         // adds info to database
-        MaxDeadLiftParse.put("MaxDeadLift", deadLift1);
-        MaxDeadLiftParse.put("username", username1);
-        MaxDeadLiftParse.put("author", curruser);
+        MaxDeadLiftParse1.put("MaxDeadLift", deadLift1);
+        MaxDeadLiftParse1.put("username", username1);
+        MaxDeadLiftParse1.put("author", curruser);
 
-        MaxDeadLiftParse.saveInBackground(new SaveCallback() {
-            @Override
-            public void done(ParseException e) {
-                if (e == null) {
-                    objectID = MaxDeadLiftParse.getObjectId();
-                    setS(objectID);
-                } else {
-                    Log.d("F", "object failllll");
-                }
-            }
-        });
+        MaxDeadLiftParse1.saveInBackground();
     }
 
 
