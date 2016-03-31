@@ -99,7 +99,7 @@ public class TrackProgressFragment extends Fragment {
         list = (ListView) v.findViewById(R.id.listView3);
 
 
-        adapter1 = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, arrayList5);
+        adapter1 = new ArrayAdapter<String>(getActivity(), R.layout.text_view, arrayList5);
         list.setAdapter(adapter1);
         adapter1.clear();
 

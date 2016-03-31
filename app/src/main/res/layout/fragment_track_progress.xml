@@ -1,15 +1,6 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/containerFitnessP"
-    android:background="@drawable/background3"
-    >
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="#212121">
+
+
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_height="fill_parent"
@@ -34,31 +25,40 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Progress Tracker"
+        android:text="Progress Tracker(lbs)"
         android:id="@+id/progressTrackerTitle"
         android:layout_gravity="center_horizontal|top"
         android:textColor="#ffffff" />
-
 
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contextClickable="true"
                 android:id="@+id/spinner_dropdown"
+                android:layout_below="@+id/progressTrackerTitle"
                 android:layout_gravity="center_horizontal" />
 
 
             <ListView
-            android:layout_width="wrap_content"
-            android:layout_height="130dp"
-            android:id="@+id/listView2"
-            android:textAlignment="center"
-            android:animateLayoutChanges="true"
-            android:textColor="#ffffff"
-            android:layout_gravity="center_horizontal|bottom" />
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:id="@+id/listView2"
+                android:textAlignment="center"
+                android:animateLayoutChanges="true"
+                android:textColor="#ffffff"
+                android:layout_gravity="center_horizontal|bottom" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Workout History"
+                android:id="@+id/progressHistory"
+                android:layout_below="@+id/listView2"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#ffffff" />
             <ListView
                 android:layout_width="wrap_content"
-                android:layout_height="130dp"
+                android:layout_height="82dp"
                 android:id="@+id/listView3"
                 android:textAlignment="center"
                 android:animateLayoutChanges="true"
@@ -66,10 +66,14 @@
                 android:layout_below="@+id/listView2"
                 android:layout_gravity="center_horizontal|bottom" />
 
-
-</LinearLayout>
-
-    </ScrollView>
+        </LinearLayout>
 
 
-</FrameLayout>
+
+
+
+
+
+
+
+
