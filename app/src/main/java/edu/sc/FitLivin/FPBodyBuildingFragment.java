@@ -42,7 +42,7 @@ public class FPBodyBuildingFragment extends Fragment {
             public void onClick(View v) {
                 BodyBuildingDayOne fragment = new BodyBuildingDayOne();
                 FragmentManager fm = getFragmentManager();
-                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
         Button day2 = (Button) v.findViewById(R.id.day2BodyBuilding);
@@ -51,7 +51,7 @@ public class FPBodyBuildingFragment extends Fragment {
             public void onClick(View v) {
                 BodyBuildingDayTwo fragment = new BodyBuildingDayTwo();
                 FragmentManager fm = getFragmentManager();
-                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
 
@@ -61,7 +61,7 @@ public class FPBodyBuildingFragment extends Fragment {
             public void onClick(View v) {
                 BodyBuildingDayThree fragment = new BodyBuildingDayThree();
                 FragmentManager fm = getFragmentManager();
-                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
         Button day4 = (Button) v.findViewById(R.id.day4BodyBuilding);
@@ -70,7 +70,7 @@ public class FPBodyBuildingFragment extends Fragment {
             public void onClick(View v) {
                 BodyBuildingDayFour fragment = new BodyBuildingDayFour();
                 FragmentManager fm = getFragmentManager();
-                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
 
             }
         });
@@ -80,7 +80,7 @@ public class FPBodyBuildingFragment extends Fragment {
             public void onClick(View v) {
                 BodyBuildingDayFive fragment = new BodyBuildingDayFive();
                 FragmentManager fm = getFragmentManager();
-                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
         // Inflate the layout for this fragment

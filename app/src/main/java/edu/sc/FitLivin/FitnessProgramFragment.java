@@ -36,7 +36,7 @@ public class FitnessProgramFragment extends Fragment {
             public void onClick(View v) {
                 FPSTRTrainingFragment fragment = new FPSTRTrainingFragment();
                 FragmentManager fm = getFragmentManager();
-                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
 
@@ -46,7 +46,7 @@ public class FitnessProgramFragment extends Fragment {
             public void onClick(View v) {
                 FPBodyBuildingFragment fragment = new FPBodyBuildingFragment();
                 FragmentManager fm = getFragmentManager();
-                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
         Button btn3 = (Button) v.findViewById(R.id.WeightLossButton);
@@ -55,7 +55,7 @@ public class FitnessProgramFragment extends Fragment {
             public void onClick(View v) {
                FPWGTLossFragment fragment = new FPWGTLossFragment();
                 FragmentManager fm = getFragmentManager();
-                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
         // Inflate the layout for this fragment

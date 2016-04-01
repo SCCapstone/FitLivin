@@ -32,7 +32,7 @@ public class FPSTRTrainingFragment extends Fragment {
             public void onClick(View v) {
                 StrengthDayOne fragment = new StrengthDayOne();
                 FragmentManager fm = getFragmentManager();
-                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
         Button day2 = (Button) v.findViewById(R.id.day2Strength);
@@ -41,7 +41,7 @@ public class FPSTRTrainingFragment extends Fragment {
             public void onClick(View v) {
                 StrengthDayTwo fragment = new StrengthDayTwo();
                 FragmentManager fm = getFragmentManager();
-                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
 
@@ -51,7 +51,7 @@ public class FPSTRTrainingFragment extends Fragment {
             public void onClick(View v) {
                 StrengthDayThree fragment = new StrengthDayThree();
                 FragmentManager fm = getFragmentManager();
-                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
         Button day4 = (Button) v.findViewById(R.id.day4Strength);
@@ -60,7 +60,7 @@ public class FPSTRTrainingFragment extends Fragment {
             public void onClick(View v) {
                 StrengthDayFour fragment = new StrengthDayFour();
                 FragmentManager fm = getFragmentManager();
-                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
         Button day5 = (Button) v.findViewById(R.id.day5Strength);
@@ -69,7 +69,7 @@ public class FPSTRTrainingFragment extends Fragment {
             public void onClick(View v) {
                 StrengthDayFive fragment = new StrengthDayFive();
                 FragmentManager fm = getFragmentManager();
-                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
         /**

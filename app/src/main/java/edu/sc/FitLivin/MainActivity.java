@@ -168,7 +168,7 @@ public class MainActivity extends FragmentActivity{
                         fragment = new HomePageFragment();
                 }
                 FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                fragmentManager.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
                 drawerLayout.closeDrawers();
 
             }

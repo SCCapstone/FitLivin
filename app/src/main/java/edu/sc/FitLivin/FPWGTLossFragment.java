@@ -44,7 +44,7 @@ public class FPWGTLossFragment extends Fragment {
             public void onClick(View v) {
                 WeightLossDayOne fragment = new WeightLossDayOne();
                 FragmentManager fm = getFragmentManager();
-                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
         Button day2 = (Button) v.findViewById(R.id.day2WeightLoss);
@@ -53,7 +53,7 @@ public class FPWGTLossFragment extends Fragment {
             public void onClick(View v) {
                 WeightLossDayTwo fragment = new WeightLossDayTwo();
                 FragmentManager fm = getFragmentManager();
-                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
 
@@ -63,7 +63,7 @@ public class FPWGTLossFragment extends Fragment {
             public void onClick(View v) {
                 WeightLossDayThree fragment = new WeightLossDayThree();
                 FragmentManager fm = getFragmentManager();
-                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
         Button day4 = (Button) v.findViewById(R.id.day4WeightLoss);
@@ -72,7 +72,7 @@ public class FPWGTLossFragment extends Fragment {
             public void onClick(View v) {
                 WeightLossDayFour fragment = new WeightLossDayFour();
                 FragmentManager fm = getFragmentManager();
-                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
         Button day5 = (Button) v.findViewById(R.id.day5WeightLoss);
@@ -81,7 +81,7 @@ public class FPWGTLossFragment extends Fragment {
             public void onClick(View v) {
                 WeightLossDayFive fragment = new WeightLossDayFive();
                 FragmentManager fm = getFragmentManager();
-                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+                fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
         // Inflate the layout for this fragment
