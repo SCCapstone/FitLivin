@@ -64,7 +64,8 @@
                 android:animateLayoutChanges="true"
                 android:textColor="#ffffff"
                 android:layout_below="@+id/listView2"
-                android:layout_gravity="center_horizontal|bottom" />
+                android:layout_gravity="center"
+                 />
 
         </LinearLayout>
 

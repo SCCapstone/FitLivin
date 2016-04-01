@@ -21,6 +21,15 @@
             android:layout_centerHorizontal="true"
             android:background="#e89633"
             />
+        <TextView
+            android:layout_width="5dp"
+            android:layout_height="55dp"
+            android:text=" "
+            android:id="@+id/view1"
+            android:textColor="#000100"
+            android:layout_above="@+id/lowText"
+            android:layout_toLeftOf="@+id/maintainButton"
+            />
         <Button
             android:layout_width="100dp"
             android:layout_height="55dp"
@@ -29,7 +38,17 @@
             android:textColor="#000100"
             android:background="#e89633"
             android:layout_above="@+id/lowText"
-            android:layout_alignEnd="@+id/lowMessage" />
+            android:layout_toLeftOf="@+id/view1"
+            />
+        <TextView
+            android:layout_width="5dp"
+            android:layout_height="55dp"
+            android:text=" "
+            android:id="@+id/view2"
+            android:textColor="#000100"
+            android:layout_above="@+id/lowText"
+            android:layout_toRightOf="@+id/maintainButton"
+            />
 
         <Button
             android:layout_width="100dp"
@@ -37,9 +56,8 @@
             android:text="Weight Gain"
             android:id="@+id/wGainButton"
             android:background="#e89633"
-            android:layout_marginRight="40dp"
             android:layout_above="@+id/lowText"
-            android:layout_alignParentEnd="true" />
+            android:layout_toRightOf="@+id/view2"/>
 
 
         <TextView

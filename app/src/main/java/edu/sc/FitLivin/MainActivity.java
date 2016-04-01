@@ -170,9 +170,7 @@ public class MainActivity extends FragmentActivity{
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
                 drawerLayout.closeDrawers();
-                   /* HomePageFragment firstFragment = new HomePageFragment();
-                    FragmentManager fm1 = getFragmentManager();
-                    fm1.beginTransaction().add(R.id.container, firstFragment).addToBackStack(null).commit();*/
+
             }
         });
 
@@ -309,7 +307,7 @@ public class MainActivity extends FragmentActivity{
         //this.getActionBar().setDisplayShowHomeEnabled(true);
         //this.getActionBar().setIcon(R.mipmap.ic_launcher);
 
-        this.getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#46d4e8")));
+        this.getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#e89633")));
 
         String s = ParseUser.getCurrentUser().getUsername();
         Log.d("FUsername ", s);
@@ -844,6 +842,7 @@ public class MainActivity extends FragmentActivity{
         }
         else {
             getFragmentManager().popBackStack();
+
         }
     }
 

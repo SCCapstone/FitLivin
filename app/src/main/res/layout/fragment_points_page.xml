@@ -2,7 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/containerFitnessP"
-    android:background="#010101">
+    android:background="#212121">
 
 
     <TextView
@@ -11,7 +11,7 @@
         android:text="Leaderboard:"
         android:id="@+id/LeaderTitle"
         android:textSize="20dp"
-        android:background="#010101"
+        android:background="#212121"
         android:autoText="true"
         android:textColor="#e89633"
         android:layout_below="@+id/with"
@@ -21,7 +21,7 @@
             android:layout_width="200dp"
             android:layout_height="70dp"
             android:id="@+id/listView4"
-            android:divider="#010101"
+            android:divider="#212121"
             android:layout_gravity="center"
             android:textColor="@android:color/white"
             android:dividerHeight="10dp"
