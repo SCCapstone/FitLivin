@@ -28,7 +28,7 @@
             android:layout_height="170dp"
             android:src="@drawable/ic_camera"
             app:civ_border_width="2dp"
-            app:civ_border_color="#ff6655"
+            app:civ_border_color="#e89633"
             android:layout_gravity="center_horizontal"
             android:layout_centerHorizontal="true" />
 
