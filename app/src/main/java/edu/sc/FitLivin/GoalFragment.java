@@ -160,7 +160,7 @@ public class GoalFragment extends Fragment {
 
         final TextView BenchG = (TextView) v.findViewById(R.id.currentBenchGoal);
         final TextView SquatG = (TextView) v. findViewById(R.id.currentSquatGoal);
-        final TextView DLG = (TextView) v. findViewById(R.id.currentDeadLiftGoal);
+        final TextView DLG = (TextView) v. findViewById(R.id.DeadLiftGoal);
         final TextView WeightG = (TextView) v.findViewById(R.id.currentWeightGoal);
         final TextView WeightGain = (TextView) v.findViewById(R.id.currentWeightGainGoal);
         final TextView MileTimeG = (TextView) v.findViewById(R.id.currentMileTimeGoal);

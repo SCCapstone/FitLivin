@@ -167,8 +167,8 @@
         android:id="@+id/DeadLiftText"
         android:textColor="#ffffff"
         android:textSize="20dp"
-        android:layout_below="@+id/currentDeadLiftGoal"
-        android:layout_alignTop="@+id/currentDeadLiftGoal"
+        android:layout_below="@+id/DeadLiftGoal"
+        android:layout_alignTop="@+id/DeadLiftGoal"
         android:layout_alignStart="@+id/SquatText"
 
         />
@@ -188,7 +188,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/currentDeadLiftGoal"
+        android:id="@+id/DeadLiftGoal"
         android:textColor="#e89633"
         android:textSize="20dp"
         android:textIsSelectable="true"

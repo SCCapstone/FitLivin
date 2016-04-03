@@ -227,11 +227,33 @@ public class BehaviorTest {
     }
     @Test
     public void weightlossCheck(){
-
+        Espresso.onData(withId(R.id.day1WeightLoss)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.id.day2WeightLoss)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.id.day3WeightLoss)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.id.day4WeightLoss)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.id.day5WeightLoss)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.id.howTo)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
     }
     @Test
     public void goalCheck(){
-
+        Espresso.onData(withId(R.id.setWeight)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.id.setWeightG)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.id.setBench)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.id.setSquat)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.id.DeadLiftGoal)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.id.setMileTime)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
     }
     @Test
     public void homepageCheck(){
