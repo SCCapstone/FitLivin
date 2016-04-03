@@ -212,7 +212,18 @@ public class BehaviorTest {
     }
     @Test
     public void strCheck(){
-
+        Espresso.onData(withId(R.id.day1Strength)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.id.day2Strength)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.id.day3Strength)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.id.day4Strength)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.id.day5Strength)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.id.howTo)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
     }
     @Test
     public void weightlossCheck(){
