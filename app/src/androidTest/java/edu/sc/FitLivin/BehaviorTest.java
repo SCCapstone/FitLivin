@@ -66,17 +66,34 @@ public class BehaviorTest {
     @Test
     public void CheckToSeeIfButtonWorksOnFitnessProgramFragment() {
 
-        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo());
-        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo(), click());
 
-        Espresso.onView(withId(R.id.StrengthTrainingButton)).perform(ViewActions.click())
+    }
+    @Test
+        public FPSTRTrainingFragment checkStrengthTrainingButton(){
+        Espresso.onData(withId(R.id.StrengthTrainingButton)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
+        return new FPSTRTrainingFragment();
+    }
+    @Test
+    public FPBodyBuildingFragment checkFPbbButton(){
+        Espresso.onData(withId(R.id.BodyBuildingButton)).perform(ViewActions.click());
+        return new FPBodyBuildingFragment();
+    }
+    @Test
+    public FPWGTLossFragment checkFPWGTLossFragment(){
+        Espresso.onData(withId(R.id.WeightLossButton)).perform(ViewActions.click());
+        return new FPWGTLossFragment();
+
+    }
+
+
        /* Espresso.onData(withId(R.id.BodyBuildingButton)).check(matches(isClickable()))
                 .check(matches(isDisplayed()));
               Espresso.onData(withId(R.id.WeightLossButton)).check(matches(isClickable()))
                 .check(matches(isDisplayed()));
         Espresso.pressBack();*/
-    }
+
     @Test
     public void CheckLoginPage(){
         String username = "school@email.sc.edu";
