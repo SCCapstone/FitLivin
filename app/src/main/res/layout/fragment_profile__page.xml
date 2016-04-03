@@ -38,9 +38,9 @@
             android:text="Take Pic"
             android:id="@+id/pic"
             android:background="#e89633"
-            android:layout_alignBaseline="@+id/textView1"
-            android:layout_alignBottom="@+id/textView1"
-            android:layout_toEndOf="@+id/overBmi" />
+
+            android:layout_alignBottom="@+id/name"
+            android:layout_alignParentEnd="true" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
