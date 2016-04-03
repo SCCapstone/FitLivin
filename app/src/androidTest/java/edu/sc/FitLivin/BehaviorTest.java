@@ -30,6 +30,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.isChecked;
 import static android.support.test.espresso.matcher.ViewMatchers.isClickable;
 import static android.support.test.espresso.matcher.ViewMatchers.isDescendantOfA;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static android.support.test.espresso.matcher.ViewMatchers.withChild;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
@@ -196,7 +197,18 @@ public class BehaviorTest {
 
     @Test
     public void bodybuildingCheck(){
-
+        Espresso.onData(withId(R.id.day1BodyBuilding)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.id.day2BodyBuilding)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.id.day3BodyBuilding)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.id.day4BodyBuilding)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.id.day5BodyBuilding)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.id.howTo)).perform(ViewActions.click())
+                .check(matches(isDisplayed()));
     }
     @Test
     public void strCheck(){
