@@ -34,7 +34,6 @@
         android:textSize="20dp"
         android:layout_alignTop="@+id/currentWeightGoal"
         android:layout_centerHorizontal="true"
-        android:paddingTop="30dp"
         />
 
         <Button
@@ -55,6 +54,8 @@
         android:textSize="20dp"
         android:textIsSelectable="true"
         android:layout_toEndOf="@+id/editnametext"
+        android:layout_marginTop="10dp"
+
 
         />
 
