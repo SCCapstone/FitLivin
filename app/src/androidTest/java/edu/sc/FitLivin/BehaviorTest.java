@@ -138,26 +138,25 @@ public class BehaviorTest {
 
     @Test
     public void CheckBBday5(){
-        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo());
-        Espresso.onData(withId(R.id.militaryPressImage)).perform(ViewActions.click());
-        Espresso.onData(withId(R.id.sideLatImage)).perform(ViewActions.click());
-        Espresso.onData(withId(R.id.shoulderpressImage)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo(), click());
+        Espresso.onData(withId(R.id.militaryPressImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onData(withId(R.id.sideLatImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onData(withId(R.id.shoulderpressImage)).perform(ViewActions.scrollTo(), click());
        // Espresso.onData(withId(R.id.BBBack)).perform(ViewActions.click())
          //   .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.completeDay5bb)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
+        Espresso.onData(withId(R.id.completeDay5bb)).perform(ViewActions.scrollTo(), click());
+
     }
     @Test
     public void CheckBBday4(){
         Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo());
-        Espresso.onData(withId(R.id.deadliftImage)).perform(ViewActions.click());
-        Espresso.onData(withId(R.id.pullupImage)).perform(ViewActions.click());
-        Espresso.onData(withId(R.id.dumbbellRowImage)).perform(ViewActions.click());
+        Espresso.onData(withId(R.id.deadliftImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onData(withId(R.id.pullupImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onData(withId(R.id.dumbbellRowImage)).perform(ViewActions.scrollTo(), click());
       //  Espresso.onData(withId(R.id.BBBack)).perform(ViewActions.click())
             //    .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.completeDay4bb)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
-    }
+        Espresso.onData(withId(R.id.completeDay4bb)).perform(ViewActions.scrollTo(), click());
+                    }
 
     @Test
     public void CheckBBday3(){
@@ -184,13 +183,13 @@ public class BehaviorTest {
 
     @Test
     public void CheckBBday1(){
-        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo());
-        Espresso.onData(withId(R.id.squatImage)).perform(ViewActions.click());
-        Espresso.onData(withId(R.id.legExtensionImage)).perform(ViewActions.click());
-        Espresso.onData(withId(R.id.curlImage)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo(), click());
+        Espresso.onData(withId(R.id.squatImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onData(withId(R.id.legExtensionImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onData(withId(R.id.curlImage)).perform(ViewActions.scrollTo(), click());
      //   Espresso.onData(withId(R.id.BBBack)).perform(ViewActions.click())
      //           .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.completeDay1bb)).perform(ViewActions.click())
+        Espresso.onData(withId(R.id.completeDay1bb)).perform(ViewActions.scrollTo(), click())
                 .check(matches(isDisplayed()));
     }
     //need to complete
