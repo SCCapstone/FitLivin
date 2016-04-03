@@ -48,7 +48,9 @@
             android:text="editProfile"
             android:background="#e89633"
             android:layout_alignTop="@+id/pic"
-            android:layout_toEndOf="@+id/textView1" />
+            android:layout_toEndOf="@+id/textView1"
+            android:layout_marginLeft="20dp"
+            />
 
         <TextView
             android:layout_width="wrap_content"

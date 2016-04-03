@@ -89,7 +89,9 @@
             android:id="@+id/lowMessage"
             android:layout_below="@+id/lowText"
             android:textColor="#ffffff"
-            android:layout_toEndOf="@+id/lowCalories" />
+            android:layout_toEndOf="@+id/lowCalories"
+            android:layout_marginBottom="20dp"
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -119,7 +121,9 @@
             android:id="@+id/modMessage"
             android:layout_below="@+id/modText"
             android:textColor="#ffffff"
-            android:layout_toEndOf="@+id/modCalories" />
+            android:layout_toEndOf="@+id/modCalories"
+            android:layout_marginBottom="20dp"
+            />
 
         <TextView
             android:layout_width="wrap_content"
