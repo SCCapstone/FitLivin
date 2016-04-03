@@ -227,6 +227,31 @@ public class BehaviorTest {
                 .check(matches(isDisplayed()));
     }
     @Test
+    public BodyBuildingDayOne bb1Test(){
+        Espresso.onData(withId(R.id.day1BodyBuilding)).perform(ViewActions.scrollTo(), click());
+        return new BodyBuildingDayOne();
+    }
+    @Test
+    public BodyBuildingDayTwo bb2Test(){
+        Espresso.onData(withId(R.id.day2BodyBuilding)).perform(ViewActions.scrollTo(), click());
+        return new BodyBuildingDayTwo();
+    }
+    @Test
+    public BodyBuildingDayThree bb3Test(){
+        Espresso.onData(withId(R.id.day3BodyBuilding)).perform(ViewActions.scrollTo(), click());
+        return new BodyBuildingDayThree();
+    }
+    @Test
+    public BodyBuildingDayFour bb4Test(){
+        Espresso.onData(withId(R.id.day4BodyBuilding)).perform(ViewActions.scrollTo(), click());
+        return new BodyBuildingDayFour();
+    }
+    @Test
+    public BodyBuildingDayFive bb5Test(){
+        Espresso.onData(withId(R.id.day5BodyBuilding)).perform(ViewActions.scrollTo(), click());
+        return new BodyBuildingDayFive();
+    }
+    @Test
     public void strCheck(){
         Espresso.onData(withId(R.id.day1Strength)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
@@ -242,6 +267,31 @@ public class BehaviorTest {
                 .check(matches(isDisplayed()));
     }
     @Test
+    public StrengthDayOne st1Test(){
+        Espresso.onData(withId(R.id.day1Strength)).perform(ViewActions.scrollTo(), click());
+        return new StrengthDayOne();
+    }
+    @Test
+    public StrengthDayTwo st2Test(){
+        Espresso.onData(withId(R.id.day2Strength)).perform(ViewActions.scrollTo(),click());
+        return new StrengthDayTwo();
+    }
+    @Test
+    public StrengthDayThree st3Test(){
+        Espresso.onData(withId(R.id.day3Strength)).perform(ViewActions.scrollTo(),click());
+        return new StrengthDayThree();
+    }
+    @Test
+    public StrengthDayFour st4Test(){
+        Espresso.onData(withId(R.id.day4Strength)).perform(ViewActions.scrollTo(),click());
+        return new StrengthDayFour();
+    }
+    @Test
+    public StrengthDayFive st5Test(){
+        Espresso.onData(withId(R.id.day5Strength)).perform(ViewActions.scrollTo(), click());
+        return new StrengthDayFive();
+    }
+    @Test
     public void weightlossCheck(){
         Espresso.onData(withId(R.id.day1WeightLoss)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
@@ -255,6 +305,31 @@ public class BehaviorTest {
                 .check(matches(isDisplayed()));
         Espresso.onData(withId(R.id.howTo)).perform(ViewActions.click())
                 .check(matches(isDisplayed()));
+    }
+    @Test
+    public WeightLossDayOne wl1Test(){
+        Espresso.onData(withId(R.id.day1WeightLoss)).perform(ViewActions.scrollTo(), click());
+        return new WeightLossDayOne();
+    }
+    @Test
+    public WeightLossDayTwo wl2Test(){
+        Espresso.onData(withId(R.id.day2WeightLoss)).perform(ViewActions.scrollTo(),click());
+        return new WeightLossDayTwo();
+    }
+    @Test
+    public WeightLossDayThree wl3Test(){
+        Espresso.onData(withId(R.id.day3WeightLoss)).perform(ViewActions.scrollTo(),click());
+        return new WeightLossDayThree();
+    }
+    @Test
+    public WeightLossDayFour wl4Test(){
+        Espresso.onData(withId(R.id.day4WeightLoss)).perform(ViewActions.scrollTo(),click());
+        return new WeightLossDayFour();
+    }
+    @Test
+    public WeightLossDayFive wl5Test(){
+        Espresso.onData(withId(R.id.day5WeightLoss)).perform(ViewActions.scrollTo(), click());
+        return new WeightLossDayFive();
     }
     @Test
     public void goalCheck(){
@@ -276,12 +351,57 @@ public class BehaviorTest {
         Espresso.onData(withId(R.id.pointsButton)).perform(ViewActions.scrollTo(),click());
         Espresso.onData(withId(R.id.profileButton)).perform(ViewActions.scrollTo(),click());
         Espresso.onData(withId(R.id.goalButton)).perform(ViewActions.scrollTo(),click());
-        Espresso.onData(withId(R.id.trackProgressButton)).perform(ViewActions.scrollTo(),click());
-        Espresso.onData(withId(R.id.bmiButton)).perform(ViewActions.scrollTo(),click());
-        Espresso.onData(withId(R.id.nutritionButton)).perform(ViewActions.scrollTo(),click());
-        Espresso.onData(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo(),click());
-        Espresso.onData(withId(R.id.MaxButton)).perform(ViewActions.scrollTo(),click());
-        Espresso.onData(withId(R.id.StopWatchButton)).perform(ViewActions.scrollTo(),click());
+        Espresso.onData(withId(R.id.trackProgressButton)).perform(ViewActions.scrollTo(), click());
+        Espresso.onData(withId(R.id.bmiButton)).perform(ViewActions.scrollTo(), click());
+        Espresso.onData(withId(R.id.nutritionButton)).perform(ViewActions.scrollTo(), click());
+        Espresso.onData(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo(), click());
+        Espresso.onData(withId(R.id.MaxButton)).perform(ViewActions.scrollTo(), click());
+        Espresso.onData(withId(R.id.StopWatchButton)).perform(ViewActions.scrollTo(), click());
+    }
+    @Test
+    public PointsPageFragment pointsTest(){
+        Espresso.onData(withId(R.id.pointsButton)).perform(ViewActions.scrollTo(),click());
+        return new PointsPageFragment();
+    }
+    @Test
+    public ProfilePageFragment profileTest(){
+        Espresso.onData(withId(R.id.profileButton)).perform(ViewActions.scrollTo(),click());
+        return new ProfilePageFragment();
+    }
+    @Test
+    public GoalFragment goalTest(){
+        Espresso.onData(withId(R.id.pic)).perform(ViewActions.scrollTo(),click());
+        return new GoalFragment();
+    }
+    @Test
+    public TrackProgressFragment trackProgressTest(){
+        Espresso.onData(withId(R.id.pic)).perform(ViewActions.scrollTo(),click());
+        return new TrackProgressFragment();
+    }
+    @Test
+    public BMICAL_Fragment bmiTest(){
+        Espresso.onData(withId(R.id.pic)).perform(ViewActions.scrollTo(),click());
+        return new BMICAL_Fragment();
+    }
+    @Test
+    public NutritionCalFragment nutritionTest(){
+        Espresso.onData(withId(R.id.pic)).perform(ViewActions.scrollTo(),click());
+        return new NutritionCalFragment();
+    }
+    @Test
+    public FitnessProgramFragment fitnessTest(){
+        Espresso.onData(withId(R.id.pic)).perform(ViewActions.scrollTo(),click());
+        return new FitnessProgramFragment();
+    }
+    @Test
+    public MaxFragment maxTest(){
+        Espresso.onData(withId(R.id.pic)).perform(ViewActions.scrollTo(),click());
+        return new MaxFragment();
+    }
+    @Test
+    public StopwatchFragment stopwatchTest(){
+        Espresso.onData(withId(R.id.pic)).perform(ViewActions.scrollTo(),click());
+        return new StopwatchFragment();
     }
     @Test
     public void maxcalcCheck(){
@@ -297,12 +417,23 @@ public class BehaviorTest {
         Espresso.onData(withId(R.id.wGainButton)).perform(ViewActions.scrollTo(),click());
     }
 
-    @Test public void profilepagecheck(){
+    @Test
+    public void profilepagecheck(){
         Espresso.onData(withId(R.id.pic)).perform(ViewActions.scrollTo(),click());
         Espresso.onData(withId(R.id.editprofilebutton)).perform(ViewActions.scrollTo(),click());
         Espresso.onData(withId(R.id.weightButton)).perform(ViewActions.scrollTo(),click());
     }
     @Test
+    public CameraActivity picTest(){
+        Espresso.onData(withId(R.id.pic)).perform(ViewActions.scrollTo(),click());
+        return new CameraActivity();
+    }
+    @Test
+    public Editprofilefragment ediProfileTest(){
+        Espresso.onData(withId(R.id.editprofilebutton)).perform(ViewActions.scrollTo(),click());
+        return new Editprofilefragment();
+    }
+     @Test
       public void stopwatchcheck(){
         Espresso.onData(withId(R.id.start)).perform(ViewActions.scrollTo(),click());
         Espresso.onData(withId(R.id.stop)).perform(ViewActions.scrollTo(),click());
