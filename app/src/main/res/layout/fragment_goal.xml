@@ -10,16 +10,18 @@
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="#212121">
+        android:background="#212121"><![CDATA[
 
-    </ScrollView>
+        >
+
+]]></ScrollView>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"
         android:orientation="vertical"
         android:background="#212121"
-        android:layout_gravity="left|top"
+        android:layout_gravity="right|bottom"
         >
 
 
@@ -33,7 +35,6 @@
         android:layout_alignTop="@+id/currentWeightGoal"
         android:layout_centerHorizontal="true"
         android:paddingTop="30dp"
-        android:layout_marginBottom="10dp"
         />
 
         <Button
@@ -44,7 +45,6 @@
             android:background="#e89633"
             android:layout_below="@+id/editnametext"
             android:layout_alignStart="@+id/setWeightG"
-            android:layout_marginBottom="10dp"
             />
 
     <TextView
@@ -67,7 +67,8 @@
         android:textSize="20dp"
         android:layout_below="@+id/setWeight"
         android:layout_alignStart="@+id/editnametext"
-        android:layout_marginBottom="10dp"
+
+
         />
 
         <Button
@@ -78,7 +79,6 @@
             android:background="#e89633"
             android:layout_below="@+id/currentWeightGainGoal"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="10dp"
             />
 
     <TextView
@@ -103,7 +103,6 @@
         android:textSize="20dp"
         android:layout_alignTop="@+id/currentBenchGoal"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
         />
 
         <Button
@@ -113,9 +112,7 @@
             android:id="@+id/setBench"
             android:background="#e89633"
             android:layout_below="@+id/BenchText"
-            android:layout_alignStart="@+id/setWeightG"
-            android:layout_marginBottom="10dp"
-            />
+            android:layout_alignStart="@+id/setWeightG" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -139,7 +136,6 @@
         android:textSize="20dp"
         android:layout_below="@+id/setBench"
         android:layout_alignStart="@+id/BenchText"
-        android:layout_marginBottom="10dp"
         />
 
         <Button
@@ -149,9 +145,7 @@
             android:id="@+id/setSquat"
             android:background="#e89633"
             android:layout_below="@+id/currentSquatGoal"
-            android:layout_alignStart="@+id/setBench"
-            android:layout_marginBottom="10dp"
-            />
+            android:layout_alignStart="@+id/setBench" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -176,7 +170,7 @@
         android:layout_below="@+id/DeadLiftGoal"
         android:layout_alignTop="@+id/DeadLiftGoal"
         android:layout_alignStart="@+id/SquatText"
-        android:layout_marginBottom="10dp"
+
         />
 
         <Button
@@ -187,8 +181,8 @@
             android:background="#e89633"
             android:layout_centerVertical="true"
             android:layout_below="@+id/DeadLiftText"
+
             android:layout_alignStart="@+id/setSquat"
-            android:layout_marginBottom="10dp"
             />
 
     <TextView
@@ -213,7 +207,6 @@
         android:textSize="20dp"
         android:layout_below="@+id/setDeadLift"
         android:layout_alignEnd="@+id/weightGain"
-        android:layout_marginBottom="10dp"
         />
 
         <Button
@@ -224,7 +217,7 @@
             android:background="#e89633"
             android:layout_below="@+id/MileTimeText"
             android:layout_alignStart="@+id/setDeadLift"
-            android:layout_marginBottom="10dp"
+
             />
 
     <TextView

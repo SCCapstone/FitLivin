@@ -57,7 +57,8 @@
             android:id="@+id/wGainButton"
             android:background="#e89633"
             android:layout_above="@+id/lowText"
-            android:layout_toRightOf="@+id/view2"/>
+            android:layout_toRightOf="@+id/view2"
+            android:allowUndo="false" />
 
 
         <TextView
@@ -79,7 +80,7 @@
             android:text=""
             android:id="@+id/lowCalories"
             android:layout_below="@+id/lowText"
-            android:textColor="#46d4e8"
+            android:textColor="#e89633"
             android:layout_alignParentStart="true" />
 
         <TextView
@@ -111,7 +112,7 @@
             android:text=""
             android:id="@+id/modCalories"
             android:layout_below="@+id/modText"
-            android:textColor="#46d4e8"
+            android:textColor="#e89633"
             android:layout_alignParentStart="true" />
 
         <TextView
@@ -144,7 +145,7 @@
             android:text=""
             android:id="@+id/highCalories"
             android:layout_below="@+id/highText"
-            android:textColor="#46d4e8"
+            android:textColor="#e89633"
             android:layout_alignParentStart="true"
             android:singleLine="true" />
 

@@ -10,16 +10,18 @@
         <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="#212121">
+            android:background="#212121"><![CDATA[
 
-        </ScrollView>
+        >
+
+        ]]></ScrollView>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"
         android:orientation="vertical"
         android:background="#212121"
-        android:layout_gravity="right|top">
+        android:layout_gravity="right|bottom">
 
 
 <TextView
@@ -32,9 +34,7 @@
     android:textSize="20dp"
     android:gravity="right|center_vertical"
     android:layout_alignTop="@+id/userBench"
-    android:layout_centerHorizontal="true"
-
-    />
+    android:layout_centerHorizontal="true" />
 
         <Button
             android:layout_width="100dp"
@@ -43,7 +43,8 @@
             android:id="@+id/setBench"
             android:background="#e89633"
             android:layout_below="@+id/benchText"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="51dp" />
 
 
         <TextView
@@ -77,7 +78,8 @@
             android:id="@+id/setSquat"
             android:background="#e89633"
             android:layout_below="@+id/squatText"
-            android:layout_alignStart="@+id/setBench" />
+            android:layout_alignStart="@+id/setBench"
+            android:layout_marginTop="51dp" />
 
         <TextView
         android:layout_width="wrap_content"
@@ -107,7 +109,8 @@
             android:id="@+id/setDeadLift"
             android:background="#e89633"
             android:layout_below="@+id/deadliftText"
-            android:layout_alignStart="@+id/setSquat" />
+            android:layout_alignStart="@+id/setSquat"
+            android:layout_marginTop="51dp" />
 
         <TextView
         android:layout_width="wrap_content"
@@ -139,7 +142,8 @@
             android:id="@+id/setMileTime"
             android:background="#e89633"
             android:layout_below="@+id/mileText"
-            android:layout_alignStart="@+id/setDeadLift" />
+            android:layout_alignStart="@+id/setDeadLift"
+            android:layout_marginTop="51dp" />
 
         <TextView
         android:layout_width="wrap_content"
@@ -155,4 +159,5 @@
 
 
     </RelativeLayout>
+
 </FrameLayout>
