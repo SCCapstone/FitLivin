@@ -29,15 +29,5 @@
         android:layout_alignTop="@+id/email_login_button"
         android:text="sign Up"
         android:layout_alignParentEnd="true" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="forgot password?"
-        android:textSize="20dp"
-        android:textColor="#ffffff"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="forgotonclicklistener"
-        android:id="@+id/forgotPassView" />
 
 </RelativeLayout>

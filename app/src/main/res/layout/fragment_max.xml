@@ -44,6 +44,7 @@
             android:id="@+id/setBench"
             android:background="#e89633"
             android:layout_below="@+id/benchText"
+            android:layout_marginBottom="10dp"
             android:layout_centerHorizontal="true"
             />
 
@@ -81,6 +82,7 @@
             android:id="@+id/setSquat"
             android:background="#e89633"
             android:layout_below="@+id/squatText"
+            android:layout_marginBottom="10dp"
             android:layout_alignStart="@+id/setBench"
 
             />
@@ -121,6 +123,7 @@
             android:background="#e89633"
             android:layout_below="@+id/deadliftText"
             android:layout_alignStart="@+id/setBench"
+            android:layout_marginBottom="10dp"
             />
 
         <TextView

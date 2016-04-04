@@ -21,6 +21,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jjoe64.graphview.DefaultLabelFormatter;
@@ -69,6 +70,8 @@ public class TrackProgressFragment extends Fragment {
         userquery.whereEqualTo("objectId",ParseUser.getCurrentUser().getObjectId());
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fragment_track_progress, container, false);
+        final TextView textViewToChange = (TextView) v.findViewById(R.id.progressTrackerTitle);
+
 
       /**  Button backBtn = (Button) v.findViewById(R.id.trackprogressBack);
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -161,18 +164,23 @@ public class TrackProgressFragment extends Fragment {
               openAnotherGraph(position);
               if(position == 0){
                   gspinner.setBackgroundColor(Color.YELLOW);
+                  textViewToChange.setText("Progress Tracker(lbs)");
               }
               else if(position == 1){
                   gspinner.setBackgroundColor(Color.RED);
+                  textViewToChange.setText("Progress Tracker(lbs)");
               }
               else if(position ==2){
                   gspinner.setBackgroundColor(Color.CYAN);
+                  textViewToChange.setText("Progress Tracker(lbs)");
               }
               else if(position == 3){
                   gspinner.setBackgroundColor(Color.MAGENTA);
+                  textViewToChange.setText("Progress Tracker(lbs)");
               }
               else if(position ==4 ){
                   gspinner.setBackgroundColor(Color.GREEN);
+                  textViewToChange.setText("Progress Tracker(sec)");
               }
           }
 
@@ -196,6 +204,7 @@ public class TrackProgressFragment extends Fragment {
 
 
     public void openAnotherGraph(int position){
+
         if (position == 0){
 
             weight.clear();
@@ -646,6 +655,7 @@ public class TrackProgressFragment extends Fragment {
 
         }
         else if(position ==4){
+
             maxmiletime.clear();
             weightList.setAdapter(null);
             graph.removeAllSeries();

@@ -145,7 +145,6 @@ public class MainActivity extends FragmentActivity{
                     case 1:
                         fragment = new PointsPageFragment();
                         break;
-
                     case 2:
                         fragment = new NutritionCalFragment();
                         break;
@@ -167,6 +166,7 @@ public class MainActivity extends FragmentActivity{
                     default:
                         fragment = new HomePageFragment();
                 }
+
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
                 drawerLayout.closeDrawers();

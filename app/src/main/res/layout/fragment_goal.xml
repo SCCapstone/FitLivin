@@ -32,7 +32,7 @@
         android:layout_alignTop="@+id/currentWeightGoal"
         android:layout_centerHorizontal="true"
         android:paddingTop="30dp"
-        android:layout_marginBottom="10dp"
+
         />
 
         <Button
@@ -53,6 +53,7 @@
         android:textColor="#e89633"
         android:textSize="20dp"
         android:textIsSelectable="true"
+        android:paddingTop="30dp"
         android:layout_toEndOf="@+id/editnametext"
 
         />
@@ -103,7 +104,7 @@
         android:textSize="20dp"
         android:layout_alignTop="@+id/currentBenchGoal"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
+
         />
 
         <Button
@@ -139,7 +140,7 @@
         android:textSize="20dp"
         android:layout_below="@+id/setBench"
         android:layout_alignStart="@+id/BenchText"
-        android:layout_marginBottom="10dp"
+
         />
 
         <Button
@@ -176,7 +177,7 @@
         android:layout_below="@+id/DeadLiftGoal"
         android:layout_alignTop="@+id/DeadLiftGoal"
         android:layout_alignStart="@+id/SquatText"
-        android:layout_marginBottom="10dp"
+
         />
 
         <Button
