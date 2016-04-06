@@ -39,7 +39,7 @@ import com.parse.SaveCallback;
 import java.util.List;
 
 public class MainActivity extends FragmentActivity{
-
+//
     //Intializing varibles
     Integer value;
     public static String name;
