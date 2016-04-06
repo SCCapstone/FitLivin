@@ -8,9 +8,11 @@
 
 package edu.sc.FitLivin;
 
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -845,8 +847,21 @@ public class MainActivity extends FragmentActivity{
         int count = fm.getBackStackEntryCount();
         System.out.println("count " + count);
         if(getFragmentManager().getBackStackEntryCount() <=1) {
-            //super.onBackPressed();
+
            // finish();
+            new AlertDialog.Builder(this).setIcon(android.R.drawable.ic_dialog_alert).setTitle("Exit")
+                    .setMessage("Are you sure you want to exit?")
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent a = new Intent(Intent.ACTION_MAIN);
+                            a.addCategory(Intent.CATEGORY_HOME);
+                            a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(a);
+                           // finish();
+
+                        }
+                    }).setNegativeButton("No", null).show();
         }
 
         else {
