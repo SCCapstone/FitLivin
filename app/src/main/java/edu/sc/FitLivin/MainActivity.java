@@ -23,6 +23,7 @@ import android.provider.MediaStore;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -30,6 +31,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.support.v7.widget.Toolbar;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -40,9 +42,10 @@ import com.parse.SaveCallback;
 
 import java.util.List;
 
-public class MainActivity extends FragmentActivity{
+public class MainActivity extends AppCompatActivity{
 //
     //Intializing varibles
+    Toolbar toolbar;
     Integer value;
     public static String name;
     public ParseUser user;
@@ -124,8 +127,10 @@ public class MainActivity extends FragmentActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
+
+        toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
 
 
@@ -309,13 +314,13 @@ public class MainActivity extends FragmentActivity{
 
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        this.getActionBar()
-                .setTitle("FitLivin");
+      //  this.getActionBar()
+          //      .setTitle("FitLivin");
         //this.getActionBar().setDisplayUseLogoEnabled(true);
         //this.getActionBar().setDisplayShowHomeEnabled(true);
         //this.getActionBar().setIcon(R.mipmap.ic_launcher);
 
-        this.getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#e89633")));
+        //this.getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#e89633")));
 
         String s = ParseUser.getCurrentUser().getUsername();
         Log.d("FUsername ", s);

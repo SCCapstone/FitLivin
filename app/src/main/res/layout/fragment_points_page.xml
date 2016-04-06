@@ -4,7 +4,10 @@
     android:id="@+id/containerFitnessP"
     android:background="#212121">
 
-
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/tool_bar"
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,7 +17,7 @@
         android:background="#212121"
         android:autoText="true"
         android:textColor="#e89633"
-        android:layout_below="@+id/with"
+        android:layout_below="@+id/toolbar"
         android:layout_alignStart="@+id/listView4" />
 
         <ListView

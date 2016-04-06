@@ -14,13 +14,13 @@
         android:id="@+id/uName"
         android:title=""
         android:orderInCategory="2"
-        android:showAsAction="always|withText"
+        app:showAsAction="always|withText"
         />
     <item
         android:id="@+id/home"
         android:title="home"
         android:orderInCategory="1"
         android:icon="@mipmap/ic_launcher"
-        android:showAsAction="always"
+        app:showAsAction="always"
         />
 </menu>
