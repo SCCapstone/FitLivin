@@ -117,7 +117,7 @@ public class MainActivity extends FragmentActivity{
     ParseQuery<ParseObject> MaxMileTimeParseQuery = ParseQuery.getQuery("MaxMileTime");
 
     //public static ParseObject WorkoutParse = new ParseObject("WorkoutProgress");
-  //  ParseQuery<ParseObject> WorkoutParseQuery = ParseQuery.getQuery("WorkoutProgress");
+    //  ParseQuery<ParseObject> WorkoutParseQuery = ParseQuery.getQuery("WorkoutProgress");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -167,8 +167,8 @@ public class MainActivity extends FragmentActivity{
                         fragment = new HomePageFragment();
                 }
 
-                FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
+                fm = getFragmentManager();
+                fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
                 drawerLayout.closeDrawers();
 
             }
@@ -290,11 +290,17 @@ public class MainActivity extends FragmentActivity{
             }
 
         });
-
+        /* fm = getFragmentManager(); // or 'getSupportFragmentManager();'
+        int count = fm.getBackStackEntryCount();
+        System.out.println("count " + count);
+        for(int i = 0; i < count; ++i) {
+            System.out.println("framgnet " + i);
+            fm.popBackStack();
+        }*/
         //Adds the fragment for the layout
         PointsPageFragment firstFragment = new PointsPageFragment();
-        FragmentManager fm1 = getFragmentManager();
-        fm1.beginTransaction().add(R.id.container, firstFragment).addToBackStack(null).commit();
+        fm= getFragmentManager();
+        fm.beginTransaction().replace(R.id.container, firstFragment).addToBackStack(null).commit();
 
     }
 
@@ -836,10 +842,13 @@ public class MainActivity extends FragmentActivity{
         }
     }
     public void onBackPressed() {
-        if(getFragmentManager().getBackStackEntryCount() == 0) {
-            super.onBackPressed();
-            finish();
+        int count = fm.getBackStackEntryCount();
+        System.out.println("count " + count);
+        if(getFragmentManager().getBackStackEntryCount() <=1) {
+            //super.onBackPressed();
+           // finish();
         }
+
         else {
             getFragmentManager().popBackStack();
 

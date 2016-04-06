@@ -148,7 +148,7 @@ public class SignupActivity extends Activity {
                             double random = new Random().nextDouble();
                             double result = start + (random * (end - start));
                             points1 = points1+result;
-                            System.out.println("Sign up points "+points1);
+
                             String username1 = userName;
 
                             //adds info to database

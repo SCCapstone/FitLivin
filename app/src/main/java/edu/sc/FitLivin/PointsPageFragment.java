@@ -42,8 +42,8 @@ public class PointsPageFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_points_page, container, false);
 
-        getActivity().getActionBar()
-                .setTitle("Points");
+       // getActivity().getActionBar()
+         //       .setTitle("Points");
 
 
 
@@ -99,7 +99,7 @@ public class PointsPageFragment extends Fragment {
                                                  Double y = (Double) objects.get(main.leader).get("CurrentPoints");
 
                                                  if (arrayList.contains(x)) {
-                                                     System.out.println("Sign up points3 " + y);
+
                                                  } else {
                                                      arrayList.add(x);
                                                      arrayList3.add(y);

@@ -154,47 +154,50 @@ public class BehaviorTest {
     }
     @Test
     public void CheckBBday4(){
-        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo());
-        Espresso.onData(withId(R.id.deadliftImage)).perform(ViewActions.scrollTo(), click());
-        Espresso.onData(withId(R.id.pullupImage)).perform(ViewActions.scrollTo(), click());
-        Espresso.onData(withId(R.id.dumbbellRowImage)).perform(ViewActions.scrollTo(), click());
-
-        Espresso.onData(withId(R.id.completeDay4bb)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
+        Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.BodyBuildingButton)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.day4BodyBuilding)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.deadliftImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.pullupImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.dumbbellRowImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.completeDay4bb)).perform(ViewActions.scrollTo(), click());
                     }
 
     @Test
     public void CheckBBday3(){
-        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo());
-        Espresso.onData(withId(R.id.hammerCurlImage)).perform(ViewActions.click());
-        Espresso.onData(withId(R.id.preacherCurlImage)).perform(ViewActions.click());
-        Espresso.onData(withId(R.id.closegrippushupImage)).perform(ViewActions.click());
-     //   Espresso.onData(withId(R.id.BBBack)).perform(ViewActions.click())
-     //           .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.completeDay3bb)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
+        Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
+        Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.BodyBuildingButton)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.day3BodyBuilding)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.hammerCurlImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.preacherCurlImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.closegrippushupImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.completeDay3bb)).perform(ViewActions.scrollTo(), click());
+
     }
     @Test
     public void CheckBBday2(){
-        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo());
-        Espresso.onData(withId(R.id.benchImage)).perform(ViewActions.click());
-        Espresso.onData(withId(R.id.flyImage)).perform(ViewActions.click());
-        Espresso.onData(withId(R.id.pushupImage)).perform(ViewActions.click());
-       // Espresso.onData(withId(R.id.BBBack)).perform(ViewActions.click())
-       //         .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.completeDay2bb)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
+        Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
+        Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.BodyBuildingButton)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.day2BodyBuilding)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.benchImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.flyImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.pushupImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.completeDay2bb)).perform(ViewActions.scrollTo(), click());
     }
 
     @Test
     public void CheckBBday1(){
-        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo(), click());
-        Espresso.onData(withId(R.id.squatImage)).perform(ViewActions.scrollTo(), click());
-        Espresso.onData(withId(R.id.legExtensionImage)).perform(ViewActions.scrollTo(), click());
-        Espresso.onData(withId(R.id.curlImage)).perform(ViewActions.scrollTo(), click());
-     //   Espresso.onData(withId(R.id.BBBack)).perform(ViewActions.click())
-     //           .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.completeDay1bb)).perform(ViewActions.scrollTo(), click())
-                .check(matches(isDisplayed()));
+        Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
+        Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.BodyBuildingButton)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.day1BodyBuilding)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.squatImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.legExtensionImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.curlImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.completeDay1bb)).perform(ViewActions.scrollTo(), click());
     }
     //need to complete
     @Test
@@ -215,21 +218,7 @@ public class BehaviorTest {
 
     }
 
-    @Test
-    public void bodybuildingCheck(){
-        Espresso.onData(withId(R.id.day1BodyBuilding)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.day2BodyBuilding)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.day3BodyBuilding)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.day4BodyBuilding)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.day5BodyBuilding)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.howTo)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
-    }
+
   /*  @Test
     public BodyBuildingDayOne bb1Test(){
         Espresso.onData(withId(R.id.day1BodyBuilding)).perform(ViewActions.scrollTo(), click());
@@ -255,21 +244,7 @@ public class BehaviorTest {
         Espresso.onData(withId(R.id.day5BodyBuilding)).perform(ViewActions.scrollTo(), click());
         return new BodyBuildingDayFive();
     }*/
-    @Test
-    public void strCheck(){
-        Espresso.onData(withId(R.id.day1Strength)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.day2Strength)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.day3Strength)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.day4Strength)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.day5Strength)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.howTo)).perform(ViewActions.click())
-                .check(matches(isDisplayed()));
-    }
+
   /*  @Test
     public StrengthDayOne st1Test(){
         Espresso.onData(withId(R.id.day1Strength)).perform(ViewActions.scrollTo(), click());
@@ -492,48 +467,59 @@ public class BehaviorTest {
     }
     @Test
     public void StrengthDay1(){
-        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo(), click());
-        Espresso.onData(withId(R.id.closeGripBenchImage)).perform(ViewActions.scrollTo(), click())
-                .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.incline)).perform(ViewActions.scrollTo(), click());
-        Espresso.onData(withId(R.id.flies)).perform(ViewActions.scrollTo(), click());
-        Espresso.onData(withId(R.id.completeDay1s)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
+        Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.StrengthTrainingButton)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.day1Strength)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.closeGripBenchImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.incline)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.flies)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.completeDay1s)).perform(ViewActions.scrollTo(), click());
     }
     @Test
     public void StrengthDay2(){
-        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo(), click());
-        Espresso.onData(withId(R.id.squatImage)).perform(ViewActions.scrollTo(), click())
-                .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.legpresspic)).perform(ViewActions.scrollTo(), click());
-        Espresso.onData(withId(R.id.calfpresspic)).perform(ViewActions.scrollTo(), click());
-        Espresso.onData(withId(R.id.completeDay2s)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
+        Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.StrengthTrainingButton)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.day2Strength)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.squatImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.legpresspic)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.calfpresspic)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.completeDay2s)).perform(ViewActions.scrollTo(), click());
     }
     @Test
     public void StrengthDay3(){
-        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo(), click());
-        Espresso.onData(withId(R.id.deadliftImage)).perform(ViewActions.scrollTo(), click())
-                .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.rowImage)).perform(ViewActions.scrollTo(), click());
-        Espresso.onData(withId(R.id.shrugpic)).perform(ViewActions.scrollTo(), click());
-        Espresso.onData(withId(R.id.completeDay3s)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
+        Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.StrengthTrainingButton)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.day3Strength)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.deadliftImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.rowImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.shrugpic)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.completeDay3s)).perform(ViewActions.scrollTo(), click());
     }
     @Test
     public void StrengthDay4(){
-        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo(), click());
-        Espresso.onData(withId(R.id.closeGripBenchImage)).perform(ViewActions.scrollTo(), click())
-                .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.bbcurl)).perform(ViewActions.scrollTo(), click());
-        Espresso.onData(withId(R.id.pushdown)).perform(ViewActions.scrollTo(), click());
-        Espresso.onData(withId(R.id.completeDay4s)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
+        Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.StrengthTrainingButton)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.day4Strength)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.closeGripBenchImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.bbcurl)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.pushdown)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.completeDay4s)).perform(ViewActions.scrollTo(), click());
     }
     @Test
     public void StrengthDay5(){
-        Espresso.onView(withId(R.id.fitnessProgramButton)).perform(ViewActions.scrollTo(), click());
-        Espresso.onData(withId(R.id.closeGripBenchImage)).perform(ViewActions.scrollTo(), click())
-                .check(matches(isDisplayed()));
-        Espresso.onData(withId(R.id.squatImage)).perform(ViewActions.scrollTo(), click());
-        Espresso.onData(withId(R.id.legpresspic)).perform(ViewActions.scrollTo(), click());
-        Espresso.onData(withId(R.id.completeDay5s)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
+        Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.StrengthTrainingButton)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.day5Strength)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.closeGripBenchImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.squatImage)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.legpresspic)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.completeDay5s)).perform(ViewActions.scrollTo(), click());
+        Espresso.onView(withId(R.id.howTo)).perform(ViewActions.scrollTo(), click());
     }
 
 
