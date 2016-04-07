@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
         android:drawableTop="@drawable/ic_camera"
         android:onClick="requestForCameraPermission"
+        android:background="#e89633"
         android:layout_above="@+id/Done"
         android:layout_centerHorizontal="true"
         android:id="@+id/button7" />
@@ -27,6 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save"
+        android:background="#e89633"
         android:id="@+id/Done"
         android:layout_marginRight="48dp"
         android:layout_alignParentBottom="true"
