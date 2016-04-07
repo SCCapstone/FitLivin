@@ -121,7 +121,7 @@
             android:id="@+id/completeDay3s"
             android:layout_below = "@+id/shrugDescription"
             android:layout_gravity="right|bottom"
-            android:background="#e89633"
+            android:background="#e70b0e"
             />
 
 

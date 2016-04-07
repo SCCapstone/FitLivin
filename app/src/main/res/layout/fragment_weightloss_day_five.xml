@@ -119,7 +119,7 @@
             android:id="@+id/completeDay5w"
             android:layout_below = "@+id/burpiesDetail"
             android:layout_gravity="right|bottom"
-            android:background="#e89633"
+            android:background="#e70b0e"
             />
 
     </LinearLayout>>

@@ -133,7 +133,7 @@
         android:id="@+id/completeDay1bb"
         android:layout_below = "@+id/hamstringDetail"
         android:layout_gravity="right|bottom"
-        android:background="#e89633"
+        android:background="#e70b0e"
         />
 
 

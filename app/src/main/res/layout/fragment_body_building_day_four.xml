@@ -130,7 +130,7 @@
         android:text="Workout Complete!"
         android:id="@+id/completeDay4bb"
         android:layout_below = "@+id/dumbbellRowDetail"
-        android:background="#e89633"
+        android:background="#e70b0e"
         android:layout_gravity="right|bottom"
         />
 

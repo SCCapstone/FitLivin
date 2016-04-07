@@ -128,7 +128,7 @@
                 android:layout_gravity="right|bottom"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentStart="false"
-                android:background="#e89633"
+                android:background="#e70b0e"
                 />
 
 

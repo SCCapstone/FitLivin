@@ -45,7 +45,7 @@
             android:layout_below="@+id/basedOnGoalsText"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="70dp"
-            android:background="#e89633" />
+            android:background="#e70b0e" />
 
 
         <TextView
@@ -71,7 +71,7 @@
             android:layout_centerHorizontal="true"
 
 
-            android:background="#e89633" />
+            android:background="#e70b0e" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -96,7 +96,7 @@
             android:clickable="true"
             android:layout_below="@+id/bodyBuildingText"
             android:layout_centerHorizontal="true"
-            android:background="#e89633" />
+            android:background="#e70b0e" />
 
         <TextView
             android:layout_width="wrap_content"

@@ -117,7 +117,7 @@
             android:id="@+id/completeDay2w"
             android:layout_below = "@+id/plankDetail"
             android:layout_gravity="right|bottom"
-            android:background="#e89633"
+            android:background="#e70b0e"
             />
 
 

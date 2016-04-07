@@ -66,6 +66,6 @@
         android:text="How To"
         android:id="@+id/howTo"
         android:layout_gravity="center_horizontal|bottom"
-        android:background="#e89633" />
+        android:background="#e70b0e" />
 
 </FrameLayout>

@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:text="Take Pic"
                 android:id="@+id/pic"
-                android:background="#e89633"
+                android:background="#e70b0e"
 
                 android:layout_alignBottom="@+id/name"
                 android:layout_alignParentEnd="true" />
@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editprofilebutton"
                 android:text="editProfile"
-                android:background="#e89633"
+                android:background="#e70b0e"
                 android:layout_alignTop="@+id/pic"
                 android:layout_toEndOf="@+id/textView1"
                 android:layout_marginLeft="20dp"
@@ -145,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:text="Change Attributes"
                 android:id="@+id/weightButton"
-                android:background="#e89633"
+                android:background="#e70b0e"
                 android:layout_gravity="center_horizontal"
                 android:layout_below="@+id/CurrH"
 

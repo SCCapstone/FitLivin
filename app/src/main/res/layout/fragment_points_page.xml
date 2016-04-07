@@ -13,7 +13,7 @@
         android:textSize="20dp"
         android:background="#212121"
         android:autoText="true"
-        android:textColor="#e89633"
+        android:textColor="#e70b0e"
         android:layout_below="@+id/points"
         android:layout_alignStart="@+id/listView4" />
 
@@ -30,7 +30,7 @@
             android:layout_below="@+id/LeaderTitle"
             android:layout_above="@+id/arnoldQuote"
             android:touchscreenBlocksFocus="false"
-            android:background="#e89633" />
+            android:background="#e70b0e" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
             android:id="@+id/arnoldQuote"
             android:layout_gravity="center"
             android:textStyle="normal|bold|italic"
-            android:textColor="#e89633"
+            android:textColor="#e70b0e"
             android:layout_above="@+id/arnoldText"
             android:layout_centerHorizontal="true"
             />
@@ -48,7 +48,7 @@
             android:layout_height="20dp"
             android:text="-Arnold Schwarzenegger"
             android:id="@+id/arnoldText"
-            android:textColor="#e89633"
+            android:textColor="#e70b0e"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true" />
 
@@ -84,7 +84,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/PointsView"
         android:layout_gravity="center_vertical"
-        android:textColor="#e8b91a"
+        android:textColor="#e70b0e"
         android:text="Points"
         android:layout_below="@+id/YouAre"
         android:layout_centerHorizontal="true"
