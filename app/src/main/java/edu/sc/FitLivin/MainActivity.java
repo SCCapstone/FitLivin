@@ -28,9 +28,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -131,7 +133,14 @@ public class MainActivity extends FragmentActivity{
 
 
         listView = (ListView)findViewById(R.id.listView);
-        listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, fragmentArray);
+        listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,android.R.id.text1, fragmentArray){
+    public View getView(int position, View convertView, ViewGroup parent) {
+        View view = super.getView(position, convertView, parent);
+        TextView ListItemShow = (TextView) view.findViewById(android.R.id.text1);
+        ListItemShow.setTextColor(Color.parseColor("#ffffff"));
+        return view;
+    }
+};
         listView.setAdapter(listAdapter);
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerview);

@@ -8,6 +8,7 @@
 package edu.sc.FitLivin;
 
 import android.app.Fragment;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -70,7 +71,15 @@ public class PointsPageFragment extends Fragment {
         list = (ListView) v.findViewById(R.id.listView4);
 
 
-        adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, arrayList2);
+        adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, android.R.id.text1,arrayList2) {
+
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView ListItemShow = (TextView) view.findViewById(android.R.id.text1);
+                ListItemShow.setTextColor(Color.parseColor("#ffffff"));
+                return view;
+            }
+        };
 
         list.setAdapter(adapter);
         adapter.clear();
@@ -137,12 +146,12 @@ public class PointsPageFragment extends Fragment {
                                              // System.out.println(uname);
                                              String padded = uname;
                                              if (place <= 9) {
-                                                 String s = "  " + place + ".) " + padded + ": " + b+" pts";
+                                                 String s = "  #" + place + ": " + b + " "+ padded;;
                                                  //System.out.println(s);
                                                  arrayList2.add(s);
 
                                              } else {
-                                                 String s = place + ".) " + padded + ": " + b+ " pts";
+                                                 String s = "#" + place + ": " + b + " "+ padded;;
                                                  //System.out.println(s);
                                                  arrayList2.add(s);
 

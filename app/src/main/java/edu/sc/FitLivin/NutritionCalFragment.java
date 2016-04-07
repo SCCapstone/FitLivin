@@ -13,7 +13,6 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,8 +59,8 @@ public class NutritionCalFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 weightLoss.setTextColor(Color.GREEN);
-                maintain.setTextColor(Color.BLACK);
-                weightGain.setTextColor(Color.BLACK);
+                maintain.setTextColor(Color.WHITE);
+                weightGain.setTextColor(Color.WHITE);
 
                 ParseQuery<ParseUser> query = ParseUser.getQuery();
                 query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
@@ -142,8 +141,8 @@ public class NutritionCalFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 maintain.setTextColor(Color.GREEN);
-                weightLoss.setTextColor(Color.BLACK);
-                weightGain.setTextColor(Color.BLACK);
+                weightLoss.setTextColor(Color.WHITE);
+                weightGain.setTextColor(Color.WHITE);
                 ParseQuery<ParseUser> query = ParseUser.getQuery();
                 query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
                 query.orderByDescending("createdAt");
@@ -225,8 +224,8 @@ public class NutritionCalFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 weightGain.setTextColor(Color.GREEN);
-                maintain.setTextColor(Color.BLACK);
-                weightLoss.setTextColor(Color.BLACK);
+                maintain.setTextColor(Color.WHITE);
+                weightLoss.setTextColor(Color.WHITE);
                 ParseQuery<ParseUser> query = ParseUser.getQuery();
                 query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
                 query.orderByDescending("createdAt");

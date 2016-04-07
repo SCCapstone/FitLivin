@@ -16,14 +16,6 @@
         android:layout_height="match_parent">
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textView2"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="84dp" />
     </RelativeLayout>
 
     <ListView
@@ -31,7 +23,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="left"
         android:id="@+id/listView"
-        android:background="#e89633"
+        android:background="#e70b0e"
+        android:textColor="@android:color/white"
         >
 
     </ListView>

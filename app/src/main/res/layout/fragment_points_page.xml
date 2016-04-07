@@ -13,7 +13,7 @@
         android:textSize="20dp"
         android:background="#212121"
         android:autoText="true"
-        android:textColor="#e70b0e"
+        android:textColor="#ffffff"
         android:layout_below="@+id/points"
         android:layout_alignStart="@+id/listView4" />
 
@@ -23,14 +23,12 @@
             android:id="@+id/listView4"
             android:divider="#212121"
             android:layout_gravity="center"
-            android:textColor="@android:color/white"
-            android:dividerHeight="10dp"
-            android:textStyle="normal|italic"
+            android:dividerHeight="7dp"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/LeaderTitle"
             android:layout_above="@+id/arnoldQuote"
             android:touchscreenBlocksFocus="false"
-            android:background="#e70b0e" />
+             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -65,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/position"
-        android:textColor="#e8b91a"
+        android:textColor="#e70b0e"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/YouAre" />
 
