@@ -219,6 +219,7 @@ public class ProfilePageFragment extends Fragment {
                 WEIGHT.setHint(WEIGHT_HINT);
                 final EditText HEIGHT = new EditText(getActivity());
                 input.setInputType(InputType.TYPE_CLASS_NUMBER);
+                HEIGHT.setInputType(InputType.TYPE_CLASS_NUMBER);
 
                 HEIGHT.setHint(HEIGHT_HINT);
                 LinearLayout layout = new LinearLayout(getActivity());
