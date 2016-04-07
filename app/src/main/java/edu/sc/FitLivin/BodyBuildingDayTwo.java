@@ -15,6 +15,7 @@ import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -76,8 +77,7 @@ private View v;
         ImageButton benchImage = (ImageButton) v.findViewById(R.id.benchImage);
         ImageButton dumbbellFlyImage = (ImageButton) v.findViewById(R.id.flyImage);
         ImageButton pushupImage = (ImageButton) v.findViewById(R.id.pushupImage);
-        getActivity().getActionBar()
-                .setTitle("Day 2");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Day2");
        // mp = MediaPlayer.create(getActivity(), R.raw.fitfactbarbellbenchpressnew);
         benchImage.setOnClickListener(new View.OnClickListener() {
             @Override

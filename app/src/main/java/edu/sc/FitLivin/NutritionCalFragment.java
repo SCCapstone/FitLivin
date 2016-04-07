@@ -13,6 +13,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,8 +47,7 @@ public class NutritionCalFragment extends Fragment {
         //Integer test = 110;
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_nutrition_cal, container, false);
-        getActivity().getActionBar()
-                .setTitle("Nutrition");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Nutrition");
         final Button weightLoss = (Button) v.findViewById(R.id.wlossButton);
         final Button maintain = (Button) v.findViewById(R.id.maintainButton);
         final Button weightGain = (Button) v.findViewById(R.id.wGainButton);

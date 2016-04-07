@@ -14,6 +14,7 @@ import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -62,8 +63,7 @@ public class WeightLossDayFour extends Fragment {
                              Bundle savedInstanceState) {
         //Required
         View v = inflater.inflate(R.layout.fragment_weightloss_day_four, container, false);
-        getActivity().getActionBar()
-                .setTitle("Day 4");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Day4");
         ImageButton jog = (ImageButton) v.findViewById(R.id.jogginImage);
         ImageButton rows = (ImageButton) v.findViewById(R.id.rowImage);
         ImageButton cardio = (ImageButton) v.findViewById(R.id.cardioImage);

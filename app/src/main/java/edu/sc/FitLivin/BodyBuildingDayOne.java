@@ -14,6 +14,7 @@ import android.app.FragmentTransaction;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -68,8 +69,7 @@ public class BodyBuildingDayOne extends Fragment {
         ImageButton squat = (ImageButton) v.findViewById(R.id.squatImage);
         ImageButton legExtension = (ImageButton) v.findViewById(R.id.legExtensionImage);
         ImageButton legCurl = (ImageButton) v.findViewById(R.id.curlImage);
-        getActivity().getActionBar()
-                .setTitle("Day 1");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Day1");
         squat.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {

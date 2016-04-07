@@ -15,6 +15,7 @@ import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -47,10 +48,9 @@ public class MaxFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_max, container, false);
 
+            ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Max");
 
 
-            getActivity().getActionBar()
-                    .setTitle("Max");
 
         //initialize textviews in max xml
         final TextView userBench = (TextView) v.findViewById(R.id.userBench);

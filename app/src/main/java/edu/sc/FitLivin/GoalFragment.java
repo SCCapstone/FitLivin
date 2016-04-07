@@ -8,6 +8,7 @@
         import android.content.DialogInterface;
         import android.media.MediaPlayer;
         import android.os.Bundle;
+        import android.support.v7.app.AppCompatActivity;
         import android.text.InputType;
         import android.util.Log;
         import android.view.LayoutInflater;
@@ -152,8 +153,7 @@ public class GoalFragment extends Fragment {
 
 
         View v = inflater.inflate(R.layout.fragment_goal, container, false);
-        getActivity().getActionBar()
-                .setTitle("Goals");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Goals");
         final  MainActivity main = new MainActivity();
 
 

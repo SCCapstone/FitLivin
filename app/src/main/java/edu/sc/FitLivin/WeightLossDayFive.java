@@ -14,6 +14,7 @@ import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,8 +65,7 @@ public class WeightLossDayFive extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_weightloss_day_five, container, false);
-        getActivity().getActionBar()
-                .setTitle("Day 5");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Day5");
         ImageButton warmuprun = (ImageButton) v.findViewById(R.id.runningImage);
         ImageButton powerjump = (ImageButton) v.findViewById(R.id.powerjumpImage);
         ImageButton burpee = (ImageButton) v.findViewById(R.id.burpeesImage);

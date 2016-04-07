@@ -18,6 +18,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -69,8 +70,7 @@ public class ProfilePageFragment extends Fragment {
 
 
         View v = inflater.inflate(R.layout.fragment_profile__page, container, false);
-        //getActivity().getActionBar()
-               // .setTitle("Profile");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Profile");
        MainActivity main = new MainActivity();
            p = (Button) v.findViewById(R.id.pic);
 
@@ -279,22 +279,21 @@ public class ProfilePageFragment extends Fragment {
         });
 
         ParseQuery queryPropic = ParseUser.getQuery();
-        queryPropic.whereEqualTo("objectId",ParseUser.getCurrentUser().getObjectId());
+        queryPropic.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
         queryPropic.whereExists("Images");
         queryPropic.findInBackground(new FindCallback<ParseUser>() {
             public void done(List<ParseUser> objects, ParseException e) {
-                if(e == null && objects.size() != 0){
+                if (e == null && objects.size() != 0) {
                     try {
-                        ParseFile profilepic  = objects.get(0).getParseFile("Images");
+                        ParseFile profilepic = objects.get(0).getParseFile("Images");
                         byte[] bm = profilepic.getData();
-                        Bitmap bmprofile = BitmapFactory.decodeByteArray(bm,0,bm.length);
+                        Bitmap bmprofile = BitmapFactory.decodeByteArray(bm, 0, bm.length);
                         imageView1.setImageBitmap(bmprofile);
-                    }catch (ParseException error){
+                    } catch (ParseException error) {
                         e.printStackTrace();
                     }
-                }
-                else {
-                    Toast.makeText(getActivity(),"Please set a profile picture",Toast.LENGTH_SHORT);
+                } else {
+                    Toast.makeText(getActivity(), "Please set a profile picture", Toast.LENGTH_SHORT);
                 }
             }
         });

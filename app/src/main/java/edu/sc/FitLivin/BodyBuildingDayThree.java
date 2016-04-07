@@ -14,6 +14,7 @@ import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,8 +70,7 @@ public class BodyBuildingDayThree extends Fragment {
         ImageButton hammerCurl = (ImageButton) v.findViewById(R.id.hammerCurlImage);
         ImageButton preacherCurl = (ImageButton) v.findViewById(R.id.preacherCurlImage);
         ImageButton pushupClose = (ImageButton) v.findViewById(R.id.closegrippushupImage);
-        getActivity().getActionBar()
-                .setTitle("Day 3");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Day3");
         hammerCurl.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {

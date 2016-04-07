@@ -15,6 +15,7 @@ import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,8 +70,7 @@ public class BodyBuildingDayFour extends Fragment {
         ImageButton deadlift = (ImageButton) v.findViewById(R.id.deadliftImage);
         ImageButton pullup = (ImageButton) v.findViewById(R.id.pullupImage);
         ImageButton dbrow = (ImageButton) v.findViewById(R.id.dumbbellRowImage);
-        getActivity().getActionBar()
-                .setTitle("Day 4");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Day4");
 
         deadlift.setOnClickListener(new View.OnClickListener() {
                                   @Override

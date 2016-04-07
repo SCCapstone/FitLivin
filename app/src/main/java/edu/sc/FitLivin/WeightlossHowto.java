@@ -6,6 +6,7 @@ import android.app.FragmentTransaction;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,19 +32,8 @@ public class WeightlossHowto extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_weightloss_howto, container, false);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("How To");
 
-     /**   Button backBtn = (Button) v.findViewById(R.id.Wlhowtoback);
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FPWGTLossFragment fragment1 = new FPWGTLossFragment();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, fragment1);
-                ft.addToBackStack(null);
-                ft.commit();
-            }
-        });**/
         return v;
     }
     }

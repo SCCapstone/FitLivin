@@ -12,6 +12,7 @@ package edu.sc.FitLivin;
 import android.app.Fragment;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -86,8 +87,7 @@ public class TrackProgressFragment extends Fragment {
             }
         });**/
 
-        getActivity().getActionBar()
-                .setTitle("Track Progress");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Track Progress");
 
         final ArrayList<String> arrayList2;
         arrayList2 = new ArrayList<String>();

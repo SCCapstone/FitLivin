@@ -11,6 +11,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,8 +21,7 @@ public class FPBodyBuildingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_fp__body__building, container, false);
-        getActivity().getActionBar()
-                .setTitle("Body Building");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Body Building");
 
         /**    Button btn = (Button) v.findViewById(R.id.backBodyBuilding);
         btn.setOnClickListener(new View.OnClickListener() {

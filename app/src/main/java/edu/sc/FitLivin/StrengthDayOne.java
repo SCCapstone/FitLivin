@@ -15,6 +15,7 @@ import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -75,8 +76,7 @@ MediaPlayer mp;
                              Bundle savedInstanceState){
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_strength_day_one, container, false);
-        getActivity().getActionBar()
-                .setTitle("Day 1");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Day1");
         ImageButton benchImage = (ImageButton) v.findViewById(R.id.closeGripBenchImage);
         ImageButton cableFlyImage = (ImageButton) v.findViewById(R.id.flies);
         ImageButton inclineDumbbell = (ImageButton) v.findViewById(R.id.incline);

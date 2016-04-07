@@ -6,6 +6,7 @@ import android.app.FragmentManager;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +42,7 @@ public class Editprofilefragment extends Fragment {
     public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_editprofile, container, false);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Edit Profile");
         nametext = (EditText)v.findViewById(R.id.editTextname);
         passwordtext = (EditText)v.findViewById(R.id.editpasstext);
         phonetext = (EditText)v.findViewById(R.id.editphone);

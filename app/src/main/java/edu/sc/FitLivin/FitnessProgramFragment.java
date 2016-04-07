@@ -13,6 +13,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,8 +28,7 @@ public class FitnessProgramFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_fitness_program, container, false);
         Button btn = (Button) v.findViewById(R.id.StrengthTrainingButton);
-        getActivity().getActionBar()
-               .setTitle("Fitness Program");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Fitness Program");
 
 
         btn.setOnClickListener(new View.OnClickListener() {

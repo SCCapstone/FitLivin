@@ -3,6 +3,7 @@ package edu.sc.FitLivin;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -35,8 +36,7 @@ public class StopwatchFragment extends Fragment implements OnClickListener {
 
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_stopwatch_main, container, false);
-        getActivity().getActionBar()
-                .setTitle("Stopwatch");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Stopwatch");
         startChron = (Button)v.findViewById(R.id.start);
                startChron.setOnClickListener(this);
         stopChron = (Button)v.findViewById(R.id.stop);
