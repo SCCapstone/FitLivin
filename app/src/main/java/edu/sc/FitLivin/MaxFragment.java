@@ -40,7 +40,7 @@ public class MaxFragment extends Fragment {
     private static final int TEXT_ID = 0;
     private static final int TEXT_ID1 = 0;
     private static final int TEXT_ID2 = 0;
-    private static final int TEXT_ID3 = 0;
+    private static final int TEXT_ID3 = 0;//
 
         @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
