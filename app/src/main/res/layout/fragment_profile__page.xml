@@ -19,10 +19,7 @@
         android:id="@+id/linview"
         android:background="#212121"
         >
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/tool_bar"
-            />
+
 
         <de.hdodenhof.circleimageview.CircleImageView
             xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -34,7 +31,7 @@
             app:civ_border_color="#e89633"
             android:layout_gravity="center_horizontal"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/toolbar"/>
+          />
 
         <Button
             android:layout_width="wrap_content"

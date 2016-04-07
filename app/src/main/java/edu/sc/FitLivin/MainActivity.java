@@ -8,6 +8,8 @@
 
 package edu.sc.FitLivin;
 
+
+import android.support.v7.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -45,7 +47,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity{
 //
     //Intializing varibles
-    Toolbar toolbar;
+    public static Toolbar toolbar;
     Integer value;
     public static String name;
     public ParseUser user;
@@ -129,11 +131,15 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toolbar = (Toolbar)findViewById(R.id.toolbar);
+       /* toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("My title");
 
-
+*/
+        ActionBar bar = getSupportActionBar();
+        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#e89633")));
         listView = (ListView)findViewById(R.id.listView);
         listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, fragmentArray);
         listView.setAdapter(listAdapter);

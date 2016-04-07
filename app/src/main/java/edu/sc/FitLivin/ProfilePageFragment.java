@@ -6,7 +6,6 @@
  */
 
 package edu.sc.FitLivin;
-
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -18,6 +17,8 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -71,6 +72,8 @@ public class ProfilePageFragment extends Fragment {
         //getActivity().getActionBar()
                // .setTitle("Profile");
        MainActivity main = new MainActivity();
+       ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Profile");
+
            p = (Button) v.findViewById(R.id.pic);
 
         p.setOnClickListener(new View.OnClickListener() {
@@ -78,8 +81,8 @@ public class ProfilePageFragment extends Fragment {
             public void onClick(View v) {
                 Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 File file = getFile();
-                camera_intent.putExtra(MediaStore.EXTRA_OUTPUT,Uri.fromFile(file));
-                startActivityForResult(camera_intent,CAM_REQUEST);
+                camera_intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
+                startActivityForResult(camera_intent, CAM_REQUEST);
             }
         });
         imageView1 = (CircleImageView) v.findViewById(R.id.profilepicview);

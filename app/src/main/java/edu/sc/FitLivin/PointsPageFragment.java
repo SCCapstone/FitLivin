@@ -9,6 +9,7 @@ package edu.sc.FitLivin;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +45,7 @@ public class PointsPageFragment extends Fragment {
 
        // getActivity().getActionBar()
          //       .setTitle("Points");
-
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Points");
 
 
         final TextView currentPoints = (TextView) v.findViewById(R.id.PointsView);
