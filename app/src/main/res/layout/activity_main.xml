@@ -15,10 +15,7 @@
     android:id="@+id/container"
     android:layout_height="match_parent">
 
-<include
-    android:id="@+id/toolbar"
-    layout="@layout/tool_bar"
-    />
+
        <TextView
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
