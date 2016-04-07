@@ -36,7 +36,8 @@ public class StopwatchFragment extends Fragment implements OnClickListener {
 
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_stopwatch_main, container, false);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Stopwatch");
+        getActivity().getActionBar()
+                .setTitle("Stopwatch");
         startChron = (Button)v.findViewById(R.id.start);
                startChron.setOnClickListener(this);
         stopChron = (Button)v.findViewById(R.id.stop);

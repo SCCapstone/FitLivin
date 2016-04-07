@@ -77,7 +77,8 @@ private View v;
         ImageButton benchImage = (ImageButton) v.findViewById(R.id.benchImage);
         ImageButton dumbbellFlyImage = (ImageButton) v.findViewById(R.id.flyImage);
         ImageButton pushupImage = (ImageButton) v.findViewById(R.id.pushupImage);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Day2");
+        getActivity().getActionBar()
+                .setTitle("Day 2");
        // mp = MediaPlayer.create(getActivity(), R.raw.fitfactbarbellbenchpressnew);
         benchImage.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,16 +1,12 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="android:Theme.Holo.Light">
         <!-- Customize your theme here. -->
     </style>
     <style name="MyMenuTextAppearance" parent="android:TextAppearance.Holo.Widget.ActionBar.Menu">
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">2sp</item>
-    </style>
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
     </style>
 
 

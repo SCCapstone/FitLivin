@@ -8,8 +8,7 @@
 
 package edu.sc.FitLivin;
 
-
-import android.support.v7.app.ActionBar;
+import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -25,7 +24,6 @@ import android.provider.MediaStore;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -33,7 +31,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.support.v7.widget.Toolbar;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -44,10 +41,9 @@ import com.parse.SaveCallback;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity{
-//
+public class MainActivity extends FragmentActivity{
+    //
     //Intializing varibles
-    public static Toolbar toolbar;
     Integer value;
     public static String name;
     public ParseUser user;
@@ -129,17 +125,11 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
-       /* toolbar = (Toolbar)findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("My title");
 
-*/
-        ActionBar bar = getSupportActionBar();
-        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#e89633")));
         listView = (ListView)findViewById(R.id.listView);
         listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, fragmentArray);
         listView.setAdapter(listAdapter);
@@ -303,13 +293,13 @@ public class MainActivity extends AppCompatActivity{
             }
 
         });
-        /* fm = getFragmentManager(); // or 'getSupportFragmentManager();'
-        int count = fm.getBackStackEntryCount();
-        System.out.println("count " + count);
-        for(int i = 0; i < count; ++i) {
-            System.out.println("framgnet " + i);
-            fm.popBackStack();
-        }*/
+	        /* fm = getFragmentManager(); // or 'getSupportFragmentManager();'
+	        int count = fm.getBackStackEntryCount();
+	        System.out.println("count " + count);
+	        for(int i = 0; i < count; ++i) {
+	            System.out.println("framgnet " + i);
+	            fm.popBackStack();
+	        }*/
         //Adds the fragment for the layout
         PointsPageFragment firstFragment = new PointsPageFragment();
         fm= getFragmentManager();
@@ -320,13 +310,13 @@ public class MainActivity extends AppCompatActivity{
 
     public boolean onCreateOptionsMenu(Menu menu) {
 
-      //  this.getActionBar()
-          //      .setTitle("FitLivin");
+        this.getActionBar()
+                .setTitle("FitLivin");
         //this.getActionBar().setDisplayUseLogoEnabled(true);
         //this.getActionBar().setDisplayShowHomeEnabled(true);
         //this.getActionBar().setIcon(R.mipmap.ic_launcher);
 
-        //this.getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#e89633")));
+        this.getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#e70b0e")));
 
         String s = ParseUser.getCurrentUser().getUsername();
         Log.d("FUsername ", s);
@@ -859,7 +849,7 @@ public class MainActivity extends AppCompatActivity{
         System.out.println("count " + count);
         if(getFragmentManager().getBackStackEntryCount() <=1) {
 
-           // finish();
+            // finish();
             new AlertDialog.Builder(this).setIcon(android.R.drawable.ic_dialog_alert).setTitle("Exit")
                     .setMessage("Are you sure you want to exit?")
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -869,7 +859,7 @@ public class MainActivity extends AppCompatActivity{
                             a.addCategory(Intent.CATEGORY_HOME);
                             a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(a);
-                           // finish();
+                            // finish();
 
                         }
                     }).setNegativeButton("No", null).show();
@@ -885,6 +875,7 @@ public class MainActivity extends AppCompatActivity{
 
 
 }
+
 
 
 

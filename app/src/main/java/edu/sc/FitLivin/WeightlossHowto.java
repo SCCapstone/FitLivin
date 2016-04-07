@@ -32,7 +32,8 @@ public class WeightlossHowto extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_weightloss_howto, container, false);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("How To");
+        getActivity().getActionBar()
+                .setTitle("Day 5");
 
         return v;
     }

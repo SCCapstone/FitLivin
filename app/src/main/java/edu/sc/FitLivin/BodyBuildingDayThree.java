@@ -70,7 +70,8 @@ public class BodyBuildingDayThree extends Fragment {
         ImageButton hammerCurl = (ImageButton) v.findViewById(R.id.hammerCurlImage);
         ImageButton preacherCurl = (ImageButton) v.findViewById(R.id.preacherCurlImage);
         ImageButton pushupClose = (ImageButton) v.findViewById(R.id.closegrippushupImage);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Day3");
+        getActivity().getActionBar()
+                .setTitle("Day 3");
         hammerCurl.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {

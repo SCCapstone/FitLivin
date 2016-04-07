@@ -28,7 +28,8 @@ public class FitnessProgramFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_fitness_program, container, false);
         Button btn = (Button) v.findViewById(R.id.StrengthTrainingButton);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Fitness Program");
+        getActivity().getActionBar()
+                .setTitle("Fitness Program");
 
 
         btn.setOnClickListener(new View.OnClickListener() {

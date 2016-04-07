@@ -10,21 +10,21 @@
 
 
 
-   <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:id="@+id/container"
-    android:layout_height="match_parent">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:id="@+id/container"
+        android:layout_height="match_parent">
 
 
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="New Text"
-           android:id="@+id/textView2"
-           android:layout_alignParentTop="true"
-           android:layout_alignParentStart="true"
-           android:layout_marginTop="84dp" />
-   </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textView2"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="84dp" />
+    </RelativeLayout>
 
     <ListView
         android:layout_width="250dp"
@@ -37,3 +37,4 @@
     </ListView>
 
 </android.support.v4.widget.DrawerLayout>
+

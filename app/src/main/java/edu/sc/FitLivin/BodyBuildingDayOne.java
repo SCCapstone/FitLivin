@@ -69,7 +69,8 @@ public class BodyBuildingDayOne extends Fragment {
         ImageButton squat = (ImageButton) v.findViewById(R.id.squatImage);
         ImageButton legExtension = (ImageButton) v.findViewById(R.id.legExtensionImage);
         ImageButton legCurl = (ImageButton) v.findViewById(R.id.curlImage);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Day1");
+        getActivity().getActionBar()
+                .setTitle("Day 1");
         squat.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {

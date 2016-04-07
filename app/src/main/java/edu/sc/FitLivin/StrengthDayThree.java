@@ -71,7 +71,8 @@ MediaPlayer mp;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_strength_day_three, container, false);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Day3");
+        getActivity().getActionBar()
+                .setTitle("Day 3");
         ImageButton deadlift = (ImageButton) v.findViewById(R.id.deadliftImage);
         ImageButton dbrow = (ImageButton) v.findViewById(R.id.rowImage);
         ImageButton shrug = (ImageButton) v.findViewById(R.id.shrugpic);

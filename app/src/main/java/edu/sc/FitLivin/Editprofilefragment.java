@@ -42,7 +42,8 @@ public class Editprofilefragment extends Fragment {
     public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_editprofile, container, false);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Edit Profile");
+        getActivity().getActionBar()
+                .setTitle("Edit Profile");
         nametext = (EditText)v.findViewById(R.id.editTextname);
         passwordtext = (EditText)v.findViewById(R.id.editpasstext);
         phonetext = (EditText)v.findViewById(R.id.editphone);

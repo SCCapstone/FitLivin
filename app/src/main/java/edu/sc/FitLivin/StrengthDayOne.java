@@ -76,7 +76,8 @@ MediaPlayer mp;
                              Bundle savedInstanceState){
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_strength_day_one, container, false);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Day1");
+        getActivity().getActionBar()
+                .setTitle("Day 1");
         ImageButton benchImage = (ImageButton) v.findViewById(R.id.closeGripBenchImage);
         ImageButton cableFlyImage = (ImageButton) v.findViewById(R.id.flies);
         ImageButton inclineDumbbell = (ImageButton) v.findViewById(R.id.incline);

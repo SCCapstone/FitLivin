@@ -87,7 +87,8 @@ public class TrackProgressFragment extends Fragment {
             }
         });**/
 
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Track Progress");
+        getActivity().getActionBar()
+                .setTitle("Track Progress");
 
         final ArrayList<String> arrayList2;
         arrayList2 = new ArrayList<String>();

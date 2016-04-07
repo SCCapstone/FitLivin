@@ -153,7 +153,8 @@ public class GoalFragment extends Fragment {
 
 
         View v = inflater.inflate(R.layout.fragment_goal, container, false);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Goals");
+        getActivity().getActionBar()
+                .setTitle("Goals");
         final  MainActivity main = new MainActivity();
 
 

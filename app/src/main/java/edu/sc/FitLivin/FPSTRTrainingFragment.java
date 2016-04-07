@@ -24,7 +24,8 @@ public class FPSTRTrainingFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_fp__str__training, container, false);
      //   Button btn = (Button) v.findViewById(R.id.backButtonStrength);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Strength Training");
+        getActivity().getActionBar()
+                .setTitle("Strength Training");
 
         Button day1 = (Button) v.findViewById(R.id.day1Strength);
         day1.setOnClickListener(new View.OnClickListener() {

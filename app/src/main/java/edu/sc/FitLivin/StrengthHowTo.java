@@ -35,7 +35,8 @@ public class StrengthHowTo extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_strength_how_to, container, false);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("How To");
+        getActivity().getActionBar()
+                .setTitle("How To");
 
       /**  Button backBtn = (Button) v.findViewById(R.id.Sdayhow2back);
         backBtn.setOnClickListener(new View.OnClickListener() {

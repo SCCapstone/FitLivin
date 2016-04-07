@@ -65,7 +65,8 @@ public class WeightLossDayFive extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_weightloss_day_five, container, false);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Day5");
+        getActivity().getActionBar()
+                .setTitle("Day 5");
         ImageButton warmuprun = (ImageButton) v.findViewById(R.id.runningImage);
         ImageButton powerjump = (ImageButton) v.findViewById(R.id.powerjumpImage);
         ImageButton burpee = (ImageButton) v.findViewById(R.id.burpeesImage);

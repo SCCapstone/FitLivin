@@ -47,7 +47,8 @@ public class NutritionCalFragment extends Fragment {
         //Integer test = 110;
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_nutrition_cal, container, false);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Nutrition");
+        getActivity().getActionBar()
+                .setTitle("Nutrition");
         final Button weightLoss = (Button) v.findViewById(R.id.wlossButton);
         final Button maintain = (Button) v.findViewById(R.id.maintainButton);
         final Button weightGain = (Button) v.findViewById(R.id.wGainButton);

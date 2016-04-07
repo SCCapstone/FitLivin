@@ -31,7 +31,8 @@ public class BodyBuildingHowto extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_body_building_howto, container, false);
 
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("How To");
+        getActivity().getActionBar()
+                .setTitle("How To");
         /**  Button backBtn = (Button) v.findViewById(R.id.Bbhowtoback);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override

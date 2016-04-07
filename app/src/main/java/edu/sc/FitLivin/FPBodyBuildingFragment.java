@@ -21,7 +21,8 @@ public class FPBodyBuildingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_fp__body__building, container, false);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Body Building");
+        getActivity().getActionBar()
+                .setTitle("Body Building");
 
         /**    Button btn = (Button) v.findViewById(R.id.backBodyBuilding);
         btn.setOnClickListener(new View.OnClickListener() {

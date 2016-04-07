@@ -63,7 +63,8 @@ MediaPlayer mp;
 
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_body_building_day_five, container, false);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Day5");
+        getActivity().getActionBar()
+                .setTitle("Day 5");
         ImageButton militaryPress = (ImageButton) v.findViewById(R.id.militaryPressImage);
         ImageButton sideLatRaise = (ImageButton) v.findViewById(R.id.sideLatImage);
         ImageButton shoulderPress = (ImageButton) v.findViewById(R.id.shoulderpressImage);
