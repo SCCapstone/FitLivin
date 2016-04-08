@@ -352,6 +352,7 @@ public class MainActivity extends FragmentActivity{
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if(id == R.id.action_settings){
+           System.out.println("Logout Count" +getFragmentManager().getBackStackEntryCount());
             ParseUser.getCurrentUser().logOut();
             startActivity(new Intent(MainActivity.this, DispatchActivity.class));
             return true;
