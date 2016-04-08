@@ -125,8 +125,8 @@ public class ProfilePageFragment extends Fragment {
                 if (e == null && objects.size() != 0) { //if objects size is not 0
 
                     if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
-                        currentWeight.setText(objects.get(objects.size() - 1).get("Weight").toString()); //setting weight
-                        currentHeight.setText(objects.get(objects.size() - 1).get("Height").toString()); //setting height
+                        currentWeight.setText(objects.get(0).get("Weight").toString()); //setting weight
+                        currentHeight.setText(objects.get(0).get("Height").toString()); //setting height
                         Log.d("F", "weight");
                     }
                 } else {
@@ -226,6 +226,10 @@ public class ProfilePageFragment extends Fragment {
                         MainActivity main = new MainActivity();
                         final EditText input = new EditText(getActivity());
                         input.setInputType(InputType.TYPE_CLASS_NUMBER);
+                        if (isEmpty(WEIGHT)==true || isEmpty(HEIGHT)==true)
+                        {
+                        }
+                        else{
                         int w = Integer.parseInt(WEIGHT.getText().toString());
                         int h = Integer.parseInt(HEIGHT.getText().toString());
                         currentWeight.setText("" + w);
@@ -254,7 +258,7 @@ public class ProfilePageFragment extends Fragment {
                             underBMI.setText("");
                             normalBMI.setText("");
                             overBMI.setText("");
-                        }
+                        }}
                         dialog.cancel();
                         // Do something with value!
                     }
@@ -331,6 +335,13 @@ public class ProfilePageFragment extends Fragment {
     public float calculateBMI(double weight, double height) {
 
         return (float) ((weight / (height * height)) * multiplier);
+    }
+    public boolean isEmpty(EditText etText) {
+        if (etText.getText().toString().trim().length() > 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     @Override

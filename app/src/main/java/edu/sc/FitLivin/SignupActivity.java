@@ -70,29 +70,29 @@ public class SignupActivity extends Activity {
                         new StringBuilder(getResources().getString(R.string.error_intro));
                 if (isEmpty(usernameView)) {
                     validationError = true;
-                    validationErrorMessage.append("enter your username");
+                    validationErrorMessage.append(" enter your username: ");
                 }
                 if(isEmpty(emailView)){
                     validationError = true;
-                    validationErrorMessage.append("enter an email");
+                    validationErrorMessage.append(" enter an email: ");
                 }
                 if(isEmpty(phnumberView)){
                     validationError = true;
-                    validationErrorMessage.append("enter your phone number");
+                    validationErrorMessage.append(" enter your phone number: ");
                 }
                 if (isEmpty(passwordView)) {
                     if (validationError) {
                         validationErrorMessage.append(", and ");
                     }
                     validationError = true;
-                    validationErrorMessage.append("enter a password");
+                    validationErrorMessage.append(" enter a password: ");
                 }
                 if (!isMatching(passwordView, passwordAgainView)) {
                     if (validationError) {
                         validationErrorMessage.append(", and ");
                     }
                     validationError = true;
-                    validationErrorMessage.append("enter the same password twice");
+                    validationErrorMessage.append(" enter the same password twice");
                 }
                 validationErrorMessage.append(".");
 
