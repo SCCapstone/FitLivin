@@ -1,3 +1,4 @@
+
 /******
  * Class 'ProfilePageFragment'
  *
@@ -13,11 +14,11 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -33,6 +34,7 @@ import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
@@ -46,7 +48,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfilePageFragment extends Fragment {
 
-    ImageView imageView1;
+    CircleImageView imageView1;
     private static final int TEXT_ID = 0;
     private static final int TEXT_ID2 = 0;
     private float multiplier = 703;
@@ -68,24 +70,26 @@ public class ProfilePageFragment extends Fragment {
 
 
         View v = inflater.inflate(R.layout.fragment_profile__page, container, false);
-        getActivity().getActionBar()
-        .setTitle("Profile");
+        //getActivity().getActionBar()
+        // .setTitle("Profile");
         MainActivity main = new MainActivity();
         p = (Button) v.findViewById(R.id.pic);
 
         p.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                File file = getFile();
-                camera_intent.putExtra(MediaStore.EXTRA_OUTPUT,Uri.fromFile(file));
-                startActivityForResult(camera_intent,CAM_REQUEST);
+                startActivity(new Intent(getActivity(), CameraActivity.class));
             }
         });
         imageView1 = (CircleImageView) v.findViewById(R.id.profilepicview);
         //  Bitmap bm = BitmapFactory.decodeResource(getResources(),R.drawable.don);
 
         imageView1.setBackgroundColor(Color.TRANSPARENT);
+        imageView1.setOnClickListener(new View.OnClickListener() {
+                       @Override public void onClick(View v) {
+                startActivity(new Intent(getActivity(), CameraActivity.class));
+                           }
+                   });
 
         final TextView heightText = (TextView) v.findViewById(R.id.heightView);
         final TextView weightText = (TextView) v.findViewById(R.id.weightView);
@@ -162,27 +166,25 @@ public class ProfilePageFragment extends Fragment {
                         float currheight = objects.get(0).get("Height").hashCode(); //setting height
 
                         float bmiV = calculateBMI(currweight, currheight);
-                        float bmiValue = (float)Math.round(bmiV * 1000f) / 1000f;
-                        if(bmiValue<18){
-                            underBMI.setText(""+bmiValue);
+
+                        float bmiValue = (float) Math.round(bmiV * 1000f) / 1000f;
+                        if (bmiValue < 18) {
+                            underBMI.setText("" + bmiValue);
                             normalBMI.setText("");
                             overBMI.setText("");
                             obeseBMI.setText("");
-                        }
-                        else if(bmiValue<25){
-                            normalBMI.setText(""+bmiValue);
+                        } else if (bmiValue < 25) {
+                            normalBMI.setText("" + bmiValue);
                             underBMI.setText("");
                             overBMI.setText("");
                             obeseBMI.setText("");
-                        }
-                        else if(bmiValue<30){
-                            overBMI.setText(""+bmiValue);
+                        } else if (bmiValue < 30) {
+                            overBMI.setText("" + bmiValue);
                             underBMI.setText("");
                             normalBMI.setText("");
                             obeseBMI.setText("");
-                        }
-                        else{
-                            obeseBMI.setText(""+bmiValue);
+                        } else {
+                            obeseBMI.setText("" + bmiValue);
                             underBMI.setText("");
                             normalBMI.setText("");
                             overBMI.setText("");
@@ -199,33 +201,26 @@ public class ProfilePageFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-
-                final String POPUP_TITLE="Attributes";
-                final String POPUP_TEXT="Please enter your weight and height";
-                final String WEIGHT_HINT="Weight(lbs)";
-                final String HEIGHT_HINT="Height(in)";
-
-
-
+                final String POPUP_TITLE = "Attributes";
+                final String POPUP_TEXT = "Please enter your weight and height";
+                final String WEIGHT_HINT = "Weight(lbs)";
+                final String HEIGHT_HINT = "Height(in)";
                 AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-
                 alert.setTitle(POPUP_TITLE);
                 alert.setMessage(POPUP_TEXT);
-
-                // Set an EditText view to get user input
                 final EditText WEIGHT = new EditText(getActivity());
                 input.setInputType(InputType.TYPE_CLASS_NUMBER);
+                WEIGHT.setInputType(InputType.TYPE_CLASS_NUMBER);
                 WEIGHT.setHint(WEIGHT_HINT);
                 final EditText HEIGHT = new EditText(getActivity());
                 input.setInputType(InputType.TYPE_CLASS_NUMBER);
-
+                HEIGHT.setInputType(InputType.TYPE_CLASS_NUMBER);
                 HEIGHT.setHint(HEIGHT_HINT);
                 LinearLayout layout = new LinearLayout(getActivity());
                 layout.setOrientation(LinearLayout.VERTICAL);
                 layout.addView(WEIGHT);
                 layout.addView(HEIGHT);
                 alert.setView(layout);
-
                 alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         MainActivity main = new MainActivity();
@@ -238,37 +233,32 @@ public class ProfilePageFragment extends Fragment {
                         main.profileData(w, h, ParseUser.getCurrentUser());
                         float bmiV = calculateBMI(w, h);
                         String.format("%.3g%n", bmiV);
-                        float bmiValue = (float)Math.round(bmiV * 1000f) / 1000f;
-                        if(bmiValue<18){
-                            underBMI.setText(""+bmiValue);
+                        float bmiValue = (float) Math.round(bmiV * 1000f) / 1000f;
+                        if (bmiValue < 18) {
+                            underBMI.setText("" + bmiValue);
                             normalBMI.setText("");
                             overBMI.setText("");
                             obeseBMI.setText("");
-                        }
-                        else if(bmiValue<25){
-                            normalBMI.setText(""+bmiValue);
+                        } else if (bmiValue < 25) {
+                            normalBMI.setText("" + bmiValue);
                             underBMI.setText("");
                             overBMI.setText("");
                             obeseBMI.setText("");
-                        }
-                        else if(bmiValue<30){
-                            overBMI.setText(""+bmiValue);
+                        } else if (bmiValue < 30) {
+                            overBMI.setText("" + bmiValue);
                             underBMI.setText("");
                             normalBMI.setText("");
                             obeseBMI.setText("");
-                        }
-                        else{
-                            obeseBMI.setText(""+bmiValue);
+                        } else {
+                            obeseBMI.setText("" + bmiValue);
                             underBMI.setText("");
                             normalBMI.setText("");
                             overBMI.setText("");
-
                         }
                         dialog.cancel();
                         // Do something with value!
                     }
                 });
-
                 alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         // Canceled.
@@ -280,26 +270,44 @@ public class ProfilePageFragment extends Fragment {
             }
         });
 
-
-
-
-      /*  editprofile = (Button) v.findViewById(R.id.editprofile);
-        editprofile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Editprofilefragment fragment = new Editprofilefragment();
-                FragmentManager fm = getFragmentManager();
-                fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
-            }
-        });*/
-       /* final MainActivity main1 = new MainActivity();
-        pic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-           main1.launchCamera(v);
+        ParseQuery queryPropic = ParseUser.getQuery();
+        queryPropic.whereEqualTo("objectId",ParseUser.getCurrentUser().getObjectId());
+        queryPropic.whereExists("Images");
+        queryPropic.findInBackground(new FindCallback<ParseUser>() {
+            public void done(List<ParseUser> objects, ParseException e) {
+                if(e == null && objects.size() != 0){
+                     try {
+                        ParseFile profilepic  = objects.get(0).getParseFile("Images");
+                        byte[] bm = profilepic.getData();
+                        Bitmap bmprofile = BitmapFactory.decodeByteArray(bm,0,bm.length);
+                        imageView1.setImageBitmap(bmprofile);
+                     }catch (ParseException error){
+                        e.printStackTrace();
+                         }
+                                   }
+                else {
+                     Toast.makeText(getActivity(),"Please set a profile picture",Toast.LENGTH_SHORT);
+                    }
             }
         });
-*/
+
+     /*  editprofile = (Button) v.findViewById(R.id.editprofile);
+          editprofile.setOnClickListener(new View.OnClickListener() {
+              @Override
+             public void onClick(View v) {
+                 Editprofilefragment fragment = new Editprofilefragment();
+                 FragmentManager fm = getFragmentManager();
+                 fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
+             }
+         });*/
+        /* final MainActivity main1 = new MainActivity();
+         pic.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+            main1.launchCamera(v);
+             }
+         });
+ */
         /**
          takepic.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -331,4 +339,3 @@ public class ProfilePageFragment extends Fragment {
         iv.setImageDrawable(Drawable.createFromPath(path));
     }
 }
-
