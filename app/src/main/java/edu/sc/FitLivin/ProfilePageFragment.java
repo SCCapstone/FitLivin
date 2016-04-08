@@ -230,6 +230,21 @@ public class ProfilePageFragment extends Fragment {
                         {
                         }
                         else{
+
+
+                            MainActivity m = new MainActivity();
+                            m.ExcTest = 1;
+                           // String value = input.getText().toString();
+                            try {
+                                Integer weight = Integer.parseInt(WEIGHT.getText().toString());
+                                Integer height = Integer.parseInt(HEIGHT.getText().toString());
+                            } catch (NumberFormatException e) {
+                                m.ExcTest = 2;
+                                Toast.makeText(getActivity(), "Invalid Weight", Toast.LENGTH_LONG)
+                                        .show();
+
+                            }
+                            if (m.ExcTest == 1) {
                         int w = Integer.parseInt(WEIGHT.getText().toString());
                         int h = Integer.parseInt(HEIGHT.getText().toString());
                         currentWeight.setText("" + w);
@@ -261,7 +276,7 @@ public class ProfilePageFragment extends Fragment {
                         }}
                         dialog.cancel();
                         // Do something with value!
-                    }
+                    }}
                 });
                 alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
