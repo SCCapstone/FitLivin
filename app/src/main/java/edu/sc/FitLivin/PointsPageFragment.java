@@ -108,7 +108,7 @@ public class PointsPageFragment extends Fragment {
                                                      } catch (ParseException E) {
 
                                                      }
-                                                     Double y = (Double) objects.get(main.leader).get("CurrentPoints");
+                                                     double y = (double) objects.get(main.leader).get("CurrentPoints");
 
                                                      if (arrayList.contains(x)) {
 
