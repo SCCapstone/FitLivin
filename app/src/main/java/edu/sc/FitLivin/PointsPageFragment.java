@@ -10,13 +10,13 @@ package edu.sc.FitLivin;
 import android.app.Fragment;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -93,75 +93,83 @@ public class PointsPageFragment extends Fragment {
         Points2.orderByDescending("createdAt");
 
         Points2.findInBackground(new FindCallback<ParseObject>() {
+
                                      public void done(List<ParseObject> objects, ParseException e) {
-                                         MainActivity main = new MainActivity();
-                                         main.leader = 0;
-                                         while (main.leader != objects.size() - 1) {
+                                         if (e == null) {
+                                             MainActivity main = new MainActivity();
+                                             main.leader = 0;
+                                             while (main.leader != objects.size() - 1) {
 
-                                             if (e == null && objects.size() != 0) { //if objects size is not 0
+                                                 if (e == null && objects.size() != 0) { //if objects size is not 0
 
-                                                 ParseUser user1 = objects.get(main.leader).getParseUser("author");
-                                                 try {
-                                                     x = user1.fetchIfNeeded().getUsername();
-                                                 } catch (ParseException E) {
+                                                     ParseUser user1 = objects.get(main.leader).getParseUser("author");
+                                                     try {
+                                                         x = user1.fetchIfNeeded().getUsername();
+                                                     } catch (ParseException E) {
+
+                                                     }
+                                                     Double y = (Double) objects.get(main.leader).get("CurrentPoints");
+
+                                                     if (arrayList.contains(x)) {
+
+                                                     } else {
+                                                         arrayList.add(x);
+                                                         arrayList3.add(y);
+                                                         myMap.put(y, x);
+                                                         // adapter.notifyDataSetChanged();
+
+                                                     }
+
 
                                                  }
-                                                 Double y = (Double) objects.get(main.leader).get("CurrentPoints");
+                                                 main.leader++;
+                                             }
 
-                                                 if (arrayList.contains(x)) {
 
-                                                 } else {
-                                                     arrayList.add(x);
-                                                     arrayList3.add(y);
-                                                     myMap.put(y, x);
-                                                     // adapter.notifyDataSetChanged();
+                                             Collections.sort(arrayList3);
 
+                                             // String str = new String(charArray);
+                                             Integer place = 1;
+                                             for (Integer i = arrayList3.size() - 1; i >= 0; i--) {
+                                                 Double pts = arrayList3.get(i);
+                                                 String uname = myMap.get(pts);
+                                                 if (uname.equalsIgnoreCase(name1)) {
+                                                     position.setText("" + place);
+                                                     int a = (int) Math.round(pts);
+                                                     currentPoints.setText("" + a);
                                                  }
+                                                 // myMap.remove(pts);
 
-
-                                             }
-                                             main.leader++;
-                                         }
-
-
-                                         Collections.sort(arrayList3);
-
-                                         // String str = new String(charArray);
-                                         Integer place = 1;
-                                         for (Integer i = arrayList3.size() - 1; i >= 0; i--) {
-                                             Double pts = arrayList3.get(i);
-                                             String uname = myMap.get(pts);
-                                             if (uname.equalsIgnoreCase(name1)) {
-                                                 position.setText("" + place);
-                                                 int a = (int) Math.round(pts);
-                                                 currentPoints.setText("" + a);
-                                             }
-                                             // myMap.remove(pts);
-
-                                             // Integer space = 19 - uname.length();
-                                             int b = (int) Math.round(pts);
+                                                 // Integer space = 19 - uname.length();
+                                                 int b = (int) Math.round(pts);
                                             /* for (Integer y = 0; y < space; y++) {
                                                  uname += ".";
                                              }*/
-                                             // System.out.println(uname);
-                                             String padded = uname;
-                                             if (place <= 9) {
-                                                 String s = "  #" + place + ": " + b + " "+ padded;;
-                                                 //System.out.println(s);
-                                                 arrayList2.add(s);
+                                                 // System.out.println(uname);
+                                                 String padded = uname;
+                                                 if (place <= 9) {
+                                                     String s = "  #" + place + ": " + b + " " + padded;
+                                                     ;
+                                                     //System.out.println(s);
+                                                     arrayList2.add(s);
 
-                                             } else {
-                                                 String s = "#" + place + ": " + b + " "+ padded;;
-                                                 //System.out.println(s);
-                                                 arrayList2.add(s);
+                                                 } else {
+                                                     String s = "#" + place + ": " + b + " " + padded;
+                                                     ;
+                                                     //System.out.println(s);
+                                                     arrayList2.add(s);
 
+                                                 }
+                                                 place++;
                                              }
-                                             place++;
+
+                                             adapter.notifyDataSetChanged();
+
+                                         } else {
+                                             Toast.makeText(getActivity(), "You dont have internet!! Call an ISP now!", Toast.LENGTH_SHORT).show();
                                          }
-
-                                         adapter.notifyDataSetChanged();
-
                                      }
+
 
                                  }
 
