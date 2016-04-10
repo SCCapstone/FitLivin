@@ -8,7 +8,6 @@
 
 package edu.sc.FitLivin;
 
-import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -449,7 +448,7 @@ public class MainActivity extends FragmentActivity{
      *
      */
 
-    public void pointsData(Double points, String user) {
+    public void pointsData(double points, String user) {
         Log.d("F", "pdata");
         Double points1 = points;
         String username1 = user;
