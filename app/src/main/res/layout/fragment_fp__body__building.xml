@@ -13,7 +13,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp"
         android:layout_gravity="center"
-        android:background="#e89633" />
+        android:background="#e89633"
+        android:textColor="#ffffff"
+        />
 
     <Button
         android:layout_width="300dp"
@@ -24,7 +26,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="125dp"
         android:layout_gravity="center"
-        android:background="#e8d839" />
+        android:background="#e8d839"
+        android:textColor="#ffffff"
+        />
 
     <Button
         android:layout_width="300dp"
@@ -36,7 +40,9 @@
         android:layout_marginBottom="75dp"
         android:layout_gravity="center"
         android:height="@dimen/activity_vertical_margin"
-        android:background="#e8b63a" />
+        android:background="#e8b63a"
+        android:textColor="#ffffff"
+        />
 
     <Button
         android:layout_width="300dp"
@@ -47,7 +53,9 @@
         android:layout_alignStart="@+id/day4BodyBuilding"
         android:layout_marginBottom="-75dp"
         android:layout_gravity="center"
-        android:background="#e8260e" />
+        android:background="#e8260e"
+        android:textColor="#ffffff"
+        />
 
     <Button
         android:layout_width="300dp"
@@ -58,7 +66,9 @@
         android:layout_alignStart="@+id/day3BodyBuilding"
         android:layout_marginBottom="-25dp"
         android:layout_gravity="center"
-        android:background="#e86f14" />
+        android:background="#e86f14"
+        android:textColor="#ffffff"
+        />
 
     <Button
         android:layout_width="wrap_content"
@@ -66,6 +76,8 @@
         android:text="How To"
         android:id="@+id/howTo"
         android:layout_gravity="center_horizontal|bottom"
-        android:background="#e70b0e" />
+        android:background="#e70b0e"
+        android:textColor="#ffffff"
+        />
 
 </FrameLayout>

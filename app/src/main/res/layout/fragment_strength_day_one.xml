@@ -129,6 +129,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentStart="false"
                 android:background="#e70b0e"
+                android:textColor="#ffffff"
                 />
 
 

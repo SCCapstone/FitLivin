@@ -45,7 +45,9 @@
             android:layout_below="@+id/basedOnGoalsText"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="70dp"
-            android:background="#e70b0e" />
+            android:background="#e70b0e"
+            android:textColor="#ffffff"
+            />
 
 
         <TextView
@@ -69,6 +71,7 @@
             android:clickable="true"
             android:layout_below="@+id/strengthTrainingText"
             android:layout_centerHorizontal="true"
+            android:textColor="#ffffff"
 
 
             android:background="#e70b0e" />
@@ -96,7 +99,9 @@
             android:clickable="true"
             android:layout_below="@+id/bodyBuildingText"
             android:layout_centerHorizontal="true"
-            android:background="#e70b0e" />
+            android:background="#e70b0e"
+            android:textColor="#ffffff"
+            />
 
         <TextView
             android:layout_width="wrap_content"

@@ -90,7 +90,7 @@ public class FPBodyBuildingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 BodyBuildingHowto howTo = new BodyBuildingHowto();
-                FragmentManager fm = getFragmentManager(); //or getFragmentManager() if you are not using support library.
+                FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.container, howTo);
                 ft.addToBackStack(null);

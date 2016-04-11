@@ -134,6 +134,7 @@
         android:layout_below = "@+id/closegripPushupDetail"
         android:layout_gravity="right|bottom"
         android:background="#e70b0e"
+        android:textColor="#ffffff"
         />
 
     </LinearLayout>>

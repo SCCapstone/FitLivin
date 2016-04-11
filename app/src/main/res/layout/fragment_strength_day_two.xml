@@ -120,6 +120,7 @@
                 android:id="@+id/completeDay2s"
                 android:layout_gravity="right|bottom"
                 android:background="#e70b0e"
+                android:textColor="#ffffff"
                 />
 
 

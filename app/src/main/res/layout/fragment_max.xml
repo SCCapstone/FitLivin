@@ -43,6 +43,7 @@
             android:text="Set Bench"
             android:id="@+id/setBench"
             android:background="#e70b0e"
+            android:textColor="#ffffff"
             android:layout_below="@+id/benchText"
             android:layout_marginBottom="10dp"
             android:layout_centerHorizontal="true"
@@ -81,6 +82,7 @@
             android:text="Set Squat"
             android:id="@+id/setSquat"
             android:background="#e70b0e"
+            android:textColor="#ffffff"
             android:layout_below="@+id/squatText"
             android:layout_marginBottom="10dp"
             android:layout_alignStart="@+id/setBench"
@@ -121,6 +123,7 @@
             android:text="Set DeadLift"
             android:id="@+id/setDeadLift"
             android:background="#e70b0e"
+            android:textColor="#ffffff"
             android:layout_below="@+id/deadliftText"
             android:layout_alignStart="@+id/setBench"
             android:layout_marginBottom="10dp"
@@ -162,6 +165,7 @@
             android:text="Set MileTime"
             android:id="@+id/setMileTime"
             android:background="#e70b0e"
+            android:textColor="#ffffff"
             android:layout_below="@+id/mileText"
             android:layout_alignStart="@+id/setBench" />
 

@@ -132,6 +132,8 @@
         android:layout_below = "@+id/dumbbellRowDetail"
         android:background="#e70b0e"
         android:layout_gravity="right|bottom"
+        android:textColor="#ffffff"
+
         />
 
 

@@ -132,7 +132,9 @@
         android:id="@+id/completeDay2bb"
         android:layout_below = "@+id/pushupDetail"
         android:background="#e70b0e"
-        android:layout_gravity="right|bottom" />
+        android:layout_gravity="right|bottom"
+                android:textColor="#ffffff"
+                />
 
 </LinearLayout>>
 

@@ -120,6 +120,7 @@
             android:layout_below = "@+id/jumpropeDetail"
             android:layout_gravity="right|bottom"
             android:background="#e70b0e"
+            android:textColor="#ffffff"
             />
 
 

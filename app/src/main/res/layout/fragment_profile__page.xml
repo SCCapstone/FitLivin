@@ -40,7 +40,7 @@
                 android:text="Take Pic"
                 android:id="@+id/pic"
                 android:background="#e70b0e"
-
+                android:textColor="#ffffff"
                 android:layout_below="@+id/profilepicview"
                 android:layout_alignEnd="@+id/obeseBmi" />
             <Button
@@ -48,6 +48,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editprofilebutton"
                 android:text="editProfile"
+                android:textColor="#ffffff"
                 android:background="#e70b0e"
                 android:layout_alignTop="@+id/pic"
                 android:layout_toEndOf="@+id/textView1"
@@ -81,8 +82,8 @@
                 android:digits="1234567890"
                 android:textColor="#ffffff"
                 android:textSize="23dp"
-                android:layout_alignTop="@+id/CurrW"
-                android:layout_toStartOf="@+id/CurrW" />
+                android:layout_alignBottom="@+id/CurrW"
+                android:layout_alignStart="@+id/CurrHdescrip" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -148,7 +149,7 @@
                 android:background="#e70b0e"
                 android:layout_gravity="center_horizontal"
                 android:layout_below="@+id/CurrH"
-
+                android:textColor="#ffffff"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentStart="true" />
 
