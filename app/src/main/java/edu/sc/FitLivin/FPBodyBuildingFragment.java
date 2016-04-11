@@ -18,6 +18,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 public class FPBodyBuildingFragment extends Fragment {
+    
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_fp__body__building, container, false);
@@ -89,10 +91,10 @@ public class FPBodyBuildingFragment extends Fragment {
         howTo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BodyBuildingHowto howTO = new BodyBuildingHowto();
+                BodyBuildingHowto howTo = new BodyBuildingHowto();
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, howTO);
+                ft.replace(R.id.container, howTo);
                 ft.addToBackStack(null);
                 ft.commit();
             }
