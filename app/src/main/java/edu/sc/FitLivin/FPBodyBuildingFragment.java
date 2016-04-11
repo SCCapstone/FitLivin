@@ -89,10 +89,10 @@ public class FPBodyBuildingFragment extends Fragment {
         howTo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BodyBuildingHowto howTo = new BodyBuildingHowto();
+                BodyBuildingHowto howTO = new BodyBuildingHowto();
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, howTo);
+                ft.replace(R.id.container, howTO);
                 ft.addToBackStack(null);
                 ft.commit();
             }
