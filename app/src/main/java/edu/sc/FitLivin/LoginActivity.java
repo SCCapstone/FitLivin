@@ -60,18 +60,13 @@ public class LoginActivity extends Activity  {
 
                 // Set up a progress dialog
                 final ProgressDialog dlg = new ProgressDialog(LoginActivity.this);
-                dlg.setTitle("Please wait.");
+                dlg.setTitle("FitLivin");
                 dlg.setMessage("Logging in.  Please wait.");
                 dlg.show();
                 // Call the Parse login method
 
 
-              if(usernameView.getText().toString().equalsIgnoreCase("randon3")){
-                  Log.d("LOGIN", "TRUE");
-              }
-                else{
-                  Log.d("LOGIN", "FALSE");
-              }
+
 
                 ParseUser.logInInBackground(usernameView.getText().toString(), passwordView.getText()
                         .toString(), new LogInCallback() {

@@ -9,6 +9,8 @@ package edu.sc.FitLivin;
 
 import android.app.Fragment;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,7 +49,7 @@ public class PointsPageFragment extends Fragment {
         getActivity().getActionBar()
                 .setTitle("Points");
 
-
+       MainActivity main = new MainActivity();
 
         final TextView currentPoints = (TextView) v.findViewById(R.id.PointsView);
         final TextView position = (TextView) v.findViewById(R.id.position);
