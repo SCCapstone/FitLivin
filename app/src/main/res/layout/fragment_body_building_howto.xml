@@ -11,7 +11,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"/>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"
         android:orientation="vertical"
@@ -33,29 +33,12 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="
 
-       Every exercise put forth in the
-       Bodybuilding program will follow
-       the MI40 style of training. This is
-       based off of body builder Ben
-       Pakulski's MI40 workout. Ben
-       Pakulski has spent many years
-       at the highest professional
-       level of body building that
-       is around today. The training
-       style is as follows:
+       Every exercise put forth in the Bodybuilding program will follow the MI40 style of training. This is based off of body builder Ben Pakulski's MI40 workout. Ben Pakulski has spent many years at the highest professional level of body building that is around today. The training style is as follows:
 
-       Each exercise will be preformed
-       as a negative rep. A negative rep
-       is when you eccentrically contract
-       the muscle in a slow controlled
-       manner. An example of this would
-       be bench pressing. When you lower
-       the bar to your chest lowering it
-       to your chest is the eccentric
-       motion. Using the MI40 style of
-       training you will be doing this
-       negative rep for the prescribed
-       rep scheme.
+
+
+
+                        Each exercise will be preformed as a negative rep. A negative rep is when you eccentrically contract the muscle in a slow controlled manner. An example of this would be bench pressing. When you lower the bar to your chest lowering it to your chest is the eccentric motion. Using the MI40 style of training you will be doing this negative rep for the prescribed rep scheme.
 
 
 

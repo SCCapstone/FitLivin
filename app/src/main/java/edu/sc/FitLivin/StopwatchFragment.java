@@ -54,6 +54,7 @@ public class StopwatchFragment extends Fragment implements OnClickListener {
     public void onClick(View v) {
         if (v == startChron){
             chron.start();
+
         }
         else if (v == stopChron){
             chron.stop();
