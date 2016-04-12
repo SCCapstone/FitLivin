@@ -18,6 +18,7 @@
         android:layout_width="fill_parent"
         android:orientation="vertical"
         android:background="#212121"
+        android:id="@+id/relLayout"
         android:layout_gravity="right|top"
         >
 
