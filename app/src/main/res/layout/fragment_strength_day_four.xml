@@ -48,6 +48,7 @@
             android:layout_below="@+id/closeGripBenchImage"
             android:layout_above="@+id/benchDetail"
             android:layout_gravity="center_horizontal"
+            android:textSize="20dp"
             android:id="@+id/closeGripBenchDescription"
             android:textColor="#ffffff"
             />
@@ -82,6 +83,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="4 Sets of 12 reps."
             android:layout_gravity="center_horizontal"
+            android:textSize="20dp"
             android:id="@+id/barbellCurlDescription"
             android:layout_below="@+id/bbcurl"
             android:layout_above="@+id/flyText"
@@ -119,6 +121,7 @@
             android:text="4 Sets of 8 reps."
             android:layout_gravity="center_horizontal"
             android:layout_below="@+id/pushdown"
+            android:textSize="20dp"
             android:id="@+id/tricepPushdownDescription"
             android:textColor="#ffffff"
             />

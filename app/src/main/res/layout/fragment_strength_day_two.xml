@@ -45,6 +45,7 @@
                 android:text="5 Sets of 2 heavy (relative) reps."
                 android:layout_gravity="center_horizontal"
                 android:id="@+id/squatDescription"
+                android:textSize="20dp"
                 android:textColor="#ffffff"
                 />
 
@@ -76,6 +77,7 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="5 Sets of 5 reps."
                 android:layout_gravity="center_horizontal"
+                android:textSize="20dp"
                 android:id="@+id/legPressDescrpition"
                 android:textColor="#ffffff"
                 />
@@ -108,6 +110,7 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="4 Sets of 8 reps."
                 android:layout_gravity="center_horizontal"
+                android:textSize="20dp"
                 android:id="@+id/calfPressDescription"
                 android:textColor="#ffffff"
                 />

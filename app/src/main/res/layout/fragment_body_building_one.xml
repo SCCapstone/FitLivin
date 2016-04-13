@@ -48,6 +48,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_below="@+id/squatImage"
             android:layout_above="@+id/extensionText"
+            android:textSize="20dp"
             android:layout_marginLeft="20dp"
             android:textColor="#ffffff" />
 
@@ -84,6 +85,7 @@
             android:id="@+id/extensionDetail"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="20dp"
+            android:textSize="20dp"
             android:layout_below="@+id/legExtensionImage"
             android:layout_above="@+id/hamstringText"
             android:textColor="#ffffff"
@@ -121,6 +123,7 @@
             android:text="4 sets of 15 repetitions."
             android:id="@+id/hamstringDetail"
             android:layout_gravity="center_horizontal"
+            android:textSize="20dp"
             android:layout_marginLeft="20dp"
             android:layout_below="@+id/curlImage"
             android:textColor="#ffffff" />

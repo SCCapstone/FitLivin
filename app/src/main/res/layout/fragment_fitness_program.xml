@@ -20,6 +20,7 @@
             android:text="Choose your Fitness Program:"
             android:id="@+id/chooseFitnessProgramText"
             android:textColor="#ffffff"
+            android:textSize="20dp"
             android:layout_centerHorizontal="true"
             />
 
@@ -30,6 +31,7 @@
             android:text="Based on YOUR Individual Goals"
             android:id="@+id/basedOnGoalsText"
             android:textColor="#ffffff"
+            android:textSize="20dp"
             android:layout_below="@+id/chooseFitnessProgramText"
             android:layout_centerHorizontal="true"
             />
@@ -59,6 +61,7 @@
             android:textColor="@android:color/white"
             android:layout_below="@id/StrengthTrainingButton"
             android:layout_centerHorizontal="true"
+            android:textSize="18dp"
             android:layout_margin="10dp"
             />
 
@@ -85,6 +88,7 @@
             android:textColor="@android:color/white"
             android:layout_below="@id/BodyBuildingButton"
             android:layout_centerHorizontal="true"
+            android:textSize="18dp"
             android:layout_margin="10dp"
 
 
@@ -113,6 +117,7 @@
             android:layout_below="@+id/WeightLossButton"
             android:layout_centerHorizontal="true"
             android:layout_margin="10dp"
+            android:textSize="18dp"
             />
 
 

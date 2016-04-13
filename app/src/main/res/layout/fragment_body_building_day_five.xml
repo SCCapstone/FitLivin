@@ -49,6 +49,7 @@
             android:layout_below="@+id/militaryPressImage"
             android:layout_above="@+id/sideRaiseText"
             android:layout_gravity="center_horizontal"
+            android:textSize="20dp"
             android:textColor="#ffffff"
             />
 
@@ -84,6 +85,7 @@
             android:id="@+id/sideLatRaiseDetail"
             android:layout_below="@+id/sideLatImage"
             android:layout_above="@+id/shoulderPressText"
+            android:textSize="20dp"
             android:layout_gravity="center_horizontal"
             android:textColor="#ffffff"
             />
@@ -122,6 +124,7 @@
             android:id="@+id/shoulderPressDetail"
             android:layout_below="@+id/shoulderpressImage"
             android:layout_gravity="center_horizontal"
+            android:textSize="20dp"
             android:textColor="#ffffff"
             />
 

@@ -48,6 +48,7 @@
             android:id="@+id/hammerCurlDetail"
             android:layout_below="@+id/hammerCurlImage"
             android:layout_above="@+id/preacherCurlText"
+            android:textSize="20dp"
             android:layout_gravity="center_horizontal"
             android:textColor="#ffffff" />
 
@@ -85,6 +86,7 @@
             android:text="4 Sets of 10-12 repititions  "
             android:id="@+id/preacherCurlDetail"
             android:layout_gravity="center_horizontal"
+            android:textSize="20dp"
             android:textColor="#ffffff"
             android:layout_below="@+id/preacherCurlImage"
             android:layout_above="@+id/closegripPushupText"
@@ -121,6 +123,7 @@
             android:text="4 sets of 5-15 concentrated repetitions (Depending on skill level)"
             android:id="@+id/closegripPushupDetail"
             android:layout_gravity="center_horizontal"
+            android:textSize="20dp"
             android:textColor="#ffffff"
             android:layout_below="@+id/closegrippushupImage"
             android:layout_above="@+id/completeDay3bb"/>

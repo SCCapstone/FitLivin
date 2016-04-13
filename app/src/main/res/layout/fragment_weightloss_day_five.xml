@@ -45,6 +45,7 @@
             android:layout_gravity="center_horizontal"
             android:textColor="#ffffff"
             android:text="Choice of treadmill or laps around track"
+            android:textSize="20dp"
             />
 
 
@@ -74,6 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="3 Sets 60 second reps"
+            android:textSize="20dp"
             android:id="@+id/powerjumpDetail"
             android:layout_gravity="center_horizontal"
             android:layout_below = "@+id/powerjumpImage"
@@ -109,6 +111,7 @@
             android:id="@+id/burpiesDetail"
             android:layout_gravity="center_horizontal"
             android:layout_below = "@+id/burpeesImage"
+            android:textSize="20dp"
             android:textColor="#ffffff"
             />
 

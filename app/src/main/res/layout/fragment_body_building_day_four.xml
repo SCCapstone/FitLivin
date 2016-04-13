@@ -48,6 +48,7 @@
                 android:id="@+id/deadliftDetail"
                 android:layout_below="@+id/deadliftImage"
                 android:layout_above="@+id/pullupText"
+                android:textSize="20dp"
                 android:layout_gravity="center_horizontal"
                 android:textColor="#ffffff"
                 />
@@ -83,6 +84,7 @@
                 android:text="3 Sets of 6-10 repetitions depending on skill level."
                 android:id="@+id/pullupDetail"
                 android:layout_gravity="center_horizontal"
+                android:textSize="20dp"
                 android:textColor="#ffffff"
                 android:layout_below="@+id/pullupImage"
                 android:layout_above="@+id/dumbbellRowText"
@@ -119,6 +121,7 @@
                 android:text="4 sets of 15 repetitions."
                 android:id="@+id/dumbbellRowDetail"
                 android:layout_gravity="center_horizontal"
+                android:textSize="20dp"
                 android:textColor="#ffffff"
                 android:layout_below="@+id/dumbbellRowImage"
                 android:layout_above="@+id/completeDay4bb"

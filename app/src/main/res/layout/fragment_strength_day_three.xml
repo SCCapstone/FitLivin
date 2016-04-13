@@ -45,6 +45,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="5 Sets of 2 heavy (relative) reps."
             android:layout_gravity="center_horizontal"
+            android:textSize="20dp"
             android:id="@+id/deadeliftDescription"
             android:textColor="#ffffff"
             />
@@ -77,6 +78,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="3 Sets of 8 reps."
             android:layout_gravity="center_horizontal"
+            android:textSize="20dp"
             android:id="@+id/dbrowDescription"
             android:textColor="#ffffff"
             />
@@ -109,6 +111,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="3 Sets of 10 reps."
             android:layout_gravity="center_horizontal"
+            android:textSize="20dp"
             android:id="@+id/shrugDescription"
             android:textColor="#ffffff"
             />

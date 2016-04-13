@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/name"
                 android:layout_gravity="left|center_vertical"
-                android:textSize="19dp"
+                android:textSize="20dp"
                 android:text="Username"
                 android:textColor="#ffffff"
                 android:layout_below="@+id/profilepicview"
@@ -81,7 +81,7 @@
                 android:inputType="number"
                 android:digits="1234567890"
                 android:textColor="#ffffff"
-                android:textSize="23dp"
+                android:textSize="20dp"
                 android:layout_alignBottom="@+id/CurrW"
                 android:layout_alignStart="@+id/CurrHdescrip" />
 
@@ -92,7 +92,7 @@
                 android:text="0"
                 android:layout_gravity="center"
                 android:textColor="#ffffff"
-                android:textSize="30dp"
+                android:textSize="20dp"
                 android:layout_above="@+id/textView3"
                 android:layout_centerHorizontal="true" />
             <TextView
@@ -104,7 +104,7 @@
                 android:textColor="#ffffff"
                 android:inputType="number"
                 android:digits="1234567890"
-                android:textSize="30dp"
+                android:textSize="20dp"
                 android:layout_toEndOf="@+id/CurrW"
                 android:layout_below="@+id/textView1"
 
@@ -186,7 +186,7 @@
                 android:layout_below="@+id/underBmi"
                 android:layout_toStartOf="@+id/normal"
                 android:background="#46d4e8"
-                android:textSize="18dp"
+                android:textSize="20dp"
                 android:textIsSelectable="true" />
             <TextView
                 android:layout_width="wrap_content"
@@ -196,7 +196,7 @@
                 android:layout_below="@+id/textView4"
                 android:layout_toStartOf="@+id/normal"
                 android:textColor="#46d4e8"
-                android:textSize="18dp"
+                android:textSize="20dp"
                 />
 
             <TextView
@@ -207,7 +207,7 @@
                 android:layout_below="@+id/normalBmi"
                 android:layout_toStartOf="@+id/textView4"
                 android:background="#31e83c"
-                android:textSize="18dp"/>
+                android:textSize="20dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -216,7 +216,7 @@
                 android:layout_below="@+id/textView4"
                 android:layout_toStartOf="@+id/over"
                 android:textColor="#31e83c"
-                android:textSize="18dp"
+                android:textSize="20dp"
                 />
 
             <TextView
@@ -227,7 +227,7 @@
                 android:layout_below="@+id/overBmi"
                 android:layout_toEndOf="@+id/textView4"
                 android:background="#e8b72c"
-                android:textSize="18dp"/>
+                android:textSize="20dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -236,7 +236,7 @@
                 android:layout_below="@+id/textView4"
                 android:layout_toStartOf="@+id/obese"
                 android:textColor="#e8b72c"
-                android:textSize="18dp"
+                android:textSize="20dp"
                 />
 
             <TextView
@@ -247,7 +247,7 @@
                 android:layout_below="@+id/obeseBmi"
                 android:layout_toEndOf="@+id/over"
                 android:background="#e80407"
-                android:textSize="18dp"/>
+                android:textSize="20dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -255,7 +255,7 @@
                 android:id="@+id/extra"
                 android:layout_below="@+id/obeseBmi"
                 android:layout_toEndOf="@+id/obese"
-                android:textSize="18dp"/>
+                android:textSize="20dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -264,7 +264,7 @@
                 android:layout_below="@+id/textView4"
                 android:layout_toStartOf="@+id/extra"
                 android:textColor="#e80407"
-                android:textSize="18dp"
+                android:textSize="20dp"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -272,7 +272,7 @@
                 android:id="@+id/undernorm"
                 android:text="18"
                 android:textColor="#ffffff"
-                android:textSize="15dp"
+                android:textSize="20dp"
                 android:layout_toEndOf="@+id/under"
                 android:layout_below="@+id/under"
 
@@ -283,7 +283,7 @@
                 android:id="@+id/normover"
                 android:text="25"
                 android:textColor="#ffffff"
-                android:textSize="15dp"
+                android:textSize="20dp"
                 android:layout_toEndOf="@+id/normal"
                 android:layout_below="@+id/normal"
 
@@ -294,7 +294,7 @@
                 android:id="@+id/overbese"
                 android:text="30"
                 android:textColor="#ffffff"
-                android:textSize="15dp"
+                android:textSize="20dp"
                 android:layout_toEndOf="@+id/over"
                 android:layout_below="@+id/over"
 
@@ -308,7 +308,7 @@
                 android:layout_below="@+id/weightButton"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="33dp"
-
+                android:textSize="20dp"
                 android:textColor="#ffffff" />
 
 

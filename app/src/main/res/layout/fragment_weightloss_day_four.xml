@@ -42,6 +42,7 @@
                 android:layout_below = "@+id/jogginImage"
                 android:id="@+id/warmupDetail"
                 android:layout_gravity="center_horizontal"
+                android:textSize="20dp"
                 android:textColor="#ffffff"
                 android:text="Choice of treadmill or laps around track"
                 />
@@ -74,6 +75,7 @@
                 android:text="4 Sets of 12 reps (minimal rest)"
                 android:id="@+id/rowDetail"
                 android:layout_gravity="center_horizontal"
+                android:textSize="20dp"
                 android:layout_below = "@+id/rowImage"
                 android:textColor="#ffffff"
                 />
@@ -107,6 +109,7 @@
                 android:id="@+id/cardioDetail"
                 android:layout_gravity="center_horizontal"
                 android:layout_below = "@+id/cardioImage"
+                android:textSize="20dp"
                 android:textColor="#ffffff"
                 />
 

@@ -32,32 +32,102 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="
-
-        All major lifts (Bench press, Deadlift, and Squat) will follow the Hepburn method. This method was created by Doug Hepburn to help people make continuous strength gains throughout their lifting career. Here&apos;s how it works:
-
-                        You will bench press and squat twice a week and deadlift once a week. Pick a weight that is 80% of your 1 rep max. Warm up with two to three sets then do the following:
-
-                      The first time running the program for a new weight 8 sets by 2 reps. The second time you will do the below scheme with the same weight.
-
-     1 set by 3 reps and 7 sets by 2 reps
-                The proceding times will look like this
-        3,3,2,2,2,2,2,2
-        3,3,3,2,2,2,2,2
-        3,3,3,3,2,2,2,2
-        3,3,3,3,3,2,2,2
-        3,3,3,3,3,3,2,2
-        3,3,3,3,3,3,3,2
-        3,3,3,3,3,3,3,3
-                         Once all sets are preformed with 3 reps increase the weight 5 - 10 lbs and start over with 8x2.
-            "
+        android:text="   All major lifts (Bench press, Dead lift, and Squat) will follow the Hepburn method. This method was created by Doug Hepburn to help people make continuous strength gains throughout their lifting career. You will bench press and squat twice a week and dead lift once a week. Pick a weight that is 80% of your 1 rep max. Warm up with two to three sets then do the following: The first time running the program for a new weight 8 sets by 2 reps. The second time you will do the next scheme with the same weight. 1 set by 3 reps and 7 sets by 2 reps. The proceeding times will look like this:"
         android:id="@+id/textView24"
         android:layout_gravity="right|center_vertical"
         android:textColor="#FFFFFF"
         android:background="#212121"
         android:autoText="true" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="3,3,2,2,2,2,2,2"
+            android:id="@+id/textView25"
+            android:background="#212121"
+            android:textColor="#e70b0e"
+            android:layout_gravity="center"
+            android:layout_below="@+id/textView24"
+            android:autoText="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="3,3,3,2,2,2,2,2"
+            android:id="@+id/textView27"
+            android:background="#212121"
+            android:textColor="#e70b0e"
+            android:layout_gravity="center"
+            android:layout_below="@+id/textView25"
+            android:autoText="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="3,3,3,3,2,2,2,2"
+            android:id="@+id/textView28"
+            android:background="#212121"
+            android:textColor="#e70b0e"
+            android:layout_gravity="center"
+            android:layout_below="@+id/textView27"
+            android:autoText="true" />
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="3,3,3,3,3,2,2,2"
+        android:id="@+id/textView29"
+        android:background="#212121"
+        android:textColor="#e70b0e"
+            android:layout_gravity="center"
+        android:layout_below="@+id/textView28"
+        android:autoText="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="3,3,3,3,3,3,2,2"
+            android:id="@+id/textView30"
+            android:background="#212121"
+            android:textColor="#e70b0e"
+            android:layout_gravity="center"
+            android:layout_below="@+id/textView29"
+            android:autoText="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="3,3,3,3,3,3,3,2"
+            android:id="@+id/textView31"
+            android:background="#212121"
+            android:textColor="#e70b0e"
+            android:layout_gravity="center"
+            android:layout_below="@+id/textView30"
+            android:autoText="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="3,3,3,3,3,3,3,3"
+            android:id="@+id/textView32"
+            android:background="#212121"
+            android:textColor="#e70b0e"
+            android:layout_gravity="center"
+            android:layout_below="@+id/textView31"
+            android:autoText="true" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Once all sets are preformed with 3 reps increase the weight 5 - 10 lbs and start over with 8x2."
+            android:id="@+id/textView26"
+            android:layout_gravity="right|center_vertical"
+            android:textColor="#FFFFFF"
+            android:background="#212121"
+            android:layout_below="@+id/textView25"
+            android:autoText="true" />
 
     </LinearLayout>>
 
