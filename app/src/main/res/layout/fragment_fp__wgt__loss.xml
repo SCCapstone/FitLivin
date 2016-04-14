@@ -15,7 +15,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp"
         android:layout_gravity="center"
-        android:background="#e89633"
+        android:background="#e88281"
         android:textColor="#ffffff"
         />
 
@@ -27,7 +27,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="125dp"
         android:layout_gravity="center"
-        android:background="#e8d839"
+        android:background="#2d84e8"
         android:textColor="#ffffff"
         />
 
@@ -40,7 +40,7 @@
         android:layout_marginBottom="75dp"
         android:layout_gravity="center"
         android:height="@dimen/activity_vertical_margin"
-        android:background="#e8b63a"
+        android:background="#81c2e8"
         android:textColor="#ffffff"
         />
 
@@ -52,7 +52,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="-75dp"
         android:layout_gravity="center"
-        android:background="#e8260e"
+        android:background="#e70b0e"
         android:textColor="#ffffff"
         />
 
@@ -64,7 +64,7 @@
 
         android:layout_marginBottom="-25dp"
         android:layout_gravity="center"
-        android:background="#e86f14"
+        android:background="#e83e36"
         android:textColor="#ffffff"
         />
 

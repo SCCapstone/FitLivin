@@ -41,7 +41,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Choice of treadmill or laps around track"
+            android:text="Choice of treadmill or track"
             android:textSize="20dp"
             android:id="@+id/warmupDetail"
             android:layout_gravity="center_horizontal"
@@ -74,7 +74,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3 Sets of 12 lounger per leg with 50-100 lbs on shoulders (depending on skill level)"
+            android:text="3 Sets of 12 lounges per leg"
             android:id="@+id/lungesDetail"
             android:layout_gravity="center_horizontal"
             android:textSize="20dp"

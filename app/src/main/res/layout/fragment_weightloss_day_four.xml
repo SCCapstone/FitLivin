@@ -44,7 +44,7 @@
                 android:layout_gravity="center_horizontal"
                 android:textSize="20dp"
                 android:textColor="#ffffff"
-                android:text="Choice of treadmill or laps around track"
+                android:text="Choice of treadmill or track"
                 />
 
             <TextView
@@ -72,7 +72,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4 Sets of 12 reps (minimal rest)"
+                android:text="4 Sets of 12 reps"
                 android:id="@+id/rowDetail"
                 android:layout_gravity="center_horizontal"
                 android:textSize="20dp"

@@ -44,7 +44,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="4 Sets of 10-12 Repetitions "
+            android:text="4 Sets of 10-12 Repetitions"
             android:id="@+id/hammerCurlDetail"
             android:layout_below="@+id/hammerCurlImage"
             android:layout_above="@+id/preacherCurlText"
@@ -120,7 +120,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="4 sets of 5-15 concentrated repetitions (Depending on skill level)"
+            android:text="4 sets of 5-15 repetitions"
             android:id="@+id/closegripPushupDetail"
             android:layout_gravity="center_horizontal"
             android:textSize="20dp"

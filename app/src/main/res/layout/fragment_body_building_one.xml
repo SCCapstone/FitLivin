@@ -43,13 +43,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="4 Sets of 10-12 Repetitions. (1 minute rest between sets)"
+            android:text="4 Sets of 10-12 Repetitions"
             android:id="@+id/benchDetail"
             android:layout_gravity="center_horizontal"
             android:layout_below="@+id/squatImage"
             android:layout_above="@+id/extensionText"
             android:textSize="20dp"
-            android:layout_marginLeft="20dp"
             android:textColor="#ffffff" />
 
 
@@ -81,7 +80,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="4 Sets of 15 repetitions. "
+            android:text="4 Sets of 15 repetitions"
             android:id="@+id/extensionDetail"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="20dp"
@@ -120,7 +119,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="4 sets of 15 repetitions."
+            android:text="4 sets of 15 repetitions"
             android:id="@+id/hamstringDetail"
             android:layout_gravity="center_horizontal"
             android:textSize="20dp"

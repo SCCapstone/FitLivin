@@ -44,7 +44,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4 Sets of 8 Repetitions. (2 minute rest between sets)"
+                android:text="4 Sets of 8 Repetitions"
                 android:id="@+id/deadliftDetail"
                 android:layout_below="@+id/deadliftImage"
                 android:layout_above="@+id/pullupText"
@@ -81,7 +81,7 @@
             <TextView
                 android:layout_width="206dp"
                 android:layout_height="49dp"
-                android:text="3 Sets of 6-10 repetitions depending on skill level."
+                android:text="3 Sets of 6-10 repetitions"
                 android:id="@+id/pullupDetail"
                 android:layout_gravity="center_horizontal"
                 android:textSize="20dp"
@@ -118,7 +118,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4 sets of 15 repetitions."
+                android:text="4 sets of 15 repetitions"
                 android:id="@+id/dumbbellRowDetail"
                 android:layout_gravity="center_horizontal"
                 android:textSize="20dp"
