@@ -11,11 +11,12 @@
         android:text="Leaderboard:"
         android:id="@+id/LeaderTitle"
         android:textSize="20dp"
-        android:background="#212121"
+        android:background="#e70b0e"
         android:autoText="true"
         android:textColor="#ffffff"
-        android:layout_below="@+id/points"
-        android:layout_alignStart="@+id/listView4" />
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/with"
+        android:layout_alignParentStart="true" />
 
         <ListView
             android:layout_width="200dp"
@@ -57,7 +58,8 @@
         android:id="@+id/YouAre"
         android:textColor="#ffffff"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -65,7 +67,8 @@
         android:id="@+id/position"
         android:textColor="#e70b0e"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/YouAre" />
+        android:layout_toEndOf="@+id/YouAre"
+        android:textSize="20dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -75,7 +78,8 @@
         android:textColor="#ffffff"
         android:layout_below="@+id/YouAre"
         android:layout_toLeftOf="@+id/PointsView"
-         />
+        android:textSize="20dp"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -86,6 +90,7 @@
         android:text="Points"
         android:layout_below="@+id/YouAre"
         android:layout_centerHorizontal="true"
+        android:textSize="20dp"
 
         />
 
@@ -97,7 +102,8 @@
         android:textColor="#ffffff"
         android:layout_toEndOf="@+id/PointsView"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/YouAre"/>
+        android:layout_below="@+id/YouAre"
+        android:textSize="20dp" />
 
 
 </RelativeLayout>
