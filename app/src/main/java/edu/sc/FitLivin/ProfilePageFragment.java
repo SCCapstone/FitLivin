@@ -10,8 +10,6 @@ package edu.sc.FitLivin;
 
 import android.app.AlertDialog;
 import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -96,8 +94,8 @@ public class ProfilePageFragment extends Fragment {
         final TextView VeiwName = (TextView) v.findViewById(R.id.name);
 
         //final TextView currentName = (TextView) v.findViewById(R.id.CurrN);
-        final Button takepic = (Button) v.findViewById(R.id.pic);
-        final Button editprofileinfo = (Button) v.findViewById(R.id.editprofilebutton);
+
+
         final TextView currentHeight = (TextView) v.findViewById(R.id.CurrH);
         final TextView currentWeight = (TextView) v.findViewById(R.id.CurrW);
         final TextView underBMI = (TextView) v.findViewById(R.id.underBmi);
@@ -136,17 +134,7 @@ public class ProfilePageFragment extends Fragment {
 
         });
 
-        editprofileinfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Editprofilefragment frag = new Editprofilefragment();
-                FragmentManager fm = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, frag);
-                ft.addToBackStack(null);
-                ft.commit();
-            }
-        });
+
 
 
         ParseQuery query2 = ParseQuery.getQuery("ProfileInfo"); //getting query

@@ -12,14 +12,12 @@ import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
-import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.FragmentActivity;
@@ -362,6 +360,15 @@ public class MainActivity extends FragmentActivity{
 
         if(id == R.id.uName){
             ProfilePageFragment fragment6 = new ProfilePageFragment();
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.container, fragment6);
+            ft.addToBackStack(null);
+            ft.commit();
+            return true;
+        }
+        if(id == R.id.editprofile){
+            Editprofilefragment fragment6 = new Editprofilefragment();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.container, fragment6);

@@ -34,27 +34,6 @@
                 android:layout_centerHorizontal="true"
               />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Take Pic"
-                android:id="@+id/pic"
-                android:background="#e70b0e"
-                android:textColor="#ffffff"
-                android:layout_below="@+id/profilepicview"
-                android:layout_alignEnd="@+id/obeseBmi" />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/editprofilebutton"
-                android:text="editProfile"
-                android:textColor="#ffffff"
-                android:background="#e70b0e"
-                android:layout_alignTop="@+id/pic"
-                android:layout_toEndOf="@+id/textView1"
-                android:layout_marginLeft="20dp"
-                />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -82,8 +61,8 @@
                 android:digits="1234567890"
                 android:textColor="#ffffff"
                 android:textSize="20dp"
-                android:layout_alignBottom="@+id/CurrW"
-                android:layout_alignStart="@+id/CurrHdescrip" />
+                android:layout_alignTop="@+id/CurrW"
+                android:layout_alignStart="@+id/name" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -92,14 +71,13 @@
                 android:text="0"
                 android:layout_gravity="center"
                 android:textColor="#ffffff"
-                android:textSize="20dp"
-                android:layout_above="@+id/textView3"
-                android:layout_centerHorizontal="true" />
+                android:textSize="25dp"
+                android:layout_below="@+id/textView1"
+                android:layout_alignEnd="@+id/name" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/CurrWlbs"
-                android:text="(lbs)"
                 android:layout_gravity="center"
                 android:textColor="#ffffff"
                 android:inputType="number"
@@ -137,9 +115,9 @@
                 android:digits="1234567890"
                 android:layout_gravity="center"
                 android:textColor="#ffffff"
-                android:textSize="30dp"
-                android:layout_above="@+id/textView4"
-                android:layout_centerHorizontal="true" />
+                android:textSize="25dp"
+                android:layout_alignBottom="@+id/CurrHdescrip"
+                android:layout_alignStart="@+id/CurrW" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -161,7 +139,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/CurrHinch"
-                android:text="(in)"
 
                 android:layout_gravity="center"
                 android:textColor="#ffffff"
