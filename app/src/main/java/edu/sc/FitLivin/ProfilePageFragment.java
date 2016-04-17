@@ -71,14 +71,7 @@ public class ProfilePageFragment extends Fragment {
         //getActivity().getActionBar()
         // .setTitle("Profile");
         MainActivity main = new MainActivity();
-        p = (Button) v.findViewById(R.id.pic);
 
-        p.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), CameraActivity.class));
-            }
-        });
         imageView1 = (CircleImageView) v.findViewById(R.id.profilepicview);
         //  Bitmap bm = BitmapFactory.decodeResource(getResources(),R.drawable.don);
 

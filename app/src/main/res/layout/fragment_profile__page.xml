@@ -60,9 +60,9 @@
                 android:inputType="number"
                 android:digits="1234567890"
                 android:textColor="#ffffff"
-                android:textSize="20dp"
-                android:layout_alignTop="@+id/CurrW"
-                android:layout_alignStart="@+id/name" />
+                android:textSize="25dp"
+                android:layout_alignBottom="@+id/CurrWlbs"
+                android:layout_toEndOf="@+id/undernorm" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -72,8 +72,8 @@
                 android:layout_gravity="center"
                 android:textColor="#ffffff"
                 android:textSize="25dp"
-                android:layout_below="@+id/textView1"
-                android:layout_alignEnd="@+id/name" />
+                android:layout_alignTop="@+id/CurrWlbs"
+                android:layout_toEndOf="@+id/bmiLabel" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -103,9 +103,9 @@
                 android:textColor="#ffffff"
                 android:inputType="number"
                 android:digits="1234567890"
-                android:textSize="23dp"
-                android:layout_below="@+id/textView3"
-                android:layout_toStartOf="@+id/CurrH" />
+                android:textSize="25dp"
+                android:layout_alignTop="@+id/CurrHinch"
+                android:layout_alignStart="@+id/CurrWdescrip" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
