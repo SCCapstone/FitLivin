@@ -126,7 +126,13 @@
             android:layout_marginLeft="20dp"
             android:layout_below="@+id/curlImage"
             android:textColor="#ffffff" />
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/space2"
+            android:textSize="20dp"
+            android:layout_below="@+id/hamstringDetail"
+            />
 
     <Button
         android:layout_width="wrap_content"

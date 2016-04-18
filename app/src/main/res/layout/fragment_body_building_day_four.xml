@@ -79,8 +79,8 @@
         />
 
             <TextView
-                android:layout_width="206dp"
-                android:layout_height="49dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="3 Sets of 6-10 repetitions"
                 android:id="@+id/pullupDetail"
                 android:layout_gravity="center_horizontal"
@@ -125,6 +125,13 @@
                 android:textColor="#ffffff"
                 android:layout_below="@+id/dumbbellRowImage"
                 android:layout_above="@+id/completeDay4bb"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:id="@+id/space2"
+                android:textSize="20dp"
+                android:layout_below="@+id/dumbbellRowDetail"
                 />
 
     <Button

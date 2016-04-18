@@ -214,6 +214,7 @@ public class TrackProgressFragment extends Fragment {
             ParseQuery query = ParseQuery.getQuery("ProfileInfo"); //getting query
             query.whereExists("Weight");//setting constraints
             query.whereExists("Height");//setting constraints
+            query.orderByDescending("createdAt");
             query.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
             query.findInBackground(new FindCallback<ParseObject>() {
                 public void done(List<ParseObject> objects, ParseException e) {
@@ -350,6 +351,7 @@ public class TrackProgressFragment extends Fragment {
             ParseQuery query = ParseQuery.getQuery("MaxBench"); //getting query
             ParseQuery userquery = ParseUser.getQuery();
             userquery.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
+            query.orderByDescending("createdAt");
             query.whereMatchesQuery("author",userquery);
             query.findInBackground(new FindCallback<ParseObject>() {
                 public void done(List<ParseObject> objects, ParseException e) {
@@ -377,7 +379,7 @@ public class TrackProgressFragment extends Fragment {
                                 mSeries3.setTitle("Max bench");
                                 mSeries3.setThickness(7);
                                 mSeries4.setThickness(7);
-                                mSeries3.setColor(Color.YELLOW);
+                                mSeries3.setColor(Color.RED);
                                 mSeries4.setColor(Color.RED);
                                 mSeries3.isDrawDataPoints();
                                 mSeries3.setOnDataPointTapListener(new OnDataPointTapListener() {
@@ -458,7 +460,8 @@ public class TrackProgressFragment extends Fragment {
             ParseQuery query = ParseQuery.getQuery("MaxSquat"); //getting query
             ParseQuery userquery = ParseUser.getQuery();
             userquery.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
-            query.whereMatchesQuery("author",userquery);
+            query.whereMatchesQuery("author", userquery);
+            query.orderByDescending("createdAt");
             query.findInBackground(new FindCallback<ParseObject>() {
                 public void done(List<ParseObject> objects, ParseException e) {
                     if (e == null && objects.size() != 0) { //if objects size is not 0
@@ -561,7 +564,8 @@ public class TrackProgressFragment extends Fragment {
             ParseQuery query = ParseQuery.getQuery("MaxDeadLift"); //getting query
             ParseQuery userquery = ParseUser.getQuery();
             userquery.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
-            query.whereMatchesQuery("author",userquery);
+            query.whereMatchesQuery("author", userquery);
+            query.orderByDescending("createdAt");
             query.findInBackground(new FindCallback<ParseObject>() {
                 public void done(List<ParseObject> objects, ParseException e) {
                     if (e == null && objects.size() != 0) { //if objects size is not 0
@@ -586,7 +590,7 @@ public class TrackProgressFragment extends Fragment {
                                 mSeries3.setTitle("Max Deadlift");
                                 mSeries3.setThickness(7);
                                 mSeries4.setThickness(7);
-                                mSeries3.setColor(Color.BLUE);
+                                mSeries3.setColor(Color.MAGENTA);
                                 mSeries4.setColor(Color.RED);
                                 mSeries3.isDrawDataPoints();
                                 mSeries3.setOnDataPointTapListener(new OnDataPointTapListener() {
@@ -663,7 +667,8 @@ public class TrackProgressFragment extends Fragment {
             ParseQuery query = ParseQuery.getQuery("MaxMileTime"); //getting query
             ParseQuery userquery = ParseUser.getQuery();
             userquery.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
-            query.whereMatchesQuery("author",userquery);
+            query.whereMatchesQuery("author", userquery);
+            query.orderByDescending("createdAt");
             query.findInBackground(new FindCallback<ParseObject>() {
                 public void done(List<ParseObject> objects, ParseException e) {
                     if (e == null && objects.size() != 0) { //if objects size is not 0
