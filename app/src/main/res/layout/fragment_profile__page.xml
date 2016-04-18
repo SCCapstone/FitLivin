@@ -60,7 +60,7 @@
                 android:inputType="number"
                 android:digits="1234567890"
                 android:textColor="#ffffff"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 android:layout_alignBottom="@+id/CurrWlbs"
                 android:layout_toEndOf="@+id/undernorm" />
 
@@ -71,9 +71,9 @@
                 android:text="0"
                 android:layout_gravity="center"
                 android:textColor="#ffffff"
-                android:textSize="25dp"
-                android:layout_alignTop="@+id/CurrWlbs"
-                android:layout_toEndOf="@+id/bmiLabel" />
+                android:textSize="20dp"
+                android:layout_alignBottom="@+id/CurrWdescrip"
+                android:layout_toEndOf="@+id/CurrWdescrip" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -103,7 +103,7 @@
                 android:textColor="#ffffff"
                 android:inputType="number"
                 android:digits="1234567890"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 android:layout_alignTop="@+id/CurrHinch"
                 android:layout_alignStart="@+id/CurrWdescrip" />
             <TextView
@@ -115,9 +115,16 @@
                 android:digits="1234567890"
                 android:layout_gravity="center"
                 android:textColor="#ffffff"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 android:layout_alignBottom="@+id/CurrHdescrip"
-                android:layout_alignStart="@+id/CurrW" />
+                android:layout_toEndOf="@+id/CurrHdescrip" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:id="@+id/space"
+                android:textSize="20dp"
+                android:layout_below="@+id/CurrH"
+               />
 
             <Button
                 android:layout_width="wrap_content"
@@ -126,7 +133,7 @@
                 android:id="@+id/weightButton"
                 android:background="#e70b0e"
                 android:layout_gravity="center_horizontal"
-                android:layout_below="@+id/CurrH"
+                android:layout_below="@+id/space"
                 android:textColor="#ffffff"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentStart="true" />
@@ -139,7 +146,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/CurrHinch"
-
                 android:layout_gravity="center"
                 android:textColor="#ffffff"
                 android:textSize="30dp"
@@ -170,7 +176,7 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:id="@+id/underBmi"
-                android:layout_below="@+id/textView4"
+                android:layout_below="@+id/space2"
                 android:layout_toStartOf="@+id/normal"
                 android:textColor="#46d4e8"
                 android:textSize="20dp"
@@ -190,7 +196,7 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:id="@+id/normalBmi"
-                android:layout_below="@+id/textView4"
+                android:layout_below="@+id/space2"
                 android:layout_toStartOf="@+id/over"
                 android:textColor="#31e83c"
                 android:textSize="20dp"
@@ -210,7 +216,7 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:id="@+id/overBmi"
-                android:layout_below="@+id/textView4"
+                android:layout_below="@+id/space2"
                 android:layout_toStartOf="@+id/obese"
                 android:textColor="#e8b72c"
                 android:textSize="20dp"
@@ -238,7 +244,7 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:id="@+id/obeseBmi"
-                android:layout_below="@+id/textView4"
+                android:layout_below="@+id/space2"
                 android:layout_toStartOf="@+id/extra"
                 android:textColor="#e80407"
                 android:textSize="20dp"
@@ -280,13 +286,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Your BMI is:"
+                android:text="BODY MASS INDEX:"
                 android:id="@+id/bmiLabel"
                 android:layout_below="@+id/weightButton"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="33dp"
                 android:textSize="20dp"
                 android:textColor="#ffffff" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="5dp"
+                android:id="@+id/space2"
+                android:textSize="20dp"
+                android:layout_below="@+id/bmiLabel"
+                />
 
 
         </RelativeLayout>
