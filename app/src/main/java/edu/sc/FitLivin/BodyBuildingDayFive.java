@@ -33,13 +33,13 @@ import java.util.Date;
 import java.util.List;
 
 public class BodyBuildingDayFive extends Fragment {
-
+//initialize media player for fit facts
 MediaPlayer mp;
     public BodyBuildingDayFive() {
         // Required empty public constructor
     }
     private AlertDialog.Builder dialogBuilder;
-    //
+    //alerts user that they have completed workout and are awarded points.
     private void bodybuild5Dialog(){
 
             dialogBuilder = new AlertDialog.Builder(getActivity());
@@ -65,11 +65,12 @@ MediaPlayer mp;
         View v = inflater.inflate(R.layout.fragment_body_building_day_five, container, false);
         getActivity().getActionBar()
                 .setTitle("Day 5");
+        //initialize buttons for fit facts
         ImageButton militaryPress = (ImageButton) v.findViewById(R.id.militaryPressImage);
         ImageButton sideLatRaise = (ImageButton) v.findViewById(R.id.sideLatImage);
         ImageButton shoulderPress = (ImageButton) v.findViewById(R.id.shoulderpressImage);
 
-
+        //if military press button is clicked, play the fitfact (as long as it is not already playing)
         militaryPress.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -88,10 +89,11 @@ MediaPlayer mp;
                                   }
                               }
         );
+        //if lat raise button is clicked, play the fitfact (as long as it is not already playing)
         sideLatRaise.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
-
+                                      //prevents double clicking and overriding sound.
                                       if(mp == null){
                                           mp = MediaPlayer.create(getActivity(), R.raw.fitfactsidelatraise);
                                           mp.start();
@@ -106,10 +108,11 @@ MediaPlayer mp;
                                   }
                               }
         );
+        //if shoulder press button is clicked, play the fitfact (as long as it is not already playing)
         shoulderPress.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
-
+                                        //prevents double clicking and overriding sound.
                                       if(mp == null){
                                           mp = MediaPlayer.create(getActivity(), R.raw.fitfactshoulderpress);
                                           mp.start();
@@ -137,6 +140,7 @@ MediaPlayer mp;
                 ft.commit();//commits it
             }
         });**/
+        //complete button adds points to points page and records date.
         Button complete = (Button) v.findViewById(R.id.completeDay5bb);//creates complete button
         complete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

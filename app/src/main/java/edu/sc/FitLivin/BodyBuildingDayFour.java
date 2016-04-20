@@ -35,11 +35,12 @@ import java.util.List;
 
 
 public class BodyBuildingDayFour extends Fragment {
+   //initialize media player for fit facts
     MediaPlayer mp;
 
 
     private AlertDialog.Builder dialogBuilder;
-
+    //alerts user that they have completed workout and awarded points
     private void bodybuild4Dialog(){
         dialogBuilder = new AlertDialog.Builder(getActivity());
         dialogBuilder.setTitle("Congratulations!");
@@ -67,16 +68,17 @@ public class BodyBuildingDayFour extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_body_building_day_four, container, false);
+        //intialize buttons
         ImageButton deadlift = (ImageButton) v.findViewById(R.id.deadliftImage);
         ImageButton pullup = (ImageButton) v.findViewById(R.id.pullupImage);
         ImageButton dbrow = (ImageButton) v.findViewById(R.id.dumbbellRowImage);
         getActivity().getActionBar()
                 .setTitle("Day 4");
-
+        //if DEADLIFT button is clicked, play the fitfact (as long as it is not already playing)
         deadlift.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
-
+                                      //prevents double clicking and overriding sound.
                                       if(mp == null){
                                           mp = MediaPlayer.create(getActivity(), R.raw.fitfactdeadlift);
                                           mp.start();
@@ -91,10 +93,11 @@ public class BodyBuildingDayFour extends Fragment {
                                   }
                               }
         );
+        //if pullup button is clicked, play the fitfact (as long as it is not already playing)
         pullup.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
-
+                                      //prevents double clicking and overriding sound.
                                       if(mp == null){
                                           mp = MediaPlayer.create(getActivity(), R.raw.fitfactpullup);
                                           mp.start();
@@ -109,10 +112,11 @@ public class BodyBuildingDayFour extends Fragment {
                                   }
                               }
         );
+        //if dumbbell row button is clicked, play the fitfact (as long as it is not already playing)
         dbrow.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
-
+                                      //prevents double clicking and overriding sound.
                                       if(mp == null){
                                           mp = MediaPlayer.create(getActivity(), R.raw.fitfactdumbbellrow);
                                           mp.start();
@@ -143,6 +147,7 @@ public class BodyBuildingDayFour extends Fragment {
         });**/
 
         Button complete = (Button) v.findViewById(R.id.completeDay4bb);//creates complete button
+        //records points and date for points page
         complete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 MainActivity main1 = new MainActivity();

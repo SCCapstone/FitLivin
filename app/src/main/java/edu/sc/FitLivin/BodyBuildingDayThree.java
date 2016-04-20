@@ -34,10 +34,11 @@ import java.util.List;
 
 
 public class BodyBuildingDayThree extends Fragment {
+    //initialize media player for fit facts
     MediaPlayer mp;
 
     private AlertDialog.Builder dialogBuilder;
-    //
+    //complete button dialog to alert user that they have been awarded points
     private void bodybuild3Dialog(){
         dialogBuilder = new AlertDialog.Builder(getActivity());
         dialogBuilder.setTitle("Congratulations!");
@@ -61,17 +62,20 @@ public class BodyBuildingDayThree extends Fragment {
 
 
     @Override
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
 
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_body_building_day_three, container, false);
+        //initialize fitfact buttons.
         ImageButton hammerCurl = (ImageButton) v.findViewById(R.id.hammerCurlImage);
         ImageButton preacherCurl = (ImageButton) v.findViewById(R.id.preacherCurlImage);
         ImageButton pushupClose = (ImageButton) v.findViewById(R.id.closegrippushupImage);
         getActivity().getActionBar()
                 .setTitle("Day 3");
+        //if hammer curl button is clicked, play the fitfact (as long as it is not already playing)
         hammerCurl.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -90,6 +94,7 @@ public class BodyBuildingDayThree extends Fragment {
                                   }
                               }
         );
+        //if curl button is clicked, play the fitfact (as long as it is not already playing)
         preacherCurl.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -108,6 +113,7 @@ public class BodyBuildingDayThree extends Fragment {
                                   }
                               }
         );
+        //if pushup button is clicked, play the fitfact (as long as it is not already playing)
         pushupClose.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -128,6 +134,7 @@ public class BodyBuildingDayThree extends Fragment {
         );
 
         Button complete = (Button) v.findViewById(R.id.completeDay3bb);//creates complete button
+       //adds points to points page
         complete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 MainActivity main1 = new MainActivity();

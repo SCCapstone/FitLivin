@@ -35,13 +35,16 @@ import java.util.List;
 
 
 public class BodyBuildingDayOne extends Fragment {
+
+    //initialize media player for fit facts
     MediaPlayer mp;
 
     public BodyBuildingDayOne() {
         // Required empty public constructor
     }
     private AlertDialog.Builder dialogBuilder;
-    //
+
+    //alerts user once they've completed their workout and rewards them 50 points to points page.
     private void bodybuild1Dialog(){
 
             dialogBuilder = new AlertDialog.Builder(getActivity());
@@ -66,11 +69,13 @@ public class BodyBuildingDayOne extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_body_building_one, container, false);
+        //initialize buttons
         ImageButton squat = (ImageButton) v.findViewById(R.id.squatImage);
         ImageButton legExtension = (ImageButton) v.findViewById(R.id.legExtensionImage);
         ImageButton legCurl = (ImageButton) v.findViewById(R.id.curlImage);
         getActivity().getActionBar()
                 .setTitle("Day 1");
+       //if squat button is clicked, play the fitfact (as long as it is not already playing)
         squat.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -89,6 +94,7 @@ public class BodyBuildingDayOne extends Fragment {
                                   }
                               }
         );
+        //if leg extension button is clicked, play the fitfact (as long as it is not already playing)
         legExtension.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -107,6 +113,7 @@ public class BodyBuildingDayOne extends Fragment {
                                   }
                               }
         );
+        //if leg curl button is clicked, play the fitfact (as long as it is not already playing)
         legCurl.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -125,6 +132,7 @@ public class BodyBuildingDayOne extends Fragment {
                                   }
                               }
         );
+        //adds points to points pasge after workout completion. also keeps track of it in workout history
         Button complete = (Button) v.findViewById(R.id.completeDay1bb);//creates complete button
         complete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

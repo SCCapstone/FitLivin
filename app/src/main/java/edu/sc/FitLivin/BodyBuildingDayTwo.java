@@ -42,7 +42,7 @@ public class BodyBuildingDayTwo extends Fragment {
 
 
 
-    //
+    //dialog for day 2 completion. alerts user of their 50 points.
     private void bodybuild2Dialog(){
 
 
@@ -61,7 +61,7 @@ public class BodyBuildingDayTwo extends Fragment {
 
 
     }
-
+//initialize media player for fit facts
 MediaPlayer mp;
     public BodyBuildingDayTwo() {
         // Required empty public constructor
@@ -74,12 +74,15 @@ private View v;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_body_building_two, container, false);
+        //initialize buttons
         ImageButton benchImage = (ImageButton) v.findViewById(R.id.benchImage);
         ImageButton dumbbellFlyImage = (ImageButton) v.findViewById(R.id.flyImage);
         ImageButton pushupImage = (ImageButton) v.findViewById(R.id.pushupImage);
         getActivity().getActionBar()
                 .setTitle("Day 2");
        // mp = MediaPlayer.create(getActivity(), R.raw.fitfactbarbellbenchpressnew);
+
+        //if bench button is clicked, play the fitfact (as long as it is not already playing)
         benchImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,7 +101,7 @@ private View v;
             }
         }
         );
-
+        //if fly button is clicked, play the fitfact (as long as it is not already playing)
         dumbbellFlyImage.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -116,7 +119,7 @@ private View v;
                                   }
                               }
         );
-
+        //if pushup button is clicked, play the fitfact (as long as it is not already playing)
         pushupImage.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
@@ -134,6 +137,7 @@ private View v;
                                                 }
                                             }
         );
+        //adds points to points page
         Button complete = (Button) v.findViewById(R.id.completeDay2bb);//creates complete button
         complete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -203,7 +207,7 @@ private View v;
         //retur
 
     }
-
+//prevents double clicks and overriding sound.
 public void onBackPressed(){
     if (mp!=null){
         mp.pause();
