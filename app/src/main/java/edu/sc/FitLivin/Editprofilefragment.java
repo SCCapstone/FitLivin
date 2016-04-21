@@ -6,8 +6,9 @@ import android.app.FragmentManager;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -32,26 +33,29 @@ public class Editprofilefragment extends Fragment {
     private String password = "Password";
     private String username = "username";
     private String phone = "phone";
+    private Menu menu;
     private ParseUser curruser = ParseUser.getCurrentUser();
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
 
 
 
     }
+
     public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_editprofile, container, false);
         getActivity().getActionBar()
                 .setTitle("Edit Profile");
-        nametext = (EditText)v.findViewById(R.id.editTextname);
+
         passwordtext = (EditText)v.findViewById(R.id.editpasstext);
         phonetext = (EditText)v.findViewById(R.id.editphone);
         reenterpass = (EditText)v.findViewById(R.id.reditpassword);
 
         buttonsave = (ImageButton)v.findViewById(R.id.savebuttoneditprofile);
      //   backbutton = (Button)v.findViewById(R.id.Back);
-
+        final MenuInflater inflater2 = getActivity().getMenuInflater();
         buttonexit = (ImageButton)v.findViewById(R.id.exiteditprofile);
         buttonexit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,9 +109,6 @@ public class Editprofilefragment extends Fragment {
                     else {
                         Toast.makeText(getActivity(),"Enter the same password twice",Toast.LENGTH_SHORT).show();
                     }
-                }
-                if (!isEmpty(nametext)) {
-                    curruser.setUsername(nametext.getText().toString());
                 }
                 if(!isEmpty(phonetext)){
                     curruser.put("phone", phonetext.getText().toString());

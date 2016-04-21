@@ -32,6 +32,7 @@
             android:onClick="myFancyMethod"
             android:icon="@mipmap/ic_launcher"
             android:textSize="2sp"
+            android:windowSoftInputMode="adjustPan"
             />
 
 
