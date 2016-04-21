@@ -34,6 +34,8 @@ public class Editprofilefragment extends Fragment {
     private String username = "username";
     private String phone = "phone";
     private Menu menu;
+    private Boolean phoneindicator = Boolean.TRUE;
+    private Boolean passindicator = Boolean.TRUE;
     private ParseUser curruser = ParseUser.getCurrentUser();
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +52,6 @@ public class Editprofilefragment extends Fragment {
                 .setTitle("Edit Profile");
 
         passwordtext = (EditText)v.findViewById(R.id.editpasstext);
-        phonetext = (EditText)v.findViewById(R.id.editphone);
         reenterpass = (EditText)v.findViewById(R.id.reditpassword);
 
         buttonsave = (ImageButton)v.findViewById(R.id.savebuttoneditprofile);
@@ -96,31 +97,28 @@ public class Editprofilefragment extends Fragment {
         buttonsave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean validationError = false;
-                StringBuilder validationErrorMessage =
-                        new StringBuilder(getResources().getString(R.string.error_intro));
+
 //
                 if (!isEmpty(passwordtext) && !isEmpty(reenterpass)) {
-                    if (!isMatching(reenterpass, passwordtext)) {
+                    if (isMatching(reenterpass, passwordtext)) {
 
                             curruser.setPassword(reenterpass.getText().toString());
+                            passindicator = true;
 
                     }
                     else {
+                        passindicator = false;
                         Toast.makeText(getActivity(),"Enter the same password twice",Toast.LENGTH_SHORT).show();
                     }
                 }
-                if(!isEmpty(phonetext)){
-                    curruser.put("phone", phonetext.getText().toString());
+                else {
+                    Toast.makeText(getActivity(),"You must enter something to save",Toast.LENGTH_SHORT).show();
+                    passindicator = false;
                 }
-                validationErrorMessage.append(".");
+
 
                 // If there is a validation error, display the error
-                if (validationError) {
-                    Toast.makeText(getActivity(), validationErrorMessage.toString(), Toast.LENGTH_LONG)
-                            .show();
-                    return;
-                }
+
 
                 // Set up a progress dialog
                 final ProgressDialog dlg = new ProgressDialog(getActivity());
@@ -139,7 +137,7 @@ public class Editprofilefragment extends Fragment {
                     @Override
                     public void done(ParseException e) {
                         dlg.dismiss();
-                        if (e == null) {                                                       // Show the error message
+                        if (e == null && passindicator == true) {                                                       // Show the error message
                             Toast.makeText(getActivity(), "Info Saved", Toast.LENGTH_LONG).show();
                             ProfilePageFragment fragment = new ProfilePageFragment();
                             FragmentManager fragmentManager = getFragmentManager();
