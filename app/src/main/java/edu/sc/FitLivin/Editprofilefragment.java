@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -138,10 +139,10 @@ public class Editprofilefragment extends Fragment {
                     public void done(ParseException e) {
                         dlg.dismiss();
                         if (e == null && passindicator == true) {                                                       // Show the error message
-                            Toast.makeText(getActivity(), "Info Saved", Toast.LENGTH_LONG).show();
-                            ProfilePageFragment fragment = new ProfilePageFragment();
-                            FragmentManager fragmentManager = getFragmentManager();
-                            fragmentManager.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
+                            Toast.makeText(getActivity(), "Info Saved", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity()," Please log back in again",Toast.LENGTH_LONG).show();
+                            curruser.logOut();
+                            startActivity(new Intent(getActivity(), DispatchActivity.class));
                             // Do something with value!
                         } else {
                             Toast.makeText(getActivity(), "Something Went Wrong", Toast.LENGTH_LONG).show();
