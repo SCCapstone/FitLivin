@@ -44,7 +44,7 @@ public class BodyBuildingDayThree extends Fragment {
         dialogBuilder.setTitle("Congratulations!");
         dialogBuilder.setMessage("You Earned 50 Points!");
         dialogBuilder.setIcon(R.mipmap.ic_launcher);
-        dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        dialogBuilder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();

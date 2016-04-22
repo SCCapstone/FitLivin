@@ -34,14 +34,21 @@ import java.util.List;
 
 public class WeightLossDayFive extends Fragment {
 
+    //initialize media player for fit facts
     MediaPlayer mp;
 
+    //builder for the dialog
     private AlertDialog.Builder dBuilder;
+
+    //alerts the use when they complete a workout and tells them how many points theyve earned
     private void WeightLD5dialog(){
         dBuilder = new AlertDialog.Builder(getActivity());
+        //the congrats message
         dBuilder.setTitle("Congratulations!");
+        //amount of points earned
         dBuilder.setMessage("You earned 50 points!");
         dBuilder.setIcon(R.mipmap.ic_launcher);
+        //continue dialog box option
         dBuilder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -67,9 +74,11 @@ public class WeightLossDayFive extends Fragment {
         View v = inflater.inflate(R.layout.fragment_weightloss_day_five, container, false);
         getActivity().getActionBar()
                 .setTitle("Day 5");
+        //here we initialize the buttons for the fit facts feature
         ImageButton warmuprun = (ImageButton) v.findViewById(R.id.runningImage);
         ImageButton powerjump = (ImageButton) v.findViewById(R.id.powerjumpImage);
         ImageButton burpee = (ImageButton) v.findViewById(R.id.burpeesImage);
+        //if warmup run button is clicked, play the fitfact (as long as it is not already playing)
         warmuprun.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -88,6 +97,7 @@ public class WeightLossDayFive extends Fragment {
                                   }
                               }
         );
+        //if power jump button is clicked, play the fitfact (as long as it is not already playing)
         powerjump.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -106,6 +116,7 @@ public class WeightLossDayFive extends Fragment {
                                   }
                               }
         );
+        //if burpee button is clicked, play the fitfact (as long as it is not already playing)
         burpee.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -138,22 +149,26 @@ public class WeightLossDayFive extends Fragment {
         });**/
 
 
-        //Add points to point page
+        //complete button adds points to points page and records date.
         Button complete1 = (Button) v.findViewById(R.id.completeDay5w);
         complete1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MainActivity main1 = new MainActivity();
+                //sets the format of the date here
                 SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
                 Date date = new Date();
                 String time = sdf.format(date);
                 main1.workoutPro(time,"Weight Loss Day Five: ");
                 ParseQuery queryuser = ParseUser.getQuery();
                 queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
+
+                //here points are updated
                 ParseQuery Points = ParseQuery.getQuery("Points");
                 Points.whereExists("CurrentPoints");//setting constraints
                 Points.whereMatchesQuery("author", queryuser);
                 Points.orderByDescending("createdAt");
+
                 Points.findInBackground(new FindCallback<ParseObject>() {
                                             public void done(List<ParseObject> objects, ParseException e) {
                                                 if (e == null && objects.size() != 0) { //if objects size is not 0

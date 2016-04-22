@@ -27,24 +27,24 @@
 
         <ImageButton
             android:scaleType="fitXY"
-            android:layout_below = "@+id/warmupCycleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/cycleImage"
             android:layout_gravity="center_horizontal"
             android:clickable="true"
             android:src="@drawable/cycling3"
+            android:layout_below = "@+id/warmupCycleText"
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below = "@+id/cycleImage"
             android:id="@+id/warmupDetail"
             android:layout_gravity="center_horizontal"
             android:textColor="#ffffff"
             android:textSize="20dp"
             android:text="5-10 minute cyle "
+            android:layout_below = "@+id/cycleImage"
             />
 
         <TextView
@@ -54,8 +54,8 @@
             android:layout_gravity="center_horizontal"
             android:textColor="#ffffff"
             android:textSize="32dp"
-            android:layout_below = "@+id/warmupDetail"
             android:id="@+id/squatText"
+            android:layout_below = "@+id/warmupDetail"
             />
 
         <ImageButton
@@ -64,9 +64,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/squatImage"
             android:layout_gravity="center_horizontal"
-            android:layout_below = "@+id/squatText"
             android:clickable="true"
             android:src="@drawable/squat"
+            android:layout_below = "@+id/squatText"
             />
 
         <TextView
@@ -76,8 +76,8 @@
             android:id="@+id/squatDetail"
             android:layout_gravity="center_horizontal"
             android:textSize="20dp"
-            android:layout_below = "@+id/squatImage"
             android:textColor="#ffffff"
+            android:layout_below = "@+id/squatImage"
             />
 
         <TextView
@@ -87,8 +87,8 @@
             android:id="@+id/plankText"
             android:layout_gravity="center_horizontal"
             android:textColor="#ffffff"
-            android:layout_below = "@+id/squatDetail"
             android:textSize="32dp"
+            android:layout_below = "@+id/squatDetail"
             />
 
         <ImageButton
@@ -97,9 +97,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/plankImage"
             android:layout_gravity="center_horizontal"
-            android:layout_below = "@+id/plankText"
             android:clickable="true"
             android:src="@drawable/plank"
+            android:layout_below = "@+id/plankText"
             />
 
         <TextView
@@ -109,9 +109,10 @@
             android:id="@+id/plankDetail"
             android:layout_gravity="center_horizontal"
             android:textSize="20dp"
-            android:layout_below = "@+id/plankImage"
             android:textColor="#ffffff"
+            android:layout_below = "@+id/plankImage"
             />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="20dp"
@@ -124,10 +125,10 @@
             android:layout_height="wrap_content"
             android:text="Workout Complete!"
             android:id="@+id/completeDay2w"
-            android:layout_below = "@+id/plankDetail"
             android:layout_gravity="right|bottom"
             android:background="#e70b0e"
             android:textColor="#ffffff"
+            android:layout_below = "@+id/plankDetail"
             />
 
 

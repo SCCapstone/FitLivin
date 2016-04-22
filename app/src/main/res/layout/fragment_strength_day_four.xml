@@ -24,8 +24,8 @@
             android:id="@+id/cpbench"
             android:textColor="#ffffff"
             android:textSize="32dp"
-            android:layout_above="@+id/closeGripBenchImage"
             android:layout_gravity="center_horizontal"
+            android:layout_above="@+id/closeGripBenchImage"
             />
 
         <ImageButton
@@ -34,10 +34,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/closeGripBenchImage"
             android:src="@drawable/closegrip"
-            android:layout_below="@+id/cpbench"
-            android:layout_above="@+id/closeGripBenchDescription"
             android:clickable="true"
             android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/cpbench"
+            android:layout_above="@+id/closeGripBenchDescription"
             />
 
         <TextView
@@ -45,12 +45,12 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="5 Sets of 5 reps"
-            android:layout_below="@+id/closeGripBenchImage"
-            android:layout_above="@+id/benchDetail"
             android:layout_gravity="center_horizontal"
             android:textSize="20dp"
             android:id="@+id/closeGripBenchDescription"
             android:textColor="#ffffff"
+            android:layout_below="@+id/closeGripBenchImage"
+            android:layout_above="@+id/benchDetail"
             />
 
         <TextView
@@ -60,9 +60,9 @@
             android:id="@+id/benchDetail"
             android:textColor="#ffffff"
             android:textSize="32dp"
+            android:layout_gravity="center_horizontal"
             android:layout_below="@+id/closeGripBenchDescription"
             android:layout_above="@+id/bbcurl"
-            android:layout_gravity="center_horizontal"
             />
 
         <ImageButton
@@ -71,10 +71,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/bbcurl"
             android:src="@drawable/barbellcurl"
-            android:layout_below="@+id/benchDetail"
-            android:layout_above="@+id/barbellCurlDescription"
             android:clickable="true"
             android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/benchDetail"
+            android:layout_above="@+id/barbellCurlDescription"
             />
 
         <TextView
@@ -85,9 +85,9 @@
             android:layout_gravity="center_horizontal"
             android:textSize="20dp"
             android:id="@+id/barbellCurlDescription"
+            android:textColor="#ffffff"
             android:layout_below="@+id/bbcurl"
             android:layout_above="@+id/flyText"
-            android:textColor="#ffffff"
             />
 
         <TextView
@@ -97,9 +97,9 @@
             android:id="@+id/flyText"
             android:textColor="#ffffff"
             android:textSize="32dp"
+            android:layout_gravity="center_horizontal"
             android:layout_below="@+id/barbellCurlDescription"
             android:layout_above="@+id/pushdown"
-            android:layout_gravity="center_horizontal"
             />
 
         <ImageButton
@@ -108,10 +108,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/pushdown"
             android:src="@drawable/pushdown2"
-            android:layout_below="@+id/flyText"
-            android:layout_above="@+id/tricepPushdownDescription"
             android:clickable="true"
             android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/flyText"
+            android:layout_above="@+id/tricepPushdownDescription"
             />
 
         <TextView
@@ -120,11 +120,12 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="4 Sets of 8 reps."
             android:layout_gravity="center_horizontal"
-            android:layout_below="@+id/pushdown"
             android:textSize="20dp"
             android:id="@+id/tricepPushdownDescription"
             android:textColor="#ffffff"
+            android:layout_below="@+id/pushdown"
             />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="20dp"
@@ -138,10 +139,10 @@
             android:layout_height="wrap_content"
             android:text="Workout Complete!"
             android:id="@+id/completeDay4s"
-            android:layout_below = "@+id/tricepPushdownDescription"
             android:layout_gravity="right|bottom"
             android:background="#e70b0e"
             android:textColor="#ffffff"
+            android:layout_below = "@+id/tricepPushdownDescription"
             />
 
     </LinearLayout>>

@@ -33,18 +33,25 @@ import java.util.Date;
 import java.util.List;
 
 public class WeightLossDayFour extends Fragment {
-
+//initialize media player for fit facts
     MediaPlayer mp;
 
     public WeightLossDayFour() {
         // Required empty public constructor
     }
+
+    //builder for the dialog
     private AlertDialog.Builder dBuilder;
+
+    //alerts the use when they complete a workout and tells them how many points theyve earned
     private void WeightLD4dialog(){
         dBuilder = new AlertDialog.Builder(getActivity());
+        //the congrats message
         dBuilder.setTitle("Congratulations!");
+        //amount of points earned
         dBuilder.setMessage("You earned 50 points!");
         dBuilder.setIcon(R.mipmap.ic_launcher);
+        //continue dialog box option
         dBuilder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -65,11 +72,12 @@ public class WeightLossDayFour extends Fragment {
         View v = inflater.inflate(R.layout.fragment_weightloss_day_four, container, false);
         getActivity().getActionBar()
                 .setTitle("Day 4");
+        //here we initialize the buttons for the fit facts feature
         ImageButton jog = (ImageButton) v.findViewById(R.id.jogginImage);
         ImageButton rows = (ImageButton) v.findViewById(R.id.rowImage);
         ImageButton cardio = (ImageButton) v.findViewById(R.id.cardioImage);
 
-
+//if jog button is clicked, play the fitfact (as long as it is not already playing)
         jog.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -88,6 +96,7 @@ public class WeightLossDayFour extends Fragment {
                                   }
                               }
         );
+        //if row button is clicked, play the fitfact (as long as it is not already playing)
         rows.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -106,6 +115,7 @@ public class WeightLossDayFour extends Fragment {
                                   }
                               }
         );
+        //if cardio button is clicked, play the fitfact (as long as it is not already playing)
         cardio.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -137,22 +147,26 @@ public class WeightLossDayFour extends Fragment {
             }
         });**/
 
-        //Add points to point page
+        //complete button adds points to points page and records date.
         Button complete1 = (Button) v.findViewById(R.id.completeDay4w);
         complete1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MainActivity main1 = new MainActivity();
+                //sets the format of the date here
                 SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
                 Date date = new Date();
                 String time = sdf.format(date);
                 main1.workoutPro(time,"Weight Loss Day Four: ");
                 ParseQuery queryuser = ParseUser.getQuery();
                 queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
+
+                //here points are updated
                 ParseQuery Points = ParseQuery.getQuery("Points");
                 Points.whereExists("CurrentPoints");//setting constraints
                 Points.whereMatchesQuery("author", queryuser);
                 Points.orderByDescending("createdAt");
+
                 Points.findInBackground(new FindCallback<ParseObject>() {
                                             public void done(List<ParseObject> objects, ParseException e) {
                                                 if (e == null && objects.size() != 0) { //if objects size is not 0

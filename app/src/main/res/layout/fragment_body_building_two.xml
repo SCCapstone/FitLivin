@@ -21,9 +21,10 @@
         android:text="Barbell Bench Press"
         android:id="@+id/benchText"
         android:layout_gravity="center_horizontal"
-        android:layout_above="@+id/benchImage"
         android:textColor="#ffffff"
-        android:textSize="25dp" />
+        android:textSize="25dp"
+        android:layout_above="@+id/benchImage"
+        />
 
 
 
@@ -45,10 +46,10 @@
                 android:text="4 Sets of 10-12 Repetitions"
                 android:id="@+id/benchDetail"
                 android:layout_gravity="center_horizontal"
-                android:layout_below="@+id/benchImage"
                 android:textSize="20dp"
                 android:layout_above="@+id/flyText"
                 android:textColor="#ffffff"
+                android:layout_below="@+id/benchImage"
                 />
 
     <TextView
@@ -111,9 +112,10 @@
                 android:id="@+id/pushupImage"
                 android:layout_gravity="center_horizontal"
                 android:clickable="true"
+                android:src="@drawable/pushup"
                 android:layout_below="@+id/pushupText"
                 android:layout_above="@+id/pushupDetail"
-                android:src="@drawable/pushup" />
+                />
 
 
 
@@ -127,6 +129,7 @@
                 android:textColor="#ffffff"
                 android:layout_below="@+id/pushupImage"
                 />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
@@ -140,11 +143,11 @@
         android:layout_height="wrap_content"
         android:text="Workout Complete!"
         android:id="@+id/completeDay2bb"
-        android:layout_below = "@+id/pushupDetail"
         android:background="#e70b0e"
         android:layout_gravity="right|bottom"
-                android:textColor="#ffffff"
-                />
+        android:textColor="#ffffff"
+        android:layout_below = "@+id/pushupDetail"
+        />
 
 </LinearLayout>>
 

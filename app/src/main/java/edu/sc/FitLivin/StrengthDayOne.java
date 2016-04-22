@@ -35,17 +35,21 @@ import java.util.List;
 
 
 public class StrengthDayOne extends Fragment {
-
+//initialize media player for fit facts
 MediaPlayer mp;
 
+//builder for the dialog
     private AlertDialog.Builder dBuilder;
 
-
+//alerts the use when they complete a workout and tells them how many points theyve earned
     private void StrengthD1dialog(){
         dBuilder = new AlertDialog.Builder(getActivity());
+        //the congrats message
         dBuilder.setTitle("Congratulations!");
+        //amount of points earned
         dBuilder.setMessage("You earned 50 points!");
         dBuilder.setIcon(R.mipmap.ic_launcher);
+        //continue dialog box option
         dBuilder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -78,10 +82,11 @@ MediaPlayer mp;
         View v = inflater.inflate(R.layout.fragment_strength_day_one, container, false);
         getActivity().getActionBar()
                 .setTitle("Day 1");
+        //here we initialize the buttons for the fit facts feature
         ImageButton benchImage = (ImageButton) v.findViewById(R.id.closeGripBenchImage);
         ImageButton cableFlyImage = (ImageButton) v.findViewById(R.id.flies);
         ImageButton inclineDumbbell = (ImageButton) v.findViewById(R.id.incline);
-
+//if bench button is clicked, play the fitfact (as long as it is not already playing)
         benchImage.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -100,6 +105,7 @@ MediaPlayer mp;
                                   }
                               }
         );
+        //if cable fly button is clicked, play the fitfact (as long as it is not already playing)
         cableFlyImage.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -118,6 +124,7 @@ MediaPlayer mp;
                                   }
                               }
         );
+        //if incline dumbbell button is clicked, play the fitfact (as long as it is not already playing)
         inclineDumbbell.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -158,18 +165,20 @@ MediaPlayer mp;
             }
         });**/
 
+        //complete button adds points to points page and records date.
         Button complete = (Button) v.findViewById(R.id.completeDay1s);//creates complete button
         complete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MainActivity main1 = new MainActivity();
+                //sets the format of the date here
                 SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
                 Date date = new Date();
                 String time = sdf.format(date);
-                main1.workoutPro(time,"Strength Day One: ");
+                main1.workoutPro(time, "Strength Day One: ");
                 ParseQuery queryuser = ParseUser.getQuery();
                 queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
-
+//here points are updated
                 ParseQuery Points = ParseQuery.getQuery("Points");
                 Points.whereExists("CurrentPoints");//setting constraints
                 Points.whereMatchesQuery("author", queryuser);
@@ -183,15 +192,15 @@ MediaPlayer mp;
                                                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
                                                         Double x = (Double) objects.get(0).get("CurrentPoints");
-                                                          MainActivity main = new MainActivity();
+                                                        MainActivity main = new MainActivity();
                                                         main.points = x;
                                                         // main.bench = x;
-                                                       // currentPoints.setText("" +x);
+                                                        // currentPoints.setText("" +x);
                                                         Double points = main.points;
                                                         points = points + 50;//adds points for completed workout
 
                                                         String s = ParseUser.getCurrentUser().getUsername();
-                                                        main.pointsData(points,s);
+                                                        main.pointsData(points, s);
 
 
                                                         StrengthD1dialog();

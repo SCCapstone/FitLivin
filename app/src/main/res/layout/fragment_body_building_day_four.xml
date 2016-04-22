@@ -34,11 +34,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/deadliftImage"
-        android:layout_above="@+id/deadliftDetail"
-        android:layout_below="@+id/deadliftText"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/deadlift"
         android:clickable="true"
+        android:layout_above="@+id/deadliftDetail"
+        android:layout_below="@+id/deadliftText"
         />
 
             <TextView
@@ -46,11 +46,11 @@
                 android:layout_height="wrap_content"
                 android:text="4 Sets of 8 Repetitions"
                 android:id="@+id/deadliftDetail"
-                android:layout_below="@+id/deadliftImage"
-                android:layout_above="@+id/pullupText"
                 android:textSize="20dp"
                 android:layout_gravity="center_horizontal"
                 android:textColor="#ffffff"
+                android:layout_below="@+id/deadliftImage"
+                android:layout_above="@+id/pullupText"
                 />
 
     <TextView
@@ -58,11 +58,11 @@
         android:layout_height="wrap_content"
         android:text="Pull-ups"
         android:id="@+id/pullupText"
-        android:layout_below="@+id/deadliftDetail"
-        android:layout_above="@+id/pullupImage"
         android:layout_gravity="center_horizontal"
         android:textColor="#ffffff"
         android:textSize="25dp"
+        android:layout_below="@+id/deadliftDetail"
+        android:layout_above="@+id/pullupImage"
         />
 
 
@@ -139,11 +139,10 @@
         android:layout_height="wrap_content"
         android:text="Workout Complete!"
         android:id="@+id/completeDay4bb"
-        android:layout_below = "@+id/dumbbellRowDetail"
         android:background="#e70b0e"
         android:layout_gravity="right|bottom"
         android:textColor="#ffffff"
-
+        android:layout_below = "@+id/dumbbellRowDetail"
         />
 
 

@@ -45,8 +45,8 @@
             android:textSize="20dp"
             android:id="@+id/warmupDetail"
             android:layout_gravity="center_horizontal"
-            android:layout_below="@+id/runningImage"
             android:textColor="#ffffff"
+            android:layout_below="@+id/runningImage"
             />
 
         <TextView
@@ -54,10 +54,10 @@
             android:layout_height="wrap_content"
             android:text="Walking lunges"
             android:layout_gravity="center_horizontal"
-            android:layout_below="@+id/warmupDetail"
             android:textColor="#ffffff"
             android:textSize="32dp"
             android:id="@+id/walkingLungesText"
+            android:layout_below="@+id/warmupDetail"
             />
 
         <ImageButton
@@ -66,9 +66,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/lungesImage"
             android:layout_gravity="center_horizontal"
-            android:layout_below="@+id/walkingLungesText"
             android:clickable="true"
             android:src="@drawable/lunges"
+            android:layout_below="@+id/walkingLungesText"
             />
 
         <TextView
@@ -78,8 +78,8 @@
             android:id="@+id/lungesDetail"
             android:layout_gravity="center_horizontal"
             android:textSize="20dp"
-            android:layout_below="@+id/lungesImage"
             android:textColor="#ffffff"
+            android:layout_below="@+id/lungesImage"
             />
 
         <TextView
@@ -88,9 +88,9 @@
             android:text="Jump rope"
             android:id="@+id/jumpropeText"
             android:layout_gravity="center_horizontal"
-            android:layout_below="@+id/lungesDetail"
             android:textColor="#ffffff"
             android:textSize="32dp"
+            android:layout_below="@+id/lungesDetail"
             />
 
         <ImageButton
@@ -99,9 +99,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/jumpRopeImage"
             android:layout_gravity="center_horizontal"
-            android:layout_below="@+id/jumpropeText"
             android:clickable="true"
             android:src="@drawable/jump_rope"
+            android:layout_below="@+id/jumpropeText"
             />
 
         <TextView
@@ -111,9 +111,10 @@
             android:id="@+id/jumpropeDetail"
             android:textSize="20dp"
             android:layout_gravity="center_horizontal"
-            android:layout_below="@+id/jumpRopeImage"
             android:textColor="#ffffff"
+            android:layout_below="@+id/jumpRopeImage"
             />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="20dp"
@@ -121,15 +122,16 @@
             android:textSize="20dp"
             android:layout_below="@+id/jumpropeDetail"
             />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Workout Complete!"
             android:id="@+id/completeDay1w"
-            android:layout_below = "@+id/jumpropeDetail"
             android:layout_gravity="right|bottom"
             android:background="#e70b0e"
             android:textColor="#ffffff"
+            android:layout_below = "@+id/jumpropeDetail"
             />
 
 

@@ -34,11 +34,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/militaryPressImage"
-            android:layout_below="@+id/militaryPressText"
-            android:layout_above="@+id/militaryPressDetail"
             android:layout_gravity="center_horizontal"
             android:clickable="true"
             android:src="@drawable/militarypress"
+            android:layout_below="@+id/militaryPressText"
+            android:layout_above="@+id/militaryPressDetail"
             />
 
         <TextView
@@ -46,11 +46,11 @@
             android:layout_height="wrap_content"
             android:text="4 Sets of 8-10 Repetitions"
             android:id="@+id/militaryPressDetail"
-            android:layout_below="@+id/militaryPressImage"
-            android:layout_above="@+id/sideRaiseText"
             android:layout_gravity="center_horizontal"
             android:textSize="20dp"
             android:textColor="#ffffff"
+            android:layout_below="@+id/militaryPressImage"
+            android:layout_above="@+id/sideRaiseText"
             />
 
         <TextView
@@ -58,11 +58,11 @@
             android:layout_height="wrap_content"
             android:text="Side Lateral Raises"
             android:id="@+id/sideRaiseText"
-            android:layout_below="@+id/militaryPressDetail"
-            android:layout_above="@+id/sideLatImage"
             android:layout_gravity="center_horizontal"
             android:textColor="#ffffff"
             android:textSize="32dp"
+            android:layout_below="@+id/militaryPressDetail"
+            android:layout_above="@+id/sideLatImage"
             />
 
 
@@ -71,11 +71,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/sideLatImage"
-            android:layout_below="@+id/sideRaiseText"
-            android:layout_above="@+id/sideLatRaiseDetail"
             android:layout_gravity="center_horizontal"
             android:clickable="true"
             android:src="@drawable/dumbbelllatraise"
+            android:layout_below="@+id/sideRaiseText"
+            android:layout_above="@+id/sideLatRaiseDetail"
             />
 
         <TextView
@@ -83,11 +83,11 @@
             android:layout_height="wrap_content"
             android:text="4 Sets of 12 light weight repetitions"
             android:id="@+id/sideLatRaiseDetail"
-            android:layout_below="@+id/sideLatImage"
-            android:layout_above="@+id/shoulderPressText"
             android:textSize="20dp"
             android:layout_gravity="center_horizontal"
             android:textColor="#ffffff"
+            android:layout_below="@+id/sideLatImage"
+            android:layout_above="@+id/shoulderPressText"
             />
 
 
@@ -96,11 +96,11 @@
             android:layout_height="wrap_content"
             android:text="Shoulder Press"
             android:id="@+id/shoulderPressText"
-            android:layout_below="@+id/sideLatRaiseDetail"
-            android:layout_above="@+id/shoulderpressImage"
             android:layout_gravity="center_horizontal"
             android:textColor="#ffffff"
             android:textSize="32dp"
+            android:layout_below="@+id/sideLatRaiseDetail"
+            android:layout_above="@+id/shoulderpressImage"
             />
 
 
@@ -110,11 +110,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/shoulderpressImage"
-            android:layout_below="@+id/shoulderPressText"
-            android:layout_above="@+id/shoulderPressDetail"
             android:layout_gravity="center_horizontal"
             android:clickable="true"
             android:src="@drawable/shoulderpress"
+            android:layout_below="@+id/shoulderPressText"
+            android:layout_above="@+id/shoulderPressDetail"
             />
 
         <TextView
@@ -140,10 +140,10 @@
             android:layout_height="wrap_content"
             android:text="Workout Complete!"
             android:id="@+id/completeDay5bb"
-            android:layout_below = "@+id/shoulderPressDetail"
             android:layout_gravity="right|bottom"
             android:background="#e70b0e"
             android:textColor="#ffffff"
+            android:layout_below = "@+id/shoulderPressDetail"
             />
 
 

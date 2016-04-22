@@ -42,10 +42,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/closeGripBenchImage"
             android:src="@drawable/bench"
-            android:layout_below="@+id/bench"
-            android:layout_above="@+id/benchPressDescription"
             android:clickable="true"
             android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/bench"
+            android:layout_above="@+id/benchPressDescription"
             />
 
         <TextView
@@ -53,12 +53,12 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="5 Sets of 2 heavy reps"
-            android:layout_below="@+id/closeGripBenchImage"
-            android:layout_above="@+id/squat"
             android:layout_gravity="center_horizontal"
             android:textSize="20dp"
             android:id="@+id/benchPressDescription"
             android:textColor="#ffffff"
+            android:layout_below="@+id/closeGripBenchImage"
+            android:layout_above="@+id/squat"
             />
 
         <TextView
@@ -68,9 +68,9 @@
             android:id="@+id/squat"
             android:textColor="#ffffff"
             android:textSize="32dp"
+            android:layout_gravity="center_horizontal"
             android:layout_below="@+id/benchPressDescription"
             android:layout_above="@+id/squatImage"
-            android:layout_gravity="center_horizontal"
             />
 
         <ImageButton
@@ -79,10 +79,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/squatImage"
             android:src="@drawable/squat"
-            android:layout_below="@+id/squat"
-            android:layout_above="@+id/squatDescription"
             android:clickable="true"
             android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/squat"
+            android:layout_above="@+id/squatDescription"
             />
 
         <TextView
@@ -91,11 +91,11 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="5 Sets of 2 heavy reps"
             android:layout_gravity="center_horizontal"
-            android:layout_below="@+id/squatImage"
-            android:layout_above="@+id/legPressTitle"
             android:textSize="20dp"
             android:id="@+id/squatDescription"
             android:textColor="#ffffff"
+            android:layout_below="@+id/squatImage"
+            android:layout_above="@+id/legPressTitle"
             />
 
         <TextView
@@ -105,9 +105,9 @@
             android:id="@+id/legPressTitle"
             android:textColor="#ffffff"
             android:textSize="32dp"
+            android:layout_gravity="center_horizontal"
             android:layout_below="@+id/squatDescription"
             android:layout_above="@+id/legpresspic"
-            android:layout_gravity="center_horizontal"
             />
 
         <ImageButton
@@ -116,10 +116,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/legpresspic"
             android:src="@drawable/legpress"
-            android:layout_below="@+id/legPressTitle"
-            android:layout_above="@+id/legPressDescrpition"
             android:clickable="true"
             android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/legPressTitle"
+            android:layout_above="@+id/legPressDescrpition"
             />
 
         <TextView
@@ -128,11 +128,12 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="5 Sets of 5 reps"
             android:layout_gravity="center_horizontal"
-            android:layout_below="@+id/legpresspic"
             android:textSize="20dp"
             android:id="@+id/legPressDescrpition"
             android:textColor="#ffffff"
+            android:layout_below="@+id/legpresspic"
             />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="20dp"
@@ -146,10 +147,10 @@
             android:layout_height="wrap_content"
             android:text="Workout Complete!"
             android:id="@+id/completeDay5s"
-            android:layout_below = "@+id/legPressDescrpition"
             android:layout_gravity="right|bottom"
             android:background="#e70b0e"
             android:textColor="#ffffff"
+            android:layout_below = "@+id/legPressDescrpition"
             />
 
 

@@ -32,20 +32,20 @@
             android:layout_height="wrap_content"
             android:id="@+id/runningImage"
             android:layout_gravity="center_horizontal"
-            android:layout_below = "@+id/warmupRunText"
             android:clickable="true"
             android:src="@drawable/cardio"
+            android:layout_below = "@+id/warmupRunText"
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below = "@+id/runningImage"
             android:id="@+id/warmupDetail"
             android:layout_gravity="center_horizontal"
             android:textColor="#ffffff"
             android:text="Choice of treadmill or track"
             android:textSize="20dp"
+            android:layout_below = "@+id/runningImage"
             />
 
 
@@ -54,10 +54,10 @@
             android:layout_height="wrap_content"
             android:text="Up-downs"
             android:layout_gravity="center_horizontal"
-            android:layout_below = "@+id/warmupDetail"
             android:textColor="#ffffff"
             android:textSize="32dp"
             android:id="@+id/updownsText"
+            android:layout_below = "@+id/warmupDetail"
             />
 
         <ImageButton
@@ -66,9 +66,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/powerjumpImage"
             android:layout_gravity="center_horizontal"
-            android:layout_below = "@+id/updownsText"
             android:clickable="true"
             android:src="@drawable/powerjump"
+            android:layout_below = "@+id/updownsText"
             />
 
         <TextView
@@ -78,8 +78,8 @@
             android:textSize="20dp"
             android:id="@+id/powerjumpDetail"
             android:layout_gravity="center_horizontal"
-            android:layout_below = "@+id/powerjumpImage"
             android:textColor="#ffffff"
+            android:layout_below = "@+id/powerjumpImage"
             />
 
         <TextView
@@ -88,9 +88,9 @@
             android:text="Burpees"
             android:id="@+id/burpeesText"
             android:layout_gravity="center_horizontal"
-            android:layout_below = "@+id/powerjumpDetail"
             android:textColor="#ffffff"
             android:textSize="32dp"
+            android:layout_below = "@+id/powerjumpDetail"
             />
 
         <ImageButton
@@ -99,9 +99,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/burpeesImage"
             android:layout_gravity="center_horizontal"
-            android:layout_below = "@+id/burpeesText"
             android:clickable="true"
             android:src="@drawable/burpees"
+            android:layout_below = "@+id/burpeesText"
             />
 
         <TextView
@@ -110,9 +110,9 @@
             android:text="3 sets of 6-10 reps"
             android:id="@+id/burpiesDetail"
             android:layout_gravity="center_horizontal"
-            android:layout_below = "@+id/burpeesImage"
             android:textSize="20dp"
             android:textColor="#ffffff"
+            android:layout_below = "@+id/burpeesImage"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -127,10 +127,10 @@
             android:layout_height="wrap_content"
             android:text="Workout Complete!"
             android:id="@+id/completeDay5w"
-            android:layout_below = "@+id/burpiesDetail"
             android:layout_gravity="right|bottom"
             android:background="#e70b0e"
             android:textColor="#ffffff"
+            android:layout_below = "@+id/burpiesDetail"
             />
 
     </LinearLayout>>

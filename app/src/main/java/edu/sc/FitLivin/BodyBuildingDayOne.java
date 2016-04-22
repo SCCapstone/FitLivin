@@ -42,16 +42,18 @@ public class BodyBuildingDayOne extends Fragment {
     public BodyBuildingDayOne() {
         // Required empty public constructor
     }
+
+    //builder for the dialog
     private AlertDialog.Builder dialogBuilder;
 
     //alerts user once they've completed their workout and rewards them 50 points to points page.
     private void bodybuild1Dialog(){
 
             dialogBuilder = new AlertDialog.Builder(getActivity());
-            dialogBuilder.setMessage("You Earned 50 Points!");
             dialogBuilder.setTitle("Congratulations!");
+            dialogBuilder.setMessage("You Earned 50 Points!");
             dialogBuilder.setIcon(R.mipmap.ic_launcher);
-            dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            dialogBuilder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.dismiss();

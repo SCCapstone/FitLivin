@@ -31,20 +31,20 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/cycleImage"
                 android:layout_gravity="center_horizontal"
-                android:layout_below = "@+id/warmupCycleText"
                 android:clickable="true"
                 android:src="@drawable/cycling3"
+                android:layout_below = "@+id/warmupCycleText"
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below = "@+id/cycleImage"
                 android:id="@+id/warmupDetail"
                 android:layout_gravity="center_horizontal"
                 android:textSize="20dp"
                 android:textColor="#ffffff"
                 android:text="5-10 minute cyle "
+                android:layout_below = "@+id/cycleImage"
                 />
 
             <TextView
@@ -52,10 +52,10 @@
                 android:layout_height="wrap_content"
                 android:text="Pull-ups"
                 android:layout_gravity="center_horizontal"
-                android:layout_below = "@+id/warmupDetail"
                 android:textColor="#ffffff"
                 android:textSize="32dp"
                 android:id="@+id/pullupText"
+                android:layout_below = "@+id/warmupDetail"
                 />
 
             <ImageButton
@@ -64,9 +64,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/pullupImage"
                 android:layout_gravity="center_horizontal"
-                android:layout_below = "@+id/pullupText"
                 android:clickable="true"
                 android:src="@drawable/pullup"
+                android:layout_below = "@+id/pullupText"
                 />
 
             <TextView
@@ -76,8 +76,8 @@
                 android:id="@+id/pullupDetail"
                 android:layout_gravity="center_horizontal"
                 android:textSize="20dp"
-                android:layout_below = "@+id/pullupImage"
                 android:textColor="#ffffff"
+                android:layout_below = "@+id/pullupImage"
                 />
 
             <TextView
@@ -86,9 +86,9 @@
                 android:text="Burpees"
                 android:id="@+id/burpeesText"
                 android:layout_gravity="center_horizontal"
-                android:layout_below = "@+id/pullupDetail"
                 android:textColor="#ffffff"
                 android:textSize="32dp"
+                android:layout_below = "@+id/pullupDetail"
                 />
 
             <ImageButton
@@ -97,9 +97,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/burpeesImage"
                 android:layout_gravity="center_horizontal"
-                android:layout_below = "@+id/burpeesText"
                 android:clickable="true"
                 android:src="@drawable/burpees"
+                android:layout_below = "@+id/burpeesText"
                 />
 
             <TextView
@@ -108,10 +108,11 @@
                 android:text="3 sets of 6-10 reps"
                 android:id="@+id/burpeesDetail"
                 android:layout_gravity="center_horizontal"
-                android:layout_below = "@+id/burpeesImage"
                 android:textSize="20dp"
                 android:textColor="#ffffff"
+                android:layout_below = "@+id/burpeesImage"
                 />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
@@ -125,10 +126,10 @@
                 android:layout_height="wrap_content"
                 android:text="Workout Complete!"
                 android:id="@+id/completeDay3w"
-                android:layout_below = "@+id/burpeesDetail"
                 android:layout_gravity="right|bottom"
                 android:background="#e70b0e"
                 android:textColor="#ffffff"
+                android:layout_below = "@+id/burpeesDetail"
                 />
 
 

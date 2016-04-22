@@ -34,9 +34,9 @@
             android:layout_height="200dp"
             android:id="@+id/deadliftImage"
             android:src="@drawable/deadlift"
-            android:layout_below="@+id/squat"
             android:clickable="true"
             android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/squat"
             />
 
         <TextView
@@ -57,8 +57,8 @@
             android:id="@+id/dbrow"
             android:textColor="#ffffff"
             android:textSize="32dp"
-            android:layout_below="@+id/closeGripBenchImage"
             android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/closeGripBenchImage"
             />
 
         <ImageButton
@@ -67,9 +67,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/rowImage"
             android:src="@drawable/dbrow"
-            android:layout_below="@+id/dbrow"
             android:clickable="true"
             android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/dbrow"
             />
 
         <TextView
@@ -90,8 +90,8 @@
             android:id="@+id/shrug"
             android:textColor="#ffffff"
             android:textSize="32dp"
-            android:layout_below="@+id/legpresspic"
             android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/legpresspic"
             />
 
         <ImageButton
@@ -100,9 +100,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/shrugpic"
             android:src="@drawable/shrugs2"
-            android:layout_below="@+id/shrug"
             android:clickable="true"
             android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/shrug"
             />
 
         <TextView
@@ -128,10 +128,10 @@
             android:layout_height="wrap_content"
             android:text="Workout Complete!"
             android:id="@+id/completeDay3s"
-            android:layout_below = "@+id/shrugDescription"
             android:layout_gravity="right|bottom"
             android:background="#e70b0e"
             android:textColor="#ffffff"
+            android:layout_below = "@+id/shrugDescription"
             />
 
 

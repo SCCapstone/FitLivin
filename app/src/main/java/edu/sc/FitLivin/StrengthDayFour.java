@@ -38,17 +38,21 @@ public class StrengthDayFour extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
-MediaPlayer mp;
+    //initialize media player for fit facts
+    MediaPlayer mp;
 
-
+//builder for the dialog
     private AlertDialog.Builder dBuilder;
 
-
+//alerts the use when they complete a workout and tells them how many points theyve earned
     private void StrengthD4dialog(){
         dBuilder = new AlertDialog.Builder(getActivity());
+        //the congrats message
         dBuilder.setTitle("Congratulations!");
+        //amount of points earned
         dBuilder.setMessage("You earned 50 points!");
         dBuilder.setIcon(R.mipmap.ic_launcher);
+        //continue dialog box option
         dBuilder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -79,11 +83,12 @@ MediaPlayer mp;
         View v = inflater.inflate(R.layout.fragment_strength_day_four, container, false);
         getActivity().getActionBar()
                 .setTitle("Day 4");
+//here we initialize the buttons for the fit facts feature
         ImageButton closeGripBench = (ImageButton) v.findViewById(R.id.closeGripBenchImage);
         ImageButton barbellCurl = (ImageButton) v.findViewById(R.id.bbcurl);
         ImageButton pushdown = (ImageButton) v.findViewById(R.id.pushdown);
 
-
+//if close grip bench button is clicked, play the fitfact (as long as it is not already playing)
         closeGripBench.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -102,6 +107,7 @@ MediaPlayer mp;
                                   }
                               }
         );
+        //if barbellCurl button is clicked, play the fitfact (as long as it is not already playing)
         barbellCurl.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -120,6 +126,7 @@ MediaPlayer mp;
                                   }
                               }
         );
+        //if pushdown button is clicked, play the fitfact (as long as it is not already playing)
         pushdown.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -158,17 +165,19 @@ MediaPlayer mp;
             }
         });**/
 
+        //complete button adds points to points page and records date.
         Button complete = (Button) v.findViewById(R.id.completeDay4s);//creates complete button
         complete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 MainActivity main1 = new MainActivity();
+                //sets the format of the date here
                 SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
                 Date date = new Date();
                 String time = sdf.format(date);
-                main1.workoutPro(time,"Strength Day Four: ");
+                main1.workoutPro(time, "Strength Day Four: ");
                 ParseQuery queryuser = ParseUser.getQuery();
                 queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
-
+//here points are updated
                 ParseQuery Points = ParseQuery.getQuery("Points");
                 Points.whereExists("CurrentPoints");//setting constraints
                 Points.whereMatchesQuery("author", queryuser);
@@ -190,7 +199,7 @@ MediaPlayer mp;
                                                         points = points + 50;//adds points for completed workout
 
                                                         String s = ParseUser.getCurrentUser().getUsername();
-                                                        main.pointsData(points,s);
+                                                        main.pointsData(points, s);
 
                                                         StrengthD4dialog();
 

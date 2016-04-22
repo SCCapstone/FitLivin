@@ -45,7 +45,7 @@ MediaPlayer mp;
             dialogBuilder = new AlertDialog.Builder(getActivity());
             dialogBuilder.setTitle("Congratulations!");
             dialogBuilder.setMessage("You Earned 50 Points!");
-            dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            dialogBuilder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.dismiss();

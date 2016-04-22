@@ -36,17 +36,20 @@ import java.util.List;
 public class StrengthDayTwo extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-
+//initialize media player for fit facts
 MediaPlayer mp;
-
+//builder for the dialog
     private AlertDialog.Builder dBuilder;
 
-
+//alerts the use when they complete a workout and tells them how many points theyve earned
     private void StrengthD2dialog(){
         dBuilder = new AlertDialog.Builder(getActivity());
+        //the congrats message
         dBuilder.setTitle("Congratulations!");
+        //amount of points earned
         dBuilder.setMessage("You earned 50 points!");
         dBuilder.setIcon(R.mipmap.ic_launcher);
+        //continue dialog box option
         dBuilder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -75,10 +78,11 @@ MediaPlayer mp;
         View v = inflater.inflate(R.layout.fragment_strength_day_two, container, false);
         getActivity().getActionBar()
                 .setTitle("Day 2");
+        //here we initialize the buttons for the fit facts feature
         ImageButton backSquat = (ImageButton) v.findViewById(R.id.squatImage);
         ImageButton legPress = (ImageButton) v.findViewById(R.id.legpresspic);
         ImageButton calfPress = (ImageButton) v.findViewById(R.id.calfpresspic);
-
+//if backSquat button is clicked, play the fitfact (as long as it is not already playing)
       backSquat.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -97,6 +101,7 @@ MediaPlayer mp;
                                   }
                               }
         );
+        //if leg press button is clicked, play the fitfact (as long as it is not already playing)
         legPress.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -115,6 +120,7 @@ MediaPlayer mp;
                                   }
                               }
         );
+        //if calf press button is clicked, play the fitfact (as long as it is not already playing)
         calfPress.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -154,22 +160,25 @@ MediaPlayer mp;
             }
         });**/
 
-
+//complete button adds points to points page and records date.
         Button complete = (Button) v.findViewById(R.id.completeDay2s);
         complete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MainActivity main1 = new MainActivity();
+                //sets the format of the date here
                 SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
                 Date date = new Date();
                 String time = sdf.format(date);
-                main1.workoutPro(time,"Strength Day Two: ");
+                main1.workoutPro(time, "Strength Day Two: ");
                 ParseQuery queryuser = ParseUser.getQuery();
                 queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
+
                 ParseQuery Points = ParseQuery.getQuery("Points");
                 Points.whereExists("CurrentPoints");//constraints
                 Points.whereMatchesQuery("author", queryuser);
                 Points.orderByDescending("createdAt");
+
                 Points.findInBackground(new FindCallback<ParseObject>() {
                                             public void done(List<ParseObject> objects, ParseException e) {
                                                 if (e == null && objects.size() != 0) {
@@ -180,7 +189,7 @@ MediaPlayer mp;
                                                         Double points = main.points;
                                                         points = points + 50;
                                                         String s = ParseUser.getCurrentUser().getUsername();
-                                                        main.pointsData(points,s);
+                                                        main.pointsData(points, s);
 
                                                         StrengthD2dialog();
                                                     }

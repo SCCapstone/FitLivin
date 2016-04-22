@@ -46,10 +46,11 @@
             android:text="4 Sets of 10-12 Repetitions"
             android:id="@+id/benchDetail"
             android:layout_gravity="center_horizontal"
+            android:textSize="20dp"
+            android:textColor="#ffffff"
             android:layout_below="@+id/squatImage"
             android:layout_above="@+id/extensionText"
-            android:textSize="20dp"
-            android:textColor="#ffffff" />
+            />
 
 
         <TextView
@@ -59,10 +60,11 @@
         android:id="@+id/extensionText"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="20dp"
+        android:textColor="#ffffff"
+        android:textSize="25dp"
         android:layout_below="@+id/benchDetail"
         android:layout_above="@+id/legExtensionImage"
-        android:textColor="#ffffff"
-        android:textSize="25dp" />
+        />
 
 
     <ImageButton
@@ -85,9 +87,9 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="20dp"
             android:textSize="20dp"
+            android:textColor="#ffffff"
             android:layout_below="@+id/legExtensionImage"
             android:layout_above="@+id/hamstringText"
-            android:textColor="#ffffff"
             />
 
         <TextView
@@ -98,9 +100,9 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="20dp"
             android:textColor="#ffffff"
+            android:textSize="25dp"
             android:layout_below="@+id/extensionDetail"
             android:layout_above="@+id/curlImage"
-            android:textSize="25dp"
             />
 
 
@@ -112,9 +114,10 @@
         android:layout_gravity="center_horizontal"
         android:id="@+id/curlImage"
         android:clickable="true"
+        android:src="@drawable/legcurl"
         android:layout_below="@+id/hamstringText"
         android:layout_above="@+id/hamstringDetail"
-        android:src="@drawable/legcurl" />
+        />
 
         <TextView
             android:layout_width="wrap_content"
@@ -124,8 +127,10 @@
             android:layout_gravity="center_horizontal"
             android:textSize="20dp"
             android:layout_marginLeft="20dp"
+            android:textColor="#ffffff"
             android:layout_below="@+id/curlImage"
-            android:textColor="#ffffff" />
+            />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="20dp"
@@ -139,10 +144,10 @@
         android:layout_height="wrap_content"
         android:text="Workout Complete!"
         android:id="@+id/completeDay1bb"
-        android:layout_below = "@+id/hamstringDetail"
         android:layout_gravity="right|bottom"
         android:background="#e70b0e"
         android:textColor="#ffffff"
+        android:layout_below = "@+id/hamstringDetail"
         />
 
 
