@@ -1,3 +1,12 @@
+/*********
+ * Class StopwatchFragment.java
+ *
+ * Provides the user with a Stopwatch so that they can monitor their time intervals
+ *
+ *
+ */
+
+
 package edu.sc.FitLivin;
 
 import android.app.Fragment;
@@ -13,12 +22,12 @@ import android.widget.Chronometer;
 
 public class StopwatchFragment extends Fragment implements OnClickListener {
 
-
+    //Empty constructor
     public StopwatchFragment() {
         // Required empty public constructor
     }
 
-
+    //Assigned the buttons and the chronometer
     Button startChron;
     Button stopChron;
     Button resetChron;
@@ -36,8 +45,10 @@ public class StopwatchFragment extends Fragment implements OnClickListener {
 
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_stopwatch_main, container, false);
+        //Creates title for the action bar
         getActivity().getActionBar()
                 .setTitle("Stopwatch");
+        //initialize buttons and sets the onClickListener
         startChron = (Button)v.findViewById(R.id.start);
                startChron.setOnClickListener(this);
         stopChron = (Button)v.findViewById(R.id.stop);
@@ -49,7 +60,7 @@ public class StopwatchFragment extends Fragment implements OnClickListener {
 
 
     }
-
+    //method which deals with button clicks. Start, stop, and reset are given functionality here
     @Override
     public void onClick(View v) {
         if (v == startChron){

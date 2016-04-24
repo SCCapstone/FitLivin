@@ -25,13 +25,15 @@ public class FitnessProgramFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        //Inflates layout for fragment
         View v = inflater.inflate(R.layout.fragment_fitness_program, container, false);
         Button btn = (Button) v.findViewById(R.id.StrengthTrainingButton);
+        //sets action bar
         getActivity().getActionBar()
                 .setTitle("Fitness Program");
 
-
+        //sets button for the Strength Training fragment
+        //Once clicked the button directs the app to the Strength training fragment
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,7 +42,8 @@ public class FitnessProgramFragment extends Fragment {
                 fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
-
+        //sets button for Bodybuilding fragment
+        //Once clicked the button directs the app to the bodybuilding fragment
         Button btn2 = (Button) v.findViewById(R.id.BodyBuildingButton);
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +53,8 @@ public class FitnessProgramFragment extends Fragment {
                 fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
+        //sets button for Weightloss fragment
+        //Once clicked the button directs the app to the weightloss exercise program
         Button btn3 = (Button) v.findViewById(R.id.WeightLossButton);
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override

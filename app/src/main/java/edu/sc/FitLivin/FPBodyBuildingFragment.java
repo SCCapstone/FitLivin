@@ -23,6 +23,7 @@ public class FPBodyBuildingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_fp__body__building, container, false);
+        //sets action bar
         getActivity().getActionBar()
                 .setTitle("Body Building");
 
@@ -38,7 +39,8 @@ public class FPBodyBuildingFragment extends Fragment {
                 ft.commit();
             }
         });**/
-
+        //sets button for Bodybuilding day 1 fragment
+        //Once clicked the button directs the app to the bodybuilding day 1 fragment
         Button day1 = (Button) v.findViewById(R.id.day1BodyBuilding);
         day1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +50,8 @@ public class FPBodyBuildingFragment extends Fragment {
                 fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
+        //sets button for Bodybuilding day 2 fragment
+        //Once clicked the button directs the app to the bodybuilding day 2 fragment
         Button day2 = (Button) v.findViewById(R.id.day2BodyBuilding);
         day2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +61,8 @@ public class FPBodyBuildingFragment extends Fragment {
                 fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
-
+        //sets button for Bodybuilding day 3 fragment
+        //Once clicked the button directs the app to the bodybuilding day 3 fragment
         Button day3 = (Button) v.findViewById(R.id.day3BodyBuilding);
         day3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +72,8 @@ public class FPBodyBuildingFragment extends Fragment {
                 fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
+        //sets button for Bodybuilding day 4 fragment
+        //Once clicked the button directs the app to the bodybuilding day 4 fragment
         Button day4 = (Button) v.findViewById(R.id.day4BodyBuilding);
         day4.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +84,8 @@ public class FPBodyBuildingFragment extends Fragment {
 
             }
         });
+        //sets button for Bodybuilding day 5 fragment
+        //Once clicked the button directs the app to the bodybuilding day 5 fragment
         Button day5 = (Button) v.findViewById(R.id.day5BodyBuilding);
         day5.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +95,9 @@ public class FPBodyBuildingFragment extends Fragment {
                 fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
+
+        //sets button for Bodybuilding how to fragment
+        //Once clicked the button directs the app to the bodybuilding how to fragment
         // Inflate the layout for this fragment
         Button howTo = (Button) v.findViewById(R.id.howTo);
         howTo.setOnClickListener(new View.OnClickListener() {

@@ -25,6 +25,7 @@ public class FPWGTLossFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_fp__wgt__loss, container, false);
      //   Button btn = (Button) v.findViewById(R.id.backButtonWeightLoss);
+        //Action bar for weight loss
         getActivity().getActionBar()
                 .setTitle("Weight Loss");
      /**   btn.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +39,8 @@ public class FPWGTLossFragment extends Fragment {
                 ft.commit();
             }
         });**/
-
+        //sets button for Weightloss day 1 fragment
+        //Once clicked the button directs the app to the Weightloss day 1 fragment
         Button day1 = (Button) v.findViewById(R.id.day1WeightLoss);
         day1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +50,8 @@ public class FPWGTLossFragment extends Fragment {
                 fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
+        //sets button for Weightloss day 2 fragment
+        //Once clicked the button directs the app to the Weightloss day 2 fragment
         Button day2 = (Button) v.findViewById(R.id.day2WeightLoss);
         day2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +61,8 @@ public class FPWGTLossFragment extends Fragment {
                 fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
-
+        //sets button for Weightloss day 3 fragment
+        //Once clicked the button directs the app to the Weightloss day 3 fragment
         Button day3 = (Button) v.findViewById(R.id.day3WeightLoss);
         day3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +72,8 @@ public class FPWGTLossFragment extends Fragment {
                 fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
+        //sets button for Weightloss day 4 fragment
+        //Once clicked the button directs the app to the Weightloss day 4 fragment
         Button day4 = (Button) v.findViewById(R.id.day4WeightLoss);
         day4.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +83,8 @@ public class FPWGTLossFragment extends Fragment {
                 fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
+        //sets button for Weightloss day 5 fragment
+        //Once clicked the button directs the app to the Weightloss day 5 fragment
         Button day5 = (Button) v.findViewById(R.id.day5WeightLoss);
         day5.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +94,8 @@ public class FPWGTLossFragment extends Fragment {
                 fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
             }
         });
+        //sets button for Weightloss how to fragment
+        //Once clicked the button directs the app to the Weightloss how to fragment
         // Inflate the layout for this fragment
         Button howTo = (Button) v.findViewById(R.id.howTo);
         howTo.setOnClickListener(new View.OnClickListener() {

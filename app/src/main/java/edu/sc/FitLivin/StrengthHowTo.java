@@ -35,6 +35,7 @@ public class StrengthHowTo extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_strength_how_to, container, false);
+        //Sets action bar
         getActivity().getActionBar()
                 .setTitle("How To");
 

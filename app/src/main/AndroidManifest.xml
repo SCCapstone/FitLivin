@@ -13,6 +13,7 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
+
     <application
         android:name=".Application"
         android:allowBackup="true"
@@ -61,5 +62,7 @@
             android:screenOrientation="portrait"/>
         <activity android:name="com.desmond.squarecamera.CameraActivity" />
     </application>
+
+
 
 </manifest>

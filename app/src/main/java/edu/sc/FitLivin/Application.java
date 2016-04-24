@@ -1,8 +1,16 @@
 package edu.sc.FitLivin;
 
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
+
 import com.parse.Parse;
+import com.parse.ParseException;
 import com.parse.ParseInstallation;
+import com.parse.ParsePush;
+import com.parse.ParsePushBroadcastReceiver;
 import com.parse.PushService;
+import com.parse.SaveCallback;
 
 /**
  * Created by pkcho on 1/13/2016.
@@ -18,6 +26,7 @@ public class Application extends android.app.Application{
         Parse.initialize(this, getString(R.string.parse_application_Id), getString(R.string.parse_application_Key));
 
     }
+
 
 
 }

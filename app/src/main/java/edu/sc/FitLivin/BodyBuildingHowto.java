@@ -29,7 +29,7 @@ public class BodyBuildingHowto extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_body_building_howto, container, false);
-
+//Sets action bar
         getActivity().getActionBar()
                 .setTitle("How To");
         /**  Button backBtn = (Button) v.findViewById(R.id.Bbhowtoback);
