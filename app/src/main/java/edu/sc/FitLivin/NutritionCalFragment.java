@@ -2,7 +2,7 @@
  * Class 'NutritionCalFragment'
  *
  * Provides the user with the ability to calculate their needed calorie
- * and protein intake.
+ * to lose, maintain, or gain weight based on level of activity
  *
  */
 
@@ -35,15 +35,10 @@ public class NutritionCalFragment extends Fragment {
     public NutritionCalFragment() {
 
     }
-
-
-
-
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
 
-        //Integer test = 110;
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_nutrition_cal, container, false);
         getActivity().getActionBar()
@@ -55,13 +50,20 @@ public class NutritionCalFragment extends Fragment {
         final TextView modCal = (TextView) v.findViewById(R.id.modCalories);
         final TextView highCal = (TextView) v.findViewById(R.id.highCalories);
 
+        /****
+         *  This block displays the amount of calories needed for a user when they
+         *  are focused on weightloss. It checks the users gender and calculates by calling the
+         *  caluclation methods.
+         */
         weightLoss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //changes button text to green when clicked
                 weightLoss.setTextColor(Color.GREEN);
                 maintain.setTextColor(Color.WHITE);
                 weightGain.setTextColor(Color.WHITE);
 
+                //queries username information on gender
                 ParseQuery<ParseUser> query = ParseUser.getQuery();
                 query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
                 query.orderByDescending("createdAt");
@@ -74,6 +76,9 @@ public class NutritionCalFragment extends Fragment {
                             String genderU = user.get("gender").toString();
 
                             Log.d("gender", genderU);
+                            //if there are a male
+                            //if user is a male, data is queried and low mod and high methods are called
+                            //for weightLoss
                             if (genderU.equalsIgnoreCase("male")) {
                                 ParseQuery query1 = ParseQuery.getQuery("ProfileInfo"); //getting query
                                 query1.whereExists("Weight");//setting constraints
@@ -86,10 +91,11 @@ public class NutritionCalFragment extends Fragment {
                                             if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
                                                 weight = (Integer) objects.get(0).get("Weight");
                                                 Log.d("F", "weightM");
+                                                //calls low mod and high methods for weight loss
                                                 Integer low = MaleWeightLossL(weight);
                                                 Integer mod = MaleWeightLossM(weight);
                                                 Integer high = MaleWeightLossH(weight);
-                                                //Integer high = 23 * weight - 550;
+                                                //sets the text
                                                 lowCal.setText("" + low);
                                                 modCal.setText("" + mod);
                                                 highCal.setText("" + high);
@@ -100,6 +106,8 @@ public class NutritionCalFragment extends Fragment {
                                 });
 
                             }
+                            //if user is a female, data is queried and low mod and high methods are called
+                            //for weight loss
                             if (genderU.equalsIgnoreCase("female")) {
                                 ParseQuery query2 = ParseQuery.getQuery("ProfileInfo"); //getting query
                                 query2.whereExists("Weight");//setting constraints
@@ -112,11 +120,9 @@ public class NutritionCalFragment extends Fragment {
                                             if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
                                                 weight = (Integer) objects.get(0).get("Weight");
                                                 Log.d("F", "weightM");
-                                                //Integer low = 16 * weight - 550;
+                                                //sets the value for low, mod, and high
                                                 Integer low = FemaleWeightLossL(weight);
-                                                //Integer mod = 17 * weight - 550;
                                                 Integer mod = FemaleWeightLossM(weight);
-                                                //Integer high = 20 * weight - 550;
                                                 Integer high = FemaleWeightLossH(weight);
                                                 lowCal.setText("" + low);
                                                 modCal.setText("" + mod);
@@ -137,10 +143,16 @@ public class NutritionCalFragment extends Fragment {
             }
         });
 
+
+        /****
+         *  This block displays the amount of calories needed for a user when they
+         *  are focused on maintain. It checks the users gender and calculates by calling the
+         *  caluclation methods.
+         */
         maintain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                maintain.setTextColor(Color.GREEN);
+                maintain.setTextColor(Color.GREEN);//sets button text to green
                 weightLoss.setTextColor(Color.WHITE);
                 weightGain.setTextColor(Color.WHITE);
                 ParseQuery<ParseUser> query = ParseUser.getQuery();
@@ -155,6 +167,8 @@ public class NutritionCalFragment extends Fragment {
                             String genderU = user.get("gender").toString();
 
                             Log.d("gender", genderU);
+                           //if user is a male, data is queried and low mod and high methods are called
+                            //for weight maintain
                             if (genderU.equalsIgnoreCase("male")) {
                                 ParseQuery query1 = ParseQuery.getQuery("ProfileInfo"); //getting query
                                 query1.whereExists("Weight");//setting constraints
@@ -167,11 +181,8 @@ public class NutritionCalFragment extends Fragment {
                                             if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
                                                 weight = (Integer) objects.get(0).get("Weight");
                                                 Log.d("F", "weightM");
-                                                //Integer low = 17 * weight;
                                                 Integer low = MaleWeightMaintainL(weight);
-                                                //Integer mod = 19 * weight;
                                                 Integer mod = MaleWeightMaintainM(weight);
-                                                //Integer high = 23 * weight;
                                                 Integer high = MaleWeightMaintainH(weight);
                                                 lowCal.setText("" + low);
                                                 modCal.setText("" + mod);
@@ -183,6 +194,8 @@ public class NutritionCalFragment extends Fragment {
                                 });
 
                             }
+                            //if user is a female, data is queried and low mod and high methods are called
+                            //for weight maintain
                             if (genderU.equalsIgnoreCase("female")) {
                                 ParseQuery query2 = ParseQuery.getQuery("ProfileInfo"); //getting query
                                 query2.whereExists("Weight");//setting constraints
@@ -195,11 +208,8 @@ public class NutritionCalFragment extends Fragment {
                                             if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
                                                 weight = (Integer) objects.get(0).get("Weight");
                                                 Log.d("F", "weightM");
-                                                //Integer low = 16 * weight;
                                                 Integer low = FemaleWeightMaintainL(weight);
-                                                //Integer mod = 17 * weight;
                                                 Integer mod = FemaleWeightMaintainM(weight);
-                                               // Integer high = 20 * weight;
                                                 Integer high = FemaleWeightMaintainH(weight);
                                                 lowCal.setText("" + low);
                                                 modCal.setText("" + mod);
@@ -219,7 +229,11 @@ public class NutritionCalFragment extends Fragment {
 
             }
         });
-
+        /****
+         *  This block displays the amount of calories needed for a user when they
+         *  are focused on weightgain. It checks the users gender and calculates by calling the
+         *  caluclation methods.
+         */
         weightGain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -238,6 +252,8 @@ public class NutritionCalFragment extends Fragment {
                             String genderU = user.get("gender").toString();
 
                             Log.d("gender", genderU);
+                            //if user is a male, data is queried and low mod and high methods are called
+                            //for weight weightGain
                             if (genderU.equalsIgnoreCase("male")) {
                                 ParseQuery query1 = ParseQuery.getQuery("ProfileInfo"); //getting query
                                 query1.whereExists("Weight");//setting constraints
@@ -266,6 +282,8 @@ public class NutritionCalFragment extends Fragment {
                                 });
 
                             }
+                            //if user is a female, data is queried and low mod and high methods are called
+                            //for weight weightGain
                             if (genderU.equalsIgnoreCase("female")) {
                                 ParseQuery query2 = ParseQuery.getQuery("ProfileInfo"); //getting query
                                 query2.whereExists("Weight");//setting constraints
@@ -303,128 +321,209 @@ public class NutritionCalFragment extends Fragment {
             }
         });
 
-
-
-        /**   //Creates back button to go back to main page
-        Button backBtn = (Button) v.findViewById(R.id.NutBack);
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                HomePageFragment fragment1 = new HomePageFragment();
-                FragmentManager fm = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.container, fragment1);//replaces fragment with previous
-                ft.addToBackStack(null);
-                ft.commit();
-            }
-        });**/
         return v;
 
 
     }
 
+    /*****
+     * 'MaleWeightLossL()'
+     *
+     * Sets the low activity calories for male weightLoss and returns it
+     *
+     */
     public Integer MaleWeightLossL (Integer weight){
         Integer weight1 = weight;
         Integer low = 17 * weight1 - 550;
-
         return low;
     }
+
+    /*****
+     * 'MaleWeightLossM()'
+     *
+     * Sets the mod activity calories for male weightLoss and returns it
+     *
+     */
     public Integer MaleWeightLossM (Integer weight){
         Integer weight1 = weight;
         Integer mod = 19 * weight1 - 550;
 
         return mod;
     }
-
+    /*****
+     * 'MaleWeightLossH()'
+     *
+     * Sets the high activity calories for male weightLoss and returns it
+     *
+     */
     public Integer MaleWeightLossH (Integer weight){
         Integer weight1 = weight;
         Integer high = 23 * weight1 - 550;
 
         return high;
     }
-
+    /*****
+     * 'FemaleWeightLossL()'
+     *
+     * Sets the low activity calories for female weightLoss and returns it
+     *
+     */
     public Integer FemaleWeightLossL (Integer weight){
         Integer weight1 = weight;
         Integer low = 16 * weight1 - 550;
 
         return low;
     }
+    /*****
+     * 'FemaleWeightLossM()'
+     *
+     * Sets the mod activity calories for female weightLoss and returns it
+     *
+     */
     public Integer FemaleWeightLossM (Integer weight){
         Integer weight1 = weight;
         Integer mod = 17 * weight1 - 550;
 
         return mod;
     }
-
+    /*****
+     * 'FemaleWeightLossH()'
+     *
+     * Sets the hgih activity calories for female weightLoss and returns it
+     *
+     */
     public Integer FemaleWeightLossH (Integer weight){
         Integer weight1 = weight;
         Integer high = 20 * weight1 - 550;
 
         return high;
     }
+    /*****
+     * 'MaleWeightMaintainL()'
+     *
+     * Sets the low activity calories for male weight maintain and returns it
+     *
+     */
     public Integer MaleWeightMaintainL (Integer weight){
         Integer weight1 = weight;
         Integer low = 17 * weight1;
 
         return low;
     }
+    /*****
+     * 'MaleWeightMaintainM()'
+     *
+     * Sets the mod activity calories for male weight maintain and returns it
+     *
+     */
     public Integer MaleWeightMaintainM (Integer weight){
         Integer weight1 = weight;
         Integer mod = 19 * weight1;
 
         return mod;
     }
+    /*****
+     * 'MaleWeightMaintainH()'
+     *
+     * Sets the high activity calories for male weight maintain and returns it
+     *
+     */
     public Integer MaleWeightMaintainH (Integer weight){
         Integer weight1 = weight;
         Integer high = 23 * weight1;
 
         return high;
     }
+    /*****
+     * 'FemaleWeightMaintainL()'
+     *
+     * Sets the low activity calories for female weight maintain and returns it
+     *
+     */
     public Integer FemaleWeightMaintainL (Integer weight){
         Integer weight1 = weight;
         Integer low = 16 * weight1;
 
         return low;
     }
+    /*****
+     * 'FemaleWeightMaintainM()'
+     *
+     * Sets the mod activity calories for female weight maintain and returns it
+     *
+     */
     public Integer FemaleWeightMaintainM (Integer weight){
         Integer weight1 = weight;
         Integer mod = 17 * weight1;
 
         return mod;
     }
+    /*****
+     * 'FemaleWeightMaintainH()'
+     *
+     * Sets the high activity calories for female weight maintain and returns it
+     *
+     */
     public Integer FemaleWeightMaintainH (Integer weight){
         Integer weight1 = weight;
         Integer high = 20 * weight1;
 
         return high;
     }
-
+    /*****
+     * 'MaleWeightGainL()'
+     *
+     * Sets the low activity calories for male weight gain and returns it
+     *
+     */
     public Integer MaleWeightGainL (Integer weight){
         Integer weight1 = weight;
         Integer low = 17 * weight1 +750;
 
         return low;
     }
-
+    /*****
+     * 'MaleWeightGainM()'
+     *
+     * Sets the mod activity calories for male weight gain and returns it
+     *
+     */
     public Integer MaleWeightGainM (Integer weight){
         Integer weight1 = weight;
         Integer mod = 19 * weight1 +750;
 
         return mod;
     }
-
+    /*****
+     * 'MaleWeightGainH()'
+     *
+     * Sets the hgih activity calories for male weight gain and returns it
+     *
+     */
     public Integer MaleWeightGainH (Integer weight){
         Integer weight1 = weight;
         Integer high = 23 * weight1 +750;
 
         return high;
     }
+    /*****
+     * 'FemaleWeightGainL()'
+     *
+     * Sets the low activity calories for female weight gain and returns it
+     *
+     */
     public Integer FemaleWeightGainL (Integer weight){
         Integer weight1 = weight;
         Integer low = 16 * weight1 +750;
 
         return low;
     }
+    /*****
+     * 'FemaleWeightGainM()'
+     *
+     * Sets the mod activity calories for female weight gain and returns it
+     *
+     */
     public Integer FemaleWeightGainM (Integer weight){
         Integer weight1 = weight;
         Integer mod = 17 * weight1 +750;
@@ -432,6 +531,12 @@ public class NutritionCalFragment extends Fragment {
         return mod;
 
     }
+    /*****
+     * 'FemaleWeightGainH()'
+     *
+     * Sets the high activity calories for female weight gain and returns it
+     *
+     */
     public Integer FemaleWeightGainH (Integer weight){
         Integer weight1 = weight;
         Integer high = 20 * weight1 +750;

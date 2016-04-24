@@ -1,7 +1,9 @@
 /******
  * Class 'PointsPageFragment'
  *
- * Points will be accumulated for meeting goals. This page displays the points.
+ * Points will be accumulated for meeting goals. This page displays the points and position of the user.
+ * There is a list showing all of the users and their points along with their position. This allows
+ * our users to check their status of the the competition.
  *
  */
 
@@ -47,20 +49,14 @@ public class PointsPageFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_points_page, container, false);
 
         getActivity().getActionBar()
-                .setTitle("Points");
+                .setTitle("Points");// sets the title of the action bar
 
-       MainActivity main = new MainActivity();
-
+       //initializing variables and objects
+        MainActivity main = new MainActivity();
         final TextView currentPoints = (TextView) v.findViewById(R.id.PointsView);
         final TextView position = (TextView) v.findViewById(R.id.position);
         final String name1 = ParseUser.getCurrentUser().getUsername();
         final MainActivity main5 = new MainActivity();
-
-
-
-
-        //Creates back button to go back to home page
-
         MainActivity main2 = new MainActivity();
         final ArrayList<String> arrayList;
         arrayList = new ArrayList<String>();
@@ -72,30 +68,33 @@ public class PointsPageFragment extends Fragment {
         final ListView list;
         list = (ListView) v.findViewById(R.id.listView4);
 
-
+        // creates an adapter for the list
         adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, android.R.id.text1,arrayList2) {
-
-            public View getView(int position, View convertView, ViewGroup parent) {
-                View view = super.getView(position, convertView, parent);
-                TextView ListItemShow = (TextView) view.findViewById(android.R.id.text1);
-                ListItemShow.setTextColor(Color.parseColor("#ffffff"));
-                return view;
+        // changes view of the list with a color change
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View view = super.getView(position, convertView, parent);
+            TextView ListItemShow = (TextView) view.findViewById(android.R.id.text1);
+            ListItemShow.setTextColor(Color.parseColor("#ffffff"));
+            return view;
             }
         };
 
         list.setAdapter(adapter);
-        adapter.clear();
-        //MainActivity main = new MainActivity();
+        adapter.clear();// clears adapter for new addition
         main2.leader = 1;
-
+        // initializing map
         final HashMap<Double, String> myMap = new HashMap<Double, String>();
+
+        //query database for points info
         ParseQuery Points2 = ParseQuery.getQuery("Points");
         Points2.whereExists("CurrentPoints");
         Points2.whereExists("username");//setting constraints
-        Points2.orderByDescending("createdAt");
+        Points2.orderByDescending("createdAt");// orders data by descending depending on date
 
         Points2.findInBackground(new FindCallback<ParseObject>() {
-
+                                  // this section uses three arrayList for the data
+                                    //sorted by user and points
+                                    // they are then put into a map and sent to the list and adapter
                                      public void done(List<ParseObject> objects, ParseException e) {
                                          if (e == null) {
                                              MainActivity main = new MainActivity();
@@ -105,33 +104,31 @@ public class PointsPageFragment extends Fragment {
                                                  if (e == null && objects.size() != 0) { //if objects size is not 0
 
                                                      ParseUser user1 = objects.get(main.leader).getParseUser("author");
+                                                     //try catch to see if username exist
                                                      try {
                                                          x = user1.fetchIfNeeded().getUsername();
                                                      } catch (ParseException E) {
 
                                                      }
                                                      double y = (double) objects.get(main.leader).get("CurrentPoints");
-
                                                      if (arrayList.contains(x)) {
 
                                                      } else {
+                                                         //adds username and points to list
+                                                         //adds attributes to map
                                                          arrayList.add(x);
                                                          arrayList3.add(y);
                                                          myMap.put(y, x);
-                                                         // adapter.notifyDataSetChanged();
 
                                                      }
-
-
                                                  }
                                                  main.leader++;
                                              }
 
+                                             Collections.sort(arrayList3);//sorts the arraylist by largest number
 
-                                             Collections.sort(arrayList3);
-
-                                             // String str = new String(charArray);
                                              Integer place = 1;
+                                             //loop goes through arraylist
                                              for (Integer i = arrayList3.size() - 1; i >= 0; i--) {
                                                  Double pts = arrayList3.get(i);
                                                  String uname = myMap.get(pts);
@@ -140,25 +137,17 @@ public class PointsPageFragment extends Fragment {
                                                      int a = (int) Math.round(pts);
                                                      currentPoints.setText("" + a);
                                                  }
-                                                 // myMap.remove(pts);
 
-                                                 // Integer space = 19 - uname.length();
                                                  int b = (int) Math.round(pts);
-                                            /* for (Integer y = 0; y < space; y++) {
-                                                 uname += ".";
-                                             }*/
-                                                 // System.out.println(uname);
+
                                                  String padded = uname;
+                                                 //organizes data by using padding
                                                  if (place <= 9) {
                                                      String s = "  #" + place + ": " + b + " " + padded;
-                                                     ;
-                                                     //System.out.println(s);
                                                      arrayList2.add(s);
 
                                                  } else {
                                                      String s = "#" + place + ": " + b + " " + padded;
-                                                     ;
-                                                     //System.out.println(s);
                                                      arrayList2.add(s);
 
                                                  }

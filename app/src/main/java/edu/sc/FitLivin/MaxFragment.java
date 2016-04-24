@@ -37,10 +37,7 @@ import java.util.List;
 
 public class MaxFragment extends Fragment {
 
-    private static final int TEXT_ID = 0;
-    private static final int TEXT_ID1 = 0;
-    private static final int TEXT_ID2 = 0;
-    private static final int TEXT_ID3 = 0;//
+
 
         @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,35 +46,35 @@ public class MaxFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_max, container, false);
 
             getActivity().getActionBar()
-                    .setTitle("Max");
-
-
+                    .setTitle("Max");//sets title of action bar
 
         //initialize textviews in max xml
+        //initializes variables
         final TextView userBench = (TextView) v.findViewById(R.id.userBench);
         final TextView userSquat = (TextView) v. findViewById(R.id.userSquat);
         final TextView userDL = (TextView) v. findViewById(R.id.userDeadlift);
         final TextView userMileTime = (TextView) v.findViewById(R.id.userTime);
-
+        //main activity object
         final  MainActivity main = new MainActivity();
-
         Button setBenchMax = (Button) v.findViewById(R.id.setBench);
         Button setSquatMax = (Button) v.findViewById(R.id.setSquat);
         Button setDeadLiftMax = (Button) v.findViewById(R.id.setDeadLift);
             userSquat.setInputType(InputType.TYPE_CLASS_NUMBER);
-
         Button setMileTimeMax = (Button) v.findViewById(R.id.setMileTime);
+
         ParseQuery BenchMaxquery = ParseQuery.getQuery("MaxBench");
         ParseQuery SquatMaxquery = ParseQuery.getQuery("MaxSquat");
         ParseQuery DeadLiftMaxquery = ParseQuery.getQuery("MaxDeadLift");
         ParseQuery MileTimeMaxquery = ParseQuery.getQuery("MaxMileTime");
-            ParseQuery queryuser = ParseUser.getQuery();
-            queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
 
-
+            /****
+             * This block is used to query and access max bench information and set it to the textview
+             */
+        ParseQuery queryuser = ParseUser.getQuery();
+        queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
         BenchMaxquery.whereExists("MaxBench");//setting constraints
         BenchMaxquery.whereMatchesQuery("author", queryuser);
-            BenchMaxquery.orderByDescending("createdAt");
+        BenchMaxquery.orderByDescending("createdAt");
         BenchMaxquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -93,12 +90,13 @@ public class MaxFragment extends Fragment {
             }
 
         });
-
+        /****
+        * This block is used to query and access max squat information and set it to the textview
+         */
             SquatMaxquery.whereExists("MaxSquat");//setting constraints
             SquatMaxquery.whereMatchesQuery("author", queryuser);
             SquatMaxquery.orderByDescending("createdAt");
-        //SquatMaxquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
-        SquatMaxquery.findInBackground(new FindCallback<ParseObject>() {
+            SquatMaxquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
                 if (e == null && objects.size() != 0) { //if objects size is not 0
@@ -113,9 +111,12 @@ public class MaxFragment extends Fragment {
             }
 
         });
+            /****
+             * This block is used to query and access max deadlift information and set it to the textview
+             */
         DeadLiftMaxquery.whereExists("MaxDeadLift");//setting constraints
-            DeadLiftMaxquery.whereMatchesQuery("author", queryuser);
-            DeadLiftMaxquery.orderByDescending("createdAt");
+        DeadLiftMaxquery.whereMatchesQuery("author", queryuser);
+        DeadLiftMaxquery.orderByDescending("createdAt");
         DeadLiftMaxquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -132,9 +133,13 @@ public class MaxFragment extends Fragment {
 
         });
 
+            /****
+             * This block is used to query and access max miletime information and set it to the textview
+             */
+
         MileTimeMaxquery.whereExists("MaxMileTime");//setting constraints
-            MileTimeMaxquery.whereMatchesQuery("author", queryuser);
-            MileTimeMaxquery.orderByDescending("createdAt");
+        MileTimeMaxquery.whereMatchesQuery("author", queryuser);
+        MileTimeMaxquery.orderByDescending("createdAt");
         MileTimeMaxquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -152,7 +157,11 @@ public class MaxFragment extends Fragment {
         });
 
 
-
+            /****
+             * This block is used to set the value. When the user clicks set, a dialog alert box appears.
+             * The user can then enter value and click set to set the weight or time. If it is an invalid
+             * value, there will be a notification.
+             */
             setBenchMax.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -163,7 +172,7 @@ public class MaxFragment extends Fragment {
                     input.setInputType(InputType.TYPE_CLASS_NUMBER);
                     builder1.setView(input);
                     builder1.setCancelable(true);
-
+                      //when set button is clicked
                     builder1.setPositiveButton(
                             "SET",
                             new DialogInterface.OnClickListener() {
@@ -172,7 +181,7 @@ public class MaxFragment extends Fragment {
                                     MainActivity m = new MainActivity();
                                     m.ExcTest = 1;
                                     String value = input.getText().toString();
-                                    try {
+                                    try {//try catch to determine if integer
                                         bench = Integer.parseInt(value);
                                         Log.d("Q", "Is a number " + bench + " dd ");
                                     } catch (NumberFormatException e) {
@@ -182,6 +191,7 @@ public class MaxFragment extends Fragment {
                                                 .show();
 
                                     }
+                                    //sets value if it is equal to 1
                                     if (m.ExcTest == 1) {
                                         Integer bench2 = Integer.valueOf(value);
                                         String s = ParseUser.getCurrentUser().getUsername();
@@ -191,7 +201,7 @@ public class MaxFragment extends Fragment {
                                     }
                                 }
                             });
-
+                   //breaks out of dialog box
                     builder1.setNegativeButton(
                             "Cancel",
                             new DialogInterface.OnClickListener() {
@@ -204,6 +214,11 @@ public class MaxFragment extends Fragment {
                     alert11.show();
                 }
             });
+            /****
+             * This block is used to set the value. When the user clicks set, a dialog alert box appears.
+             * The user can then enter value and click set to set the weight or time.If it is an invalid
+             * value, there will be a notification.
+             */
 
             setSquatMax.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -257,6 +272,11 @@ public class MaxFragment extends Fragment {
                 }
             });
 
+            /****
+             * This block is used to set the value. When the user clicks set, a dialog alert box appears.
+             * The user can then enter value and click set to set the weight or time.If it is an invalid
+             * value, there will be a notification.
+             */
             setDeadLiftMax.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -307,6 +327,12 @@ public class MaxFragment extends Fragment {
                     alert11.show();
                 }
             });
+
+            /****
+             * This block is used to set the value. When the user clicks set, a dialog alert box appears.
+             * The user can then enter value and click set to set the weight or time.If it is an invalid
+             * value, there will be a notification.
+             */
 
             setMileTimeMax.setOnClickListener(new View.OnClickListener() {
                 @Override

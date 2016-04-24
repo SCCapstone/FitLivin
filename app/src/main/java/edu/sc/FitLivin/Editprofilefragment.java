@@ -1,3 +1,10 @@
+
+/******
+ * Class 'Editprofilefragment'
+ *
+ * This page will allow the user to go in a change their password
+ *
+ */
 package edu.sc.FitLivin;
 
 import android.app.AlertDialog;
@@ -25,40 +32,37 @@ import com.parse.SaveCallback;
  * Created by pkcho on 2/10/2016.
  */
 public class Editprofilefragment extends Fragment {
-    private EditText nametext;
-    private EditText phonetext;
+
     private EditText passwordtext;
     private ImageButton buttonsave;
     private EditText reenterpass;
     private ImageButton buttonexit;
-    private String password = "Password";
-    private String username = "username";
-    private String phone = "phone";
-    private Menu menu;
-    private Boolean phoneindicator = Boolean.TRUE;
     private Boolean passindicator = Boolean.TRUE;
     private ParseUser curruser = ParseUser.getCurrentUser();
+
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-
-
-
     }
 
     public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_editprofile, container, false);
         getActivity().getActionBar()
-                .setTitle("Edit Profile");
+                .setTitle("Edit Profile");//sets title to action bar
 
         passwordtext = (EditText)v.findViewById(R.id.editpasstext);
         reenterpass = (EditText)v.findViewById(R.id.reditpassword);
-
         buttonsave = (ImageButton)v.findViewById(R.id.savebuttoneditprofile);
-     //   backbutton = (Button)v.findViewById(R.id.Back);
         final MenuInflater inflater2 = getActivity().getMenuInflater();
         buttonexit = (ImageButton)v.findViewById(R.id.exiteditprofile);
+
+        /****
+         *  When the exit button is clicked, there is a notification asking the user if they
+         *  are sure they want to exit. If they click yes, it exits. If no, the alert closes and
+         *  they stay on the page.
+         */
         buttonexit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,16 +71,14 @@ public class Editprofilefragment extends Fragment {
                 final String POPUP_TEXT="Are You Sure?";
 
                 AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-
                 alert.setTitle(POPUP_TITLE);
                 alert.setMessage(POPUP_TEXT);
-
-
                 // Set an EditText view to get user input
                 LinearLayout layout = new LinearLayout(getActivity());
                 layout.setOrientation(LinearLayout.VERTICAL);
                 alert.setView(layout);
                 alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    //goes back to profile page if yes
                     public void onClick(DialogInterface dialog, int whichButton) {
 
                         ProfilePageFragment fragment = new ProfilePageFragment();
@@ -95,12 +97,18 @@ public class Editprofilefragment extends Fragment {
             }
 
         });
+
+        /****
+         * This block is used to save the password that is entered. The user can enter the password
+         * twice and they must be exactly the same. The user can then click save to save password.
+         */
         buttonsave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-//
+               //makes sure edit text is not empty
                 if (!isEmpty(passwordtext) && !isEmpty(reenterpass)) {
+                    //makes sure it is matching
                     if (isMatching(reenterpass, passwordtext)) {
 
                             curruser.setPassword(reenterpass.getText().toString());
@@ -133,6 +141,10 @@ public class Editprofilefragment extends Fragment {
 
 
                 // Call the Parse signup method
+
+                /****
+                 * This block is used to save the info into the parse database
+                 */
                 curruser.saveInBackground(new SaveCallback() {
 
                     @Override
@@ -158,7 +170,12 @@ public class Editprofilefragment extends Fragment {
         return v;
     }
 
-
+    /*****
+     * 'isEmpty()'
+     *
+     * Checks to see if edit text is empty. If so return false, otherwise return true
+     *
+     */
 
     private boolean isEmpty(EditText etText) {
         if (etText.getText().toString().trim().length() > 0) {
@@ -167,6 +184,13 @@ public class Editprofilefragment extends Fragment {
             return true;
         }
     }
+
+    /*****
+     * 'isMatching()'
+     *
+     * Checks to see if edittext 1 and edittext 2 are matching. If so return true, otherwise return false
+     *
+     */
     private boolean isMatching(EditText etText1, EditText etText2) {
         if (etText1.getText().toString().equals(etText2.getText().toString())) {
             return true;
@@ -175,7 +199,12 @@ public class Editprofilefragment extends Fragment {
         }
     }
 
-
+    /*****
+     * 'issaved()'
+     *
+     * Sends toast message to notify user that data has been saved
+     *
+     */
     private void issaved(String something){
         Toast.makeText(getActivity(),something+" has been updated",Toast.LENGTH_SHORT).show();
     }
