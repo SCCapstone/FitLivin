@@ -45,6 +45,7 @@ public class BodyBuildingDayFour extends Fragment {
         dialogBuilder= new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
         dialogBuilder.setTitle("Congratulations!");
         dialogBuilder.setMessage("You Earned 50 Points!");
+        dialogBuilder.setIcon(R.mipmap.ic_launcher);
         dialogBuilder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -52,7 +53,6 @@ public class BodyBuildingDayFour extends Fragment {
             }
         });
         AlertDialog dialog = dialogBuilder.create();
-        dialogBuilder.setIcon(R.mipmap.ic_launcher);
         dialog.show();
     }
 
