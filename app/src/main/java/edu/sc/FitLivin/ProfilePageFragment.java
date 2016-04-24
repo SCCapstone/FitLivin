@@ -2,7 +2,10 @@
 /******
  * Class 'ProfilePageFragment'
  *
- * Provides the user with the ability to enter their name, weight, and height
+ * Provides the user with the ability to enter weight and height attributes. User
+ * will have the ability to take a picture and set it as a profile picture.
+ * The user will also be able to check their bmi and see where they stand on the
+ * bmi chart.
  *
  */
 
@@ -41,9 +44,6 @@ import java.io.File;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-
-//import com.tutorialsface.roundimage.R;
-
 public class ProfilePageFragment extends Fragment {
 
     CircleImageView imageView1;
@@ -68,12 +68,9 @@ public class ProfilePageFragment extends Fragment {
 
 
         View v = inflater.inflate(R.layout.fragment_profile__page, container, false);
-        //getActivity().getActionBar()
-        // .setTitle("Profile");
-        MainActivity main = new MainActivity();
 
         imageView1 = (CircleImageView) v.findViewById(R.id.profilepicview);
-        //  Bitmap bm = BitmapFactory.decodeResource(getResources(),R.drawable.don);
+
 
         imageView1.setBackgroundColor(Color.TRANSPARENT);
         imageView1.setOnClickListener(new View.OnClickListener() {
@@ -81,13 +78,6 @@ public class ProfilePageFragment extends Fragment {
                 startActivity(new Intent(getActivity(), CameraActivity.class));
                            }
                    });
-
-        final TextView heightText = (TextView) v.findViewById(R.id.heightView);
-        final TextView weightText = (TextView) v.findViewById(R.id.weightView);
-        final TextView VeiwName = (TextView) v.findViewById(R.id.name);
-
-        //final TextView currentName = (TextView) v.findViewById(R.id.CurrN);
-
 
         final TextView currentHeight = (TextView) v.findViewById(R.id.CurrH);
         final TextView currentWeight = (TextView) v.findViewById(R.id.CurrW);
@@ -100,13 +90,11 @@ public class ProfilePageFragment extends Fragment {
         String s = ParseUser.getCurrentUser().getUsername();
         name.setText(s);
 
-        //pic = (Button) v.findViewById(R.id.pic);
-
-
-
-
-
-
+        /*****
+         *
+         * This section queries the database and sets the weight height attributes
+         *
+         */
         ParseQuery query = ParseQuery.getQuery("ProfileInfo"); //getting query
         query.whereExists("Weight");//setting constraints
         query.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
@@ -128,7 +116,12 @@ public class ProfilePageFragment extends Fragment {
         });
 
 
-
+        /*****
+         *
+         * This section queries the database and sets the weight height attibutes as floats for bmi calculation.
+         * It then runs through and calculates the bmi and sets the edit text to the value
+         *
+         */
 
         ParseQuery query2 = ParseQuery.getQuery("ProfileInfo"); //getting query
         query2.whereExists("Weight");//setting constraints
@@ -178,6 +171,13 @@ public class ProfilePageFragment extends Fragment {
             }
 
         });
+        /*****
+         *
+         * This section is for the dialog alert box. When the set attributes button is clicked
+         * the alert box pops up asking the user to enter weight and height. When the user enters
+         * weight and height, they can click set and the attributes will be set if they are valid.
+         *
+         */
         setWeightPro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -233,7 +233,14 @@ public class ProfilePageFragment extends Fragment {
                         main.profileData(w, h, ParseUser.getCurrentUser());
                         float bmiV = calculateBMI(w, h);
                         String.format("%.3g%n", bmiV);
-                        float bmiValue = (float) Math.round(bmiV * 1000f) / 1000f;
+                        float bmiValue = (float) Math.round(bmiV * 1000f) / 1000f;// calculates bmi
+                     /*****
+                     *
+                     *
+                     * It then runs through and calculates the bmi and sets the edit text to the value
+                     * for the bmi chart.
+                     *
+                     */
                         if (bmiValue < 18) {
                             underBMI.setText("" + bmiValue);
                             normalBMI.setText("");
@@ -269,7 +276,11 @@ public class ProfilePageFragment extends Fragment {
                 alert.show();
             }
         });
-
+        /*****
+         *
+         * This section queries the database for the picture to set as the profile picture
+         *
+         */
         ParseQuery queryPropic = ParseUser.getQuery();
         queryPropic.whereEqualTo("objectId",ParseUser.getCurrentUser().getObjectId());
         queryPropic.whereExists("Images");
@@ -295,18 +306,22 @@ public class ProfilePageFragment extends Fragment {
 
         return v;
     }
-    private File getFile(){
-        File folder = new File("sdcard/fitLivin_app");
-        if(!folder.exists()){
-            folder.mkdir();
-        }
-        File image_file = new File(folder, "FL_image.jpg");
-        return image_file;
-    }
+    /*****
+     * 'calculateBMI'
+     *
+     * Takes in weight and height and calculates body mass index
+     *
+     */
     public float calculateBMI(double weight, double height) {
 
         return (float) ((weight / (height * height)) * multiplier);
     }
+    /*****
+     * 'isEmpty'
+     *
+     * Checks to see if edit text is empty
+     *
+     */
     public boolean isEmpty(EditText etText) {
         if (etText.getText().toString().trim().length() > 0) {
             return false;
@@ -315,6 +330,12 @@ public class ProfilePageFragment extends Fragment {
         }
     }
 
+    /*****
+     * 'onActivityResult'
+     *
+     * As this page opens, the image for the profile picture will be set
+     *
+     */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         String path = "sdcard/fitLivin/FL_image.jpg";

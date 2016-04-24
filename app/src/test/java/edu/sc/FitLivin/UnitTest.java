@@ -1,3 +1,10 @@
+/******
+ * Class 'UnitTest'
+ *
+ * Unit test for the application
+ *
+ */
+
 package edu.sc.FitLivin;
 
 import android.app.Application;
@@ -10,13 +17,6 @@ import org.junit.Test;
 
 import edu.sc.FitLivin.BMICAL_Fragment;
 import edu.sc.FitLivin.NutritionCalFragment;
-
-/**
- * Created by Owner on 2/15/2016.
- */
-
-
-
 import android.app.Application;
 import android.test.ApplicationTestCase;
 import org.junit.Test;

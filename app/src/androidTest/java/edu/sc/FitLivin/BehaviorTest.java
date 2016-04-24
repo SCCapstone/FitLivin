@@ -1,8 +1,13 @@
+/******
+ * Class 'BehaviorTest'
+ *
+ * Behavior test for the application
+ *
+ */
+
 package edu.sc.FitLivin;
 
-/**
- * Created by Owner on 2/2/2016.
- */
+
 
 import android.os.SystemClock;
 import android.provider.ContactsContract;
@@ -59,7 +64,7 @@ public class BehaviorTest {
         Espresso.onView(withId(R.id.name)).check(ViewAssertions.matches(withText(na)));
     }
     @Test
-    public void profilepagecheck(){
+    public void ShouldbeAbleVerifyMeunIconsWork(){
         Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
         Espresso.onView(withText("Profile")).perform(ViewActions.click());
         Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
@@ -68,7 +73,7 @@ public class BehaviorTest {
 
     }
     @Test
-    public void GoalsCheck(){
+    public void ShouldbeAbleVerifyGoals(){
        
         Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
         Espresso.onView(withText("Goals")).perform(ViewActions.click());
@@ -84,11 +89,11 @@ public class BehaviorTest {
         Espresso.onView(withText("SET")).perform(ViewActions.click());
         Espresso.onView(withId(R.id.setMileTime)).perform(ViewActions.scrollTo(), click());
         Espresso.onView(withText("SET")).perform(ViewActions.click());
-        // Espresso.onView(withId(R.id.highCalories)).check(ViewAssertions.matches(withText("3291")));
+
     }
 
     @Test
-    public void NutritionCheck(){
+    public void ShouldbeAbleVerifyNutrition(){
         Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
         Espresso.onView(withText("Nutrition")).perform(ViewActions.click());
         Espresso.onView(withId(R.id.maintainButton)).perform(ViewActions.click());
@@ -97,7 +102,7 @@ public class BehaviorTest {
        // Espresso.onView(withId(R.id.highCalories)).check(ViewAssertions.matches(withText("3291")));
     }
     @Test
-    public void TrackProgressCheck(){
+    public void ShouldbeAbleVerifyTrackProgress(){
         Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
         Espresso.onView(withText("Track Progress")).perform(ViewActions.click());
         Espresso.onView(withId(R.id.spinner_dropdown)).perform(ViewActions.click());
@@ -113,7 +118,7 @@ public class BehaviorTest {
 
     }
     @Test
-    public void stopwatchcheck(){
+    public void ShouldbeAbleVerifyStopwatch(){
         Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
         Espresso.onView(withText("Stop Watch")).perform(ViewActions.click());
         Espresso.onView(withId(R.id.start)).perform(ViewActions.click());
@@ -123,7 +128,7 @@ public class BehaviorTest {
     }
 
     @Test
-    public void CheckBBday5(){
+    public void ShouldbeAbleVerifyBBday5(){
         Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
         Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
         Espresso.onView(withId(R.id.BodyBuildingButton)).perform(ViewActions.click());
@@ -139,7 +144,7 @@ public class BehaviorTest {
 
     }
     @Test
-    public void CheckBBday4(){
+    public void ShouldbeAbleVerifyBBday4(){
         Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
         Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
         Espresso.onView(withId(R.id.BodyBuildingButton)).perform(ViewActions.click());
@@ -151,7 +156,7 @@ public class BehaviorTest {
                     }
 
     @Test
-    public void CheckBBday3(){
+    public void ShouldbeAbleVerifyBBday3(){
         Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
         Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
         Espresso.onView(withId(R.id.BodyBuildingButton)).perform(ViewActions.click());
@@ -163,7 +168,7 @@ public class BehaviorTest {
 
     }
     @Test
-    public void CheckBBday2(){
+    public void ShouldbeAbleVerifyBBday2(){
         Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
         Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
         Espresso.onView(withId(R.id.BodyBuildingButton)).perform(ViewActions.click());
@@ -175,7 +180,7 @@ public class BehaviorTest {
     }
 
     @Test
-    public void CheckBBday1(){
+    public void ShouldbeAbleVerifyBBday1(){
         Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
         Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
         Espresso.onView(withId(R.id.BodyBuildingButton)).perform(ViewActions.click());
@@ -187,7 +192,7 @@ public class BehaviorTest {
     }
 
     @Test
-    public void CheckWLD1(){
+    public void ShouldbeAbleVerifyWLD1(){
         Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
         Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
         Espresso.onView(withId(R.id.WeightLossButton)).perform(ViewActions.click());
@@ -200,7 +205,7 @@ public class BehaviorTest {
 
 
     @Test
-    public void CheckWLD2(){
+    public void ShouldbeAbleVerifyWLD2(){
         Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
         Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
         Espresso.onView(withId(R.id.WeightLossButton)).perform(ViewActions.click());
@@ -211,7 +216,7 @@ public class BehaviorTest {
         Espresso.onView(withId(R.id.completeDay2w)).perform(ViewActions.scrollTo(), click());
     }
     @Test
-    public void CheckWLD3(){
+    public void ShouldbeAbleVerifyWLD3(){
         Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
         Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
         Espresso.onView(withId(R.id.WeightLossButton)).perform(ViewActions.click());
@@ -222,7 +227,7 @@ public class BehaviorTest {
         Espresso.onView(withId(R.id.completeDay3w)).perform(ViewActions.scrollTo(), click());
     }
     @Test
-    public void CheckWLD4(){
+    public void ShouldbeAbleVerifyWLD4(){
         Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
         Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
         Espresso.onView(withId(R.id.WeightLossButton)).perform(ViewActions.click());
@@ -233,7 +238,7 @@ public class BehaviorTest {
         Espresso.onView(withId(R.id.completeDay4w)).perform(ViewActions.scrollTo(), click());
     }
     @Test
-    public void CheckWLD5(){
+    public void ShouldbeAbleVerifyWLD5(){
         Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
         Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
         Espresso.onView(withId(R.id.WeightLossButton)).perform(ViewActions.click());
@@ -244,7 +249,7 @@ public class BehaviorTest {
         Espresso.onView(withId(R.id.completeDay5w)).perform(ViewActions.scrollTo(), click());
     }
     @Test
-    public void StrengthDay1(){
+    public void ShouldbeAbleVerifyStrengthDay1(){
         Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
         Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
         Espresso.onView(withId(R.id.StrengthTrainingButton)).perform(ViewActions.click());
@@ -255,7 +260,7 @@ public class BehaviorTest {
         Espresso.onView(withId(R.id.completeDay1s)).perform(ViewActions.scrollTo(), click());
     }
     @Test
-    public void StrengthDay2(){
+    public void ShouldbeAbleVerifyStrengthDay2(){
         Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
         Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
         Espresso.onView(withId(R.id.StrengthTrainingButton)).perform(ViewActions.click());
@@ -266,7 +271,7 @@ public class BehaviorTest {
         Espresso.onView(withId(R.id.completeDay2s)).perform(ViewActions.scrollTo(), click());
     }
     @Test
-    public void StrengthDay3(){
+    public void ShouldbeAbleVerifyStrengthDay3(){
         Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
         Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
         Espresso.onView(withId(R.id.StrengthTrainingButton)).perform(ViewActions.click());
@@ -277,7 +282,7 @@ public class BehaviorTest {
         Espresso.onView(withId(R.id.completeDay3s)).perform(ViewActions.scrollTo(), click());
     }
     @Test
-    public void StrengthDay4(){
+    public void ShouldbeAbleVerifyStrengthDay4(){
         Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
         Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
         Espresso.onView(withId(R.id.StrengthTrainingButton)).perform(ViewActions.click());
@@ -288,7 +293,7 @@ public class BehaviorTest {
         Espresso.onView(withId(R.id.completeDay4s)).perform(ViewActions.scrollTo(), click());
     }
     @Test
-    public void StrengthDay5(){
+    public void ShouldbeAbleVerifyStrengthDay5(){
         Espresso.onView(withId(R.id.home)).perform(ViewActions.click());
         Espresso.onView(withText("Fitness Program")).perform(ViewActions.click());
         Espresso.onView(withId(R.id.StrengthTrainingButton)).perform(ViewActions.click());
