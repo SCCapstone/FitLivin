@@ -2,7 +2,7 @@
  * Class 'MainActivity'
  *
  * Initializes the Parse Database and first fragment layout. Stores variables
- * for the Database.
+ * for the Database. Has functions that are used throughout all fragments
  *
  */
 
@@ -68,6 +68,7 @@ public class MainActivity extends FragmentActivity{
 
     ListView listView;
     ArrayAdapter<String> listAdapter;
+    //intializing list for navigation drawer
     String fragmentArray[] = {"Profile", "Points", "Nutrition", "Goals", "Max", "Track Progress", "Fitness Program","Stop Watch"};
     DrawerLayout drawerLayout;
 
@@ -79,72 +80,38 @@ public class MainActivity extends FragmentActivity{
     //Creates a parse object for the database
     //Creates a query object to query through the database
     public static ParseObject profileInfo = new ParseObject("ProfileInfo");
-    ParseQuery<ParseObject> query = ParseQuery.getQuery("ProfileInfo");
-
     public static ParseObject max = new ParseObject("Max");
-    ParseQuery<ParseObject> query3 = ParseQuery.getQuery("Max");
-
     public static ParseObject pointsInfo = new ParseObject("Points");
-    ParseQuery<ParseObject> query2 = ParseQuery.getQuery("Points");
-
     public static ParseObject weightParse = new ParseObject("WeightGoal");
-    ParseQuery<ParseObject> weightParseQuery = ParseQuery.getQuery("WeightGoal");
-
     public static ParseObject weightGainParse = new ParseObject("goalWeightGain");
-    ParseQuery<ParseObject> weightGainParseQuery = ParseQuery.getQuery("goalWeightGain");
-
     public static ParseObject benchParse = new ParseObject("BenchGoal");
-    ParseQuery<ParseObject> benchParseQuery = ParseQuery.getQuery("BenchGoal");
-
     public static ParseObject squatParse = new ParseObject("SquatGoal");
-    ParseQuery<ParseObject> squatParseQuery = ParseQuery.getQuery("SquatGoal");
-
     public static ParseObject DeadLiftParse = new ParseObject("DeadLiftGoal");
-    ParseQuery<ParseObject> DeadLiftParseQuery = ParseQuery.getQuery("DeadLiftGoal");
-
     public static ParseObject MileTimeParse = new ParseObject("MileTimeGoal");
-    ParseQuery<ParseObject> MileTimeParseQuery = ParseQuery.getQuery("MileTimeGoal");
 
-    public static ParseObject MaxBenchParse = new ParseObject("MaxBench");
-    ParseQuery<ParseObject> MaxBenchParseQuery = ParseQuery.getQuery("MaxBench");
 
-    public static ParseObject MaxSquatParse = new ParseObject("MaxSquat");
-    ParseQuery<ParseObject> MaxSquatParseQuery = ParseQuery.getQuery("MaxSquat");
-
-    public static ParseObject MaxDeadLiftParse = new ParseObject("MaxDeadLift");
-    ParseQuery<ParseObject> MaxDeadLiftParseQuery = ParseQuery.getQuery("MaxDeadLift");
-
-    public static ParseObject MaxBigThreeParse = new ParseObject("MaxBigThree");
-    ParseQuery<ParseObject> MaxBigThreeParseQuery = ParseQuery.getQuery("MaxBigThree");
-
-    public static ParseObject MaxMileTimeParse = new ParseObject("MaxMileTime");
-    ParseQuery<ParseObject> MaxMileTimeParseQuery = ParseQuery.getQuery("MaxMileTime");
-
-    //public static ParseObject WorkoutParse = new ParseObject("WorkoutProgress");
-    //  ParseQuery<ParseObject> WorkoutParseQuery = ParseQuery.getQuery("WorkoutProgress");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-
-
-
-
+        //intializing list view and adapter
         listView = (ListView)findViewById(R.id.listView);
         listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,android.R.id.text1, fragmentArray){
-    public View getView(int position, View convertView, ViewGroup parent) {
+
+        public View getView(int position, View convertView, ViewGroup parent) {
         View view = super.getView(position, convertView, parent);
         TextView ListItemShow = (TextView) view.findViewById(android.R.id.text1);
-        ListItemShow.setTextColor(Color.parseColor("#ffffff"));
+        ListItemShow.setTextColor(Color.parseColor("#ffffff"));// setting text color of list to white
         return view;
     }
 };
+        //setting cases for the navigation drawer
+        //when a the phone slides, the usr can click one of the buttons and be directed
+        //to the case with the correct title
         listView.setAdapter(listAdapter);
-
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerview);
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -181,13 +148,15 @@ public class MainActivity extends FragmentActivity{
 
                 fm = getFragmentManager();
                 fm.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit();
-                drawerLayout.closeDrawers();
+                drawerLayout.closeDrawers();// closes the navigation drawer
 
             }
         });
 
 
-        //initializes the query object for the Profile databse
+
+
+
         ParseQuery<ParseObject> query = ParseQuery.getQuery("ProfileInfo");
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
@@ -210,7 +179,7 @@ public class MainActivity extends FragmentActivity{
                 }
             }
         });
-
+        //querys database to find maxbench for the user to set variable
         ParseQuery MaxBench = ParseQuery.getQuery("MaxBench");
         MaxBench.whereExists("MaxBench");//setting constraints
         MaxBench.orderByDescending("createdAt");
@@ -218,13 +187,9 @@ public class MainActivity extends FragmentActivity{
 
         MaxBench.findInBackground(new FindCallback<ParseObject>() {
                                       public void done(List<ParseObject> objects, ParseException e) {
-
                                           if (e == null && objects.size() != 0) { //if objects size is not 0
-
                                               if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
-
                                                   int x = (Integer) objects.get(0).get("MaxBench");
-
                                                   bench = x;
 
 
@@ -237,6 +202,7 @@ public class MainActivity extends FragmentActivity{
 
                                   }
         );
+        //querys database to find max squat for the user to set variable
         ParseQuery MaxSquat = ParseQuery.getQuery("MaxSquat");
         MaxSquat.whereExists("MaxSquat");//setting constraints
         MaxSquat.orderByDescending("createdAt");
@@ -246,18 +212,15 @@ public class MainActivity extends FragmentActivity{
             public void done(List<ParseObject> objects, ParseException e) {
 
                 if (e == null && objects.size() != 0) { //if objects size is not 0
-
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
-
                         int x = (Integer) objects.get(0).get("MaxSquat");
-                        //currentW.setText(Integer.toString(x));
-                        //setSquat(x);
                         squat = x;
                     }
                 }
             }
 
         });
+        //querys database to find max deadlift for the user to set variable
         ParseQuery MaxDeadLift = ParseQuery.getQuery("MaxDeadLift");
         MaxDeadLift.whereExists("MaxDeadLift");//setting constraints
         MaxDeadLift.orderByDescending("createdAt");
@@ -271,7 +234,6 @@ public class MainActivity extends FragmentActivity{
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
                         int x = (Integer) objects.get(0).get("MaxDeadLift");
-                        //currentW.setText(Integer.toString(x));
                         deadLift = x;
 
 
@@ -280,6 +242,8 @@ public class MainActivity extends FragmentActivity{
             }
 
         });
+
+        //querys database to find max miletime for the user to set variable
         ParseQuery MaxMileTime = ParseQuery.getQuery("MaxMileTime");
         MaxMileTime.whereExists("MaxMileTime");//setting constraints
         MaxMileTime.orderByDescending("createdAt");
@@ -293,7 +257,7 @@ public class MainActivity extends FragmentActivity{
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
                         int x = (Integer) objects.get(0).get("MaxMileTime");
-                        //currentW.setText(Integer.toString(x));
+
                         mileTime = x;
 
 
@@ -302,13 +266,7 @@ public class MainActivity extends FragmentActivity{
             }
 
         });
-	        /* fm = getFragmentManager(); // or 'getSupportFragmentManager();'
-	        int count = fm.getBackStackEntryCount();
-	        System.out.println("count " + count);
-	        for(int i = 0; i < count; ++i) {
-	            System.out.println("framgnet " + i);
-	            fm.popBackStack();
-	        }*/
+
         //Adds the fragment for the layout
         PointsPageFragment firstFragment = new PointsPageFragment();
         fm= getFragmentManager();
@@ -316,15 +274,17 @@ public class MainActivity extends FragmentActivity{
 
     }
 
-
+    /*****
+     * 'onCreateOptionsMenu()'
+     *
+     * When the app is started a menu bar will be activated
+     *
+     */
     public boolean onCreateOptionsMenu(Menu menu) {
 
         this.getActionBar()
                 .setTitle("FitLivin");
-        //this.getActionBar().setDisplayUseLogoEnabled(true);
-        //this.getActionBar().setDisplayShowHomeEnabled(true);
-        //this.getActionBar().setIcon(R.mipmap.ic_launcher);
-
+         //sets color of action bar
         this.getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#e70b0e")));
 
         String s = ParseUser.getCurrentUser().getUsername();
@@ -334,6 +294,7 @@ public class MainActivity extends FragmentActivity{
         MenuItem menuItem = menu.findItem(R.id.uName);
         MenuItem menuItem2 = menu.findItem(R.id.home);
 
+        //when menu image icon is clicked, navigation drawer is opened
         menuItem2.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -349,6 +310,13 @@ public class MainActivity extends FragmentActivity{
     }
 
     @Override
+    /*****
+     * 'onOptionsItemSelected()'
+     *
+     * Id's are set for each icon on the menu bar, when they are clicked, the
+     * function will run
+     *
+     */
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if(id == R.id.action_settings){
@@ -358,7 +326,7 @@ public class MainActivity extends FragmentActivity{
             return true;
         }
 
-        if(id == R.id.uName){
+        if(id == R.id.uName){// username directs user to profile page
             ProfilePageFragment fragment6 = new ProfilePageFragment();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
@@ -384,6 +352,7 @@ public class MainActivity extends FragmentActivity{
     }
 
     /*****
+     * 'profileData'
      *
      * This method will allow for the Profile page to send name,
      * weight,and height to the database.
@@ -420,41 +389,12 @@ public class MainActivity extends FragmentActivity{
 
     }
 
-    public void MaxData(Integer bench, Integer squat, Integer deadLift, Integer total,Integer mileTime, String user) {
-        Integer bench1 = bench;
-        Integer squat1 = squat;
-        Integer deadLift1 = deadLift;
-        Integer total1 = total;
-        Integer miletime1 = mileTime;
-        // ParseUser user1 = user;
-        String username1 = user;
 
-        Log.d("F", "maxData!!!!!!!!!!!!!!!!!!");
-        // adds info to database
-        max.put("bench", bench1);
-        max.put("squat", squat1);
-        max.put("deadlift", deadLift1);
-        max.put("big3total", total1);
-        max.put("miletime",miletime1);
-        max.put("username", username1);
-
-        max.saveInBackground(new SaveCallback() {
-            @Override
-            public void done(ParseException e) {
-                if (e == null) {
-                    objectID = max.getObjectId();
-                    setS(objectID);
-                } else {
-                    Log.d("F", "object failllll");
-                }
-            }
-        });
-
-    }
 
     /*****
+     * 'pointsData'
      *
-     * Allows the user to send pints to the database
+     * Allows the user to send points to the database
      *
      */
 
@@ -482,14 +422,17 @@ public class MainActivity extends FragmentActivity{
 
 
     }
+    /*****
+     * 'WeightGoal'
+     *
+     * This method will add a users weight loss goal to the database based on user info
+     *
+     */
 
     public void WeightGoal(Integer weight, String user) {
         Integer weight1 = weight;
-
-        // ParseUser user1 = user;
         String username1 = user;
 
-        Log.d("F", "weightGoal!!!!!!!!!!!!!!!!!!");
         // adds info to database
         weightParse.put("goalWeight", weight1);
         weightParse.put("username", username1);
@@ -508,14 +451,16 @@ public class MainActivity extends FragmentActivity{
         });
 
     }
-
+    /*****
+     * 'WeightGainGoal'
+     *
+     * This method will add a users weight gain goal to the database based on user info
+     *
+     */
     public void WeightGainGoal(Integer weight, String user) {
         Integer weight1 = weight;
-
-        // ParseUser user1 = user;
         String username1 = user;
 
-        Log.d("F", "weightGainGoal!!!!!!!!!!!!!!!!!!");
         // adds info to database
         weightGainParse.put("goalWeightGain", weight1);
         weightGainParse.put("username", username1);
@@ -561,13 +506,17 @@ public class MainActivity extends FragmentActivity{
 
     }
 
+    /*****
+     * 'SquatGoal'
+     *
+     * This method will add a users squat goal to the database based on user info
+     *
+     */
+
     public void SquatGoal(Integer squat, String user) {
         Integer squat1 = squat;
-
-        // ParseUser user1 = user;
         String username1 = user;
 
-        Log.d("F", "squatGoal!!!!!!!!!!!!!!!!!!");
         // adds info to database
         squatParse.put("SquatGoal", squat1);
         squatParse.put("username", username1);
@@ -587,13 +536,16 @@ public class MainActivity extends FragmentActivity{
 
     }
 
+    /*****
+     * 'DeadLiftGoal'
+     *
+     * This method will add a users dead lift goal to the database based on user info
+     *
+     */
     public void DeadLiftGoal(Integer DL, String user) {
         Integer DL1 = DL;
-
-        // ParseUser user1 = user;
         String username1 = user;
 
-        Log.d("F", "DLGoal!!!!!!!!!!!!!!!!!!");
         // adds info to database
         DeadLiftParse.put("DeadLiftGoal", DL1);
         DeadLiftParse.put("username", username1);
@@ -613,13 +565,16 @@ public class MainActivity extends FragmentActivity{
 
     }
 
+    /*****
+     * 'MileTimeGoal'
+     *
+     * This method will add a users goal to the database based on user info
+     *
+     */
     public void MileTimeGoal(Integer mileTime, String user) {
         Integer mileTime1 = mileTime;
-
-        // ParseUser user1 = user;
         String username1 = user;
 
-        Log.d("F", "mileTimeGoal!!!!!!!!!!!!!!!!!!");
         // adds info to database
         MileTimeParse.put("MileTimeGoal", mileTime1);
         MileTimeParse.put("username", username1);
@@ -638,11 +593,15 @@ public class MainActivity extends FragmentActivity{
         });
 
     }
+    /*****
+     * 'BenchMax'
+     *
+     * This method will add a users bench max to the database based on user info
+     *
+     */
     public void BenchMax(Integer bench, String user) {
         ParseObject MaxBenchParse1 = new ParseObject("MaxBench");
         Integer bench1 = bench;
-
-        // ParseUser user1 = user;
         String username1 = user;
         // adds info to database
         MaxBenchParse1.put("MaxBench", bench1);
@@ -651,12 +610,15 @@ public class MainActivity extends FragmentActivity{
 
         MaxBenchParse1.saveInBackground();
     }
-
+    /*****
+     * 'SquatMax'
+     *
+     * This method will add a users squat max to the database based on user info
+     *
+     */
     public void SquatMax(Integer squat, String user) {
         ParseObject MaxSquatParse1 = new ParseObject("MaxSquat");
         Integer squat1 = squat;
-
-        // ParseUser user1 = user;
         String username1 = user;
         // adds info to database
         MaxSquatParse1.put("MaxSquat", squat1);
@@ -665,12 +627,15 @@ public class MainActivity extends FragmentActivity{
 
         MaxSquatParse1.saveInBackground();
     }
-
+    /*****
+     * 'DeadLiftMax'
+     *
+     * This method will add a users dead lift max to the database based on user info
+     *
+     */
     public void DeadLiftMax(Integer deadLift, String user) {
         ParseObject MaxDeadLiftParse1 = new ParseObject("MaxDeadLift");
         Integer deadLift1 = deadLift;
-
-        // ParseUser user1 = user;
         String username1 = user;
         // adds info to database
         MaxDeadLiftParse1.put("MaxDeadLift", deadLift1);
@@ -680,10 +645,16 @@ public class MainActivity extends FragmentActivity{
         MaxDeadLiftParse1.saveInBackground();
     }
 
+    /*****
+     * 'MileTimeMax'
+     *
+     * This method will add a users miletime max to the database based on user info
+     *
+     */
 
     public void MileTimeMax(Integer mileTime, String user) {
         ParseObject MaxMileTimeParse1 = new ParseObject("MaxMileTime");
-        Integer mileTime1 = mileTime;        // ParseUser user1 = user;
+        Integer mileTime1 = mileTime;
         String username1 = user;
         // adds info to database
         MaxMileTimeParse1.put("MaxMileTime", mileTime1);
@@ -692,6 +663,14 @@ public class MainActivity extends FragmentActivity{
 
         MaxMileTimeParse1.saveInBackground();
     }
+
+    /*****
+     * 'workoutPro'
+     *
+     * This method will add a user workout progress data to the database with
+     * workout description and date
+     *
+     */
     public void workoutPro(String date, String workout) {
         ParseObject WorkoutParse = new ParseObject("WorkoutProgress");
         String date1 = date;
@@ -704,6 +683,12 @@ public class MainActivity extends FragmentActivity{
         WorkoutParse.put("author", curruser);
         WorkoutParse.saveInBackground();
     }
+    /*****
+     * 'WeightGoalTest'
+     *
+     * Compares integer with current weight loss goal to see if goal was complete
+     *
+     */
     public Integer WeightGoalTest(final Integer weightL){
 
 
@@ -719,14 +704,18 @@ public class MainActivity extends FragmentActivity{
         }
 
     }
+    /*****
+     * 'WeightGainGoalTest'
+     *
+     * Compares integer with current weight gain goal to see if goal was complete
+     *
+     */
     public Integer WeightGainGoalTest(final Integer weightG){
 
         ParseQuery CurrentWeightquery = ParseQuery.getQuery("ProfileInfo");
         CurrentWeightquery.whereExists("Weight");//setting constraints
         CurrentWeightquery.orderByDescending("createdAt");
         CurrentWeightquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
-
-
         //final  SaveData data = new SaveData();
 
         CurrentWeightquery.findInBackground(new FindCallback<ParseObject>() {
@@ -759,6 +748,12 @@ public class MainActivity extends FragmentActivity{
         }
 
     }
+    /*****
+     * 'BenchGoalTest'
+     *
+     * Compares integer with current bench goal to see if goal was complete
+     *
+     */
     public Integer BenchGoalTest(final Integer weightG) {
 
 
@@ -774,7 +769,12 @@ public class MainActivity extends FragmentActivity{
 
     }
 
-
+    /*****
+     * 'SquatGoalTest'
+     *
+     * Compares integer with current squat goal to see if goal was complete
+     *
+     */
     public Integer SquatGoalTest(final Integer weightG){
 
 
@@ -786,6 +786,12 @@ public class MainActivity extends FragmentActivity{
         }
 
     }
+    /*****
+     * 'DeadliftGoalTest'
+     *
+     * Compares integer with current deadLift goal to see if goal was complete
+     *
+     */
     public Integer DeadLiftGoalTest(final Integer weightG){
 
         Integer currentD = deadLift;
@@ -796,7 +802,12 @@ public class MainActivity extends FragmentActivity{
         }
 
     }
-
+    /*****
+     * 'MileTimeGoalTest'
+     *
+     * Compares integer with current mile time goal to see if goal was complete
+     *
+     */
     public Integer MileTimeGoalTest(final Integer weightG){
 
         Integer currentM = mileTime;
@@ -810,14 +821,10 @@ public class MainActivity extends FragmentActivity{
         }
 
     }
-    public void myFancyMethod(View v) {
-        BMICAL_Fragment fragment3 = new BMICAL_Fragment();
-        FragmentManager fm = getFragmentManager();
-        fm.beginTransaction().replace(R.id.container, fragment3).addToBackStack(null).commit();
-    }
+
     /***
      *
-     * Getters and Setters for name, weight, and height
+     * Getters and Setters for variables
      */
 
     public String getName(){
@@ -852,17 +859,37 @@ public class MainActivity extends FragmentActivity{
     public void setS(String sn){
         this.objectID = sn;
     }
+
+    /*****
+     * 'launchCamera'
+     *
+     * Launches camera and media store on command
+     *
+     */
     public void launchCamera(View view){
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent, 1);
     }
 
+    /*****
+     * 'onActivityResult'
+     *
+     * If user clicks ok then the data will be captured
+     *
+     */
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         if(requestCode == 1 && resultCode == RESULT_OK){
             Bundle extras = data.getExtras();
             Bitmap photo = (Bitmap) extras.get("data");
         }
     }
+    /*****
+     * 'onBackPressed'
+     *
+     * This method allows for fragments to be removed from the backstack. It allows for fragments
+     * to be revisited upon request as well.
+     *
+     */
     public void onBackPressed() {
         int count = fm.getBackStackEntryCount();
         System.out.println("count " + count);

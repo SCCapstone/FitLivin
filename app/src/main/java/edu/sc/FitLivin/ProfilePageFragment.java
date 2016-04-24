@@ -291,31 +291,6 @@ public class ProfilePageFragment extends Fragment {
             }
         });
 
-     /*  editprofile = (Button) v.findViewById(R.id.editprofile);
-          editprofile.setOnClickListener(new View.OnClickListener() {
-              @Override
-             public void onClick(View v) {
-                 Editprofilefragment fragment = new Editprofilefragment();
-                 FragmentManager fm = getFragmentManager();
-                 fm.beginTransaction().add(R.id.container, fragment).addToBackStack(null).commit();
-             }
-         });*/
-        /* final MainActivity main1 = new MainActivity();
-         pic.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-            main1.launchCamera(v);
-             }
-         });
- */
-        /**
-         takepic.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-        startActivity(new Intent(getActivity(), CameraActivity.class));
-        }
-        });
-         **/
 
 
         return v;
