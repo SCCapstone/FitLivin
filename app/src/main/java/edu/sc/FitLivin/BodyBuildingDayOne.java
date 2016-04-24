@@ -49,7 +49,7 @@ public class BodyBuildingDayOne extends Fragment {
     //alerts user once they've completed their workout and rewards them 50 points to points page.
     private void bodybuild1Dialog(){
 
-            dialogBuilder = new AlertDialog.Builder(getActivity());
+            dialogBuilder= new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
             dialogBuilder.setTitle("Congratulations!");
             dialogBuilder.setMessage("You Earned 50 Points!");
             dialogBuilder.setIcon(R.mipmap.ic_launcher);

@@ -40,7 +40,7 @@ public class BodyBuildingDayThree extends Fragment {
     private AlertDialog.Builder dialogBuilder;
     //complete button dialog to alert user that they have been awarded points
     private void bodybuild3Dialog(){
-        dialogBuilder = new AlertDialog.Builder(getActivity());
+        dialogBuilder= new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
         dialogBuilder.setTitle("Congratulations!");
         dialogBuilder.setMessage("You Earned 50 Points!");
         dialogBuilder.setIcon(R.mipmap.ic_launcher);

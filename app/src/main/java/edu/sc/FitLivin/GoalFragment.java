@@ -1,4 +1,10 @@
-
+/******
+ * Class 'GoalFragment'
+ *
+ * Provides the user with the chance to add to their goals
+ * Bench,Squat,Dead lift, Mile Run, Weight Loss, and Weight Gain.
+ *
+ */
         package edu.sc.FitLivin;
 
         import android.app.AlertDialog;
@@ -6,6 +12,7 @@
         import android.app.FragmentManager;
         import android.app.FragmentTransaction;
         import android.content.DialogInterface;
+        import android.graphics.Color;
         import android.media.MediaPlayer;
         import android.os.Bundle;
         import android.support.v7.app.AppCompatActivity;
@@ -29,14 +36,20 @@
 
 
 public class GoalFragment extends Fragment {
-    MainActivity main = new MainActivity();
+    MainActivity main = new MainActivity();//main activity object
 
     private static final int TEXT_ID = 0;
 
     private AlertDialog.Builder dialogBuilder;
-    //
+
+    /* * Method 'weightLossDialog'
+     *
+     *  Dialog builder for weight loss. notifies the user when a goal was completed.
+     // Dispalys message and applause
+     *
+     */
     private void weightLossDialog(){
-        dialogBuilder = new AlertDialog.Builder(getActivity());
+        dialogBuilder= new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
         dialogBuilder.setTitle("Great Job!!!!");
         dialogBuilder.setMessage("Weight Loss Goal: Complete!");
         main.mp = MediaPlayer.create(getActivity(), R.raw.applause);
@@ -58,16 +71,23 @@ public class GoalFragment extends Fragment {
         AlertDialog dialog = dialogBuilder.create();
         dialog.show();
     }
+
+    /* * Method 'weightGainDialog'
+     *
+     *  Dialog builder for weight gain. notifies the user when a goal was completed.
+     // Dispalys message and applause
+     *
+     */
     private void weightGainDialog(){
-        dialogBuilder = new AlertDialog.Builder(getActivity());
+        dialogBuilder= new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
         dialogBuilder.setTitle("Great Job!!!!");
         dialogBuilder.setMessage("Weight Gain Goal: Complete!");
         main.mp = MediaPlayer.create(getActivity(), R.raw.applause);
-        main.mp.start();
+        main.mp.start();// starts media player
         dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                main.mp.stop();
+                main.mp.stop();//stops media player
 
                 dialog.dismiss();
             }
@@ -75,8 +95,15 @@ public class GoalFragment extends Fragment {
         AlertDialog dialog = dialogBuilder.create();
         dialog.show();
     }
+
+    /* * Method 'benchDialog'
+     *
+     *  Dialog builder for bench press. notifies the user when a goal was completed.
+     // Dispalys message and applause
+     *
+     */
     private void benchDialog(){
-        dialogBuilder = new AlertDialog.Builder(getActivity());
+        dialogBuilder= new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
         dialogBuilder.setTitle("Great Job!!!!");
         dialogBuilder.setMessage("Bench Press Goal: Complete!");
         main.mp = MediaPlayer.create(getActivity(), R.raw.applause);
@@ -94,16 +121,23 @@ public class GoalFragment extends Fragment {
         AlertDialog dialog = dialogBuilder.create();
         dialog.show();
     }
+
+    /* * Method 'squatDialog'
+     *
+     *  Dialog builder for squat. notifies the user when a goal was completed.
+     // Dispalys message and applause
+     *
+     */
     private void squatDialog(){
-        dialogBuilder = new AlertDialog.Builder(getActivity());
+        dialogBuilder= new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
         dialogBuilder.setTitle("Great Job!!!!");
         dialogBuilder.setMessage("Squat Goal: Complete!");
         main.mp = MediaPlayer.create(getActivity(), R.raw.applause);
-        main.mp.start();
+        main.mp.start();//starts media player
         dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                main.mp.stop();
+                main.mp.stop();//stops media player
 
                 dialog.dismiss();
             }
@@ -111,8 +145,15 @@ public class GoalFragment extends Fragment {
         AlertDialog dialog = dialogBuilder.create();
         dialog.show();
     }
+
+    /* * Method 'deadLiftDialog'
+     *
+     *  Dialog builder for deadlift. notifies the user when a goal was completed.
+     // Dispalys message and applause
+     *
+     */
     private void deadLiftDialog(){
-        dialogBuilder = new AlertDialog.Builder(getActivity());
+        dialogBuilder= new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
         dialogBuilder.setTitle("Great Job!!!!");
         dialogBuilder.setMessage("Dead Lift Goal: Complete!");
 
@@ -129,8 +170,15 @@ public class GoalFragment extends Fragment {
         AlertDialog dialog = dialogBuilder.create();
         dialog.show();
     }
+
+    /* * Method 'mileTimeDialog'
+     *
+     *  Dialog builder for miletime. notifies the user when a goal was completed.
+     // Dispalys message and applause
+     *
+     */
     private void mileTimeDialog(){
-        dialogBuilder = new AlertDialog.Builder(getActivity());
+        dialogBuilder= new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
         dialogBuilder.setTitle("Great Job!!!!");
         dialogBuilder.setMessage("Mile Time Goal: Complete!");
         main.mp = MediaPlayer.create(getActivity(), R.raw.applause);
@@ -146,6 +194,8 @@ public class GoalFragment extends Fragment {
         AlertDialog dialog = dialogBuilder.create();
         dialog.show();
     }
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -155,21 +205,16 @@ public class GoalFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_goal, container, false);
         getActivity().getActionBar()
                 .setTitle("Goals");
+
+        //intializing variables
         final  MainActivity main = new MainActivity();
-
-
-
         final TextView BenchG = (TextView) v.findViewById(R.id.currentBenchGoal);
         final TextView SquatG = (TextView) v. findViewById(R.id.currentSquatGoal);
         final TextView DLG = (TextView) v. findViewById(R.id.DeadLiftGoal);
         final TextView WeightG = (TextView) v.findViewById(R.id.currentWeightGoal);
         final TextView WeightGain = (TextView) v.findViewById(R.id.currentWeightGainGoal);
         final TextView MileTimeG = (TextView) v.findViewById(R.id.currentMileTimeGoal);
-
-
         ParseUser user = ParseUser.getCurrentUser();
-
-
         ParseQuery Weightquery = ParseQuery.getQuery("WeightGoal");
         ParseQuery WeightGainquery = ParseQuery.getQuery("goalWeightGain");
         ParseQuery Benchquery = ParseQuery.getQuery("BenchGoal");
@@ -183,16 +228,14 @@ public class GoalFragment extends Fragment {
         Button setDeadLiftG = (Button) v.findViewById(R.id.setDeadLift);
         Button setMileTimeG = (Button) v.findViewById(R.id.setMileTime);
 
+        // querys parse database for points data on user
         ParseQuery queryuser = ParseUser.getQuery();
         queryuser.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
-
-
-
         ParseQuery Points = ParseQuery.getQuery("Points");
         Points.whereExists("CurrentPoints");//setting constraints
         Points.whereMatchesQuery("author", queryuser);
         Points.whereContains("username", ParseUser.getCurrentUser().getUsername());
-        Points.orderByDescending("createdAt");
+        Points.orderByDescending("createdAt");// grabs the most recent data
 
         Points.findInBackground(new FindCallback<ParseObject>() {
                                     public void done(List<ParseObject> objects, ParseException e) {
@@ -215,11 +258,12 @@ public class GoalFragment extends Fragment {
                                 }
         );//
 
+        // querys parse database for weight data on user
         ParseQuery CurrentWeightquery = ParseQuery.getQuery("ProfileInfo");
         CurrentWeightquery.whereExists("Weight");//setting constraints
         CurrentWeightquery.orderByDescending("createdAt");
         CurrentWeightquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
-
+        // getst he most recent weight from the user
         CurrentWeightquery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -238,17 +282,19 @@ public class GoalFragment extends Fragment {
 
         });
 
+        // querys parse database for bench data on user
+
         ParseQuery MaxBench = ParseQuery.getQuery("MaxBench");
         MaxBench.whereExists("MaxBench");//setting constraints
         MaxBench.whereMatchesQuery("author", queryuser);
         MaxBench.whereContains("username", ParseUser.getCurrentUser().getUsername());
-        MaxBench.orderByDescending("createdAt");
+        MaxBench.orderByDescending("createdAt");// gets most recent data
 
         MaxBench.findInBackground(new FindCallback<ParseObject>() {
                                       public void done(List<ParseObject> objects, ParseException e) {
-
+                                           //if object is not empty
                                           if (e == null && objects.size() != 0) { //if objects size is not 0
-
+                                                    //gets the top user
                                               if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
                                                   int x = (Integer) objects.get(0).get("MaxBench");
@@ -266,11 +312,13 @@ public class GoalFragment extends Fragment {
 
                                   }
         );
+
+        // querys parse database for squat data on user
         ParseQuery MaxSquat = ParseQuery.getQuery("MaxSquat");
         MaxSquat.whereExists("MaxSquat");//setting constraints
         MaxSquat.whereMatchesQuery("author", queryuser);
         MaxSquat.whereContains("username", ParseUser.getCurrentUser().getUsername());
-        MaxSquat.orderByDescending("createdAt");
+        MaxSquat.orderByDescending("createdAt");//gets most recent data
         MaxSquat.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -278,23 +326,20 @@ public class GoalFragment extends Fragment {
 
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                        int x = (Integer) objects.get(0).get("MaxSquat");
-                        //currentW.setText(Integer.toString(x));
-                        //setSquat(x);
+                        int x = (Integer) objects.get(0).get("MaxSquat");//sets the top data set
+
                         main.squat = x;
-                        // Log.d("Q", "ddCurrentSquat " + main.squat + " dd ");
-
-
                     }
                 }
             }
 
         });
-        ParseQuery MaxDeadLift = ParseQuery.getQuery("MaxDeadLift");
+        // querys parse database for deadlift data on user
+        ParseQuery MaxDeadLift = ParseQuery.getQuery("MaxDeadLift");// looks for maxdeadlift in database
         MaxDeadLift.whereExists("MaxDeadLift");//setting constraints
         MaxDeadLift.whereMatchesQuery("author", queryuser);
         MaxDeadLift.whereContains("username", ParseUser.getCurrentUser().getUsername());
-        MaxDeadLift.orderByDescending("createdAt");
+        MaxDeadLift.orderByDescending("createdAt");// gets most recent data first
         MaxDeadLift.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
 
@@ -303,7 +348,7 @@ public class GoalFragment extends Fragment {
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
 
                         int x = (Integer) objects.get(0).get("MaxDeadLift");
-                        //currentW.setText(Integer.toString(x));
+
                         main.deadLift = x;
 
 
@@ -312,20 +357,21 @@ public class GoalFragment extends Fragment {
             }
 
         });
+
+        // querys parse database for miletime data on user
         ParseQuery MaxMileTime = ParseQuery.getQuery("MaxMileTime");
         MaxMileTime.whereExists("MaxMileTime");//setting constraints
         MaxMileTime.whereMatchesQuery("author", queryuser);
         MaxMileTime.whereContains("username", ParseUser.getCurrentUser().getUsername());
-        MaxMileTime.orderByDescending("createdAt");
+        MaxMileTime.orderByDescending("createdAt");// gets data by date
         MaxMileTime.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException e) {
-
+        // checks if object is null
                 if (e == null && objects.size() != 0) { //if objects size is not 0
 
-                    if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
+                    if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {//gets top most data
 
                         int x = (Integer) objects.get(0).get("MaxMileTime");
-                        //currentW.setText(Integer.toString(x));
                         main.mileTime = x;
 
 
@@ -336,7 +382,7 @@ public class GoalFragment extends Fragment {
         });
 
 
-
+// querys parse database for goalweight data on user
         Weightquery.whereExists("goalWeight");//setting constraints
         Weightquery.whereMatchesQuery("author", queryuser);
         Weightquery.whereContains("username", ParseUser.getCurrentUser().getUsername());
@@ -347,20 +393,20 @@ public class GoalFragment extends Fragment {
                 if (e == null && objects.size() != 0) { //if objects size is not 0
                     if (objects.get(0).get("username").equals(ParseUser.getCurrentUser().getUsername())) {
                         int x = (Integer) objects.get(0).get("goalWeight");
-                        if (x == 0) {
+                        if (x == 0) {// if text field is empty we want to set the text to nothing
                             WeightG.setText("");
-                        } else {
+                        } else {// if text field is not 0 set the number
                             WeightG.setText("" + x);
 
                         }
-
+/*
+ This section adds points by calling the pointsData method from the main. It also calls the dialog
+ */
                         if (x > 0) {
                             Integer value = main.WeightGoalTest(x);
                             System.out.println("value 2 " + value);
                             if (value == 1) {
-                                Log.d("QAOD", "congratsWEIGHTGoal");
-                                System.out.println("test 13");
-                                Double points = main.points;
+                                Double points = main.points;// sets points to double
                                 points = points + 100;
                                 main.points = points;
                                 String s = ParseUser.getCurrentUser().getUsername();
@@ -400,8 +446,9 @@ public class GoalFragment extends Fragment {
                         } else {
                             WeightGain.setText("" + x);
                         }
-
-                        //main.bench = x;
+                        /*
+ This section adds points by calling the pointsData method from the main. It also calls the dialog
+ */
                         if (x > 0) {
                             Integer value = main.WeightGainGoalTest(x);
                             if (value == 1) {
@@ -445,6 +492,9 @@ public class GoalFragment extends Fragment {
                         } else {
                             BenchG.setText("" + x);
                         }
+                        /*
+ This section adds points by calling the pointsData method from the main. It also calls the dialog
+ */
                         if (x > 0) {
                             Log.d("QAOD", "BENCHMAX" + main.bench);
                             Integer value = main.BenchGoalTest(x);
@@ -488,6 +538,9 @@ public class GoalFragment extends Fragment {
                         } else {
                             SquatG.setText("" + x);
                         }
+                        /*
+ This section adds points by calling the pointsData method from the main. It also calls the dialog
+ */
                         if (x > 0) {
                             Log.d("QAOD", "SQUATMAX" + main.squat);
                             Integer value = main.SquatGoalTest(x);
@@ -533,10 +586,12 @@ public class GoalFragment extends Fragment {
                             DLG.setText("" + x);
                         }
                         if (x > 0) {
-                            Log.d("QAOD", "DEADLIFTMAX" + main.deadLift);
                             Integer value = main.DeadLiftGoalTest(x);
-                            Log.d("QAOD", "DEADLIFTMAXGOAL" + x);
 
+
+                            /*
+ This section adds points by calling the pointsData method from the main. It also calls the dialog
+ */
                             if (value == 1) {
                                 Log.d("QAOD", "congratsDEADLIFT");
                                 Double points = main.points;
@@ -578,6 +633,9 @@ public class GoalFragment extends Fragment {
                         } else {
                             MileTimeG.setText("" + x);
                         }
+                        /*
+ This section adds points by calling the pointsData method from the main. It also calls the dialog
+ */
                         if (x > 0) {
                             Log.d("QAOD", "MILETIMEMAX" + main.mileTime);
                             Integer value = main.MileTimeGoalTest(x);
@@ -605,15 +663,18 @@ public class GoalFragment extends Fragment {
             }
 
         });
-
+/*
+ This section is for the dialog builder. When we want to set a goal, the set button is clicked which pops up the dialog alert box.
+ The user can enter the value of the goal. They can then click set or cancel.
+ */
         setWeightG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
+                AlertDialog.Builder builder1 =  new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
                 builder1.setTitle("Set Your Goal");
                 builder1.setMessage("Enter Your Goal Weight.");
                 final EditText input = new EditText(getActivity());
-                input.setInputType(InputType.TYPE_CLASS_NUMBER);
+                input.setInputType(InputType.TYPE_CLASS_NUMBER);//makes sure it is a value number
                 builder1.setView(input);
                 builder1.setCancelable(true);
 
@@ -646,11 +707,11 @@ public class GoalFragment extends Fragment {
                                         WeightG.setText("" + weight2);
                                     }
                                     main.WeightGoal(weight2, s);
-                                    dialog.cancel();
+                                    dialog.cancel();// close dialog
                                 }
                             }
                         });
-
+// if cancel is clicked it closes
                 builder1.setNegativeButton(
                         "Cancel",
                         new DialogInterface.OnClickListener() {
@@ -664,14 +725,19 @@ public class GoalFragment extends Fragment {
 
             }
         });
+
+        /*
+ This section is for the dialog builder. When we want to set a goal, the set button is clicked which pops up the dialog alert box.
+ The user can enter the value of the goal. They can then click set or cancel.
+ */
         setWeightGain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
+                AlertDialog.Builder builder1 =  new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
                 builder1.setTitle("Set Your Goal");
                 builder1.setMessage("Enter Your Goal Weight.");
                 final EditText input = new EditText(getActivity());
-                input.setInputType(InputType.TYPE_CLASS_NUMBER);
+                input.setInputType(InputType.TYPE_CLASS_NUMBER);// makes sure it is a valid number
                 builder1.setView(input);
                 builder1.setCancelable(true);
 
@@ -710,7 +776,7 @@ public class GoalFragment extends Fragment {
                                 }
                             }
                         });
-
+        // if cancel is clicked
                 builder1.setNegativeButton(
                         "Cancel",
                         new DialogInterface.OnClickListener() {
@@ -723,11 +789,14 @@ public class GoalFragment extends Fragment {
                 alert11.show();
             }
         });
-
+/*
+ This section is for the dialog builder. When we want to set a goal, the set button is clicked which pops up the dialog alert box.
+ The user can enter the value of the goal. They can then click set or cancel.
+ */
         setBenchG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
+                AlertDialog.Builder builder1 =  new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
                 builder1.setTitle("Set Your Goal");
                 builder1.setMessage("Enter Your Bench Goal.");
                 final EditText input = new EditText(getActivity());
@@ -781,11 +850,14 @@ public class GoalFragment extends Fragment {
             }
         });
 
-
+/*
+ This section is for the dialog builder. When we want to set a goal, the set button is clicked which pops up the dialog alert box.
+ The user can enter the value of the goal. They can then click set or cancel.
+ */
         setSquatG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
                 builder1.setTitle("Set Your Goal");
                 builder1.setMessage("Enter Your Squat Goal.");
                 final EditText input = new EditText(getActivity());
@@ -836,12 +908,15 @@ public class GoalFragment extends Fragment {
                 alert11.show();
             }
         });
-
+/*
+ This section is for the dialog builder. When we want to set a goal, the set button is clicked which pops up the dialog alert box.
+ The user can enter the value of the goal. They can then click set or cancel.
+ */
         setDeadLiftG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
+                AlertDialog.Builder builder1 =  new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
                 builder1.setTitle("Set Your Goal");
                 builder1.setMessage("Enter Your Dead Lift Goal.");
                 final EditText input = new EditText(getActivity());
@@ -892,10 +967,14 @@ public class GoalFragment extends Fragment {
                 alert11.show();
             }
         });
+        /*
+ This section is for the dialog builder. When we want to set a goal, the set button is clicked which pops up the dialog alert box.
+ The user can enter the value of the goal. They can then click set or cancel.
+ */
         setMileTimeG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
+                AlertDialog.Builder builder1 =  new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
                 builder1.setTitle("Set Your Goal");
                 builder1.setMessage("Enter Your Mile Time Goal.");
                 final EditText input = new EditText(getActivity());

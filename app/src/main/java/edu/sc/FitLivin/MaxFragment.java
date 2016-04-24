@@ -156,7 +156,7 @@ public class MaxFragment extends Fragment {
             setBenchMax.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
+                    AlertDialog.Builder builder1 =  new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
                     builder1.setTitle("Set Your Max");
                     builder1.setMessage("Enter Your Bench Max.");
                     final EditText input = new EditText(getActivity());
@@ -208,7 +208,7 @@ public class MaxFragment extends Fragment {
             setSquatMax.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
+                    AlertDialog.Builder builder1 =  new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
                     builder1.setTitle("Set Your Max");
                     builder1.setMessage("Enter Your Squat Max.");
                     final EditText input = new EditText(getActivity());
@@ -260,7 +260,7 @@ public class MaxFragment extends Fragment {
             setDeadLiftMax.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
+                    AlertDialog.Builder builder1 =  new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
                     builder1.setTitle("Set Your Max");
                     builder1.setMessage("Enter Your Dead Lift Max.");
                     final EditText input = new EditText(getActivity());
@@ -311,7 +311,7 @@ public class MaxFragment extends Fragment {
             setMileTimeMax.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
                     builder1.setTitle("Set Your Max");
                     builder1.setMessage("Enter Your Best Mile Time.");
                     final EditText input = new EditText(getActivity());

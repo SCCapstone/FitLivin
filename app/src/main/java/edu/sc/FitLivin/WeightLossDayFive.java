@@ -1,3 +1,5 @@
+
+
 /******
  * Class 'WeightLossDayFive'
  *
@@ -42,9 +44,10 @@ public class WeightLossDayFive extends Fragment {
 
     //alerts the use when they complete a workout and tells them how many points theyve earned
     private void WeightLD5dialog(){
-        dBuilder = new AlertDialog.Builder(getActivity());
+        dBuilder = new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
         //the congrats message
         dBuilder.setTitle("Congratulations!");
+
         //amount of points earned
         dBuilder.setMessage("You earned 50 points!");
         dBuilder.setIcon(R.mipmap.ic_launcher);

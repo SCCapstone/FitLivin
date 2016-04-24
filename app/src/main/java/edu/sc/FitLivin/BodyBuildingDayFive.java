@@ -42,7 +42,7 @@ MediaPlayer mp;
     //alerts user that they have completed workout and are awarded points.
     private void bodybuild5Dialog(){
 
-            dialogBuilder = new AlertDialog.Builder(getActivity());
+            dialogBuilder= new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
             dialogBuilder.setTitle("Congratulations!");
             dialogBuilder.setMessage("You Earned 50 Points!");
             dialogBuilder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {

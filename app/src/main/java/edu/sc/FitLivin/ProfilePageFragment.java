@@ -186,7 +186,7 @@ public class ProfilePageFragment extends Fragment {
                 final String POPUP_TEXT = "Please enter your weight and height";
                 final String WEIGHT_HINT = "Weight(lbs)";
                 final String HEIGHT_HINT = "Height(in)";
-                AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+                AlertDialog.Builder alert =  new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
                 alert.setTitle(POPUP_TITLE);
                 alert.setMessage(POPUP_TEXT);
                 final EditText WEIGHT = new EditText(getActivity());
