@@ -1,7 +1,7 @@
 
 /******
  * Class 'Editprofilefragment'
- *
+ *Author:Parth Choksi
  * This page will allow the user to go in a change their password
  *
  */
@@ -15,7 +15,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,7 +31,7 @@ import com.parse.SaveCallback;
  * Created by pkcho on 2/10/2016.
  */
 public class Editprofilefragment extends Fragment {
-
+    //Declaring Variabes
     private EditText passwordtext;
     private ImageButton buttonsave;
     private EditText reenterpass;
@@ -63,14 +62,14 @@ public class Editprofilefragment extends Fragment {
          *  are sure they want to exit. If they click yes, it exits. If no, the alert closes and
          *  they stay on the page.
          */
-        buttonexit.setOnClickListener(new View.OnClickListener() {
+        buttonexit.setOnClickListener(new View.OnClickListener() { //exit button on click listner
             @Override
             public void onClick(View v) {
 
                 final String POPUP_TITLE="Attention!";
                 final String POPUP_TEXT="Are You Sure?";
 
-                AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+                AlertDialog.Builder alert = new AlertDialog.Builder(getActivity()); //asking whether the person wants to stay or not
                 alert.setTitle(POPUP_TITLE);
                 alert.setMessage(POPUP_TEXT);
                 // Set an EditText view to get user input
@@ -98,10 +97,7 @@ public class Editprofilefragment extends Fragment {
 
         });
 
-        /****
-         * This block is used to save the password that is entered. The user can enter the password
-         * twice and they must be exactly the same. The user can then click save to save password.
-         */
+
         buttonsave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,7 +122,7 @@ public class Editprofilefragment extends Fragment {
                 }
 
 
-                // If there is a validation error, display the error
+
 
 
                 // Set up a progress dialog
@@ -135,13 +131,7 @@ public class Editprofilefragment extends Fragment {
                 dlg.setMessage("Saving Information.");
                 dlg.show();
 
-                // Set up a new Parse user
-
-
-
-
-                // Call the Parse signup method
-
+              
                 /****
                  * This block is used to save the info into the parse database
                  */
