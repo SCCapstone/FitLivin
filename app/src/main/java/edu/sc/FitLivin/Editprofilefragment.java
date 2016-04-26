@@ -131,7 +131,7 @@ public class Editprofilefragment extends Fragment {
                 dlg.setMessage("Saving Information.");
                 dlg.show();
 
-              
+
                 /****
                  * This block is used to save the info into the parse database
                  */

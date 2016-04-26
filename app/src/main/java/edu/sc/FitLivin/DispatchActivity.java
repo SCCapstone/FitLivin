@@ -11,24 +11,25 @@ import android.widget.Toast;
 import com.parse.ParseUser;
 
 /*
-This class checks whether the user is logged in. If yes, then the user is directy taken to home screen
- */
+*Author: Parth K. Choksi
+*This class checks whether the user is logged in. If yes, then the user is directy taken to home screen
+*/
 public class DispatchActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if(isNetworkAvailable(getApplicationContext())){
+        if(isNetworkAvailable(getApplicationContext())){ //cecking for internet connection
             if (ParseUser.getCurrentUser() != null) {
                 // Start an intent for the logged in activity
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, MainActivity.class)); //user is logged in
             } else {
                 // Start and intent for the logged out activity
-                startActivity(new Intent(this, SignUporLogin.class));
+                startActivity(new Intent(this, SignUporLogin.class));//not logged in
             }
         }
-        else {
+        else {//tells the user the app is going to shutdown
             new CountDownTimer(5000, 1000) {
 
                 public void onTick(long millisUntilFinished) {
