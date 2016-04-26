@@ -7,12 +7,15 @@
  */
 
 package edu.sc.FitLivin;
+/*
+*Author: Parth Choksi & Randon Sandifer
+* This class creates graph by querying the daa from the databse as provided by the user.
+*/
 
 
 import android.app.Fragment;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -68,7 +71,7 @@ public class TrackProgressFragment extends Fragment {
 
 
         ParseQuery userquery = ParseUser.getQuery();
-        userquery.whereEqualTo("objectId",ParseUser.getCurrentUser().getObjectId());
+        userquery.whereEqualTo("objectId",ParseUser.getCurrentUser().getObjectId()); //getting the user
         // Inflate the layout for this fragment
         final View v = inflater.inflate(R.layout.fragment_track_progress, container, false);
         final TextView textViewToChange = (TextView) v.findViewById(R.id.progressTrackerTitle);
@@ -151,10 +154,10 @@ public class TrackProgressFragment extends Fragment {
         });
 
         //Creates back button to go back to main page
-       graph = (GraphView) v.findViewById(R.id.graph);
+       graph = (GraphView) v.findViewById(R.id.graph); //initializing the graph
 
         final Spinner gspinner = (Spinner) v.findViewById(R.id.spinner_dropdown);
-        gspinner.setPrompt("Select your graph");
+        gspinner.setPrompt("Select your graph"); //drop down for selscting different graph
         spinnerAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.graphspinner,android.R.layout.simple_spinner_item);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         gspinner.setAdapter(spinnerAdapter);
@@ -204,7 +207,7 @@ public class TrackProgressFragment extends Fragment {
     }
 
 
-    public void openAnotherGraph(int position){
+    public void openAnotherGraph(int position){ //created seperate method for querying data and setting the graph
 
         if (position == 0){
 
@@ -217,7 +220,7 @@ public class TrackProgressFragment extends Fragment {
             query.orderByDescending("createdAt");
             query.whereContains("ObjectId", ParseUser.getCurrentUser().getObjectId());
             query.findInBackground(new FindCallback<ParseObject>() {
-                public void done(List<ParseObject> objects, ParseException e) {
+                public void done(List<ParseObject> objects, ParseException e) { //querying the database
                     if (e == null && objects.size() != 0) { //if objects size is not 0
 
                         if (objects.get(0).get("UserP").equals(ParseUser.getCurrentUser())) {
@@ -235,7 +238,8 @@ public class TrackProgressFragment extends Fragment {
 
 
                                 LineGraphSeries<DataPoint> mSeries1 = new LineGraphSeries<DataPoint>(Datagenerator(weight));
-                                LineGraphSeries<DataPoint> mSeries2 = new LineGraphSeries<DataPoint>(WeightGenerator(weight, dates));
+                                LineGraphSeries<DataPoint> mSeries2 = new LineGraphSeries<DataPoint>(WeightGenerator(weight, dates)); //initializing the lines on the grpah
+                               //customizing the graph
                                 mSeries2.setTitle("Dates");
                                 mSeries1.setTitle("Weights");
                                 mSeries1.setThickness(7);
@@ -257,7 +261,7 @@ public class TrackProgressFragment extends Fragment {
                                 graph.addSeries(mSeries2);
 
 
-                                graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter() {
+                                graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter() {//customzing the x and y axis
                                     @Override
                                     public String formatLabel(double value, boolean isValueX) {
                                         if (isValueX) {
@@ -335,7 +339,7 @@ public class TrackProgressFragment extends Fragment {
                             weightList.setAdapter(weightArrayAdapter);
 
 
-                        } else {
+                        } else { //making sure the code checks for errors
                             Toast.makeText(getActivity(), "Did not load", Toast.LENGTH_LONG).show();
                         }
                     }
@@ -344,7 +348,7 @@ public class TrackProgressFragment extends Fragment {
             });
 
         }
-        else if (position == 1){
+        else if (position == 1){//same structure as the above.
             maxBenchweight.clear();
             weightList.setAdapter(null);
             graph.removeAllSeries();
@@ -453,7 +457,7 @@ public class TrackProgressFragment extends Fragment {
 
             });
         }
-        else if (position == 2){
+        else if (position == 2){//same structure as the above but querying a different table
             maxsquats.clear();
             weightList.setAdapter(null);
             graph.removeAllSeries();
@@ -557,7 +561,7 @@ public class TrackProgressFragment extends Fragment {
 
             });
         }
-        else if(position ==3){
+        else if(position ==3){//just querying a different table
             maxdeadlift.clear();
             weightList.setAdapter(null);
             graph.removeAllSeries();
@@ -772,7 +776,7 @@ public class TrackProgressFragment extends Fragment {
         }
     }
 
-    private DataPoint[] WeightGenerator(ArrayList<String> weight, ArrayList<Date> dates) {
+    private DataPoint[] WeightGenerator(ArrayList<String> weight, ArrayList<Date> dates) {//methods for converting list to points
 
         DataPoint[] values = new DataPoint[weight.size()];
 
@@ -787,7 +791,7 @@ public class TrackProgressFragment extends Fragment {
         }
         return values;
     }
-    private DataPoint[] Datagenerator(ArrayList<String> weight) {
+    private DataPoint[] Datagenerator(ArrayList<String> weight) {//methods for converting list to points(dates)
 
         DataPoint[] values = new DataPoint[weight.size()];
 
