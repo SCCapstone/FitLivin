@@ -1,7 +1,7 @@
 
 /******
  * Class 'ProfilePageFragment'
- *
+ *Author: Randon and Parth
  * Provides the user with the ability to enter weight and height attributes. User
  * will have the ability to take a picture and set it as a profile picture.
  * The user will also be able to check their bmi and see where they stand on the
@@ -40,7 +40,6 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
-import java.io.File;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;

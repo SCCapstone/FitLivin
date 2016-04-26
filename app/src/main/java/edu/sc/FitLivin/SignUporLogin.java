@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 /**
- * Created by pkcho on 1/13/2016.
+ * Author: Parth Choksi.
  * This class guides the user to a login or sign up screen
  */
 public class SignUporLogin extends Activity {

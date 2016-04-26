@@ -20,7 +20,7 @@ import com.parse.SignUpCallback;
 import java.util.Random;
 
 /**
- * Created by pkcho on 1/13/2016.
+ * Author: Parth Choksi.
  * This class sets up a user to be entered into parse in a class called User
  */
 

@@ -1,11 +1,9 @@
 package edu.sc.FitLivin;
 
-import android.app.*;
-import android.app.Application;
+import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.test.ApplicationTestCase;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -16,7 +14,7 @@ import com.parse.ParseUser;
 
 /**
  * A login screen that offers login via email/password.
- * created by pkcho on 1/14/16
+ * Author: Parth Choksi
  * This class checks in background user entered texts and validates login
  */
 public class LoginActivity extends Activity  {
