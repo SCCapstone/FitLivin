@@ -17,7 +17,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 /**
- * Created by pkcho on 3/2/2016.
+ * Author: Parth Choksi on 3/2/2016.
+ * This class is a back up Camera and is depricated from the app.
  */
 public class CameraView extends SurfaceView implements SurfaceHolder.Callback {
     private SurfaceHolder mHolder;

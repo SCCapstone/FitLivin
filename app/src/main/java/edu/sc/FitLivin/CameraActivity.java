@@ -31,7 +31,8 @@ import com.parse.SaveCallback;
 import java.io.ByteArrayOutputStream;
 
 /**
- * Created by pkcho on 3/2/2016.
+ * Author: Parth Choksi.
+ * This class uses the squarecamera library and gets result and passes it onto CameraView
  */
 public class CameraActivity extends AppCompatActivity {
     private static final int REQUEST_CAMERA = 0;
@@ -63,14 +64,14 @@ public class CameraActivity extends AppCompatActivity {
 
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {//getting data as intent
 
         Done = (Button)findViewById(R.id.Done);
 
         if (resultCode != RESULT_OK) return;
 
         if (requestCode == REQUEST_CAMERA) {
-            final Uri photoUri = data.getData();
+            final Uri photoUri = data.getData();//storinf the data as Uri
             ParseUser user = ParseUser.getCurrentUser();
             // Get the bitmap in according to the width of the device
             final Bitmap bitmap = ImageUtility.decodeSampledBitmapFromPath(photoUri.getPath(), mSize.x, mSize.x);
@@ -79,13 +80,13 @@ public class CameraActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     try{
-                        if(photoUri != null){
+                        if(photoUri != null){//checking if uri not equal to null
                             final ProgressDialog dlg = new ProgressDialog(CameraActivity.this);
                             dlg.setTitle("Please wait.");
                             dlg.setMessage("Saving Picture.  Please wait.");
                             dlg.show();
                             ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+                            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);//compressing the image and storing in background
                             byte[] byteArray = stream.toByteArray();
                             ParseFile photofile = new ParseFile("Picture.jpg", byteArray);
                             ParseUser curruser = ParseUser.getCurrentUser();
@@ -118,7 +119,7 @@ public class CameraActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    public void requestForCameraPermission(View view) {
+    public void requestForCameraPermission(View view) {//requesting persmission
         final String permission = Manifest.permission.CAMERA;
         if (ContextCompat.checkSelfPermission(CameraActivity.this, permission)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -155,7 +156,7 @@ public class CameraActivity extends AppCompatActivity {
         ActivityCompat.requestPermissions(CameraActivity.this, new String[]{permission}, REQUEST_CAMERA_PERMISSION);
     }
 
-    private void launch() {
+    private void launch() {//launching the camera
         Intent startCustomCameraIntent = new Intent(this, com.desmond.squarecamera.CameraActivity.class);
         startActivityForResult(startCustomCameraIntent, REQUEST_CAMERA);
     }
@@ -176,7 +177,7 @@ public class CameraActivity extends AppCompatActivity {
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
-    public  byte[] scaledData(byte[] data){
+    public  byte[] scaledData(byte[] data){//seperate method to compress the image
         // Resize photo from camera byte array
         Bitmap imageProfile = BitmapFactory.decodeByteArray(data, 0, data.length);
         final Bitmap imageProfileScaled = Bitmap.createScaledBitmap(imageProfile, 500, 500
