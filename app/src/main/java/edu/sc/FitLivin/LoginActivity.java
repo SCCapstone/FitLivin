@@ -14,7 +14,6 @@ import com.parse.ParseUser;
 
 /**
  * A login screen that offers login via email/password.
- * Author: Parth Choksi
  * This class checks in background user entered texts and validates login
  */
 public class LoginActivity extends Activity  {

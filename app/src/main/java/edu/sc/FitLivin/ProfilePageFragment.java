@@ -1,7 +1,6 @@
 
 /******
  * Class 'ProfilePageFragment'
- *Author: Randon and Parth
  * Provides the user with the ability to enter weight and height attributes. User
  * will have the ability to take a picture and set it as a profile picture.
  * The user will also be able to check their bmi and see where they stand on the

@@ -40,6 +40,14 @@ public class StopwatchFragment extends Fragment implements OnClickListener {
         super.onCreate(savedInstanceState);
 
     }
+
+    /**
+     * Method for initalizing variables
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
@@ -60,7 +68,11 @@ public class StopwatchFragment extends Fragment implements OnClickListener {
 
 
     }
-    //method which deals with button clicks. Start, stop, and reset are given functionality here
+
+    /**
+     * method which deals with button clicks. Start, stop, and reset are given functionality here
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         if (v == startChron){

@@ -46,7 +46,10 @@ public class BodyBuildingDayOne extends Fragment {
     //builder for the dialog
     private AlertDialog.Builder dialogBuilder;
 
-    //alerts user once they've completed their workout and rewards them 50 points to points page.
+    /**
+     * alerts user once they've completed their workout and rewards them 50 points to points page.
+     */
+
     private void bodybuild1Dialog(){
 
             dialogBuilder= new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
@@ -65,7 +68,9 @@ public class BodyBuildingDayOne extends Fragment {
         }
 
 
-
+    /**
+     * Method for clicking on pictures and playing audio
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -134,7 +139,9 @@ public class BodyBuildingDayOne extends Fragment {
                                   }
                               }
         );
-        //adds points to points pasge after workout completion. also keeps track of it in workout history
+        /**
+         * Method for complete workout and date workout completed
+         */
         Button complete = (Button) v.findViewById(R.id.completeDay1bb);//creates complete button
         complete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

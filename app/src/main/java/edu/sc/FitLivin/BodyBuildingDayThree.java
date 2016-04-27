@@ -38,7 +38,10 @@ public class BodyBuildingDayThree extends Fragment {
     MediaPlayer mp;
 
     private AlertDialog.Builder dialogBuilder;
-    //complete button dialog to alert user that they have been awarded points
+    /**
+     * Complete button dialog to alert user that they have been awarded points
+     */
+
     private void bodybuild3Dialog(){
         dialogBuilder= new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
         dialogBuilder.setTitle("Congratulations!");
@@ -60,7 +63,13 @@ public class BodyBuildingDayThree extends Fragment {
     }
 
 
-
+    /**
+     * Method for clicking on image and playing audio
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -94,7 +103,10 @@ public class BodyBuildingDayThree extends Fragment {
                                   }
                               }
         );
-        //if curl button is clicked, play the fitfact (as long as it is not already playing)
+        /**
+         *  if curl button is clicked, play the fitfact (as long as it is not already playing)
+         */
+
         preacherCurl.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -113,7 +125,10 @@ public class BodyBuildingDayThree extends Fragment {
                                   }
                               }
         );
-        //if pushup button is clicked, play the fitfact (as long as it is not already playing)
+        /**
+         * if pushup button is clicked, play the fitfact (as long as it is not already playing)
+         */
+
         pushupClose.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
@@ -134,7 +149,10 @@ public class BodyBuildingDayThree extends Fragment {
         );
 
         Button complete = (Button) v.findViewById(R.id.completeDay3bb);//creates complete button
-       //adds points to points page
+        /**
+         * adds points to points page
+         */
+
         complete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 MainActivity main1 = new MainActivity();

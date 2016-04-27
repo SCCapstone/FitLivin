@@ -8,13 +8,10 @@
 package edu.sc.FitLivin;
 
 import android.app.AlertDialog;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,13 +30,19 @@ import java.util.Date;
 import java.util.List;
 
 public class BodyBuildingDayFive extends Fragment {
-//initialize media player for fit facts
+    /**
+     * initialize media player for fit facts
+     */
 MediaPlayer mp;
     public BodyBuildingDayFive() {
         // Required empty public constructor
     }
     private AlertDialog.Builder dialogBuilder;
-    //alerts user that they have completed workout and are awarded points.
+
+    /**
+     * Alerts user that they have completed workout and are awarded points.
+     *
+     */
     private void bodybuild5Dialog(){
 
             dialogBuilder= new AlertDialog.Builder(getActivity(),android.R.style.Theme_DeviceDefault_Dialog_Alert);
@@ -57,7 +60,13 @@ MediaPlayer mp;
             dialog.show();
         }
 
-
+    /**
+     * Method for clicking picture playing audio
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -141,7 +150,9 @@ MediaPlayer mp;
                 ft.commit();//commits it
             }
         });**/
-        //complete button adds points to points page and records date.
+        /**
+         * Complete button adds points to points page and records date
+         */
         Button complete = (Button) v.findViewById(R.id.completeDay5bb);//creates complete button
         complete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

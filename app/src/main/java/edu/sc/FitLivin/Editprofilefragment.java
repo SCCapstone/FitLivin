@@ -1,10 +1,5 @@
 
-/******
- * Class 'Editprofilefragment'
- *Author:Parth Choksi
- * This page will allow the user to go in a change their password
- *
- */
+
 package edu.sc.FitLivin;
 
 import android.app.AlertDialog;
@@ -28,7 +23,7 @@ import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 /**
- * Created by pkcho on 2/10/2016.
+ * Allows user to edit their profile
  */
 public class Editprofilefragment extends Fragment {
     //Declaring Variabes

@@ -11,7 +11,6 @@ import android.widget.Toast;
 import com.parse.ParseUser;
 
 /*
-*Author: Parth K. Choksi
 *This class checks whether the user is logged in. If yes, then the user is directy taken to home screen
 */
 public class DispatchActivity extends Activity {

@@ -31,7 +31,6 @@ import com.parse.SaveCallback;
 import java.io.ByteArrayOutputStream;
 
 /**
- * Author: Parth Choksi.
  * This class uses the squarecamera library and gets result and passes it onto CameraView
  */
 public class CameraActivity extends AppCompatActivity {

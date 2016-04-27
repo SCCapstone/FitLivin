@@ -23,7 +23,13 @@ public class BodyBuildingHowto extends Fragment {
     }
 
 
-
+    /**
+     * How to page method
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

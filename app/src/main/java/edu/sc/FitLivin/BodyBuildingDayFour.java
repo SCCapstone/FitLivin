@@ -9,13 +9,10 @@
 package edu.sc.FitLivin;
 
 import android.app.AlertDialog;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,7 +35,9 @@ public class BodyBuildingDayFour extends Fragment {
    //initialize media player for fit facts
     MediaPlayer mp;
 
-
+    /**
+     * Dialog box for points
+     */
     private AlertDialog.Builder dialogBuilder;
     //alerts user that they have completed workout and awarded points
     private void bodybuild4Dialog(){
@@ -62,7 +61,13 @@ public class BodyBuildingDayFour extends Fragment {
         // Required empty public constructor
     }
 
-
+    /**
+     * Clicks pictures and plays audio
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -145,7 +150,9 @@ public class BodyBuildingDayFour extends Fragment {
                 ft.commit();//commits it
             }
         });**/
-
+/**
+ * Method for complete workout and date workout completed
+ */
         Button complete = (Button) v.findViewById(R.id.completeDay4bb);//creates complete button
         //records points and date for points page
         complete.setOnClickListener(new View.OnClickListener() {

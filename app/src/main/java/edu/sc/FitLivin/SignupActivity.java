@@ -20,7 +20,6 @@ import com.parse.SignUpCallback;
 import java.util.Random;
 
 /**
- * Author: Parth Choksi.
  * This class sets up a user to be entered into parse in a class called User
  */
 
@@ -34,7 +33,10 @@ public class SignupActivity extends Activity {
     private String objectID;
     private String userName;
 
-
+    /**
+     * Method for taking in users information
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -163,7 +165,7 @@ public class SignupActivity extends Activity {
                                         objectID = pointsInfo.getObjectId();
                                         setS(objectID);
                                     } else {
-                                        Log.d("F", "object failllll");
+                                        Log.d("F", "object fail");
                                     }
                                 }
                             });

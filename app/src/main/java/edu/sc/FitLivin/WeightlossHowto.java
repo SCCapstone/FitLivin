@@ -27,6 +27,13 @@ public class WeightlossHowto extends Fragment {
 
     }
 
+    /**
+     * Activity for weightloss day
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

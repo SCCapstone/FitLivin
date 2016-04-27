@@ -8,15 +8,12 @@
 package edu.sc.FitLivin;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -34,18 +31,25 @@ public class BMICAL_Fragment extends Fragment {
         // Required empty public constructor
     }
 
-
+    /**
+     * Method that takes in user input for BMI calc
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_bmical, container, false);
+        //sets action bar title
         getActivity().getActionBar()
                 .setTitle("BMI");
-
+        //initialize varibales
         final TextView CurrH = (TextView) v.findViewById(R.id.CurrHeight);
         final TextView BMI = (TextView) v.findViewById(R.id.DisplayBMI);
         final TextView CurrW = (TextView) v.findViewById(R.id.CurrWeight);
-
+        //takes input
        CurrH.setText("" + MainActivity.height);
        CurrW.setText("" + MainActivity.weight);
         //BMI_Weight = MainActivity.weight;
@@ -80,7 +84,7 @@ public class BMICAL_Fragment extends Fragment {
                 //BMI.setText("" + BMI_Weight);
 
 
-
+                //Tells user their BMI
                 ParseQuery query = ParseQuery.getQuery("ProfileInfo"); //getting query
                 query.whereExists("Weight");//setting constraints
                 query.whereExists("Height");//setting constraints
@@ -97,15 +101,15 @@ public class BMICAL_Fragment extends Fragment {
 
                                 float bmiValue = calculateBMI(currweight, currheight);
                                 if (bmiValue < 16) {
-                                    BMI.setText("BMI: " + bmiValue + ". You are severely underweight. Get help!");
+                                    BMI.setText("BMI: " + bmiValue + ". You are severely underweight");
                                 } else if (bmiValue < 18.5) {
-                                    BMI.setText("BMI: " + bmiValue + ". You are underweight. Eat something!");
+                                    BMI.setText("BMI: " + bmiValue + ". You are underweight");
                                 } else if (bmiValue < 25) {
-                                    BMI.setText("BMI: " + bmiValue + ". You are average. Keep doing you.");
+                                    BMI.setText("BMI: " + bmiValue + ". You are average");
                                 } else if (bmiValue < 30) {
-                                    BMI.setText("BMI: " + bmiValue + ". You are overweight. Go for a run.");
+                                    BMI.setText("BMI: " + bmiValue + ". You are overweight");
                                 } else {
-                                    BMI.setText("BMI: " + bmiValue + ". You are obese. Get a hold of yourself!");
+                                    BMI.setText("BMI: " + bmiValue + ". You are obese");
                                 }
 
                             }

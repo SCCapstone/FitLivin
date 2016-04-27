@@ -13,7 +13,6 @@ import com.parse.ParseUser;
 
 
 /**
- * Created by pkcho on 1/22/2016.
  * could be useful for graph
  * must be passed in a list
  */
